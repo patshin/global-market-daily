@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-02",
+  "thesis": "AI需求仍强，但市场的主要矛盾已从“订单是否存在”转向“盈利上修能否跑赢资本成本”：Brent约96美元、UST 10Y约4.81%与9月Fed加息概率约68%，正在成为Nasdaq与半导体估值的硬约束。",
+  "regime": "Event Risk",
+  "dominant_narrative": "市场今天交易的不是单纯地缘避险，而是可传导的能源通胀冲击。美伊互袭与航运风险推高油价，油价再推高全球收益率；Dell证明AI基础设施需求没有明显塌陷，因此风险点已转向高利率下的估值与融资可持续性。",
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "美伊再度互袭，Hormuz风险重新进入实体供应链",
+      "direction": "Bearish risk assets / Bullish oil",
+      "importance": "★★★★★"
+    },
+    {
+      "rank": 2,
+      "event": "全球主权债抛售升级：UST 10Y触及4.8122%，JGB 10Y突破3%",
+      "direction": "Bearish bonds and duration assets",
+      "importance": "★★★★★"
+    },
+    {
+      "rank": 3,
+      "event": "Dell确认AI基础设施需求强劲；Broadcom成为下一项核心验证",
+      "direction": "Fundamentals bullish / Valuation mixed",
+      "importance": "★★★★"
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "Hormuz从局部受扰升级为持续性商业航运中断",
+      "first_asset": "Brent / short-dated oil spreads"
+    },
+    {
+      "risk": "UST 10Y向5%延伸，形成全球融资成本二次冲击",
+      "first_asset": "UST 10Y / Nasdaq futures"
+    },
+    {
+      "risk": "AI基本面强，但资本成本与投入回报错配",
+      "first_asset": "AVGO / SOX / SMH"
+    }
+  ],
+  "next_catalyst": {
+    "event": "ADP Private Payrolls — August 2026",
+    "et": "08:15 EDT",
+    "sgt": "20:15 SGT"
+  },
+  "daily_json_path": "data/daily/2026-09-02.json",
+  "report_path": "reports/2026/09/2026-09-02.md",
+  "sources_path": "data/sources/2026-09-02.json",
+  "updated_at": "2026-09-02T11:47:00+08:00"
+}

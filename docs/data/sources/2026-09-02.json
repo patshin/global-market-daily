@@ -1,0 +1,387 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-02",
+  "data_cutoff_sgt": "2026-09-02 11:47 SGT",
+  "data_cutoff_et": "2026-09-01 23:47 EDT",
+  "retrieved_at": "2026-09-02T11:47:00+08:00",
+  "sources": [
+    {
+      "id": "S01",
+      "source_name": "Reuters",
+      "source_title": "Wall Street ends lower as higher yields, rising oil prices mark shaky start to September",
+      "source_url": "https://www.reuters.com/business/wall-st-futures-kick-off-september-under-pressure-yields-oil-prices-rise-2026-09-01/",
+      "published_at": "2026-09-01T09:20:00Z",
+      "event_time": "2026-09-01 US cash session",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 2",
+      "tier": "Tier 2",
+      "used_for": [
+        "US equity close",
+        "cross-asset transmission",
+        "JOLTS market reaction"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S02",
+      "source_name": "Reuters",
+      "source_title": "Asian markets tumble as US-Iran fighting lifts oil and bond yields",
+      "source_url": "https://www.reuters.com/world/china/global-markets-wrapup-1-2026-09-02/",
+      "published_at": "2026-09-02T00:43:00Z",
+      "event_time": "2026-09-02 Asia session",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 2",
+      "tier": "Tier 2",
+      "used_for": [
+        "Asia equities",
+        "Brent",
+        "UST 10Y",
+        "cross-asset tape"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S03",
+      "source_name": "Reuters",
+      "source_title": "Bond selloff deepens as inflation, oil prices jolt markets",
+      "source_url": "https://www.reuters.com/world/asia-pacific/bond-selloff-deepens-inflation-oil-prices-jolt-markets-2026-09-02/",
+      "published_at": "2026-09-02T03:11:00Z",
+      "event_time": "2026-09-02 Asia session",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 2",
+      "tier": "Tier 2",
+      "used_for": [
+        "UST 2Y/10Y",
+        "JGB",
+        "financial conditions",
+        "AI bond issuance"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S04",
+      "source_name": "Reuters",
+      "source_title": "Dollar holds firm at nearly two-week high as Middle East hostilities lift oil",
+      "source_url": "https://www.reuters.com/world/china/dollar-holds-firm-middle-east-hostilities-lift-oil-2026-09-02/",
+      "published_at": "2026-09-02T01:03:00Z",
+      "event_time": "2026-09-02 Asia FX session",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 2",
+      "tier": "Tier 2",
+      "used_for": [
+        "DXY",
+        "EURUSD",
+        "USDJPY",
+        "Fed pricing",
+        "NFP consensus"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S05",
+      "source_name": "Reuters",
+      "source_title": "Oil up nearly 1% as US and Iran trade fresh strikes",
+      "source_url": "https://www.reuters.com/business/energy/oil-up-nearly-1-us-iran-trade-fresh-strikes-2026-09-02/",
+      "published_at": "2026-09-02T00:55:00Z",
+      "event_time": "2026-09-01 night ET / 2026-09-02 morning SGT",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 2",
+      "tier": "Tier 2",
+      "used_for": [
+        "Oil price",
+        "US-Iran exchange",
+        "Hormuz physical risk"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S06",
+      "source_name": "U.S. Central Command",
+      "source_title": "CENTCOM Completes Strikes on IRGC Targets in Iran",
+      "source_url": "https://www.centcom.mil/",
+      "published_at": "2026-09-01",
+      "event_time": "2026-09-01",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 1",
+      "tier": "Tier 1",
+      "used_for": [
+        "Official confirmation of US strikes"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S07",
+      "source_name": "Institute for Supply Management",
+      "source_title": "August 2026 ISM Manufacturing PMI Report",
+      "source_url": "https://www.ismworld.org/supply-management-news-and-reports/reports/ism-pmi-reports/pmi/august/",
+      "published_at": "2026-09-01T10:00:00-04:00",
+      "event_time": "2026-09-01T10:00:00-04:00",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 1",
+      "tier": "Tier 1",
+      "used_for": [
+        "ISM headline and internals"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S08",
+      "source_name": "U.S. Bureau of Labor Statistics",
+      "source_title": "Job Openings and Labor Turnover Summary — July 2026",
+      "source_url": "https://www.bls.gov/news.release/jolts.nr0.htm",
+      "published_at": "2026-09-01T10:00:00-04:00",
+      "event_time": "2026-09-01T10:00:00-04:00",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 1",
+      "tier": "Tier 1",
+      "used_for": [
+        "JOLTS openings, hires, separations, revisions"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S09",
+      "source_name": "Federal Reserve Board",
+      "source_title": "Calendar: September 2026",
+      "source_url": "https://www.federalreserve.gov/newsevents/2026-september.htm",
+      "published_at": null,
+      "event_time": null,
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 1",
+      "tier": "Tier 1",
+      "used_for": [
+        "Beige Book",
+        "Waller speech",
+        "FOMC dates"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S10",
+      "source_name": "Dell Technologies Investor Relations",
+      "source_title": "Dell Technologies Fiscal Year 2027 Second Quarter Results",
+      "source_url": "https://investors.delltechnologies.com/events/event-details/dell-technologies-fiscal-year-2027-second-quarter-results",
+      "published_at": "2026-09-01",
+      "event_time": "2026-09-01 after market ET",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 1",
+      "tier": "Tier 1",
+      "used_for": [
+        "Dell official earnings materials"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S11",
+      "source_name": "Reuters",
+      "source_title": "Dell again lifts annual forecasts as AI demand powers record results",
+      "source_url": "https://www.reuters.com/business/dell-again-lifts-forecasts-ai-demand-powers-record-results-2026-09-01/",
+      "published_at": "2026-09-01",
+      "event_time": "2026-09-01 after market ET",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 2",
+      "tier": "Tier 2",
+      "used_for": [
+        "Dell consensus, surprise, after-hours move, AI bookings"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S12",
+      "source_name": "Broadcom Investor Relations",
+      "source_title": "Broadcom Inc. to Announce Third Quarter Fiscal Year 2026 Financial Results",
+      "source_url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-third-quarter-fiscal-year-2026-financial",
+      "published_at": "2026-08-03",
+      "event_time": "2026-09-02T17:00:00-04:00",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 1",
+      "tier": "Tier 1",
+      "used_for": [
+        "Broadcom earnings timing"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S13",
+      "source_name": "Broadcom Investor Relations",
+      "source_title": "Broadcom Inc. Announces Second Quarter Fiscal Year 2026 Financial Results",
+      "source_url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial",
+      "published_at": "2026-06-03",
+      "event_time": "2026-06-03",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 1",
+      "tier": "Tier 1",
+      "used_for": [
+        "Broadcom Q3 revenue and margin guidance"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S14",
+      "source_name": "U.S. Bureau of Labor Statistics",
+      "source_title": "Schedule of Selected Releases 2026",
+      "source_url": "https://www.bls.gov/schedule/2026/home.htm",
+      "published_at": null,
+      "event_time": "2026-09-04T08:30:00-04:00",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 1",
+      "tier": "Tier 1",
+      "used_for": [
+        "August Employment Situation release time"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S15",
+      "source_name": "ADP",
+      "source_title": "July ADP National Employment Report and August release calendar",
+      "source_url": "https://mediacenter.adp.com/2026-08-05-ADP-National-Employment-Report-Private-Sector-Employment-Increased-by-44,000-Jobs-in-July-Annual-Pay-was-Up-4-4",
+      "published_at": "2026-08-05",
+      "event_time": "2026-09-02T08:15:00-04:00",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 1",
+      "tier": "Tier 1",
+      "used_for": [
+        "ADP previous and release time"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S16",
+      "source_name": "CME Group Econoday",
+      "source_title": "US: ADP Employment Report",
+      "source_url": "https://www.cmegroup.com/education/events/econoday/671132",
+      "published_at": null,
+      "event_time": "2026-09-02T08:15:00-04:00",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 2",
+      "tier": "Tier 2",
+      "used_for": [
+        "ADP consensus"
+      ],
+      "confidence": "Medium-High"
+    },
+    {
+      "id": "S17",
+      "source_name": "Cboe Global Markets",
+      "source_title": "VIX Volatility Products — Trade Data",
+      "source_url": "https://www.cboe.com/tradable-products/vix/",
+      "published_at": null,
+      "event_time": "2026-09-01T20:15:00-04:00",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 1",
+      "tier": "Tier 1",
+      "used_for": [
+        "VIX spot and daily change"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S18",
+      "source_name": "Reserve Bank of New Zealand",
+      "source_title": "Monetary Policy Statement September 2026",
+      "source_url": "https://www.rbnz.govt.nz/monetary-policy/monetary-policy-statement/monetary-policy-statement-filtered-listing-page/2026/sep-0209/monetary-policy-statement-september-2026",
+      "published_at": "2026-09-02",
+      "event_time": "2026-09-02",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 1",
+      "tier": "Tier 1",
+      "used_for": [
+        "RBNZ OCR decision and inflation assessment"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S19",
+      "source_name": "Reuters",
+      "source_title": "Japan's benchmark bond yield rises to 3% for first time in 30 years",
+      "source_url": "https://www.reuters.com/world/asia-pacific/japans-benchmark-bond-yield-rises-3-first-time-30-years-2026-09-01/",
+      "published_at": "2026-09-01T06:33:00Z",
+      "event_time": "2026-09-01 Japan session",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 2",
+      "tier": "Tier 2",
+      "used_for": [
+        "JGB curve",
+        "BOJ pricing",
+        "Japan fiscal risk"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S20",
+      "source_name": "Eurostat",
+      "source_title": "Inflation in the euro area",
+      "source_url": "https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Inflation_in_the_euro_area",
+      "published_at": "2026-09-01",
+      "event_time": "2026-09-01",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 1",
+      "tier": "Tier 1",
+      "used_for": [
+        "Euro area August inflation flash estimate"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S21",
+      "source_name": "Reuters",
+      "source_title": "Gold hits over 3-week low as MidEast tensions fan rate-hike fears",
+      "source_url": "https://www.reuters.com/world/india/gold-hits-over-3-week-low-mideast-tensions-fan-rate-hike-fears-2026-09-02/",
+      "published_at": "2026-09-02T02:18:00Z",
+      "event_time": "2026-09-02 Asia session",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 2",
+      "tier": "Tier 2",
+      "used_for": [
+        "Gold price and rates transmission"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "S22",
+      "source_name": "Trading Economics",
+      "source_title": "Copper — Price, Chart, Historical Data",
+      "source_url": "https://tradingeconomics.com/commodity/copper",
+      "published_at": null,
+      "event_time": "2026-09-02",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 3",
+      "tier": "Tier 3",
+      "used_for": [
+        "Indicative copper price"
+      ],
+      "confidence": "Medium"
+    },
+    {
+      "id": "S23",
+      "source_name": "TreasuryDirect",
+      "source_title": "Upcoming Auctions",
+      "source_url": "https://www.treasurydirect.gov/auctions/upcoming/",
+      "published_at": null,
+      "event_time": null,
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 1",
+      "tier": "Tier 1",
+      "used_for": [
+        "Treasury auction calendar check"
+      ],
+      "confidence": "High for source; current page details not reliably parsed"
+    },
+    {
+      "id": "S24",
+      "source_name": "Reuters",
+      "source_title": "US factory activity slows in August; input prices remain elevated",
+      "source_url": "https://www.reuters.com/business/us-manufacturing-activity-slows-august-input-prices-still-elevated-2026-09-01/",
+      "published_at": "2026-09-01",
+      "event_time": "2026-09-01T10:00:00-04:00",
+      "retrieved_at": "2026-09-02T11:47:00+08:00",
+      "source_tier": "Tier 2",
+      "tier": "Tier 2",
+      "used_for": [
+        "ISM consensus and macro interpretation"
+      ],
+      "confidence": "High"
+    }
+  ]
+}

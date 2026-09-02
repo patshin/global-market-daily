@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "updated_at": "2026-09-02T11:47:00+08:00",
+  "entries": [
+    {
+      "date": "2026-09-02",
+      "thesis": "AI需求仍强，但市场的主要矛盾已从“订单是否存在”转向“盈利上修能否跑赢资本成本”：Brent约96美元、UST 10Y约4.81%与9月Fed加息概率约68%，正在成为Nasdaq与半导体估值的硬约束。",
+      "overall_regime": "Event Risk",
+      "dominant_narrative": "市场今天交易的不是单纯地缘避险，而是可传导的能源通胀冲击。美伊互袭与航运风险推高油价，油价再推高全球收益率；Dell证明AI基础设施需求没有明显塌陷，因此风险点已转向高利率下的估值与融资可持续性。",
+      "report_path": "reports/2026/09/2026-09-02.md",
+      "daily_json_path": "data/daily/2026-09-02.json",
+      "sources_path": "data/sources/2026-09-02.json"
+    }
+  ]
+}

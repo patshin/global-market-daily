@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://patshin.github.io/global-market-daily/schemas/daily.schema.json",
+  "title": "Global Market Daily publication contract",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "date",
+    "edition",
+    "timezone",
+    "data_cutoff_sgt",
+    "data_cutoff_et",
+    "last_updated",
+    "thesis",
+    "dominant_narrative",
+    "market_regime",
+    "market_tape",
+    "what_changed",
+    "top_catalysts",
+    "section_order",
+    "sections",
+    "signal_panel",
+    "scenario_matrix",
+    "upcoming_market_watch",
+    "top_risks",
+    "next_catalyst",
+    "sources"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "edition": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timezone": {
+      "const": "Asia/Singapore"
+    },
+    "data_cutoff_sgt": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2} SGT$"
+    },
+    "data_cutoff_et": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2} \\d{2} (EDT|EST)$"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "thesis": {
+      "type": "string",
+      "minLength": 40
+    },
+    "dominant_narrative": {
+      "type": "string",
+      "minLength": 40
+    },
+    "market_regime": {
+      "type": "object",
+      "required": [
+        "growth",
+        "inflation",
+        "rates",
+        "earnings",
+        "liquidity",
+        "geopolitics",
+        "overall"
+      ],
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "state",
+          "evidence"
+        ],
+        "properties": {
+          "state": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string",
+            "minLength": 10
+          }
+        }
+      }
+    },
+    "market_tape": {
+      "type": "array",
+      "minItems": 12,
+      "items": {
+        "type": "object",
+        "required": [
+          "asset",
+          "level",
+          "change_1d",
+          "change_5d",
+          "signal",
+          "driver",
+          "status",
+          "as_of",
+          "sources"
+        ]
+      }
+    },
+    "what_changed": {
+      "type": "array",
+      "maxItems": 5
+    },
+    "top_catalysts": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "section_order": {
+      "type": "array",
+      "minItems": 15,
+      "maxItems": 15,
+      "uniqueItems": true
+    },
+    "sections": {
+      "type": "object",
+      "minProperties": 15
+    },
+    "signal_panel": {
+      "type": "object",
+      "minProperties": 6
+    },
+    "scenario_matrix": {
+      "type": "object",
+      "required": [
+        "base_case",
+        "bull_case",
+        "bear_case"
+      ]
+    },
+    "upcoming_market_watch": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "sgt",
+          "et",
+          "event",
+          "consensus",
+          "previous",
+          "actual",
+          "importance"
+        ],
+        "properties": {
+          "actual": {
+            "const": "待公布"
+          }
+        }
+      }
+    },
+    "top_risks": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "next_catalyst": {
+      "type": "object",
+      "required": [
+        "event",
+        "status",
+        "date",
+        "et",
+        "sgt",
+        "consensus",
+        "previous",
+        "actual",
+        "why_it_matters"
+      ],
+      "properties": {
+        "actual": {
+          "const": "待公布"
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    }
+  }
+}

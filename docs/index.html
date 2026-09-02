@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Global Market Daily — institutional cross-asset market intelligence in Chinese.">
+  <title>Global Market Daily</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳至正文</a>
+  <div class="top-rule" aria-hidden="true"></div>
+
+  <header class="masthead">
+    <div class="masthead__eyebrow">Institutional Investment Intelligence</div>
+    <a class="masthead__brand" href="./" aria-label="Global Market Daily 首页">GLOBAL MARKET DAILY</a>
+    <div class="masthead__dek">每日全球投资日报 · Macro · Technology · Rates · Cross-Asset Risk</div>
+    <div class="masthead__meta" id="masthead-meta">
+      <span>Loading latest edition…</span>
+    </div>
+  </header>
+
+  <nav class="utility-bar" aria-label="报告工具">
+    <div class="utility-bar__inner">
+      <div class="edition-controls">
+        <button class="text-button" id="previous-report" type="button" disabled aria-label="上一期">← Previous</button>
+        <button class="text-button text-button--strong" id="latest-report" type="button">Latest</button>
+        <button class="text-button" id="next-report" type="button" disabled aria-label="下一期">Next →</button>
+      </div>
+      <label class="date-control">
+        <span class="sr-only">选择日报日期</span>
+        <select id="date-selector" aria-label="选择日报日期"></select>
+      </label>
+      <label class="archive-search">
+        <span class="sr-only">搜索历史日报</span>
+        <input id="archive-search" type="search" autocomplete="off" placeholder="Search archive / 搜索归档">
+      </label>
+      <a class="text-button" id="markdown-link" href="#" target="_blank" rel="noopener">Markdown ↗</a>
+    </div>
+    <div class="archive-results" id="archive-results" hidden></div>
+  </nav>
+
+  <main id="main-content">
+    <section class="status-panel" id="loading-state" aria-live="polite">
+      <div class="status-panel__kicker">Loading</div>
+      <h1>正在读取最新一期市场日报</h1>
+      <p>Fetching the validated JSON publication bundle.</p>
+    </section>
+
+    <section class="status-panel status-panel--error" id="error-state" hidden aria-live="assertive">
+      <div class="status-panel__kicker">Publication Error</div>
+      <h1>日报数据暂时无法读取</h1>
+      <p id="error-message"></p>
+      <button class="action-button" id="retry-button" type="button">Retry</button>
+    </section>
+
+    <div id="report-shell" hidden>
+      <section class="market-tape" aria-label="Cross-asset market tape">
+        <div class="market-tape__label">MARKET TAPE</div>
+        <div class="market-tape__track" id="market-tape"></div>
+      </section>
+
+      <div class="page-wrap">
+        <section class="edition-header">
+          <div>
+            <div class="section-kicker">Morning Dashboard</div>
+            <h1 id="edition-title">Global Market Daily</h1>
+          </div>
+          <div class="edition-header__time" id="cutoff-block"></div>
+        </section>
+
+        <section class="lead-grid">
+          <article class="lead-story">
+            <div class="section-kicker">Today's Thesis / 今日结论</div>
+            <h2 id="thesis"></h2>
+            <p class="lead-story__narrative" id="dominant-narrative"></p>
+            <div class="baseline-note" id="baseline-note" hidden></div>
+          </article>
+
+          <section class="catalyst-column" aria-labelledby="catalyst-heading">
+            <div class="section-heading">
+              <div class="section-kicker">Highest Conviction</div>
+              <h2 id="catalyst-heading">Top 3 Catalysts</h2>
+            </div>
+            <div id="top-catalysts"></div>
+          </section>
+
+          <aside class="regime-column" aria-labelledby="regime-heading">
+            <div class="section-heading">
+              <div class="section-kicker">Current State</div>
+              <h2 id="regime-heading">Market Regime</h2>
+            </div>
+            <div id="market-regime"></div>
+          </aside>
+        </section>
+
+        <section class="editorial-section changed-section" id="what-changed-section">
+          <div class="section-heading section-heading--rule">
+            <div>
+              <div class="section-kicker">Delta, Not Repetition</div>
+              <h2>What Changed Since Yesterday</h2>
+            </div>
+            <span class="section-index">01</span>
+          </div>
+          <div class="change-grid" id="what-changed"></div>
+        </section>
+
+        <section class="dashboard-grid">
+          <article class="dashboard-panel dashboard-panel--wide">
+            <div class="section-heading">
+              <div>
+                <div class="section-kicker">Confirmed Calendar</div>
+                <h2>Upcoming Market Watch</h2>
+              </div>
+              <span class="window-label">NEXT 24–72H</span>
+            </div>
+            <div class="table-scroll" id="upcoming-watch"></div>
+          </article>
+
+          <article class="dashboard-panel risk-panel">
+            <div class="section-heading">
+              <div>
+                <div class="section-kicker">Downside Map</div>
+                <h2>今日三大风险</h2>
+              </div>
+            </div>
+            <div id="top-risks"></div>
+          </article>
+        </section>
+
+        <section class="editorial-section signal-section">
+          <div class="section-heading section-heading--rule">
+            <div>
+              <div class="section-kicker">Direction With Evidence</div>
+              <h2>Market Signal Panel</h2>
+            </div>
+            <span class="section-index">02</span>
+          </div>
+          <div class="signal-grid" id="signal-panel"></div>
+        </section>
+
+        <section class="editorial-section scenario-section">
+          <div class="section-heading section-heading--rule">
+            <div>
+              <div class="section-kicker">Conditional, Not Point Forecasts</div>
+              <h2>24–72H Scenario Matrix</h2>
+            </div>
+            <span class="section-index">03</span>
+          </div>
+          <div class="scenario-grid" id="scenario-matrix"></div>
+        </section>
+
+        <section class="next-catalyst" id="next-catalyst-section">
+          <div class="next-catalyst__label">NEXT KEY CATALYST</div>
+          <div id="next-catalyst"></div>
+        </section>
+
+        <section class="full-report" id="full-report">
+          <div class="full-report__header">
+            <div>
+              <div class="section-kicker">Complete Edition</div>
+              <h2>15 Core Sections</h2>
+            </div>
+            <nav class="section-jump" id="section-jump" aria-label="报告章节"></nav>
+          </div>
+          <div id="report-sections"></div>
+        </section>
+
+        <section class="source-section" id="sources-section">
+          <div class="section-heading section-heading--rule">
+            <div>
+              <div class="section-kicker">Audit Trail</div>
+              <h2>Sources</h2>
+            </div>
+            <span class="section-index">04</span>
+          </div>
+          <p class="source-intro">Primary sources are preferred. Market reporting is labelled separately. Each link opens the original source.</p>
+          <div class="source-list" id="source-list"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div>GLOBAL MARKET DAILY</div>
+    <div>Independent market intelligence · Not investment advice</div>
+    <div id="footer-updated"></div>
+  </footer>
+
+  <noscript>
+    <div class="noscript">This site requires JavaScript to load the daily JSON archive. The complete Markdown edition is available under <code>reports/</code>.</div>
+  </noscript>
+</body>
+</html>
