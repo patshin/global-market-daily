@@ -25,16 +25,26 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Reassemble and inspect release bundle
+      - name: Reassemble and verify release bundle
         shell: bash
         run: |
           set -euo pipefail
-          cat bootstrap/event-collections-v13/bundle.b64.part-* > /tmp/gmd-event-collections-v13.b64
-          echo "Base64 size: $(wc -c < /tmp/gmd-event-collections-v13.b64 | tr -d ' ')"
-          sha256sum /tmp/gmd-event-collections-v13.b64
+          python3 bootstrap/event-collections-v13/build_part01b.py
+          cat \
+            bootstrap/event-collections-v13/bundle.b64.part-00 \
+            bootstrap/event-collections-v13/bundle.b64.part-01a \
+            /tmp/gmd-event-part-01b \
+            bootstrap/event-collections-v13/bundle.b64.part-02 \
+            bootstrap/event-collections-v13/bundle.b64.part-03 \
+            bootstrap/event-collections-v13/bundle.b64.part-04 \
+            bootstrap/event-collections-v13/bundle.b64.part-04b \
+            bootstrap/event-collections-v13/bundle.b64.part-05 \
+            > /tmp/gmd-event-collections-v13.b64
+          test "$(wc -c < /tmp/gmd-event-collections-v13.b64 | tr -d ' ')" = "67328"
+          echo "2e8838edcac85d9e626e6428045fc8d60428cf06c31e87be0ce303f077836f87  /tmp/gmd-event-collections-v13.b64" | sha256sum --check --strict
           base64 --decode /tmp/gmd-event-collections-v13.b64 > /tmp/gmd-event-collections-v13.tar.xz
-          echo "Archive size: $(wc -c < /tmp/gmd-event-collections-v13.tar.xz | tr -d ' ')"
-          sha256sum /tmp/gmd-event-collections-v13.tar.xz
+          test "$(wc -c < /tmp/gmd-event-collections-v13.tar.xz | tr -d ' ')" = "50496"
+          echo "8908dda06282080bf853005af4d30f6d6d5bc1f9655188f9ce4673f6a40d82c4  /tmp/gmd-event-collections-v13.tar.xz" | sha256sum --check --strict
           xz --test /tmp/gmd-event-collections-v13.tar.xz
           tar -tJf /tmp/gmd-event-collections-v13.tar.xz | tee /tmp/gmd-event-collections-v13.files
           for required in \
