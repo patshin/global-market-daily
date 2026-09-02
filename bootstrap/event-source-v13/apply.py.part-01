@@ -1,0 +1,122 @@
+                  '欧元区8月通胀初值升至3.3%，市场报道提高下周加息预期。',
+                  '更高ECB定价会影响EUR、Bund和全球收益率，但截至截止时间不是正式决定。',
+                  'Euro inflation ↑ → ECB pricing ↑ → Bund yields ↑ → EUR / global duration repricing',
+                  ['EURUSD', 'Bund', 'European equities', 'Global bonds'],
+                  [('Euro-area inflation', '3.3%'), ('Official decision', 'No new decision'), ('Next event', 'Next week meeting; exact time not listed')],
+                  ['Market reporting and official decision remain separate.'],
+                  ['S19', 'S20'], importance='★★★★'),
+        ], '无足以改变市场定价的新央行沟通或概率变化。'),
+        group('other-core-banks', 'BOE / BOC', '保留独立容器，未来可同时加入多项政策或沟通事件。', [],
+              '截至数据截止时间，BOE与BOC无重大正式新增决定。'),
+    ]
+
+    sections['geopolitics']['event_groups'] = [
+        group('official-actions', 'Officially Confirmed Actions', '正式确认的军事或政府行动。', [
+            event('US-IRGC-STRIKES-2026-09-01', 'US strikes on IRGC targets', 'Military Action', 'Confirmed / Occurred',
+                  'CENTCOM确认完成对IRGC目标的新一轮打击。',
+                  '风险已从政治表态进入正式军事行动，能源与航运风险溢价因此上升。',
+                  'Military action → shipping / supply risk ↑ → oil ↑ → inflation and yields ↑',
+                  ['Brent', 'WTI', 'UST', 'DXY', 'Nasdaq'],
+                  [('Official source', 'CENTCOM'), ('Minute-level time', '尚无法可靠确认')],
+                  ['Target list and minute-level timing remain unconfirmed.'],
+                  ['S05'], time={'et': '2026-09-01 night EDT', 'sgt': '2026-09-02 morning SGT'}, importance='★★★★★'),
+        ], '无新的正式确认重大行动。'),
+        group('market-reporting', 'Market Reporting', '高质量媒体报道但一手确认仍不完整。', [
+            event('IRAN-RETALIATION-2026-09-01', 'Iranian retaliation', 'Military Action', 'Market Reporting / Occurred',
+                  'Reuters报道伊朗随后作出反击，冲突仍在发展。',
+                  '持续互袭提高事件持续时间与误判升级概率。',
+                  'Retaliation → escalation risk ↑ → oil / haven USD ↑ → risk assets ↓',
+                  ['Oil', 'USD', 'Global equities', 'Credit'],
+                  [('Reporting source', 'Reuters'), ('Physical status', 'Conflict ongoing')],
+                  ['Complete loss assessment and subsequent actions remain unconfirmed.'],
+                  ['S06'], importance='★★★★★'),
+        ], '无新的高质量重大市场报道。'),
+        group('physical-disruption', 'Physical Confirmation / 实体影响', '将政治 headline 与实际物流、供给和价格影响分开。', [
+            event('HORMUZ-DISRUPTION-2026-09-02', 'Hormuz commercial shipping disruption', 'Energy / Shipping', 'Ongoing',
+                  '商业船舶事件、通行受限迹象与油价连续上涨构成可观察的实体影响。',
+                  '实际供给损失尚无法可靠确认，但物流与保险风险已经进入资产定价。',
+                  'Shipping disruption → freight / insurance / oil ↑ → inflation ↑ → UST yields ↑ → Nasdaq ↓',
+                  ['Brent', 'WTI', 'Shipping', 'Airlines', 'UST 10Y', 'Nasdaq'],
+                  [('Price confirmation', 'Brent above $95'), ('Supply loss', '尚无法可靠确认')],
+                  ['Worst-case supply loss is not treated as already occurred.'],
+                  ['S05', 'S06'], importance='★★★★★'),
+        ], '无新的实体供给或航运中断确认。'),
+    ]
+
+    sections['regional_policy']['event_groups'] = [
+        group('europe', 'Europe', '政策、数据、宣布日与生效日分别记录。', [
+            event('EURO-INFLATION-FLASH-2026-08', 'Euro-area inflation flash — August 2026', 'Economic Data', 'Released',
+                  '欧元区8月通胀初值3.3%，高于7月2.9%，能源同比14.3%。',
+                  '该数据强化ECB紧缩定价并影响EUR与Bund，但不等于ECB已经加息。',
+                  'Energy inflation ↑ → ECB pricing ↑ → Bund yields ↑ → EUR / global yields',
+                  ['EURUSD', 'Bund', 'European equities', 'Global rates'],
+                  [('Announcement date', '2026-09-01'), ('Reference period', 'August 2026'), ('Headline inflation', '3.3%'), ('Energy YoY', '14.3%')],
+                  ['Data release is not an ECB policy decision.'],
+                  ['S19'], importance='★★★★'),
+        ], '欧洲无重大新增政策或数据事件。'),
+        group('japan', 'Japan', '预算申请、批准、实施与市场反应分别记录。', [
+            event('JAPAN-BUDGET-REQUESTS-2026', 'Japan initial budget requests and fiscal-premium concern', 'Fiscal Policy / Market Reporting', 'Market Reporting',
+                  '创纪录规模的初始预算申请与JGB 10Y突破3%共同提高财政健康担忧。',
+                  '预算申请不是已批准预算，但市场已通过更高收益率反映财政溢价。',
+                  'Budget pressure → fiscal premium ↑ → JGB yields ↑ → global duration assets pressure',
+                  ['JGB', 'JPY', 'Japanese equities', 'Global bonds'],
+                  [('Announcement', '近期报道'), ('Approval status', 'Not approved'), ('JGB 10Y', '>3%')],
+                  ['Initial request is not written as approved spending.'],
+                  ['S20'], importance='★★★★'),
+        ], '日本无重大新增政策事件。'),
+        group('china', 'China', '未来可同时容纳货币、财政、地产、AI、半导体及贸易政策。', [],
+              '截至数据截止时间，中国无足以改变全球资产定价的正式新增政策。'),
+        group('canada', 'Canada', '未来可同时容纳BOC、财政、税收与贸易政策事件。', [],
+              '截至数据截止时间，加拿大无足以改变全球资产定价的正式新增政策。'),
+    ]
+
+    sections['index_changes']['event_groups'] = [
+        group('provider-actions', 'MSCI / FTSE / S&P / Nasdaq', '每项事件分别保存 Announcement、Implementation、Effective 与 Estimated Flow。', [],
+              '截至数据截止时间，未确认有足以产生显著被动资金冲击的新公告或实施安排。'),
+    ]
+    sections['flows']['event_groups'] = [
+        group('confirmed-flows', 'Confirmed Flows', '仅收录可以核验的实际资金流。', [],
+              '截至截止时间，未获得可核验的实际 Pension、Month-End 或 Quarter-End 资金流。'),
+        group('estimated-flows', 'Estimated Flows', '机构模型估算必须明确标记 Estimated Flow。', [],
+              '截至截止时间，没有足够高质量且可清晰标注的机构估算。'),
+    ]
+    sections['etf']['event_groups'] = [
+        group('major-etf-actions', 'QQQ / SPY / SMH / SOXX / XLK / AI ETFs', '每个ETF调整作为独立事件保存。', [],
+              '未确认有足以主导今日交易的重大ETF再平衡或指数重构。'),
+    ]
+    sections['options']['event_groups'] = [
+        group('expiry-calendar', 'Monthly / Quarterly / Triple-Witching Expiry', '只收录已确认到期事件；不猜测Gamma Flip、Pin Level或Max Pain。', [],
+              '未来72小时内未识别到需要上调至核心催化剂的重大到期事件。'),
+    ]
+    sections['treasury']['event_groups'] = [
+        group('completed-auctions', 'Completed Auctions', '每个期限的已完成拍卖独立保存完整结果。', [],
+              '当前未获得可可靠核验、且需要重点跟踪的已完成票息债拍卖结果。'),
+        group('upcoming-auctions', 'Confirmed Upcoming Auctions', '未来拍卖只填写 Date、Time、Size、Maturity，结果保持待公布。', [],
+              'TreasuryDirect日程未能可靠提取；因此不猜测未来72小时拍卖规模、WI或结果。'),
+    ]
+
+    commodity_rows = sections['commodities']['tables'][0]['rows']
+    commodity_sources = sections['commodities']['tables'][0]['sources']
+    energy, metals = [], []
+    for name, level, one_day, driver, implication in commodity_rows:
+        item = event(
+            f'COMMODITY-{name.upper().replace(" ", "-")}-2026-09-02',
+            f'{name} market move', 'Commodity Market', 'Occurred',
+            f'{name} traded at {level} with a one-day move of {one_day}.',
+            implication,
+            implication,
+            [name, 'Inflation expectations', 'Rates', 'Risk assets'],
+            [('Level', level), ('1D', one_day), ('Primary driver', driver)],
+            ['Market level is time-sensitive and tied to the report cutoff.'],
+            commodity_sources,
+            time={'as_of': report['data_cutoff_sgt']}, importance='★★★★' if name in {'Brent', 'WTI'} else '★★★',
+        )
+        (energy if name in {'Brent', 'WTI'} else metals).append(item)
+    sections['commodities']['event_groups'] = [
+        group('energy', 'Oil & Energy', '每个能源资产或OPEC/库存/航运事件独立呈现。', energy, '无重大能源事件。'),
+        group('metals', 'Gold & Industrial Metals', '黄金与工业金属分别保存驱动和跨资产含义。', metals, '无重大金属事件。'),
+    ]
+
+    sections['financing']['event_groups'] = [
+        group('ai-capital-cycle', 'AI Capital Cycle', '追踪债券、可转债、私募、基础设施、算力和电力融资。', [
+            event('AI-DEBT-SUPPLY-2026-09-02', 'Large-technology AI financing adds to bond supply pressure', 'AI Financing / Capital Cycle', 'Market Reporting / Structural Update',
