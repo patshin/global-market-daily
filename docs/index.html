@@ -6,8 +6,8 @@
   <meta name="color-scheme" content="light">
   <meta name="description" content="Global Market Daily — institutional cross-asset market intelligence in Chinese.">
   <title>Global Market Daily</title>
-  <link rel="stylesheet" href="assets/styles.css">
-  <script defer src="assets/app.js"></script>
+  <link rel="stylesheet" href="assets/styles.css?v=1.1.1">
+  <script defer src="assets/app.js?v=1.1.1"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳至正文</a>
@@ -79,14 +79,6 @@
             <div class="baseline-note" id="baseline-note" hidden></div>
           </article>
 
-          <section class="catalyst-column" aria-labelledby="catalyst-heading">
-            <div class="section-heading">
-              <div class="section-kicker">Highest Conviction</div>
-              <h2 id="catalyst-heading">Top 3 Catalysts</h2>
-            </div>
-            <div id="top-catalysts"></div>
-          </section>
-
           <aside class="regime-column" aria-labelledby="regime-heading">
             <div class="section-heading">
               <div class="section-kicker">Current State</div>
@@ -94,6 +86,17 @@
             </div>
             <div id="market-regime"></div>
           </aside>
+        </section>
+
+        <section class="editorial-section catalyst-section" aria-labelledby="catalyst-heading">
+          <div class="section-heading section-heading--rule">
+            <div>
+              <div class="section-kicker">Highest Conviction · Fully Evidenced</div>
+              <h2 id="catalyst-heading">Top 3 Market Catalysts</h2>
+            </div>
+            <span class="window-label">EVENT · DATA · TRANSMISSION</span>
+          </div>
+          <div class="catalyst-grid" id="top-catalysts"></div>
         </section>
 
         <section class="editorial-section changed-section" id="what-changed-section">

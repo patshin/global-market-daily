@@ -27,6 +27,93 @@ function appendText(parent, tag, className, text) {
   return node;
 }
 
+function textOrFallback(value, fallback = "尚无法可靠确认") {
+  if (Array.isArray(value)) {
+    const values = value.map((item) => String(item || "").trim()).filter(Boolean);
+    return values.length ? values.join(" · ") : fallback;
+  }
+  const text = String(value ?? "").trim();
+  return text || fallback;
+}
+
+function appendDefinition(parent, label, value, className = "definition-block") {
+  const block = create("div", className);
+  appendText(block, "div", `${className}__label`, label);
+  appendText(block, "p", `${className}__value`, textOrFallback(value));
+  parent.appendChild(block);
+  return block;
+}
+
+function renderCatalyst(item) {
+  const article = create("article", "catalyst-item catalyst-item--detailed");
+
+  const header = create("header", "catalyst-item__header");
+  const top = create("div", "catalyst-item__top");
+  appendText(top, "span", "catalyst-item__rank", String(item.rank).padStart(2, "0"));
+  appendText(top, "h3", "", textOrFallback(item.event));
+  header.appendChild(top);
+
+  const meta = create("div", "catalyst-item__meta");
+  appendText(meta, "span", "catalyst-chip catalyst-chip--importance", textOrFallback(item.importance));
+  appendText(meta, "span", "catalyst-chip", textOrFallback(item.status));
+  appendText(meta, "span", `catalyst-chip ${changeClass(item.direction)}`, textOrFallback(item.direction));
+  header.appendChild(meta);
+  article.appendChild(header);
+
+  const timeGrid = create("div", "catalyst-item__time-grid");
+  [
+    ["ET", item.event_time_et],
+    ["SGT", item.event_time_sgt]
+  ].forEach(([label, value]) => {
+    const row = create("div", "catalyst-time");
+    appendText(row, "span", "catalyst-time__label", label);
+    appendText(row, "strong", "catalyst-time__value", textOrFallback(value));
+    timeGrid.appendChild(row);
+  });
+  article.appendChild(timeGrid);
+
+  appendDefinition(article, "What Happened / 发生了什么", item.what_happened, "catalyst-fact");
+  appendDefinition(article, "What Changed / 认知变化", item.what_changed, "catalyst-fact");
+  appendDefinition(article, "Why It Matters / 为什么重要", item.why_it_matters, "catalyst-fact");
+
+  const transmission = create("div", "catalyst-transmission");
+  appendText(transmission, "div", "catalyst-transmission__label", "Transmission / 传导链");
+  appendText(transmission, "div", "catalyst-transmission__value", textOrFallback(item.transmission));
+  article.appendChild(transmission);
+
+  const assets = create("div", "catalyst-assets");
+  appendText(assets, "div", "catalyst-assets__label", "Affected Assets");
+  const chipList = create("div", "catalyst-assets__list");
+  (item.affected_assets || []).forEach((asset) => appendText(chipList, "span", "asset-chip", asset));
+  if (!chipList.childElementCount) appendText(chipList, "span", "asset-chip", "尚无法可靠确认");
+  assets.appendChild(chipList);
+  article.appendChild(assets);
+
+  const tests = create("div", "catalyst-tests");
+  appendDefinition(tests, "Confirmation / 确认条件", item.confirmation, "catalyst-test");
+  appendDefinition(tests, "Invalidation / 否定条件", item.invalidation, "catalyst-test");
+  article.appendChild(tests);
+
+  return article;
+}
+
+function renderCatalystMatrix(items) {
+  const rows = items.map((item) => [
+    String(item.rank).padStart(2, "0"),
+    item.event,
+    `${item.event_time_et} / ${item.event_time_sgt}`,
+    item.transmission,
+    textOrFallback(item.affected_assets),
+    item.confirmation,
+    item.invalidation
+  ]);
+  return renderTable(
+    ["Rank", "Event", "ET / SGT", "Transmission", "Affected Assets", "Confirmation", "Invalidation"],
+    rows,
+    "Top 3 catalyst transmission matrix"
+  );
+}
+
 async function fetchJson(path) {
   const url = new URL(path, document.baseURI);
   const response = await fetch(url, { cache: "no-store" });
@@ -129,37 +216,23 @@ function renderTape(report) {
 }
 
 function renderLead(report) {
-  $("#thesis").textContent = report.thesis;
-  $("#dominant-narrative").textContent = report.dominant_narrative;
+  $("#thesis").textContent = textOrFallback(report.thesis);
+  $("#dominant-narrative").textContent = textOrFallback(report.dominant_narrative);
   const baseline = $("#baseline-note");
   baseline.hidden = !report.first_run_baseline;
   baseline.textContent = report.baseline_note || "";
 
   const catalysts = $("#top-catalysts");
   clear(catalysts);
-  report.top_catalysts.forEach((item) => {
-    const article = create("article", "catalyst-item");
-    const top = create("div", "catalyst-item__top");
-    appendText(top, "span", "catalyst-item__rank", item.rank);
-    appendText(top, "h3", "", item.event);
-    article.appendChild(top);
-
-    const meta = create("div", "catalyst-item__meta");
-    appendText(meta, "span", "", item.importance);
-    appendText(meta, "span", "", item.status);
-    appendText(meta, "span", "", item.direction);
-    article.appendChild(meta);
-    appendText(article, "p", "", item.why_it_matters);
-    catalysts.appendChild(article);
-  });
+  (report.top_catalysts || []).forEach((item) => catalysts.appendChild(renderCatalyst(item)));
 
   const regime = $("#market-regime");
   clear(regime);
-  Object.entries(report.market_regime).forEach(([key, item]) => {
+  Object.entries(report.market_regime || {}).forEach(([key, item]) => {
     const row = create("div", "regime-row");
     appendText(row, "div", "regime-row__label", regimeKeyLabel(key));
-    appendText(row, "div", `regime-row__state ${changeClass(item.state)}`, item.state);
-    appendText(row, "div", "regime-row__evidence", item.evidence);
+    appendText(row, "div", `regime-row__state ${changeClass(item.state)}`, textOrFallback(item.state));
+    appendText(row, "div", "regime-row__evidence", textOrFallback(item.evidence));
     regime.appendChild(row);
   });
 }
@@ -180,24 +253,39 @@ function renderChanges(report) {
   });
 }
 
-function renderTable(headers, rows) {
+function renderTable(headers, rows, label = "Data table") {
   const wrapper = create("div", "table-scroll");
+  wrapper.tabIndex = 0;
+  wrapper.setAttribute("role", "region");
+  wrapper.setAttribute("aria-label", label);
+
   const table = create("table", "data-table");
   const thead = create("thead");
   const headRow = create("tr");
-  headers.forEach((header) => appendText(headRow, "th", "", header));
+  headers.forEach((header) => {
+    const th = appendText(headRow, "th", "", header);
+    th.scope = "col";
+  });
   thead.appendChild(headRow);
   table.appendChild(thead);
 
   const tbody = create("tbody");
-  rows.forEach((row) => {
+  if (!Array.isArray(rows) || !rows.length) {
     const tr = create("tr");
-    row.forEach((cell) => {
-      const td = appendText(tr, "td", "", cell);
-      if (String(cell) === "待公布") td.classList.add("actual-pending");
-    });
+    const td = appendText(tr, "td", "table-empty", "无可核验数据");
+    td.colSpan = Math.max(headers.length, 1);
     tbody.appendChild(tr);
-  });
+  } else {
+    rows.forEach((row) => {
+      const tr = create("tr");
+      row.forEach((cell, cellIndex) => {
+        const td = appendText(tr, "td", "", textOrFallback(cell, "—"));
+        td.dataset.label = headers[cellIndex] || "";
+        if (String(cell) === "待公布") td.classList.add("actual-pending");
+      });
+      tbody.appendChild(tr);
+    });
+  }
   table.appendChild(tbody);
   wrapper.appendChild(table);
   return wrapper;
@@ -216,11 +304,13 @@ function renderUpcoming(report) {
 function renderRisks(report) {
   const container = $("#top-risks");
   clear(container);
-  report.top_risks.forEach((item, index) => {
+  (report.top_risks || []).forEach((item, index) => {
     const article = create("article", "risk-item");
-    appendText(article, "div", "risk-item__asset", `${String(index + 1).padStart(2, "0")} · First: ${item.first_asset}`);
-    appendText(article, "h3", "", item.risk);
-    appendText(article, "p", "", item.trigger);
+    appendText(article, "div", "risk-item__asset", `${String(index + 1).padStart(2, "0")} · FIRST ASSET: ${textOrFallback(item.first_asset)}`);
+    appendText(article, "h3", "", textOrFallback(item.risk));
+    appendDefinition(article, "Why monitor / 为什么值得监控", item.why_not_fully_priced, "risk-detail");
+    appendDefinition(article, "Trigger / 触发条件", item.trigger, "risk-detail");
+    appendDefinition(article, "Transmission / 传导链", item.transmission, "risk-detail risk-detail--transmission");
     container.appendChild(article);
   });
 }
@@ -271,8 +361,8 @@ function renderNextCatalyst(report) {
   const item = report.next_catalyst;
   const container = $("#next-catalyst");
   clear(container);
-  appendText(container, "h2", "", item.event);
-  appendText(container, "div", "next-catalyst__time", `${item.et} · ${item.sgt} · ${item.status}`);
+  appendText(container, "h2", "", textOrFallback(item.event));
+  appendText(container, "div", "next-catalyst__time", `${textOrFallback(item.et)} · ${textOrFallback(item.sgt)} · ${textOrFallback(item.status)}`);
 
   const metrics = create("div", "next-catalyst__grid");
   [
@@ -282,15 +372,24 @@ function renderNextCatalyst(report) {
   ].forEach(([label, value]) => {
     const block = create("div", "next-catalyst__metric");
     appendText(block, "span", "", label);
-    const strong = appendText(block, "strong", "", value);
+    const strong = appendText(block, "strong", "", textOrFallback(value));
     if (value === "待公布") strong.classList.add("actual-pending");
     metrics.appendChild(block);
   });
   container.appendChild(metrics);
-  appendText(container, "p", "next-catalyst__analysis", item.why_it_matters);
+  appendText(container, "p", "next-catalyst__analysis", textOrFallback(item.why_it_matters));
+  appendDefinition(container, "Which Market Reacts First", item.first_market, "next-catalyst__first-market");
 
+  const interpretation = create("div", "next-catalyst__interpretation");
+  appendDefinition(interpretation, "Bull Interpretation", item.bull_interpretation, "interpretation-card interpretation-card--bull");
+  appendDefinition(interpretation, "Bear Interpretation", item.bear_interpretation, "interpretation-card interpretation-card--bear");
+  container.appendChild(interpretation);
+
+  const watchTitle = appendText(container, "h3", "watch-list__title", "What I Would Watch First");
+  watchTitle.id = "watch-list-title";
   const ul = create("ol", "watch-list");
-  item.watch_first.forEach((value) => appendText(ul, "li", "", value));
+  ul.setAttribute("aria-labelledby", "watch-list-title");
+  (item.watch_first || []).forEach((value) => appendText(ul, "li", "", value));
   container.appendChild(ul);
 }
 
@@ -300,39 +399,62 @@ function renderSections(report) {
   clear(container);
   clear(jump);
 
-  const defaultOpen = new Set(["earnings", "us_macro", "geopolitics", "commodities", "market_impact"]);
+  (report.section_order || []).forEach((key) => {
+    const section = report.sections?.[key];
+    if (!section) return;
 
-  report.section_order.forEach((key) => {
-    const section = report.sections[key];
     const id = `section-${section.number}`;
+    const headingId = `${id}-title`;
     const anchor = create("a", "", String(section.number).padStart(2, "0"));
     anchor.href = `#${id}`;
     anchor.title = section.title;
+    anchor.setAttribute("aria-label", `${section.number}. ${section.title}`);
     jump.appendChild(anchor);
 
-    const details = create("details", "report-section");
-    details.id = id;
-    details.open = defaultOpen.has(key);
+    const article = create("section", "report-section");
+    article.id = id;
+    article.setAttribute("aria-labelledby", headingId);
 
-    const summary = create("summary");
-    appendText(summary, "span", "report-section__number", String(section.number).padStart(2, "0"));
-    appendText(summary, "span", "report-section__title", section.title);
-    appendText(summary, "span", "report-section__summary", section.summary);
-    appendText(summary, "span", "report-section__status", section.status);
-    details.appendChild(summary);
+    const header = create("header", "report-section__header");
+    appendText(header, "span", "report-section__number", String(section.number).padStart(2, "0"));
+    const title = appendText(header, "h3", "report-section__title", textOrFallback(section.title));
+    title.id = headingId;
+    const statusClass = /无重大新增|尚无法可靠确认/.test(section.status || "")
+      ? "report-section__status report-section__status--muted"
+      : "report-section__status";
+    appendText(header, "span", statusClass, textOrFallback(section.status));
+    article.appendChild(header);
+
+    const summaryBox = create("div", "report-section__summary-box");
+    appendText(summaryBox, "span", "report-section__summary-label", "SECTION TAKEAWAY");
+    appendText(summaryBox, "p", "report-section__summary", textOrFallback(section.summary));
+    article.appendChild(summaryBox);
 
     const body = create("div", "report-section__body");
-    (section.paragraphs || []).forEach((paragraph) => appendText(body, "p", "", paragraph));
+    const paragraphs = Array.isArray(section.paragraphs) ? section.paragraphs : [];
+    paragraphs.forEach((paragraph) => appendText(body, "p", "", textOrFallback(paragraph)));
 
-    (section.tables || []).forEach((block) => {
+    if (key === "top_catalysts") {
+      const matrix = create("div", "report-table-block report-table-block--catalysts");
+      appendText(matrix, "h4", "", "Catalyst Transmission Matrix");
+      matrix.appendChild(renderCatalystMatrix(report.top_catalysts || []));
+      body.appendChild(matrix);
+    }
+
+    const tables = Array.isArray(section.tables) ? section.tables : [];
+    tables.forEach((block) => {
       const tableBlock = create("div", "report-table-block");
-      appendText(tableBlock, "h4", "", block.title);
-      tableBlock.appendChild(renderTable(block.headers, block.rows));
+      appendText(tableBlock, "h4", "", textOrFallback(block.title, "Data"));
+      tableBlock.appendChild(renderTable(block.headers || [], block.rows || [], block.title || section.title));
       body.appendChild(tableBlock);
     });
 
-    details.appendChild(body);
-    container.appendChild(details);
+    if (!paragraphs.length && !tables.length && key !== "top_catalysts") {
+      appendText(body, "p", "report-section__empty", "无重大新增事件。当前未发现可核验且足以改变市场定价的信息。");
+    }
+
+    article.appendChild(body);
+    container.appendChild(article);
   });
 }
 
@@ -370,7 +492,8 @@ function configureArchiveControls(selectedDate) {
   const selector = $("#date-selector");
   clear(selector);
   state.archive.forEach((entry) => {
-    const option = create("option", "", `${entry.date} · ${entry.overall_regime}`);
+    const option = create("option", "", entry.date);
+    option.title = `${entry.date} · ${entry.overall_regime}`;
     option.value = entry.date;
     option.selected = entry.date === selectedDate;
     selector.appendChild(option);
