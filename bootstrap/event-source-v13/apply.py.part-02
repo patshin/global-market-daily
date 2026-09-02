@@ -1,0 +1,167 @@
+                  '大型科技公司为AI建设进行的债券融资增加债市供给，同时Dell订单显示资本开支仍在转化为硬件需求。',
+                  '需求强不等于股权回报无风险；融资成本、利用率、客户集中度与ROI需要同时验证。',
+                  'AI financing supply ↑ → corporate / Treasury yields ↑ → capital cost ↑ → semiconductor and growth multiples ↓',
+                  ['Corporate bonds', 'UST 10Y', 'Nasdaq', 'Semiconductors', 'Data centers'],
+                  [('Financing state', 'Market reported / aggregate'), ('Single transaction amount', 'No qualifying new deal confirmed'), ('Deployment', 'Not treated as fully deployed')],
+                  ['Announced, committed, target and deployed amounts remain distinct.', 'No circular-financing conclusion is asserted without evidence.'],
+                  ['S03', 'S11'], importance='★★★★'),
+        ], '无足以改变市场定价的AI资本周期更新。'),
+        group('transactions', 'IPO / Secondary / Convertible / Private Financing', '每笔交易作为独立事件保存金额、状态、用途与市场影响。', [],
+              '截至截止时间，没有新的单一交易同时满足金额、状态、来源和市场重要性标准。'),
+    ]
+
+    breaking_rows = sections['breaking_news']['tables'][0]['rows']
+    breaking_sources = sections['breaking_news']['tables'][0]['sources']
+    breaking_items = []
+    for idx, (actual_time, title, status, reaction) in enumerate(breaking_rows, start=1):
+        breaking_items.append(event(
+            f'BREAKING-2026-09-02-{idx:02d}', title, 'Past 24h Event', status,
+            f'{title} occurred within the strict 24-hour event-time window.',
+            f'First market reaction: {reaction}.',
+            reaction,
+            ['Equity', 'Rates', 'FX', 'Commodities'],
+            [('Actual event time', actual_time), ('First market reaction', reaction)],
+            ['Inclusion is based on actual event time, not article publication time.'],
+            breaking_sources,
+            time={'actual_event_time': actual_time}, importance='★★★★'),
+        )
+    sections['breaking_news']['event_groups'] = [
+        group('strict-24h-window', 'Strict Past-24-Hour Event Log',
+              '窗口：2026-09-01 11:47 SGT → 2026-09-02 11:47 SGT；旧事件的新报道不重新计为新事件。',
+              breaking_items, '严格24小时窗口内无重大新增事件。'),
+    ]
+
+    for key in EVENT_SECTION_KEYS:
+        sections[key]['paragraphs'] = []
+        sections[key]['tables'] = []
+
+    DAILY.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+
+def patch_app():
+    text = APP.read_text(encoding='utf-8')
+    if 'function renderSectionEventGroups(' not in text:
+        marker = 'function renderCatalyst(item) {'
+        insert = r'''function renderSectionEventFacts(facts) {
+  const grid = create("dl", "section-event__facts");
+  (facts || []).forEach((fact) => {
+    const block = create("div", "section-event__fact");
+    appendText(block, "dt", "", textOrFallback(fact.label));
+    appendText(block, "dd", "", textOrFallback(fact.value, "—"));
+    grid.appendChild(block);
+  });
+  return grid;
+}
+
+function renderSectionEvent(item, index) {
+  const article = create("article", "section-event");
+  article.id = `event-${item.id || index + 1}`;
+
+  const header = create("header", "section-event__header");
+  const identity = create("div", "section-event__identity");
+  appendText(identity, "div", "section-event__eyebrow", `${String(index + 1).padStart(2, "0")} · ${textOrFallback(item.category)}`);
+  appendText(identity, "h5", "", textOrFallback(item.title));
+  header.appendChild(identity);
+
+  const chips = create("div", "section-event__chips");
+  [item.importance, item.status, item.actual].filter(Boolean).forEach((value) => {
+    const chip = appendText(chips, "span", "section-event__chip", value);
+    if (value === "待公布") chip.classList.add("actual-pending");
+  });
+  header.appendChild(chips);
+  article.appendChild(header);
+
+  if (item.time && Object.keys(item.time).length) {
+    const timeGrid = create("div", "section-event__time-grid");
+    Object.entries(item.time).forEach(([label, value]) => {
+      const block = create("div", "section-event__time");
+      appendText(block, "span", "", label.replaceAll("_", " "));
+      appendText(block, "strong", "", textOrFallback(value));
+      timeGrid.appendChild(block);
+    });
+    article.appendChild(timeGrid);
+  }
+
+  appendDefinition(article, "What Happened / 发生了什么", item.summary, "section-event__summary");
+  appendDefinition(article, "Why It Matters / 为什么重要", item.why_it_matters, "section-event__why");
+  appendDefinition(article, "Transmission / 传导链", item.transmission, "section-event__transmission");
+
+  if (Array.isArray(item.facts) && item.facts.length) {
+    article.appendChild(renderSectionEventFacts(item.facts));
+  }
+
+  const assets = create("div", "section-event__assets");
+  appendText(assets, "div", "section-event__label", "Affected Assets");
+  const assetList = create("div", "section-event__asset-list");
+  (item.affected_assets || []).forEach((asset) => appendText(assetList, "span", "asset-chip", asset));
+  if (!assetList.childElementCount) appendText(assetList, "span", "asset-chip", "尚无法可靠确认");
+  assets.appendChild(assetList);
+  article.appendChild(assets);
+
+  if (Array.isArray(item.integrity) && item.integrity.length) {
+    const integrity = create("div", "section-event__integrity");
+    appendText(integrity, "div", "section-event__label", "Integrity / 口径边界");
+    const list = create("ul");
+    item.integrity.forEach((note) => appendText(list, "li", "", note));
+    integrity.appendChild(list);
+    article.appendChild(integrity);
+  }
+
+  return article;
+}
+
+function renderSectionEventGroups(section) {
+  const collection = create("div", "section-event-groups");
+  (section.event_groups || []).forEach((group) => {
+    const groupNode = create("section", "section-event-group");
+    const header = create("header", "section-event-group__header");
+    const identity = create("div");
+    appendText(identity, "h4", "", textOrFallback(group.label));
+    appendText(identity, "p", "", textOrFallback(group.description));
+    header.appendChild(identity);
+    appendText(header, "span", "section-event-group__count", `${(group.items || []).length} EVENT${(group.items || []).length === 1 ? "" : "S"}`);
+    groupNode.appendChild(header);
+
+    const list = create("div", "section-event-group__list");
+    if (Array.isArray(group.items) && group.items.length) {
+      group.items.forEach((item, index) => list.appendChild(renderSectionEvent(item, index)));
+    } else {
+      appendText(list, "p", "section-event-group__empty", textOrFallback(group.empty_message, "无重大新增事件。"));
+    }
+    groupNode.appendChild(list);
+    collection.appendChild(groupNode);
+  });
+  return collection;
+}
+
+'''
+        if marker not in text:
+            raise RuntimeError('app insertion marker not found')
+        text = text.replace(marker, insert + marker, 1)
+
+    old = '''    const hasStructuredEarnings = key === "earnings" &&
+      Array.isArray(section.reported) &&
+      Array.isArray(section.upcoming_72h);
+    if (hasStructuredEarnings) {
+      body.appendChild(renderEarningsCollection(section));
+    }
+'''
+    new = '''    const hasStructuredEarnings = key === "earnings" &&
+      Array.isArray(section.reported) &&
+      Array.isArray(section.upcoming_72h);
+    const hasEventGroups = Array.isArray(section.event_groups);
+    if (hasStructuredEarnings) {
+      body.appendChild(renderEarningsCollection(section));
+    }
+    if (hasEventGroups) {
+      body.appendChild(renderSectionEventGroups(section));
+    }
+'''
+    if old in text:
+        text = text.replace(old, new, 1)
+
+    text = text.replace('''    const tables = hasStructuredEarnings
+      ? []
+      : (Array.isArray(section.tables) ? section.tables : []);''', '''    const tables = (hasStructuredEarnings || hasEventGroups)
+      ? []
+      : (Array.isArray(section.tables) ? section.tables : []);''', 1)
