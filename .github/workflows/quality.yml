@@ -11,17 +11,23 @@ permissions:
 
 jobs:
   validate:
-    name: Validate JSON, archive, sources and Markdown
+    name: Validate publication, visibility and JavaScript
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
       - name: Run deterministic publication gate
         run: python scripts/validate_publish.py --root .
+
+      - name: Run frontend visibility gate
+        run: python scripts/validate_frontend.py --root .
+
+      - name: Check JavaScript syntax
+        run: node --check docs/assets/app.js

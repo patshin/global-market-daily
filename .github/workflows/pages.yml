@@ -6,6 +6,7 @@ on:
     paths:
       - "docs/**"
       - "scripts/validate_publish.py"
+      - "scripts/validate_frontend.py"
       - "schemas/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
@@ -21,20 +22,26 @@ concurrency:
 
 jobs:
   validate:
-    name: Validate publication bundle
+    name: Validate publication bundle and frontend visibility
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
       - name: Run deterministic publication gate
         run: python scripts/validate_publish.py --root .
+
+      - name: Run frontend visibility gate
+        run: python scripts/validate_frontend.py --root .
+
+      - name: Check JavaScript syntax
+        run: node --check docs/assets/app.js
 
   deploy:
     name: Deploy GitHub Pages
@@ -46,16 +53,16 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Configure Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
 
       - name: Upload static site
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./docs
 
       - name: Deploy
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
