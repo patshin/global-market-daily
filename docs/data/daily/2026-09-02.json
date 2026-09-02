@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "date": "2026-09-02",
   "edition": "Asia Morning",
   "timezone": "Asia/Singapore",
@@ -497,73 +497,113 @@
         "Dell的核心信号不是单一EPS超预期，而是订单覆盖面扩展至neocloud、主权与企业客户，且过去12个月AI服务器订单超过1300亿美元。AI基础设施景气仍强，但高收益率环境使估值对任何指引缺口更敏感。",
         "Read-through：对NVDA、网络设备、内存与数据中心建设偏正面；对软件和云服务的影响取决于AI资本开支能否转化为可持续利用率与收入。"
       ],
-      "tables": [
+      "tables": [],
+      "reported": [
         {
-          "title": "Dell FY27 Q2 — 已公布",
-          "headers": [
-            "Metric",
-            "Actual",
-            "Consensus / Prior",
-            "Surprise / Change"
+          "id": "DELL-FY27-Q2-2026-09-01",
+          "company": "Dell Technologies",
+          "ticker": "DELL",
+          "period": "FY27 Q2",
+          "status": "Released / 已公布",
+          "release_date": "2026-09-01",
+          "release_time_et": "After-market",
+          "release_time_sgt": "2026-09-02 凌晨 SGT",
+          "market_session": "After-market",
+          "key_takeaway": "收入、调整后EPS与全年AI服务器收入展望均显著高于此前门槛，AI基础设施需求没有明显降温；但股价能否持续重估仍取决于盈利上修能否跑赢长端利率上行。",
+          "metrics": [
+            {
+              "metric": "Revenue",
+              "actual": "$46.97B",
+              "consensus": "$44.92B",
+              "previous_or_yoy": "尚无法可靠确认",
+              "surprise": "+约$2.05B",
+              "notes": "已公布"
+            },
+            {
+              "metric": "Adjusted EPS",
+              "actual": "$7.04",
+              "consensus": "$4.91",
+              "previous_or_yoy": "尚无法可靠确认",
+              "surprise": "+$2.13",
+              "notes": "公司披露的调整后口径"
+            }
           ],
-          "rows": [
-            [
-              "Revenue",
-              "$46.97B",
-              "$44.92B",
-              "+约$2.05B"
-            ],
-            [
-              "Adjusted EPS",
-              "$7.04",
-              "$4.91",
-              "+$2.13"
-            ],
-            [
-              "FY27 Revenue Guidance",
-              "$192B",
-              "Prior $167B",
-              "+$25B"
-            ],
-            [
-              "FY27 AI Server Revenue Outlook",
-              "$74B",
-              "Prior $60B",
-              "+$14B"
-            ],
-            [
-              "After-hours reaction",
-              "+约7%",
-              "—",
-              "Positive"
-            ]
+          "guidance": [
+            {
+              "metric": "FY27 Revenue Guidance",
+              "current": "$192B",
+              "previous_or_consensus": "Prior $167B",
+              "change": "+$25B",
+              "interpretation": "全年收入预期显著上修"
+            },
+            {
+              "metric": "FY27 AI Server Revenue Outlook",
+              "current": "$74B",
+              "previous_or_consensus": "Prior $60B",
+              "change": "+$14B",
+              "interpretation": "AI基础设施需求继续增强"
+            }
+          ],
+          "market_reaction": {
+            "session": "After-hours",
+            "move": "+约7%",
+            "as_of": "2026-09-01 after-market ET"
+          },
+          "one_offs": "本期采用公司披露的Adjusted EPS口径；GAAP EPS与具体一次性项目拆分尚无法可靠确认，因此未将调整后EPS等同于GAAP经营表现。",
+          "read_through": [
+            {
+              "asset": "NVDA / AI Accelerators",
+              "implication": "服务器订单和收入展望上修，对加速器需求偏正面。"
+            },
+            {
+              "asset": "Networking / Memory",
+              "implication": "AI服务器放量对网络、内存与配套硬件需求偏正面。"
+            },
+            {
+              "asset": "Data Center Infrastructure",
+              "implication": "订单覆盖neocloud、主权与企业客户，建设景气度仍强。"
+            },
+            {
+              "asset": "Cloud / Software",
+              "implication": "影响取决于资本开支最终能否转化为利用率、收入和可持续ROI。"
+            }
           ],
           "sources": [
             "S10",
             "S11"
           ]
-        },
+        }
+      ],
+      "upcoming_72h": [
         {
-          "title": "Broadcom FY26 Q3 — Upcoming",
-          "headers": [
-            "Date",
-            "ET",
-            "SGT",
-            "Revenue guide / consensus",
-            "EPS consensus",
-            "Actual",
-            "What matters"
+          "id": "AVGO-FY26-Q3-2026-09-02",
+          "company": "Broadcom",
+          "ticker": "AVGO",
+          "period": "FY26 Q3",
+          "status": "Confirmed Upcoming",
+          "date": "2026-09-02",
+          "et": "17:00 EDT",
+          "sgt": "2026-09-03 05:00 SGT",
+          "market_session": "After-market",
+          "consensus": {
+            "revenue": "约$29.4B / management guide",
+            "eps": "尚无法可靠确认"
+          },
+          "previous_guidance": "Q2 revenue $22.2B；Q3 revenue guide $29.4B；non-GAAP operating margin约67%。",
+          "actual": "待公布",
+          "what_matters": [
+            "AI semiconductor revenue及增长持续性",
+            "Custom accelerator与networking需求",
+            "Non-GAAP operating margin能否维持约67%",
+            "下一季度收入与AI业务指引"
           ],
-          "rows": [
-            [
-              "2026-09-02",
-              "17:00 EDT",
-              "2026-09-03 05:00",
-              "Management guide $29.4B；市场门槛约同区间",
-              "尚无法可靠确认",
-              "待公布",
-              "AI semiconductor revenue、custom accelerator/networking、non-GAAP operating margin约67%、下一季指引"
-            ]
+          "read_through_targets": [
+            "AVGO",
+            "NVDA",
+            "SOX",
+            "SMH / SOXX",
+            "AI Networking",
+            "Cloud / AI Infrastructure"
           ],
           "sources": [
             "S12",

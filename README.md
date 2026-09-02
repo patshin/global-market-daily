@@ -26,6 +26,10 @@ GitHub Pages deployment
 
 The website renders from the daily JSON. Markdown is the human-readable long-term archive. The separate source archive preserves publication time, event time, retrieval time, source tier and confidence.
 
+### Collection contract for repeated events
+
+A numbered report section is a category, not a single-event slot. In particular, `sections.earnings.reported` and `sections.earnings.upcoming_72h` are unbounded arrays of independent company earnings events. The renderer and validators must iterate every event and must never assume a single company at index `0`. The same collection principle applies to central banks, geopolitics, auctions, index changes and financing events; only `top_catalysts` is deliberately capped at three.
+
 ## Repository structure
 
 ```text

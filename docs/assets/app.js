@@ -5,7 +5,8 @@ const state = {
   latest: null,
   report: null,
   sources: [],
-  selectedDate: null
+  selectedDate: null,
+  sectionObserver: null
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -42,6 +43,275 @@ function appendDefinition(parent, label, value, className = "definition-block") 
   appendText(block, "p", `${className}__value`, textOrFallback(value));
   parent.appendChild(block);
   return block;
+}
+
+function setActiveSection(sectionId) {
+  document.querySelectorAll(".section-jump__button").forEach((button) => {
+    const active = button.dataset.target === sectionId;
+    button.classList.toggle("is-active", active);
+    button.setAttribute("aria-current", active ? "true" : "false");
+  });
+}
+
+function scrollToSection(sectionId, options = {}) {
+  const target = document.getElementById(sectionId);
+  if (!target) return false;
+
+  const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+  target.scrollIntoView({
+    behavior: options.behavior || (reducedMotion ? "auto" : "smooth"),
+    block: "start"
+  });
+  setActiveSection(sectionId);
+
+  if (options.updateUrl !== false) {
+    const url = new URL(window.location.href);
+    url.hash = sectionId;
+    window.history.replaceState(
+      { date: state.selectedDate, section: sectionId },
+      "",
+      url
+    );
+  }
+  return true;
+}
+
+function restoreSectionFromHash() {
+  const sectionId = window.location.hash.replace(/^#/, "");
+  if (!sectionId) return false;
+  return scrollToSection(sectionId, { updateUrl: false, behavior: "auto" });
+}
+
+function setupSectionObserver() {
+  if (state.sectionObserver) {
+    state.sectionObserver.disconnect();
+    state.sectionObserver = null;
+  }
+
+  const sections = [...document.querySelectorAll(".report-section")];
+  if (!sections.length || !("IntersectionObserver" in window)) return;
+
+  state.sectionObserver = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+    if (visible.length) setActiveSection(visible[0].target.id);
+  }, {
+    root: null,
+    rootMargin: "-132px 0px -68% 0px",
+    threshold: [0, 0.05, 0.25]
+  });
+
+  sections.forEach((section) => state.sectionObserver.observe(section));
+}
+
+function renderEarningsMetricTable(metrics, label) {
+  const rows = (metrics || []).map((metric) => [
+    metric.metric,
+    metric.actual,
+    metric.consensus,
+    metric.previous_or_yoy,
+    metric.surprise,
+    metric.notes
+  ]);
+  return renderTable(
+    ["Metric", "Actual", "Consensus", "Previous / YoY", "Surprise", "Notes"],
+    rows,
+    label
+  );
+}
+
+function renderEarningsGuidanceTable(guidance, label) {
+  const rows = (guidance || []).map((item) => [
+    item.metric,
+    item.current,
+    item.previous_or_consensus,
+    item.change,
+    item.interpretation
+  ]);
+  return renderTable(
+    ["Guidance Metric", "Current", "Previous / Consensus", "Change", "Interpretation"],
+    rows,
+    label
+  );
+}
+
+function renderReadThrough(items) {
+  const container = create("div", "earnings-read-through");
+  appendText(container, "h5", "", "Read-through / 产业链映射");
+  const grid = create("div", "earnings-read-through__grid");
+  (items || []).forEach((item) => {
+    const card = create("article", "earnings-read-through__item");
+    appendText(card, "strong", "", textOrFallback(item.asset));
+    appendText(card, "p", "", textOrFallback(item.implication));
+    grid.appendChild(card);
+  });
+  if (!grid.childElementCount) {
+    appendText(grid, "p", "earnings-empty", "尚无法可靠确认。");
+  }
+  container.appendChild(grid);
+  return container;
+}
+
+function renderReportedEarning(item, index) {
+  const article = create("article", "earnings-event earnings-event--reported");
+  article.id = `earnings-reported-${item.id || index + 1}`;
+
+  const header = create("header", "earnings-event__header");
+  const identity = create("div");
+  appendText(identity, "div", "earnings-event__eyebrow", `REPORTED ${String(index + 1).padStart(2, "0")}`);
+  appendText(identity, "h4", "", `${textOrFallback(item.company)} · ${textOrFallback(item.ticker)}`);
+  appendText(identity, "p", "earnings-event__period", textOrFallback(item.period));
+  header.appendChild(identity);
+
+  const meta = create("div", "earnings-event__meta");
+  [
+    item.status,
+    item.market_session,
+    `ET ${item.release_date} ${item.release_time_et}`,
+    `SGT ${item.release_time_sgt}`
+  ].forEach((value) => appendText(meta, "span", "earnings-chip", textOrFallback(value)));
+  header.appendChild(meta);
+  article.appendChild(header);
+
+  appendDefinition(article, "Key Takeaway / 核心结论", item.key_takeaway, "earnings-takeaway");
+
+  const metrics = create("div", "report-table-block earnings-event__table");
+  appendText(metrics, "h5", "", "Reported Metrics");
+  metrics.appendChild(renderEarningsMetricTable(
+    item.metrics,
+    `${item.company} ${item.period} reported metrics`
+  ));
+  article.appendChild(metrics);
+
+  if (Array.isArray(item.guidance) && item.guidance.length) {
+    const guidance = create("div", "report-table-block earnings-event__table");
+    appendText(guidance, "h5", "", "Guidance");
+    guidance.appendChild(renderEarningsGuidanceTable(
+      item.guidance,
+      `${item.company} ${item.period} guidance`
+    ));
+    article.appendChild(guidance);
+  }
+
+  const reaction = create("div", "earnings-event__facts");
+  appendDefinition(
+    reaction,
+    "Market Reaction / 市场反应",
+    `${textOrFallback(item.market_reaction?.move)} · ${textOrFallback(item.market_reaction?.session)} · ${textOrFallback(item.market_reaction?.as_of)}`,
+    "earnings-fact"
+  );
+  appendDefinition(
+    reaction,
+    "EPS / One-off Integrity",
+    item.one_offs,
+    "earnings-fact"
+  );
+  article.appendChild(reaction);
+  article.appendChild(renderReadThrough(item.read_through));
+
+  return article;
+}
+
+function renderUpcomingEarning(item, index) {
+  const article = create("article", "earnings-event earnings-event--upcoming");
+  article.id = `earnings-upcoming-${item.id || index + 1}`;
+
+  const header = create("header", "earnings-event__header");
+  const identity = create("div");
+  appendText(identity, "div", "earnings-event__eyebrow", `UPCOMING ${String(index + 1).padStart(2, "0")}`);
+  appendText(identity, "h4", "", `${textOrFallback(item.company)} · ${textOrFallback(item.ticker)}`);
+  appendText(identity, "p", "earnings-event__period", textOrFallback(item.period));
+  header.appendChild(identity);
+
+  const meta = create("div", "earnings-event__meta");
+  [
+    item.status,
+    item.market_session,
+    `ET ${item.date} ${item.et}`,
+    `SGT ${item.sgt}`
+  ].forEach((value) => appendText(meta, "span", "earnings-chip", textOrFallback(value)));
+  header.appendChild(meta);
+  article.appendChild(header);
+
+  const consensus = create("div", "earnings-consensus");
+  [
+    ["Revenue Consensus / Guide", item.consensus?.revenue],
+    ["EPS Consensus", item.consensus?.eps],
+    ["Actual", item.actual]
+  ].forEach(([label, value]) => {
+    const block = create("div", "earnings-consensus__item");
+    appendText(block, "span", "", label);
+    const strong = appendText(block, "strong", "", textOrFallback(value));
+    if (value === "待公布") strong.classList.add("actual-pending");
+    consensus.appendChild(block);
+  });
+  article.appendChild(consensus);
+
+  appendDefinition(
+    article,
+    "Previous Guidance / 上期指引",
+    item.previous_guidance,
+    "earnings-takeaway"
+  );
+
+  const watch = create("div", "earnings-watch");
+  appendText(watch, "h5", "", "What Matters / 关键观察");
+  const list = create("ul");
+  (item.what_matters || []).forEach((value) => appendText(list, "li", "", value));
+  if (!list.childElementCount) appendText(list, "li", "", "尚无法可靠确认");
+  watch.appendChild(list);
+  article.appendChild(watch);
+
+  const targets = create("div", "earnings-targets");
+  appendText(targets, "span", "earnings-targets__label", "Read-through Targets");
+  const chips = create("div", "earnings-targets__list");
+  (item.read_through_targets || []).forEach((value) => appendText(chips, "span", "asset-chip", value));
+  if (!chips.childElementCount) appendText(chips, "span", "asset-chip", "尚无法可靠确认");
+  targets.appendChild(chips);
+  article.appendChild(targets);
+
+  return article;
+}
+
+function renderEarningsCollection(section) {
+  const collection = create("div", "earnings-collection");
+  const reported = Array.isArray(section.reported) ? section.reported : [];
+  const upcoming = Array.isArray(section.upcoming_72h) ? section.upcoming_72h : [];
+
+  const groups = [
+    {
+      key: "reported",
+      label: "已公布重大财报",
+      count: reported.length,
+      items: reported,
+      renderer: renderReportedEarning
+    },
+    {
+      key: "upcoming",
+      label: "未来72小时重大财报",
+      count: upcoming.length,
+      items: upcoming,
+      renderer: renderUpcomingEarning
+    }
+  ];
+
+  groups.forEach((group) => {
+    const sectionNode = create("section", `earnings-group earnings-group--${group.key}`);
+    const heading = create("header", "earnings-group__header");
+    appendText(heading, "h4", "", group.label);
+    appendText(heading, "span", "earnings-group__count", `${group.count} EVENT${group.count === 1 ? "" : "S"}`);
+    sectionNode.appendChild(heading);
+
+    if (group.items.length) {
+      group.items.forEach((item, index) => sectionNode.appendChild(group.renderer(item, index)));
+    } else {
+      appendText(sectionNode, "p", "earnings-empty", "无重大新增事件。");
+    }
+    collection.appendChild(sectionNode);
+  });
+
+  return collection;
 }
 
 function renderCatalyst(item) {
@@ -405,11 +675,17 @@ function renderSections(report) {
 
     const id = `section-${section.number}`;
     const headingId = `${id}-title`;
-    const anchor = create("a", "", String(section.number).padStart(2, "0"));
-    anchor.href = `#${id}`;
-    anchor.title = section.title;
-    anchor.setAttribute("aria-label", `${section.number}. ${section.title}`);
-    jump.appendChild(anchor);
+    const button = create("button", "section-jump__button", String(section.number).padStart(2, "0"));
+    button.type = "button";
+    button.dataset.target = id;
+    button.title = section.title;
+    button.setAttribute("aria-label", `${section.number}. ${section.title}`);
+    button.setAttribute("aria-current", "false");
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      scrollToSection(id);
+    });
+    jump.appendChild(button);
 
     const article = create("section", "report-section");
     article.id = id;
@@ -434,6 +710,13 @@ function renderSections(report) {
     const paragraphs = Array.isArray(section.paragraphs) ? section.paragraphs : [];
     paragraphs.forEach((paragraph) => appendText(body, "p", "", textOrFallback(paragraph)));
 
+    const hasStructuredEarnings = key === "earnings" &&
+      Array.isArray(section.reported) &&
+      Array.isArray(section.upcoming_72h);
+    if (hasStructuredEarnings) {
+      body.appendChild(renderEarningsCollection(section));
+    }
+
     if (key === "top_catalysts") {
       const matrix = create("div", "report-table-block report-table-block--catalysts");
       appendText(matrix, "h4", "", "Catalyst Transmission Matrix");
@@ -441,7 +724,9 @@ function renderSections(report) {
       body.appendChild(matrix);
     }
 
-    const tables = Array.isArray(section.tables) ? section.tables : [];
+    const tables = hasStructuredEarnings
+      ? []
+      : (Array.isArray(section.tables) ? section.tables : []);
     tables.forEach((block) => {
       const tableBlock = create("div", "report-table-block");
       appendText(tableBlock, "h4", "", textOrFallback(block.title, "Data"));
@@ -449,7 +734,7 @@ function renderSections(report) {
       body.appendChild(tableBlock);
     });
 
-    if (!paragraphs.length && !tables.length && key !== "top_catalysts") {
+    if (!paragraphs.length && !tables.length && key !== "top_catalysts" && !hasStructuredEarnings) {
       appendText(body, "p", "report-section__empty", "无重大新增事件。当前未发现可核验且足以改变市场定价的信息。");
     }
 
@@ -486,6 +771,8 @@ function renderSources(sourceDocument) {
     article.appendChild(body);
     container.appendChild(article);
   });
+
+  setupSectionObserver();
 }
 
 function configureArchiveControls(selectedDate) {
@@ -526,6 +813,7 @@ function updateUrl(date) {
   } else {
     url.searchParams.set("date", date);
   }
+  url.hash = "";
   window.history.pushState({ date }, "", url);
 }
 
@@ -555,6 +843,12 @@ async function loadDate(date, options = {}) {
     configureArchiveControls(date);
     if (!options.skipUrl) updateUrl(date);
     showReport();
+    requestAnimationFrame(() => {
+      if (!restoreSectionFromHash()) {
+        window.scrollTo({ top: 0, behavior: "auto" });
+        setActiveSection("");
+      }
+    });
   } catch (error) {
     showError(error);
   }
@@ -645,7 +939,17 @@ async function initialize() {
 window.addEventListener("popstate", () => {
   if (!state.latest || !state.archive.length) return;
   const requested = queryDate();
-  loadDate(requested || state.latest.date, { skipUrl: true });
+  const targetDate = requested || state.latest.date;
+
+  if (targetDate === state.selectedDate) {
+    requestAnimationFrame(restoreSectionFromHash);
+    return;
+  }
+  loadDate(targetDate, { skipUrl: true });
+});
+
+window.addEventListener("hashchange", () => {
+  if (state.selectedDate) requestAnimationFrame(restoreSectionFromHash);
 });
 
 document.addEventListener("DOMContentLoaded", initialize);

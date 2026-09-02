@@ -126,7 +126,15 @@
     },
     "sections": {
       "type": "object",
-      "minProperties": 15
+      "minProperties": 15,
+      "required": [
+        "earnings"
+      ],
+      "properties": {
+        "earnings": {
+          "$ref": "#/$defs/earningsSection"
+        }
+      }
     },
     "signal_panel": {
       "type": "object",
@@ -190,6 +198,203 @@
         "type": "string"
       },
       "uniqueItems": true
+    }
+  },
+  "$defs": {
+    "earningsMetric": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "metric",
+        "actual",
+        "consensus",
+        "previous_or_yoy",
+        "surprise",
+        "notes"
+      ],
+      "properties": {
+        "metric": {
+          "type": "string",
+          "minLength": 1
+        },
+        "actual": {
+          "type": "string",
+          "minLength": 1
+        },
+        "consensus": {
+          "type": "string",
+          "minLength": 1
+        },
+        "previous_or_yoy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "surprise": {
+          "type": "string",
+          "minLength": 1
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "reportedEarning": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "company",
+        "ticker",
+        "period",
+        "status",
+        "release_date",
+        "release_time_et",
+        "release_time_sgt",
+        "market_session",
+        "key_takeaway",
+        "metrics",
+        "guidance",
+        "market_reaction",
+        "one_offs",
+        "read_through",
+        "sources"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 3
+        },
+        "company": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ticker": {
+          "type": "string",
+          "minLength": 1
+        },
+        "period": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metrics": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/earningsMetric"
+          }
+        },
+        "guidance": {
+          "type": "array"
+        },
+        "market_reaction": {
+          "type": "object",
+          "required": [
+            "session",
+            "move",
+            "as_of"
+          ]
+        },
+        "read_through": {
+          "type": "array",
+          "minItems": 1
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "upcomingEarning": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "company",
+        "ticker",
+        "period",
+        "status",
+        "date",
+        "et",
+        "sgt",
+        "market_session",
+        "consensus",
+        "previous_guidance",
+        "actual",
+        "what_matters",
+        "read_through_targets",
+        "sources"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 3
+        },
+        "company": {
+          "type": "string",
+          "minLength": 1
+        },
+        "ticker": {
+          "type": "string",
+          "minLength": 1
+        },
+        "period": {
+          "type": "string",
+          "minLength": 1
+        },
+        "actual": {
+          "const": "待公布"
+        },
+        "consensus": {
+          "type": "object",
+          "required": [
+            "revenue",
+            "eps"
+          ]
+        },
+        "what_matters": {
+          "type": "array",
+          "minItems": 1
+        },
+        "read_through_targets": {
+          "type": "array",
+          "minItems": 1
+        },
+        "sources": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "earningsSection": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "number",
+        "title",
+        "status",
+        "summary",
+        "paragraphs",
+        "tables",
+        "reported",
+        "upcoming_72h"
+      ],
+      "properties": {
+        "reported": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/reportedEarning"
+          }
+        },
+        "upcoming_72h": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/upcomingEarning"
+          }
+        }
+      }
     }
   }
 }

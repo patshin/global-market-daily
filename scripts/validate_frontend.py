@@ -52,6 +52,7 @@ def validate_frontend_sources(root: Path, gate: Gate) -> None:
     index = read(root / "docs/index.html", gate)
     app = read(root / "docs/assets/app.js", gate)
     css = read(root / "docs/assets/styles.css", gate)
+    schema = read(root / "schemas/daily.schema.json", gate)
 
     # Continuous reading contract: no disclosure widgets may hide core report data.
     gate.require("<details" not in index.lower(), "index.html must not contain <details>")
@@ -102,11 +103,36 @@ def validate_frontend_sources(root: Path, gate: Gate) -> None:
                  "Market-tape neutral colour requires a dark-background override")
 
     # Cache-busting prevents the old collapsed/tiny-font bundle from surviving deployment.
-    gate.require("styles.css?v=1.1.1" in index, "index.html must load styles.css?v=1.1.1")
-    gate.require("app.js?v=1.1.1" in index, "index.html must load app.js?v=1.1.1")
+    gate.require("styles.css?v=1.2.0" in index, "index.html must load styles.css?v=1.2.0")
+    gate.require("app.js?v=1.2.0" in index, "index.html must load app.js?v=1.2.0")
     gate.require('class="catalyst-grid" id="top-catalysts"' in index,
                  "Top 3 catalysts must have a dedicated full-width evidence grid")
     gate.require('id="report-sections"' in index, "Missing continuous report container")
+
+    # Earnings is an unbounded event collection, not a one-company table slot.
+    for token in (
+        "function renderEarningsCollection(", "function renderReportedEarning(",
+        "function renderUpcomingEarning(", "section.reported", "section.upcoming_72h",
+    ):
+        gate.require(token in app, f"Missing structured multi-company earnings renderer token: {token}")
+    gate.require("group.items.forEach((item, index)" in app,
+                 "Earnings arrays must be iterated; renderer may not assume index zero")
+    gate.require("Earnings collections + deterministic section navigation (v1.2.0)" in css,
+                 "Missing earnings/navigation v1.2.0 CSS contract")
+    gate.require('"earningsSection"' in schema and '"reportedEarning"' in schema and '"upcomingEarning"' in schema,
+                 "Schema must define structured earnings collections")
+
+    # Section navigation must be an in-page button action, never a document/hash reload.
+    gate.require('create("button", "section-jump__button"' in app,
+                 "Section navigation must render explicit buttons")
+    gate.require("event.preventDefault()" in app and "scrollToSection(id)" in app,
+                 "Section navigation must prevent default navigation and scroll explicitly")
+    gate.require("scrollIntoView" in app and "history.replaceState" in app,
+                 "Section navigation must scroll in place and update the hash without navigation")
+    gate.require("targetDate === state.selectedDate" in app,
+                 "popstate handler must not reload the current report for section-only navigation")
+    gate.require('create("a", "", String(section.number)' not in app,
+                 "Legacy hash anchors remain in section navigation")
 
 
 def validate_daily_visibility(path: Path, gate: Gate) -> None:
@@ -186,6 +212,39 @@ def validate_daily_visibility(path: Path, gate: Gate) -> None:
                         gate.require(isinstance(row, list) and len(row) == len(headers),
                                      f"{table_label}.rows[{row_index}] must match header count")
 
+    earnings = sections.get("earnings")
+    gate.require(isinstance(earnings, dict), f"{path}: sections.earnings must be an object")
+    if isinstance(earnings, dict):
+        reported = earnings.get("reported")
+        upcoming = earnings.get("upcoming_72h")
+        gate.require(isinstance(reported, list), f"{path}: earnings.reported must be an array")
+        gate.require(isinstance(upcoming, list), f"{path}: earnings.upcoming_72h must be an array")
+        if isinstance(reported, list) and isinstance(upcoming, list):
+            event_ids = [
+                item.get("id")
+                for item in [*reported, *upcoming]
+                if isinstance(item, dict)
+            ]
+            gate.require(len(event_ids) == len(set(event_ids)),
+                         f"{path}: earnings event IDs must be unique")
+            if "无重大新增" not in str(earnings.get("status", "")):
+                gate.require(bool(reported or upcoming),
+                             f"{path}: updated earnings section has no event objects")
+            for index, item in enumerate(reported):
+                item_label = f"{path}: earnings.reported[{index}]"
+                gate.require(isinstance(item, dict), f"{item_label} must be an object")
+                if isinstance(item, dict):
+                    gate.require(isinstance(item.get("metrics"), list) and bool(item["metrics"]),
+                                 f"{item_label}.metrics must be non-empty")
+                    gate.require(isinstance(item.get("read_through"), list) and bool(item["read_through"]),
+                                 f"{item_label}.read_through must be non-empty")
+            for index, item in enumerate(upcoming):
+                item_label = f"{path}: earnings.upcoming_72h[{index}]"
+                gate.require(isinstance(item, dict), f"{item_label} must be an object")
+                if isinstance(item, dict):
+                    gate.require(item.get("actual") == "待公布",
+                                 f"{item_label}.actual must be 待公布")
+
     # The file name and date remain the unique edition key.
     gate.require(date == path.stem, f"{path}: date must match filename")
 
@@ -207,7 +266,7 @@ def validate_repository(root: Path) -> int:
 
     print(
         "FRONTEND VISIBILITY GATE PASSED — "
-        f"continuous report, complete catalysts, readable responsive tables, {len(daily_paths)} edition(s)"
+        f"continuous report, complete catalysts, multi-company earnings, stable in-page navigation, {len(daily_paths)} edition(s)"
     )
     return 0
 

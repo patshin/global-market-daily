@@ -98,6 +98,84 @@ def validate_source_doc(path: Path, expected_date: str, gate: Gate) -> tuple[dic
     return doc, set(ids)
 
 
+def validate_earnings_section(section: dict[str, Any], path: Path, gate: Gate) -> None:
+    # Validate N reported and N upcoming earnings events; never a single-company slot.
+    label = f"{path}: sections.earnings"
+    reported = section.get("reported")
+    upcoming = section.get("upcoming_72h")
+    gate.require(isinstance(reported, list), f"{label}.reported must be an array")
+    gate.require(isinstance(upcoming, list), f"{label}.upcoming_72h must be an array")
+    if not isinstance(reported, list) or not isinstance(upcoming, list):
+        return
+
+    ids: list[str] = []
+
+    for index, item in enumerate(reported):
+        item_label = f"{label}.reported[{index}]"
+        gate.require(isinstance(item, dict), f"{item_label} must be an object")
+        if not isinstance(item, dict):
+            continue
+        for field in (
+            "id", "company", "ticker", "period", "status", "release_date",
+            "release_time_et", "release_time_sgt", "market_session",
+            "key_takeaway", "metrics", "guidance", "market_reaction",
+            "one_offs", "read_through", "sources",
+        ):
+            gate.require(field in item, f"{item_label} missing {field}")
+        if isinstance(item.get("id"), str):
+            ids.append(item["id"])
+        gate.require(isinstance(item.get("metrics"), list) and bool(item["metrics"]),
+                     f"{item_label}.metrics must be a non-empty array")
+        if isinstance(item.get("metrics"), list):
+            for metric_index, metric in enumerate(item["metrics"]):
+                metric_label = f"{item_label}.metrics[{metric_index}]"
+                gate.require(isinstance(metric, dict), f"{metric_label} must be an object")
+                if isinstance(metric, dict):
+                    for field in ("metric", "actual", "consensus", "previous_or_yoy", "surprise", "notes"):
+                        gate.require(bool(metric.get(field)), f"{metric_label} missing {field}")
+        gate.require(isinstance(item.get("guidance"), list),
+                     f"{item_label}.guidance must be an array")
+        reaction = item.get("market_reaction")
+        gate.require(isinstance(reaction, dict), f"{item_label}.market_reaction must be an object")
+        if isinstance(reaction, dict):
+            for field in ("session", "move", "as_of"):
+                gate.require(bool(reaction.get(field)), f"{item_label}.market_reaction missing {field}")
+        gate.require(isinstance(item.get("read_through"), list) and bool(item["read_through"]),
+                     f"{item_label}.read_through must be a non-empty array")
+
+    for index, item in enumerate(upcoming):
+        item_label = f"{label}.upcoming_72h[{index}]"
+        gate.require(isinstance(item, dict), f"{item_label} must be an object")
+        if not isinstance(item, dict):
+            continue
+        for field in (
+            "id", "company", "ticker", "period", "status", "date", "et", "sgt",
+            "market_session", "consensus", "previous_guidance", "actual",
+            "what_matters", "read_through_targets", "sources",
+        ):
+            gate.require(field in item, f"{item_label} missing {field}")
+        if isinstance(item.get("id"), str):
+            ids.append(item["id"])
+        gate.require(item.get("actual") == "待公布",
+                     f"{item_label}.actual must be 待公布")
+        consensus = item.get("consensus")
+        gate.require(isinstance(consensus, dict), f"{item_label}.consensus must be an object")
+        if isinstance(consensus, dict):
+            gate.require(bool(consensus.get("revenue")), f"{item_label}.consensus.revenue is required")
+            gate.require(bool(consensus.get("eps")), f"{item_label}.consensus.eps is required")
+        gate.require(isinstance(item.get("what_matters"), list) and bool(item["what_matters"]),
+                     f"{item_label}.what_matters must be a non-empty array")
+        gate.require(
+            isinstance(item.get("read_through_targets"), list) and bool(item["read_through_targets"]),
+            f"{item_label}.read_through_targets must be a non-empty array",
+        )
+
+    gate.require(len(ids) == len(set(ids)), f"{label} contains duplicate earnings event IDs")
+    if not re.search(r"无重大新增", str(section.get("status", ""))):
+        gate.require(bool(reported or upcoming),
+                     f"{label} is marked as an update but contains no earnings events")
+
+
 def validate_daily(path: Path, root: Path, gate: Gate) -> str | None:
     display_path = path.relative_to(root) if path.is_absolute() else path
     report = load_json(path, gate)
@@ -181,6 +259,11 @@ def validate_daily(path: Path, root: Path, gate: Gate) -> str | None:
             for field in ("number", "title", "status", "summary", "paragraphs", "tables"):
                 gate.require(field in section, f"{path}: section {key} missing {field}")
         gate.require(numbers == list(range(1, 16)), f"{path}: section numbers must be 1..15 in order")
+        earnings_section = sections.get("earnings")
+        gate.require(isinstance(earnings_section, dict),
+                     f"{path}: sections.earnings must be an object")
+        if isinstance(earnings_section, dict):
+            validate_earnings_section(earnings_section, path, gate)
 
     panel = report.get("signal_panel")
     gate.require(isinstance(panel, dict) and len(panel) == 6, f"{path}: signal_panel must contain 6 signals")
