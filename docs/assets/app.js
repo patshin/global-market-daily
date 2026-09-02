@@ -6,7 +6,11 @@ const state = {
   report: null,
   sources: [],
   selectedDate: null,
-  sectionObserver: null
+  sectionObserver: null,
+  sectionNavigationTarget: null,
+  sectionNavigationTimer: null,
+  sectionScrollRaf: null,
+  sectionScrollBound: false
 };
 
 const $ = (selector) => document.querySelector(selector);
@@ -53,16 +57,67 @@ function setActiveSection(sectionId) {
   });
 }
 
+function getSectionScrollOffset() {
+  const utility = $(".utility-bar");
+  const header = $(".full-report__header");
+  const utilityHeight = utility?.offsetHeight || 0;
+  const headerTopValue = header ? Number.parseFloat(window.getComputedStyle(header).top) : 0;
+  const headerTop = Number.isFinite(headerTopValue) ? headerTopValue : utilityHeight;
+  const headerBottom = header ? headerTop + header.offsetHeight : utilityHeight;
+  return Math.ceil(Math.max(utilityHeight, headerBottom) + 16);
+}
+
+function updateActiveSectionFromViewport() {
+  if (state.sectionNavigationTarget) {
+    setActiveSection(state.sectionNavigationTarget);
+    return;
+  }
+
+  const sections = [...document.querySelectorAll(".report-section")];
+  if (!sections.length) return;
+  const marker = getSectionScrollOffset() + 24;
+  let active = null;
+
+  sections.forEach((section) => {
+    if (section.getBoundingClientRect().top <= marker) active = section;
+  });
+
+  if (!active) active = sections[0];
+  setActiveSection(active.id);
+}
+
+function scheduleActiveSectionUpdate() {
+  if (state.sectionScrollRaf !== null) return;
+  state.sectionScrollRaf = window.requestAnimationFrame(() => {
+    state.sectionScrollRaf = null;
+    updateActiveSectionFromViewport();
+  });
+}
+
+function releaseSectionNavigationLock(sectionId, behavior) {
+  window.clearTimeout(state.sectionNavigationTimer);
+  state.sectionNavigationTimer = window.setTimeout(() => {
+    if (state.sectionNavigationTarget !== sectionId) return;
+    state.sectionNavigationTarget = null;
+    updateActiveSectionFromViewport();
+  }, behavior === "auto" ? 100 : 1250);
+}
+
 function scrollToSection(sectionId, options = {}) {
   const target = document.getElementById(sectionId);
   if (!target) return false;
 
   const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
-  target.scrollIntoView({
-    behavior: options.behavior || (reducedMotion ? "auto" : "smooth"),
-    block: "start"
-  });
+  const behavior = options.behavior || (reducedMotion ? "auto" : "smooth");
+  const top = Math.max(
+    0,
+    window.scrollY + target.getBoundingClientRect().top - getSectionScrollOffset()
+  );
+
+  state.sectionNavigationTarget = sectionId;
   setActiveSection(sectionId);
+  window.scrollTo({ top, behavior });
+  releaseSectionNavigationLock(sectionId, behavior);
 
   if (options.updateUrl !== false) {
     const url = new URL(window.location.href);
@@ -89,20 +144,24 @@ function setupSectionObserver() {
   }
 
   const sections = [...document.querySelectorAll(".report-section")];
-  if (!sections.length || !("IntersectionObserver" in window)) return;
+  if (!sections.length) return;
 
-  state.sectionObserver = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter((entry) => entry.isIntersecting)
-      .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-    if (visible.length) setActiveSection(visible[0].target.id);
-  }, {
-    root: null,
-    rootMargin: "-132px 0px -68% 0px",
-    threshold: [0, 0.05, 0.25]
-  });
+  if (!state.sectionScrollBound) {
+    window.addEventListener("scroll", scheduleActiveSectionUpdate, { passive: true });
+    window.addEventListener("resize", scheduleActiveSectionUpdate);
+    state.sectionScrollBound = true;
+  }
 
-  sections.forEach((section) => state.sectionObserver.observe(section));
+  if ("IntersectionObserver" in window) {
+    state.sectionObserver = new IntersectionObserver(scheduleActiveSectionUpdate, {
+      root: null,
+      rootMargin: "0px 0px -65% 0px",
+      threshold: [0, 0.01, 0.25]
+    });
+    sections.forEach((section) => state.sectionObserver.observe(section));
+  }
+
+  scheduleActiveSectionUpdate();
 }
 
 function renderEarningsMetricTable(metrics, label) {
@@ -741,6 +800,8 @@ function renderSections(report) {
     article.appendChild(body);
     container.appendChild(article);
   });
+
+  setupSectionObserver();
 }
 
 function renderSources(sourceDocument) {
@@ -771,8 +832,6 @@ function renderSources(sourceDocument) {
     article.appendChild(body);
     container.appendChild(article);
   });
-
-  setupSectionObserver();
 }
 
 function configureArchiveControls(selectedDate) {

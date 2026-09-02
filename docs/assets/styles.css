@@ -3357,3 +3357,15 @@ body {
     content: none;
   }
 }
+
+
+/* Sticky section navigation precision (v1.2.1) */
+.report-section {
+  scroll-margin-top: 150px;
+}
+
+@media (max-width: 900px) {
+  .report-section {
+    scroll-margin-top: 250px;
+  }
+}

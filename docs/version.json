@@ -1,8 +1,9 @@
 {
-  "site_version": "1.2.0",
+  "site_version": "1.2.1",
   "published_features": [
     "unbounded_multi_company_earnings",
-    "non_reloading_section_navigation"
+    "non_reloading_section_navigation",
+    "sticky_navigation_offset_precision"
   ],
-  "updated_at": "2026-09-02T15:55:00+08:00"
+  "updated_at": "2026-09-02T16:05:00+08:00"
 }

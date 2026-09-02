@@ -103,8 +103,8 @@ def validate_frontend_sources(root: Path, gate: Gate) -> None:
                  "Market-tape neutral colour requires a dark-background override")
 
     # Cache-busting prevents the old collapsed/tiny-font bundle from surviving deployment.
-    gate.require("styles.css?v=1.2.0" in index, "index.html must load styles.css?v=1.2.0")
-    gate.require("app.js?v=1.2.0" in index, "index.html must load app.js?v=1.2.0")
+    gate.require("styles.css?v=1.2.1" in index, "index.html must load styles.css?v=1.2.1")
+    gate.require("app.js?v=1.2.1" in index, "index.html must load app.js?v=1.2.1")
     gate.require('class="catalyst-grid" id="top-catalysts"' in index,
                  "Top 3 catalysts must have a dedicated full-width evidence grid")
     gate.require('id="report-sections"' in index, "Missing continuous report container")
@@ -127,8 +127,12 @@ def validate_frontend_sources(root: Path, gate: Gate) -> None:
                  "Section navigation must render explicit buttons")
     gate.require("event.preventDefault()" in app and "scrollToSection(id)" in app,
                  "Section navigation must prevent default navigation and scroll explicitly")
-    gate.require("scrollIntoView" in app and "history.replaceState" in app,
-                 "Section navigation must scroll in place and update the hash without navigation")
+    gate.require("getSectionScrollOffset" in app and "window.scrollTo" in app and "history.replaceState" in app,
+                 "Section navigation must use sticky-aware in-page scrolling without navigation")
+    gate.require("sectionNavigationTarget" in app and "releaseSectionNavigationLock" in app,
+                 "Section navigation must retain the clicked active state until scrolling settles")
+    gate.require("Sticky section navigation precision (v1.2.1)" in css and "scroll-margin-top: 250px" in css,
+                 "Desktop/mobile sticky navigation offsets must be protected")
     gate.require("targetDate === state.selectedDate" in app,
                  "popstate handler must not reload the current report for section-only navigation")
     gate.require('create("a", "", String(section.number)' not in app,
