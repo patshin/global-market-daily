@@ -1,0 +1,275 @@
+name: Apply Sticky Navigation Precision Fix v1.2.1
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/nav-offset-v121.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gmd-nav-offset-v121
+  cancel-in-progress: false
+
+jobs:
+  patch-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Apply navigation offset and active-state fix
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+
+          root = Path('.')
+          app_path = root / 'docs/assets/app.js'
+          app = app_path.read_text(encoding='utf-8')
+
+          def replace_once(text: str, old: str, new: str, label: str) -> str:
+              count = text.count(old)
+              if count != 1:
+                  raise RuntimeError(f'{label}: expected one match, found {count}')
+              return text.replace(old, new, 1)
+
+          def replace_block(text: str, start_marker: str, end_marker: str, replacement: str, label: str) -> str:
+              start = text.find(start_marker)
+              if start < 0:
+                  raise RuntimeError(f'{label}: start marker not found')
+              end = text.find(end_marker, start)
+              if end < 0:
+                  raise RuntimeError(f'{label}: end marker not found')
+              return text[:start] + replacement.rstrip() + '\n\n' + text[end:]
+
+          app = replace_once(
+              app,
+              '''  selectedDate: null,\n  sectionObserver: null\n};''',
+              '''  selectedDate: null,\n  sectionObserver: null,\n  sectionNavigationTarget: null,\n  sectionNavigationTimer: null,\n  sectionScrollRaf: null,\n  sectionScrollBound: false\n};''',
+              'navigation state',
+          )
+
+          scroll_block = r'''function getSectionScrollOffset() {
+            const utility = $(".utility-bar");
+            const header = $(".full-report__header");
+            const utilityHeight = utility?.offsetHeight || 0;
+            const headerTopValue = header ? Number.parseFloat(window.getComputedStyle(header).top) : 0;
+            const headerTop = Number.isFinite(headerTopValue) ? headerTopValue : utilityHeight;
+            const headerBottom = header ? headerTop + header.offsetHeight : utilityHeight;
+            return Math.ceil(Math.max(utilityHeight, headerBottom) + 16);
+          }
+
+          function updateActiveSectionFromViewport() {
+            if (state.sectionNavigationTarget) {
+              setActiveSection(state.sectionNavigationTarget);
+              return;
+            }
+
+            const sections = [...document.querySelectorAll(".report-section")];
+            if (!sections.length) return;
+            const marker = getSectionScrollOffset() + 24;
+            let active = null;
+
+            sections.forEach((section) => {
+              if (section.getBoundingClientRect().top <= marker) active = section;
+            });
+
+            if (!active) active = sections[0];
+            setActiveSection(active.id);
+          }
+
+          function scheduleActiveSectionUpdate() {
+            if (state.sectionScrollRaf !== null) return;
+            state.sectionScrollRaf = window.requestAnimationFrame(() => {
+              state.sectionScrollRaf = null;
+              updateActiveSectionFromViewport();
+            });
+          }
+
+          function releaseSectionNavigationLock(sectionId, behavior) {
+            window.clearTimeout(state.sectionNavigationTimer);
+            state.sectionNavigationTimer = window.setTimeout(() => {
+              if (state.sectionNavigationTarget !== sectionId) return;
+              state.sectionNavigationTarget = null;
+              updateActiveSectionFromViewport();
+            }, behavior === "auto" ? 100 : 1250);
+          }
+
+          function scrollToSection(sectionId, options = {}) {
+            const target = document.getElementById(sectionId);
+            if (!target) return false;
+
+            const reducedMotion = window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+            const behavior = options.behavior || (reducedMotion ? "auto" : "smooth");
+            const top = Math.max(
+              0,
+              window.scrollY + target.getBoundingClientRect().top - getSectionScrollOffset()
+            );
+
+            state.sectionNavigationTarget = sectionId;
+            setActiveSection(sectionId);
+            window.scrollTo({ top, behavior });
+            releaseSectionNavigationLock(sectionId, behavior);
+
+            if (options.updateUrl !== false) {
+              const url = new URL(window.location.href);
+              url.hash = sectionId;
+              window.history.replaceState(
+                { date: state.selectedDate, section: sectionId },
+                "",
+                url
+              );
+            }
+            return true;
+          }'''
+          app = replace_block(
+              app,
+              'function scrollToSection(',
+              'function restoreSectionFromHash(',
+              scroll_block,
+              'scroll navigation block',
+          )
+
+          observer_block = r'''function setupSectionObserver() {
+            if (state.sectionObserver) {
+              state.sectionObserver.disconnect();
+              state.sectionObserver = null;
+            }
+
+            const sections = [...document.querySelectorAll(".report-section")];
+            if (!sections.length) return;
+
+            if (!state.sectionScrollBound) {
+              window.addEventListener("scroll", scheduleActiveSectionUpdate, { passive: true });
+              window.addEventListener("resize", scheduleActiveSectionUpdate);
+              state.sectionScrollBound = true;
+            }
+
+            if ("IntersectionObserver" in window) {
+              state.sectionObserver = new IntersectionObserver(scheduleActiveSectionUpdate, {
+                root: null,
+                rootMargin: "0px 0px -65% 0px",
+                threshold: [0, 0.01, 0.25]
+              });
+              sections.forEach((section) => state.sectionObserver.observe(section));
+            }
+
+            scheduleActiveSectionUpdate();
+          }'''
+          app = replace_block(
+              app,
+              'function setupSectionObserver(',
+              'function renderEarningsMetricTable(',
+              observer_block,
+              'section observer block',
+          )
+
+          app = replace_once(
+              app,
+              '''    article.appendChild(body);\n    container.appendChild(article);\n  });\n}\n\nfunction renderSources''',
+              '''    article.appendChild(body);\n    container.appendChild(article);\n  });\n\n  setupSectionObserver();\n}\n\nfunction renderSources''',
+              'observer placement after sections',
+          )
+          app = replace_once(
+              app,
+              '''    article.appendChild(body);\n    container.appendChild(article);\n  });\n\n  setupSectionObserver();\n}\n\nfunction configureArchiveControls''',
+              '''    article.appendChild(body);\n    container.appendChild(article);\n  });\n}\n\nfunction configureArchiveControls''',
+              'remove observer placement after sources',
+          )
+          app_path.write_text(app, encoding='utf-8')
+
+          css_path = root / 'docs/assets/styles.css'
+          css = css_path.read_text(encoding='utf-8')
+          marker = 'Sticky section navigation precision (v1.2.1)'
+          if marker in css:
+              raise RuntimeError('v1.2.1 CSS marker already exists')
+          css += r'''
+
+          /* Sticky section navigation precision (v1.2.1) */
+          .report-section {
+            scroll-margin-top: 150px;
+          }
+
+          @media (max-width: 900px) {
+            .report-section {
+              scroll-margin-top: 250px;
+            }
+          }
+          '''
+          css_path.write_text(css, encoding='utf-8')
+
+          index_path = root / 'docs/index.html'
+          index = index_path.read_text(encoding='utf-8')
+          index = replace_once(index, 'styles.css?v=1.2.0', 'styles.css?v=1.2.1', 'CSS cache version')
+          index = replace_once(index, 'app.js?v=1.2.0', 'app.js?v=1.2.1', 'JS cache version')
+          index_path.write_text(index, encoding='utf-8')
+
+          version_path = root / 'docs/version.json'
+          version = json.loads(version_path.read_text(encoding='utf-8'))
+          version['site_version'] = '1.2.1'
+          features = version.setdefault('published_features', [])
+          if 'sticky_navigation_offset_precision' not in features:
+              features.append('sticky_navigation_offset_precision')
+          version['updated_at'] = '2026-09-02T16:05:00+08:00'
+          version_path.write_text(json.dumps(version, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          validator_path = root / 'scripts/validate_frontend.py'
+          validator = validator_path.read_text(encoding='utf-8')
+          validator = validator.replace('styles.css?v=1.2.0', 'styles.css?v=1.2.1')
+          validator = validator.replace('app.js?v=1.2.0', 'app.js?v=1.2.1')
+          validator = replace_once(
+              validator,
+              '''    gate.require("scrollIntoView" in app and "history.replaceState" in app,\n                 "Section navigation must scroll in place and update the hash without navigation")''',
+              '''    gate.require("getSectionScrollOffset" in app and "window.scrollTo" in app and "history.replaceState" in app,\n                 "Section navigation must use sticky-aware in-page scrolling without navigation")\n    gate.require("sectionNavigationTarget" in app and "releaseSectionNavigationLock" in app,\n                 "Section navigation must retain the clicked active state until scrolling settles")\n    gate.require("Sticky section navigation precision (v1.2.1)" in css and "scroll-margin-top: 250px" in css,\n                 "Desktop/mobile sticky navigation offsets must be protected")''',
+              'frontend navigation validator',
+          )
+          validator_path.write_text(validator, encoding='utf-8')
+
+          print('Applied sticky-aware section navigation v1.2.1')
+          PY
+
+      - name: Run deterministic gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/validate_publish.py --root .
+          python3 scripts/validate_frontend.py --root .
+          python3 -m json.tool docs/version.json >/dev/null
+          node --check docs/assets/app.js
+          git diff --check
+
+      - name: Verify non-reloading sticky-aware navigation contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'function getSectionScrollOffset' docs/assets/app.js
+          grep -q 'sectionNavigationTarget' docs/assets/app.js
+          grep -q 'window.scrollTo({ top, behavior })' docs/assets/app.js
+          grep -q 'history.replaceState' docs/assets/app.js
+          grep -q 'Sticky section navigation precision (v1.2.1)' docs/assets/styles.css
+          grep -q 'styles.css?v=1.2.1' docs/index.html
+          grep -q 'app.js?v=1.2.1' docs/index.html
+          ! grep -q 'scrollIntoView' docs/assets/app.js
+
+      - name: Commit tested fix
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            docs/index.html \
+            docs/assets/app.js \
+            docs/assets/styles.css \
+            docs/version.json \
+            scripts/validate_frontend.py
+          git commit -m "fix(site): keep section navigation active and unobscured"
+          git push origin HEAD:main
