@@ -1,0 +1,86 @@
+name: Apply Earnings Collection and Navigation Fix
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "bootstrap/earnings-nav-v12/**"
+      - ".github/workflows/earnings-nav-v12.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gmd-earnings-nav-v12
+  cancel-in-progress: false
+
+jobs:
+  migrate-and-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Reassemble verified migration bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat bootstrap/earnings-nav-v12/bundle.b64.part-* > /tmp/earnings-nav-v12.b64
+          test "$(wc -c < /tmp/earnings-nav-v12.b64 | tr -d ' ')" = "12904"
+          echo "6acd041e809b449289deb0ed1bbbfbc3e0bb6ca6ae38be0147425dbff708a6ff  /tmp/earnings-nav-v12.b64" | sha256sum --check --strict
+          base64 --decode /tmp/earnings-nav-v12.b64 > /tmp/earnings-nav-v12.tar.xz
+          test "$(wc -c < /tmp/earnings-nav-v12.tar.xz | tr -d ' ')" = "9676"
+          echo "263663ff517e5d217be9d2b89cd37b47f1c9a791b773fc04c7350d622c994674  /tmp/earnings-nav-v12.tar.xz" | sha256sum --check --strict
+          tar -xJf /tmp/earnings-nav-v12.tar.xz -C .
+
+      - name: Apply structured earnings and in-page navigation migration
+        run: python3 scripts/apply_earnings_nav_v12.py
+
+      - name: Run publication and frontend gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/validate_publish.py --root .
+          python3 scripts/validate_frontend.py --root .
+          python3 -m json.tool docs/data/daily/2026-09-02.json >/dev/null
+          python3 -m json.tool schemas/daily.schema.json >/dev/null
+          node --check docs/assets/app.js
+          git diff --check
+
+      - name: Verify unbounded earnings arrays and non-reloading navigation
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'function renderEarningsCollection' docs/assets/app.js
+          grep -q 'group.items.forEach' docs/assets/app.js
+          grep -q 'create("button", "section-jump__button"' docs/assets/app.js
+          grep -q 'event.preventDefault()' docs/assets/app.js
+          grep -q 'history.replaceState' docs/assets/app.js
+          grep -q 'targetDate === state.selectedDate' docs/assets/app.js
+          ! grep -q 'create("a", "", String(section.number)' docs/assets/app.js
+
+      - name: Commit tested production changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            README.md \
+            docs/index.html \
+            docs/assets/app.js \
+            docs/assets/styles.css \
+            docs/data/daily/2026-09-02.json \
+            schemas/daily.schema.json \
+            scripts/validate_publish.py \
+            scripts/validate_frontend.py
+          if git diff --cached --quiet; then
+            echo "No migration changes to commit."
+            exit 0
+          fi
+          git commit -m "fix(site): support multi-company earnings and stable section navigation"
+          git push origin HEAD:main
