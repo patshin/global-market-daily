@@ -1,0 +1,119 @@
+name: Audit v2.1 Release
+
+on:
+  push:
+    branches: [release/trend-schedule-v2.1]
+    paths:
+      - ".github/workflows/audit-v21.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Run repository and UX audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/build_market_lens.py
+          test -f scripts/enrich_policy_events.py
+          python3 scripts/enrich_policy_events.py
+          python3 scripts/validate_publish.py --root .
+          python3 scripts/validate_frontend.py --root .
+          python3 scripts/validate_market_lens.py
+          python3 -m py_compile scripts/build_market_lens.py scripts/enrich_policy_events.py scripts/scheduled_publish.py
+          node --check docs/assets/app.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
+          test -f prompts/global-market-daily.md
+          test -f .github/workflows/daily-research.yml
+          grep -Fq 'cron: "0 1 * * *"' .github/workflows/daily-research.yml
+          grep -Fq 'cron: "0 10 * * *"' .github/workflows/daily-research.yml
+
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, shutil, tempfile, subprocess
+
+          banned = [
+              '离散状态，不使用黑箱综合分数',
+              'Growth / Inflation / Rates / Earnings / Liquidity / Geopolitics 六条信号',
+              '横轴是日期，纵轴是稳定主题类别',
+              '30-day catalyst map',
+              '衡量的是进入 Top 3 的持续性',
+              '每个资产独立小图，避免多轴混乱',
+          ]
+          html = Path('docs/trends.html').read_text(encoding='utf-8')
+          leftovers = [text for text in banned if text in html]
+          assert not leftovers, leftovers
+
+          lens = json.loads(Path('docs/data/trends/rolling-30d.json').read_text(encoding='utf-8'))
+          monitor = lens.get('policy_monitor', {})
+          assert monitor.get('category') == 'china_trade_policy'
+          assert monitor.get('events_in_window', 0) > 0 or monitor.get('empty_state')
+          assert len(lens.get('days', [])) >= 12
+
+          version = json.loads(Path('docs/version.json').read_text(encoding='utf-8'))
+          assert version.get('site_version') == '2.1.0'
+
+          # Scheduled publisher fixture: prove morning is provisional and evening becomes official.
+          daily = json.loads(Path('docs/data/daily/2026-09-02.json').read_text(encoding='utf-8'))
+          daily['date'] = '2026-09-03'
+          report = Path('docs/reports/2026/09/2026-09-02.md').read_text(encoding='utf-8')
+          sources_doc = json.loads(Path('docs/data/sources/2026-09-02.json').read_text(encoding='utf-8'))
+          sources = sources_doc.get('sources', sources_doc if isinstance(sources_doc, list) else [])
+          fixture = {'daily': daily, 'markdown': report, 'sources': sources}
+          with tempfile.TemporaryDirectory() as tmp:
+              test_root = Path(tmp) / 'repo'
+              shutil.copytree('.', test_root, ignore=shutil.ignore_patterns('.git', '.release'))
+              fx = test_root / 'fixture.json'
+              fx.write_text(json.dumps(fixture, ensure_ascii=False), encoding='utf-8')
+              subprocess.run(['python3', 'scripts/scheduled_publish.py', '--edition', 'morning', '--date', '2026-09-03', '--fixture', 'fixture.json'], cwd=test_root, check=True)
+              morning = json.loads((test_root/'docs/data/latest.json').read_text())
+              assert morning['archive_status'] == 'provisional'
+              subprocess.run(['python3', 'scripts/scheduled_publish.py', '--edition', 'evening', '--date', '2026-09-03', '--fixture', 'fixture.json'], cwd=test_root, check=True)
+              evening = json.loads((test_root/'docs/data/latest.json').read_text())
+              archive = json.loads((test_root/'docs/data/archive.json').read_text())
+              assert evening['archive_status'] == 'official'
+              entry = next(x for x in archive['entries'] if x['date'] == '2026-09-03')
+              assert entry['archive_status'] == 'official'
+
+          audit = {
+              'release': '2.1.0',
+              'status': 'passed',
+              'checks': {
+                  'china_trade_policy_lane': 'event_or_explicit_empty_state',
+                  'user_facing_copy': 'passed',
+                  'morning_schedule_sgt': '09:00',
+                  'evening_schedule_sgt': '18:00',
+                  'evening_official_archive': True,
+                  'scheduled_publisher_fixture': 'passed',
+                  'publication_gate': 'passed',
+                  'frontend_gate': 'passed',
+                  'market_lens_gate': 'passed',
+                  'javascript_syntax': 'passed'
+              },
+              'automation_prerequisite': 'OPENAI_API_KEY secret and GMD_MODEL repository variable'
+          }
+          Path('docs/release-audit-v2.1.json').write_text(json.dumps(audit, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+          PY
+
+      - name: Commit audit proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/trends/rolling-30d.json docs/release-audit-v2.1.json
+          git commit -m "test(site): record v2.1 release audit"
+          git push origin HEAD:release/trend-schedule-v2.1
