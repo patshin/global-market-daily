@@ -1,0 +1,44 @@
+name: Refresh 30D Market Lens
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/data/daily/*.json"
+      - "docs/data/latest.json"
+  schedule:
+    - cron: "35 23 * * 0-4"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trends-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Build official/public market-history layer
+        run: python scripts/build_market_lens.py
+      - name: Validate 30D lens
+        run: python scripts/validate_market_lens.py
+      - name: Commit derived trend data when changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/trends/market-history.json docs/data/trends/rolling-30d.json docs/data/trends/theme-registry.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "data: refresh rolling 30D market lens"
+          git push origin HEAD:main
