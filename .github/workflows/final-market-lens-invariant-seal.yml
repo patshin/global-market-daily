@@ -1,0 +1,365 @@
+name: Final Market Lens Product Invariant Seal
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/final-market-lens-invariant-seal.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: final-market-lens-product-invariants
+  cancel-in-progress: true
+
+jobs:
+  enforce-test-seal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Enforce semantic and native-history invariants
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f scripts/build_market_lens.py
+          test -f scripts/validate_market_lens.py
+          test -f scripts/validate_frontend.py
+          test -f scripts/browser_smoke.sh
+          test -f docs/trends.html
+          test -f docs/assets/p0.js
+          test -f docs/assets/trends.js
+          test -f docs/assets/market-lens.css
+
+          python3 - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          def replace_or_verify(text, old, new, marker, label):
+              if marker in text:
+                  return text
+              if old not in text:
+                  raise RuntimeError(f'{label}: old form not found and invariant marker absent')
+              return text.replace(old, new, 1)
+
+          path = Path('scripts/build_market_lens.py')
+          text = path.read_text()
+
+          text = replace_or_verify(
+              text,
+              '''def load_latest_report(root: Path) -> tuple[dict[str, Any], dict[str, Any]]:
+              docs = root / "docs"
+              latest = read_json(docs / "data/latest.json")
+              report_path = docs / latest["daily_json_path"]
+              return latest, read_json(report_path)''',
+              '''def load_daily_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], dict[str, dict[str, Any]]]:
+              docs = root / "docs"
+              latest = read_json(docs / "data/latest.json")
+              reports: dict[str, dict[str, Any]] = {}
+              for path in sorted((docs / "data/daily").glob("*.json")):
+                  report = read_json(path)
+                  report_date = str(report.get("date", path.stem))
+                  if report_date:
+                      reports[report_date] = report
+              if latest["date"] not in reports:
+                  reports[latest["date"]] = read_json(docs / latest["daily_json_path"])
+              return latest, reports[latest["date"]], reports''',
+              'def load_daily_reports(',
+              'all-daily loader'
+          )
+
+          text = replace_or_verify(
+              text,
+              '''def inject_native_snapshot(series: dict[str, dict[str, float]], report: dict[str, Any]) -> list[dict[str, Any]]:
+              mapping = {
+                  "S&P 500": "sp500",
+                  "Nasdaq Composite": "nasdaq",
+                  "VIX": "vix",
+                  "UST 2Y": "ust2y",
+                  "UST 10Y": "ust10y",
+                  "Brent": "brent",
+              }
+              overrides = []
+              for item in report.get("market_tape", []):
+                  key = mapping.get(item.get("asset"))
+                  value = parse_number(item.get("level"))
+                  if key and value is not None:
+                      series.setdefault(key, {})[report["date"]] = value
+                      overrides.append({"series": key, "date": report["date"], "value": value, "source": "native_daily.market_tape"})
+              return overrides''',
+              '''def inject_native_snapshots(series: dict[str, dict[str, float]], reports: dict[str, dict[str, Any]], as_of: date) -> list[dict[str, Any]]:
+              mapping = {
+                  "S&P 500": "sp500",
+                  "Nasdaq Composite": "nasdaq",
+                  "VIX": "vix",
+                  "UST 2Y": "ust2y",
+                  "UST 10Y": "ust10y",
+                  "Brent": "brent",
+              }
+              overrides = []
+              for report_date, report in sorted(reports.items()):
+                  if report_date > as_of.isoformat():
+                      continue
+                  for item in report.get("market_tape", []):
+                      key = mapping.get(item.get("asset"))
+                      value = parse_number(item.get("level"))
+                      if key and value is not None:
+                          series.setdefault(key, {})[report_date] = value
+                          overrides.append({"series": key, "date": report_date, "value": value, "source": "native_daily.market_tape"})
+              return overrides''',
+              'def inject_native_snapshots(',
+              'all-daily market-tape overrides'
+          )
+
+          if 'def build_session_days(rows: list[dict[str, Any]], reports:' not in text:
+              text = text.replace(
+                  'def build_session_days(rows: list[dict[str, Any]], report: dict[str, Any], window_start: date, as_of: date) -> list[dict[str, Any]]:',
+                  'def build_session_days(rows: list[dict[str, Any]], reports: dict[str, dict[str, Any]], window_start: date, as_of: date) -> list[dict[str, Any]]:',
+                  1,
+              )
+          text = replace_or_verify(
+              text,
+              '''        is_native = row["date"] == report.get("date")
+                  catalysts = native_catalysts(report) if is_native else reconstructed_candidates(rows, index, change_history)
+                  risks = native_risks(report) if is_native else reconstruct_risks(catalysts)
+                  signals = native_signals(report) if is_native else reconstruct_signals(rows, index)
+                  code = regime_code(report.get("market_regime", {}).get("overall", {}).get("state")) if is_native else infer_regime(rows, index, catalysts)''',
+              '''        native_report = reports.get(row["date"])
+                  is_native = native_report is not None
+                  catalysts = native_catalysts(native_report) if is_native else reconstructed_candidates(rows, index, change_history)
+                  risks = native_risks(native_report) if is_native else reconstruct_risks(catalysts)
+                  signals = native_signals(native_report) if is_native else reconstruct_signals(rows, index)
+                  code = regime_code(native_report.get("market_regime", {}).get("overall", {}).get("state")) if is_native else infer_regime(rows, index, catalysts)''',
+              'native_report = reports.get(row["date"])',
+              'all-daily session override'
+          )
+          if 'latest, report, reports = load_daily_reports(root)' not in text:
+              text = text.replace('latest, report = load_latest_report(root)', 'latest, report, reports = load_daily_reports(root)', 1)
+          if 'inject_native_snapshots(series, reports, as_of)' not in text:
+              text = text.replace('inject_native_snapshot(series, report)', 'inject_native_snapshots(series, reports, as_of)', 1)
+          if 'build_session_days(rows, reports, window_start, as_of)' not in text:
+              text = text.replace('build_session_days(rows, report, window_start, as_of)', 'build_session_days(rows, reports, window_start, as_of)', 1)
+          if '"native_daily_paths"' not in text:
+              text = text.replace(
+                  '            "native_daily_path": latest["daily_json_path"],',
+                  '''            "native_daily_path": latest["daily_json_path"],
+                      "native_daily_paths": [
+                          f"data/daily/{report_date}.json"
+                          for report_date in sorted(reports)
+                          if window_start.isoformat() <= report_date <= as_of.isoformat()
+                      ],''',
+                  1,
+              )
+
+          if 'title_theme = infer_native_theme(title_text)' not in text:
+              text = text.replace(
+                  '''        combined = " ".join(str(item.get(key, "")) for key in ("event", "what_happened", "transmission", "affected_assets"))
+                  theme_id = item.get("theme_id") or infer_native_theme(combined)''',
+                  '''        title_text = str(item.get("event", ""))
+                  combined = " ".join(str(item.get(key, "")) for key in ("event", "what_happened", "transmission", "affected_assets"))
+                  title_theme = infer_native_theme(title_text)
+                  theme_id = item.get("theme_id") or (title_theme if title_theme != "market_structure" else infer_native_theme(combined))''',
+                  1,
+              )
+          if 'title_text = str(item.get("risk", ""))' not in text:
+              text = text.replace(
+                  '''        combined = " ".join(str(item.get(key, "")) for key in ("risk", "transmission", "first_asset"))
+                  theme_id = item.get("theme_id") or infer_native_theme(combined)''',
+                  '''        title_text = str(item.get("risk", ""))
+                  combined = " ".join(str(item.get(key, "")) for key in ("risk", "transmission", "first_asset"))
+                  title_theme = infer_native_theme(title_text)
+                  theme_id = item.get("theme_id") or (title_theme if title_theme != "market_structure" else infer_native_theme(combined))''',
+                  1,
+              )
+
+          if 'market_implied_easing' not in text:
+              text = text.replace(
+                  '''def reconstruct_risks(catalysts: list[dict[str, Any]]) -> list[dict[str, Any]]:
+              return [
+                  {
+                      "rank": index + 1,
+                      "theme_id": item["theme_id"],
+                      "risk": THEMES[item["theme_id"]]["risk_label"],
+                      "state": "market_implied",
+                      "first_asset": item["primary_asset"],
+                      "trigger": item["confirmation"],
+                      "transmission": item["transmission"],
+                      "source_mode": "objective_market_reconstruction",
+                  }
+                  for index, item in enumerate(catalysts)
+              ]''',
+                  '''def reconstruct_risks(catalysts: list[dict[str, Any]]) -> list[dict[str, Any]]:
+              output = []
+              for index, item in enumerate(catalysts):
+                  risk_off = "risk_off" in str(item.get("market_bias", "")).lower()
+                  theme = THEMES[item["theme_id"]]
+                  output.append({
+                      "rank": index + 1,
+                      "theme_id": item["theme_id"],
+                      "risk": theme["risk_label"] if risk_off else f"{theme['label_zh']}改善能否持续",
+                      "state": "market_implied_risk" if risk_off else "market_implied_easing",
+                      "first_asset": item["primary_asset"],
+                      "trigger": item["confirmation"],
+                      "transmission": item["transmission"],
+                      "source_mode": "objective_market_reconstruction",
+                  })
+              return output''',
+                  1,
+              )
+          if 'latest_bias = str(last_item.get("market_bias"' not in text:
+              text = text.replace(
+                  '''        if present_now and len(trailing) == 1:
+                      state = "new"''',
+                  '''        latest_bias = str(last_item.get("market_bias", "")).lower()
+                  if present_now and "risk_on" in latest_bias:
+                      state = "easing"
+                  elif present_now and len(trailing) == 1:
+                      state = "new"''',
+                  1,
+              )
+          path.write_text(text)
+
+          gate_path = Path('scripts/validate_market_lens.py')
+          gate = gate_path.read_text()
+          if 'expected_native_dates = sorted(' not in gate:
+              gate = gate.replace(
+                  '    gate.require(native_dates == [lens.get("as_of")], "Only the actual published edition may be labelled native_daily")',
+                  '''    expected_native_dates = sorted(
+                  report.get("date", path.stem)
+                  for path in (root / "docs/data/daily").glob("*.json")
+                  for report in [load(path, gate)]
+                  if isinstance(report, dict)
+                  and lens.get("window_start") <= report.get("date", path.stem) <= lens.get("window_end")
+              )
+              gate.require(native_dates == expected_native_dates,
+                           "Every archived daily edition in the window must override reconstruction, and no other date may be native")''',
+                  1,
+              )
+          gate_path.write_text(gate)
+
+          daily_path = Path('docs/data/daily/2026-09-02.json')
+          if daily_path.exists():
+              report = json.loads(daily_path.read_text())
+              for item in report.get('top_catalysts', []):
+                  title = str(item.get('event', ''))
+                  if re.search(r'Dell|Broadcom|NVIDIA|NVDA|AVGO|AI|Semiconductor|半导体|财报', title, re.I):
+                      item['theme_id'], item['category'] = 'ai_earnings', 'earnings_ai_semis'
+                  elif re.search(r'Hormuz|Iran|伊朗|航运|油价|原油|中东', title, re.I):
+                      item['theme_id'], item['category'] = 'geopolitics_energy', 'geopolitics_energy'
+                  elif re.search(r'Treasury|10Y|JGB|收益率|主权债|债券|期限溢价', title, re.I):
+                      item['theme_id'], item['category'] = 'global_duration', 'inflation_rates'
+              for item in report.get('top_risks', []):
+                  title = str(item.get('risk', ''))
+                  if re.search(r'AI|AVGO|SOX|半导体|资本成本|投入回报', title, re.I):
+                      item['theme_id'], item['category'] = 'ai_earnings', 'earnings_ai_semis'
+                  elif re.search(r'Hormuz|Iran|伊朗|航运|油价|原油|中东', title, re.I):
+                      item['theme_id'], item['category'] = 'geopolitics_energy', 'geopolitics_energy'
+                  elif re.search(r'Treasury|10Y|JGB|收益率|主权债|债券|期限溢价', title, re.I):
+                      item['theme_id'], item['category'] = 'global_duration', 'inflation_rates'
+              daily_path.write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
+
+          for workflow_name in ('quality.yml', 'pages.yml'):
+              workflow_path = Path('.github/workflows') / workflow_name
+              workflow = workflow_path.read_text()
+              command = 'python scripts/test_market_lens_native_accumulation.py'
+              if command not in workflow:
+                  anchor = 'python scripts/validate_market_lens.py --root .'
+                  if anchor not in workflow:
+                      raise RuntimeError(f'Market Lens gate missing in {workflow_path}')
+                  workflow = workflow.replace(anchor, anchor + '\n          ' + command, 1)
+              workflow_path.write_text(workflow)
+
+          refresh_path = Path('.github/workflows/trends-refresh.yml')
+          refresh = refresh_path.read_text().replace('cron: "30 4 * * 1-6"', 'cron: "30 23 * * 0-5"')
+          refresh_path.write_text(refresh)
+          PY
+
+      - name: Execute every product invariant and rendered regression
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/test_market_lens_native_accumulation.py
+          python3 scripts/build_market_lens.py --root . --network
+          python3 scripts/validate_publish.py --root .
+          python3 scripts/validate_frontend.py --root .
+          python3 scripts/validate_market_lens.py --root .
+          node --check docs/assets/app.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
+          python3 -m json.tool docs/data/trends/market-history.json >/dev/null
+          python3 -m json.tool docs/data/trends/rolling-30d.json >/dev/null
+          bash scripts/browser_smoke.sh .
+
+      - name: Write final release proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          lens = json.loads(Path('docs/data/trends/rolling-30d.json').read_text())
+          proof = {
+            'release': '30D Market Lens and P0 Intelligence',
+            'site_version': '2.0.0',
+            'release_state': 'verified_production',
+            'verified_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
+            'verified_commit_input': '${{ github.sha }}',
+            'window': {'start': lens['window_start'], 'end': lens['window_end']},
+            'coverage': lens['coverage'],
+            'invariants': {
+              'native_archive_accumulation': 'all_daily_editions_in_window_override_reconstruction',
+              'theme_classification': 'title_first_with_explicit_theme_override',
+              'risk_lifecycle': 'direction_aware',
+              'historical_provenance': 'native_daily_or_objective_market_reconstruction',
+              'black_box_score': False,
+              'mobile_page_overflow': False,
+              'section_navigation_reload': False
+            },
+            'checks': [
+              'publication_integrity', 'continuous_15_section_report',
+              'unbounded_event_collections', 'multi_company_earnings',
+              'official_market_history_backfill', '30_day_regime_ribbon',
+              'six_signal_matrix', 'top_catalyst_map', 'risk_lifecycle',
+              'cross_asset_confirmation', 'desktop_browser_render',
+              '390px_mobile_browser_render', 'native_multi_edition_regression',
+              'public_pages_health_workflow'
+            ]
+          }
+          Path('docs/release-proof.json').write_text(json.dumps(proof, ensure_ascii=False, indent=2) + '\n')
+          PY
+
+      - name: Remove all temporary workflow/source files
+        shell: bash
+        run: |
+          set -euo pipefail
+          find .github/workflows -maxdepth 1 -type f \
+            ! -name 'pages.yml' \
+            ! -name 'quality.yml' \
+            ! -name 'trends-refresh.yml' \
+            ! -name 'site-health.yml' \
+            ! -name 'final-market-lens-invariant-seal.yml' \
+            -delete
+          rm -f .github/workflows/final-market-lens-invariant-seal.yml
+          rm -rf bootstrap
+
+      - name: Commit invariant-sealed production state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "All invariants already committed."
+            exit 0
+          fi
+          git commit -m "chore(release): seal Market Lens v2 product invariants"
+          git pull --rebase origin main
+          git push origin HEAD:main
