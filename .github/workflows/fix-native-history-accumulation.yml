@@ -1,0 +1,216 @@
+name: Fix Native Daily History Accumulation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/fix-native-history-accumulation.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fix-native-history-accumulation
+  cancel-in-progress: true
+
+jobs:
+  fix-test-commit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Make every archived daily edition override reconstruction
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path('scripts/build_market_lens.py')
+          text = path.read_text()
+
+          old = '''def load_latest_report(root: Path) -> tuple[dict[str, Any], dict[str, Any]]:
+              docs = root / "docs"
+              latest = read_json(docs / "data/latest.json")
+              report_path = docs / latest["daily_json_path"]
+              return latest, read_json(report_path)'''
+          new = '''def load_daily_reports(root: Path) -> tuple[dict[str, Any], dict[str, Any], dict[str, dict[str, Any]]]:
+              docs = root / "docs"
+              latest = read_json(docs / "data/latest.json")
+              reports: dict[str, dict[str, Any]] = {}
+              for path in sorted((docs / "data/daily").glob("*.json")):
+                  report = read_json(path)
+                  report_date = str(report.get("date", path.stem))
+                  if report_date:
+                      reports[report_date] = report
+              if latest["date"] not in reports:
+                  reports[latest["date"]] = read_json(docs / latest["daily_json_path"])
+              return latest, reports[latest["date"]], reports'''
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif 'def load_daily_reports(' not in text:
+              raise RuntimeError('load_daily_reports migration target not found')
+
+          old = '''def inject_native_snapshot(series: dict[str, dict[str, float]], report: dict[str, Any]) -> list[dict[str, Any]]:
+              mapping = {
+                  "S&P 500": "sp500",
+                  "Nasdaq Composite": "nasdaq",
+                  "VIX": "vix",
+                  "UST 2Y": "ust2y",
+                  "UST 10Y": "ust10y",
+                  "Brent": "brent",
+              }
+              overrides = []
+              for item in report.get("market_tape", []):
+                  key = mapping.get(item.get("asset"))
+                  value = parse_number(item.get("level"))
+                  if key and value is not None:
+                      series.setdefault(key, {})[report["date"]] = value
+                      overrides.append({"series": key, "date": report["date"], "value": value, "source": "native_daily.market_tape"})
+              return overrides'''
+          new = '''def inject_native_snapshots(series: dict[str, dict[str, float]], reports: dict[str, dict[str, Any]], as_of: date) -> list[dict[str, Any]]:
+              mapping = {
+                  "S&P 500": "sp500",
+                  "Nasdaq Composite": "nasdaq",
+                  "VIX": "vix",
+                  "UST 2Y": "ust2y",
+                  "UST 10Y": "ust10y",
+                  "Brent": "brent",
+              }
+              overrides = []
+              for report_date, report in sorted(reports.items()):
+                  if report_date > as_of.isoformat():
+                      continue
+                  for item in report.get("market_tape", []):
+                      key = mapping.get(item.get("asset"))
+                      value = parse_number(item.get("level"))
+                      if key and value is not None:
+                          series.setdefault(key, {})[report_date] = value
+                          overrides.append({"series": key, "date": report_date, "value": value, "source": "native_daily.market_tape"})
+              return overrides'''
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif 'def inject_native_snapshots(' not in text:
+              raise RuntimeError('inject_native_snapshots migration target not found')
+
+          text = text.replace(
+              'def build_session_days(rows: list[dict[str, Any]], report: dict[str, Any], window_start: date, as_of: date) -> list[dict[str, Any]]:',
+              'def build_session_days(rows: list[dict[str, Any]], reports: dict[str, dict[str, Any]], window_start: date, as_of: date) -> list[dict[str, Any]]:',
+              1,
+          )
+          old = '''        is_native = row["date"] == report.get("date")
+                  catalysts = native_catalysts(report) if is_native else reconstructed_candidates(rows, index, change_history)
+                  risks = native_risks(report) if is_native else reconstruct_risks(catalysts)
+                  signals = native_signals(report) if is_native else reconstruct_signals(rows, index)
+                  code = regime_code(report.get("market_regime", {}).get("overall", {}).get("state")) if is_native else infer_regime(rows, index, catalysts)'''
+          new = '''        native_report = reports.get(row["date"])
+                  is_native = native_report is not None
+                  catalysts = native_catalysts(native_report) if is_native else reconstructed_candidates(rows, index, change_history)
+                  risks = native_risks(native_report) if is_native else reconstruct_risks(catalysts)
+                  signals = native_signals(native_report) if is_native else reconstruct_signals(rows, index)
+                  code = regime_code(native_report.get("market_regime", {}).get("overall", {}).get("state")) if is_native else infer_regime(rows, index, catalysts)'''
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif 'native_report = reports.get(row["date"])' not in text:
+              raise RuntimeError('native-report selection target not found')
+
+          text = text.replace(
+              '    latest, report = load_latest_report(root)',
+              '    latest, report, reports = load_daily_reports(root)',
+              1,
+          )
+          text = text.replace(
+              '    overrides = inject_native_snapshot(series, report)',
+              '    overrides = inject_native_snapshots(series, reports, as_of)',
+              1,
+          )
+          text = text.replace(
+              '    days = build_session_days(rows, report, window_start, as_of)',
+              '    days = build_session_days(rows, reports, window_start, as_of)',
+              1,
+          )
+          old = '            "native_daily_path": latest["daily_json_path"],'
+          new = '''            "native_daily_path": latest["daily_json_path"],
+                      "native_daily_paths": [
+                          f"data/daily/{report_date}.json"
+                          for report_date in sorted(reports)
+                          if window_start.isoformat() <= report_date <= as_of.isoformat()
+                      ],'''
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif '"native_daily_paths"' not in text:
+              raise RuntimeError('native provenance list target not found')
+          path.write_text(text)
+
+          path = Path('scripts/validate_market_lens.py')
+          text = path.read_text()
+          old = '''    gate.require(native_dates == [lens.get("as_of")], "Only the actual published edition may be labelled native_daily")'''
+          new = '''    expected_native_dates = sorted(
+                  report.get("date", path.stem)
+                  for path in (root / "docs/data/daily").glob("*.json")
+                  for report in [load(path, gate)]
+                  if isinstance(report, dict)
+                  and lens.get("window_start") <= report.get("date", path.stem) <= lens.get("window_end")
+              )
+              gate.require(native_dates == expected_native_dates,
+                           "Every archived daily edition in the window must override reconstruction, and no other date may be native")'''
+          if old in text:
+              text = text.replace(old, new, 1)
+          elif 'expected_native_dates = sorted(' not in text:
+              raise RuntimeError('native validation target not found')
+          path.write_text(text)
+
+          design_path = Path('docs/product/30d-market-lens.md')
+          design = design_path.read_text()
+          marker = '### 3.4 Native archive accumulation'
+          if marker not in design:
+              design += '''\n\n### 3.4 Native archive accumulation\n\nEvery `docs/data/daily/YYYY-MM-DD.json` file inside the rolling window is loaded. Its published regime, catalyst, risk, signal and market-tape fields replace the same date’s objective reconstruction. The native coverage therefore grows automatically from Day 1 to Day 30; it is not limited to the latest edition.\n'''
+              design_path.write_text(design)
+          PY
+
+      - name: Rebuild history and execute all release gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/build_market_lens.py --root . --network
+          python3 scripts/validate_publish.py --root .
+          python3 scripts/validate_frontend.py --root .
+          python3 scripts/validate_market_lens.py --root .
+          node --check docs/assets/app.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
+          bash scripts/browser_smoke.sh .
+
+      - name: Update release proof and clean workflow
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          proof_path = Path('docs/release-proof.json')
+          proof = json.loads(proof_path.read_text())
+          lens = json.loads(Path('docs/data/trends/rolling-30d.json').read_text())
+          proof['native_archive_accumulation'] = 'all_daily_editions_in_window_override_reconstruction'
+          proof['verified_at'] = datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z')
+          proof['verified_commit_input'] = '${{ github.sha }}'
+          proof['coverage'] = lens['coverage']
+          proof_path.write_text(json.dumps(proof, ensure_ascii=False, indent=2) + '\n')
+          PY
+          rm -f .github/workflows/fix-native-history-accumulation.yml
+
+      - name: Commit future-proof native archive logic
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "fix(lens): accumulate every native daily edition in trend history"
+          git pull --rebase origin main
+          git push origin HEAD:main
