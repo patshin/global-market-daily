@@ -1,0 +1,130 @@
+name: Correct Publication Runtime v2.1
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/patch-publication-runtime-v21.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Patch runtime semantics
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f scripts/scheduled_publish.py
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('scripts/scheduled_publish.py')
+          s=p.read_text(encoding='utf-8')
+
+          # Morning is visible as the current same-date edition, but it is not inserted
+          # into archive.json. The evening run overwrites the same date and becomes official.
+          old='''    upsert_archive(daily, date, paths, edition)\n\n    latest = {'''
+          new='''    if edition == "evening":\n        upsert_archive(daily, date, paths, edition)\n\n    latest = {'''
+          if old in s:
+              s=s.replace(old,new)
+          elif 'if edition == "evening":\n        upsert_archive' not in s:
+              raise SystemExit('Cannot locate archive upsert block')
+
+          # The previous comparison must be a prior official date, never the same-day morning run.
+          old_fn='''def previous_official_daily() -> dict[str, Any]:\n    archive = read_json(DOCS / "data/archive.json", {"entries": []})\n    entries = archive.get("entries", []) if isinstance(archive, dict) else []\n    for entry in entries:\n        if not isinstance(entry, dict):\n            continue\n        path = entry.get("daily_json_path")\n        if path and (DOCS / path).exists():\n            return read_json(DOCS / path, {})\n    return {}\n'''
+          new_fn='''def previous_official_daily(current_date: str) -> dict[str, Any]:\n    archive = read_json(DOCS / "data/archive.json", {"entries": []})\n    entries = archive.get("entries", []) if isinstance(archive, dict) else []\n    for entry in entries:\n        if not isinstance(entry, dict):\n            continue\n        entry_date = str(entry.get("date", ""))\n        status = str(entry.get("archive_status", "official"))\n        if not entry_date or entry_date >= current_date or status != "official":\n            continue\n        path = entry.get("daily_json_path")\n        if path and (DOCS / path).exists():\n            daily = read_json(DOCS / path, {})\n            if daily.get("official_daily_archive", True):\n                return daily\n    return {}\n'''
+          if old_fn in s:
+              s=s.replace(old_fn,new_fn)
+          s=s.replace('previous = previous_official_daily()', 'previous = previous_official_daily(date)')
+
+          # Keep the source archive explicit about provisional vs official editions.
+          s=s.replace(
+              'json.dumps({"date": date, "edition": edition, "sources": sources}, ensure_ascii=False, indent=2)',
+              'json.dumps({"date": date, "edition": edition, "archive_status": "official" if edition == "evening" else "provisional", "source_count": len(sources), "sources": sources}, ensure_ascii=False, indent=2)'
+          )
+          p.write_text(s,encoding='utf-8')
+          PY
+          python3 -m py_compile scripts/scheduled_publish.py
+
+      - name: Verify morning then evening with an isolated fixture
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, shutil, subprocess, tempfile
+          daily=json.loads(Path('docs/data/daily/2026-09-02.json').read_text(encoding='utf-8'))
+          daily['date']='2026-09-03'
+          report=Path('docs/reports/2026/09/2026-09-02.md').read_text(encoding='utf-8')
+          source_doc=json.loads(Path('docs/data/sources/2026-09-02.json').read_text(encoding='utf-8'))
+          sources=source_doc.get('sources', source_doc if isinstance(source_doc,list) else [])
+          fixture={'daily':daily,'markdown':report,'sources':sources}
+          with tempfile.TemporaryDirectory() as tmp:
+              root=Path(tmp)/'repo'
+              shutil.copytree('.',root,ignore=shutil.ignore_patterns('.git','.release'))
+              (root/'fixture.json').write_text(json.dumps(fixture,ensure_ascii=False),encoding='utf-8')
+              original=json.loads((root/'docs/data/archive.json').read_text(encoding='utf-8'))
+              original_dates=[x.get('date') for x in original.get('entries',[])]
+              subprocess.run(['python3','scripts/scheduled_publish.py','--edition','morning','--date','2026-09-03','--fixture','fixture.json'],cwd=root,check=True)
+              morning_latest=json.loads((root/'docs/data/latest.json').read_text(encoding='utf-8'))
+              morning_archive=json.loads((root/'docs/data/archive.json').read_text(encoding='utf-8'))
+              assert morning_latest['archive_status']=='provisional'
+              assert [x.get('date') for x in morning_archive.get('entries',[])]==original_dates
+              subprocess.run(['python3','scripts/scheduled_publish.py','--edition','evening','--date','2026-09-03','--fixture','fixture.json'],cwd=root,check=True)
+              evening_latest=json.loads((root/'docs/data/latest.json').read_text(encoding='utf-8'))
+              evening_archive=json.loads((root/'docs/data/archive.json').read_text(encoding='utf-8'))
+              assert evening_latest['archive_status']=='official'
+              matches=[x for x in evening_archive['entries'] if x.get('date')=='2026-09-03']
+              assert len(matches)==1 and matches[0]['archive_status']=='official'
+          print('MORNING/EVENING ARCHIVE CONTRACT PASSED')
+          PY
+
+      - name: Refresh official policy data and market lens
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/fetch_policy_events.py
+          python3 scripts/build_market_lens.py
+          python3 scripts/enrich_policy_events.py
+          python3 scripts/validate_market_lens.py
+
+      - name: Run complete product gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/validate_publish.py --root .
+          python3 scripts/validate_frontend.py --root .
+          node --check docs/assets/app.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          policy=json.loads(Path('docs/data/trends/policy-events.json').read_text(encoding='utf-8'))
+          lens=json.loads(Path('docs/data/trends/rolling-30d.json').read_text(encoding='utf-8'))
+          assert policy.get('fetch_status','').startswith(('success','fallback'))
+          assert lens.get('policy_monitor',{}).get('category')=='china_trade_policy'
+          assert 'risk_score' not in json.dumps(lens)
+          assert 'upsert_archive(daily, date, paths, edition)' not in Path('scripts/scheduled_publish.py').read_text(encoding='utf-8')
+          PY
+
+      - name: Commit runtime and refreshed data
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/scheduled_publish.py docs/data/trends
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "fix(automation): make 18:00 edition the sole official daily archive"
+          git pull --rebase origin main
+          git push origin HEAD:main
