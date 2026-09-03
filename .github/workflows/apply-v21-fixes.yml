@@ -52,6 +52,7 @@ jobs:
           base64 --decode /tmp/gmd-v21.b64 > /tmp/gmd-v21-product.tar.gz
           echo "e81bdd660be49f26f2a9f43dd3a89ecfebaac926663b832e412cb2edd4b959a7  /tmp/gmd-v21-product.tar.gz" | sha256sum --check --strict
           tar -xzf /tmp/gmd-v21-product.tar.gz -C .
+          sed -i 's/[[:space:]]\+$//' docs/trends.html
 
       - name: Rebuild market memory
         run: python scripts/build_market_lens.py
@@ -91,4 +92,4 @@ jobs:
           git commit -m "fix(site): complete trend coverage and publication contract"
           git push origin HEAD:release/trend-schedule-v2.1
 
-# rerun after publication workflow was staged
+# rerun after removing trailing whitespace from the generated trend page
