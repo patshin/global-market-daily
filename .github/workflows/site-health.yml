@@ -1,0 +1,60 @@
+name: Public Site Health Check
+
+on:
+  workflow_run:
+    workflows: ["Deploy Global Market Daily"]
+    types: [completed]
+  schedule:
+    - cron: "0 0 * * 1-6"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: public-site-health
+  cancel-in-progress: true
+
+jobs:
+  verify-public-pages:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Wait for Pages edge propagation
+        run: sleep 15
+
+      - name: Fetch public production resources
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://patshin.github.io/global-market-daily"
+          for path in / /trends.html /version.json /release-proof.json /data/trends/rolling-30d.json /data/trends/market-history.json; do
+            curl --fail --silent --show-error --location \
+              --retry 8 --retry-delay 5 --retry-all-errors \
+              "$base$path" -o "$(echo "$path" | tr '/' '_' | sed 's/^_$/_index.html/').out"
+          done
+
+      - name: Validate the public responses
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'assets/p0.js?v=2.0.0' _index.html.out
+          grep -q '过去30日市场主线与风险状态图' _trends.html.out
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          version = json.loads(Path('_version.json.out').read_text())
+          proof = json.loads(Path('_release-proof.json.out').read_text())
+          lens = json.loads(Path('_data_trends_rolling-30d.json.out').read_text())
+          history = json.loads(Path('_data_trends_market-history.json.out').read_text())
+          assert version['site_version'] == '2.0.0'
+          assert proof['release_state'] == 'verified_production'
+          assert lens['coverage']['day1_ready'] is True
+          assert lens['coverage']['market_sessions'] >= 12
+          assert lens['coverage']['objective_reconstruction_days'] >= 10
+          assert lens['as_of'] == lens['window_end']
+          assert len(history['series']['nasdaq']) >= 25
+          assert len(history['series']['ust10y']) >= 25
+          print('PUBLIC SITE HEALTH PASSED')
+          PY
