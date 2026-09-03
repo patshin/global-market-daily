@@ -1,0 +1,24 @@
+name: Export Manual Run Source
+
+on:
+  push:
+    branches: [release/trend-schedule-v2.1]
+    paths: [.github/workflows/export-manual-run.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - name: Package source
+        run: tar --exclude=.git -czf /tmp/gmd-source.tar.gz .
+      - uses: actions/upload-artifact@v7
+        with:
+          name: gmd-manual-run-source
+          path: /tmp/gmd-source.tar.gz
+          retention-days: 1
