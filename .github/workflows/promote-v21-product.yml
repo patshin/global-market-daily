@@ -1,0 +1,54 @@
+name: Promote Audited v2.1 Product
+
+on:
+  push:
+    branches: [release/trend-schedule-v2.1]
+    paths:
+      - ".github/workflows/promote-v21-product.yml"
+      - "docs/release-audit-v2.1.json"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: release/trend-schedule-v2.1
+          fetch-depth: 0
+      - name: Require a passing release audit
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('docs/release-audit-v2.1.json')
+          assert p.exists(), 'v2.1 audit proof is not present'
+          d=json.loads(p.read_text())
+          assert d.get('status') == 'passed', d
+          PY
+      - name: Copy audited product into main
+        shell: bash
+        run: |
+          set -euo pipefail
+          release_dir="$PWD"
+          git worktree add /tmp/gmd-main origin/main
+          mkdir -p /tmp/gmd-main/prompts
+          rsync -a "$release_dir/docs/" /tmp/gmd-main/docs/
+          rsync -a "$release_dir/scripts/" /tmp/gmd-main/scripts/
+          rsync -a "$release_dir/schemas/" /tmp/gmd-main/schemas/
+          rsync -a "$release_dir/prompts/" /tmp/gmd-main/prompts/
+          cd /tmp/gmd-main
+          git checkout -B main origin/main
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs scripts schemas prompts
+          if git diff --cached --quiet; then
+            echo 'Main already contains the audited product.'
+            exit 0
+          fi
+          git commit -m "fix(site): publish audited v2.1 trend and policy corrections"
+          git push origin HEAD:main
