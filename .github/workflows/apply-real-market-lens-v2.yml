@@ -53,13 +53,15 @@ jobs:
           grep -q '30D Market Lens' docs/index.html
           grep -q 'data/trends/rolling-30d.json' docs/assets/trends.js
 
-      - name: Commit verified v2 product files
+      - name: Commit verified v2 product files only
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs scripts schemas .github/workflows/quality.yml .github/workflows/pages.yml .github/workflows/trends-refresh.yml
+          # Workflows are deliberately NOT staged here. GitHub Apps need a
+          # separate workflows permission to push workflow changes.
+          git add docs scripts schemas
           if git diff --cached --quiet; then
             echo "No product changes to commit"
             exit 1
