@@ -11,23 +11,24 @@ permissions:
 
 jobs:
   validate:
-    name: Validate publication, visibility and JavaScript
+    name: Validate publication, market lens and JavaScript
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-
       - name: Set up Python
         uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-
       - name: Run deterministic publication gate
         run: python scripts/validate_publish.py --root .
-
       - name: Run frontend visibility gate
         run: python scripts/validate_frontend.py --root .
-
+      - name: Run 30D market lens gate
+        run: python scripts/validate_market_lens.py
       - name: Check JavaScript syntax
-        run: node --check docs/assets/app.js
+        run: |
+          node --check docs/assets/app.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
