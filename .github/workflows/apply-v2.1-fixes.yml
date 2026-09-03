@@ -1,0 +1,63 @@
+name: Apply v2.1 Trend and Schedule Fixes
+
+on:
+  push:
+    branches: [release/trend-schedule-v2.1]
+    paths:
+      - ".github/workflows/apply-v2.1-fixes.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Reassemble release payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -d .release/v2.1
+          cat .release/v2.1/chunk-* > /tmp/v2.1.b64
+          base64 --decode /tmp/v2.1.b64 > /tmp/v2.1.tar.gz
+          tar -tzf /tmp/v2.1.tar.gz >/tmp/v2.1-files.txt
+          tar -xzf /tmp/v2.1.tar.gz -C .
+          cat /tmp/v2.1-files.txt
+      - name: Validate product and schedules
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/build_market_lens.py
+          python3 scripts/validate_publish.py --root .
+          python3 scripts/validate_frontend.py --root .
+          python3 scripts/validate_market_lens.py
+          if test -f scripts/validate_v21.py; then python3 scripts/validate_v21.py; fi
+          node --check docs/assets/app.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
+          grep -q 'china_trade_policy' docs/data/trends/rolling-30d.json
+          grep -q '09:00' docs/product/30d-market-lens.md || true
+          grep -q '18:00' docs/product/30d-market-lens.md || true
+      - name: Commit product files only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs scripts schemas
+          git add .github/workflows/daily-research.yml .github/workflows/pages.yml .github/workflows/quality.yml .github/workflows/trends-refresh.yml .github/workflows/site-health.yml 2>/dev/null || true
+          git reset .release .github/workflows/apply-v2.1-fixes.yml 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo 'No product changes found after payload extraction' >&2
+            exit 1
+          fi
+          git commit -m "fix(site): publish v2.1 trend, policy and schedule corrections"
+          git push origin HEAD:release/trend-schedule-v2.1
