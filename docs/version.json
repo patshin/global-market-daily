@@ -12,7 +12,10 @@
     "native_vs_reconstructed_provenance",
     "verified_trade_policy_event_overlay",
     "twice_daily_publication_schedule",
-    "user_facing_trend_copy_cleanup"
+    "user_facing_trend_copy_cleanup",
+    "policy_event_monitor",
+    "concise_user_facing_trend_copy",
+    "twice_daily_publication_contract"
   ],
-  "updated_at": "2026-09-03T13:30:00+08:00"
+  "updated_at": "2026-09-03T14:10:00+08:00"
 }

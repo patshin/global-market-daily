@@ -59,3 +59,31 @@ function sparkPath(points,w,h,pad=6){const vals=points.map(p=>p.value),min=Math.
 function renderSparks(data){const root=q("#spark-grid");Object.values(data.series||{}).forEach(s=>{if(!s.points?.length)return;const card=e("article","spark-card"),head=e("div","spark-card__head");head.append(e("h3","",s.label),e("strong","",`${s.points.at(-1).value.toLocaleString(undefined,{maximumFractionDigits:2})}${s.unit==='%'?'%':''}`));card.append(head);const S=svg('svg',{viewBox:'0 0 500 90','aria-label':`${s.label} 30-day trend`});S.append(svg('line',{x1:6,y1:82,x2:494,y2:82,stroke:'#d4cec3','stroke-width':1}));S.append(svg('path',{d:sparkPath(s.points,500,90),fill:'none',stroke:'#171614','stroke-width':2,'vector-effect':'non-scaling-stroke'}));card.append(S);const meta=e("div","spark-card__meta");meta.append(e("span","",s.points[0].date),e("span","",s.source),e("span","",s.points.at(-1).date));card.append(meta);root.append(card)})}
 async function init(){try{const r=await fetch(DATA_URL,{cache:'no-store'});if(!r.ok)throw new Error(`${r.status}`);const data=await r.json();renderHero(data);renderRibbon(data);renderSignals(data);renderCatalystMap(data);renderThemes(data);renderSparks(data)}catch(err){console.error(err);q('#lens-app').append(e('div','status-panel status-panel--error',`30D Lens data unavailable: ${err.message}`))}}
 document.addEventListener('DOMContentLoaded',init);
+
+
+/* v2.1 policy-lane state */
+(() => {
+  const DATA_PATH = "data/trends/rolling-30d.json";
+  const renderPolicyState = async () => {
+    try {
+      const response = await fetch(`${DATA_PATH}?v=2.1.0`, { cache: "no-store" });
+      if (!response.ok) return;
+      const data = await response.json();
+      const monitor = data.policy_monitor;
+      if (!monitor) return;
+      const section = document.querySelector("#catalysts")?.closest("section") || document.querySelector("#catalysts");
+      if (!section || section.querySelector(".policy-lane-state")) return;
+      const box = document.createElement("div");
+      box.className = "policy-lane-state";
+      const count = Number(monitor.events_in_window || 0);
+      box.innerHTML = count > 0
+        ? `<strong>China / Trade / Industrial Policy</strong><span>${count} 个已确认政策节点 · P 为政策节点</span>`
+        : `<strong>China / Trade / Industrial Policy</strong><span>${monitor.empty_state || "本窗口无入选 Top 3 的政策催化剂"}</span>`;
+      section.appendChild(box);
+    } catch (_) {
+      // Core trend page remains available if this non-critical annotation fails.
+    }
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", renderPolicyState);
+  else renderPolicyState();
+})();

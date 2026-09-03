@@ -32,3 +32,5 @@
 .mobile-catalyst strong,.mobile-catalyst span{display:block}
 .mobile-catalyst span{margin-top:4px;color:var(--muted);font-size:.75rem;line-height:1.45}
 .mobile-catalyst:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.policy-lane-state{display:flex;justify-content:space-between;gap:18px;margin:18px 0 0;padding:12px 14px;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);font-size:.82rem}.policy-lane-state strong{font-family:var(--serif);font-size:.92rem}.policy-lane-state span{color:var(--muted);text-align:right}@media(max-width:560px){.policy-lane-state{display:block}.policy-lane-state span{display:block;margin-top:4px;text-align:left}}
