@@ -1,0 +1,75 @@
+name: Apply v2.1 Trend, Copy and Schedule Fixes
+
+on:
+  push:
+    branches: [release/trend-schedule-v2.1]
+    paths:
+      - ".github/workflows/apply-v21-fixes.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout release branch
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Reassemble and verify release payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .release/v2.1/part-* > /tmp/gmd-v21.b64
+          test "$(wc -c < /tmp/gmd-v21.b64 | tr -d ' ')" = "63080"
+          base64 --decode /tmp/gmd-v21.b64 > /tmp/gmd-v21-product.tar.gz
+          echo "e81bdd660be49f26f2a9f43dd3a89ecfebaac926663b832e412cb2edd4b959a7  /tmp/gmd-v21-product.tar.gz" | sha256sum --check --strict
+          tar -xzf /tmp/gmd-v21-product.tar.gz -C .
+
+      - name: Rebuild market memory
+        run: python scripts/build_market_lens.py
+
+      - name: Run product and data gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate_publish.py --root .
+          python scripts/validate_frontend.py --root .
+          python scripts/validate_market_lens.py
+          python -m py_compile scripts/generate_daily_update.py scripts/build_market_lens.py
+          node --check docs/assets/app.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
+          git diff --check
+          grep -q '"verified_event_days": 5' docs/data/trends/rolling-30d.json
+          grep -q '"china_trade_policy"' docs/data/trends/rolling-30d.json
+          test "$(grep -c '"category": "china_trade_policy"' docs/data/trends/rolling-30d.json)" -ge 5
+          ! grep -Eq '离散状态，不使用黑箱综合分数|粗酒红下划线代表|六条信号与同一交易日对齐|横轴是日期，纵轴是稳定主题类别|衡量的是进入 Top 3 的持续性|每个资产独立小图|不等同于因果证明' docs/trends.html
+
+      - name: Commit verified product files only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md prompts/global-market-daily-master.md \
+            scripts/build_market_lens.py scripts/generate_daily_update.py scripts/validate_market_lens.py \
+            docs/index.html docs/trends.html docs/version.json \
+            docs/assets/market-lens.css docs/assets/p0.js docs/assets/trends.js \
+            docs/data/trends/rolling-30d.json docs/data/trends/theme-registry.json docs/data/trends/verified-events.json \
+            docs/product/30d-market-lens.md
+          if git diff --cached --quiet; then
+            echo "No product changes detected."
+            exit 1
+          fi
+          git commit -m "fix(site): complete trend coverage and publication contract"
+          git push origin HEAD:release/trend-schedule-v2.1
