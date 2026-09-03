@@ -82,15 +82,21 @@ def call_research_model(prompt: str) -> dict[str, Any]:
     return json.loads(extract_output_text(raw))
 
 
-def previous_official_daily() -> dict[str, Any]:
+def previous_official_daily(current_date: str) -> dict[str, Any]:
     archive = read_json(DOCS / "data/archive.json", {"entries": []})
     entries = archive.get("entries", []) if isinstance(archive, dict) else []
     for entry in entries:
         if not isinstance(entry, dict):
             continue
+        entry_date = str(entry.get("date", ""))
+        status = str(entry.get("archive_status", "official"))
+        if not entry_date or entry_date >= current_date or status != "official":
+            continue
         path = entry.get("daily_json_path")
         if path and (DOCS / path).exists():
-            return read_json(DOCS / path, {})
+            daily = read_json(DOCS / path, {})
+            if daily.get("official_daily_archive", True):
+                return daily
     return {}
 
 
@@ -182,7 +188,7 @@ def write_publication(bundle: dict[str, Any], date: str, edition: str) -> None:
 
 def build_prompt(date: str, edition: str) -> str:
     specification = (ROOT / "prompts/global-market-daily.md").read_text(encoding="utf-8")
-    previous = previous_official_daily()
+    previous = previous_official_daily(date)
     cutoff = "09:00" if edition == "morning" else "18:00"
     return f"""{specification}
 
