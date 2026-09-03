@@ -1,0 +1,68 @@
+name: Apply Real Market Lens v2
+
+on:
+  push:
+    branches: [release/market-lens-v2-real]
+    paths:
+      - ".github/workflows/apply-real-market-lens-v2.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout release branch
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Reassemble and verify product payload
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat .release/market-lens-v2/part-* > /tmp/gmd-v2.b64
+          test "$(wc -c < /tmp/gmd-v2.b64 | tr -d ' ')" = "30172"
+          base64 --decode /tmp/gmd-v2.b64 > /tmp/gmd-v2-static.tar.gz
+          echo "4c9f75c4b0aed2ca8dadb507f960724811d30526c525ade5db72f4db387ae9f5  /tmp/gmd-v2-static.tar.gz" | sha256sum --check --strict
+          tar -xzf /tmp/gmd-v2-static.tar.gz -C .
+
+      - name: Build historical market lens
+        run: python3 scripts/build_market_lens.py
+
+      - name: Run all release gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/validate_publish.py --root .
+          python3 scripts/validate_frontend.py --root .
+          python3 scripts/validate_market_lens.py
+          node --check docs/assets/app.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
+          test -f docs/trends.html
+          grep -q '"site_version": "2.0.0"' docs/version.json
+          grep -q '30D Market Lens' docs/index.html
+          grep -q 'data/trends/rolling-30d.json' docs/assets/trends.js
+
+      - name: Commit verified v2 product files
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs scripts schemas .github/workflows/quality.yml .github/workflows/pages.yml .github/workflows/trends-refresh.yml
+          if git diff --cached --quiet; then
+            echo "No product changes to commit"
+            exit 1
+          fi
+          git commit -m "feat(site): publish real 30D Market Lens and P0 intelligence"
+          git push origin HEAD:release/market-lens-v2-real
