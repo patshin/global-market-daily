@@ -1,0 +1,53 @@
+name: Add Native History Regression to CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/add-native-history-test-to-ci.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  add-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Run the regression before installing it
+        run: python3 scripts/test_market_lens_native_accumulation.py
+
+      - name: Add regression to quality and deploy gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          for name in ('quality.yml', 'pages.yml'):
+              path = Path('.github/workflows') / name
+              text = path.read_text()
+              command = 'python scripts/test_market_lens_native_accumulation.py'
+              if command not in text:
+                  anchor = 'python scripts/validate_market_lens.py --root .'
+                  if anchor not in text:
+                      raise RuntimeError(f'{anchor} not found in {path}')
+                  text = text.replace(anchor, anchor + '\n          ' + command, 1)
+                  path.write_text(text)
+          PY
+          rm -f .github/workflows/add-native-history-test-to-ci.yml
+
+      - name: Commit permanent regression coverage
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "test(lens): enforce multi-edition native history accumulation"
+          git pull --rebase origin main
+          git push origin HEAD:main
