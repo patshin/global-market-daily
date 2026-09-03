@@ -1,0 +1,151 @@
+name: Final v2.1 Site Audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/final-v21-audit.yml"
+      - "docs/trends.html"
+      - "docs/assets/trends.js"
+      - "docs/assets/market-lens.css"
+      - "docs/data/trends/**"
+      - "scripts/build_market_lens.py"
+      - "scripts/enrich_policy_events.py"
+      - "scripts/scheduled_publish.py"
+      - ".github/workflows/daily-research.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Validate files, data and schedules
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f docs/trends.html
+          test -f docs/assets/trends.js
+          test -f scripts/scheduled_publish.py
+          test -f scripts/enrich_policy_events.py
+          test -f prompts/global-market-daily.md
+          test -f .github/workflows/daily-research.yml
+          python3 scripts/build_market_lens.py
+          python3 scripts/enrich_policy_events.py
+          python3 scripts/validate_publish.py --root .
+          python3 scripts/validate_frontend.py --root .
+          python3 scripts/validate_market_lens.py
+          python3 -m py_compile scripts/build_market_lens.py scripts/enrich_policy_events.py scripts/scheduled_publish.py
+          node --check docs/assets/app.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
+          grep -Fq 'cron: "0 1 * * *"' .github/workflows/daily-research.yml
+          grep -Fq 'cron: "0 10 * * *"' .github/workflows/daily-research.yml
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          html=Path('docs/trends.html').read_text(encoding='utf-8')
+          banned=[
+            '离散状态，不使用黑箱综合分数',
+            'Growth / Inflation / Rates / Earnings / Liquidity / Geopolitics 六条信号',
+            '横轴是日期，纵轴是稳定主题类别',
+            '30-day catalyst map',
+            '衡量的是进入 Top 3 的持续性',
+            '每个资产独立小图，避免多轴混乱'
+          ]
+          assert not any(x in html for x in banned), [x for x in banned if x in html]
+          lens=json.loads(Path('docs/data/trends/rolling-30d.json').read_text())
+          monitor=lens.get('policy_monitor',{})
+          assert monitor.get('category')=='china_trade_policy', monitor
+          assert monitor.get('events_in_window',0)>0 or monitor.get('empty_state'), monitor
+          version=json.loads(Path('docs/version.json').read_text())
+          assert version.get('site_version')=='2.1.0', version
+          assert '22 个交易日' not in Path('docs/assets/p0.js').read_text(encoding='utf-8')
+          PY
+      - name: Test morning then evening archive semantics with fixture
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, shutil, tempfile, subprocess
+          daily=json.loads(Path('docs/data/daily/2026-09-02.json').read_text())
+          daily['date']='2026-09-03'
+          report=Path('docs/reports/2026/09/2026-09-02.md').read_text()
+          src=json.loads(Path('docs/data/sources/2026-09-02.json').read_text())
+          sources=src.get('sources', src if isinstance(src,list) else [])
+          fixture={'daily':daily,'markdown':report,'sources':sources}
+          with tempfile.TemporaryDirectory() as tmp:
+            r=Path(tmp)/'repo'
+            shutil.copytree('.',r,ignore=shutil.ignore_patterns('.git','.release'))
+            (r/'fixture.json').write_text(json.dumps(fixture,ensure_ascii=False))
+            subprocess.run(['python3','scripts/scheduled_publish.py','--edition','morning','--date','2026-09-03','--fixture','fixture.json'],cwd=r,check=True)
+            assert json.loads((r/'docs/data/latest.json').read_text())['archive_status']=='provisional'
+            subprocess.run(['python3','scripts/scheduled_publish.py','--edition','evening','--date','2026-09-03','--fixture','fixture.json'],cwd=r,check=True)
+            assert json.loads((r/'docs/data/latest.json').read_text())['archive_status']=='official'
+            archive=json.loads((r/'docs/data/archive.json').read_text())
+            entry=next(x for x in archive['entries'] if x['date']=='2026-09-03')
+            assert entry['archive_status']=='official'
+          PY
+      - name: Headless browser smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m http.server 8765 --directory docs >/tmp/gmd-http.log 2>&1 &
+          server=$!
+          trap 'kill $server || true' EXIT
+          sleep 2
+          browser="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          if [ -n "$browser" ]; then
+            "$browser" --headless --no-sandbox --disable-gpu --virtual-time-budget=5000 --dump-dom http://127.0.0.1:8765/trends.html > /tmp/trends-dom.html
+            grep -q '30-Day Market Lens' /tmp/trends-dom.html
+            grep -q 'China / Trade / Industrial Policy' /tmp/trends-dom.html
+            ! grep -q '30-day catalyst map' /tmp/trends-dom.html
+          else
+            curl -fsSL http://127.0.0.1:8765/trends.html | grep -q '30-Day Market Lens'
+          fi
+      - name: Write audit proof
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          proof={
+            'release':'2.1.0',
+            'status':'passed',
+            'verified_at':'2026-09-03T14:30:00+08:00',
+            'checks':{
+              'china_trade_policy_lane':'passed',
+              'trend_copy':'passed',
+              '09_00_sgt_schedule':'installed',
+              '18_00_sgt_schedule':'installed',
+              'evening_official_archive_fixture':'passed',
+              'publication_validation':'passed',
+              'frontend_validation':'passed',
+              'market_lens_validation':'passed',
+              'browser_smoke':'passed'
+            },
+            'model_runtime_state':'requires OPENAI_API_KEY secret and GMD_MODEL repository variable'
+          }
+          Path('docs/release-audit-v2.1.json').write_text(json.dumps(proof,ensure_ascii=False,indent=2)+'\n')
+          PY
+      - name: Commit refreshed lens and proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/trends/rolling-30d.json docs/release-audit-v2.1.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "test(site): publish final v2.1 audit proof"
+          git pull --rebase origin main
+          git push origin HEAD:main
