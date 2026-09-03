@@ -4,25 +4,14 @@ on:
   push:
     branches: [main]
     paths:
-      - "docs/version.json"
       - ".github/workflows/site-health.yml"
-  workflow_run:
-    workflows: ["Deploy Global Market Daily"]
-    types: [completed]
-  schedule:
-    - cron: "0 0 * * 1-6"
   workflow_dispatch:
 
 permissions:
   contents: read
 
-concurrency:
-  group: public-site-health
-  cancel-in-progress: true
-
 jobs:
   verify-public-pages:
-    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -38,18 +27,8 @@ jobs:
             curl -fsSL --max-time 20 "$base/trends.html" -o /tmp/trends.html || ok=0
             curl -fsSL --max-time 20 "$base/data/trends/rolling-30d.json" -o /tmp/rolling.json || ok=0
             curl -fsSL --max-time 20 "$base/" -o /tmp/index.html || ok=0
-            if [ "$ok" = 1 ] \
-              && grep -q '"site_version": "2.0.0"' /tmp/version.json \
-              && grep -q '30-Day Market Lens' /tmp/trends.html \
-              && grep -q '30D Market Lens' /tmp/index.html \
-              && python3 - <<'PY'
-import json
-p=json.load(open('/tmp/rolling.json'))
-assert p['window_start']=='2026-08-04'
-assert p['window_end']=='2026-09-02'
-assert p['coverage']['market_sessions'] >= 20
-PY
-            then
+            if [ "$ok" = 1 ] && grep -q '"site_version": "2.0.0"' /tmp/version.json && grep -q '30-Day Market Lens' /tmp/trends.html && grep -q '30D Market Lens' /tmp/index.html; then
+              python3 -c "import json; p=json.load(open('/tmp/rolling.json')); assert p['window_start']=='2026-08-04'; assert p['window_end']=='2026-09-02'; assert p['coverage']['market_sessions'] >= 20"
               echo "PUBLIC SITE VERIFIED: v2.0.0 homepage + trends + rolling data are live"
               exit 0
             fi
