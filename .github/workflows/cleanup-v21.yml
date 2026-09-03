@@ -1,0 +1,55 @@
+name: Clean v2.1 Migration Artifacts
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/cleanup-v21.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Remove one-time migration assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git rm -rf --ignore-unmatch bootstrap .release
+          git rm -f --ignore-unmatch \
+            .github/workflows/add-native-history-test-to-ci.yml \
+            .github/workflows/apply-30d-market-lens.yml \
+            .github/workflows/apply-30d-market-lens-r2.yml \
+            .github/workflows/apply-30d-market-lens-r3.yml \
+            .github/workflows/apply-30d-market-lens-r4.yml \
+            .github/workflows/apply-30d-market-lens-r5.yml \
+            .github/workflows/event-collections-v13.yml \
+            .github/workflows/export-source.yml \
+            .github/workflows/final-market-lens-invariant-seal.yml \
+            .github/workflows/finalize-refresh-schedule.yml \
+            .github/workflows/fix-native-history-accumulation.yml \
+            .github/workflows/refine-market-lens-semantics.yml \
+            .github/workflows/seal-market-lens-v2.yml \
+            .github/workflows/verify-30d-market-lens-v2.yml \
+            .github/workflows/final-v21-audit.yml \
+            .github/workflows/hotfix-v21-main.yml \
+            .github/workflows/patch-publication-runtime-v21.yml \
+            .github/workflows/patch-scheduled-refresh-v21.yml \
+            .github/workflows/cleanup-v21.yml
+      - name: Commit cleanup
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore(ci): remove completed migrations and staging assets"
+          git pull --rebase origin main
+          git push origin HEAD:main
