@@ -1,0 +1,52 @@
+name: Probe Market Data Sources
+
+on:
+  push:
+    branches: [feature/30d-market-lens]
+    paths: [.github/workflows/probe-market-data.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - name: Probe public endpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p probe
+          python3 - <<'PY'
+          from urllib.request import Request, urlopen
+          urls = {
+            'fred_nasdaq.csv': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=NASDAQCOM&cosd=2026-08-01&coed=2026-09-02',
+            'fred_sp500.csv': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=SP500&cosd=2026-08-01&coed=2026-09-02',
+            'fred_vix.csv': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=VIXCLS&cosd=2026-08-01&coed=2026-09-02',
+            'fred_dgs2.csv': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2&cosd=2026-08-01&coed=2026-09-02',
+            'fred_dgs10.csv': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2026-08-01&coed=2026-09-02',
+            'fred_brent.csv': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2026-08-01&coed=2026-09-02',
+            'fred_usd.csv': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXBGS&cosd=2026-08-01&coed=2026-09-02',
+            'fred_gold.csv': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=GOLDAMGBD228NLBM&cosd=2026-08-01&coed=2026-09-02',
+            'stooq_ndx.csv': 'https://stooq.com/q/d/l/?s=%5Endx&i=d&d1=20260801&d2=20260902',
+            'stooq_dxy.csv': 'https://stooq.com/q/d/l/?s=dx.f&i=d&d1=20260801&d2=20260902',
+          }
+          for name, url in urls.items():
+              try:
+                  req = Request(url, headers={'User-Agent':'GlobalMarketDaily/1.0 contact=github.com/patshin/global-market-daily'})
+                  with urlopen(req, timeout=30) as r:
+                      data = r.read()
+                  open('probe/'+name,'wb').write(data)
+                  print(name, len(data), data[:120])
+              except Exception as e:
+                  open('probe/'+name+'.error','w').write(repr(e))
+                  print(name, 'ERROR', repr(e))
+          PY
+          find probe -maxdepth 1 -type f -print -exec sh -c 'echo --- $1; head -5 "$1"' _ {} \;
+      - uses: actions/upload-artifact@v7
+        with:
+          name: market-data-probe
+          path: probe/
