@@ -44,6 +44,18 @@
     "market_structure": {
       "label": "Market Structure",
       "category": "market_structure"
+    },
+    "us_china_trade_controls": {
+      "label": "U.S.–China Trade Controls",
+      "category": "china_trade_policy"
+    },
+    "china_industrial_policy": {
+      "label": "China Industrial Policy",
+      "category": "china_trade_policy"
+    },
+    "china_semiconductor_policy": {
+      "label": "China Semiconductor Policy",
+      "category": "china_trade_policy"
     }
   },
   "categories": {

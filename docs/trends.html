@@ -7,8 +7,8 @@
   <meta name="description" content="Global Market Daily — 30-Day Market Regime & Catalyst Map.">
   <title>30D Market Lens — Global Market Daily</title>
   <link rel="stylesheet" href="assets/styles.css?v=1.2.1">
-  <link rel="stylesheet" href="assets/market-lens.css?v=2.0.0">
-  <script defer src="assets/trends.js?v=2.0.0"></script>
+  <link rel="stylesheet" href="assets/market-lens.css?v=2.1.0">
+  <script defer src="assets/trends.js?v=2.1.0"></script>
 </head>
 <body>
   <div class="top-rule" aria-hidden="true"></div>
@@ -27,7 +27,7 @@
       <div>
         <div class="section-kicker">Market Memory · Rolling 30-Day Context</div>
         <h1>30-Day Market Lens</h1>
-        <p>把每天的 Market Regime、Top Catalyst、Persistent Risk 与跨资产价格验证放到同一条时间轴上。原生日判断与历史价格重建严格分开，避免用今天的结果倒推过去的新闻叙事。</p>
+        <p>查看过去 30 天的市场状态切换、核心催化剂、持续风险与跨资产验证。</p>
       </div>
       <div class="lens-hero__meta" id="lens-hero-meta"></div>
     </section>
@@ -39,7 +39,7 @@
     <section class="lens-section" id="regime">
       <div class="lens-section__head">
         <h2>Overall Regime Ribbon</h2>
-        <p>离散状态，不使用黑箱综合分数。粗酒红下划线代表当天存在原生 GMD 日报。</p>
+        <div class="lens-inline-legend"><span>Risk-On</span><span>Neutral</span><span>Risk-Off</span><span>Event Risk</span><span class="legend-native">原生日报</span></div>
       </div>
       <div class="lens-full-ribbon" id="lens-full-ribbon"></div>
       <div class="lens-detail" id="regime-detail"></div>
@@ -48,7 +48,7 @@
     <section class="lens-section">
       <div class="lens-section__head">
         <h2>Six-Signal Matrix</h2>
-        <p>Growth / Inflation / Rates / Earnings / Liquidity / Geopolitics 六条信号与同一交易日对齐。</p>
+        <div class="lens-inline-legend"><span>↑ 上升</span><span>→ 稳定</span><span>↓ 下降</span><span>重建期为市场代理信号</span></div>
       </div>
       <div class="signal-matrix" id="signal-matrix"></div>
     </section>
@@ -56,9 +56,9 @@
     <section class="lens-section" id="catalysts">
       <div class="lens-section__head">
         <h2>Top Catalyst Map</h2>
-        <p>横轴是日期，纵轴是稳定主题类别；圆点中的数字是当天 Rank，大小代表 Importance。</p>
+        <div class="lens-inline-legend"><span>数字：排名</span><span>大小：重要性</span><span class="legend-verified">描边：官方事件</span></div>
       </div>
-      <div class="catalyst-map-wrap"><svg class="catalyst-map" id="catalyst-map" role="img" aria-label="30-day catalyst map"></svg></div>
+      <div class="catalyst-map-wrap"><svg class="catalyst-map" id="catalyst-map" role="img" aria-label="过去30日市场催化剂分布图"></svg></div>
       <div class="mobile-catalyst-weeks" id="mobile-catalyst-weeks"></div>
       <div class="lens-detail" id="catalyst-detail"></div>
     </section>
@@ -66,7 +66,7 @@
     <section class="lens-section" id="risks">
       <div class="lens-section__head">
         <h2>Persistent Risk Themes</h2>
-        <p>衡量的是进入 Top 3 的持续性与生命周期，而不是人为制造的 0–100 风险分。</p>
+
       </div>
       <div class="table-scroll"><table class="theme-table" id="theme-table"></table></div>
     </section>
@@ -74,17 +74,14 @@
     <section class="lens-section" id="validation">
       <div class="lens-section__head">
         <h2>Cross-Asset Validation</h2>
-        <p>每个资产独立小图，避免多轴混乱。价格共振仅作为 Narrative confirmation/divergence evidence，不等同于因果证明。</p>
+
       </div>
       <div class="spark-grid" id="spark-grid"></div>
     </section>
 
-    <section class="lens-section">
-      <div class="lens-section__head"><h2>Methodology & Provenance</h2></div>
-      <div class="methodology-box">
-        <article><h3>Native Daily</h3><p>来自当天真实发布的 Global Market Daily，包括 Market Regime、Top 3 Catalysts、Top Risks 与 Signal Panel。它代表当时的研究判断。</p></article>
-        <article><h3>Objective Market Reconstruction</h3><p>缺少原生日报时，根据当时真实市场价格、收益率、信用利差和波动率变化构建“价格驱动代理”。它不声称还原当日新闻叙事，也不会伪造历史日报。</p></article>
-      </div>
+    <section class="lens-section lens-data-note">
+      <h2>Data Coverage</h2>
+      <p>数据来源：已发布 GMD 日报、官方事件与可核验市场序列。</p>
     </section>
   </main>
   <footer class="site-footer"><div>GLOBAL MARKET DAILY</div><div>30-Day Market Lens · Not investment advice</div><div id="lens-footer"></div></footer>

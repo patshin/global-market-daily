@@ -35,26 +35,46 @@ A numbered report section is a category, not a single-event slot. In particular,
 ```text
 docs/
   index.html
+  trends.html
   .nojekyll
   assets/
     styles.css
     app.js
+    p0.js
+    trends.js
+    market-lens.css
   data/
     latest.json
     archive.json
     daily/YYYY-MM-DD.json
     sources/YYYY-MM-DD.json
+    runs/YYYY/MM/YYYY-MM-DD-{0900|1800}*.json
+    trends/
+      market-history.json
+      rolling-30d.json
+      verified-events.json
+      theme-registry.json
   reports/YYYY/MM/YYYY-MM-DD.md
+
+prompts/
+  global-market-daily-master.md
 
 schemas/
   daily.schema.json
 
 scripts/
+  generate_daily_update.py
+  build_market_lens.py
   validate_publish.py
+  validate_frontend.py
+  validate_market_lens.py
 
 .github/workflows/
+  daily-market-update.yml
+  trends-refresh.yml
   quality.yml
   pages.yml
+  site-health.yml
 ```
 
 ## Deterministic release gate
@@ -89,22 +109,26 @@ For the first deployment, GitHub may require one repository setting:
 1. Open **Settings → Pages**.
 2. Under **Build and deployment**, choose **GitHub Actions** as the source.
 
-No repository secret is required for static deployment.
+No repository secret is required for static deployment. Automated research publication additionally requires `OPENAI_API_KEY`.
 
-## Daily research automation boundary
+## Twice-daily research automation
 
-GitHub Actions is the deterministic CI, QA and deployment engine. It does **not** invent or research the market report on its own.
+The production workflow is scheduled every day at:
 
-A daily research runner must have:
+- **09:00 Asia/Singapore** — full morning edition; visible on the website but provisional for historical trend purposes.
+- **18:00 Asia/Singapore** — full evening final edition; overwrites the same date key and becomes the canonical daily archive and native 30D Market Lens observation.
 
-- current web-search access;
-- official-source verification;
-- timezone and DST handling;
-- authority to write the ordered publication bundle;
-- an idempotent date key;
-- failure handling that leaves the previous `latest.json` untouched.
+Both runs independently research and verify every required module. The runner uses the OpenAI Responses API with web search, model `gpt-5.6-sol`, and reasoning effort `xhigh`.
 
-The initial operating mode is direct source-backed publication through the connected ChatGPT/GitHub workflow. A scheduled API runner can be added later only after its model, search provider, secrets, spend limits and failure controls are explicitly configured.
+One repository secret is required:
+
+```text
+OPENAI_API_KEY
+```
+
+Configure it under **Settings → Secrets and variables → Actions → New repository secret**. Optional project or organization scoping can be supplied with `OPENAI_PROJECT_ID` and `OPENAI_ORG_ID`.
+
+The workflow fails closed when credentials, research, JSON validation, source resolution, trend rebuilding, or publication gates fail. The 18:00 run is the only new native observation admitted to historical trend analysis; the 09:00 snapshot remains preserved under `docs/data/runs/` for audit.
 
 ## Local preview
 

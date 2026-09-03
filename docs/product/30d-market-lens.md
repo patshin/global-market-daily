@@ -58,3 +58,15 @@ The P0 homepage module fetches `rolling-30d.json` independently. If it fails, th
 ## Daily Operation
 
 A daily edition publish remains the source event. After new daily JSON is added, the trend-refresh workflow pulls current official/public market series, rebuilds `market-history.json` and `rolling-30d.json`, validates them, commits the derived trend files, and the normal Pages workflow publishes them.
+
+
+## v2.1 verified event layer
+
+Price-only reconstruction cannot identify policy catalysts that do not immediately dominate a market series. The lens therefore adds a primary-source verified-event overlay for trade, sanctions and industrial-policy events. Each overlay event stores actual event date, first market date, source URL, source tier, confidence, transmission, confirmation and invalidation. The UI marks these events separately from native daily assessments and price reconstruction.
+
+## Twice-daily publication cycle
+
+- 09:00 Asia/Singapore: full morning update; visible on the website but not admitted as a canonical native trend day.
+- 18:00 Asia/Singapore: full closing update; overwrites the same calendar date and becomes the canonical daily archive and native 30D input.
+- Both runs use `gpt-5.6-sol` with `xhigh` reasoning through the OpenAI Responses API and web search.
+- GitHub Actions requires the repository secret `OPENAI_API_KEY`; the connector cannot create this secret.

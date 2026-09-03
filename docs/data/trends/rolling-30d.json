@@ -7,10 +7,12 @@
     "market_sessions": 22,
     "native_daily_days": 1,
     "reconstructed_days": 21,
-    "historical_series_start": "2026-01-02"
+    "verified_event_days": 5,
+    "historical_series_start": "2025-07-10"
   },
   "methodology": {
     "native_daily": "Original published GMD daily assessment.",
+    "verified_event": "Primary-source policy or trade event aligned to its first market session.",
     "objective_market_reconstruction": "Rule-based reconstruction from contemporaneous market-price/rate changes; not a retroactive claim about the day’s news narrative.",
     "no_black_box_score": true
   },
@@ -68,6 +70,18 @@
     "market_structure": {
       "label": "Market Structure",
       "category": "market_structure"
+    },
+    "us_china_trade_controls": {
+      "label": "U.S.–China Trade Controls",
+      "category": "china_trade_policy"
+    },
+    "china_industrial_policy": {
+      "label": "China Industrial Policy",
+      "category": "china_trade_policy"
+    },
+    "china_semiconductor_policy": {
+      "label": "China Semiconductor Policy",
+      "category": "china_trade_policy"
     }
   },
   "days": [
@@ -188,7 +202,7 @@
       "source_mode": "objective_market_reconstruction",
       "regime_code": "neutral",
       "regime_label": "Neutral",
-      "dominant_theme_id": "fed_policy_path",
+      "dominant_theme_id": "us_china_trade_controls",
       "signals": {
         "growth": "→",
         "inflation": "↑",
@@ -198,6 +212,29 @@
         "geopolitics": "→"
       },
       "catalysts": [
+        {
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "U.S. imposes a minimum-import-price program and 15% tariff on polysilicon derivatives",
+          "evidence": "The White House announced a Section 232 program covering polysilicon imports and a 15% ad valorem tariff on downstream derivative products.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Trade protection → solar and semiconductor input costs → U.S. supply-chain capex and China-linked exporters",
+          "confirmation": "Implementation details raise landed costs or trigger supplier relocation and retaliation.",
+          "invalidation": "Broad exemptions or delayed implementation materially reduce the effective trade barrier.",
+          "source_mode": "verified_event",
+          "event_id": "policy-2026-08-06-us-polysilicon",
+          "status": "Confirmed / Announced",
+          "actual_event_date": "2026-08-06",
+          "source_name": "The White House",
+          "source_title": "Fact Sheet: President Donald J. Trump Bolsters National Security and Strengthens U.S. Supply Chains by Imposing Tariffs on Polysilicon and its Derivatives",
+          "source_url": "https://www.whitehouse.gov/fact-sheets/2026/08/fact-sheet-president-donald-j-trump-bolsters-national-security-and-strengthens-u-s-supply-chains-by-imposing-tariffs-on-polysilicon-and-its-derivatives/",
+          "source_tier": "Tier 1",
+          "confidence": "High",
+          "rank": 1
+        },
         {
           "theme_id": "fed_policy_path",
           "theme_label": "Fed Policy Path",
@@ -209,7 +246,7 @@
           "importance": "★★★★",
           "transmission": "2Y ↑ → policy path reprices tighter",
           "source_mode": "objective_market_reconstruction",
-          "rank": 1
+          "rank": 2
         },
         {
           "theme_id": "global_duration",
@@ -221,19 +258,6 @@
           "importance_level": 4,
           "importance": "★★★★",
           "transmission": "10Y ↑ → discount rate ↑ → long-duration equity valuation ↓",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "credit_conditions",
-          "theme_label": "Credit Conditions",
-          "category": "liquidity_credit",
-          "title": "HY OAS moves -4.0bp",
-          "evidence": "BAMLH0A0HYM2 -4.0bp",
-          "market_bias": "risk_on",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Credit spreads tighter → funding conditions ease",
           "source_mode": "objective_market_reconstruction",
           "rank": 3
         }
@@ -468,7 +492,7 @@
       "source_mode": "objective_market_reconstruction",
       "regime_code": "neutral",
       "regime_label": "Neutral",
-      "dominant_theme_id": "global_duration",
+      "dominant_theme_id": "us_china_trade_controls",
       "signals": {
         "growth": "↑",
         "inflation": "→",
@@ -478,6 +502,29 @@
         "geopolitics": "→"
       },
       "catalysts": [
+        {
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "U.S. invokes Section 232 to adjust imports of unmanned aircraft systems and components",
+          "evidence": "A presidential proclamation found UAS and component imports threatened U.S. national security and directed measures to adjust imports.",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Import restrictions → drone supply-chain repricing → domestic production incentives and foreign supplier risk",
+          "confirmation": "Commerce implementation materially restricts foreign-origin UAS or components.",
+          "invalidation": "Exemptions and implementation scope leave existing supply chains largely unchanged.",
+          "source_mode": "verified_event",
+          "event_id": "policy-2026-08-13-us-uas-imports",
+          "status": "Confirmed / Announced",
+          "actual_event_date": "2026-08-13",
+          "source_name": "The White House",
+          "source_title": "Adjusting Imports of Unmanned Aircraft Systems and Unmanned Aircraft Systems Components into the United States",
+          "source_url": "https://www.whitehouse.gov/presidential-actions/2026/08/adjusting-imports-of-unmanned-aircraft-systems-and-unmanned-aircraft-systems-components-into-the-united-states/",
+          "source_tier": "Tier 1",
+          "confidence": "High",
+          "rank": 1
+        },
         {
           "theme_id": "global_duration",
           "theme_label": "Global Duration / Term Premium",
@@ -489,7 +536,7 @@
           "importance": "★★★★",
           "transmission": "10Y ↓ → discount rate eases",
           "source_mode": "objective_market_reconstruction",
-          "rank": 1
+          "rank": 2
         },
         {
           "theme_id": "fed_policy_path",
@@ -501,19 +548,6 @@
           "importance_level": 4,
           "importance": "★★★★",
           "transmission": "2Y ↓ → policy path reprices easier",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "equity_risk_appetite",
-          "theme_label": "Equity Risk Appetite",
-          "category": "growth_macro",
-          "title": "Nasdaq daily move +0.81%",
-          "evidence": "NASDAQCOM +0.81% vs prior close",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Equity move → risk appetite / duration repricing",
           "source_mode": "objective_market_reconstruction",
           "rank": 3
         }
@@ -748,7 +782,7 @@
       "source_mode": "objective_market_reconstruction",
       "regime_code": "risk_off",
       "regime_label": "Risk-Off",
-      "dominant_theme_id": "volatility_event_risk",
+      "dominant_theme_id": "china_industrial_policy",
       "signals": {
         "growth": "↓",
         "inflation": "→",
@@ -758,6 +792,29 @@
         "geopolitics": "↑"
       },
       "catalysts": [
+        {
+          "theme_id": "china_industrial_policy",
+          "theme_label": "China Industrial Policy",
+          "category": "china_trade_policy",
+          "title": "China's state-asset regulator advances a central-SOE 6G industry program",
+          "evidence": "SASAC convened 31 central enterprises, released 6G scenario co-creation tasks and called for breakthroughs in core devices, platforms and commercialization.",
+          "market_bias": "risk_on",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "State industrial coordination → 6G R&D and capex → telecom equipment, semiconductors and infrastructure demand",
+          "confirmation": "Named SOEs publish funded projects, procurement plans or commercialization milestones.",
+          "invalidation": "The program remains aspirational without budgets, tenders or implementation milestones.",
+          "source_mode": "verified_event",
+          "event_id": "policy-2026-08-20-cn-6g",
+          "status": "Confirmed / Program advanced",
+          "actual_event_date": "2026-08-20",
+          "source_name": "State-owned Assets Supervision and Administration Commission",
+          "source_title": "国务院国资委召开中央企业6G未来产业推进会",
+          "source_url": "https://wap.sasac.gov.cn/n2588025/n2643314/c35809045/content.html",
+          "source_tier": "Tier 1",
+          "confidence": "High",
+          "rank": 1
+        },
         {
           "theme_id": "volatility_event_risk",
           "theme_label": "Volatility / Event Risk",
@@ -769,7 +826,7 @@
           "importance": "★★★★",
           "transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
           "source_mode": "objective_market_reconstruction",
-          "rank": 1
+          "rank": 2
         },
         {
           "theme_id": "global_duration",
@@ -782,19 +839,6 @@
           "importance": "★★★",
           "transmission": "10Y ↑ → discount rate ↑ → long-duration equity valuation ↓",
           "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "equity_risk_appetite",
-          "theme_label": "Equity Risk Appetite",
-          "category": "growth_macro",
-          "title": "Nasdaq daily move -1.00%",
-          "evidence": "NASDAQCOM -1.00% vs prior close",
-          "market_bias": "risk_off",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Equity move → risk appetite / duration repricing",
-          "source_mode": "objective_market_reconstruction",
           "rank": 3
         }
       ]
@@ -802,8 +846,8 @@
     {
       "date": "2026-08-21",
       "source_mode": "objective_market_reconstruction",
-      "regime_code": "neutral",
-      "regime_label": "Neutral",
+      "regime_code": "risk_on",
+      "regime_label": "Risk-On",
       "dominant_theme_id": "fed_policy_path",
       "signals": {
         "growth": "→",
@@ -858,9 +902,9 @@
     {
       "date": "2026-08-24",
       "source_mode": "objective_market_reconstruction",
-      "regime_code": "neutral",
-      "regime_label": "Neutral",
-      "dominant_theme_id": "growth_duration_rotation",
+      "regime_code": "risk_off",
+      "regime_label": "Risk-Off",
+      "dominant_theme_id": "china_semiconductor_policy",
       "signals": {
         "growth": "↓",
         "inflation": "↓",
@@ -870,6 +914,29 @@
         "geopolitics": "→"
       },
       "catalysts": [
+        {
+          "theme_id": "china_semiconductor_policy",
+          "theme_label": "China Semiconductor Policy",
+          "category": "china_trade_policy",
+          "title": "Beijing E-Town issues the 2026–2028 AI4Chip industrial action plan",
+          "evidence": "The official plan sets 20 tasks for applying AI across chip design, manufacturing, packaging, equipment, materials and the supporting ecosystem.",
+          "market_bias": "risk_on",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Local policy support → EDA, equipment, advanced packaging and memory R&D → China semiconductor capex",
+          "confirmation": "Funding, model/computing vouchers and named demonstration projects are awarded to companies.",
+          "invalidation": "Targets are not followed by funded projects or measurable adoption milestones.",
+          "source_mode": "verified_event",
+          "event_id": "policy-2026-08-23-cn-ai4chip",
+          "status": "Confirmed / Issued",
+          "actual_event_date": "2026-08-23",
+          "source_name": "Beijing Economic-Technological Development Area",
+          "source_title": "“AI4Chip”人工智能赋能集成电路产业跨越式发展行动计划（2026-2028）",
+          "source_url": "https://www.ncsti.gov.cn/kjdt/tzgg/202608/t20260826_254432.html",
+          "source_tier": "Tier 1",
+          "confidence": "High",
+          "rank": 1
+        },
         {
           "theme_id": "growth_duration_rotation",
           "theme_label": "Growth / Duration Rotation",
@@ -881,7 +948,7 @@
           "importance": "★★★★",
           "transmission": "Long-duration growth underperforms",
           "source_mode": "objective_market_reconstruction",
-          "rank": 1
+          "rank": 2
         },
         {
           "theme_id": "usd_financial_conditions",
@@ -893,19 +960,6 @@
           "importance_level": 4,
           "importance": "★★★★",
           "transmission": "USD ↑ → global financial conditions tighten",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "energy_inflation",
-          "theme_label": "Energy Inflation",
-          "category": "geopolitics_energy",
-          "title": "Brent daily move -4.34%",
-          "evidence": "DCOILBRENTEU -4.34%",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Oil ↓ → inflation impulse eases",
           "source_mode": "objective_market_reconstruction",
           "rank": 3
         }
@@ -972,7 +1026,7 @@
       "source_mode": "objective_market_reconstruction",
       "regime_code": "neutral",
       "regime_label": "Neutral",
-      "dominant_theme_id": "usd_financial_conditions",
+      "dominant_theme_id": "china_industrial_policy",
       "signals": {
         "growth": "→",
         "inflation": "→",
@@ -982,6 +1036,29 @@
         "geopolitics": "→"
       },
       "catalysts": [
+        {
+          "theme_id": "china_industrial_policy",
+          "theme_label": "China Industrial Policy",
+          "category": "china_trade_policy",
+          "title": "China outlines a five-year industrial-upgrading roadmap centered on AI, advanced manufacturing and NEVs",
+          "evidence": "At a State Council Information Office briefing, officials said China had formulated nearly 200 key AI standards and planned 500 zero-carbon factories while optimizing NEV policy.",
+          "market_bias": "risk_on",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "National industrial roadmap → manufacturing standards and investment → AI, robotics, EV and clean-industry supply chains",
+          "confirmation": "Ministries publish funded implementation plans, standards and sector-specific targets.",
+          "invalidation": "Implementation lacks budgets, timetables or measurable sector deployment.",
+          "source_mode": "verified_event",
+          "event_id": "policy-2026-08-26-cn-industrial-roadmap",
+          "status": "Confirmed / Roadmap announced",
+          "actual_event_date": "2026-08-26",
+          "source_name": "State Council Information Office / Xinhua",
+          "source_title": "China unveils roadmap for AI, NEV industrial upgrading",
+          "source_url": "https://english.scio.gov.cn/pressroom/2026-08/26/content_118665742.html",
+          "source_tier": "Tier 1",
+          "confidence": "High",
+          "rank": 1
+        },
         {
           "theme_id": "usd_financial_conditions",
           "theme_label": "USD Financial Conditions",
@@ -993,7 +1070,7 @@
           "importance": "★★★",
           "transmission": "USD ↑ → global financial conditions tighten",
           "source_mode": "objective_market_reconstruction",
-          "rank": 1
+          "rank": 2
         },
         {
           "theme_id": "credit_conditions",
@@ -1005,19 +1082,6 @@
           "importance_level": 3,
           "importance": "★★★",
           "transmission": "Credit spreads tighter → funding conditions ease",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "fed_policy_path",
-          "theme_label": "Fed Policy Path",
-          "category": "central_banks_fiscal",
-          "title": "US 2Y moves +2.0bp",
-          "evidence": "DGS2 +2.0bp",
-          "market_bias": "risk_off",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "2Y ↑ → policy path reprices tighter",
           "source_mode": "objective_market_reconstruction",
           "rank": 3
         }
@@ -1082,8 +1146,8 @@
     {
       "date": "2026-08-28",
       "source_mode": "objective_market_reconstruction",
-      "regime_code": "risk_off",
-      "regime_label": "Risk-Off",
+      "regime_code": "event_risk",
+      "regime_label": "Event Risk",
       "dominant_theme_id": "fed_policy_path",
       "signals": {
         "growth": "↓",
@@ -1351,17 +1415,23 @@
       "date": "2026-08-20",
       "from": "Risk-On",
       "to": "Risk-Off",
-      "dominant_theme_id": "volatility_event_risk"
+      "dominant_theme_id": "china_industrial_policy"
     },
     {
       "date": "2026-08-21",
       "from": "Risk-Off",
-      "to": "Neutral",
+      "to": "Risk-On",
       "dominant_theme_id": "fed_policy_path"
     },
     {
+      "date": "2026-08-24",
+      "from": "Risk-On",
+      "to": "Risk-Off",
+      "dominant_theme_id": "china_semiconductor_policy"
+    },
+    {
       "date": "2026-08-25",
-      "from": "Neutral",
+      "from": "Risk-Off",
       "to": "Risk-On",
       "dominant_theme_id": "fed_policy_path"
     },
@@ -1369,7 +1439,7 @@
       "date": "2026-08-26",
       "from": "Risk-On",
       "to": "Neutral",
-      "dominant_theme_id": "usd_financial_conditions"
+      "dominant_theme_id": "china_industrial_policy"
     },
     {
       "date": "2026-08-27",
@@ -1380,8 +1450,14 @@
     {
       "date": "2026-08-28",
       "from": "Risk-On",
-      "to": "Risk-Off",
+      "to": "Event Risk",
       "dominant_theme_id": "fed_policy_path"
+    },
+    {
+      "date": "2026-08-31",
+      "from": "Event Risk",
+      "to": "Risk-Off",
+      "dominant_theme_id": "credit_conditions"
     },
     {
       "date": "2026-09-01",
@@ -1426,28 +1502,13 @@
       "theme_id": "fed_policy_path",
       "theme_label": "Fed Policy Path",
       "category": "central_banks_fiscal",
-      "days_in_top3": 9,
+      "days_in_top3": 8,
       "best_rank": 1,
       "first_seen": "2026-08-06",
       "last_seen": "2026-08-28",
       "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "2Y ↑ → policy path reprices tighter",
-      "source_modes": [
-        "objective_market_reconstruction"
-      ]
-    },
-    {
-      "theme_id": "credit_conditions",
-      "theme_label": "Credit Conditions",
-      "category": "liquidity_credit",
-      "days_in_top3": 8,
-      "best_rank": 1,
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-31",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "Credit spreads wider → funding conditions tighten",
       "source_modes": [
         "objective_market_reconstruction"
       ]
@@ -1468,16 +1529,16 @@
       ]
     },
     {
-      "theme_id": "equity_risk_appetite",
-      "theme_label": "Equity Risk Appetite",
-      "category": "growth_macro",
+      "theme_id": "credit_conditions",
+      "theme_label": "Credit Conditions",
+      "category": "liquidity_credit",
       "days_in_top3": 7,
-      "best_rank": 2,
-      "first_seen": "2026-08-04",
-      "last_seen": "2026-09-01",
+      "best_rank": 1,
+      "first_seen": "2026-08-14",
+      "last_seen": "2026-08-31",
       "latest_rank": null,
       "state": "Persistent",
-      "latest_transmission": "Equity move → risk appetite / duration repricing",
+      "latest_transmission": "Credit spreads wider → funding conditions tighten",
       "source_modes": [
         "objective_market_reconstruction"
       ]
@@ -1498,10 +1559,25 @@
       ]
     },
     {
+      "theme_id": "equity_risk_appetite",
+      "theme_label": "Equity Risk Appetite",
+      "category": "growth_macro",
+      "days_in_top3": 5,
+      "best_rank": 2,
+      "first_seen": "2026-08-04",
+      "last_seen": "2026-09-01",
+      "latest_rank": null,
+      "state": "Persistent",
+      "latest_transmission": "Equity move → risk appetite / duration repricing",
+      "source_modes": [
+        "objective_market_reconstruction"
+      ]
+    },
+    {
       "theme_id": "energy_inflation",
       "theme_label": "Energy Inflation",
       "category": "geopolitics_energy",
-      "days_in_top3": 4,
+      "days_in_top3": 3,
       "best_rank": 2,
       "first_seen": "2026-08-10",
       "last_seen": "2026-09-01",
@@ -1510,6 +1586,51 @@
       "latest_transmission": "Oil ↑ → inflation expectations ↑ → rates pressure ↑",
       "source_modes": [
         "objective_market_reconstruction"
+      ]
+    },
+    {
+      "theme_id": "us_china_trade_controls",
+      "theme_label": "U.S.–China Trade Controls",
+      "category": "china_trade_policy",
+      "days_in_top3": 2,
+      "best_rank": 1,
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-08-13",
+      "latest_rank": null,
+      "state": "Resolved",
+      "latest_transmission": "Import restrictions → drone supply-chain repricing → domestic production incentives and foreign supplier risk",
+      "source_modes": [
+        "verified_event"
+      ]
+    },
+    {
+      "theme_id": "china_industrial_policy",
+      "theme_label": "China Industrial Policy",
+      "category": "china_trade_policy",
+      "days_in_top3": 2,
+      "best_rank": 1,
+      "first_seen": "2026-08-20",
+      "last_seen": "2026-08-26",
+      "latest_rank": null,
+      "state": "Resolved",
+      "latest_transmission": "National industrial roadmap → manufacturing standards and investment → AI, robotics, EV and clean-industry supply chains",
+      "source_modes": [
+        "verified_event"
+      ]
+    },
+    {
+      "theme_id": "china_semiconductor_policy",
+      "theme_label": "China Semiconductor Policy",
+      "category": "china_trade_policy",
+      "days_in_top3": 1,
+      "best_rank": 1,
+      "first_seen": "2026-08-24",
+      "last_seen": "2026-08-24",
+      "latest_rank": null,
+      "state": "Resolved",
+      "latest_transmission": "Local policy support → EDA, equipment, advanced packaging and memory R&D → China semiconductor capex",
+      "source_modes": [
+        "verified_event"
       ]
     },
     {
@@ -1523,21 +1644,6 @@
       "latest_rank": 1,
       "state": "New",
       "latest_transmission": "Hormuz/航运受扰 → 原油与运费↑ → 通胀预期↑ → 2Y/10Y收益率↑ → Nasdaq估值↓",
-      "source_modes": [
-        "native_daily"
-      ]
-    },
-    {
-      "theme_id": "ai_earnings",
-      "theme_label": "AI / Earnings",
-      "category": "earnings_ai_semis",
-      "days_in_top3": 1,
-      "best_rank": 3,
-      "first_seen": "2026-09-02",
-      "last_seen": "2026-09-02",
-      "latest_rank": 3,
-      "state": "New",
-      "latest_transmission": "AI订单/指引↑ → 半导体与网络盈利预期↑；但10Y↑ → 估值倍数↓ → 股价方向取决于盈利上修幅度",
       "source_modes": [
         "native_daily"
       ]
@@ -1575,7 +1681,7 @@
         "label": "US 10Y Treasury Yield"
       }
     ],
-    "interpretation_note": "Price co-movement is treated as confirmation/divergence evidence, not proof of causality.",
+    "interpretation_note": "3 项资产确认当前主线，0 项出现背离。",
     "what_would_flip_it": "双方停止新增军事行动、航运恢复且Brent快速回落至冲突前区间。"
   },
   "series": {

@@ -45,7 +45,7 @@ function renderPreview(data) {
   const axis = lensEl("div", "regime-ribbon__axis");
   axis.append(lensEl("span", "", data.window_start), lensEl("span", "", data.window_end));
   primary.appendChild(axis);
-  primary.appendChild(lensEl("p", "lens-method-note", `22-session context uses ${data.coverage.native_daily_days} published daily assessment(s) plus ${data.coverage.reconstructed_days} objective market reconstructions. Reconstructed days are price-based driver proxies, not retroactive news claims.`));
+  primary.appendChild(lensEl("p", "lens-method-note", `${data.coverage.market_sessions} 个市场日 · ${data.coverage.native_daily_days} 个原生日报 · ${data.coverage.verified_event_days || 0} 个官方事件日`));
 
   const side = lensEl("div", "lens-preview-side");
   side.appendChild(lensEl("div", "section-kicker", "Persistent Risk Themes"));

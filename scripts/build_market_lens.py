@@ -3,7 +3,7 @@ from __future__ import annotations
 import csv, json, math, statistics
 from urllib.request import Request, urlopen
 from collections import defaultdict, Counter
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -11,30 +11,39 @@ HISTORY_DIR = ROOT / 'history'
 DAILY_DIR = ROOT / 'docs/data/daily'
 OUT_DIR = ROOT / 'docs/data/trends'
 OUT_DIR.mkdir(parents=True, exist_ok=True)
+VERIFIED_EVENTS_PATH = OUT_DIR / 'verified-events.json'
 
-FRED_URLS = {
-    'NASDAQCOM':'https://fred.stlouisfed.org/graph/fredgraph.csv?id=NASDAQCOM&cosd=2026-01-01&coed=2026-12-31',
-    'SP500':'https://fred.stlouisfed.org/graph/fredgraph.csv?id=SP500&cosd=2026-01-01&coed=2026-12-31',
-    'VIXCLS':'https://fred.stlouisfed.org/graph/fredgraph.csv?id=VIXCLS&cosd=2026-01-01&coed=2026-12-31',
-    'DGS2':'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2&cosd=2026-01-01&coed=2026-12-31',
-    'DGS10':'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2026-01-01&coed=2026-12-31',
-    'DCOILBRENTEU':'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2026-01-01&coed=2026-12-31',
-    'DTWEXBGS':'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXBGS&cosd=2026-01-01&coed=2026-12-31',
-    'BAMLH0A0HYM2':'https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLH0A0HYM2&cosd=2026-01-01&coed=2026-12-31',
-}
+FRED_SERIES_IDS = tuple(SERIES_ID for SERIES_ID in (
+    'NASDAQCOM','SP500','VIXCLS','DGS2','DGS10','DCOILBRENTEU','DTWEXBGS','BAMLH0A0HYM2'
+))
+
+
+def fred_url(series_id: str) -> str:
+    # Keep enough context for rolling z-scores and continue working after 2026.
+    today = datetime.now(timezone.utc).date()
+    start = today - timedelta(days=420)
+    return (
+        'https://fred.stlouisfed.org/graph/fredgraph.csv'
+        f'?id={series_id}&cosd={start.isoformat()}&coed={today.isoformat()}'
+    )
 
 def ensure_history():
+    """Refresh every series, falling back to the last valid local copy on outage."""
     HISTORY_DIR.mkdir(parents=True, exist_ok=True)
-    for sid,url in FRED_URLS.items():
+    for sid in FRED_SERIES_IDS:
         path=HISTORY_DIR/f'{sid}.csv'
-        if path.exists() and path.stat().st_size>100:
-            continue
-        req=Request(url,headers={'User-Agent':'GlobalMarketDaily/2.0 github.com/patshin/global-market-daily'})
-        with urlopen(req,timeout=30) as response:
-            payload=response.read()
-        if len(payload)<100:
-            raise RuntimeError(f'{sid}: FRED response too small')
-        path.write_bytes(payload)
+        try:
+            req=Request(fred_url(sid),headers={'User-Agent':'GlobalMarketDaily/2.1 github.com/patshin/global-market-daily'})
+            with urlopen(req,timeout=45) as response:
+                payload=response.read()
+            if len(payload)<100 or b'observation_date' not in payload[:200]:
+                raise RuntimeError(f'{sid}: invalid FRED response')
+            tmp=path.with_suffix('.csv.tmp')
+            tmp.write_bytes(payload)
+            tmp.replace(path)
+        except Exception:
+            if not path.exists() or path.stat().st_size<=100:
+                raise
 
 SERIES = {
     'NASDAQCOM': {'label':'Nasdaq Composite','unit':'Index','source':'Nasdaq, Inc. via FRED','kind':'price'},
@@ -59,6 +68,9 @@ THEMES = {
     'geopolitics_energy': ('Geopolitics / Energy','geopolitics_energy'),
     'ai_earnings': ('AI / Earnings','earnings_ai_semis'),
     'market_structure': ('Market Structure','market_structure'),
+    'us_china_trade_controls': ('U.S.–China Trade Controls','china_trade_policy'),
+    'china_industrial_policy': ('China Industrial Policy','china_trade_policy'),
+    'china_semiconductor_policy': ('China Semiconductor Policy','china_trade_policy'),
 }
 
 CATEGORY_LABELS = {
@@ -100,6 +112,13 @@ def sign_symbol(x, threshold=.45):
 
 def theme_from_text(text: str):
     t=text.lower()
+    china=any(k in t for k in ['china','chinese','中国','北京','国资委','工信部'])
+    policy=any(k in t for k in ['policy','roadmap','standards','subsid','industrial','产业','政策','标准','规划','行动计划','6g','nev'])
+    trade=any(k in t for k in ['tariff','trade','export control','import restriction','sanction','关税','贸易','出口管制','进口限制','制裁'])
+    semis=any(k in t for k in ['semiconductor','chip','eda','集成电路','芯片','半导体'])
+    if china and semis and policy: return 'china_semiconductor_policy'
+    if china and policy: return 'china_industrial_policy'
+    if trade or (china and any(k in t for k in ['u.s.','us ','美国'])): return 'us_china_trade_controls'
     if any(k in t for k in ['hormuz','iran','伊朗','美伊','war','航运']): return 'geopolitics_energy'
     if any(k in t for k in ['dell','broadcom','avgo','nvda','ai','semiconductor','半导体','财报']): return 'ai_earnings'
     if any(k in t for k in ['10y','yield','treasury','jgb','主权债','收益率','term premium']): return 'global_duration'
@@ -118,11 +137,27 @@ def market_bias_from_direction(x):
     if 'bullish' in s and 'bearish' not in s: return 'risk_on'
     return 'mixed'
 
+
+
+def load_verified_events():
+    if not VERIFIED_EVENTS_PATH.exists():
+        return {}
+    doc=json.loads(VERIFIED_EVENTS_PATH.read_text(encoding='utf-8'))
+    by_date=defaultdict(list)
+    for item in doc.get('events',[]):
+        market_date=item.get('market_date')
+        if market_date:
+            by_date[market_date].append(item)
+    return by_date
+
 def load_native_reports():
     native={}
     for p in sorted(DAILY_DIR.glob('*.json')):
         try: r=json.loads(p.read_text(encoding='utf-8'))
         except Exception: continue
+        cycle=r.get('publication_cycle') or {}
+        if cycle.get('is_final') is False:
+            continue
         d=r.get('date')
         if d: native[d]=r
     return native
@@ -133,6 +168,7 @@ def build():
     maps={sid:{p['date']:p['value'] for p in pts} for sid,pts in raw.items()}
     master_dates=sorted(set(maps['NASDAQCOM']) | set(maps['SP500']))
     native=load_native_reports()
+    verified_events=load_verified_events()
     as_of=max(max(master_dates), max(native) if native else max(master_dates))
     as_of_date=date.fromisoformat(as_of)
     window_start=(as_of_date-timedelta(days=29)).isoformat()
@@ -229,6 +265,22 @@ def build():
             rel=nc-spc
             add('growth_duration_rotation',rel/0.35,f'Nasdaq relative to S&P 500 {rel:+.2f}pp',f'NASDAQCOM {nc:+.2f}% vs SP500 {spc:+.2f}%','risk_on' if rel>0 else 'risk_off','Growth leadership strengthens' if rel>0 else 'Long-duration growth underperforms')
 
+        # Verified policy/trade events complement the price-only reconstruction.
+        # They remain explicitly labelled and never overwrite a native GMD daily view.
+        for event in verified_events.get(d, []):
+            tid=event['theme_id']
+            candidates.append({
+                'theme_id':tid,'theme_label':THEMES[tid][0],'category':event.get('category',THEMES[tid][1]),
+                'score':float(event.get('ranking_score',1.5)),'title':event['title'],'evidence':event['evidence'],
+                'market_bias':event.get('market_bias','mixed'),'importance_level':int(event.get('importance_level',4)),
+                'importance':event.get('importance','★★★★'),'transmission':event.get('transmission',''),
+                'confirmation':event.get('confirmation',''),'invalidation':event.get('invalidation',''),
+                'source_mode':'verified_event','event_id':event.get('id'),'status':event.get('status','Confirmed'),
+                'actual_event_date':event.get('actual_event_date',d),'source_name':event.get('source_name',''),
+                'source_title':event.get('source_title',''),'source_url':event.get('source_url'),
+                'source_tier':event.get('source_tier','Tier 1'),'confidence':event.get('confidence','High')
+            })
+
         candidates.sort(key=lambda x:x['score'], reverse=True)
         top=[]
         seen=set()
@@ -236,14 +288,32 @@ def build():
             if c['theme_id'] in seen: continue
             seen.add(c['theme_id']); c=dict(c); c['rank']=len(top)+1; c.pop('score',None); top.append(c)
             if len(top)==3: break
-        # cross-asset risk score
+        # Transparent regime rules: count observable stress/relief conditions.
+        # No weighted composite score is created or displayed.
         def z(sid): return v(sid,d,'z') or 0.0
         def ch(sid): return v(sid,d,'change') or 0.0
-        risk_score=(-z('NASDAQCOM')*.35 + z('VIXCLS')*.25 + z('DGS10')*.15 + z('DCOILBRENTEU')*.10 + z('DTWEXBGS')*.05 + z('BAMLH0A0HYM2')*.10)
-        extreme=max(abs(z(s)) for s in ['NASDAQCOM','VIXCLS','DGS10','DCOILBRENTEU','BAMLH0A0HYM2'])
-        if risk_score>=.75 and extreme>=1.8: code='event_risk'; label='Event Risk'
-        elif risk_score>=.45: code='risk_off'; label='Risk-Off'
-        elif risk_score<=-.45: code='risk_on'; label='Risk-On'
+        stress_conditions = [
+            z('NASDAQCOM') <= -0.75,
+            z('VIXCLS') >= 0.75,
+            z('BAMLH0A0HYM2') >= 0.75,
+            z('DTWEXBGS') >= 0.85,
+            z('DGS10') >= 0.85 and ch('NASDAQCOM') < 0,
+            z('DCOILBRENTEU') >= 0.85 and (z('DGS10') > 0 or ch('NASDAQCOM') < 0),
+        ]
+        relief_conditions = [
+            z('NASDAQCOM') >= 0.75,
+            z('VIXCLS') <= -0.75,
+            z('BAMLH0A0HYM2') <= -0.75,
+            z('DTWEXBGS') <= -0.85,
+            z('DGS10') <= -0.85 and ch('NASDAQCOM') > 0,
+            z('DCOILBRENTEU') <= -0.85 and ch('NASDAQCOM') > 0,
+        ]
+        stress=sum(stress_conditions); relief=sum(relief_conditions)
+        extreme=max(abs(z(s)) for s in ['NASDAQCOM','VIXCLS','DGS10','DCOILBRENTEU','DTWEXBGS','BAMLH0A0HYM2'])
+        verified_risk_event=any(c.get('source_mode')=='verified_event' and c.get('market_bias')=='risk_off' and c.get('importance_level',3)>=5 for c in top)
+        if (stress>=3 and extreme>=1.5) or (verified_risk_event and stress>=2): code='event_risk'; label='Event Risk'
+        elif stress>=2 and stress>relief: code='risk_off'; label='Risk-Off'
+        elif relief>=2 and relief>stress: code='risk_on'; label='Risk-On'
         else: code='neutral'; label='Neutral'
         signals={
             'growth':sign_symbol((z('NASDAQCOM')+z('SP500'))/2),
@@ -283,7 +353,7 @@ def build():
         latest=occ[-1][1]
         persistent.append({'theme_id':tid,'theme_label':THEMES.get(tid,(tid,''))[0],'category':THEMES.get(tid,('', 'market_structure'))[1],
                            'days_in_top3':len(occ),'best_rank':min(ranks),'first_seen':first,'last_seen':last,'latest_rank':latest_rank,
-                           'state':state,'latest_transmission':latest.get('transmission',''),'source_modes':sorted(set(day['source_mode'] for day,_ in occ))})
+                           'state':state,'latest_transmission':latest.get('transmission',''),'source_modes':sorted(set(c.get('source_mode',day['source_mode']) for day,c in occ))})
     persistent.sort(key=lambda x:(-x['days_in_top3'],x['best_rank']))
 
     # current confirmation based on latest native day if available else last day
@@ -319,14 +389,14 @@ def build():
         item={'series_id':sid,'label':SERIES[sid]['label'],'change':display_delta or (f'{delta:+.1f}bp' if SERIES[sid]['kind']=='yield' else f'{delta:+.2f}%')}
         (confirms if actual==sgn else diverges).append(item)
     confirmation={'theme_id':tid,'theme_label':THEMES.get(tid,(tid,''))[0],'as_of':current['date'],'confirming':confirms,'diverging':diverges,'unavailable':unavailable,
-                  'interpretation_note':'Price co-movement is treated as confirmation/divergence evidence, not proof of causality.',
+                  'interpretation_note':f"{len(confirms)} 项资产确认当前主线，{len(diverges)} 项出现背离。",
                   'what_would_flip_it':current['catalysts'][0].get('invalidation','A material reversal in the key confirming assets.') if current['catalysts'] else ''}
 
     rolling={
         'schema_version':'1.0.0','as_of':as_of,'window_start':window_start,'window_end':as_of,
-        'coverage':{'market_sessions':len(days),'native_daily_days':sum(1 for x in days if x['source_mode']=='native_daily'),'reconstructed_days':sum(1 for x in days if x['source_mode']!='native_daily'),
+        'coverage':{'market_sessions':len(days),'native_daily_days':sum(1 for x in days if x['source_mode']=='native_daily'),'reconstructed_days':sum(1 for x in days if x['source_mode']!='native_daily'),'verified_event_days':sum(1 for x in days if any(c.get('source_mode')=='verified_event' for c in x.get('catalysts',[]))),
                     'historical_series_start':min(p['date'] for pts in raw.values() for p in pts)},
-        'methodology':{'native_daily':'Original published GMD daily assessment.','objective_market_reconstruction':'Rule-based reconstruction from contemporaneous market-price/rate changes; not a retroactive claim about the day’s news narrative.','no_black_box_score':True},
+        'methodology':{'native_daily':'Original published GMD daily assessment.','verified_event':'Primary-source policy or trade event aligned to its first market session.','objective_market_reconstruction':'Rule-based reconstruction from contemporaneous market-price/rate changes; not a retroactive claim about the day’s news narrative.','no_black_box_score':True},
         'category_labels':CATEGORY_LABELS,'themes':{k:{'label':v[0],'category':v[1]} for k,v in THEMES.items()},
         'days':days,'regime_transitions':transitions,'persistent_themes':persistent[:12],'cross_asset_confirmation':confirmation,
         'series':{sid:{**SERIES[sid], 'points':[p for p in market_history['series'][sid]['points'] if window_start<=p['date']<=as_of]} for sid in SERIES}
