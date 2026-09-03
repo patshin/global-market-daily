@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "timezone": "Asia/Singapore",
+  "runs": [
+    {
+      "edition": "morning",
+      "local_time": "09:00",
+      "cron_utc": "0 1 * * *",
+      "publication_role": "provisional"
+    },
+    {
+      "edition": "eod",
+      "local_time": "18:00",
+      "cron_utc": "0 10 * * *",
+      "publication_role": "official_daily_archive"
+    }
+  ],
+  "official_archive_rule": "Only the 18:00 SGT EOD edition is treated as the official native daily observation in historical trend analysis.",
+  "model_configuration": {
+    "provider": "OpenAI Responses API",
+    "model_source": "GitHub Actions variable GMD_OPENAI_MODEL",
+    "reasoning_effort_source": "GitHub Actions variable GMD_REASONING_EFFORT",
+    "reasoning_effort_default": "xhigh",
+    "credential_source": "GitHub Actions secret OPENAI_API_KEY"
+  },
+  "failure_policy": "Fail closed. A failed run must not update latest.json or replace the last successful public edition."
+}
