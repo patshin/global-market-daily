@@ -90,3 +90,5 @@ jobs:
           fi
           git commit -m "fix(site): complete trend coverage and publication contract"
           git push origin HEAD:release/trend-schedule-v2.1
+
+# rerun after publication workflow was staged
