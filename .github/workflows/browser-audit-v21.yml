@@ -1,0 +1,93 @@
+name: Browser Audit v2.1 Public Site
+
+on:
+  push:
+    branches: [work/fix-schedules-copy-audit]
+    paths:
+      - ".github/workflows/browser-audit-v21.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Install Playwright
+        run: |
+          python -m pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+      - name: Audit desktop and mobile production pages
+        shell: bash
+        run: |
+          cat > /tmp/audit.py <<'PY'
+          import json
+          from pathlib import Path
+          from playwright.sync_api import sync_playwright
+
+          BASE='https://patshin.github.io/global-market-daily/'
+          results=[]
+          with sync_playwright() as p:
+              browser=p.chromium.launch()
+              for name,width,height in [('desktop',1440,1000),('mobile',390,844)]:
+                  page=browser.new_page(viewport={'width':width,'height':height})
+                  errors=[]
+                  page.on('console',lambda msg: errors.append(f'console:{msg.type}:{msg.text}') if msg.type=='error' else None)
+                  page.on('pageerror',lambda exc: errors.append(f'pageerror:{exc}'))
+                  page.goto(BASE+'?audit=v21',wait_until='networkidle',timeout=120000)
+                  page.wait_for_selector('#report-sections .report-section',timeout=60000)
+                  assert page.locator('#report-sections .report-section').count()==15
+                  assert page.locator('#lens-preview-grid .lens-kpi').count()>=4
+                  assert page.locator('#cross-asset-confirmation').inner_text().strip()
+                  overflow=page.evaluate('document.documentElement.scrollWidth > document.documentElement.clientWidth + 2')
+                  assert not overflow, f'homepage horizontal overflow {name}'
+                  first=page.locator('.section-jump__button').first
+                  before=page.evaluate('performance.getEntriesByType("navigation").length')
+                  first.click()
+                  page.wait_for_timeout(800)
+                  after=page.evaluate('performance.getEntriesByType("navigation").length')
+                  assert before==after==1
+                  page.screenshot(path=f'/tmp/home-{name}.png',full_page=True)
+
+                  page.goto(BASE+'trends.html?audit=v21',wait_until='networkidle',timeout=120000)
+                  page.wait_for_selector('#catalyst-map circle.catalyst-dot, #catalyst-map .catalyst-empty-label',timeout=60000)
+                  assert page.locator('#lens-full-ribbon button').count()>=12
+                  assert page.locator('#signal-matrix > div').count()>20
+                  assert page.locator('#spark-grid .spark-card').count()>=6
+                  text=page.locator('body').inner_text()
+                  banned=[
+                    '离散状态，不使用黑箱综合分数',
+                    'Growth / Inflation / Rates / Earnings / Liquidity / Geopolitics 六条信号与同一交易日对齐',
+                    '横轴是日期，纵轴是稳定主题类别',
+                    '衡量的是进入 Top 3 的持续性与生命周期，而不是人为制造的 0–100 风险分',
+                    '价格共振仅作为 Narrative confirmation/divergence evidence，不等同于因果证明',
+                  ]
+                  assert all(x not in text for x in banned)
+                  assert 'China / Trade / Industrial Policy' in text
+                  overflow=page.evaluate('document.documentElement.scrollWidth > document.documentElement.clientWidth + 2')
+                  assert not overflow, f'trend horizontal overflow {name}'
+                  page.screenshot(path=f'/tmp/trends-{name}.png',full_page=True)
+                  assert not errors, errors
+                  results.append({'viewport':name,'homepage_sections':15,'trend_sparks':page.locator('#spark-grid .spark-card').count(),'console_errors':errors})
+                  page.close()
+              browser.close()
+          Path('/tmp/browser-audit.json').write_text(json.dumps({'status':'passed','results':results},ensure_ascii=False,indent=2))
+          print(json.dumps(results,ensure_ascii=False))
+          PY
+          python /tmp/audit.py
+      - uses: actions/upload-artifact@v7
+        with:
+          name: gmd-v21-browser-audit
+          path: |
+            /tmp/browser-audit.json
+            /tmp/home-desktop.png
+            /tmp/home-mobile.png
+            /tmp/trends-desktop.png
+            /tmp/trends-mobile.png
+          retention-days: 7
