@@ -1,0 +1,44 @@
+name: Harden Scheduled Publisher
+
+on:
+  push:
+    branches: [release/trend-schedule-v2.1]
+    paths: [".github/workflows/patch-scheduled-publisher.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Patch previous-official selection and date handling
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('scripts/scheduled_publish.py')
+          s=p.read_text(encoding='utf-8')
+          old='''def previous_official_daily() -> dict[str, Any]:\n    archive = read_json(DOCS / "data/archive.json", {"entries": []})\n    entries = archive.get("entries", []) if isinstance(archive, dict) else []\n    for entry in entries:\n        if not isinstance(entry, dict):\n            continue\n        path = entry.get("daily_json_path")\n        if path and (DOCS / path).exists():\n            return read_json(DOCS / path, {})\n    return {}\n'''
+          new='''def previous_official_daily(current_date: str) -> dict[str, Any]:\n    archive = read_json(DOCS / "data/archive.json", {"entries": []})\n    entries = archive.get("entries", []) if isinstance(archive, dict) else []\n    for entry in entries:\n        if not isinstance(entry, dict):\n            continue\n        entry_date = str(entry.get("date", ""))\n        status = str(entry.get("archive_status", "official"))\n        if not entry_date or entry_date >= current_date or status != "official":\n            continue\n        path = entry.get("daily_json_path")\n        if path and (DOCS / path).exists():\n            daily = read_json(DOCS / path, {})\n            if daily.get("official_daily_archive", True):\n                return daily\n    return {}\n'''
+          if old not in s:
+              raise SystemExit('Expected previous_official_daily block not found')
+          s=s.replace(old,new)
+          s=s.replace('previous = previous_official_daily()', 'previous = previous_official_daily(date)')
+          p.write_text(s,encoding='utf-8')
+          PY
+          python3 -m py_compile scripts/scheduled_publish.py
+      - name: Commit hardened publisher
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/scheduled_publish.py
+          git commit -m "fix(automation): compare scheduled editions with prior official day"
+          git push origin HEAD:release/trend-schedule-v2.1
