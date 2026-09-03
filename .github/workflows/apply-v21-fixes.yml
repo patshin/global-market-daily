@@ -33,17 +33,21 @@ jobs:
           echo "46d282322f055bfdd6a66d1048ab7560622e0c4c3726af7f93adbedb4c124f5a  .release/v2.1/part-01" | sha256sum --check --strict
           echo "af22af295c434970388044bccd4ba0c27ddf6ed3777467d17b3ca35564216762  .release/v2.1/part-02" | sha256sum --check --strict
           echo "f4390555fe10f13bd251463fe363f0778995fa3c5d93a9b46ba9d128074c3311  .release/v2.1/part-03" | sha256sum --check --strict
-          echo "b49ba7730d0ad23229be73398de7ac61f1737efa784dbb3491322ddf02937952  .release/v2.1/part-04" | sha256sum --check --strict
-          echo "7d2e5f0f35a3d158b6d0c7718a081b8f2e8d4063f2d240a98b8be2f382928c59  .release/v2.1/tail-01" | sha256sum --check --strict
-          echo "d2ad7bf385af2143e79300dd8afdcda983cc31eb36e784990beb2283ec6e7379  .release/v2.1/tail-02" | sha256sum --check --strict
+          echo "e5f8d17f3b5d2f9ccbee47034fa74b2b5f38152c062fbebc085160da001f3d5c  .release/v2.1/part-04" | sha256sum --check --strict
+          echo "af79b7a17c0a919b7915ed638f39213ba9e5773d6abafc040249958391351fcb  .release/v2.1/rem-00" | sha256sum --check --strict
+          echo "6e170e967c909eb1b73d0f0a951dcaff039f98b2f9ed0e6fdf640b5af8abc6b1  .release/v2.1/rem-01" | sha256sum --check --strict
+          echo "15acf905cccf037a030f52090342e0fa72c51a86647a2ac6540a5061804323a8  .release/v2.1/rem-02" | sha256sum --check --strict
+          echo "ce54976112107d24060f42bb30499019262537a2c3a30be7de1bf33846b293d7  .release/v2.1/rem-03" | sha256sum --check --strict
           cat \
             .release/v2.1/part-00 \
             .release/v2.1/part-01 \
             .release/v2.1/part-02 \
             .release/v2.1/part-03 \
             .release/v2.1/part-04 \
-            .release/v2.1/tail-01 \
-            .release/v2.1/tail-02 > /tmp/gmd-v21.b64
+            .release/v2.1/rem-00 \
+            .release/v2.1/rem-01 \
+            .release/v2.1/rem-02 \
+            .release/v2.1/rem-03 > /tmp/gmd-v21.b64
           test "$(wc -c < /tmp/gmd-v21.b64 | tr -d ' ')" = "63080"
           base64 --decode /tmp/gmd-v21.b64 > /tmp/gmd-v21-product.tar.gz
           echo "e81bdd660be49f26f2a9f43dd3a89ecfebaac926663b832e412cb2edd4b959a7  /tmp/gmd-v21-product.tar.gz" | sha256sum --check --strict
@@ -65,7 +69,6 @@ jobs:
           node --check docs/assets/trends.js
           git diff --check
           grep -q '"verified_event_days": 5' docs/data/trends/rolling-30d.json
-          grep -q '"china_trade_policy"' docs/data/trends/rolling-30d.json
           test "$(grep -c '"category": "china_trade_policy"' docs/data/trends/rolling-30d.json)" -ge 5
           ! grep -Eq '离散状态，不使用黑箱综合分数|粗酒红下划线代表|六条信号与同一交易日对齐|横轴是日期，纵轴是稳定主题类别|衡量的是进入 Top 3 的持续性|每个资产独立小图|不等同于因果证明' docs/trends.html
 
