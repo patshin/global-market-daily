@@ -1,0 +1,17 @@
+{
+  "release": "2.1.0",
+  "status": "passed",
+  "checks": {
+    "china_trade_policy_lane": "event_or_explicit_empty_state",
+    "user_facing_copy": "passed",
+    "morning_schedule_sgt": "09:00",
+    "evening_schedule_sgt": "18:00",
+    "evening_official_archive": true,
+    "scheduled_publisher_fixture": "passed",
+    "publication_gate": "passed",
+    "frontend_gate": "passed",
+    "market_lens_gate": "passed",
+    "javascript_syntax": "passed"
+  },
+  "automation_prerequisite": "OPENAI_API_KEY secret and GMD_MODEL repository variable"
+}

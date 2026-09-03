@@ -2417,5 +2417,12 @@
         }
       ]
     }
+  },
+  "policy_monitor": {
+    "category": "china_trade_policy",
+    "events_in_window": 0,
+    "empty_state": "本窗口无入选 Top 3 的中国、贸易或产业政策催化剂",
+    "marker": "P",
+    "marker_label": "已确认政策节点"
   }
 }
