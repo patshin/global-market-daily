@@ -1,17 +1,17 @@
 {
   "release": "2.1.0",
   "status": "passed",
+  "verified_at": "2026-09-03T14:30:00+08:00",
   "checks": {
-    "china_trade_policy_lane": "event_or_explicit_empty_state",
-    "user_facing_copy": "passed",
-    "morning_schedule_sgt": "09:00",
-    "evening_schedule_sgt": "18:00",
-    "evening_official_archive": true,
-    "scheduled_publisher_fixture": "passed",
-    "publication_gate": "passed",
-    "frontend_gate": "passed",
-    "market_lens_gate": "passed",
-    "javascript_syntax": "passed"
+    "china_trade_policy_lane": "passed",
+    "trend_copy": "passed",
+    "09_00_sgt_schedule": "installed",
+    "18_00_sgt_schedule": "installed",
+    "evening_official_archive_fixture": "passed",
+    "publication_validation": "passed",
+    "frontend_validation": "passed",
+    "market_lens_validation": "passed",
+    "browser_smoke": "passed"
   },
-  "automation_prerequisite": "OPENAI_API_KEY secret and GMD_MODEL repository variable"
+  "model_runtime_state": "requires OPENAI_API_KEY secret and GMD_MODEL repository variable"
 }
