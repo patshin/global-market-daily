@@ -1,0 +1,161 @@
+name: Apply v2.1 Trend Data Pipeline Fixes
+
+on:
+  push:
+    branches: [work/fix-schedules-copy-audit]
+    paths:
+      - ".github/workflows/apply-v21-data-pipeline.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Add China/trade market proxy and policy-event ingestion
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+
+          path = Path('scripts/build_market_lens.py')
+          text = path.read_text(encoding='utf-8')
+
+          def replace_once(old, new, label):
+              global text
+              if old not in text:
+                  raise SystemExit(f'patch anchor missing: {label}')
+              text = text.replace(old, new, 1)
+
+          replace_once(
+              "    'DTWEXBGS':'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXBGS&cosd=2026-01-01&coed=2026-12-31',\n    'BAMLH0A0HYM2'",
+              "    'DTWEXBGS':'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXBGS&cosd=2026-01-01&coed=2026-12-31',\n    'DEXCHUS':'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DEXCHUS&cosd=2026-01-01&coed=2026-12-31',\n    'BAMLH0A0HYM2'",
+              'FRED DEXCHUS source',
+          )
+          replace_once(
+              "    'DTWEXBGS': {'label':'Broad Trade-Weighted USD','unit':'Index','source':'Federal Reserve via FRED','kind':'price'},\n    'BAMLH0A0HYM2'",
+              "    'DTWEXBGS': {'label':'Broad Trade-Weighted USD','unit':'Index','source':'Federal Reserve via FRED','kind':'price'},\n    'DEXCHUS': {'label':'USD/CNY','unit':'CNY per USD','source':'Federal Reserve H.10 via FRED','kind':'price'},\n    'BAMLH0A0HYM2'",
+              'DEXCHUS series metadata',
+          )
+          replace_once(
+              "    'geopolitics_energy': ('Geopolitics / Energy','geopolitics_energy'),\n    'ai_earnings'",
+              "    'geopolitics_energy': ('Geopolitics / Energy','geopolitics_energy'),\n    'china_trade_conditions': ('China / Trade Conditions','china_trade_policy'),\n    'ai_earnings'",
+              'China theme registry',
+          )
+          replace_once(
+              "    if any(k in t for k in ['oil','brent','wti','原油','能源']): return 'energy_inflation'\n    if any(k in t for k in ['credit','spread','融资','liquidity']): return 'credit_conditions'",
+              "    if any(k in t for k in ['oil','brent','wti','原油','能源']): return 'energy_inflation'\n    if any(k in t for k in ['china','chinese','中国','tariff','关税','trade policy','贸易政策','export control','出口管制','industrial policy','产业政策','subsidy','补贴','pboC','人民银行','mofcom','商务部']): return 'china_trade_conditions'\n    if any(k in t for k in ['credit','spread','融资','liquidity']): return 'credit_conditions'",
+              'China text classifier',
+          )
+          replace_once(
+              "        d=r.get('date')\n        if d: native[d]=r",
+              "        d=r.get('date')\n        if r.get('official_archive') is False or r.get('report_edition') == 'morning':\n            continue\n        if d: native[d]=r",
+              'official EOD native filter',
+          )
+          replace_once(
+              "def build():\n    ensure_history()",
+              "def load_policy_events():\n    path = OUT_DIR / 'policy-events.json'\n    if not path.exists():\n        return {}\n    try:\n        payload = json.loads(path.read_text(encoding='utf-8'))\n    except Exception:\n        return {}\n    by_date = defaultdict(list)\n    for item in payload.get('events', []):\n        if not isinstance(item, dict) or not item.get('date') or not item.get('title'):\n            continue\n        by_date[item['date']].append(item)\n    return by_date\n\ndef build():\n    ensure_history()",
+              'policy event loader',
+          )
+          replace_once(
+              "    native=load_native_reports()\n    as_of=max(max(master_dates), max(native) if native else max(master_dates))",
+              "    native=load_native_reports()\n    policy_events=load_policy_events()\n    as_of=max(max(master_dates), max(native) if native else max(master_dates))",
+              'policy events in build',
+          )
+          replace_once(
+              "        if nc is not None and spc is not None:\n            rel=nc-spc\n            add('growth_duration_rotation',rel/0.35,f'Nasdaq relative to S&P 500 {rel:+.2f}pp',f'NASDAQCOM {nc:+.2f}% vs SP500 {spc:+.2f}%','risk_on' if rel>0 else 'risk_off','Growth leadership strengthens' if rel>0 else 'Long-duration growth underperforms')\n\n        candidates.sort",
+              "        if nc is not None and spc is not None:\n            rel=nc-spc\n            add('growth_duration_rotation',rel/0.35,f'Nasdaq relative to S&P 500 {rel:+.2f}pp',f'NASDAQCOM {nc:+.2f}% vs SP500 {spc:+.2f}%','risk_on' if rel>0 else 'risk_off','Growth leadership strengthens' if rel>0 else 'Long-duration growth underperforms')\n        xz=v('DEXCHUS',d,'z'); xc=v('DEXCHUS',d,'change')\n        if xz is not None and xc is not None:\n            add('china_trade_conditions',xz,f'USD/CNY daily move {xc:+.2f}%',f'DEXCHUS {xc:+.2f}% vs prior fixing day','risk_off' if xc>0 else 'risk_on','CNY weakness → China risk premium / trade sensitivity rises' if xc>0 else 'CNY strength → China financial conditions ease')\n        for event in policy_events.get(d, []):\n            importance_level = max(3, min(5, int(event.get('importance_level', 4))))\n            candidates.append({\n                'theme_id':'china_trade_conditions',\n                'theme_label':THEMES['china_trade_conditions'][0],\n                'category':'china_trade_policy',\n                'score':float(event.get('priority_score', importance_level)),\n                'title':event['title'],\n                'evidence':event.get('evidence',''),\n                'market_bias':event.get('market_bias','mixed'),\n                'importance_level':importance_level,\n                'importance':'★' * importance_level,\n                'transmission':event.get('transmission',''),\n                'confirmation':event.get('confirmation',''),\n                'invalidation':event.get('invalidation',''),\n                'source_mode':'verified_policy_event',\n                'source_ids':event.get('source_ids',[]),\n            })\n\n        candidates.sort",
+              'China market and policy candidates',
+          )
+          replace_once(
+              "        # cross-asset risk score\n        def z(sid):",
+              "        # Cross-asset pressure is used only to assign a discrete regime label.\n        def z(sid):",
+              'remove score wording',
+          )
+          replace_once("        risk_score=(-z('NASDAQCOM')", "        risk_pressure=(-z('NASDAQCOM')", 'rename risk score')
+          replace_once("        if risk_score>=.75", "        if risk_pressure>=.75", 'risk pressure high')
+          replace_once("        elif risk_score>=.45", "        elif risk_pressure>=.45", 'risk pressure off')
+          replace_once("        elif risk_score<=-.45", "        elif risk_pressure<=-.45", 'risk pressure on')
+          replace_once(
+              "    rolling={\n        'schema_version':'1.0.0'",
+              "    category_activity={cat:{'top3_occurrences':0,'status':'not_in_top3'} for cat in CATEGORY_LABELS}\n    for day in days:\n        for catalyst in day.get('catalysts', []):\n            cat=catalyst.get('category')\n            if cat in category_activity:\n                category_activity[cat]['top3_occurrences'] += 1\n                category_activity[cat]['status'] = 'active'\n\n    rolling={\n        'schema_version':'1.1.0'",
+              'category activity summary',
+          )
+          replace_once(
+              "        'category_labels':CATEGORY_LABELS,'themes'",
+              "        'category_labels':CATEGORY_LABELS,'category_activity':category_activity,'themes'",
+              'category activity output',
+          )
+          replace_once(
+              "aliases={'NASDAQCOM':'Nasdaq Composite','SP500':'S&P 500','VIXCLS':'VIX','DGS2':'UST 2Y','DGS10':'UST 10Y','DCOILBRENTEU':'Brent','DTWEXBGS':'DXY','BAMLH0A0HYM2':'US High Yield OAS'}",
+              "aliases={'NASDAQCOM':'Nasdaq Composite','SP500':'S&P 500','VIXCLS':'VIX','DGS2':'UST 2Y','DGS10':'UST 10Y','DCOILBRENTEU':'Brent','DTWEXBGS':'DXY','DEXCHUS':'USD/CNY','BAMLH0A0HYM2':'US High Yield OAS'}",
+              'DEXCHUS alias',
+          )
+
+          path.write_text(text, encoding='utf-8')
+
+          policy_path = Path('docs/data/trends/policy-events.json')
+          if not policy_path.exists():
+              policy_path.write_text(json.dumps({
+                  'schema_version':'1.0.0',
+                  'description':'Primary-source China, trade and industrial-policy events used by the 30D catalyst map. Empty means no verified event has been ingested; it never means the category is unsupported.',
+                  'events':[]
+              }, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          trends = Path('docs/assets/trends.js')
+          js = trends.read_text(encoding='utf-8')
+          js = js.replace(
+              'const native = mode === "native_daily";\n  return create(\n    "span",\n    `source-mode-badge${native ? " native" : ""}`,\n    native ? "原生日报" : "市场重建"\n  );',
+              'const native = mode === "native_daily";\n  const policy = mode === "verified_policy_event";\n  return create(\n    "span",\n    `source-mode-badge${native ? " native" : ""}${policy ? " policy" : ""}`,\n    native ? "原生日报" : policy ? "官方政策事件" : "市场重建"\n  );'
+          )
+          js = js.replace(
+              '.map((mode) => mode === "native_daily" ? "原生日报" : "市场重建")',
+              '.map((mode) => mode === "native_daily" ? "原生日报" : mode === "verified_policy_event" ? "官方政策事件" : "市场重建")'
+          )
+          trends.write_text(js, encoding='utf-8')
+          PY
+
+      - name: Build and validate trend output
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/build_market_lens.py
+          python3 scripts/validate_market_lens.py
+          node --check docs/assets/trends.js
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          data=json.loads(Path('docs/data/trends/rolling-30d.json').read_text())
+          assert 'DEXCHUS' in data['series']
+          assert 'china_trade_policy' in data['category_activity']
+          assert data['category_activity']['china_trade_policy']['status'] in {'active','not_in_top3'}
+          assert all(day.get('source_mode') != 'morning' for day in data['days'])
+          print(json.dumps(data['category_activity']['china_trade_policy'], ensure_ascii=False))
+          PY
+
+      - name: Commit non-workflow product changes
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/build_market_lens.py docs/assets/trends.js docs/data/trends/
+          if git diff --cached --quiet; then
+            echo "No data-pipeline changes"
+            exit 0
+          fi
+          git commit -m "fix(trends): ingest China market and policy catalysts"
+          git push origin HEAD:work/fix-schedules-copy-audit
