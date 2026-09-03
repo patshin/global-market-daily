@@ -1,0 +1,67 @@
+name: Promote Clean v2.1 Release to Main
+
+on:
+  push:
+    branches: [work/fix-schedules-copy-audit]
+    paths:
+      - ".github/workflows/promote-clean-v21-to-main.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout clean release candidate
+        uses: actions/checkout@v7
+        with:
+          ref: release/v2.1-production
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install validation dependency
+        run: python -m pip install --disable-pip-version-check --quiet "jsonschema>=4.23,<5"
+
+      - name: Verify clean production surface
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected="daily-market-intelligence.yml pages.yml quality.yml site-health.yml trends-refresh.yml"
+          actual="$(find .github/workflows -maxdepth 1 -type f -name '*.yml' -printf '%f\n' | sort | tr '\n' ' ' | sed 's/ $//')"
+          if [[ "$actual" != "$expected" ]]; then
+            echo "::error::Unexpected production workflows: $actual"
+            exit 1
+          fi
+          grep -q '"site_version": "2.1.0"' docs/version.json
+          grep -q 'DEXCHUS' scripts/build_market_lens.py
+          grep -q 'load_policy_events' scripts/build_market_lens.py
+          grep -q 'cron: "0 1 \* \* \*"' .github/workflows/daily-market-intelligence.yml
+          grep -q 'cron: "0 10 \* \* \*"' .github/workflows/daily-market-intelligence.yml
+          test -f docs/data/automation/v21-validation.json
+
+      - name: Run final release gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate_publish.py --root .
+          python scripts/validate_frontend.py --root .
+          python scripts/validate_market_lens.py
+          python scripts/validate_v21_contract.py
+          python -m py_compile scripts/build_market_lens.py scripts/generate_daily_with_openai.py scripts/validate_v21_contract.py
+          node --check docs/assets/app.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
+
+      - name: Fast-forward main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin main
+          git merge-base --is-ancestor origin/main HEAD
+          git push origin HEAD:main
