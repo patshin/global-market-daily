@@ -1,15 +1,11 @@
 name: Public Site Health Check
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - ".github/workflows/site-health.yml"
   workflow_run:
     workflows: ["Deploy Global Market Daily"]
     types: [completed]
   schedule:
-    - cron: "0 0 * * 1-6"
+    - cron: "20 0 * * *"
   workflow_dispatch:
 
 permissions:
@@ -23,26 +19,48 @@ jobs:
   verify-public-pages:
     if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
-      - name: Verify deployed public URLs
+      - name: Wait for Pages edge propagation
+        run: sleep 15
+
+      - name: Fetch public production resources
         shell: bash
         run: |
           set -euo pipefail
           base="https://patshin.github.io/global-market-daily"
-          for attempt in $(seq 1 24); do
-            echo "Public verification attempt ${attempt}/24"
-            ok=1
-            curl -fsSL --max-time 20 "$base/version.json" -o /tmp/version.json || ok=0
-            curl -fsSL --max-time 20 "$base/trends.html" -o /tmp/trends.html || ok=0
-            curl -fsSL --max-time 20 "$base/data/trends/rolling-30d.json" -o /tmp/rolling.json || ok=0
-            curl -fsSL --max-time 20 "$base/" -o /tmp/index.html || ok=0
-            if [ "$ok" = 1 ] && grep -q '"site_version": "2.0.0"' /tmp/version.json && grep -q '30-Day Market Lens' /tmp/trends.html && grep -q '30D Market Lens' /tmp/index.html; then
-              python3 -c "import json; p=json.load(open('/tmp/rolling.json')); assert p['window_start']=='2026-08-04'; assert p['window_end']=='2026-09-02'; assert p['coverage']['market_sessions'] >= 20"
-              echo "PUBLIC SITE VERIFIED: v2.0.0 homepage + trends + rolling data are live"
-              exit 0
-            fi
-            sleep 5
+          declare -A resources=(
+            [index]="/"
+            [trends]="/trends.html"
+            [version]="/version.json"
+            [rolling]="/data/trends/rolling-30d.json"
+            [schedule]="/data/automation/schedule.json"
+          )
+          for name in "${!resources[@]}"; do
+            curl --fail --silent --show-error --location \
+              --retry 8 --retry-delay 5 --retry-all-errors \
+              "$base${resources[$name]}?health_run=${GITHUB_RUN_ID}" \
+              -o "$name.out"
           done
-          echo "Public site never converged to v2.0.0"
-          exit 1
+
+      - name: Validate public responses
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'assets/p0.js?v=2.1.0' index.out
+          grep -q '点内数字为当日优先级' trends.out
+          ! grep -q '离散状态，不使用黑箱综合分数' trends.out
+          ! grep -q '价格共振仅作为 Narrative' trends.out
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          version=json.loads(Path('version.out').read_text())
+          rolling=json.loads(Path('rolling.out').read_text())
+          schedule=json.loads(Path('schedule.out').read_text())
+          assert version['site_version']=='2.1.0'
+          assert 'DEXCHUS' in rolling['series']
+          assert rolling['category_activity']['china_trade_policy']['status'] in {'active','not_in_top3'}
+          assert len(schedule['runs'])==2
+          assert {(r['local_time'],r['edition']) for r in schedule['runs']}=={('09:00','morning'),('18:00','eod')}
+          print('PUBLIC SITE HEALTH PASSED — v2.1')
+          PY
