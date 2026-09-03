@@ -1,0 +1,49 @@
+name: Export 30D History Source Data
+
+on:
+  push:
+    branches: [feature/30d-market-lens]
+    paths: [.github/workflows/export-30d-history.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - name: Download official/public market series
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p history
+          python3 - <<'PY'
+          from urllib.request import Request, urlopen
+          from pathlib import Path
+          urls = {
+            'NASDAQCOM.csv': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=NASDAQCOM&cosd=2026-01-01&coed=2026-09-02',
+            'SP500.csv': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=SP500&cosd=2026-01-01&coed=2026-09-02',
+            'VIXCLS.csv': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=VIXCLS&cosd=2026-01-01&coed=2026-09-02',
+            'DGS2.csv': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS2&cosd=2026-01-01&coed=2026-09-02',
+            'DGS10.csv': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS10&cosd=2026-01-01&coed=2026-09-02',
+            'DCOILBRENTEU.csv': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DCOILBRENTEU&cosd=2026-01-01&coed=2026-09-02',
+            'DTWEXBGS.csv': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DTWEXBGS&cosd=2026-01-01&coed=2026-09-02',
+            'BAMLH0A0HYM2.csv': 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=BAMLH0A0HYM2&cosd=2026-01-01&coed=2026-09-02',
+          }
+          for name, url in urls.items():
+              req = Request(url, headers={'User-Agent':'GlobalMarketDaily/2.0 github.com/patshin/global-market-daily'})
+              with urlopen(req, timeout=30) as response:
+                  payload = response.read()
+              if len(payload) < 100:
+                  raise RuntimeError(f'{name}: response too small')
+              Path('history', name).write_bytes(payload)
+              print(name, len(payload))
+          PY
+      - uses: actions/upload-artifact@v7
+        with:
+          name: gmd-30d-history-source
+          path: history/
+          retention-days: 7
