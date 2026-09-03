@@ -1,0 +1,16 @@
+name: Prepare Clean v2.1 Release Branch
+
+on:
+  push:
+    branches: [work/fix-schedules-copy-audit]
+    paths:
+      - ".github/workflows/trigger-clean-v21-branch.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  marker:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Clean release branch is managed through the GitHub connector."
