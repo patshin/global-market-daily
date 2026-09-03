@@ -1,0 +1,50 @@
+name: Check Daily Automation Configuration
+
+on:
+  push:
+    branches: [work/fix-schedules-copy-audit]
+    paths:
+      - ".github/workflows/check-daily-automation-config.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      GMD_MODEL: ${{ vars.GMD_OPENAI_MODEL }}
+      GMD_REASONING_EFFORT: ${{ vars.GMD_REASONING_EFFORT || 'xhigh' }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Record non-sensitive configuration status
+        shell: bash
+        run: |
+          set -euo pipefail
+          sleep 5
+          git fetch origin work/fix-schedules-copy-audit
+          git reset --hard origin/work/fix-schedules-copy-audit
+          key=false
+          model=false
+          [[ -n "${OPENAI_API_KEY:-}" ]] && key=true
+          [[ -n "${GMD_MODEL:-}" ]] && model=true
+          mkdir -p docs/data/automation
+          cat > docs/data/automation/config-status.json <<JSON
+          {
+            "api_key_configured": $key,
+            "model_configured": $model,
+            "reasoning_effort": "${GMD_REASONING_EFFORT}",
+            "ready": $([[ "$key" == true && "$model" == true ]] && echo true || echo false)
+          }
+          JSON
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/automation/config-status.json
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "chore: record daily automation configuration status"
+          git pull --rebase origin work/fix-schedules-copy-audit
+          git push origin HEAD:work/fix-schedules-copy-audit
