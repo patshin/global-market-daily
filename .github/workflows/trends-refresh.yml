@@ -5,9 +5,8 @@ on:
     branches: [main]
     paths:
       - "docs/data/daily/*.json"
-      - "docs/data/latest.json"
-  schedule:
-    - cron: "35 23 * * 0-4"
+      - "docs/data/trends/policy-events.json"
+      - "scripts/build_market_lens.py"
   workflow_dispatch:
 
 permissions:
@@ -20,7 +19,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
         with:
@@ -28,10 +27,14 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-      - name: Build official/public market-history layer
+      - name: Refresh official and public market-history layer
         run: python scripts/build_market_lens.py
-      - name: Validate 30D lens
-        run: python scripts/validate_market_lens.py
+      - name: Validate 30D lens and v2.1 contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate_market_lens.py
+          python scripts/validate_v21_contract.py
       - name: Commit derived trend data when changed
         shell: bash
         run: |
@@ -41,4 +44,5 @@ jobs:
           git add docs/data/trends/market-history.json docs/data/trends/rolling-30d.json docs/data/trends/theme-registry.json
           if git diff --cached --quiet; then exit 0; fi
           git commit -m "data: refresh rolling 30D market lens"
+          git pull --rebase origin main
           git push origin HEAD:main
