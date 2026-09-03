@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "themes": {
+    "equity_risk_appetite": {
+      "label": "Equity Risk Appetite",
+      "category": "growth_macro"
+    },
+    "volatility_event_risk": {
+      "label": "Volatility / Event Risk",
+      "category": "market_structure"
+    },
+    "global_duration": {
+      "label": "Global Duration / Term Premium",
+      "category": "inflation_rates"
+    },
+    "fed_policy_path": {
+      "label": "Fed Policy Path",
+      "category": "central_banks_fiscal"
+    },
+    "energy_inflation": {
+      "label": "Energy Inflation",
+      "category": "geopolitics_energy"
+    },
+    "usd_financial_conditions": {
+      "label": "USD Financial Conditions",
+      "category": "liquidity_credit"
+    },
+    "credit_conditions": {
+      "label": "Credit Conditions",
+      "category": "liquidity_credit"
+    },
+    "growth_duration_rotation": {
+      "label": "Growth / Duration Rotation",
+      "category": "earnings_ai_semis"
+    },
+    "geopolitics_energy": {
+      "label": "Geopolitics / Energy",
+      "category": "geopolitics_energy"
+    },
+    "ai_earnings": {
+      "label": "AI / Earnings",
+      "category": "earnings_ai_semis"
+    },
+    "market_structure": {
+      "label": "Market Structure",
+      "category": "market_structure"
+    }
+  },
+  "categories": {
+    "growth_macro": "Growth / Macro",
+    "inflation_rates": "Inflation / Rates",
+    "central_banks_fiscal": "Central Banks / Fiscal",
+    "earnings_ai_semis": "Earnings / AI / Semiconductors",
+    "geopolitics_energy": "Geopolitics / Energy",
+    "china_trade_policy": "China / Trade / Industrial Policy",
+    "liquidity_credit": "Liquidity / Credit / Financing",
+    "market_structure": "Market Structure / Index / Options"
+  }
+}

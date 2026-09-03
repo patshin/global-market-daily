@@ -1,10 +1,15 @@
 {
-  "site_version": "1.2.1",
+  "site_version": "2.0.0",
   "release_state": "production",
   "published_features": [
     "unbounded_multi_company_earnings",
     "non_reloading_section_navigation",
-    "sticky_navigation_offset_precision"
+    "sticky_navigation_offset_precision",
+    "30d_market_lens",
+    "narrative_risk_lifecycle",
+    "cross_asset_confirmation",
+    "mobile_compact_reader_bar",
+    "native_vs_reconstructed_provenance"
   ],
-  "updated_at": "2026-09-02T16:09:00+08:00"
+  "updated_at": "2026-09-03T11:24:00+08:00"
 }

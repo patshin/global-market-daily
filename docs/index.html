@@ -7,7 +7,9 @@
   <meta name="description" content="Global Market Daily — institutional cross-asset market intelligence in Chinese.">
   <title>Global Market Daily</title>
   <link rel="stylesheet" href="assets/styles.css?v=1.2.1">
+  <link rel="stylesheet" href="assets/market-lens.css?v=2.0.0">
   <script defer src="assets/app.js?v=1.2.1"></script>
+  <script defer src="assets/p0.js?v=2.0.0"></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">跳至正文</a>
@@ -37,6 +39,7 @@
         <span class="sr-only">搜索历史日报</span>
         <input id="archive-search" type="search" autocomplete="off" placeholder="Search archive / 搜索归档">
       </label>
+      <a class="text-button text-button--strong" href="trends.html">30D Lens</a>
       <a class="text-button" id="markdown-link" href="#" target="_blank" rel="noopener">Markdown ↗</a>
     </div>
     <div class="archive-results" id="archive-results" hidden></div>
@@ -108,6 +111,31 @@
             <span class="section-index">01</span>
           </div>
           <div class="change-grid" id="what-changed"></div>
+        </section>
+
+
+        <section class="editorial-section market-lens-preview" id="market-lens-preview-section" aria-labelledby="market-lens-preview-title">
+          <div class="section-heading section-heading--rule">
+            <div>
+              <div class="section-kicker">Market Memory · 30-Day Context</div>
+              <h2 id="market-lens-preview-title">30D Market Lens</h2>
+            </div>
+            <a class="lens-inline-link" href="trends.html">Open full lens →</a>
+          </div>
+          <div class="lens-preview-grid" id="lens-preview-grid" aria-live="polite">
+            <div class="lens-loading">Loading 30-day market context…</div>
+          </div>
+        </section>
+
+        <section class="editorial-section confirmation-section" id="cross-asset-confirmation-section" aria-labelledby="cross-asset-confirmation-title">
+          <div class="section-heading section-heading--rule">
+            <div>
+              <div class="section-kicker">Narrative Validation</div>
+              <h2 id="cross-asset-confirmation-title">Cross-Asset Confirmation</h2>
+            </div>
+            <span class="window-label">CONFIRM / DIVERGE</span>
+          </div>
+          <div id="cross-asset-confirmation" class="confirmation-shell" aria-live="polite"></div>
         </section>
 
         <section class="dashboard-grid">
@@ -185,6 +213,16 @@
       </div>
     </div>
   </main>
+
+
+  <div class="reader-bar" id="reader-bar" hidden>
+    <button type="button" class="reader-bar__main" id="reader-bar-toggle" aria-expanded="false">
+      <span class="reader-bar__date" id="reader-bar-date">—</span>
+      <span class="reader-bar__section" id="reader-bar-section">Report</span>
+      <span class="reader-bar__progress" id="reader-bar-progress">0%</span>
+    </button>
+    <div class="reader-menu" id="reader-menu" hidden aria-label="15 Core Sections"></div>
+  </div>
 
   <footer class="site-footer">
     <div>GLOBAL MARKET DAILY</div>
