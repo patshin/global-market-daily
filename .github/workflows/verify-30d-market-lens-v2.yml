@@ -1,0 +1,94 @@
+name: Verify 30D Market Lens v2 Release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/verify-30d-market-lens-v2.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apply-30d-market-lens-v2
+  cancel-in-progress: false
+
+jobs:
+  verify-and-seal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Verify production files and rebuild deterministic snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f docs/trends.html
+          test -f docs/assets/trends.js
+          test -f docs/assets/p0.js
+          test -f docs/assets/market-lens.css
+          test -f docs/data/trends/market-history.json
+          test -f docs/data/trends/rolling-30d.json
+          test -f docs/data/trends/theme-registry.json
+          test -f scripts/build_market_lens.py
+          test -f scripts/validate_market_lens.py
+          python3 scripts/build_market_lens.py --root .
+          python3 scripts/validate_publish.py --root .
+          python3 scripts/validate_frontend.py --root .
+          python3 scripts/validate_market_lens.py --root .
+          node --check docs/assets/app.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
+          git diff --check
+
+      - name: Verify real desktop and mobile rendering
+        run: bash scripts/browser_smoke.sh .
+
+      - name: Seal release proof only after every gate passes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          lens = json.loads(Path('docs/data/trends/rolling-30d.json').read_text())
+          version = json.loads(Path('docs/version.json').read_text())
+          proof = {
+              'release': '30D Market Lens and P0 Intelligence',
+              'site_version': version['site_version'],
+              'release_state': 'verified_production',
+              'verified_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
+              'verified_commit': '${{ github.sha }}',
+              'coverage': lens['coverage'],
+              'checks': [
+                  'publication_integrity',
+                  'continuous_15_section_report',
+                  'unbounded_event_collections',
+                  'official_market_history',
+                  'native_vs_reconstructed_provenance',
+                  '30_day_regime_ribbon',
+                  'six_signal_matrix',
+                  'top_catalyst_map',
+                  'risk_lifecycle',
+                  'cross_asset_confirmation',
+                  'desktop_browser_render',
+                  '390px_mobile_browser_render',
+                  'non_reloading_section_navigation',
+                  'no_page_level_horizontal_overflow'
+              ]
+          }
+          Path('docs/release-proof.json').write_text(json.dumps(proof, ensure_ascii=False, indent=2) + '\n')
+          PY
+          rm -f .github/workflows/verify-30d-market-lens-v2.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/release-proof.json .github/workflows/verify-30d-market-lens-v2.yml
+          git commit -m "chore(release): seal verified Market Lens v2 production"
+          git pull --rebase origin main
+          git push origin HEAD:main
