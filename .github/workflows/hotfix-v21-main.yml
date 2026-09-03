@@ -1,0 +1,193 @@
+name: Apply Deterministic v2.1 Main Hotfix
+
+on:
+  push:
+    branches: [main]
+    paths: [".github/workflows/hotfix-v21-main.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  hotfix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Bring scheduled publisher assets from audited release branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch origin release/trend-schedule-v2.1
+          for path in scripts/scheduled_publish.py prompts/global-market-daily.md; do
+            git show "origin/release/trend-schedule-v2.1:$path" > "$path.tmp"
+            mkdir -p "$(dirname "$path")"
+            mv "$path.tmp" "$path"
+          done
+      - name: Apply deterministic user-facing and policy fix
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import json, re, textwrap
+          root=Path('.')
+          p=root/'docs/trends.html'
+          html=p.read_text(encoding='utf-8')
+          replacements={
+            '把每天的 Market Regime、Top Catalyst、Persistent Risk 与跨资产价格验证放到同一条时间轴上。原生日判断与历史价格重建严格分开，避免用今天的结果倒推过去的新闻叙事。':'回看过去30日的市场状态、核心催化剂、持续风险与跨资产验证。',
+            '离散状态，不使用黑箱综合分数。粗酒红下划线代表当天存在原生 GMD 日报。':'过去30日市场状态及关键切换。',
+            'Growth / Inflation / Rates / Earnings / Liquidity / Geopolitics 六条信号与同一交易日对齐。':'六项核心信号的日度方向变化。',
+            '横轴是日期，纵轴是稳定主题类别；圆点中的数字是当天 Rank，大小代表 Importance。':'过去30日进入市场核心视野的催化剂与政策节点。',
+            '30-day catalyst map':'',
+            '衡量的是进入 Top 3 的持续性与生命周期，而不是人为制造的 0–100 风险分。':'持续出现、升级或缓解的核心风险主题。',
+            '每个资产独立小图，避免多轴混乱。价格共振仅作为 Narrative confirmation/divergence evidence，不等同于因果证明。':'主要资产对当前市场主线的验证与背离。'
+          }
+          for old,new in replacements.items(): html=html.replace(old,new)
+          html=re.sub(r'<p[^>]*>\s*</p>','',html)
+          p.write_text(html,encoding='utf-8')
+
+          policy=root/'docs/data/trends/policy-events.json'
+          policy.parent.mkdir(parents=True,exist_ok=True)
+          if policy.exists():
+            try: d=json.loads(policy.read_text(encoding='utf-8'))
+            except Exception: d={}
+          else: d={}
+          d.setdefault('schema_version','1.0.0')
+          d.setdefault('source_policy','Primary government and regulator releases only')
+          d.setdefault('events',[])
+          d['empty_state']='本窗口无入选 Top 3 的中国、贸易或产业政策催化剂'
+          policy.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+
+          enrich=root/'scripts/enrich_policy_events.py'
+          enrich.write_text(textwrap.dedent(r'''
+            #!/usr/bin/env python3
+            from __future__ import annotations
+            import json
+            from pathlib import Path
+            ROOT=Path(__file__).resolve().parents[1]
+            LENS=ROOT/'docs/data/trends/rolling-30d.json'
+            POLICY=ROOT/'docs/data/trends/policy-events.json'
+            def main():
+              lens=json.loads(LENS.read_text(encoding='utf-8'))
+              policy=json.loads(POLICY.read_text(encoding='utf-8'))
+              days=lens.get('days',[])
+              by_date={d.get('date'):d for d in days if isinstance(d,dict)}
+              accepted=[]
+              for event in policy.get('events',[]):
+                if not isinstance(event,dict) or event.get('date') not in by_date: continue
+                item={
+                  'id':event.get('id') or f"policy-{event['date']}",
+                  'rank':'P','marker_type':'confirmed_policy','importance':event.get('importance',4),
+                  'theme_id':event.get('theme_id','china_trade_policy'),'category':'china_trade_policy',
+                  'title':event.get('title','Policy milestone'),'event':event.get('title','Policy milestone'),
+                  'status':event.get('status','Confirmed / Released'),'market_bias':event.get('market_bias','mixed'),
+                  'evidence':event.get('evidence',''),'transmission':event.get('transmission',''),
+                  'confirmation':event.get('confirmation',''),'invalidation':event.get('invalidation',''),
+                  'source_url':event.get('source_url'),'source_name':event.get('source_name'),
+                  'provenance':'primary_policy_source'
+                }
+                bucket=by_date[event['date']].setdefault('catalysts',[])
+                if not any(isinstance(x,dict) and x.get('id')==item['id'] for x in bucket): bucket.append(item)
+                accepted.append(item)
+              lens['policy_monitor']={
+                'category':'china_trade_policy','events_in_window':len(accepted),
+                'empty_state':policy.get('empty_state','本窗口无重大政策节点'),
+                'marker':'P','marker_label':'已确认政策节点'
+              }
+              # Scores may be useful diagnostics internally, but must never be a published black-box metric.
+              def strip_scores(value):
+                if isinstance(value,dict):
+                  value.pop('risk_score',None)
+                  for child in value.values(): strip_scores(child)
+                elif isinstance(value,list):
+                  for child in value: strip_scores(child)
+              strip_scores(lens)
+              LENS.write_text(json.dumps(lens,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+            if __name__=='__main__': main()
+          ''').lstrip(),encoding='utf-8')
+          enrich.chmod(0o755)
+
+          js_path=root/'docs/assets/trends.js'
+          js=js_path.read_text(encoding='utf-8')
+          if '/* v2.1 policy-lane state */' not in js:
+            js += r'''
+
+          /* v2.1 policy-lane state */
+          (() => {
+            const renderPolicyState = async () => {
+              try {
+                const response = await fetch("data/trends/rolling-30d.json?v=2.1.0", {cache:"no-store"});
+                if (!response.ok) return;
+                const data = await response.json();
+                const monitor = data.policy_monitor;
+                const section = document.querySelector("#catalysts")?.closest("section") || document.querySelector("#catalysts");
+                if (!monitor || !section || section.querySelector(".policy-lane-state")) return;
+                const box=document.createElement("div"); box.className="policy-lane-state";
+                const count=Number(monitor.events_in_window||0);
+                box.innerHTML=count>0
+                  ? `<strong>China / Trade / Industrial Policy</strong><span>${count} 个已确认政策节点 · P 为政策节点</span>`
+                  : `<strong>China / Trade / Industrial Policy</strong><span>${monitor.empty_state}</span>`;
+                section.appendChild(box);
+              } catch (_) {}
+            };
+            if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',renderPolicyState);else renderPolicyState();
+          })();
+          '''
+          js_path.write_text(js,encoding='utf-8')
+
+          css_path=root/'docs/assets/market-lens.css'
+          css=css_path.read_text(encoding='utf-8')
+          if '.policy-lane-state' not in css:
+            css+='\n.policy-lane-state{display:flex;justify-content:space-between;gap:18px;margin:18px 0 0;padding:12px 14px;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);font-size:.82rem}.policy-lane-state strong{font-family:var(--serif);font-size:.92rem}.policy-lane-state span{color:var(--muted);text-align:right}@media(max-width:560px){.policy-lane-state{display:block}.policy-lane-state span{display:block;margin-top:4px;text-align:left}}\n'
+          css_path.write_text(css,encoding='utf-8')
+
+          vpath=root/'docs/version.json'; v=json.loads(vpath.read_text(encoding='utf-8'))
+          v['site_version']='2.1.0'; v['release_state']='production'; v['updated_at']='2026-09-03T14:30:00+08:00'
+          feats=v.setdefault('published_features',[])
+          for x in ['policy_event_monitor','concise_user_facing_trend_copy','twice_daily_publication_contract']:
+            if x not in feats: feats.append(x)
+          vpath.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          for page in [root/'docs/index.html',root/'docs/trends.html']:
+            s=page.read_text(encoding='utf-8')
+            s=re.sub(r'(assets/(?:p0|trends)\.js\?v=)[^"\']+',r'\g<1>2.1.0',s)
+            s=re.sub(r'(assets/market-lens\.css\?v=)[^"\']+',r'\g<1>2.1.0',s)
+            page.write_text(s,encoding='utf-8')
+          PY
+      - name: Rebuild, validate and commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/build_market_lens.py
+          python3 scripts/enrich_policy_events.py
+          python3 scripts/validate_publish.py --root .
+          python3 scripts/validate_frontend.py --root .
+          python3 scripts/validate_market_lens.py
+          python3 -m py_compile scripts/enrich_policy_events.py scripts/scheduled_publish.py
+          node --check docs/assets/app.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
+          python3 - <<'PY'
+          from pathlib import Path
+          import json
+          html=Path('docs/trends.html').read_text()
+          banned=['离散状态，不使用黑箱综合分数','Growth / Inflation / Rates / Earnings / Liquidity / Geopolitics 六条信号','横轴是日期，纵轴是稳定主题类别','30-day catalyst map','衡量的是进入 Top 3 的持续性','每个资产独立小图，避免多轴混乱']
+          assert not any(x in html for x in banned)
+          lens=json.loads(Path('docs/data/trends/rolling-30d.json').read_text())
+          assert lens['policy_monitor']['category']=='china_trade_policy'
+          assert 'risk_score' not in json.dumps(lens)
+          assert json.loads(Path('docs/version.json').read_text())['site_version']=='2.1.0'
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs scripts prompts
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "fix(site): apply deterministic v2.1 policy and copy hotfix"
+          git pull --rebase origin main
+          git push origin HEAD:main
