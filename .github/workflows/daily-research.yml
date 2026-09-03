@@ -1,0 +1,116 @@
+name: Twice-Daily Global Market Research
+
+on:
+  schedule:
+    - cron: "0 1 * * *"   # 09:00 Asia/Singapore
+    - cron: "0 10 * * *"  # 18:00 Asia/Singapore; official daily archive
+  workflow_dispatch:
+    inputs:
+      edition:
+        description: Publication edition
+        required: true
+        type: choice
+        options: [morning, evening]
+        default: morning
+      date:
+        description: Optional SGT date (YYYY-MM-DD)
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: global-market-daily-${{ github.event.schedule || inputs.edition || 'manual' }}
+  cancel-in-progress: false
+
+env:
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  GMD_MODEL: ${{ vars.GMD_MODEL }}
+  GMD_REASONING_EFFORT: ${{ vars.GMD_REASONING_EFFORT || 'xhigh' }}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Resolve SGT edition
+        id: edition
+        shell: bash
+        env:
+          MANUAL_EDITION: ${{ inputs.edition }}
+          MANUAL_DATE: ${{ inputs.date }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            edition="$MANUAL_EDITION"
+          elif [ "$SCHEDULE" = "0 1 * * *" ]; then
+            edition="morning"
+          else
+            edition="evening"
+          fi
+          echo "edition=$edition" >> "$GITHUB_OUTPUT"
+          echo "date_arg=${MANUAL_DATE:+--date $MANUAL_DATE}" >> "$GITHUB_OUTPUT"
+      - name: Verify model automation is configured
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -z "${OPENAI_API_KEY:-}" ]; then
+            echo '::error title=Missing OPENAI_API_KEY::Add a callable model API key in Settings > Secrets and variables > Actions.'
+            exit 1
+          fi
+          if [ -z "${GMD_MODEL:-}" ]; then
+            echo '::error title=Missing GMD_MODEL::Set the exact callable API model ID in Settings > Secrets and variables > Actions > Variables.'
+            exit 1
+          fi
+          echo "Model: $GMD_MODEL; reasoning effort: $GMD_REASONING_EFFORT"
+      - name: Independently research and generate the edition
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/scheduled_publish.py --edition "${{ steps.edition.outputs.edition }}" ${{ steps.edition.outputs.date_arg }}
+      - name: Rebuild official 30D history only for evening edition
+        if: steps.edition.outputs.edition == 'evening'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/build_market_lens.py
+          python3 scripts/enrich_policy_events.py
+          python3 scripts/validate_market_lens.py
+      - name: Validate publication bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/validate_publish.py --root .
+          python3 scripts/validate_frontend.py --root .
+          node --check docs/assets/app.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
+      - name: Commit and publish
+        shell: bash
+        run: |
+          set -euo pipefail
+          edition="${{ steps.edition.outputs.edition }}"
+          date_sgt="$(TZ=Asia/Singapore date +%F)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data docs/reports
+          if git diff --cached --quiet; then
+            echo 'No publication changes were generated.'
+            exit 1
+          fi
+          if [ "$edition" = "evening" ]; then
+            message="daily: publish official market brief $date_sgt 18:00 SGT"
+          else
+            message="daily: publish morning market brief $date_sgt 09:00 SGT"
+          fi
+          git commit -m "$message"
+          git pull --rebase origin main
+          git push origin HEAD:main
