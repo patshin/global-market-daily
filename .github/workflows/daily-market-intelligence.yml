@@ -1,0 +1,140 @@
+name: Generate Global Market Daily
+
+on:
+  schedule:
+    # GitHub cron is UTC. Singapore is UTC+8 year-round.
+    - cron: "0 1 * * *"   # 09:00 SGT — provisional morning edition
+    - cron: "0 10 * * *"  # 18:00 SGT — official EOD archive edition
+  workflow_dispatch:
+    inputs:
+      edition:
+        description: Edition to publish
+        required: true
+        type: choice
+        default: morning
+        options:
+          - morning
+          - eod
+      model:
+        description: Optional API model override; otherwise GMD_OPENAI_MODEL repository variable is used
+        required: false
+        type: string
+      reasoning_effort:
+        description: Reasoning effort
+        required: true
+        type: choice
+        default: xhigh
+        options:
+          - xhigh
+          - high
+          - medium
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/daily-market-intelligence.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: global-market-daily-publication
+  cancel-in-progress: false
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      GMD_MODEL: ${{ github.event.inputs.model || vars.GMD_OPENAI_MODEL }}
+      GMD_REASONING_EFFORT: ${{ github.event.inputs.reasoning_effort || vars.GMD_REASONING_EFFORT || 'xhigh' }}
+      OPENAI_BASE_URL: ${{ vars.OPENAI_BASE_URL || 'https://api.openai.com/v1' }}
+
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Install validation dependency
+        run: python -m pip install --disable-pip-version-check --quiet "jsonschema>=4.23,<5"
+
+      - name: Resolve edition
+        id: edition
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            edition="${{ github.event.inputs.edition }}"
+          elif [[ "${{ github.event_name }}" == "schedule" && "${{ github.event.schedule }}" == "0 10 * * *" ]]; then
+            edition="eod"
+          elif [[ "${{ github.event_name }}" == "schedule" ]]; then
+            edition="morning"
+          else
+            hour_sgt="$(TZ=Asia/Singapore date +%H)"
+            if (( 10#$hour_sgt >= 18 )); then edition="eod"; else edition="morning"; fi
+          fi
+          echo "edition=$edition" >> "$GITHUB_OUTPUT"
+          echo "Resolved publication edition: $edition"
+
+      - name: Preflight automation configuration
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -z "${OPENAI_API_KEY:-}" ]]; then
+            echo "::error::Missing repository Actions secret OPENAI_API_KEY"
+            exit 1
+          fi
+          if [[ -z "${GMD_MODEL:-}" ]]; then
+            echo "::error::Missing repository Actions variable GMD_OPENAI_MODEL. Use a valid OpenAI Responses API model ID."
+            exit 1
+          fi
+          echo "Model: $GMD_MODEL"
+          echo "Reasoning effort: $GMD_REASONING_EFFORT"
+          echo "Edition: ${{ steps.edition.outputs.edition }}"
+
+      - name: Research, verify and generate all report modules
+        env:
+          GMD_EDITION: ${{ steps.edition.outputs.edition }}
+        run: python scripts/generate_daily_with_openai.py
+
+      - name: Rebuild 30D market memory
+        run: python scripts/build_market_lens.py
+
+      - name: Run all publication gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate_publish.py --root .
+          python scripts/validate_frontend.py --root .
+          python scripts/validate_market_lens.py
+          node --check docs/assets/app.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
+
+      - name: Commit publication atomically
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data docs/reports
+          if git diff --cached --quiet; then
+            echo "No publication changes to commit."
+            exit 0
+          fi
+          report_date="$(TZ=Asia/Singapore date +%F)"
+          edition="${{ steps.edition.outputs.edition }}"
+          if [[ "$edition" == "eod" ]]; then
+            message="daily: publish market brief $report_date"
+          else
+            message="daily: publish market brief $report_date morning"
+          fi
+          git commit -m "$message"
+          git pull --rebase origin main
+          git push origin HEAD:main
