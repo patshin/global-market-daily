@@ -29,7 +29,21 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          cat .release/v2.1/part-* > /tmp/gmd-v21.b64
+          echo "ccc1b071f9e814eb8ad24b213df9917a4b33776b54b69a956a18434ae55abafc  .release/v2.1/part-00" | sha256sum --check --strict
+          echo "46d282322f055bfdd6a66d1048ab7560622e0c4c3726af7f93adbedb4c124f5a  .release/v2.1/part-01" | sha256sum --check --strict
+          echo "af22af295c434970388044bccd4ba0c27ddf6ed3777467d17b3ca35564216762  .release/v2.1/part-02" | sha256sum --check --strict
+          echo "f4390555fe10f13bd251463fe363f0778995fa3c5d93a9b46ba9d128074c3311  .release/v2.1/part-03" | sha256sum --check --strict
+          echo "b49ba7730d0ad23229be73398de7ac61f1737efa784dbb3491322ddf02937952  .release/v2.1/part-04" | sha256sum --check --strict
+          echo "7d2e5f0f35a3d158b6d0c7718a081b8f2e8d4063f2d240a98b8be2f382928c59  .release/v2.1/tail-01" | sha256sum --check --strict
+          echo "d2ad7bf385af2143e79300dd8afdcda983cc31eb36e784990beb2283ec6e7379  .release/v2.1/tail-02" | sha256sum --check --strict
+          cat \
+            .release/v2.1/part-00 \
+            .release/v2.1/part-01 \
+            .release/v2.1/part-02 \
+            .release/v2.1/part-03 \
+            .release/v2.1/part-04 \
+            .release/v2.1/tail-01 \
+            .release/v2.1/tail-02 > /tmp/gmd-v21.b64
           test "$(wc -c < /tmp/gmd-v21.b64 | tr -d ' ')" = "63080"
           base64 --decode /tmp/gmd-v21.b64 > /tmp/gmd-v21-product.tar.gz
           echo "e81bdd660be49f26f2a9f43dd3a89ecfebaac926663b832e412cb2edd4b959a7  /tmp/gmd-v21-product.tar.gz" | sha256sum --check --strict
