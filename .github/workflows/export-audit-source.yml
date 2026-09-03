@@ -1,0 +1,23 @@
+name: Export Audit Source
+
+on:
+  push:
+    branches: [work/fix-schedules-copy-audit]
+    paths: [.github/workflows/export-audit-source.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Package source
+        run: tar --exclude=.git -czf /tmp/gmd-source.tar.gz .
+      - uses: actions/upload-artifact@v7
+        with:
+          name: gmd-audit-source
+          path: /tmp/gmd-source.tar.gz
+          retention-days: 1
