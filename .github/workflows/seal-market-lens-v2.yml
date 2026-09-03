@@ -1,0 +1,124 @@
+name: Seal Verified Market Lens v2 Production
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/seal-market-lens-v2.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: seal-market-lens-v2
+  cancel-in-progress: true
+
+jobs:
+  recover-verify-seal:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Recover the production build when a prior migration was interrupted
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -f bootstrap/lens-v2/finalize_v4.py ]]; then
+            python3 bootstrap/lens-v2/finalize_v4.py
+          else
+            test -f scripts/build_market_lens.py
+            test -f scripts/validate_market_lens.py
+            test -f scripts/validate_frontend.py
+            test -f scripts/browser_smoke.sh
+            test -f docs/trends.html
+            test -f docs/assets/p0.js
+            test -f docs/assets/trends.js
+            test -f docs/assets/market-lens.css
+            python3 scripts/build_market_lens.py --root . --network
+            python3 scripts/validate_publish.py --root .
+            python3 scripts/validate_frontend.py --root .
+            python3 scripts/validate_market_lens.py --root .
+            node --check docs/assets/app.js
+            node --check docs/assets/p0.js
+            node --check docs/assets/trends.js
+          fi
+
+      - name: Run real desktop and 390px mobile rendering checks
+        run: bash scripts/browser_smoke.sh .
+
+      - name: Seal evidence-backed release proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from datetime import datetime, timezone
+          from pathlib import Path
+          lens = json.loads(Path('docs/data/trends/rolling-30d.json').read_text())
+          history = json.loads(Path('docs/data/trends/market-history.json').read_text())
+          version = json.loads(Path('docs/version.json').read_text())
+          assert version['site_version'] == '2.0.0'
+          assert lens['coverage']['day1_ready'] is True
+          assert lens['coverage']['market_sessions'] >= 12
+          assert lens['coverage']['objective_reconstruction_days'] >= 10
+          assert lens['coverage']['history_days_retained'] >= 150
+          proof = {
+            'release': '30D Market Lens and P0 Intelligence',
+            'site_version': version['site_version'],
+            'release_state': 'verified_production',
+            'verified_at': datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00', 'Z'),
+            'verified_commit_input': '${{ github.sha }}',
+            'history_retrieved_at': history['retrieved_at'],
+            'window': {'start': lens['window_start'], 'end': lens['window_end']},
+            'coverage': lens['coverage'],
+            'checks': [
+              'publication_integrity',
+              'continuous_15_section_report',
+              'unbounded_event_collections',
+              'official_market_history_backfill',
+              'native_vs_reconstructed_provenance',
+              '30_day_regime_ribbon',
+              'six_signal_matrix',
+              'top_catalyst_map',
+              'risk_lifecycle',
+              'cross_asset_confirmation',
+              'desktop_browser_render',
+              '390px_mobile_browser_render',
+              'non_reloading_section_navigation',
+              'no_page_level_horizontal_overflow'
+            ]
+          }
+          Path('docs/release-proof.json').write_text(json.dumps(proof, ensure_ascii=False, indent=2) + '\n')
+          PY
+
+      - name: Remove every temporary workflow and source bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          find .github/workflows -maxdepth 1 -type f \
+            ! -name 'pages.yml' \
+            ! -name 'quality.yml' \
+            ! -name 'trends-refresh.yml' \
+            ! -name 'seal-market-lens-v2.yml' \
+            -delete
+          rm -f .github/workflows/seal-market-lens-v2.yml
+          rm -rf bootstrap
+
+      - name: Commit final verified production state
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Verified production state already committed."
+            exit 0
+          fi
+          git commit -m "chore(release): seal verified Market Lens v2 production"
+          git pull --rebase origin main
+          git push origin HEAD:main
