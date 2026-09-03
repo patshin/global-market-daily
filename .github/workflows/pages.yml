@@ -5,8 +5,7 @@ on:
     branches: [main]
     paths:
       - "docs/**"
-      - "scripts/validate_publish.py"
-      - "scripts/validate_frontend.py"
+      - "scripts/**"
       - "schemas/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
@@ -22,26 +21,27 @@ concurrency:
 
 jobs:
   validate:
-    name: Validate publication bundle and frontend visibility
+    name: Validate publication bundle and 30D lens
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 8
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-
       - name: Set up Python
         uses: actions/setup-python@v7
         with:
           python-version: "3.12"
-
       - name: Run deterministic publication gate
         run: python scripts/validate_publish.py --root .
-
       - name: Run frontend visibility gate
         run: python scripts/validate_frontend.py --root .
-
+      - name: Run 30D market lens gate
+        run: python scripts/validate_market_lens.py
       - name: Check JavaScript syntax
-        run: node --check docs/assets/app.js
+        run: |
+          node --check docs/assets/app.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
 
   deploy:
     name: Deploy GitHub Pages
@@ -54,15 +54,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-
       - name: Configure Pages
         uses: actions/configure-pages@v6
-
       - name: Upload static site
         uses: actions/upload-pages-artifact@v5
         with:
           path: ./docs
-
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v5
