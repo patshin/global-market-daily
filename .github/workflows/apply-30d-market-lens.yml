@@ -1,0 +1,353 @@
+name: Apply 30D Market Lens and P0 Intelligence
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "bootstrap/lens-v2/**"
+      - ".github/workflows/apply-30d-market-lens.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: apply-30d-market-lens-v2
+  cancel-in-progress: false
+
+jobs:
+  build-test-publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout current production branch
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Install 30D Lens source files
+        shell: bash
+        run: |
+          set -euo pipefail
+          install -D -m 0755 bootstrap/lens-v2/build_market_lens.py scripts/build_market_lens.py
+          install -D -m 0755 bootstrap/lens-v2/validate_market_lens.py scripts/validate_market_lens.py
+          install -D -m 0755 bootstrap/lens-v2/browser_smoke.sh scripts/browser_smoke.sh
+          install -D -m 0644 bootstrap/lens-v2/trends.html docs/trends.html
+          install -D -m 0644 bootstrap/lens-v2/trends.js docs/assets/trends.js
+          install -D -m 0644 bootstrap/lens-v2/p0.js docs/assets/p0.js
+          install -D -m 0644 bootstrap/lens-v2/market-lens.css docs/assets/market-lens.css
+          install -D -m 0644 bootstrap/lens-v2/theme-registry.json docs/data/trends/theme-registry.json
+          install -D -m 0644 bootstrap/lens-v2/market-lens.schema.json schemas/market-lens.schema.json
+          install -D -m 0644 bootstrap/lens-v2/30d-market-lens.md docs/product/30d-market-lens.md
+
+      - name: Integrate with existing daily site and event collections
+        run: python3 bootstrap/lens-v2/migrate_existing.py
+
+      - name: Harden parser, QA hooks and event presentation
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path("scripts/build_market_lens.py")
+          text = path.read_text(encoding="utf-8")
+          old = '''            reader = csv.DictReader(body.splitlines())
+                      value_column = next((name for name in (reader.fieldnames or []) if name != "DATE"), None)
+                      if not value_column:
+                          raise ValueError(f"FRED response for {series_id} has no value column")
+                      for row in reader:
+                          value = parse_number(row.get(value_column))
+                          if value is not None:
+                              rows[row["DATE"]] = value'''
+          new = '''            reader = csv.DictReader(body.splitlines())
+                      fieldnames = reader.fieldnames or []
+                      date_column = next((name for name in fieldnames if name.lower() in {"date", "observation_date"}), fieldnames[0] if fieldnames else None)
+                      value_column = next((name for name in fieldnames if name != date_column), None)
+                      if not date_column or not value_column:
+                          raise ValueError(f"FRED response for {series_id} has no date/value columns")
+                      for row in reader:
+                          value = parse_number(row.get(value_column))
+                          if value is not None and row.get(date_column):
+                              rows[row[date_column]] = value'''
+          if old not in text:
+              raise RuntimeError("FRED parser target was not found")
+          path.write_text(text.replace(old, new, 1), encoding="utf-8")
+
+          path = Path("docs/assets/trends.js")
+          text = path.read_text(encoding="utf-8")
+          old = '    document.body.dataset.lensReady = "true";'
+          new = '''    document.body.dataset.lensReady = "true";
+              requestAnimationFrame(() => {
+                document.body.dataset.horizontalOverflow = String(document.documentElement.scrollWidth > window.innerWidth + 1);
+                if (new URLSearchParams(window.location.search).get("qa") === "1") {
+                  const point = document.querySelector(".catalyst-point");
+                  if (point) point.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+                  document.body.dataset.catalystQa = point && document.querySelector("#catalyst-detail h3") ? "passed" : "failed";
+                }
+              });'''
+          if old not in text:
+              raise RuntimeError("trends.js QA target was not found")
+          path.write_text(text.replace(old, new, 1), encoding="utf-8")
+
+          path = Path("docs/assets/p0.js")
+          text = path.read_text(encoding="utf-8")
+          old = '  document.body.dataset.p0Ready = "true";'
+          new = '''  document.body.dataset.p0Ready = "true";
+            requestAnimationFrame(() => {
+              document.body.dataset.horizontalOverflow = String(document.documentElement.scrollWidth > window.innerWidth + 1);
+              if (new URLSearchParams(window.location.search).get("qa") === "1") {
+                const button = document.querySelectorAll(".section-jump__button")[3];
+                const pathBefore = window.location.pathname;
+                if (button) button.click();
+                document.body.dataset.navigationQa = button && window.location.pathname === pathBefore ? "passed" : "failed";
+              }
+            });'''
+          if old not in text:
+              raise RuntimeError("p0.js QA target was not found")
+          path.write_text(text.replace(old, new, 1), encoding="utf-8")
+          PY
+
+          cat >> docs/assets/market-lens.css <<'CSS'
+
+          /* Structured cross-section event collections retained from v1.3. */
+          .structured-event-collection { margin-top: 28px; }
+          .structured-event-group { margin-top: 26px; border-top: 1px solid var(--lens-ink); }
+          .structured-event-group__header { display: flex; justify-content: space-between; gap: 18px; align-items: baseline; padding: 10px 0; }
+          .structured-event-group__header h4 { margin: 0; font-family: var(--serif, Georgia, serif); font-size: 1.08rem; text-transform: none; letter-spacing: 0; }
+          .structured-event-group__header span { color: var(--lens-muted); font-family: var(--mono, monospace); font-size: .68rem; }
+          .structured-event { padding: 20px 0 24px; border-top: 1px solid var(--lens-hairline); }
+          .structured-event__header { display: flex; justify-content: space-between; gap: 24px; align-items: flex-start; }
+          .structured-event__eyebrow { color: var(--lens-accent); font-size: .69rem; font-weight: 800; letter-spacing: .055em; }
+          .structured-event h5 { margin: 5px 0 0; font-family: var(--serif, Georgia, serif); font-size: 1.12rem; line-height: 1.35; }
+          .structured-event__meta { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px; }
+          .structured-event__chip { padding: 3px 6px; border: 1px solid var(--lens-hairline); color: var(--lens-charcoal); font-size: .68rem; }
+          .structured-event__time { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-top: 13px; border-top: 1px solid var(--lens-hairline); border-left: 1px solid var(--lens-hairline); }
+          .structured-event__time-item { padding: 9px; border-right: 1px solid var(--lens-hairline); border-bottom: 1px solid var(--lens-hairline); }
+          .structured-event__time-item__label,
+          .structured-event__fact__label,
+          .structured-event__transmission__label,
+          .structured-event__assets-label { color: var(--lens-accent); font-size: .69rem; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
+          .structured-event__time-item__value,
+          .structured-event__fact__value,
+          .structured-event__transmission__value { margin: 5px 0 0; color: var(--lens-charcoal); font-size: .86rem; line-height: 1.58; }
+          .structured-event__fact { padding: 12px 0; border-bottom: 1px solid var(--lens-hairline); }
+          .structured-event__transmission { margin: 14px 0; padding: 13px 15px; border-left: 4px solid var(--lens-accent); background: var(--lens-paper-deep); }
+          .structured-event__assets { padding: 4px 0 14px; }
+          .structured-event__assets-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 7px; }
+          .structured-event__empty { padding: 13px 0; color: var(--lens-muted); font-style: italic; }
+
+          @media (max-width: 900px) {
+            .structured-event__header { display: block; }
+            .structured-event__meta { justify-content: flex-start; margin-top: 10px; }
+            .structured-event__time { grid-template-columns: 1fr; }
+          }
+          CSS
+
+      - name: Write permanent CI, deployment and refresh workflows
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > .github/workflows/quality.yml <<'YAML'
+          name: Publication Quality Gate
+
+          on:
+            push:
+              branches: [main]
+            pull_request:
+            workflow_dispatch:
+
+          permissions:
+            contents: read
+
+          jobs:
+            validate:
+              name: Validate publication, Market Lens and rendered UX
+              runs-on: ubuntu-latest
+              timeout-minutes: 12
+              steps:
+                - uses: actions/checkout@v7
+                - uses: actions/setup-python@v7
+                  with:
+                    python-version: "3.12"
+                - name: Rebuild derived lens from committed history
+                  run: python scripts/build_market_lens.py --root .
+                - name: Run deterministic gates
+                  run: |
+                    python scripts/validate_publish.py --root .
+                    python scripts/validate_frontend.py --root .
+                    python scripts/validate_market_lens.py --root .
+                    node --check docs/assets/app.js
+                    node --check docs/assets/p0.js
+                    node --check docs/assets/trends.js
+                    python -m json.tool docs/data/trends/market-history.json >/dev/null
+                    python -m json.tool docs/data/trends/rolling-30d.json >/dev/null
+                    git diff --check
+                - name: Render desktop and mobile smoke tests
+                  run: bash scripts/browser_smoke.sh .
+          YAML
+
+          cat > .github/workflows/pages.yml <<'YAML'
+          name: Deploy Global Market Daily
+
+          on:
+            push:
+              branches: [main]
+              paths:
+                - "docs/**"
+                - "scripts/**"
+                - "schemas/**"
+                - ".github/workflows/pages.yml"
+            workflow_dispatch:
+
+          permissions:
+            contents: read
+            pages: write
+            id-token: write
+
+          concurrency:
+            group: pages
+            cancel-in-progress: false
+
+          jobs:
+            validate:
+              name: Build and validate publication bundle
+              runs-on: ubuntu-latest
+              timeout-minutes: 15
+              steps:
+                - uses: actions/checkout@v7
+                - uses: actions/setup-python@v7
+                  with:
+                    python-version: "3.12"
+                - name: Refresh official market history with stored fallback
+                  run: python scripts/build_market_lens.py --root . --network
+                - name: Run all release gates
+                  run: |
+                    python scripts/validate_publish.py --root .
+                    python scripts/validate_frontend.py --root .
+                    python scripts/validate_market_lens.py --root .
+                    node --check docs/assets/app.js
+                    node --check docs/assets/p0.js
+                    node --check docs/assets/trends.js
+                - name: Render desktop and mobile smoke tests
+                  run: bash scripts/browser_smoke.sh .
+                - name: Upload validated site
+                  uses: actions/upload-pages-artifact@v5
+                  with:
+                    path: ./docs
+
+            deploy:
+              name: Deploy GitHub Pages
+              needs: validate
+              environment:
+                name: github-pages
+                url: ${{ steps.deployment.outputs.page_url }}
+              runs-on: ubuntu-latest
+              timeout-minutes: 10
+              steps:
+                - name: Configure Pages
+                  uses: actions/configure-pages@v6
+                - name: Deploy
+                  id: deployment
+                  uses: actions/deploy-pages@v5
+          YAML
+
+          cat > .github/workflows/trends-refresh.yml <<'YAML'
+          name: Refresh 30D Market Lens Data
+
+          on:
+            push:
+              branches: [main]
+              paths:
+                - "docs/data/daily/**"
+                - "docs/data/latest.json"
+            schedule:
+              - cron: "30 4 * * 1-6"
+            workflow_dispatch:
+
+          permissions:
+            contents: write
+
+          concurrency:
+            group: trends-refresh
+            cancel-in-progress: false
+
+          jobs:
+            refresh:
+              runs-on: ubuntu-latest
+              timeout-minutes: 12
+              steps:
+                - uses: actions/checkout@v7
+                  with:
+                    fetch-depth: 0
+                - uses: actions/setup-python@v7
+                  with:
+                    python-version: "3.12"
+                - name: Refresh source history and derived snapshot
+                  run: python scripts/build_market_lens.py --root . --network
+                - name: Validate snapshot
+                  run: python scripts/validate_market_lens.py --root .
+                - name: Commit changed trend data
+                  shell: bash
+                  run: |
+                    set -euo pipefail
+                    git config user.name "github-actions[bot]"
+                    git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+                    git add docs/data/trends/market-history.json docs/data/trends/rolling-30d.json
+                    if git diff --cached --quiet; then
+                      echo "Trend data already current."
+                      exit 0
+                    fi
+                    git commit -m "data: refresh 30-day market lens"
+                    git pull --rebase origin main
+                    git push origin HEAD:main
+          YAML
+
+      - name: Build maximum useful history and derived 30D snapshot
+        run: python3 scripts/build_market_lens.py --root . --network
+
+      - name: Validate source, data contract and JavaScript
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/validate_publish.py --root .
+          python3 scripts/validate_frontend.py --root .
+          python3 scripts/validate_market_lens.py --root .
+          node --check docs/assets/app.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
+          python3 -m json.tool docs/data/trends/market-history.json >/dev/null
+          python3 -m json.tool docs/data/trends/rolling-30d.json >/dev/null
+          python3 -m json.tool schemas/market-lens.schema.json >/dev/null
+          git diff --check
+
+      - name: Run real desktop and 390px mobile browser smoke
+        run: bash scripts/browser_smoke.sh .
+
+      - name: Clean one-time migration artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          find .github/workflows -maxdepth 1 -type f \
+            ! -name 'pages.yml' \
+            ! -name 'quality.yml' \
+            ! -name 'trends-refresh.yml' \
+            ! -name 'apply-30d-market-lens.yml' \
+            -delete
+          rm -f .github/workflows/apply-30d-market-lens.yml
+          rm -rf bootstrap
+
+      - name: Commit production release
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No production changes to commit."
+            exit 0
+          fi
+          git commit -m "feat(site): launch 30-day market lens and P0 intelligence"
+          git pull --rebase origin main
+          git push origin HEAD:main
