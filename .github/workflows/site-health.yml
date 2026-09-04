@@ -114,18 +114,22 @@ jobs:
           PY
           )"
 
-          for attempt in $(seq 1 12); do
-            echo "Browser render attempt ${attempt}/12 for ${latest_date}"
-            if "$browser" \
+          for attempt in $(seq 1 3); do
+            echo "Browser render attempt ${attempt}/3 for ${latest_date}"
+            "$browser" \
               --headless=new \
               --disable-gpu \
               --no-sandbox \
               --disable-dev-shm-usage \
               --virtual-time-budget=15000 \
-              --dump-dom "$base/" > /tmp/rendered.html 2>/tmp/browser.stderr; then
-              if LATEST_DATE="$latest_date" EXPECTED_THESIS="$expected_thesis" python3 - <<'PY'
+              --enable-logging=stderr \
+              --dump-dom "$base/" > /tmp/rendered.html 2>/tmp/browser.stderr || true
+
+            if LATEST_DATE="$latest_date" EXPECTED_THESIS="$expected_thesis" python3 - <<'PY'
           import os
           from html.parser import HTMLParser
+
+          VOID = {'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
 
           class Capture(HTMLParser):
               def __init__(self):
@@ -135,17 +139,25 @@ jobs:
               def handle_starttag(self, tag, attrs):
                   attrs=dict(attrs)
                   node_id=attrs.get('id')
-                  self.stack.append(node_id)
+                  if node_id:
+                      self.nodes[node_id]={'attrs':attrs,'text':[]}
+                  if tag not in VOID:
+                      self.stack.append((tag,node_id))
+              def handle_startendtag(self, tag, attrs):
+                  attrs=dict(attrs)
+                  node_id=attrs.get('id')
                   if node_id:
                       self.nodes[node_id]={'attrs':attrs,'text':[]}
               def handle_endtag(self, tag):
-                  if self.stack:
-                      self.stack.pop()
+                  for i in range(len(self.stack)-1,-1,-1):
+                      if self.stack[i][0] == tag:
+                          del self.stack[i:]
+                          return
               def handle_data(self, data):
-                  for node_id in reversed(self.stack):
+                  for _,node_id in reversed(self.stack):
                       if node_id and node_id in self.nodes:
                           self.nodes[node_id]['text'].append(data)
-                          break
+                          return
 
           parser=Capture()
           parser.feed(open('/tmp/rendered.html', encoding='utf-8').read())
@@ -153,25 +165,37 @@ jobs:
           date=os.environ['LATEST_DATE']
           expected=os.environ['EXPECTED_THESIS'].strip()
 
+          def node_text(node_id):
+              node=nodes.get(node_id)
+              return ' '.join(node['text']).strip() if node else ''
+
           shell=nodes.get('report-shell')
           error=nodes.get('error-state')
+          loading=nodes.get('loading-state')
           title=nodes.get('edition-title')
           thesis=nodes.get('thesis')
+          print('BROWSER DIAGNOSTICS:')
+          print('  report-shell attrs =', shell['attrs'] if shell else None)
+          print('  loading-state attrs =', loading['attrs'] if loading else None)
+          print('  error-state attrs =', error['attrs'] if error else None)
+          print('  error-message =', repr(node_text('error-message')))
+          print('  edition-title =', repr(node_text('edition-title')))
+          print('  thesis =', repr(node_text('thesis')))
+
           assert shell is not None, 'report-shell missing'
-          assert 'hidden' not in shell['attrs'], 'report-shell is still hidden after JS execution'
-          assert error is not None and 'hidden' in error['attrs'], 'error-state is visible after JS execution'
-          rendered_title=' '.join(title['text']).strip() if title else ''
-          rendered_thesis=' '.join(thesis['text']).strip() if thesis else ''
+          assert 'hidden' not in shell['attrs'], f'report-shell hidden; page error={node_text("error-message")!r}'
+          assert error is not None and 'hidden' in error['attrs'], f'error-state visible; page error={node_text("error-message")!r}'
+          rendered_title=node_text('edition-title')
+          rendered_thesis=node_text('thesis')
           assert date in rendered_title, f'latest date not rendered: {rendered_title!r}'
           assert rendered_thesis == expected, 'rendered thesis does not match latest.json'
           print(f'BROWSER RENDER VERIFIED: {date} is visible and Publication Error is hidden')
           PY
-              then
-                exit 0
-              fi
+            then
+              exit 0
             fi
-            cat /tmp/browser.stderr || true
-            sleep 5
+            tail -n 80 /tmp/browser.stderr || true
+            sleep 3
           done
 
           echo "Browser could fetch the site but never rendered the latest edition successfully."
