@@ -2,6 +2,74 @@
 
 const LENS_DATA_URL = "data/trends/rolling-30d.json";
 
+// Live-publication compatibility bridge.
+// Morning provisional editions are intentionally excluded from formal archive.json,
+// but they are still allowed to become the website's current `latest` edition.
+// The main loader historically assumed every visible date existed in archive.json,
+// which made a valid provisional latest impossible to render. Resolve the live latest
+// directly from latest.json and add it only to the browser's in-memory navigation list.
+function livePublicationEntry(date) {
+  if (!state.latest || state.latest.date !== date) return null;
+  if (!state.latest.daily_json_path || !state.latest.sources_path) return null;
+  return {
+    date: state.latest.date,
+    daily_json_path: state.latest.daily_json_path,
+    report_path: state.latest.report_path,
+    sources_path: state.latest.sources_path,
+    thesis: state.latest.thesis,
+    dominant_narrative: state.latest.dominant_narrative,
+    overall_regime: state.latest.regime || state.latest.overall_regime || state.latest.edition_status || "Live",
+    publication_status: state.latest.edition_status || "live",
+    live_only: true
+  };
+}
+
+loadDate = async function loadPublicationDate(date, options = {}) {
+  showLoading();
+  try {
+    let entry = state.archive.find((item) => item.date === date);
+    if (!entry) {
+      entry = livePublicationEntry(date);
+      if (entry) {
+        state.archive = [entry, ...state.archive]
+          .filter((item, index, items) => items.findIndex((candidate) => candidate.date === item.date) === index)
+          .sort((a, b) => b.date.localeCompare(a.date));
+      }
+    }
+    if (!entry) throw new Error(`Publication entry not found for ${date}`);
+
+    const report = await fetchJson(entry.daily_json_path);
+    const sourceDocument = await fetchJson(entry.sources_path || report.sources_path);
+
+    state.report = report;
+    state.sources = sourceDocument.sources || [];
+    state.selectedDate = date;
+
+    renderMasthead(report);
+    renderTape(report);
+    renderLead(report);
+    renderChanges(report);
+    renderUpcoming(report);
+    renderRisks(report);
+    renderSignals(report);
+    renderScenarios(report);
+    renderNextCatalyst(report);
+    renderSections(report);
+    renderSources(sourceDocument);
+    configureArchiveControls(date);
+    if (!options.skipUrl) updateUrl(date);
+    showReport();
+    requestAnimationFrame(() => {
+      if (!restoreSectionFromHash()) {
+        window.scrollTo({ top: 0, behavior: "auto" });
+        setActiveSection("");
+      }
+    });
+  } catch (error) {
+    showError(error);
+  }
+};
+
 function lensEl(tag, cls, text) {
   const n = document.createElement(tag);
   if (cls) n.className = cls;
