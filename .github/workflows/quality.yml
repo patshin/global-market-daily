@@ -22,7 +22,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Run deterministic publication gate
-        run: python scripts/validate_publish.py --root .
+        run: python scripts/validate_publish_v2.py --root .
       - name: Run frontend visibility gate
         run: python scripts/validate_frontend.py --root .
       - name: Run 30D market lens gate
