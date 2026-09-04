@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "retrieved_for": "Global Market Daily 30D Lens",
-  "as_of": "2026-09-03",
+  "as_of": "2026-09-04",
   "series": {
     "NASDAQCOM": {
       "label": "Nasdaq Composite",
@@ -1164,6 +1164,10 @@
         {
           "date": "2026-09-02",
           "value": 26217.83
+        },
+        {
+          "date": "2026-09-03",
+          "value": 26584.06
         }
       ]
     },
@@ -3524,6 +3528,10 @@
         {
           "date": "2026-09-02",
           "value": 15.2
+        },
+        {
+          "date": "2026-09-03",
+          "value": 14.32
         }
       ]
     },

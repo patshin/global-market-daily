@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-09-03",
-  "window_start": "2026-08-05",
-  "window_end": "2026-09-03",
+  "as_of": "2026-09-04",
+  "window_start": "2026-08-06",
+  "window_end": "2026-09-04",
   "coverage": {
     "market_sessions": 22,
-    "native_daily_days": 2,
-    "reconstructed_days": 20,
+    "native_daily_days": 3,
+    "reconstructed_days": 19,
     "verified_event_days": 5,
     "historical_series_start": "2025-07-11"
   },
@@ -85,62 +85,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-08-05",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "neutral",
-      "regime_label": "Neutral",
-      "dominant_theme_id": "growth_duration_rotation",
-      "signals": {
-        "growth": "↓",
-        "inflation": "→",
-        "rates": "→",
-        "earnings": "↓",
-        "liquidity": "→",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "theme_id": "growth_duration_rotation",
-          "theme_label": "Growth / Duration Rotation",
-          "category": "earnings_ai_semis",
-          "title": "Nasdaq relative to S&P 500 -0.67pp",
-          "evidence": "NASDAQCOM -0.83% vs SP500 -0.17%",
-          "market_bias": "risk_off",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Long-duration growth underperforms",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
-          "theme_id": "equity_risk_appetite",
-          "theme_label": "Equity Risk Appetite",
-          "category": "growth_macro",
-          "title": "Nasdaq daily move -0.83%",
-          "evidence": "NASDAQCOM -0.83% vs prior close",
-          "market_bias": "risk_off",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Equity move → risk appetite / duration repricing",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "volatility_event_risk",
-          "theme_label": "Volatility / Event Risk",
-          "category": "market_structure",
-          "title": "VIX daily move -4.18%",
-          "evidence": "VIXCLS -4.18%",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Volatility ↓ → event premium eases",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ]
-    },
     {
       "date": "2026-08-06",
       "source_mode": "objective_market_reconstruction",
@@ -1378,6 +1322,68 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-09-04",
+      "source_mode": "native_daily",
+      "regime_code": "event_risk",
+      "regime_label": "Event Risk / Mixed",
+      "dominant_theme_id": "fed_policy_path",
+      "signals": {
+        "growth": "→",
+        "inflation": "↑",
+        "rates": "↓",
+        "earnings": "→",
+        "liquidity": "→",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
+          "title": "美国8月非农就业报告：20:30 SGT将重新定价9月Fed路径",
+          "evidence": "截至19:03 SGT，BLS尚未公布8月Employment Situation；Reuters调查共识为非农约+56K，7月为-23K，失业率预期约4.1%。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "NFP/失业率 → 9月Fed定价 → UST 2Y/10Y → DXY → Nasdaq/SOX/Gold",
+          "confirmation": "非农、失业率和修订呈同向强/弱信号，并得到2Y与美元同步确认。",
+          "invalidation": "头条接近预期、但工资/修订/失业率相互抵消，市场继续等待CPI。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
+          "title": "Waller条件性偏鸽把利率尾部从“高概率加息”拉回数据依赖",
+          "evidence": "Waller表示若未来两周通胀改善延续，他倾向9月维持利率；Sep 3美股大涨，2Y官方收于4.34%。 政策沟通进一步验证短端压力可下降，但并未消除高服务通胀与高长端收益率。",
+          "market_bias": "risk_on",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Fed沟通 → hike probability↓ → 2Y↓/USD↓ → duration equities↑；数据再热则反向",
+          "confirmation": "后续就业与CPI继续降温，2Y与美元不重新突破本周高位。",
+          "invalidation": "就业、工资或CPI再热，前端利率和加息定价同步回升。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
+          "title": "Hormuz实体通行仍偏低：油价周内大涨继续约束全球久期",
+          "evidence": "Reuters援引Kpler称周四仅4艘商品船通过Hormuz，低于10日均值15艘；Brent/WTI周内约+6.5%/+8.8%。CENTCOM 9月1日确认对与海上威胁相关的IRGC目标实施打击。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Hormuz traffic↓ → oil risk premium↑ → inflation expectations↑ → long yields↑ → growth multiples↓",
+          "confirmation": "航运量继续显著低于近期均值且油价重新上冲。；后续需看到Brent、WTI、UST 10Y、Nasdaq 100的盈利兑现、指引或市场反应继续支持当前传导判断。",
+          "invalidation": "可持续外交降级并伴随Hormuz商业通行连续恢复、油价风险溢价回落。",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
@@ -1471,13 +1477,29 @@
       "theme_id": "global_duration",
       "theme_label": "Global Duration / Term Premium",
       "category": "inflation_rates",
-      "days_in_top3": 13,
+      "days_in_top3": 14,
       "best_rank": 1,
       "first_seen": "2026-08-06",
-      "last_seen": "2026-09-02",
-      "latest_rank": null,
+      "last_seen": "2026-09-04",
+      "latest_rank": 2,
       "state": "Persistent",
-      "latest_transmission": "Oil/财政/债券供给↑ → 全球期限溢价↑ → 融资成本↑ → EPS估值倍数↓ → 风险资产去杠杆",
+      "latest_transmission": "Fed沟通 → hike probability↓ → 2Y↓/USD↓ → duration equities↑；数据再热则反向",
+      "source_modes": [
+        "native_daily",
+        "objective_market_reconstruction"
+      ]
+    },
+    {
+      "theme_id": "fed_policy_path",
+      "theme_label": "Fed Policy Path",
+      "category": "central_banks_fiscal",
+      "days_in_top3": 9,
+      "best_rank": 1,
+      "first_seen": "2026-08-06",
+      "last_seen": "2026-09-04",
+      "latest_rank": 1,
+      "state": "Persistent",
+      "latest_transmission": "NFP/失业率 → 9月Fed定价 → UST 2Y/10Y → DXY → Nasdaq/SOX/Gold",
       "source_modes": [
         "native_daily",
         "objective_market_reconstruction"
@@ -1487,43 +1509,13 @@
       "theme_id": "growth_duration_rotation",
       "theme_label": "Growth / Duration Rotation",
       "category": "earnings_ai_semis",
-      "days_in_top3": 8,
+      "days_in_top3": 7,
       "best_rank": 1,
-      "first_seen": "2026-08-05",
+      "first_seen": "2026-08-07",
       "last_seen": "2026-08-31",
       "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "Growth leadership strengthens",
-      "source_modes": [
-        "objective_market_reconstruction"
-      ]
-    },
-    {
-      "theme_id": "fed_policy_path",
-      "theme_label": "Fed Policy Path",
-      "category": "central_banks_fiscal",
-      "days_in_top3": 8,
-      "best_rank": 1,
-      "first_seen": "2026-08-06",
-      "last_seen": "2026-08-28",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "2Y ↑ → policy path reprices tighter",
-      "source_modes": [
-        "objective_market_reconstruction"
-      ]
-    },
-    {
-      "theme_id": "volatility_event_risk",
-      "theme_label": "Volatility / Event Risk",
-      "category": "market_structure",
-      "days_in_top3": 7,
-      "best_rank": 1,
-      "first_seen": "2026-08-05",
-      "last_seen": "2026-09-01",
-      "latest_rank": null,
-      "state": "Escalating",
-      "latest_transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
       "source_modes": [
         "objective_market_reconstruction"
       ]
@@ -1559,16 +1551,16 @@
       ]
     },
     {
-      "theme_id": "equity_risk_appetite",
-      "theme_label": "Equity Risk Appetite",
-      "category": "growth_macro",
-      "days_in_top3": 4,
-      "best_rank": 2,
-      "first_seen": "2026-08-05",
+      "theme_id": "volatility_event_risk",
+      "theme_label": "Volatility / Event Risk",
+      "category": "market_structure",
+      "days_in_top3": 6,
+      "best_rank": 1,
+      "first_seen": "2026-08-12",
       "last_seen": "2026-09-01",
       "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "Equity move → risk appetite / duration repricing",
+      "state": "Escalating",
+      "latest_transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
       "source_modes": [
         "objective_market_reconstruction"
       ]
@@ -1581,12 +1573,27 @@
       "best_rank": 1,
       "first_seen": "2026-08-20",
       "last_seen": "2026-09-03",
-      "latest_rank": 3,
+      "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "产业政策/长期资本 → SME融资可得性↑ → 新兴产业研发与扩产↑ → 机器人/AI/新材料等供应链资本开支↑",
       "source_modes": [
         "native_daily",
         "verified_event"
+      ]
+    },
+    {
+      "theme_id": "geopolitics_energy",
+      "theme_label": "Geopolitics / Energy",
+      "category": "geopolitics_energy",
+      "days_in_top3": 3,
+      "best_rank": 1,
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-04",
+      "latest_rank": 3,
+      "state": "New",
+      "latest_transmission": "Hormuz traffic↓ → oil risk premium↑ → inflation expectations↑ → long yields↑ → growth multiples↓",
+      "source_modes": [
+        "native_daily"
       ]
     },
     {
@@ -1600,6 +1607,21 @@
       "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "Oil ↑ → inflation expectations ↑ → rates pressure ↑",
+      "source_modes": [
+        "objective_market_reconstruction"
+      ]
+    },
+    {
+      "theme_id": "equity_risk_appetite",
+      "theme_label": "Equity Risk Appetite",
+      "category": "growth_macro",
+      "days_in_top3": 3,
+      "best_rank": 2,
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-09-01",
+      "latest_rank": null,
+      "state": "Persistent",
+      "latest_transmission": "Equity move → risk appetite / duration repricing",
       "source_modes": [
         "objective_market_reconstruction"
       ]
@@ -1620,21 +1642,6 @@
       ]
     },
     {
-      "theme_id": "geopolitics_energy",
-      "theme_label": "Geopolitics / Energy",
-      "category": "geopolitics_energy",
-      "days_in_top3": 2,
-      "best_rank": 1,
-      "first_seen": "2026-09-02",
-      "last_seen": "2026-09-03",
-      "latest_rank": 1,
-      "state": "New",
-      "latest_transmission": "Hormuz/军事风险 → 原油与运保成本↑ → 通胀预期↑ → Fed/全球央行更鹰 → UST与全球折现率↑ → Nasdaq估值承压",
-      "source_modes": [
-        "native_daily"
-      ]
-    },
-    {
       "theme_id": "ai_earnings",
       "theme_label": "AI / Earnings",
       "category": "earnings_ai_semis",
@@ -1642,7 +1649,7 @@
       "best_rank": 2,
       "first_seen": "2026-09-02",
       "last_seen": "2026-09-03",
-      "latest_rank": 2,
+      "latest_rank": null,
       "state": "New",
       "latest_transmission": "AI bookings/ASIC/networking需求↑ → AI基础设施营收可见度↑ → 半导体基本面↑；同时指引轻微不及高预期 → 估值敏感度↑",
       "source_modes": [
@@ -1651,37 +1658,36 @@
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "geopolitics_energy",
-    "theme_label": "Geopolitics / Energy",
-    "as_of": "2026-09-03",
-    "confirming": [],
-    "diverging": [
+    "theme_id": "fed_policy_path",
+    "theme_label": "Fed Policy Path",
+    "as_of": "2026-09-04",
+    "confirming": [
       {
-        "series_id": "NASDAQCOM",
-        "label": "Nasdaq Composite",
-        "change": "+0.45%"
+        "series_id": "DTWEXBGS",
+        "label": "Broad Trade-Weighted USD",
+        "change": "+0.10%"
       }
     ],
-    "unavailable": [
+    "diverging": [
       {
-        "series_id": "DCOILBRENTEU",
-        "label": "Brent"
-      },
-      {
-        "series_id": "VIXCLS",
-        "label": "VIX"
+        "series_id": "DGS2",
+        "label": "US 2Y Treasury Yield",
+        "change": "-5bp"
       },
       {
         "series_id": "DGS10",
-        "label": "US 10Y Treasury Yield"
+        "label": "US 10Y Treasury Yield",
+        "change": "-2bp"
       },
       {
-        "series_id": "DTWEXBGS",
-        "label": "Broad Trade-Weighted USD"
+        "series_id": "NASDAQCOM",
+        "label": "Nasdaq Composite",
+        "change": "+1.40%"
       }
     ],
-    "interpretation_note": "0 项资产确认当前主线，1 项出现背离。",
-    "what_would_flip_it": "冲突实质降级、Hormuz船舶通行恢复且Brent回落至冲突前区间。"
+    "unavailable": [],
+    "interpretation_note": "1 项资产确认当前主线，3 项出现背离。",
+    "what_would_flip_it": "头条接近预期、但工资/修订/失业率相互抵消，市场继续等待CPI。"
   },
   "series": {
     "NASDAQCOM": {
@@ -1690,10 +1696,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-05",
-          "value": 26363.44
-        },
         {
           "date": "2026-08-06",
           "value": 26348.35
@@ -1773,6 +1775,10 @@
         {
           "date": "2026-09-02",
           "value": 26217.83
+        },
+        {
+          "date": "2026-09-03",
+          "value": 26584.06
         }
       ]
     },
@@ -1782,10 +1788,6 @@
       "source": "S&P Dow Jones Indices via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-05",
-          "value": 7723.55
-        },
         {
           "date": "2026-08-06",
           "value": 7709.96
@@ -1879,10 +1881,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-05",
-          "value": 15.81
-        },
-        {
           "date": "2026-08-06",
           "value": 15.15
         },
@@ -1961,6 +1959,10 @@
         {
           "date": "2026-09-02",
           "value": 15.2
+        },
+        {
+          "date": "2026-09-03",
+          "value": 14.32
         }
       ]
     },
@@ -1970,10 +1972,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-05",
-          "value": 4.18
-        },
         {
           "date": "2026-08-06",
           "value": 4.25
@@ -2063,10 +2061,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-08-05",
-          "value": 4.63
-        },
-        {
           "date": "2026-08-06",
           "value": 4.69
         },
@@ -2155,10 +2149,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-05",
-          "value": 86.65
-        },
-        {
           "date": "2026-08-06",
           "value": 89.65
         },
@@ -2239,10 +2229,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-05",
-          "value": 119.3881
-        },
-        {
           "date": "2026-08-06",
           "value": 119.5113
         },
@@ -2318,10 +2304,6 @@
       "source": "ICE BofA via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-05",
-          "value": 2.75
-        },
         {
           "date": "2026-08-06",
           "value": 2.71
