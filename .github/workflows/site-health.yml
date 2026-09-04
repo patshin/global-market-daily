@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - name: Verify deployed public URLs
+      - name: Verify deployed public publication bundle
         shell: bash
         run: |
           set -euo pipefail
@@ -33,16 +33,61 @@ jobs:
           for attempt in $(seq 1 24); do
             echo "Public verification attempt ${attempt}/24"
             ok=1
-            curl -fsSL --max-time 20 "$base/version.json" -o /tmp/version.json || ok=0
-            curl -fsSL --max-time 20 "$base/trends.html" -o /tmp/trends.html || ok=0
-            curl -fsSL --max-time 20 "$base/data/trends/rolling-30d.json" -o /tmp/rolling.json || ok=0
             curl -fsSL --max-time 20 "$base/" -o /tmp/index.html || ok=0
-            if [ "$ok" = 1 ] && grep -q '"site_version": "2.0.0"' /tmp/version.json && grep -q '30-Day Market Lens' /tmp/trends.html && grep -q '30D Market Lens' /tmp/index.html; then
-              python3 -c "import json; p=json.load(open('/tmp/rolling.json')); assert p['window_start']=='2026-08-04'; assert p['window_end']=='2026-09-02'; assert p['coverage']['market_sessions'] >= 20"
-              echo "PUBLIC SITE VERIFIED: v2.0.0 homepage + trends + rolling data are live"
-              exit 0
+            curl -fsSL --max-time 20 "$base/trends.html" -o /tmp/trends.html || ok=0
+            curl -fsSL --max-time 20 "$base/data/latest.json" -o /tmp/latest.json || ok=0
+            curl -fsSL --max-time 20 "$base/data/archive.json" -o /tmp/archive.json || ok=0
+            curl -fsSL --max-time 20 "$base/data/trends/rolling-30d.json" -o /tmp/rolling.json || ok=0
+            if [ "$ok" = 1 ] && grep -q '30D Market Lens' /tmp/index.html; then
+              if python3 - <<'PY'
+          import json, pathlib, subprocess, sys
+          base='https://patshin.github.io/global-market-daily'
+          latest=json.load(open('/tmp/latest.json'))
+          archive=json.load(open('/tmp/archive.json'))
+          rolling=json.load(open('/tmp/rolling.json'))
+          date=latest.get('date')
+          assert isinstance(date,str) and len(date)==10
+          for field in ('daily_json_path','report_path','sources_path'):
+              assert latest.get(field), field
+          paths={
+              'daily': latest['daily_json_path'],
+              'report': latest['report_path'],
+              'sources': latest['sources_path'],
+          }
+          for key,path in paths.items():
+              out=f'/tmp/{key}.live'
+              subprocess.run(['curl','-fsSL','--max-time','20',f'{base}/{path}','-o',out],check=True)
+          daily=json.load(open('/tmp/daily.live'))
+          sources=json.load(open('/tmp/sources.live'))
+          assert daily['date']==date
+          assert sources['date']==date
+          assert daily['thesis']==latest['thesis']
+          assert daily['dominant_narrative']==latest['dominant_narrative']
+          assert len(daily.get('top_catalysts',[]))==3
+          assert len(daily.get('section_order',[]))==15
+          assert len(daily.get('sections',{}))==15
+          assert len(daily.get('top_risks',[]))==3
+          assert daily.get('sources_path')==latest['sources_path']
+          assert set(daily.get('sources',[]))=={s.get('id') for s in sources.get('sources',[])}
+          archive_dates={x.get('date') for x in archive.get('entries',[])}
+          cycle=daily.get('publication_cycle') or {}
+          if cycle.get('is_final') is False:
+              assert latest.get('edition_status')=='provisional'
+              assert cycle.get('archive_eligible') is False
+              assert cycle.get('market_lens_native_eligible') is False
+              assert date not in archive_dates
+              native_dates={d.get('date') for d in rolling.get('days',[]) if d.get('source_mode')=='native_daily'}
+              assert date not in native_dates
+          else:
+              assert date in archive_dates
+          assert pathlib.Path('/tmp/report.live').stat().st_size > 2000
+          print(f'PUBLIC SITE VERIFIED: latest={date}, status={latest.get("edition_status","official")}, daily/report/sources consistent, archive isolation OK')
+          PY
+              then
+                exit 0
+              fi
             fi
             sleep 5
           done
-          echo "Public site never converged to v2.0.0"
+          echo "Public site never converged to a self-consistent publication bundle"
           exit 1
