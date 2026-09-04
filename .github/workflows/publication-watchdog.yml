@@ -1,0 +1,72 @@
+name: Twice-Daily Publication Watchdog
+
+on:
+  schedule:
+    # GitHub cron is UTC. SGT is UTC+8 year-round.
+    - cron: "35 1 * * *"   # 09:35 SGT — 35-minute morning grace period
+    - cron: "45 10 * * *"  # 18:45 SGT — 45-minute close grace period
+  workflow_dispatch:
+    inputs:
+      cycle:
+        description: Publication cycle to verify
+        required: true
+        type: choice
+        options:
+          - morning
+          - close
+      date:
+        description: Optional expected SGT date (YYYY-MM-DD)
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: publication-watchdog-${{ github.event.schedule || inputs.cycle || 'manual' }}
+  cancel-in-progress: false
+
+jobs:
+  verify-morning:
+    name: Verify 09:00 SGT morning publication
+    if: >-
+      (github.event_name == 'schedule' && github.event.schedule == '35 1 * * *') ||
+      (github.event_name == 'workflow_dispatch' && inputs.cycle == 'morning')
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Validate automation definitions
+        run: python scripts/validate_automation_contract.py .
+      - name: Verify morning publication state
+        env:
+          EXPECTED_DATE: ${{ inputs.date }}
+        run: |
+          args=(--root . --cycle morning)
+          if [ -n "${EXPECTED_DATE:-}" ]; then args+=(--date "$EXPECTED_DATE"); fi
+          python scripts/verify_scheduled_publication.py "${args[@]}"
+
+  verify-close:
+    name: Verify 18:00 SGT close publication
+    if: >-
+      (github.event_name == 'schedule' && github.event.schedule == '45 10 * * *') ||
+      (github.event_name == 'workflow_dispatch' && inputs.cycle == 'close')
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Validate automation definitions
+        run: python scripts/validate_automation_contract.py .
+      - name: Verify close publication state
+        env:
+          EXPECTED_DATE: ${{ inputs.date }}
+        run: |
+          args=(--root . --cycle close)
+          if [ -n "${EXPECTED_DATE:-}" ]; then args+=(--date "$EXPECTED_DATE"); fi
+          python scripts/verify_scheduled_publication.py "${args[@]}"
