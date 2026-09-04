@@ -3,8 +3,9 @@ name: Twice-Daily Publication Watchdog
 on:
   schedule:
     # GitHub cron is UTC. SGT is UTC+8 year-round.
-    - cron: "35 1 * * *"   # 09:35 SGT — 35-minute morning grace period
-    - cron: "45 10 * * *"  # 18:45 SGT — 45-minute close grace period
+    # ChatGPT-native tasks may start late under platform queueing, so verify after a realistic grace window.
+    - cron: "15 2 * * *"   # 10:15 SGT — morning publication grace window
+    - cron: "30 11 * * *"  # 19:30 SGT — close publication grace window
   workflow_dispatch:
     inputs:
       cycle:
@@ -30,7 +31,7 @@ jobs:
   verify-morning:
     name: Verify 09:00 SGT morning publication
     if: >-
-      (github.event_name == 'schedule' && github.event.schedule == '35 1 * * *') ||
+      (github.event_name == 'schedule' && github.event.schedule == '15 2 * * *') ||
       (github.event_name == 'workflow_dispatch' && inputs.cycle == 'morning')
     runs-on: ubuntu-latest
     timeout-minutes: 6
@@ -52,7 +53,7 @@ jobs:
   verify-close:
     name: Verify 18:00 SGT close publication
     if: >-
-      (github.event_name == 'schedule' && github.event.schedule == '45 10 * * *') ||
+      (github.event_name == 'schedule' && github.event.schedule == '30 11 * * *') ||
       (github.event_name == 'workflow_dispatch' && inputs.cycle == 'close')
     runs-on: ubuntu-latest
     timeout-minutes: 6
