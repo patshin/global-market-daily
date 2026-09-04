@@ -40,7 +40,7 @@ jobs:
             curl -fsSL --max-time 20 "$base/data/trends/rolling-30d.json" -o /tmp/rolling.json || ok=0
             if [ "$ok" = 1 ] && grep -q '30D Market Lens' /tmp/index.html; then
               if python3 - <<'PY'
-          import json, pathlib, subprocess, sys
+          import json, pathlib, subprocess
           base='https://patshin.github.io/global-market-daily'
           latest=json.load(open('/tmp/latest.json'))
           archive=json.load(open('/tmp/archive.json'))
@@ -81,7 +81,7 @@ jobs:
           else:
               assert date in archive_dates
           assert pathlib.Path('/tmp/report.live').stat().st_size > 2000
-          print(f'PUBLIC SITE VERIFIED: latest={date}, status={latest.get("edition_status","official")}, daily/report/sources consistent, archive isolation OK')
+          print(f'PUBLIC BUNDLE VERIFIED: latest={date}, status={latest.get("edition_status","official")}, daily/report/sources consistent, archive isolation OK')
           PY
               then
                 exit 0
@@ -90,4 +90,89 @@ jobs:
             sleep 5
           done
           echo "Public site never converged to a self-consistent publication bundle"
+          exit 1
+
+      - name: Verify browser renders latest edition
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://patshin.github.io/global-market-daily"
+          browser="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          if [ -z "$browser" ]; then
+            echo "No Chromium-compatible browser is available on the runner. Browser-level verification is mandatory."
+            exit 1
+          fi
+
+          latest_date="$(python3 - <<'PY'
+          import json
+          print(json.load(open('/tmp/latest.json'))['date'])
+          PY
+          )"
+          expected_thesis="$(python3 - <<'PY'
+          import json
+          print(json.load(open('/tmp/latest.json'))['thesis'])
+          PY
+          )"
+
+          for attempt in $(seq 1 12); do
+            echo "Browser render attempt ${attempt}/12 for ${latest_date}"
+            if "$browser" \
+              --headless=new \
+              --disable-gpu \
+              --no-sandbox \
+              --disable-dev-shm-usage \
+              --virtual-time-budget=15000 \
+              --dump-dom "$base/" > /tmp/rendered.html 2>/tmp/browser.stderr; then
+              if LATEST_DATE="$latest_date" EXPECTED_THESIS="$expected_thesis" python3 - <<'PY'
+          import os
+          from html.parser import HTMLParser
+
+          class Capture(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.stack=[]
+                  self.nodes={}
+              def handle_starttag(self, tag, attrs):
+                  attrs=dict(attrs)
+                  node_id=attrs.get('id')
+                  self.stack.append(node_id)
+                  if node_id:
+                      self.nodes[node_id]={'attrs':attrs,'text':[]}
+              def handle_endtag(self, tag):
+                  if self.stack:
+                      self.stack.pop()
+              def handle_data(self, data):
+                  for node_id in reversed(self.stack):
+                      if node_id and node_id in self.nodes:
+                          self.nodes[node_id]['text'].append(data)
+                          break
+
+          parser=Capture()
+          parser.feed(open('/tmp/rendered.html', encoding='utf-8').read())
+          nodes=parser.nodes
+          date=os.environ['LATEST_DATE']
+          expected=os.environ['EXPECTED_THESIS'].strip()
+
+          shell=nodes.get('report-shell')
+          error=nodes.get('error-state')
+          title=nodes.get('edition-title')
+          thesis=nodes.get('thesis')
+          assert shell is not None, 'report-shell missing'
+          assert 'hidden' not in shell['attrs'], 'report-shell is still hidden after JS execution'
+          assert error is not None and 'hidden' in error['attrs'], 'error-state is visible after JS execution'
+          rendered_title=' '.join(title['text']).strip() if title else ''
+          rendered_thesis=' '.join(thesis['text']).strip() if thesis else ''
+          assert date in rendered_title, f'latest date not rendered: {rendered_title!r}'
+          assert rendered_thesis == expected, 'rendered thesis does not match latest.json'
+          print(f'BROWSER RENDER VERIFIED: {date} is visible and Publication Error is hidden')
+          PY
+              then
+                exit 0
+              fi
+            fi
+            cat /tmp/browser.stderr || true
+            sleep 5
+          done
+
+          echo "Browser could fetch the site but never rendered the latest edition successfully."
           exit 1
