@@ -42,6 +42,76 @@ The report must include:
 - 30-Day Market Lens lifecycle fields required by the current repository contract, including theme/risk identity, state/lifecycle, first-seen/last-seen context and confirmation/invalidation evidence where applicable
 - Material China / Trade / Industrial Policy events when they can affect global growth, inflation, technology, semiconductors, commodities, FX or capital flows
 
+## Canonical nested publication contract — field names are API
+
+The JSON field names consumed by the production website are a hard API contract. Do not paraphrase, rename or substitute them even when another label sounds semantically equivalent. A report with the right prose but the wrong nested keys is a failed publication.
+
+### `signal_panel`
+
+Each of the six signal objects must contain all of:
+
+- `label`
+- `current`
+- `yesterday`
+- `change_reason`
+- `evidence`
+- `sources`
+
+Do **not** emit `previous` instead of `yesterday`. If a source template contains legacy aliases, normalize them to the canonical fields before publication.
+
+### `scenario_matrix`
+
+`base_case`, `bull_case` and `bear_case` must each contain all of:
+
+- `label`
+- `probability`
+- `trigger`
+- `expected_market_reaction`
+- `assets_most_sensitive` — always an array, never omitted and never a scalar string
+- `what_confirms_it`
+- `what_invalidates_it`
+
+Do **not** use `market_path` in place of `expected_market_reaction`, and do **not** use `invalidation` in place of `what_invalidates_it`.
+
+### `next_catalyst`
+
+In addition to date/time/status/consensus/previous/actual/why-it-matters, include:
+
+- `first_market`
+- `bull_interpretation`
+- `bear_interpretation`
+- `watch_first` — array with zero to three items
+
+### `top_risks`
+
+Each risk must include:
+
+- `risk`
+- `why_not_fully_priced`
+- `trigger`
+- `transmission`
+- `first_asset`
+- lifecycle/theme fields required by the current 30D contract where applicable
+- `sources`
+
+### Important Earnings
+
+For every reported company:
+
+- `guidance` is an array of objects, not free-form strings. Each guidance item uses `metric`, `current`, `previous_or_consensus`, `change`, `interpretation`.
+- `read_through` is an array of objects using `asset`, `implication`, not free-form strings.
+- `metrics`, `market_reaction`, `one_offs`, `sources` must follow the repository schema.
+
+For upcoming companies, preserve the repository's canonical `consensus`, `previous_guidance`, `what_matters`, `read_through_targets`, `actual` and `sources` structure.
+
+### Tables
+
+Every structured table object should carry `title`, `headers` and `rows` when the current UI expects a titled table block.
+
+### Contract-drift prohibition
+
+Before writing `latest.json`, explicitly compare the generated nested keys against the current repository schema **and the production renderer contract**. Any missing renderer-required field, wrong type, or alias drift is a blocking failure. Do not rely on prose-level similarity and do not assume a permissive JSON Schema proves the browser can render the report.
+
 ## Fifteen core sections
 
 1. Top 3 Market Catalysts
@@ -106,6 +176,7 @@ For a morning provisional edition, it is valid and expected that `latest.date` i
 Before updating `latest.json`, verify at minimum:
 
 - daily JSON parses and matches the current schema/shape
+- all renderer-required nested fields listed in the canonical contract above exist with the correct types; no alias drift remains
 - exactly 3 Top Catalysts, exactly 15 core sections, exactly 3 Top Risks
 - all referenced source IDs exist and unused fabricated source records are absent
 - daily / Markdown / sources represent the same date, thesis, key catalysts, risks and factual state
