@@ -36,6 +36,28 @@ jobs:
           tar -tzf /tmp/manual0903.tar.gz
           tar -xzf /tmp/manual0903.tar.gz -C .
 
+      - name: Strengthen thin content caught by the release gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          jp=Path('docs/data/daily/2026-09-03.json')
+          report=json.loads(jp.read_text())
+          old_inv=report['top_catalysts'][1]['invalidation']
+          new_inv='后续AI收入、订单、毛利率或客户容量承诺连续低于当前高增长路径，并导致未来两个季度的收入指引同步下修。'
+          report['top_catalysts'][1]['invalidation']=new_inv
+          old_etf='相关ETF表现主要仍由底层资产与折现率驱动。'
+          new_etf='相关ETF表现主要仍由底层资产与折现率驱动；截至截点没有一手证据支持将常规资金流升级为独立市场催化剂。'
+          report['sections']['etf']['paragraphs']=[new_etf]
+          jp.write_text(json.dumps(report, ensure_ascii=False, indent=2)+'\n')
+          mp=Path('docs/reports/2026/09/2026-09-03.md')
+          md=mp.read_text()
+          md=md.replace(old_inv,new_inv).replace(old_etf,new_etf)
+          mp.write_text(md)
+          PY
+
       - name: Protect current provisional latest
         shell: bash
         run: |
