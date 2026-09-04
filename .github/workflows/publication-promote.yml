@@ -1,0 +1,52 @@
+name: Promote Validated GMD Publication
+
+on:
+  workflow_run:
+    workflows: ["Publication Quality Gate"]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: gmd-publication-promote
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    name: Merge validated scheduled publication
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'pull_request' &&
+      startsWith(github.event.workflow_run.head_branch, 'publish/gmd-')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Resolve and merge publication PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.workflow_run.pull_requests[0].number }}
+          EXPECTED_HEAD: ${{ github.event.workflow_run.head_sha }}
+          EXPECTED_BRANCH: ${{ github.event.workflow_run.head_branch }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "${PR_NUMBER:-}" || { echo 'Quality run has no PR number'; exit 1; }
+          meta="$(gh pr view "$PR_NUMBER" --repo "$REPO" --json state,headRefName,headRefOid,baseRefName,title)"
+          echo "$meta"
+          state="$(jq -r .state <<<"$meta")"
+          head="$(jq -r .headRefName <<<"$meta")"
+          oid="$(jq -r .headRefOid <<<"$meta")"
+          base="$(jq -r .baseRefName <<<"$meta")"
+          title="$(jq -r .title <<<"$meta")"
+          test "$state" = "OPEN"
+          test "$head" = "$EXPECTED_BRANCH"
+          test "$oid" = "$EXPECTED_HEAD"
+          test "$base" = "main"
+          [[ "$title" == GMD\ Publish* ]]
+          gh pr merge "$PR_NUMBER" --repo "$REPO" --squash --delete-branch \
+            --subject "${title}" \
+            --body "Automatically promoted after Publication Quality Gate passed."
+          echo "PROMOTED PR #$PR_NUMBER ($EXPECTED_BRANCH)"
