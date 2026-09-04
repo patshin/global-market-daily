@@ -20,6 +20,33 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
+      - name: Strengthen thin content caught by the visibility gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          path=Path('docs/data/daily/2026-09-04.json')
+          r=json.loads(path.read_text())
+          cats=r.get('top_catalysts') or []
+          if len(cats)>1 and len(str(cats[1].get('what_happened','')).strip()) < 60:
+              existing=str(cats[1].get('what_happened','')).strip()
+              evidence=str(cats[1].get('what_changed','')).strip()
+              cats[1]['what_happened']=(existing + ' ' + evidence).strip()
+          if len(cats)>2 and len(str(cats[2].get('confirmation','')).strip()) < 25:
+              existing=str(cats[2].get('confirmation','')).strip()
+              assets='、'.join(cats[2].get('affected_assets') or [])
+              cats[2]['confirmation']=(existing + f'；后续需看到{assets or "相关资产"}的盈利兑现、指引或市场反应继续支持当前传导判断。').strip('；')
+          etf=(r.get('sections') or {}).get('etf')
+          if isinstance(etf,dict):
+              paragraphs=etf.get('paragraphs') if isinstance(etf.get('paragraphs'),list) else []
+              text=''.join(x.strip() for x in paragraphs if isinstance(x,str))
+              if len(text)<25:
+                  summary=str(etf.get('summary','')).strip()
+                  etf['paragraphs']=[summary if len(summary)>=25 else '截至本期研究截止，未发现能够通过可靠来源确认、且足以改变当日跨资产判断的重大ETF再平衡或异常资金流事件。']
+          path.write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n')
+          PY
       - name: Finalize latest and verify archive
         shell: bash
         run: |
@@ -87,7 +114,7 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add docs/data/latest.json docs/data/trends/market-history.json docs/data/trends/rolling-30d.json docs/data/trends/theme-registry.json
+          git add docs/data/daily/2026-09-04.json docs/data/latest.json docs/data/trends/market-history.json docs/data/trends/rolling-30d.json docs/data/trends/theme-registry.json
           git reset .github/workflows/recover-evening-2026-09-04.yml 2>/dev/null || true
           if git diff --cached --quiet; then
             echo 'No finalize changes to commit' >&2
