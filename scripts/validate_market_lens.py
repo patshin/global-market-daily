@@ -58,17 +58,36 @@ req('source_mode' in p0 and 'source_mode' in tjs and '市场重建' in tjs,'prov
 req('verified_event' in tjs and 'Verified Event' in tjs,'verified event provenance missing from frontend')
 req('reader-bar' in css and '@media(max-width:900px)' in css,'mobile compact reader bar CSS missing')
 
-workflow=(ROOT/'.github/workflows/daily-market-update.yml')
-prompt=(ROOT/'prompts/global-market-daily-master.md')
-generator=(ROOT/'scripts/generate_daily_update.py')
-req(workflow.exists() and prompt.exists() and generator.exists(),'twice-daily publication automation files missing')
-if workflow.exists():
-    w=workflow.read_text(encoding='utf-8')
-    for token in ['0 1 * * *','0 10 * * *','gpt-5.6-sol','xhigh','OPENAI_API_KEY']:
-        req(token in w,f'daily automation missing {token}')
-if prompt.exists():
-    t=prompt.read_text(encoding='utf-8')
-    req('morning' in t and 'close' in t and 'canonical daily archive' in t,'publication-cycle contract missing')
+# Publication architecture contract:
+# ChatGPT owns research/cadence and writes source-backed publication files.
+# GitHub Actions only validate, derive deterministic trend data, and deploy Pages.
+legacy_workflow=ROOT/'.github/workflows/daily-market-update.yml'
+req(not legacy_workflow.exists(),'legacy API-key research scheduler must remain absent')
+workflow_dir=ROOT/'.github/workflows'
+active_workflows=list(workflow_dir.glob('*.yml')) + list(workflow_dir.glob('*.yaml'))
+for wf in active_workflows:
+    text=wf.read_text(encoding='utf-8')
+    req('OPENAI_API_KEY' not in text,f'{wf.name}: Actions must not require OPENAI_API_KEY')
+    req('api.openai.com' not in text,f'{wf.name}: Actions must not call OpenAI API directly')
+for required in ['quality.yml','pages.yml','trends-refresh.yml']:
+    req((workflow_dir/required).exists(),f'required validation/deployment workflow missing: {required}')
+
+# The builder must explicitly ignore provisional morning reports as native daily history.
+req("cycle.get('is_final') is False" in builder,
+    'market-lens builder must skip publication_cycle.is_final=false reports')
+
+# The latest live report may be provisional; formal archive remains official-only.
+latest=json.loads((ROOT/'docs/data/latest.json').read_text(encoding='utf-8'))
+latest_path=ROOT/'docs'/str(latest.get('daily_json_path',''))
+if latest_path.exists():
+    latest_report=json.loads(latest_path.read_text(encoding='utf-8'))
+    cycle=latest_report.get('publication_cycle') or {}
+    if cycle.get('is_final') is False:
+        req(cycle.get('archive_eligible') is False,'provisional report must be archive_eligible=false')
+        req(cycle.get('market_lens_native_eligible') is False,'provisional report must be market_lens_native_eligible=false')
+        native_dates={d.get('date') for d in days if d.get('source_mode')=='native_daily'}
+        req(latest_report.get('date') not in native_dates,
+            'provisional latest edition leaked into native 30D history')
 
 if errors:
     print('MARKET LENS GATE FAILED')
