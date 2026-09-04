@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - "docs/**"
+      - "prompts/**"
       - "scripts/**"
       - "schemas/**"
       - ".github/workflows/pages.yml"
@@ -21,9 +22,9 @@ concurrency:
 
 jobs:
   validate:
-    name: Validate publication bundle and 30D lens
+    name: Validate publication bundle, automation and editorial UI
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v7
@@ -37,6 +38,10 @@ jobs:
         run: python scripts/validate_live_contract.py --root .
       - name: Enforce formal archive renderer contracts
         run: python scripts/validate_archive_live_contract.py --root .
+      - name: Enforce standalone morning and close automation prompts
+        run: python scripts/validate_automation_contract.py .
+      - name: Enforce editorial signal and watch-first UI contract
+        run: python scripts/validate_editorial_ui.py .
       - name: Run frontend visibility gate
         run: python scripts/validate_frontend.py --root .
       - name: Run 30D market lens gate
@@ -45,6 +50,7 @@ jobs:
         run: |
           node --check docs/assets/app.js
           node --check docs/assets/publication-compat.js
+          node --check docs/assets/editorial-v2.js
           node --check docs/assets/p0.js
           node --check docs/assets/trends.js
 
