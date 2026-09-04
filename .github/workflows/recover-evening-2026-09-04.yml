@@ -1,0 +1,97 @@
+name: Recover Sep 4 Evening Publication
+
+on:
+  push:
+    branches: [recover/2026-09-04-evening]
+    paths: [.github/workflows/recover-evening-2026-09-04.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Finalize latest and verify archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=Path('docs/data/daily/2026-09-04.json')
+          r=json.loads(d.read_text())
+          assert r['publication_cycle']['is_final'] is True
+          assert r['publication_cycle']['archive_eligible'] is True
+          archive_path=Path('docs/data/archive.json')
+          archive=json.loads(archive_path.read_text())
+          matches=[x for x in archive['entries'] if x.get('date')=='2026-09-04']
+          assert len(matches)==1, matches
+          a=matches[0]
+          assert a['thesis']==r['thesis']
+          latest={
+            'schema_version':'1.0.0',
+            'date':r['date'],
+            'edition_status':'official',
+            'publication_cycle':'evening',
+            'thesis':r['thesis'],
+            'regime':r['market_regime']['overall']['state'],
+            'dominant_narrative':r['dominant_narrative'],
+            'top_catalysts':[
+              {'rank':x.get('rank'),'event':x.get('event'),'direction':x.get('direction'),'importance':x.get('importance')}
+              for x in r.get('top_catalysts',[])
+            ],
+            'top_risks':[
+              {'risk':x.get('risk'),'first_asset':x.get('first_asset')}
+              for x in r.get('top_risks',[])
+            ],
+            'next_catalyst':{
+              'event':r['next_catalyst'].get('event'),
+              'et':r['next_catalyst'].get('et'),
+              'sgt':r['next_catalyst'].get('sgt')
+            },
+            'daily_json_path':r.get('daily_json_path','data/daily/2026-09-04.json'),
+            'report_path':r.get('report_path','reports/2026/09/2026-09-04.md'),
+            'sources_path':r.get('sources_path','data/sources/2026-09-04.json'),
+            'updated_at':r['last_updated']
+          }
+          Path('docs/data/latest.json').write_text(json.dumps(latest,ensure_ascii=False,indent=2)+'\n')
+          print('LATEST FINALIZED', latest['date'], latest['edition_status'])
+          PY
+      - name: Rebuild 30D data
+        run: python3 scripts/build_market_lens.py
+      - name: Run all production gates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/validate_publish_v2.py --root .
+          python3 scripts/validate_live_contract.py --root .
+          python3 scripts/validate_archive_live_contract.py --root .
+          python3 scripts/validate_frontend.py --root .
+          python3 scripts/validate_market_lens.py
+          node --check docs/assets/app.js
+          node --check docs/assets/publication-compat.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
+      - name: Commit finalized publication
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/data/latest.json docs/data/trends/market-history.json docs/data/trends/rolling-30d.json docs/data/trends/theme-registry.json
+          git reset .github/workflows/recover-evening-2026-09-04.yml 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo 'No finalize changes to commit' >&2
+            exit 1
+          fi
+          git commit -m 'daily: finalize official market brief 2026-09-04'
+          git push origin HEAD:recover/2026-09-04-evening
