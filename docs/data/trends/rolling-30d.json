@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-09-02",
-  "window_start": "2026-08-04",
-  "window_end": "2026-09-02",
+  "as_of": "2026-09-03",
+  "window_start": "2026-08-05",
+  "window_end": "2026-09-03",
   "coverage": {
     "market_sessions": 22,
-    "native_daily_days": 1,
-    "reconstructed_days": 21,
+    "native_daily_days": 2,
+    "reconstructed_days": 20,
     "verified_event_days": 5,
-    "historical_series_start": "2025-07-10"
+    "historical_series_start": "2025-07-11"
   },
   "methodology": {
     "native_daily": "Original published GMD daily assessment.",
@@ -85,62 +85,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-08-04",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "risk_on",
-      "regime_label": "Risk-On",
-      "dominant_theme_id": "growth_duration_rotation",
-      "signals": {
-        "growth": "↑",
-        "inflation": "↓",
-        "rates": "↓",
-        "earnings": "↑",
-        "liquidity": "↑",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "theme_id": "growth_duration_rotation",
-          "theme_label": "Growth / Duration Rotation",
-          "category": "earnings_ai_semis",
-          "title": "Nasdaq relative to S&P 500 +0.80pp",
-          "evidence": "NASDAQCOM +2.59% vs SP500 +1.79%",
-          "market_bias": "risk_on",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Growth leadership strengthens",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "US 10Y moves -7.0bp",
-          "evidence": "DGS10 -7.0bp",
-          "market_bias": "risk_on",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "10Y ↓ → discount rate eases",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "equity_risk_appetite",
-          "theme_label": "Equity Risk Appetite",
-          "category": "growth_macro",
-          "title": "Nasdaq daily move +2.59%",
-          "evidence": "NASDAQCOM +2.59% vs prior close",
-          "market_bias": "risk_on",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Equity move → risk appetite / duration repricing",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ]
-    },
     {
       "date": "2026-08-05",
       "source_mode": "objective_market_reconstruction",
@@ -1372,15 +1316,71 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-09-03",
+      "source_mode": "native_daily",
+      "regime_code": "event_risk",
+      "regime_label": "Event Risk / Mixed",
+      "dominant_theme_id": "geopolitics_energy",
+      "signals": {
+        "growth": "↓",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "↑",
+        "liquidity": "→",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
+          "title": "Hormuz实体航运风险未解除，Brent继续维持高位",
+          "evidence": "美伊新一轮军事行动后，Brent与WTI维持六周高位附近；Reuters报道Hormuz船舶通行仍明显低于近期常态，实体供应链风险没有解除。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Hormuz/军事风险 → 原油与运保成本↑ → 通胀预期↑ → Fed/全球央行更鹰 → UST与全球折现率↑ → Nasdaq估值承压",
+          "confirmation": "Brent继续处于高位且Hormuz船舶通行量持续低于正常水平。",
+          "invalidation": "冲突实质降级、Hormuz船舶通行恢复且Brent回落至冲突前区间。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "Broadcom确认AI基础设施需求更强，但近端指引没有完全满足高预期",
+          "evidence": "Broadcom Q3营收约295.9亿美元、调整后EPS 3.32美元；AI芯片销售167亿美元。公司把FY2027 AI芯片收入预期提高至约1150亿美元，并预计FY2028约2300亿美元。",
+          "market_bias": "risk_on",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "AI bookings/ASIC/networking需求↑ → AI基础设施营收可见度↑ → 半导体基本面↑；同时指引轻微不及高预期 → 估值敏感度↑",
+          "confirmation": "AI收入、订单与客户容量承诺继续上修，并转化为收入与自由现金流。",
+          "invalidation": "后续AI收入、订单、毛利率或客户容量承诺连续低于当前高增长路径，并导致未来两个季度的收入指引同步下修。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "china_industrial_policy",
+          "theme_label": "China Industrial Policy",
+          "category": "china_trade_policy",
+          "title": "中国发布“十五五”中小企业规划，强化专精特新与先进制造资本支持",
+          "evidence": "工信部等十部门发布促进中小企业发展“十五五”规划：到2030年专精特新“小巨人”目标2.2万家、国家级中小企业特色产业集群600个，规上工业中小企业研发支出年均增长8%以上，并强调机器人、量子、脑机接口和具身智能等方向。",
+          "market_bias": "risk_on",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "产业政策/长期资本 → SME融资可得性↑ → 新兴产业研发与扩产↑ → 机器人/AI/新材料等供应链资本开支↑",
+          "confirmation": "后续专项基金、信贷、上市融资和地方配套政策形成可量化资金落地。",
+          "invalidation": "目标缺少财政/金融执行工具，或后续资金与项目落地明显弱于规划。",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
-    {
-      "date": "2026-08-05",
-      "from": "Risk-On",
-      "to": "Neutral",
-      "dominant_theme_id": "growth_duration_rotation"
-    },
     {
       "date": "2026-08-07",
       "from": "Neutral",
@@ -1471,11 +1471,11 @@
       "theme_id": "global_duration",
       "theme_label": "Global Duration / Term Premium",
       "category": "inflation_rates",
-      "days_in_top3": 14,
+      "days_in_top3": 13,
       "best_rank": 1,
-      "first_seen": "2026-08-04",
+      "first_seen": "2026-08-06",
       "last_seen": "2026-09-02",
-      "latest_rank": 2,
+      "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "Oil/财政/债券供给↑ → 全球期限溢价↑ → 融资成本↑ → EPS估值倍数↓ → 风险资产去杠杆",
       "source_modes": [
@@ -1487,9 +1487,9 @@
       "theme_id": "growth_duration_rotation",
       "theme_label": "Growth / Duration Rotation",
       "category": "earnings_ai_semis",
-      "days_in_top3": 9,
+      "days_in_top3": 8,
       "best_rank": 1,
-      "first_seen": "2026-08-04",
+      "first_seen": "2026-08-05",
       "last_seen": "2026-08-31",
       "latest_rank": null,
       "state": "Persistent",
@@ -1507,7 +1507,7 @@
       "first_seen": "2026-08-06",
       "last_seen": "2026-08-28",
       "latest_rank": null,
-      "state": "Persistent",
+      "state": "Resolved",
       "latest_transmission": "2Y ↑ → policy path reprices tighter",
       "source_modes": [
         "objective_market_reconstruction"
@@ -1552,7 +1552,7 @@
       "first_seen": "2026-08-07",
       "last_seen": "2026-08-28",
       "latest_rank": null,
-      "state": "Persistent",
+      "state": "Resolved",
       "latest_transmission": "USD ↑ → global financial conditions tighten",
       "source_modes": [
         "objective_market_reconstruction"
@@ -1562,15 +1562,31 @@
       "theme_id": "equity_risk_appetite",
       "theme_label": "Equity Risk Appetite",
       "category": "growth_macro",
-      "days_in_top3": 5,
+      "days_in_top3": 4,
       "best_rank": 2,
-      "first_seen": "2026-08-04",
+      "first_seen": "2026-08-05",
       "last_seen": "2026-09-01",
       "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "Equity move → risk appetite / duration repricing",
       "source_modes": [
         "objective_market_reconstruction"
+      ]
+    },
+    {
+      "theme_id": "china_industrial_policy",
+      "theme_label": "China Industrial Policy",
+      "category": "china_trade_policy",
+      "days_in_top3": 3,
+      "best_rank": 1,
+      "first_seen": "2026-08-20",
+      "last_seen": "2026-09-03",
+      "latest_rank": 3,
+      "state": "Persistent",
+      "latest_transmission": "产业政策/长期资本 → SME融资可得性↑ → 新兴产业研发与扩产↑ → 机器人/AI/新材料等供应链资本开支↑",
+      "source_modes": [
+        "native_daily",
+        "verified_event"
       ]
     },
     {
@@ -1604,46 +1620,31 @@
       ]
     },
     {
-      "theme_id": "china_industrial_policy",
-      "theme_label": "China Industrial Policy",
-      "category": "china_trade_policy",
-      "days_in_top3": 2,
-      "best_rank": 1,
-      "first_seen": "2026-08-20",
-      "last_seen": "2026-08-26",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "National industrial roadmap → manufacturing standards and investment → AI, robotics, EV and clean-industry supply chains",
-      "source_modes": [
-        "verified_event"
-      ]
-    },
-    {
-      "theme_id": "china_semiconductor_policy",
-      "theme_label": "China Semiconductor Policy",
-      "category": "china_trade_policy",
-      "days_in_top3": 1,
-      "best_rank": 1,
-      "first_seen": "2026-08-24",
-      "last_seen": "2026-08-24",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Local policy support → EDA, equipment, advanced packaging and memory R&D → China semiconductor capex",
-      "source_modes": [
-        "verified_event"
-      ]
-    },
-    {
       "theme_id": "geopolitics_energy",
       "theme_label": "Geopolitics / Energy",
       "category": "geopolitics_energy",
-      "days_in_top3": 1,
+      "days_in_top3": 2,
       "best_rank": 1,
       "first_seen": "2026-09-02",
-      "last_seen": "2026-09-02",
+      "last_seen": "2026-09-03",
       "latest_rank": 1,
       "state": "New",
-      "latest_transmission": "Hormuz/航运受扰 → 原油与运费↑ → 通胀预期↑ → 2Y/10Y收益率↑ → Nasdaq估值↓",
+      "latest_transmission": "Hormuz/军事风险 → 原油与运保成本↑ → 通胀预期↑ → Fed/全球央行更鹰 → UST与全球折现率↑ → Nasdaq估值承压",
+      "source_modes": [
+        "native_daily"
+      ]
+    },
+    {
+      "theme_id": "ai_earnings",
+      "theme_label": "AI / Earnings",
+      "category": "earnings_ai_semis",
+      "days_in_top3": 2,
+      "best_rank": 2,
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-03",
+      "latest_rank": 2,
+      "state": "New",
+      "latest_transmission": "AI bookings/ASIC/networking需求↑ → AI基础设施营收可见度↑ → 半导体基本面↑；同时指引轻微不及高预期 → 估值敏感度↑",
       "source_modes": [
         "native_daily"
       ]
@@ -1652,37 +1653,35 @@
   "cross_asset_confirmation": {
     "theme_id": "geopolitics_energy",
     "theme_label": "Geopolitics / Energy",
-    "as_of": "2026-09-02",
-    "confirming": [
-      {
-        "series_id": "VIXCLS",
-        "label": "VIX",
-        "change": "+9.52%"
-      },
+    "as_of": "2026-09-03",
+    "confirming": [],
+    "diverging": [
       {
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
-        "change": "-1.03%"
-      },
-      {
-        "series_id": "DTWEXBGS",
-        "label": "Broad Trade-Weighted USD",
-        "change": "+0.11%"
+        "change": "+0.45%"
       }
     ],
-    "diverging": [],
     "unavailable": [
       {
         "series_id": "DCOILBRENTEU",
         "label": "Brent"
       },
       {
+        "series_id": "VIXCLS",
+        "label": "VIX"
+      },
+      {
         "series_id": "DGS10",
         "label": "US 10Y Treasury Yield"
+      },
+      {
+        "series_id": "DTWEXBGS",
+        "label": "Broad Trade-Weighted USD"
       }
     ],
-    "interpretation_note": "3 项资产确认当前主线，0 项出现背离。",
-    "what_would_flip_it": "双方停止新增军事行动、航运恢复且Brent快速回落至冲突前区间。"
+    "interpretation_note": "0 项资产确认当前主线，1 项出现背离。",
+    "what_would_flip_it": "冲突实质降级、Hormuz船舶通行恢复且Brent回落至冲突前区间。"
   },
   "series": {
     "NASDAQCOM": {
@@ -1691,10 +1690,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-04",
-          "value": 26584.99
-        },
         {
           "date": "2026-08-05",
           "value": 26363.44
@@ -1788,10 +1783,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-04",
-          "value": 7736.52
-        },
-        {
           "date": "2026-08-05",
           "value": 7723.55
         },
@@ -1874,6 +1865,10 @@
         {
           "date": "2026-09-02",
           "value": 7666.6
+        },
+        {
+          "date": "2026-09-03",
+          "value": 7747.71
         }
       ]
     },
@@ -1883,10 +1878,6 @@
       "source": "CBOE via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-04",
-          "value": 16.5
-        },
         {
           "date": "2026-08-05",
           "value": 15.81
@@ -1966,6 +1957,10 @@
         {
           "date": "2026-09-01",
           "value": 16.34
+        },
+        {
+          "date": "2026-09-02",
+          "value": 15.2
         }
       ]
     },
@@ -1975,10 +1970,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-04",
-          "value": 4.2
-        },
         {
           "date": "2026-08-05",
           "value": 4.18
@@ -2058,6 +2049,10 @@
         {
           "date": "2026-09-01",
           "value": 4.39
+        },
+        {
+          "date": "2026-09-02",
+          "value": 4.39
         }
       ]
     },
@@ -2067,10 +2062,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-04",
-          "value": 4.63
-        },
         {
           "date": "2026-08-05",
           "value": 4.63
@@ -2150,6 +2141,10 @@
         {
           "date": "2026-09-01",
           "value": 4.79
+        },
+        {
+          "date": "2026-09-02",
+          "value": 4.79
         }
       ]
     },
@@ -2159,10 +2154,6 @@
       "source": "U.S. EIA via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-04",
-          "value": 86.47
-        },
         {
           "date": "2026-08-05",
           "value": 86.65
@@ -2248,10 +2239,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-04",
-          "value": 119.5977
-        },
-        {
           "date": "2026-08-05",
           "value": 119.3881
         },
@@ -2332,10 +2319,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-08-04",
-          "value": 2.73
-        },
-        {
           "date": "2026-08-05",
           "value": 2.75
         },
@@ -2414,15 +2397,12 @@
         {
           "date": "2026-09-01",
           "value": 2.65
+        },
+        {
+          "date": "2026-09-02",
+          "value": 2.66
         }
       ]
     }
-  },
-  "policy_monitor": {
-    "category": "china_trade_policy",
-    "events_in_window": 0,
-    "empty_state": "本窗口无入选 Top 3 的中国、贸易或产业政策催化剂",
-    "marker": "P",
-    "marker_label": "已确认政策节点"
   }
 }
