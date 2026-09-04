@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "timezone": "Asia/Singapore",
+  "repository": "patshin/global-market-daily",
+  "branch": "main",
+  "public_site": "https://patshin.github.io/global-market-daily/",
+  "publisher_architecture": "connected_scheduled_agent",
+  "github_actions_role": [
+    "validate",
+    "derive_trends",
+    "deploy_pages",
+    "verify_public_browser",
+    "watchdog"
+  ],
+  "tasks": [
+    {
+      "id": "gmd-morning-0900-sgt",
+      "name": "Global Market Daily Morning",
+      "run_mode": "morning",
+      "schedule_sgt": "09:00",
+      "cron_utc": "0 1 * * *",
+      "prompt_path": "prompts/automation-morning.md",
+      "edition_status": "provisional",
+      "archive_eligible": false,
+      "market_lens_native_eligible": false,
+      "watchdog_grace_minutes": 35
+    },
+    {
+      "id": "gmd-close-1800-sgt",
+      "name": "Global Market Daily Close",
+      "run_mode": "close",
+      "schedule_sgt": "18:00",
+      "cron_utc": "0 10 * * *",
+      "prompt_path": "prompts/automation-close.md",
+      "edition_status": "official",
+      "archive_eligible": true,
+      "market_lens_native_eligible": true,
+      "watchdog_grace_minutes": 45
+    }
+  ]
+}
