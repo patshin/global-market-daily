@@ -1,0 +1,144 @@
+name: Editorial UI Health Check
+
+on:
+  workflow_run:
+    workflows: ["Deploy Global Market Daily"]
+    types: [completed]
+  workflow_dispatch:
+  schedule:
+    - cron: "20 2 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: editorial-ui-health
+  cancel-in-progress: true
+
+jobs:
+  verify-editorial-ui:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Fetch current publication metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://patshin.github.io/global-market-daily"
+          for attempt in $(seq 1 18); do
+            if curl -fsSL --max-time 20 "$base/data/latest.json?health=${GITHUB_RUN_ID}-${attempt}" -o /tmp/latest.json; then
+              python3 - <<'PY' && exit 0
+          import json
+          latest=json.load(open('/tmp/latest.json', encoding='utf-8'))
+          assert latest.get('date')
+          assert latest.get('thesis')
+          print(f"Editorial health target: {latest['date']}")
+          PY
+            fi
+            sleep 5
+          done
+          echo "Could not fetch a valid latest.json from public Pages"
+          exit 1
+
+      - name: Verify desktop and mobile editorial rendering
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://patshin.github.io/global-market-daily"
+          browser="$(command -v google-chrome || command -v chromium || command -v chromium-browser || true)"
+          if [ -z "$browser" ]; then
+            echo "No Chromium-compatible browser is available; real browser verification is mandatory."
+            exit 1
+          fi
+
+          latest_date="$(python3 - <<'PY'
+          import json
+          print(json.load(open('/tmp/latest.json', encoding='utf-8'))['date'])
+          PY
+          )"
+
+          verify_viewport() {
+            local name="$1"
+            local size="$2"
+            local dom="/tmp/rendered-${name}.html"
+            local stderr="/tmp/browser-${name}.stderr"
+
+            for attempt in $(seq 1 8); do
+              echo "${name} render attempt ${attempt}/8 (${size})"
+              "$browser" \
+                --headless=new \
+                --disable-gpu \
+                --no-sandbox \
+                --disable-dev-shm-usage \
+                --force-device-scale-factor=1 \
+                --window-size="$size" \
+                --virtual-time-budget=15000 \
+                --dump-dom "$base/?ui_health=${GITHUB_RUN_ID}-${name}-${attempt}" \
+                > "$dom" 2> "$stderr" || true
+
+              if VIEWPORT="$name" LATEST_DATE="$latest_date" DOM_PATH="$dom" python3 - <<'PY'
+          import os
+          from html.parser import HTMLParser
+
+          class Probe(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.root={}
+                  self.nodes={}
+                  self.signal_cards=0
+                  self.watch_items=0
+                  self.stack=[]
+              def handle_starttag(self, tag, attrs):
+                  attrs=dict(attrs)
+                  if tag == 'html':
+                      self.root=attrs
+                  node_id=attrs.get('id')
+                  if node_id:
+                      self.nodes[node_id]=attrs
+                  classes=set((attrs.get('class') or '').split())
+                  if 'signal-card--editorial' in classes:
+                      self.signal_cards += 1
+                  if tag == 'li' and any('watch-list--editorial' in classes for _, classes in self.stack):
+                      self.watch_items += 1
+                  self.stack.append((tag, classes))
+              def handle_endtag(self, tag):
+                  for i in range(len(self.stack)-1, -1, -1):
+                      if self.stack[i][0] == tag:
+                          del self.stack[i:]
+                          break
+
+          path=os.environ['DOM_PATH']
+          html=open(path, encoding='utf-8').read()
+          parser=Probe(); parser.feed(html)
+          root=parser.root
+          shell=parser.nodes.get('report-shell') or {}
+          error=parser.nodes.get('error-state') or {}
+          date=os.environ['LATEST_DATE']
+          viewport=os.environ['VIEWPORT']
+
+          assert date in html, f'{viewport}: latest date is not visible'
+          assert 'hidden' not in shell, f'{viewport}: report shell is hidden'
+          assert 'hidden' in error, f'{viewport}: publication error is visible'
+          assert root.get('data-gmd-editorial-ready') == 'true', f'{viewport}: editorial probe not ready: {root}'
+          assert root.get('data-gmd-signal-count') == '6', f'{viewport}: expected six signals: {root}'
+          assert root.get('data-gmd-watch-count') in {'2','3'}, f'{viewport}: watch-first must contain 2-3 items: {root}'
+          assert root.get('data-gmd-signal-facts-distinct') == 'true', f'{viewport}: duplicate signal facts detected'
+          assert root.get('data-gmd-horizontal-overflow') == 'false', f'{viewport}: horizontal overflow detected'
+          assert parser.signal_cards == 6, f'{viewport}: DOM contains {parser.signal_cards} editorial signal cards'
+          assert parser.watch_items in {2,3}, f'{viewport}: DOM contains {parser.watch_items} watch items'
+          print(f'EDITORIAL UI VERIFIED: {viewport}, signals=6, watch={parser.watch_items}, overflow=false')
+          PY
+              then
+                return 0
+              fi
+
+              tail -n 60 "$stderr" || true
+              sleep 5
+            done
+            echo "${name} editorial rendering did not converge"
+            return 1
+          }
+
+          verify_viewport desktop "1440,1200"
+          verify_viewport mobile "390,844"
