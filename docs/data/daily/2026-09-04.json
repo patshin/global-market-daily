@@ -1,1 +1,1363 @@
-{"schema_version":"1.1.0","date":"2026-09-04","edition":"Asia Morning / Provisional","timezone":"Asia/Singapore","data_cutoff_sgt":"2026-09-04 09:00 SGT","data_cutoff_et":"2026-09-03 21:00 EDT","last_updated":"2026-09-04T09:00:00+08:00","publication_cycle":{"status":"provisional","is_final":false,"cycle":"morning","archive_eligible":false,"market_lens_native_eligible":false,"note":"Morning provisional edition. It may update the live site but must not be written as the day's formal archive/native 30D record."},"comparison_basis":{"previous_official_date":"2026-09-02","note":"2026-09-03 evening official was not present on main at cutoff; What Changed therefore compares against the previous formal GitHub edition dated 2026-09-02."},"thesis":"利率尾部风险暂时降温，但并未消失：Waller把9月Fed加息定价拉回约50%，推动美股与黄金反弹、美元和收益率回落；今晚8月非农将决定这次risk-on是新阶段，还是高服务通胀与油价压力下的短暂喘息。","dominant_narrative":"过去24小时最重要的变化是市场重新从“油价与债券抛售主导”切换到“数据决定Fed路径”。服务业PMI 55.4显示需求强、Prices 72.6显示通胀黏性，而招聘仍弱；这种组合使今晚非农成为真正的跨资产分水岭。AI基本面仍强，但Broadcom与Snowflake的股价分化说明高估值资产已经进入严格的兑现筛选。","market_regime":{"growth":{"state":"Resilient / hiring cooling","evidence":"ISM Services 55.4、Business Activity 61.7、New Orders 60.9显示需求韧性，但Employment 47.8与ADP +38k显示招聘偏弱。"},"inflation":{"state":"Sticky / upside risk","evidence":"ISM Services Prices升至72.6，油价仍在90美元以上，服务与能源共同维持通胀上行尾部。"},"rates":{"state":"High but easing from stress","evidence":"Waller条件性支持维持利率，UST 2Y/10Y回落至约4.34%/4.77%，但绝对水平仍构成紧金融条件。"},"earnings":{"state":"AI strong / high bar","evidence":"Broadcom长期AI收入展望继续上修，Snowflake上调产品收入指引；但AVGO下跌与SNOW大涨显示市场对近端兑现高度分化。"},"liquidity":{"state":"Restrictive","evidence":"10Y仍在4.7%以上、30Y约5.25%，资本成本没有真正回到宽松区间。"},"geopolitics":{"state":"High","evidence":"美伊冲突与Hormuz航运风险仍支撑约95美元Brent，物理供应尾部尚未消除。"},"overall":{"state":"Event Risk","evidence":"宏观主导变量从单向高利率压力切换到NFP二元事件风险；政策、能源与AI盈利三条主线同时可能造成大幅跨资产重定价。"}},"market_tape":[{"asset":"S&P 500","level":"7,747.71","change_1d":"+1.06%","change_5d":"尚无法可靠确认","signal":"Risk-On rebound","driver":"Waller缓和加息担忧、收益率回落","status":"Confirmed","as_of":"2026-09-03 close ET","sources":["S01"]},{"asset":"Nasdaq Composite","level":"26,584.06","change_1d":"+1.40%","change_5d":"尚无法可靠确认","signal":"Duration rebound","driver":"利率压力下降与大型AI股反弹","status":"Confirmed","as_of":"2026-09-03 close ET","sources":["S01"]},{"asset":"Dow","level":"53,686.11","change_1d":"+1.18%","change_5d":"尚无法可靠确认","signal":"Broad risk-on","driver":"金融条件边际缓和","status":"Confirmed","as_of":"2026-09-03 close ET","sources":["S01"]},{"asset":"SOX","level":"11,318.75","change_1d":"-0.18%","change_5d":"尚无法可靠确认","signal":"Relative lag","driver":"Broadcom指引门槛压制半导体相对表现","status":"Confirmed","as_of":"2026-09-03 close ET","sources":["S19","S11"]},{"asset":"UST 2Y","level":"4.34%","change_1d":"-5bp","change_5d":"尚无法可靠确认","signal":"Hawkish premium easing","driver":"Waller条件性偏鸽降低9月加息定价","status":"Confirmed","as_of":"2026-09-03 close ET","sources":["S04","S03"]},{"asset":"UST 5Y","level":"4.52%","change_1d":"-2bp","change_5d":"尚无法可靠确认","signal":"Rates easing","driver":"政策路径重定价","status":"Confirmed","as_of":"2026-09-03 close ET","sources":["S04"]},{"asset":"UST 10Y","level":"4.77%","change_1d":"-2bp","change_5d":"尚无法可靠确认","signal":"Still restrictive","driver":"从4.8%上方压力位回落但融资成本仍高","status":"Confirmed","as_of":"2026-09-03 close ET","sources":["S04"]},{"asset":"UST 30Y","level":"5.25%","change_1d":"-2bp","change_5d":"尚无法可靠确认","signal":"Term premium high","driver":"财政/供给与通胀风险仍支撑长端溢价","status":"Confirmed","as_of":"2026-09-03 close ET","sources":["S04"]},{"asset":"2s10s","level":"+43bp","change_1d":"+3bp","change_5d":"尚无法可靠确认","signal":"Curve steepening","driver":"前端对Fed加息定价回落快于长端","status":"Calculated from official Treasury closes","as_of":"2026-09-03 close ET","sources":["S04"]},{"asset":"DXY","level":"98.91","change_1d":"-0.69%","change_5d":"尚无法可靠确认","signal":"USD softening","driver":"Fed加息概率下降","status":"Market reporting","as_of":"2026-09-03 close ET","sources":["S02"]},{"asset":"EURUSD","level":"1.1634","change_1d":"+0.41%","change_5d":"尚无法可靠确认","signal":"EUR firmer","driver":"美元回落","status":"Market reporting","as_of":"2026-09-03 close ET","sources":["S02"]},{"asset":"USDJPY","level":"155.47","change_1d":"-2.08%","change_5d":"尚无法可靠确认","signal":"Yen surge","driver":"BOJ本月加息预期升温、美元回落","status":"Market reporting","as_of":"2026-09-03 close ET","sources":["S02"]},{"asset":"Brent","level":"$95.52/bbl","change_1d":"-0.12%","change_5d":"尚无法可靠确认","signal":"Geopolitical premium high","driver":"Hormuz风险仍在，但俄乌和谈信号限制涨幅","status":"Confirmed settlement","as_of":"2026-09-03 close ET","sources":["S15"]},{"asset":"WTI","level":"$91.30/bbl","change_1d":"+0.32%","change_5d":"尚无法可靠确认","signal":"Supply risk","driver":"中东供应风险与库存偏紧","status":"Confirmed settlement","as_of":"2026-09-03 close ET","sources":["S15"]},{"asset":"Gold","level":"$4,473.40/oz","change_1d":"+1.99%","change_5d":"尚无法可靠确认","signal":"Haven + lower yields","driver":"美元与收益率回落叠加地缘避险","status":"Market reporting","as_of":"2026-09-03 close ET","sources":["S02"]}],"what_changed":[{"yesterday":"上一正式版（9月2日）9月Fed加息隐含概率约68%","today":"Waller讲话后约50.4%","why":"政策尾部风险明显降温，但并未消失；市场从“接近确定加息”回到“数据决定”的二元定价。","sources":["S01","S03"]},{"yesterday":"上一正式版UST 10Y一度至4.8122%，全球久期压力升级","today":"9月3日美国财政部官方10Y收于4.77%","why":"长端压力边际缓和，为高久期科技股提供估值喘息，但4.7%上方仍是明显紧金融条件。","sources":["S04"]},{"yesterday":"USDJPY约160.28，日元处于显著压力区","today":"USDJPY约155.47，美元兑日元单日下跌约2.08%","why":"BOJ本月加息预期升温叠加美元回落，使日元出现冲突以来最强的一次修复之一。","sources":["S02"]},{"yesterday":"增长放缓与通胀压力谁主导尚不清晰","today":"ISM服务业PMI升至55.4、Prices升至72.6，但Employment仅47.8","why":"需求仍强、招聘偏弱、价格更热的组合强化“滞胀式尾部风险”，也提高今晚NFP的政策敏感度。","sources":["S05"]},{"yesterday":"AI基本面等待Broadcom验证","today":"Broadcom长期AI收入展望上修但近季总营收指引略低预期；Snowflake业绩与指引显著走强","why":"AI需求仍强，但赢家从单纯算力β转向能够持续兑现收入与利润的公司；估值门槛显著提高。","sources":["S11","S12","S13","S01"]}],"top_catalysts":[{"rank":1,"event":"美国8月非农就业报告：今晚决定9月Fed加息定价的下一次跃迁","status":"Future confirmed / 待公布","event_time_et":"2026-09-04 08:30 EDT","event_time_sgt":"2026-09-04 20:30 SGT","what_happened":"BLS已确认8月Employment Situation将在9月4日08:30 ET发布；Reuters市场预期非农约增加5.6万、失业率约4.1%，而7月非农为-2.3万。","what_changed":"Waller把9月加息概率从约63%压回约50%，使今晚就业数据重新成为真正的边际定价器。","why_it_matters":"就业若明显强于预期，会与服务业价格高企共同强化再次加息逻辑；若明显弱于预期且工资不热，则可能继续压低前端利率并支撑Nasdaq。","transmission":"NFP/工资 → 9月Fed概率 → UST 2Y/10Y → USD → Nasdaq/SOX与黄金","affected_assets":["UST 2Y","UST 10Y","DXY","Nasdaq","SOX","Gold"],"direction":"Binary / high-volatility macro catalyst","importance":"★★★★★","confirmation":"非农明显高于约5.6万且工资/失业率不转弱，或明显低于预期并伴随失业率上行。","invalidation":"报告接近预期且修订、工资与失业率互相抵消，市场继续等待CPI。","sources":["S09","S10","S01"]},{"rank":2,"event":"Waller条件性偏鸽：9月加息从高概率交易退回数据依赖","status":"Confirmed / 已发生","event_time_et":"2026-09-03","event_time_sgt":"2026-09-03/04 SGT","what_happened":"Waller表示通胀仍高于目标，但若未来两周的改善延续，他倾向在9月会议维持利率；若改善只是暂时，则仍可能支持加息。股债市场随之明显反弹。","what_changed":"市场对9月加息的隐含概率由周三约63.2%降至约50.4%，S&P 500、Nasdaq分别上涨1.06%和1.40%。","why_it_matters":"这改变了资产定价的风险分布：政策基准从“加息偏主导”变为“数据二元”，但服务业价格72.6意味着鸽派结论仍不稳固。","transmission":"Fed沟通 → hike probability↓ → 2Y/10Y↓ + USD↓ → duration equities↑ / gold↑","affected_assets":["UST 2Y","UST 10Y","DXY","S&P 500","Nasdaq","Gold"],"direction":"Bullish duration assets / conditional","importance":"★★★★★","confirmation":"后续就业与CPI继续显示降温、9月加息概率进一步跌破50%。","invalidation":"NFP、工资或CPI重新走热，把9月加息概率推回60%–70%以上。","sources":["S03","S01","S05"]},{"rank":3,"event":"AI盈利分化：Broadcom长期需求强、Snowflake兑现软件AI，但高估值要求更高","status":"Confirmed / 已公布","event_time_et":"2026-09-02 after market → 2026-09-03 regular session","event_time_sgt":"2026-09-03 morning → 2026-09-04 early morning","what_happened":"Broadcom季度营收约295.9亿美元（$29.59B）、调整后EPS 3.32美元均略超预期，FY27 AI芯片收入展望约1150亿美元，但Q4总营收指引约348亿美元略低于市场预期；Snowflake总营收15.5亿美元、调整后EPS 0.62美元均明显超预期，并上调全年产品收入展望。","what_changed":"AI需求并未塌陷，但Broadcom股价下跌2.7%、Snowflake上涨16.6%，显示市场开始显著区分“长期AI故事”与“短期超预期幅度”。","why_it_matters":"这决定AI交易是否从硬件β扩散到数据/软件盈利兑现，同时提醒高估值硬件即使长期增长强，也可能因近端指引小幅缺口被惩罚。","transmission":"AI revenue/guidance → earnings revisions → semiconductor/software relative performance → Nasdaq breadth","affected_assets":["AVGO","SNOW","NVDA","SOX","Nasdaq"],"direction":"AI fundamentals positive / relative-performance dispersion","importance":"★★★★","confirmation":"更多AI软件/基础设施公司实现收入与利润率上修，且SOX相对Nasdaq重新走强。","invalidation":"后续AI订单、毛利率或资本开支回报连续低于预期，同时SOX相对Nasdaq继续走弱并出现盈利下修。","sources":["S11","S12","S13","S01"]}],"section_order":["top_catalysts","earnings","us_macro","central_banks","geopolitics","regional_policy","index_changes","flows","etf","options","treasury","commodities","financing","breaking_news","market_impact"],"sections":{"top_catalysts":{"number":1,"title":"Top 3 市场催化剂","status":"重大更新","summary":"市场从“利率持续上冲”切换为“Waller降温 + 今晚NFP二元定价”；AI内部则出现硬件与软件显著分化。","paragraphs":["首要事件不是昨天已经上涨的指数，而是今晚08:30 ET的8月就业报告。Waller已经把政策概率重新拉回五五开，因此就业、工资和失业率任何一项偏离预期，都可能把2Y、美元与Nasdaq重新推向单边。"],"tables":[]},"earnings":{"number":2,"title":"重要财报","status":"重大更新","summary":"Broadcom长期AI收入展望强，但近季总营收门槛略逊预期；Snowflake则以更强收入、EPS与全年产品收入指引获得明显重估。","paragraphs":["同一天AVGO -2.7%、SNOW +16.6%的分化很关键：市场并没有否定AI需求，而是在提高对近端兑现的要求。","Read-through：定制芯片/网络基本面仍强，但半导体估值对指引缺口更加敏感；数据平台/软件若能将AI使用量转化为收入和利润，可能获得更高相对收益。"],"tables":[],"reported":[{"id":"AVGO-FY26-Q3-2026-09-02","company":"Broadcom","ticker":"AVGO","period":"FY2026 Q3","status":"Released / 已公布","release_date":"2026-09-02","release_time_et":"After-market","release_time_sgt":"2026-09-03 early morning SGT","market_session":"After-market","key_takeaway":"AI芯片需求的中长期斜率继续上修，但Q4总营收指引略低于市场预期，使高估值下的近端门槛成为股价主导变量。","metrics":[{"metric":"Revenue","actual":"$29.59B","consensus":"$29.36B","previous_or_yoy":"Reuters cited quarter result; YoY not independently rechecked here","surprise":"约+$0.23B","notes":"已公布"},{"metric":"Adjusted EPS","actual":"$3.32","consensus":"$3.24","previous_or_yoy":"Prior-year comparison not independently rechecked here","surprise":"+$0.08","notes":"已公布"},{"metric":"AI chip revenue","actual":"$16.7B","consensus":"无单一可靠共识值","previous_or_yoy":"同比超过3倍（Reuters）","surprise":"N/A","notes":"AI需求强劲"}],"guidance":["Q4 total revenue约$34.8B vs 市场预期约$35.03B","FY2027 AI chip revenue约$115B（此前表述为超过$100B）","FY2028 AI chip revenue约$230B"],"market_reaction":{"session":"2026-09-03 regular session","move":"-2.7%","as_of":"2026-09-03 close ET"},"one_offs":[],"read_through":["定制AI加速器与网络需求仍强","高估值硬件的近季指引容错率下降","SOX相对Nasdaq出现明显分化"],"sources":["S11","S01"]},{"id":"SNOW-FY27-Q2-2026-09-02","company":"Snowflake","ticker":"SNOW","period":"FY2027 Q2","status":"Released / 已公布","release_date":"2026-09-02","release_time_et":"After-market","release_time_sgt":"2026-09-03 early morning SGT","market_session":"After-market","key_takeaway":"云数据平台需求与AI工作负载推动收入和盈利显著超预期，并带来全年产品收入指引上修，成为软件侧AI变现的积极样本。","metrics":[{"metric":"Total revenue","actual":"$1.55B","consensus":"$1.48B","previous_or_yoy":"Official release confirms quarter total; YoY not used for this metric","surprise":"约+$0.07B","notes":"已公布"},{"metric":"Adjusted EPS","actual":"$0.62","consensus":"$0.45","previous_or_yoy":"Prior-year comparison not independently rechecked here","surprise":"+$0.17","notes":"已公布"},{"metric":"Product revenue","actual":"$1.49B","consensus":"无单一可靠共识值","previous_or_yoy":"+37% YoY","surprise":"N/A","notes":"官方SEC发布确认"}],"guidance":["FY2027 product revenue forecast上调至约$6.07B，前值约$5.84B"],"market_reaction":{"session":"2026-09-03 regular session","move":"+16.6%","as_of":"2026-09-03 close ET"},"one_offs":[],"read_through":["AI需求正在向数据平台与软件层兑现","软件端盈利上修可支持Nasdaq市场宽度改善","高质量增长与毛利兑现比单纯AI叙事更受奖励"],"sources":["S12","S13","S01"]}],"upcoming_72h":[]},"us_macro":{"number":3,"title":"美国经济","status":"重大更新","summary":"服务业需求明显加速、价格更热，但招聘指标仍弱；ADP与初请显示劳动力市场没有失速，却缺乏强劲扩张。","paragraphs":["ISM Services PMI升至55.4，Business Activity 61.7、New Orders 60.9，而Employment仅47.8；Prices升至72.6，为近四年高位。这个组合对Fed并不友好：需求强、价格热、就业却软。","ADP显示8月私营就业仅增加3.8万；最新初请约20.6万。BEA同时显示7月贸易逆差扩大至886亿美元。今晚官方非农将决定这些“软招聘”信号是否得到确认。"],"tables":[{"headers":["Metric","Actual","Context"],"rows":[["ADP private payrolls","+38k","August 2026"],["ISM Services PMI","55.4","Prices 72.6; Employment 47.8"],["U.S. trade deficit","$88.6B","July 2026"]]}]},"central_banks":{"number":4,"title":"全球央行","status":"重大更新","summary":"Fed从强鹰派尾部回到数据依赖；日本则出现相反方向的政策重定价，BOJ本月加息预期升温。","paragraphs":["Waller明确把9月立场绑定于未来两周通胀改善是否持续，市场因此把9月加息概率从约63%降至约50%。","Reuters报道BOJ本月加息概率约75%，这与日元单日大幅升值相互强化。跨央行分化正在成为USDJPY和全球长端的重要来源。"],"tables":[]},"geopolitics":{"number":5,"title":"国际事件 / 地缘政治","status":"高风险持续","summary":"美伊冲突与Hormuz航运风险仍维持高位，但油价在95美元附近没有进一步失控，市场暂时把它视为高风险溢价而非新一轮断供确认。","paragraphs":["Brent结算约95.52美元，WTI约91.30美元。油价没有显著回落意味着供应风险仍真实存在；但俄罗斯—乌克兰和谈信号限制了进一步上冲。","真正需要监控的是物理流量与船舶通行，而不是Headline数量。若Hormuz通行进一步下降，油价很容易重新主导Fed与债市定价。"],"tables":[]},"regional_policy":{"number":6,"title":"中日欧加政策 / China–Trade–Industrial Policy","status":"重大更新","summary":"中国同时推出“专精特新/小巨人”五年支持计划与8000亿元政策性融资工具，政策重心继续偏向先进制造、AI/机器人和资本形成；G20贸易摩擦则强化外部约束。","paragraphs":["中国十部门提出到2030年将“小巨人”企业增至约2.2万家、产业集群增至600个，并支持机器人、量子、脑机接口、具身AI、新能源和新材料等方向。","2026年政策性融资计划规模约8000亿元，首批资金已投向电池、高端镍铬材料与交通项目。与此同时，G20除中国外成员支持针对“非市场政策”和贸易失衡采取行动，意味着产业扶持的资产利好与贸易壁垒风险会同时上升。"],"tables":[]},"index_changes":{"number":7,"title":"指数变动 / 重构","status":"结构性分化","summary":"未确认到新的重大美国指数成分股重构，但SOX在Nasdaq大涨时仍下跌0.18%，是值得单独记录的相对价格信号。","paragraphs":["Nasdaq Composite上涨1.40%，而官方SOX收跌0.18%。这种背离说明AI交易内部并非全面risk-on：Broadcom近端指引门槛正在压制芯片β，而软件侧出现更强盈利兑现。"],"tables":[]},"flows":{"number":8,"title":"Pension / 月末季末资金流","status":"无可靠新增硬流量数据","summary":"当前没有足够一手数据支持给出具体养老金或系统性资金净流入数字；价格行为显示资金从美元与债券空头压力中部分回流风险资产与黄金。","paragraphs":["本期不把价格变化伪装成真实flow。可确认的是美元下跌、收益率回落、股票与黄金同步走强；这更像政策尾部风险缓和后的跨资产再平衡，而非已经证实的大规模养老金配置。"],"tables":[]},"etf":{"number":9,"title":"ETF 重构 / 资金","status":"无可靠新增净流量数据","summary":"未取得满足本期来源标准的ETF一级市场净申购/赎回数据，因此不输出未经核验的流量数字。","paragraphs":["ETF维度暂用相关指数价格作为风险代理，不等价于资金流：Nasdaq走强但SOX走弱，说明半导体ETF即使价格反弹，也不能直接推断净流入。"],"tables":[]},"options":{"number":10,"title":"期权 / 波动率","status":"事件风险升高","summary":"今晚NFP形成明显的二元宏观事件窗口；缺少可靠的实时dealer gamma/0DTE仓位一手数据，因此只做事件结构判断，不编造具体gamma墙。","paragraphs":["若非农显著偏强，最先受压的应是2Y与高久期成长股；若显著偏弱且工资降温，收益率与美元可能进一步下行。事件后的波动方向比事件前的单点VIX读数更重要。"],"tables":[]},"treasury":{"number":11,"title":"美国国债 / Treasury Auctions","status":"收益率回落但仍高","summary":"美国财政部9月3日官方曲线显示2Y 4.34%、5Y 4.52%、10Y 4.77%、30Y 5.25%；2s10s约+43bp。","paragraphs":["较9月2日，2Y约下行5bp、10Y约下行2bp，表明Waller讲话首先作用于政策端，而长期通胀与期限溢价下降更有限。","本期未确认未来72小时内有比NFP更重要、且需要前置交易的关键UST拍卖，因此不虚构拍卖规模或投标指标。"],"tables":[]},"commodities":{"number":12,"title":"油气 / 金属 / 大宗商品","status":"油价高位、黄金走强","summary":"Brent约95.52美元、WTI约91.30美元，地缘溢价仍高；黄金约4473美元并上涨约1.99%，同时受益于美元与收益率回落及避险需求。","paragraphs":["油价的关键不是单日涨跌，而是是否重新突破并稳定在100美元上方。若发生，市场会重新上调短期通胀与Fed加息概率。","黄金在收益率回落时重新获得定价优势，说明它仍是“地缘风险 + 政策转鸽”组合下的主要受益资产。"],"tables":[]},"financing":{"number":13,"title":"IPO / 融资 / AI Capex","status":"重大更新","summary":"Nvidia以约129.3亿美元收购Hugging Face，显示AI资本配置从芯片扩展到开发者平台与模型生态；中国政策融资则继续支持先进制造投资。","paragraphs":["Nvidia交易包含约119亿美元现金和最高约10亿美元员工留任股权。战略上它是在保护开放模型生态对GPU需求的长期入口，而不是单纯追求短期EPS增厚。","中国8000亿元政策性融资计划则从宏观端增加电池、高端材料与基础设施的资本供给。两者共同说明AI/先进制造仍处全球资本开支主轴，但回报率与融资成本的约束正在变强。"],"tables":[]},"breaking_news":{"number":14,"title":"过去24小时 Breaking","status":"重大更新","summary":"过去24小时最值得保留的三条新增信息是：Waller缓和9月加息担忧、Nvidia收购Hugging Face、中国加码“小巨人”与政策融资。","paragraphs":["这些事件分别改变了利率尾部风险、AI生态资本配置和中国先进制造政策支持。相比重复报道的地缘headline，它们对未来数周资产定价的信息增量更高。"],"tables":[]},"market_impact":{"number":15,"title":"Integrated Market Impact","status":"跨资产结论","summary":"市场暂时从“油价+利率双杀”切换为“Fed尾部风险缓和后的risk-on反弹”，但今晚NFP和服务业高价格读数意味着这一切换尚未被确认。","paragraphs":["基准框架：只要NFP没有明显超预期、工资不重新走热，2Y和美元仍有缓和空间，Nasdaq可维持高位震荡；若就业强、油价再冲100美元，市场会快速回到9月2日的高利率压力框架。","AI内部继续做相对价值而不是无差别β：软件盈利兑现优于仅靠远期AI收入叙事；半导体要重新跑赢，需要近端收入/利润率也超过高预期门槛。"],"tables":[]}},"signal_panel":{"growth_impulse":{"current":"→ 需求韧性 / 招聘↓","previous":"边际放缓","evidence":"ISM服务需求强，但ADP与就业分项偏弱","sources":["S05","S06"]},"inflation_impulse":{"current":"↑","previous":"↑","evidence":"ISM Services Prices升至72.6，油价仍在高位","sources":["S05","S15"]},"rates_pressure":{"current":"↓ 但仍高","previous":"↑","evidence":"2Y/10Y分别约4.34%/4.77%，较前日回落","sources":["S04","S03"]},"earnings_revision":{"current":"↑ / 分化","previous":"↑","evidence":"Snowflake上调指引；Broadcom长期AI展望强但近季门槛略逊","sources":["S11","S12","S13"]},"liquidity":{"current":"→ Restrictive","previous":"Restrictive","evidence":"长端仍在4.7%以上，金融条件未真正转松","sources":["S04"]},"geopolitical_risk":{"current":"↑","previous":"↑","evidence":"Hormuz与美伊冲突仍维持高风险溢价","sources":["S15"]}},"scenario_matrix":{"base_case":{"probability":"50%","trigger":"NFP约0–100k、失业率约4.1%，工资没有明显再加速；油价维持90–100美元区间","market_path":"Fed继续五五开/偏暂停；UST 10Y约4.65–4.85%，美元偏弱震荡，Nasdaq高位震荡且内部轮动加大","invalidation":"就业或工资明显超预期，或Brent持续突破100美元"},"bull_case":{"probability":"25%","trigger":"NFP明显低于预期且工资降温、失业率上行，同时油价回落","market_path":"9月加息概率显著跌破50%；2Y/10Y继续下行，USD走弱，Nasdaq与软件/高久期资产扩张","invalidation":"服务通胀或后续CPI重新走热"},"bear_case":{"probability":"25%","trigger":"NFP显著高于约56k、工资走热，或Hormuz升级推动Brent>100美元","market_path":"9月加息概率重回60%–70%以上；UST 10Y回到4.85%上方，美元走强，Nasdaq/SOX承压","invalidation":"就业转弱且油价快速回落"}},"upcoming_market_watch":[{"sgt":"2026-09-04 20:30 SGT","et":"2026-09-04 08:30 EDT","event":"U.S. Employment Situation — August 2026","consensus":"Nonfarm payrolls约+56k；unemployment rate约4.1%","previous":"July payrolls -23k；unemployment 4.1%","actual":"待公布","importance":"★★★★★","why_it_matters":"决定9月Fed加息概率、2Y/美元与Nasdaq方向","sources":["S09","S10","S01"]}],"top_risks":[{"risk":"NFP/工资强于预期，叠加服务业Prices 72.6，推动9月Fed重新转鹰","trigger":"Payrolls明显>约56k且工资不降温","transmission":"就业/工资↑ → hike odds↑ → 2Y/10Y↑ → USD↑ → Nasdaq估值↓","first_asset":"UST 2Y / Fed pricing","theme_id":"fed_policy_path","status":"Active / event tonight","sources":["S05","S09","S01"]},{"risk":"Hormuz从高风险溢价升级为持续物理断供，Brent突破100美元","trigger":"航运流量进一步下降或能源设施新增受损","transmission":"Oil↑ → inflation expectations↑ → 10Y↑ → global risk assets↓","first_asset":"Brent / front oil spreads","theme_id":"geopolitics_energy","status":"Active","sources":["S15"]},{"risk":"AI高预期门槛使硬件盈利“好但不够好”，带来SOX相对回撤","trigger":"更多芯片公司近端指引低于buy-side门槛或毛利受压","transmission":"guidance miss → earnings revision dispersion → SOX relative weakness → Nasdaq breadth narrows","first_asset":"SOX / AVGO","theme_id":"ai_earnings","status":"Active / monitoring","sources":["S11","S19","S01"]}],"next_catalyst":{"event":"U.S. Employment Situation — August 2026","status":"Future confirmed / 待公布","date":"2026-09-04","et":"08:30 EDT","sgt":"20:30 SGT","consensus":"Nonfarm payrolls约+56k；unemployment约4.1%","previous":"July payrolls -23k；unemployment 4.1%","actual":"待公布","why_it_matters":"Waller已把9月加息概率拉回约50%，因此就业报告是下一次最有可能让Fed定价发生跃迁的事件。","sources":["S09","S10","S01"]},"data_quality":{"market_tape_assets":15,"known_limitations":["多数资产的5D变化未在本轮可核验的一手/高质量来源中完整提供，因此明确标记为尚无法可靠确认，而非填充估算值。","本期未取得可靠的ETF净流量、养老金净流量与实时dealer gamma一手数据，因此相关栏目只做可验证的结构性判断。"],"missing_official_2026_09_03_archive":true},"sources_path":"data/sources/2026-09-04.json","sources":["S01","S02","S03","S04","S05","S06","S07","S08","S09","S10","S11","S12","S13","S14","S15","S16","S17","S18","S19"]}
+{
+  "schema_version": "1.1.0",
+  "date": "2026-09-04",
+  "edition": "Evening Official",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-09-04 19:03 SGT",
+  "data_cutoff_et": "2026-09-04 07:03 EDT",
+  "last_updated": "2026-09-04T19:03:18+08:00",
+  "run_timing": {
+    "scheduled_publish_time_sgt": "2026-09-04 18:00 SGT",
+    "started_at": "2026-09-04T18:56:24+08:00",
+    "research_cutoff": "2026-09-04T19:03:18+08:00",
+    "schedule_delay": "56m24s"
+  },
+  "publication_cycle": {
+    "status": "official",
+    "is_final": true,
+    "cycle": "close",
+    "archive_eligible": true,
+    "market_lens_native_eligible": true,
+    "note": "Evening Official Edition; independently re-researched and replaces the same-date morning provisional bundle as the sole formal 2026-09-04 history point."
+  },
+  "comparison_basis": {
+    "previous_official_date": "2026-09-03",
+    "note": "What Changed compares strictly with the previous formal official archive dated 2026-09-03; the 2026-09-04 morning provisional edition is excluded."
+  },
+  "first_run_baseline": false,
+  "baseline_note": "本期What Changed严格对比上一正式归档2026-09-03。",
+  "thesis": "战术性利率缓和已经给风险资产喘息，但结构性约束没有解除：Waller把9月Fed路径重新推回数据依赖，Sep 3美股强反弹、2Y回落；与此同时服务业价格仍高、Hormuz实体通行偏弱且油价周内大涨。20:30 SGT的8月非农将决定这轮久期反弹能否延续，还是重新回到“高通胀 + 高资本成本”定价。",
+  "dominant_narrative": "截至真实19:03 SGT研究截止，市场并未得到一个干净的Risk-On答案，而是进入“就业二元事件 + 能源高风险溢价 + 盈利强分化”结构：Fed短端压力缓和，全球资金仍大量停留在现金，SOX和小盘股5D仍落后，同时LULU与DOCU展示消费与AI软件截然不同的盈利修订。最重要的确认链是NFP之后UST 2Y → DXY → Nasdaq/SOX相对表现是否同向。",
+  "market_regime": {
+    "growth": {
+      "state": "Resilient demand / hiring cooling",
+      "evidence": "ISM Services 55.4、New Orders 60.9显示需求韧性，但Employment 47.8与此前ADP偏弱显示招聘动能不足。"
+    },
+    "inflation": {
+      "state": "Sticky / energy-upside risk",
+      "evidence": "ISM Services Prices升至72.6，Brent/WTI周内约+6.5%/+8.8%，服务与能源共同维持通胀上行尾部。"
+    },
+    "rates": {
+      "state": "High but tactically easing",
+      "evidence": "Sep 3官方2Y/10Y收4.34%/4.77%，日内分别-5bp/-2bp；但较Aug 27仍高14bp/10bp。"
+    },
+    "earnings": {
+      "state": "Highly selective / dispersion",
+      "evidence": "AI相关盈利仍有兑现，但LULU再下修指引、DOCU因AI平台提高收入展望，板块和公司间分化加大。"
+    },
+    "liquidity": {
+      "state": "Restrictive / defensive cash demand",
+      "evidence": "全球货币基金一周流入$46.1B，同时10Y仍在4.7%以上，显示现金偏好与资本成本都处高位。"
+    },
+    "geopolitics": {
+      "state": "High / physical shipping impairment",
+      "evidence": "Hormuz商品船通行仍显著低于10日均值，且近期美伊军事行动已有官方与独立报道确认。"
+    },
+    "overall": {
+      "state": "Event Risk / Mixed",
+      "evidence": "Waller缓解短端利率尾部，但NFP尚未公布、油价周内大涨且实体航运仍受扰，市场处于宏观二元事件前的分化状态。"
+    }
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,747.71",
+      "change_1d": "+1.06%",
+      "change_5d": "+0.22%",
+      "signal": "Risk-on rebound",
+      "driver": "Waller缓和加息尾部、收益率回落",
+      "status": "Confirmed close",
+      "as_of": "2026-09-03 close ET",
+      "sources": [
+        "S01",
+        "S23"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "26,584.06",
+      "change_1d": "+1.40%",
+      "change_5d": "+0.16%",
+      "signal": "Duration rebound",
+      "driver": "利率压力缓和叠加AI龙头反弹",
+      "status": "Confirmed close",
+      "as_of": "2026-09-03 close ET",
+      "sources": [
+        "S01",
+        "S23"
+      ]
+    },
+    {
+      "asset": "Nasdaq 100",
+      "level": "29,482.32",
+      "change_1d": "+1.16%",
+      "change_5d": "-0.54%",
+      "signal": "Rebound / still lagging 5D",
+      "driver": "高久期资产反弹但周内仍受折现率约束",
+      "status": "Confirmed close",
+      "as_of": "2026-09-03 close ET",
+      "sources": [
+        "S23"
+      ]
+    },
+    {
+      "asset": "Dow",
+      "level": "53,686.11",
+      "change_1d": "+1.18%",
+      "change_5d": "+0.22%",
+      "signal": "Broad risk-on",
+      "driver": "金融条件边际缓和推动广泛反弹",
+      "status": "Confirmed close",
+      "as_of": "2026-09-03 close ET",
+      "sources": [
+        "S01",
+        "S23"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,968.27",
+      "change_1d": "+0.51%",
+      "change_5d": "-1.53%",
+      "signal": "Small-cap lag",
+      "driver": "高融资成本仍压制小盘股相对表现",
+      "status": "Confirmed close",
+      "as_of": "2026-09-03 close ET",
+      "sources": [
+        "S23"
+      ]
+    },
+    {
+      "asset": "SOX",
+      "level": "11,352.13",
+      "change_1d": "+0.11%",
+      "change_5d": "-4.46%",
+      "signal": "AI fundamentals / valuation friction",
+      "driver": "Broadcom强基本面未完全抵消高预期和利率压力",
+      "status": "Confirmed close",
+      "as_of": "2026-09-03 close ET",
+      "sources": [
+        "S01",
+        "S23"
+      ]
+    },
+    {
+      "asset": "VIX",
+      "level": "14.30",
+      "change_1d": "-6.3%",
+      "change_5d": "-1.45%",
+      "signal": "Event premium eased",
+      "driver": "股债反弹压低短期波动率，但NFP前事件风险仍在",
+      "status": "Confirmed close / secondary 5D",
+      "as_of": "2026-09-03 close ET",
+      "sources": [
+        "S23"
+      ]
+    },
+    {
+      "asset": "UST 2Y",
+      "level": "4.34%",
+      "change_1d": "-5bp",
+      "change_5d": "+14bp",
+      "signal": "Front-end relief",
+      "driver": "Waller条件性维持利率压低近端加息定价",
+      "status": "Official close",
+      "as_of": "2026-09-03 close ET",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "asset": "UST 5Y",
+      "level": "4.52%",
+      "change_1d": "-2bp",
+      "change_5d": "+14bp",
+      "signal": "Relief within restrictive regime",
+      "driver": "政策路径缓和但周内利率仍明显上行",
+      "status": "Official close",
+      "as_of": "2026-09-03 close ET",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "asset": "UST 10Y",
+      "level": "4.77%",
+      "change_1d": "-2bp",
+      "change_5d": "+10bp",
+      "signal": "Still restrictive",
+      "driver": "风险溢价边际回落，但财政/资本需求维持高长端",
+      "status": "Official close",
+      "as_of": "2026-09-03 close ET",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "asset": "UST 30Y",
+      "level": "5.25%",
+      "change_1d": "-2bp",
+      "change_5d": "+6bp",
+      "signal": "Term premium high",
+      "driver": "长端供给与通胀风险仍限制估值扩张",
+      "status": "Official close",
+      "as_of": "2026-09-03 close ET",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "asset": "2s10s",
+      "level": "+43bp",
+      "change_1d": "+3bp",
+      "change_5d": "-4bp",
+      "signal": "Curve re-steepening 1D",
+      "driver": "前端收益率下降快于10Y",
+      "status": "Calculated from official Treasury closes",
+      "as_of": "2026-09-03 close ET",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "asset": "10s30s",
+      "level": "+48bp",
+      "change_1d": "0bp",
+      "change_5d": "-4bp",
+      "signal": "Long-end slope stable",
+      "driver": "30Y期限溢价仍高但日内未继续陡峭化",
+      "status": "Calculated from official Treasury closes",
+      "as_of": "2026-09-03 close ET",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "asset": "DXY",
+      "level": "99.00",
+      "change_1d": "+0.10%",
+      "change_5d": "-0.70%",
+      "signal": "USD softer on week",
+      "driver": "Fed加息概率回落抵消NFP前避险",
+      "status": "Market cross-check",
+      "as_of": "2026-09-04 pre-NFP, before 19:03 SGT",
+      "sources": [
+        "S10",
+        "S24",
+        "S27"
+      ]
+    },
+    {
+      "asset": "EURUSD",
+      "level": "1.1628",
+      "change_1d": "+0.02%",
+      "change_5d": "+0.36%",
+      "signal": "EUR firmer on week",
+      "driver": "美元周内回落；欧洲能源通胀限制ECB宽松空间",
+      "status": "Market cross-check",
+      "as_of": "2026-09-04 pre-NFP, before 19:03 SGT",
+      "sources": [
+        "S11",
+        "S24"
+      ]
+    },
+    {
+      "asset": "USDJPY",
+      "level": "156.03",
+      "change_1d": "-0.13%",
+      "change_5d": "-2.3%",
+      "signal": "Yen weekly rebound",
+      "driver": "BOJ加息预期升温与美元回落共同支撑日元",
+      "status": "Market cross-check",
+      "as_of": "2026-09-04 pre-NFP, before 19:03 SGT",
+      "sources": [
+        "S10",
+        "S24"
+      ]
+    },
+    {
+      "asset": "USDCAD",
+      "level": "1.3789",
+      "change_1d": "+0.04%",
+      "change_5d": "-0.83%",
+      "signal": "CAD firmer on week",
+      "driver": "高油价对加元形成支撑，美元周内走弱",
+      "status": "Secondary spot history",
+      "as_of": "2026-09-04 pre-NFP, before 19:03 SGT",
+      "sources": [
+        "S24"
+      ]
+    },
+    {
+      "asset": "USD/CNH",
+      "level": "6.7166",
+      "change_1d": "+0.01%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "Stable pre-NFP",
+      "driver": "美元与中国政策/资金流因素交织；未获得同源可靠5D序列",
+      "status": "Secondary spot / current only",
+      "as_of": "2026-09-04 pre-NFP, before 19:03 SGT",
+      "sources": [
+        "S13",
+        "S24"
+      ]
+    },
+    {
+      "asset": "Brent",
+      "level": "$95.05/bbl",
+      "change_1d": "-0.49%",
+      "change_5d": "+6.5%",
+      "signal": "Energy inflation risk",
+      "driver": "Hormuz实体通行偏低维持供应风险溢价",
+      "status": "Reuters market reporting",
+      "as_of": "2026-09-04 16:13 SGT snapshot",
+      "sources": [
+        "S07",
+        "S08",
+        "S09"
+      ]
+    },
+    {
+      "asset": "WTI",
+      "level": "$90.66/bbl",
+      "change_1d": "-0.70%",
+      "change_5d": "+8.8%",
+      "signal": "Supply-risk premium",
+      "driver": "中东供应风险令周内油价显著上行",
+      "status": "Reuters market reporting",
+      "as_of": "2026-09-04 16:13 SGT snapshot",
+      "sources": [
+        "S07",
+        "S09"
+      ]
+    },
+    {
+      "asset": "Gold",
+      "level": "~$4,476/oz",
+      "change_1d": "约0.0%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "Haven + lower yields",
+      "driver": "美元和收益率周内回落、地缘风险支撑黄金",
+      "status": "Reuters market reporting",
+      "as_of": "2026-09-04 Asia/Europe session before cutoff",
+      "sources": [
+        "S21",
+        "S27"
+      ]
+    },
+    {
+      "asset": "Copper",
+      "level": "$14,342/t",
+      "change_1d": "+0.06%",
+      "change_5d": "+0.03%",
+      "signal": "High-level consolidation",
+      "driver": "供应紧张与中国需求预期支撑，周内涨幅接近平盘",
+      "status": "Reuters republished market reporting",
+      "as_of": "2026-09-04 11:00 SGT snapshot",
+      "sources": [
+        "S22"
+      ]
+    }
+  ],
+  "data_quality": {
+    "publish_status": "FULL PUBLISH",
+    "market_tape_core_assets": 22,
+    "level_1d_covered": 22,
+    "level_1d_coverage_pct": 100.0,
+    "change_5d_covered": 20,
+    "change_5d_coverage_pct": 90.9,
+    "five_day_gaps": [
+      "USD/CNH — 同源可靠5D序列未在cutoff前确认",
+      "Gold — 可靠来源确认周内小幅上涨但未取得精确同源5D百分比"
+    ],
+    "note": "5D优先按一致历史价格序列计算；未可靠确认的字段不估算。"
+  },
+  "what_changed": [
+    {
+      "title": "Fed路径从“长端压力缓和”进一步转为“数据二元”",
+      "yesterday": "Sep 3正式版仍以高长端收益率和能源通胀为主要约束，政策缓和只是边际信号。",
+      "today": "Waller明确给出条件性维持利率路径，Sep 3美股大涨、2Y降5bp；但NFP仍待公布。",
+      "why": "短端政策风险下降使久期资产获得反弹窗口，也把20:30 SGT就业数据变成更集中的单点事件风险。",
+      "sources": [
+        "S01",
+        "S02",
+        "S03",
+        "S05"
+      ]
+    },
+    {
+      "title": "增长与通胀组合转为“需求韧性 + 价格黏性 + 招聘弱”",
+      "yesterday": "Sep 3正式版主要看到就业偏弱与能源冲击并存。",
+      "today": "ISM Services 55.4、New Orders 60.9保持强势，Employment 47.8仍收缩，Prices升至72.6。",
+      "why": "这不是干净的软着陆，Fed仍需同时处理价格黏性与招聘降温。",
+      "sources": [
+        "S04"
+      ]
+    },
+    {
+      "title": "Hormuz风险获得新的实体航运确认",
+      "yesterday": "Sep 3正式版指出Hormuz商业通行未恢复、油价维持高位。",
+      "today": "Reuters/Kpler显示周四仅4艘商品船通过，低于10日均值15艘；Brent/WTI周内仍大涨。",
+      "why": "能源风险溢价仍有真实物流基础，不能因Sep 4油价小幅回落而忽略。",
+      "sources": [
+        "S07",
+        "S08",
+        "S09"
+      ]
+    },
+    {
+      "title": "消费端新增弱点：Lululemon再度大幅下修全年指引",
+      "yesterday": "Sep 3正式版的盈利改善证据集中在AI硬件/云数据平台。",
+      "today": "LULU Q2收入低于预期，FY收入/EPS指引再下调，盘前约跌18%。",
+      "why": "盈利分化扩展到消费板块，非必需消费的定价权和品牌动能仍需单独审视。",
+      "sources": [
+        "S16",
+        "S17",
+        "S18"
+      ]
+    },
+    {
+      "title": "资金流显示“现金防守 + 区域分化”，并非全面Risk-On",
+      "yesterday": "Sep 3正式版市场从单向Risk-Off转为风险定价分化。",
+      "today": "截至Sep 2一周全球货币基金净流入$46.1B；全球股票基金+6.65B，但美国股票基金净流出$11.12B。",
+      "why": "Sep 3美股反弹并不代表资金面已全面追风险。",
+      "sources": [
+        "S12"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "美国8月非农就业报告：20:30 SGT将重新定价9月Fed路径",
+      "category": "growth_macro",
+      "theme_id": "fed_policy_path",
+      "continuity": "escalating",
+      "status": "Confirmed Upcoming",
+      "event_time_et": "2026-09-04 08:30 EDT",
+      "event_time_sgt": "2026-09-04 20:30 SGT",
+      "what_happened": "截至19:03 SGT，BLS尚未公布8月Employment Situation；Reuters调查共识为非农约+56K，7月为-23K，失业率预期约4.1%。",
+      "what_changed": "Waller已把政策风险从“加息偏主导”推回数据依赖，因此就业数据对前端利率的边际冲击更大。",
+      "why_it_matters": "强就业会与服务业价格72.6共同强化再加息尾部；弱就业则可能继续压低2Y与美元。",
+      "transmission": "NFP/失业率 → 9月Fed定价 → UST 2Y/10Y → DXY → Nasdaq/SOX/Gold",
+      "affected_assets": [
+        "UST 2Y",
+        "UST 10Y",
+        "DXY",
+        "Nasdaq 100",
+        "SOX",
+        "Gold"
+      ],
+      "direction": "Binary / high-volatility macro catalyst",
+      "importance": "★★★★★",
+      "confirmation": "非农、失业率和修订呈同向强/弱信号，并得到2Y与美元同步确认。",
+      "invalidation": "头条接近预期、但工资/修订/失业率相互抵消，市场继续等待CPI。",
+      "sources": [
+        "S05",
+        "S06",
+        "S27"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "Waller条件性偏鸽把利率尾部从“高概率加息”拉回数据依赖",
+      "category": "central_banks_fiscal",
+      "theme_id": "fed_policy_path",
+      "continuity": "escalating",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-09-03",
+      "event_time_sgt": "2026-09-03/04 SGT",
+      "what_happened": "Waller表示若未来两周通胀改善延续，他倾向9月维持利率；Sep 3美股大涨，2Y官方收于4.34%。 政策沟通进一步验证短端压力可下降，但并未消除高服务通胀与高长端收益率。",
+      "what_changed": "政策沟通进一步验证短端压力可下降，但并未消除高服务通胀与高长端收益率。",
+      "why_it_matters": "资产定价从单向高利率压力转向事件驱动，NFP/CPI任何再热都可能造成快速反转。",
+      "transmission": "Fed沟通 → hike probability↓ → 2Y↓/USD↓ → duration equities↑；数据再热则反向",
+      "affected_assets": [
+        "UST 2Y",
+        "DXY",
+        "S&P 500",
+        "Nasdaq 100",
+        "Gold"
+      ],
+      "direction": "Bullish duration assets / conditional",
+      "importance": "★★★★★",
+      "confirmation": "后续就业与CPI继续降温，2Y与美元不重新突破本周高位。",
+      "invalidation": "就业、工资或CPI再热，前端利率和加息定价同步回升。",
+      "sources": [
+        "S01",
+        "S02",
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "Hormuz实体通行仍偏低：油价周内大涨继续约束全球久期",
+      "category": "geopolitics_energy",
+      "theme_id": "geopolitics_energy",
+      "continuity": "persistent",
+      "status": "Ongoing",
+      "event_time_et": "2026-09-04 premarket EDT",
+      "event_time_sgt": "2026-09-04 Asia/Europe session",
+      "what_happened": "Reuters援引Kpler称周四仅4艘商品船通过Hormuz，低于10日均值15艘；Brent/WTI周内约+6.5%/+8.8%。CENTCOM 9月1日确认对与海上威胁相关的IRGC目标实施打击。",
+      "what_changed": "实体航运偏弱得到新数据确认；但Sep 4油价日内小幅回落，尚未演变成新的单日价格失控。",
+      "why_it_matters": "只要实体运输不能正常化，能源价格就会通过通胀预期与央行反应函数限制债券和高估值股票。",
+      "transmission": "Hormuz traffic↓ → oil risk premium↑ → inflation expectations↑ → long yields↑ → growth multiples↓",
+      "affected_assets": [
+        "Brent",
+        "WTI",
+        "UST 10Y",
+        "Nasdaq 100"
+      ],
+      "direction": "Bearish duration / bullish energy, conditional",
+      "importance": "★★★★",
+      "confirmation": "航运量继续显著低于近期均值且油价重新上冲。；后续需看到Brent、WTI、UST 10Y、Nasdaq 100的盈利兑现、指引或市场反应继续支持当前传导判断。",
+      "invalidation": "可持续外交降级并伴随Hormuz商业通行连续恢复、油价风险溢价回落。",
+      "sources": [
+        "S07",
+        "S08",
+        "S09"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top 3 Catalysts",
+      "status": "Updated",
+      "summary": "NFP是最集中的宏观事件风险；Waller提供久期缓和，但Hormuz实体通行意味着能源约束未解除。",
+      "paragraphs": [
+        "就业决定Fed路径，Hormuz决定能源通胀尾部。"
+      ],
+      "tables": [
+        {
+          "title": "Top 3 Catalyst Map",
+          "headers": [
+            "Rank",
+            "Catalyst",
+            "Status"
+          ],
+          "rows": [
+            [
+              1,
+              "美国8月非农就业报告：20:30 SGT将重新定价9月Fed路径",
+              "Confirmed Upcoming"
+            ],
+            [
+              2,
+              "Waller条件性偏鸽把利率尾部从“高概率加息”拉回数据依赖",
+              "Released/Occurred"
+            ],
+            [
+              3,
+              "Hormuz实体通行仍偏低：油价周内大涨继续约束全球久期",
+              "Ongoing"
+            ]
+          ]
+        }
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings",
+      "status": "Updated — 2 reported companies",
+      "summary": "LULU与DOCU构成消费/软件分化：前者再次下调指引，后者因AI平台采用上调收入/ARR路径。",
+      "paragraphs": [
+        "LULU需剔除关税退款的一次性EPS影响；DOCU提供AI产品变现证据。"
+      ],
+      "tables": [
+        {
+          "title": "Reported Earnings Snapshot",
+          "headers": [
+            "Ticker",
+            "Revenue",
+            "EPS",
+            "Guide",
+            "Reaction"
+          ],
+          "rows": [
+            [
+              "LULU",
+              "$2.42B vs $2.46B",
+              "$2.92 vs ~$1.82",
+              "FY revenue/EPS cut",
+              "~ -18% premarket"
+            ],
+            [
+              "DOCU",
+              "$875.7M vs $867.2M",
+              "$1.16 vs $1.09",
+              "FY revenue/ARR raised",
+              "~ +8% after-hours"
+            ]
+          ]
+        }
+      ],
+      "reported": [
+        {
+          "id": "LULU-2026Q2",
+          "company": "lululemon athletica",
+          "ticker": "LULU",
+          "period": "Q2 FY2026",
+          "status": "Released/Occurred",
+          "release_date": "2026-09-03",
+          "release_time_et": "after U.S. close",
+          "release_time_sgt": "2026-09-04 early SGT",
+          "market_session": "after-hours / Sep 4 premarket",
+          "key_takeaway": "收入与可比销售承压、全年指引再次下修；EPS表面超预期受到关税退款一次性收益显著帮助。",
+          "metrics": [
+            {
+              "metric": "Revenue",
+              "actual": "$2.42B",
+              "consensus": "$2.46B",
+              "previous_or_yoy": "-4% YoY",
+              "surprise": "约-$0.04B",
+              "notes": "Americas revenue约-8% YoY。"
+            },
+            {
+              "metric": "Adjusted EPS",
+              "actual": "$2.92",
+              "consensus": "约$1.82",
+              "previous_or_yoy": "含约$0.86/股关税退款与利息收益",
+              "surprise": "约+$1.10",
+              "notes": "剔除一次性收益后约$2.06。"
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "FY2026 revenue",
+              "current": "$10.35B–$10.50B",
+              "previous_or_consensus": "Prior $11.00B–$11.15B; consensus约$11.03B",
+              "change": "下调",
+              "interpretation": "全年收入路径再下修。"
+            },
+            {
+              "metric": "FY2026 EPS",
+              "current": "$9.48–$9.73",
+              "previous_or_consensus": "Prior $10.95–$11.15; consensus约$10.84",
+              "change": "下调",
+              "interpretation": "盈利与品牌修复压力持续。"
+            }
+          ],
+          "market_reaction": {
+            "session": "Sep 4 premarket",
+            "move": "约-18%",
+            "as_of": "before 19:03 SGT cutoff"
+          },
+          "one_offs": [
+            "Q2 adjusted EPS包含约$0.86/股联邦关税退款及相关利息收益。"
+          ],
+          "read_through": [
+            {
+              "asset": "U.S. Consumer Discretionary",
+              "implication": "非必需消费需求与品牌分化仍大。"
+            }
+          ],
+          "sources": [
+            "S16",
+            "S17",
+            "S18"
+          ]
+        },
+        {
+          "id": "DOCU-FY27Q2",
+          "company": "Docusign",
+          "ticker": "DOCU",
+          "period": "Q2 FY2027",
+          "status": "Released/Occurred",
+          "release_date": "2026-09-03",
+          "release_time_et": "after U.S. close",
+          "release_time_sgt": "2026-09-04 early SGT",
+          "market_session": "after-hours",
+          "key_takeaway": "收入与调整后EPS均超预期，公司再次上调全年收入展望，AI协议管理平台成为正向读穿。",
+          "metrics": [
+            {
+              "metric": "Revenue",
+              "actual": "$875.7M",
+              "consensus": "$867.2M",
+              "previous_or_yoy": "+9% YoY",
+              "surprise": "约+$8.5M",
+              "notes": "收入增长好于预期。"
+            },
+            {
+              "metric": "Adjusted EPS",
+              "actual": "$1.16",
+              "consensus": "$1.09",
+              "previous_or_yoy": "高于去年同期",
+              "surprise": "约+$0.07",
+              "notes": "盈利能力好于预期。"
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "FY revenue",
+              "current": "$3.50B–$3.51B",
+              "previous_or_consensus": "此前年度收入区间更低",
+              "change": "小幅上调",
+              "interpretation": "AI/协议管理需求改善增长动能。"
+            },
+            {
+              "metric": "Q3 revenue",
+              "current": "$886M–$890M",
+              "previous_or_consensus": "consensus约$888.5M",
+              "change": "大致符合共识",
+              "interpretation": "近端并未给出激进加速。"
+            }
+          ],
+          "market_reaction": {
+            "session": "Sep 3 after-hours",
+            "move": "约+8%",
+            "as_of": "initial after-hours reaction"
+          },
+          "one_offs": [],
+          "read_through": [
+            {
+              "asset": "Application software",
+              "implication": "AI可将合同/工作流产品转为更高价值执行平台。"
+            }
+          ],
+          "sources": [
+            "S19",
+            "S20"
+          ]
+        }
+      ],
+      "upcoming_72h": []
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "U.S. Macro",
+      "status": "Updated",
+      "summary": "服务业需求强、价格更热、招聘偏弱；截至cutoff，8月非农仍待20:30 SGT公布。",
+      "paragraphs": [
+        "ISM Services 55.4、New Orders 60.9、Employment 47.8、Prices 72.6；NFP共识约+56K、失业率约4.1%。"
+      ],
+      "tables": [
+        {
+          "title": "Macro Calendar / Consensus",
+          "headers": [
+            "Release",
+            "ET",
+            "SGT",
+            "Consensus",
+            "Previous",
+            "Actual"
+          ],
+          "rows": [
+            [
+              "U.S. Employment Situation — Aug",
+              "08:30 EDT",
+              "20:30 SGT",
+              "NFP ~+56K; unemployment ~4.1%",
+              "NFP -23K; unemployment 4.1%",
+              "待公布"
+            ]
+          ]
+        }
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Global Central Banks",
+      "status": "Updated",
+      "summary": "Fed因Waller转向更强数据依赖；欧洲能源通胀提高ECB鹰派尾部，BOJ预期支撑日元。",
+      "paragraphs": [
+        "Waller并未承诺不加息；后续就业与CPI仍是路径开关。"
+      ],
+      "tables": []
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Geopolitics",
+      "status": "Updated",
+      "summary": "美伊冲突仍通过Hormuz实体通行与能源价格影响全球资产。",
+      "paragraphs": [
+        "周四Hormuz商品船通行显著低于10日均值，实体供应链约束未恢复。"
+      ],
+      "tables": [
+        {
+          "title": "Physical-Risk Confirmation",
+          "headers": [
+            "Indicator",
+            "Latest evidence",
+            "Channel"
+          ],
+          "rows": [
+            [
+              "Hormuz commodity vessels",
+              "4 vs 10-day average 15",
+              "Supply risk → oil → rates"
+            ],
+            [
+              "Brent 5D",
+              "+6.5%",
+              "Energy inflation premium"
+            ]
+          ]
+        }
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "Regional Policy — China / Japan / Europe / Canada",
+      "status": "Updated",
+      "summary": "中国APEC中小企业活动继续强化创新、数字、绿色与跨境投资合作；欧洲和日本当前以货币/能源传导为主。",
+      "paragraphs": [
+        "截至cutoff未确认新的重大关税/出口管制实施节点，不以政策言辞替代正式动作。"
+      ],
+      "tables": [
+        {
+          "title": "Regional Policy Status",
+          "headers": [
+            "Region",
+            "Status"
+          ],
+          "rows": [
+            [
+              "China",
+              "APEC SME cooperation / industrial policy continuity"
+            ],
+            [
+              "Japan",
+              "BOJ repricing dominates"
+            ],
+            [
+              "Europe",
+              "Energy-inflation policy constraint"
+            ],
+            [
+              "Canada",
+              "无可靠重大新增政策节点"
+            ]
+          ]
+        }
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "Index Changes",
+      "status": "No reliable major new index event",
+      "summary": "第二轮检索未捕获截至cutoff可由指数提供商可靠确认的重大新纳入/剔除或再平衡实施事件。",
+      "paragraphs": [
+        "不把普通个股涨跌或未经官方确认的预期调仓包装为指数事件。"
+      ],
+      "tables": []
+    },
+    "flows": {
+      "number": 8,
+      "title": "Flows / Pension / Rebalancing",
+      "status": "Updated",
+      "summary": "资金流仍偏防守：全球货币基金大幅吸金，美国股票基金净流出。",
+      "paragraphs": [
+        "截至Sep 2一周：货币基金+$46.1B、全球股票+$6.65B、美国股票-$11.12B、债券+$10.01B、贵金属+$2.85B；未获得可靠当日养老金实际再平衡流量。"
+      ],
+      "tables": [
+        {
+          "title": "Weekly Fund Flows",
+          "headers": [
+            "Bucket",
+            "Net flow"
+          ],
+          "rows": [
+            [
+              "Global money market",
+              "+$46.1B"
+            ],
+            [
+              "Global equity",
+              "+$6.65B"
+            ],
+            [
+              "U.S. equity",
+              "-$11.12B"
+            ],
+            [
+              "Global bond",
+              "+$10.01B"
+            ],
+            [
+              "Gold/precious metals",
+              "+$2.85B"
+            ]
+          ]
+        }
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF / Fund Allocation",
+      "status": "Partial — no reliable ETF-only split",
+      "summary": "新增数据来自LSEG Lipper广义基金流；没有可靠ETF单独大类流量就不强行拆分。",
+      "paragraphs": [
+        "新增数据来自LSEG Lipper广义基金流；没有可靠ETF单独大类流量就不强行拆分。"
+      ],
+      "tables": []
+    },
+    "options": {
+      "number": 10,
+      "title": "Options / Volatility",
+      "status": "Partial — calendar verified, positioning unverified",
+      "summary": "截至cutoff未获得可依赖的全市场dealer gamma、flip、max-pain或0DTE净头寸数据。",
+      "paragraphs": [
+        "VIX回落不是dealer positioning替代指标；NFP前不猜gamma方向。"
+      ],
+      "tables": [
+        {
+          "title": "Options Data Quality",
+          "headers": [
+            "Item",
+            "Status"
+          ],
+          "rows": [
+            [
+              "Weekly option calendar",
+              "Verified from Cboe"
+            ],
+            [
+              "Dealer gamma / flip / max pain",
+              "No reliable current evidence"
+            ]
+          ]
+        }
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "U.S. Treasury / Auctions",
+      "status": "Updated schedule; no result before cutoff",
+      "summary": "下一轮coupon供给将在Labor Day后展开；截至cutoff无新拍卖结果可填。",
+      "paragraphs": [
+        "Sep 8 3Y、Sep 9 10Y、Sep 10 30Y结果全部保持待公布。"
+      ],
+      "tables": [
+        {
+          "title": "Next Coupon Auctions",
+          "headers": [
+            "Security",
+            "Auction date",
+            "Result"
+          ],
+          "rows": [
+            [
+              "3Y note",
+              "2026-09-08 ET",
+              "待公布"
+            ],
+            [
+              "10Y note",
+              "2026-09-09 ET",
+              "待公布"
+            ],
+            [
+              "30Y bond",
+              "2026-09-10 ET",
+              "待公布"
+            ]
+          ]
+        }
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Commodities",
+      "status": "Updated",
+      "summary": "Brent/WTI周内大涨但日内小幅回落；铜维持高位，黄金NFP前大致稳定。",
+      "paragraphs": [
+        "Commodity → Inflation → Rates仍是核心传导。"
+      ],
+      "tables": [
+        {
+          "title": "Commodity Tape",
+          "headers": [
+            "Asset",
+            "Level",
+            "1D",
+            "5D"
+          ],
+          "rows": [
+            [
+              "Brent",
+              "$95.05",
+              "-0.49%",
+              "+6.5%"
+            ],
+            [
+              "WTI",
+              "$90.66",
+              "-0.70%",
+              "+8.8%"
+            ],
+            [
+              "Gold",
+              "~$4,476",
+              "~0.0%",
+              "尚无法可靠确认"
+            ],
+            [
+              "LME Copper",
+              "$14,342/t",
+              "+0.06%",
+              "+0.03%"
+            ]
+          ]
+        }
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "Financing / AI Capex",
+      "status": "Updated evidence",
+      "summary": "AI资本需求既支撑科技收入，也与政府融资竞争资本。",
+      "paragraphs": [
+        "DOCU提供AI软件变现证据；不把计划/承诺/已部署资金混为一谈。"
+      ],
+      "tables": []
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Breaking News — Past 24H",
+      "status": "Updated",
+      "summary": "高价值新增集中在LULU/DOCU财报、Hormuz通行数据与全球资金流；NFP在cutoff时仍是未来事件。",
+      "paragraphs": [
+        "LULU盘前大跌、DOCU盘后上涨；Hormuz新船舶数据继续验证实体风险。"
+      ],
+      "tables": [
+        {
+          "title": "Past-24H Events",
+          "headers": [
+            "Event",
+            "State"
+          ],
+          "rows": [
+            [
+              "LULU Q2 + guide cut",
+              "Released/Occurred"
+            ],
+            [
+              "DOCU Q2 + guide raise",
+              "Released/Occurred"
+            ],
+            [
+              "Hormuz shipping update",
+              "Market Reporting"
+            ],
+            [
+              "U.S. NFP",
+              "Confirmed Upcoming / Actual 待公布"
+            ]
+          ]
+        }
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "Integrated Market Impact",
+      "status": "Updated",
+      "summary": "市场从“利率单向压制”进入“就业二元事件 + 能源高风险溢价 + 盈利强分化”的三线结构。",
+      "paragraphs": [
+        "等待NFP后2Y、DXY与高久期相对表现是否形成一致确认。"
+      ],
+      "tables": [
+        {
+          "title": "Cross-Asset Confirmation",
+          "headers": [
+            "Signal",
+            "Evidence"
+          ],
+          "rows": [
+            [
+              "Rates",
+              "2Y -5bp 1D, +14bp 5D"
+            ],
+            [
+              "Equities",
+              "S&P +1.06% 1D; SOX -4.46% 5D"
+            ],
+            [
+              "Flows",
+              "Money funds +$46.1B weekly"
+            ],
+            [
+              "Energy",
+              "Brent +6.5% 5D"
+            ]
+          ]
+        }
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "Growth Impulse",
+      "current": "→ 需求韧性/招聘偏弱",
+      "yesterday": "↓ 就业降温",
+      "change_reason": "服务业新订单保持强势，但就业分项仍收缩。",
+      "evidence": "ISM Services 55.4、New Orders 60.9，Employment 47.8；NFP截至cutoff待公布。",
+      "sources": [
+        "S04",
+        "S05",
+        "S06"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "Inflation Impulse",
+      "current": "↑ 服务+能源偏热",
+      "yesterday": "↑ 能源事件驱动",
+      "change_reason": "服务价格继续上升，同时油价周内大涨。",
+      "evidence": "ISM Services Prices 72.6；Brent/WTI周内约+6.5%/+8.8%。",
+      "sources": [
+        "S04",
+        "S07"
+      ]
+    },
+    "rates_pressure": {
+      "label": "Rates Pressure",
+      "current": "↓ 短端缓和/长端仍高",
+      "yesterday": "→ 高位边际缓和",
+      "change_reason": "Waller条件性维持利率压低前端压力，但周内累计上行尚未逆转。",
+      "evidence": "Sep 3 2Y/10Y官方4.34%/4.77%，1D -5bp/-2bp；5D +14bp/+10bp。",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    "earnings_revision": {
+      "label": "Earnings Revision",
+      "current": "→ 强分化",
+      "yesterday": "↑ AI改善",
+      "change_reason": "DOCU上调收入展望与LULU下调全年指引同时出现。",
+      "evidence": "DOCU FY收入指引升至$3.50–3.51B；LULU FY收入降至$10.35–10.50B。",
+      "sources": [
+        "S16",
+        "S19"
+      ]
+    },
+    "liquidity": {
+      "label": "Liquidity",
+      "current": "→ 防守型现金充裕",
+      "yesterday": "→ 限制性/边际缓和",
+      "change_reason": "收益率回落带来交易性缓和，但大额货币基金流入显示投资者仍主动持有现金。",
+      "evidence": "全球货币基金一周净流入$46.1B，10Y仍为4.77%。",
+      "sources": [
+        "S03",
+        "S12"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "Geopolitical Risk",
+      "current": "↑ 高位未解除",
+      "yesterday": "↑ 高",
+      "change_reason": "新的船舶数据确认Hormuz商业通行仍低于近期均值。",
+      "evidence": "周四仅4艘商品船通过Hormuz，低于10日均值15艘。",
+      "sources": [
+        "S08",
+        "S09"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base — 就业接近预期，数据依赖延续",
+      "probability": "中等偏高",
+      "trigger": "NFP接近约+56K、失业率约4.1%，修订/工资无单向冲击。",
+      "expected_market_reaction": "2Y与美元维持缓和水平，Nasdaq保留反弹但受油价和高10Y限制。",
+      "assets_most_sensitive": [
+        "UST 2Y",
+        "DXY",
+        "Nasdaq 100",
+        "VIX"
+      ],
+      "what_confirms_it": "2Y与DXY不重新突破本周高点，股指上涨由大型科技向外扩散。",
+      "what_invalidates_it": "就业/工资明显偏离共识并触发前端利率单向重定价。"
+    },
+    "bull_case": {
+      "label": "Bull — 就业降温且无工资再热",
+      "probability": "中等",
+      "trigger": "NFP明显偏弱、失业率/修订走软且工资不热。",
+      "expected_market_reaction": "2Y和美元下行，高久期科技与黄金受益；小盘需10Y同步下行。",
+      "assets_most_sensitive": [
+        "UST 2Y",
+        "DXY",
+        "Nasdaq 100",
+        "Russell 2000",
+        "Gold"
+      ],
+      "what_confirms_it": "2Y、DXY同步下行且Nasdaq/Russell上涨不被10Y反弹破坏。",
+      "what_invalidates_it": "弱就业被工资/修订抵消，或油价再升压过增长交易。"
+    },
+    "bear_case": {
+      "label": "Bear — 就业偏强叠加价格黏性",
+      "probability": "中等",
+      "trigger": "NFP明显强于约+56K，或就业/工资组合提高9月加息概率。",
+      "expected_market_reaction": "2Y与美元上行，Nasdaq/SOX承压；高油价会放大长端压力。",
+      "assets_most_sensitive": [
+        "UST 2Y",
+        "DXY",
+        "SOX",
+        "Nasdaq 100",
+        "Brent"
+      ],
+      "what_confirms_it": "2Y和DXY同步上行、SOX相对S&P走弱且VIX回升。",
+      "what_invalidates_it": "强头条被向下修订/失业率上行抵消，前端利率无法维持上行。"
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-09-04 20:30 SGT",
+      "et": "2026-09-04 08:30 EDT",
+      "event": "U.S. Employment Situation — August 2026",
+      "status": "Confirmed Upcoming",
+      "consensus": "非农约+56K；失业率约4.1%",
+      "previous": "非农-23K；失业率4.1%",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "why": "将直接重定价9月Fed路径、2Y与美元。",
+      "sources": [
+        "S05",
+        "S06"
+      ]
+    },
+    {
+      "sgt": "2026-09-08/09 SGT",
+      "et": "2026-09-08 U.S. session EDT",
+      "event": "U.S. Treasury 3Y auction and next-week coupon supply sequence",
+      "status": "Confirmed Upcoming",
+      "consensus": "待市场形成WI定价",
+      "previous": "上一轮结果不作为本期预测输入",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "why": "NFP后若利率仍高，3Y→10Y→30Y供给将测试期限溢价。",
+      "sources": [
+        "S15"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "NFP/工资重新偏热，9月Fed加息尾部快速回归",
+      "why_not_fully_priced": "Waller讲话与Sep 3股债反弹已使市场重新拥抱暂缓加息路径，短端仓位对反向数据更敏感。",
+      "trigger": "就业、失业率或工资组合显著偏鹰，并得到2Y/DXY确认。",
+      "transmission": "Labor surprise↑ → Fed hike odds↑ → 2Y/USD↑ → Nasdaq/SOX multiples↓",
+      "first_asset": "UST 2Y / DXY",
+      "confirmation": "2Y与DXY同时突破讲话后回落区间。",
+      "invalidation": "就业偏弱且修订/失业率确认降温，2Y继续下行。",
+      "theme_id": "fed_policy_path",
+      "category": "inflation_rates",
+      "continuity": "escalating",
+      "status": "Active",
+      "sources": [
+        "S02",
+        "S03",
+        "S05"
+      ]
+    },
+    {
+      "risk": "Hormuz通行继续恶化，把油价高位转化为更持久实体通胀冲击",
+      "why_not_fully_priced": "Sep 4油价日内小幅回落容易被解读为风险降温，但船舶数据仍显示商业通行显著偏低。",
+      "trigger": "船舶通行连续低迷并伴随Brent/WTI重新上冲。",
+      "transmission": "Shipping impairment → oil↑ → inflation expectations↑ → long yields↑ → risk assets↓",
+      "first_asset": "Brent / front oil spreads",
+      "confirmation": "实体船舶通行与价格同时恶化。",
+      "invalidation": "连续恢复通行、外交降级且油价风险溢价回落。",
+      "theme_id": "geopolitics_energy",
+      "category": "geopolitics_energy",
+      "continuity": "persistent",
+      "status": "Active",
+      "sources": [
+        "S07",
+        "S08",
+        "S09"
+      ]
+    },
+    {
+      "risk": "盈利分化扩散：消费疲弱与高估值AI同时压制风险偏好",
+      "why_not_fully_priced": "Sep 3指数反弹较强，但LULU大幅下修与SOX 5D相对落后显示内部质量分化仍高。",
+      "trigger": "更多公司出现明显下修指引或强业绩后负面股价反应。",
+      "transmission": "Earnings dispersion↑ → breadth↓ → index multiple support weakens",
+      "first_asset": "SOX / Consumer Discretionary",
+      "confirmation": "盈利后负反应与市场宽度恶化同时出现。",
+      "invalidation": "后续公司持续上修指引且盈利反应扩散到非AI周期板块。",
+      "theme_id": "ai_earnings",
+      "category": "earnings_ai_semis",
+      "continuity": "persistent",
+      "status": "Active",
+      "sources": [
+        "S01",
+        "S16",
+        "S17",
+        "S19"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "U.S. Employment Situation — August 2026",
+    "status": "Confirmed Upcoming",
+    "date": "2026-09-04",
+    "et": "08:30 EDT",
+    "sgt": "20:30 SGT",
+    "consensus": "非农约+56K；失业率约4.1%",
+    "previous": "非农-23K；失业率4.1%",
+    "actual": "待公布",
+    "why_it_matters": "这是Waller将政策重新推回数据依赖后的第一项一级就业数据，最先影响2Y与美元，再传导到Nasdaq/SOX/黄金。",
+    "first_market": "UST 2Y / DXY",
+    "bull_interpretation": "就业明显降温且没有工资再热：2Y和美元下行，久期资产获益。",
+    "bear_interpretation": "就业/工资偏强：加息尾部升温，2Y和美元反弹，高估值科技承压。",
+    "watch_first": [
+      "先看UST 2Y与Fed路径定价：若头条方向能在前端利率中持续，才说明政策重定价得到确认。",
+      "再看DXY与USDJPY：若美元与2Y同向，说明宏观冲击得到跨资产确认。",
+      "最后看Nasdaq 100/SOX相对S&P 500：若利率下行伴随高久期相对走强，risk-on更可信。"
+    ],
+    "sources": [
+      "S05",
+      "S06",
+      "S27"
+    ]
+  },
+  "sources_path": "data/sources/2026-09-04.json",
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S25",
+    "S26",
+    "S27"
+  ]
+}

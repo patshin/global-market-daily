@@ -1,1 +1,52 @@
-{"schema_version":"1.0.0","date":"2026-09-04","edition_status":"provisional","publication_cycle":"morning","thesis":"利率尾部风险暂时降温，但并未消失：Waller把9月Fed加息定价拉回约50%，推动美股与黄金反弹、美元和收益率回落；今晚8月非农将决定这次risk-on是新阶段，还是高服务通胀与油价压力下的短暂喘息。","regime":"Event Risk","dominant_narrative":"过去24小时最重要的变化是市场重新从“油价与债券抛售主导”切换到“数据决定Fed路径”。服务业PMI 55.4显示需求强、Prices 72.6显示通胀黏性，而招聘仍弱；这种组合使今晚非农成为真正的跨资产分水岭。AI基本面仍强，但Broadcom与Snowflake的股价分化说明高估值资产已经进入严格的兑现筛选。","top_catalysts":[{"rank":1,"event":"美国8月非农就业报告：今晚决定9月Fed加息定价的下一次跃迁","direction":"Binary / high-volatility macro catalyst","importance":"★★★★★"},{"rank":2,"event":"Waller条件性偏鸽：9月加息从高概率交易退回数据依赖","direction":"Bullish duration assets / conditional","importance":"★★★★★"},{"rank":3,"event":"AI盈利分化：Broadcom长期需求强、Snowflake兑现软件AI，但高估值要求更高","direction":"AI fundamentals positive / relative-performance dispersion","importance":"★★★★"}],"top_risks":[{"risk":"NFP/工资强于预期，叠加服务业Prices 72.6，推动9月Fed重新转鹰","first_asset":"UST 2Y / Fed pricing"},{"risk":"Hormuz从高风险溢价升级为持续物理断供，Brent突破100美元","first_asset":"Brent / front oil spreads"},{"risk":"AI高预期门槛使硬件盈利“好但不够好”，带来SOX相对回撤","first_asset":"SOX / AVGO"}],"next_catalyst":{"event":"U.S. Employment Situation — August 2026","et":"08:30 EDT","sgt":"20:30 SGT"},"daily_json_path":"data/daily/2026-09-04.json","report_path":"reports/2026/09/2026-09-04.md","sources_path":"data/sources/2026-09-04.json","updated_at":"2026-09-04T09:00:00+08:00"}
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-04",
+  "edition_status": "official",
+  "publication_cycle": "evening",
+  "thesis": "战术性利率缓和已经给风险资产喘息，但结构性约束没有解除：Waller把9月Fed路径重新推回数据依赖，Sep 3美股强反弹、2Y回落；与此同时服务业价格仍高、Hormuz实体通行偏弱且油价周内大涨。20:30 SGT的8月非农将决定这轮久期反弹能否延续，还是重新回到“高通胀 + 高资本成本”定价。",
+  "regime": "Event Risk / Mixed",
+  "dominant_narrative": "截至真实19:03 SGT研究截止，市场并未得到一个干净的Risk-On答案，而是进入“就业二元事件 + 能源高风险溢价 + 盈利强分化”结构：Fed短端压力缓和，全球资金仍大量停留在现金，SOX和小盘股5D仍落后，同时LULU与DOCU展示消费与AI软件截然不同的盈利修订。最重要的确认链是NFP之后UST 2Y → DXY → Nasdaq/SOX相对表现是否同向。",
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "美国8月非农就业报告：20:30 SGT将重新定价9月Fed路径",
+      "direction": "Binary / high-volatility macro catalyst",
+      "importance": "★★★★★"
+    },
+    {
+      "rank": 2,
+      "event": "Waller条件性偏鸽把利率尾部从“高概率加息”拉回数据依赖",
+      "direction": "Bullish duration assets / conditional",
+      "importance": "★★★★★"
+    },
+    {
+      "rank": 3,
+      "event": "Hormuz实体通行仍偏低：油价周内大涨继续约束全球久期",
+      "direction": "Bearish duration / bullish energy, conditional",
+      "importance": "★★★★"
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "NFP/工资重新偏热，9月Fed加息尾部快速回归",
+      "first_asset": "UST 2Y / DXY"
+    },
+    {
+      "risk": "Hormuz通行继续恶化，把油价高位转化为更持久实体通胀冲击",
+      "first_asset": "Brent / front oil spreads"
+    },
+    {
+      "risk": "盈利分化扩散：消费疲弱与高估值AI同时压制风险偏好",
+      "first_asset": "SOX / Consumer Discretionary"
+    }
+  ],
+  "next_catalyst": {
+    "event": "U.S. Employment Situation — August 2026",
+    "et": "08:30 EDT",
+    "sgt": "20:30 SGT"
+  },
+  "daily_json_path": "data/daily/2026-09-04.json",
+  "report_path": "reports/2026/09/2026-09-04.md",
+  "sources_path": "data/sources/2026-09-04.json",
+  "updated_at": "2026-09-04T19:03:18+08:00"
+}
