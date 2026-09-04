@@ -25,6 +25,8 @@ jobs:
         run: python scripts/validate_publish_v2.py --root .
       - name: Enforce live renderer contract
         run: python scripts/validate_live_contract.py --root .
+      - name: Enforce formal archive renderer contracts
+        run: python scripts/validate_archive_live_contract.py --root .
       - name: Run frontend visibility gate
         run: python scripts/validate_frontend.py --root .
       - name: Run 30D market lens gate
