@@ -6,6 +6,7 @@ on:
     types: [completed]
 
 permissions:
+  actions: write
   contents: write
   pull-requests: write
 
@@ -49,4 +50,18 @@ jobs:
           gh pr merge "$PR_NUMBER" --repo "$REPO" --squash --delete-branch \
             --subject "${title}" \
             --body "Automatically promoted after Publication Quality Gate passed."
-          echo "PROMOTED PR #$PR_NUMBER ($EXPECTED_BRANCH)"
+          merge_sha="$(gh pr view "$PR_NUMBER" --repo "$REPO" --json mergeCommit --jq '.mergeCommit.oid // empty')"
+          test -n "$merge_sha" || { echo 'Merged PR has no merge commit SHA'; exit 1; }
+          echo "PROMOTED PR #$PR_NUMBER ($EXPECTED_BRANCH) -> $merge_sha"
+
+      - name: Dispatch post-merge 30D refresh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          # GITHUB_TOKEN-authored merges do not emit downstream push workflows.
+          # workflow_dispatch is the supported non-recursive handoff.
+          gh workflow run trends-refresh.yml --repo "$REPO" --ref main
+          echo "DISPATCHED Refresh 30D Market Lens on main"
