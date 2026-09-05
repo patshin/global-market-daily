@@ -11,6 +11,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: write
   contents: write
 
 concurrency:
@@ -39,6 +40,21 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/data/trends/market-history.json docs/data/trends/rolling-30d.json docs/data/trends/theme-registry.json
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m "data: refresh rolling 30D market lens"
-          git push origin HEAD:main
+          if git diff --cached --quiet; then
+            echo "30D derived data already current"
+          else
+            git commit -m "data: refresh rolling 30D market lens"
+            git push origin HEAD:main
+          fi
+
+      - name: Dispatch Pages from settled main
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          # A GITHUB_TOKEN-authored trend commit cannot be relied on to trigger
+          # a push-based Pages workflow, so explicitly dispatch deployment.
+          gh workflow run pages.yml --repo "$REPO" --ref main
+          echo "DISPATCHED Deploy Global Market Daily on main"

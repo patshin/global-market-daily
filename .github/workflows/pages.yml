@@ -9,6 +9,9 @@ on:
       - "scripts/**"
       - "schemas/**"
       - ".github/workflows/pages.yml"
+  # Keep this dispatch entry: trends-refresh.yml uses it as the reliable
+  # handoff after derived data settles because GITHUB_TOKEN pushes do not
+  # recursively start push-triggered workflows.
   workflow_dispatch:
 
 permissions:

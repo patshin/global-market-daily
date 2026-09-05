@@ -35,15 +35,30 @@ def validate_repository(root: Path) -> int:
     reports: dict[str, dict] = {}
 
     for path in daily_paths:
+        # validate_daily() expects daily.sources_path to resolve to a JSON file.
+        # Guard that contract here so a malformed candidate fails closed with a
+        # useful gate error rather than raising IsADirectoryError on docs/.
+        report = load_json(path, gate)
+        if not isinstance(report, dict):
+            continue
+        sources_path = report.get("sources_path")
+        has_sources_path = isinstance(sources_path, str) and bool(sources_path.strip())
+        gate.require(has_sources_path, f"{path}: sources_path must be a non-empty string")
+        if not has_sources_path:
+            continue
+        resolved_sources = root / "docs" / sources_path
+        gate.require(resolved_sources.is_file(),
+                     f"{path}: sources_path must resolve to a JSON file: {sources_path}")
+        if not resolved_sources.is_file():
+            continue
+
         date = validate_daily(path, root, gate)
         if not date:
             continue
         valid_dates.append(date)
-        report = load_json(path, gate)
-        if isinstance(report, dict):
-            reports[date] = report
-            if is_final_report(report):
-                final_dates.append(date)
+        reports[date] = report
+        if is_final_report(report):
+            final_dates.append(date)
 
     latest = load_json(root / "docs/data/latest.json", gate)
     archive = load_json(root / "docs/data/archive.json", gate)
