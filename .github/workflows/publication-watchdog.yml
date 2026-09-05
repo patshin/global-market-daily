@@ -21,6 +21,7 @@ on:
         type: string
 
 permissions:
+  actions: write
   contents: read
 
 concurrency:
@@ -42,13 +43,40 @@ jobs:
           python-version: "3.12"
       - name: Validate automation definitions
         run: python scripts/validate_automation_contract.py .
-      - name: Verify morning publication state
+      - name: Verify morning publication state in main
         env:
           EXPECTED_DATE: ${{ inputs.date }}
         run: |
           args=(--root . --cycle morning)
           if [ -n "${EXPECTED_DATE:-}" ]; then args+=(--date "$EXPECTED_DATE"); fi
           python scripts/verify_scheduled_publication.py "${args[@]}"
+      - name: Verify morning is live on public Pages
+        env:
+          EXPECTED_DATE: ${{ inputs.date }}
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected="${EXPECTED_DATE:-$(TZ=Asia/Singapore date +%F)}"
+          base="https://patshin.github.io/global-market-daily"
+          for attempt in 1 2 3; do
+            if curl -fsSL --max-time 20 "$base/data/latest.json?watchdog=${GITHUB_RUN_ID}-${attempt}" -o /tmp/public-latest.json; then
+              if python3 - "$expected" <<'PY'
+          import json, sys
+          expected = sys.argv[1]
+          latest = json.load(open('/tmp/public-latest.json', encoding='utf-8'))
+          assert latest.get('date') == expected, (latest.get('date'), expected)
+          assert latest.get('edition_status') == 'provisional', latest.get('edition_status')
+          print(f"PUBLIC MORNING VERIFIED: {expected}")
+          PY
+              then exit 0; fi
+            fi
+            sleep 5
+          done
+          echo "::error::Public Pages did not catch up to ${expected} morning; dispatching recovery chain"
+          gh workflow run trends-refresh.yml --repo "$REPO" --ref main
+          exit 1
 
   verify-close:
     name: Verify 18:00 SGT close publication
@@ -64,10 +92,38 @@ jobs:
           python-version: "3.12"
       - name: Validate automation definitions
         run: python scripts/validate_automation_contract.py .
-      - name: Verify close publication state
+      - name: Verify close publication state in main
         env:
           EXPECTED_DATE: ${{ inputs.date }}
         run: |
           args=(--root . --cycle close)
           if [ -n "${EXPECTED_DATE:-}" ]; then args+=(--date "$EXPECTED_DATE"); fi
           python scripts/verify_scheduled_publication.py "${args[@]}"
+      - name: Verify close is live on public Pages
+        env:
+          EXPECTED_DATE: ${{ inputs.date }}
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          expected="${EXPECTED_DATE:-$(TZ=Asia/Singapore date +%F)}"
+          base="https://patshin.github.io/global-market-daily"
+          for attempt in 1 2 3; do
+            if curl -fsSL --max-time 20 "$base/data/latest.json?watchdog=${GITHUB_RUN_ID}-${attempt}" -o /tmp/public-latest.json; then
+              if python3 - "$expected" <<'PY'
+          import json, sys
+          expected = sys.argv[1]
+          latest = json.load(open('/tmp/public-latest.json', encoding='utf-8'))
+          assert latest.get('date') == expected, (latest.get('date'), expected)
+          assert latest.get('edition_status') == 'official', latest.get('edition_status')
+          assert latest.get('publication_cycle') in ('close', 'evening'), latest.get('publication_cycle')
+          print(f"PUBLIC CLOSE VERIFIED: {expected}")
+          PY
+              then exit 0; fi
+            fi
+            sleep 5
+          done
+          echo "::error::Public Pages did not catch up to ${expected} close; dispatching recovery chain"
+          gh workflow run trends-refresh.yml --repo "$REPO" --ref main
+          exit 1
