@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Validate the standalone twice-daily automation prompt contract."""
+"""Validate the standalone twice-daily automation prompt and transaction contract."""
 from __future__ import annotations
 
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -92,6 +93,35 @@ def validate_prompt(path: Path, gate: Gate, mode: str, schedule: str) -> None:
                  f"{path} does not prevent duplicated signal text")
 
 
+def validate_transaction(root: Path, gate: Gate) -> None:
+    transaction_path = root / "prompts/automation-transaction.md"
+    transaction = read_text(transaction_path, gate)
+    lower = transaction.lower()
+
+    gate.require("quality-parity" in lower,
+                 "Transaction contract must require Quality-parity preflight")
+    gate.require(".github/workflows/quality.yml" in transaction,
+                 "Transaction contract must read current .github/workflows/quality.yml before PR creation")
+    gate.require("scripts/validate_frontend.py" in transaction,
+                 "Transaction contract must explicitly cover the frontend visibility gate")
+    gate.require("minimum-length" in lower,
+                 "Transaction contract must treat frontend minimum-length checks as blocking")
+    gate.require("never knowingly submit" in lower,
+                 "Transaction contract must prohibit knowingly submitting deterministic Quality failures")
+    gate.require("status = `submitted_for_validation`" in lower,
+                 "Transaction contract must preserve SUBMITTED_FOR_VALIDATION receipt semantics")
+
+    quality_path = root / ".github/workflows/quality.yml"
+    quality = read_text(quality_path, gate)
+    # Keep transaction preflight aligned with the validator scripts actually invoked by Quality.
+    quality_validator_scripts = sorted(set(re.findall(r"scripts/[A-Za-z0-9_.-]*validate[A-Za-z0-9_.-]*\.py", quality)))
+    gate.require(bool(quality_validator_scripts),
+                 "quality.yml must invoke at least one deterministic validator script")
+    for script in quality_validator_scripts:
+        gate.require(script in transaction,
+                     f"Transaction Quality-parity preflight is missing current Quality validator: {script}")
+
+
 def main() -> int:
     root = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path.cwd()
     gate = Gate()
@@ -144,6 +174,8 @@ def main() -> int:
     gate.require("six editorial signal cards" in master.lower(),
                  "Master prompt must include the browser UI gate")
 
+    validate_transaction(root, gate)
+
     gate.require(not (root / "prompts/global-market-daily.md").exists(),
                  "Legacy prompts/global-market-daily.md must be removed to avoid automation ambiguity")
 
@@ -153,7 +185,10 @@ def main() -> int:
             print(f"  - {error}")
         return 1
 
-    print("AUTOMATION CONTRACT PASSED — standalone 09:00/18:00 prompts, fixed modes, browser gate, no context-dependent wording")
+    print(
+        "AUTOMATION CONTRACT PASSED — standalone 09:00/18:00 prompts, fixed modes, "
+        "Quality-parity transaction preflight, browser gate, no context-dependent wording"
+    )
     return 0
 
 
