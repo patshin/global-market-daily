@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "retrieved_for": "Global Market Daily 30D Lens",
-  "as_of": "2026-09-05",
+  "as_of": "2026-09-06",
   "series": {
     "NASDAQCOM": {
       "label": "Nasdaq Composite",
