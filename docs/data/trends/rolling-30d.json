@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-09-06",
-  "window_start": "2026-08-08",
-  "window_end": "2026-09-06",
+  "as_of": "2026-09-07",
+  "window_start": "2026-08-09",
+  "window_end": "2026-09-07",
   "coverage": {
-    "market_sessions": 22,
-    "native_daily_days": 5,
+    "market_sessions": 23,
+    "native_daily_days": 6,
     "reconstructed_days": 17,
     "verified_event_days": 4,
     "historical_series_start": "2025-07-14"
@@ -1386,6 +1386,68 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-09-07",
+      "source_mode": "native_daily",
+      "regime_code": "event_risk",
+      "regime_label": "Event Risk / Energy-Inflation + Global Tightening",
+      "dominant_theme_id": "geopolitics_energy",
+      "signals": {
+        "growth": "→",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "→",
+        "liquidity": "→",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
+          "title": "伊朗拟公布Hormuz附近新受限区，Brent日内最高触及$97.93",
+          "evidence": "Reuters在9月7日更新称，伊朗表示未来数日将在海湾公布新的受限区，并称该区域将从美方封锁线起始；同时伊朗与阿曼已就一条新国际航道的地图达成一致，计划由伊朗管理。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "受限区/航线调整 → 商船通行与保险成本 → Brent/柴油 → 通胀预期 → UST 2Y/Fed → DXY与Nasdaq。",
+          "confirmation": "未来24–72小时若Hormuz商业通行继续维持低位、运费或保险成本上升且Brent重新站上97.93美元，说明制度性航运风险正在兑现。",
+          "invalidation": "若新航道迅速获得多方认可、商业通行恢复且Brent回落到冲突升级前区间，则受限区的市场约束力明显下降。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "OPEC+正式维持2026年10月产量政策不变",
+          "evidence": "OPEC一级来源确认沙特、俄罗斯、伊拉克、科威特、哈萨克斯坦、阿尔及利亚和阿曼将在10月维持9月所需产量安排，并将下一次会议定于10月4日。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "OPEC+政策不变 → 缺少新增名义供给缓冲 → 实物中断敏感度上升 → Brent/柴油 → 全球通胀与利率。",
+          "confirmation": "若Hormuz流量仍低且Brent期限结构和柴油裂解价差继续紧张，说明名义政策不变无法抵消实物供应约束。",
+          "invalidation": "若Hormuz流量快速恢复、成员国实际出口明显上升或出现新的紧急增供安排，该催化剂的边际约束将下降。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "USDJPY跌至154.42，日元升至七个月高位并强化BOJ收紧交易",
+          "evidence": "Reuters报道美元兑日元下跌1.14%至154.42，日元升至七个月高位；同时日本财务省数据显示8月底外储为1.207524万亿美元，单月减少795.75亿美元。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "BOJ收紧预期/干预可信度 → JPY升值 → carry unwind → Nikkei与全球股票波动 → JGB/UST跨市场利率联动。",
+          "confirmation": "USDJPY持续低于155且Sep 18 BOJ加息概率保持高位，同时JGB收益率与日元方向一致，将确认套息交易正在重估。",
+          "invalidation": "USDJPY快速重回157上方、BOJ公开弱化近期加息信号或市场大幅撤回Sep 18加息定价，会削弱该链条。",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
@@ -1472,7 +1534,7 @@
       "first_seen": "2026-08-10",
       "last_seen": "2026-09-04",
       "latest_rank": null,
-      "state": "Persistent",
+      "state": "Escalating",
       "latest_transmission": "Fed沟通 → hike probability↓ → 2Y↓/USD↓ → duration equities↑；数据再热则反向",
       "source_modes": [
         "native_daily",
@@ -1488,7 +1550,7 @@
       "first_seen": "2026-08-10",
       "last_seen": "2026-09-05",
       "latest_rank": null,
-      "state": "Persistent",
+      "state": "Escalating",
       "latest_transmission": "Payrolls↑ → Fed hike odds↑ → UST 2Y/DXY↑ → long-duration equity valuation↓; softer inflation can reverse the chain.",
       "source_modes": [
         "native_daily",
@@ -1508,6 +1570,21 @@
       "latest_transmission": "Credit spreads wider → funding conditions tighten",
       "source_modes": [
         "objective_market_reconstruction"
+      ]
+    },
+    {
+      "theme_id": "geopolitics_energy",
+      "theme_label": "Geopolitics / Energy",
+      "category": "geopolitics_energy",
+      "days_in_top3": 7,
+      "best_rank": 1,
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-07",
+      "latest_rank": 1,
+      "state": "Escalating",
+      "latest_transmission": "受限区/航线调整 → 商船通行与保险成本 → Brent/柴油 → 通胀预期 → UST 2Y/Fed → DXY与Nasdaq。",
+      "source_modes": [
+        "native_daily"
       ]
     },
     {
@@ -1534,25 +1611,10 @@
       "first_seen": "2026-08-12",
       "last_seen": "2026-09-01",
       "latest_rank": null,
-      "state": "Persistent",
+      "state": "Resolved",
       "latest_transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
       "source_modes": [
         "objective_market_reconstruction"
-      ]
-    },
-    {
-      "theme_id": "geopolitics_energy",
-      "theme_label": "Geopolitics / Energy",
-      "category": "geopolitics_energy",
-      "days_in_top3": 6,
-      "best_rank": 1,
-      "first_seen": "2026-09-02",
-      "last_seen": "2026-09-06",
-      "latest_rank": 3,
-      "state": "New",
-      "latest_transmission": "No new OPEC+ supply cushion → geopolitical barrel risk matters more → Brent risk premium↑ → inflation/yields↑",
-      "source_modes": [
-        "native_daily"
       ]
     },
     {
@@ -1595,7 +1657,7 @@
       "first_seen": "2026-08-10",
       "last_seen": "2026-09-01",
       "latest_rank": null,
-      "state": "Persistent",
+      "state": "Resolved",
       "latest_transmission": "Oil ↑ → inflation expectations ↑ → rates pressure ↑",
       "source_modes": [
         "objective_market_reconstruction"
@@ -1610,7 +1672,7 @@
       "first_seen": "2026-08-18",
       "last_seen": "2026-09-01",
       "latest_rank": null,
-      "state": "Persistent",
+      "state": "Resolved",
       "latest_transmission": "Equity move → risk appetite / duration repricing",
       "source_modes": [
         "objective_market_reconstruction"
@@ -1625,38 +1687,33 @@
       "first_seen": "2026-09-02",
       "last_seen": "2026-09-05",
       "latest_rank": null,
-      "state": "New",
+      "state": "Escalating",
       "latest_transmission": "AI server/chip demand↑ → semiconductor earnings↑; AI capex financing↑ → capital demand and long-end rate support↑ → greater intra-tech dispersion.",
       "source_modes": [
         "native_daily"
       ]
     },
     {
-      "theme_id": "us_china_trade_controls",
-      "theme_label": "U.S.–China Trade Controls",
-      "category": "china_trade_policy",
-      "days_in_top3": 1,
-      "best_rank": 1,
-      "first_seen": "2026-08-13",
-      "last_seen": "2026-08-13",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Import restrictions → drone supply-chain repricing → domestic production incentives and foreign supplier risk",
+      "theme_id": "market_structure",
+      "theme_label": "Market Structure",
+      "category": "market_structure",
+      "days_in_top3": 3,
+      "best_rank": 2,
+      "first_seen": "2026-09-06",
+      "last_seen": "2026-09-07",
+      "latest_rank": 3,
+      "state": "New",
+      "latest_transmission": "BOJ收紧预期/干预可信度 → JPY升值 → carry unwind → Nikkei与全球股票波动 → JGB/UST跨市场利率联动。",
       "source_modes": [
-        "verified_event"
+        "native_daily"
       ]
     }
   ],
   "cross_asset_confirmation": {
     "theme_id": "geopolitics_energy",
     "theme_label": "Geopolitics / Energy",
-    "as_of": "2026-09-06",
+    "as_of": "2026-09-07",
     "confirming": [
-      {
-        "series_id": "DCOILBRENTEU",
-        "label": "Brent",
-        "change": "+0.8%"
-      },
       {
         "series_id": "VIXCLS",
         "label": "VIX",
@@ -1671,17 +1728,23 @@
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
         "change": "-0.29%"
-      },
+      }
+    ],
+    "diverging": [
       {
         "series_id": "DTWEXBGS",
         "label": "Broad Trade-Weighted USD",
-        "change": "+0.27%"
+        "change": "-0.2%"
       }
     ],
-    "diverging": [],
-    "unavailable": [],
-    "interpretation_note": "5 项资产确认当前主线，0 项出现背离。",
-    "what_would_flip_it": "实体供应与航运未进一步恶化，油价快速回吐风险溢价且利率不跟随。"
+    "unavailable": [
+      {
+        "series_id": "DCOILBRENTEU",
+        "label": "Brent"
+      }
+    ],
+    "interpretation_note": "3 项资产确认当前主线，1 项出现背离。",
+    "what_would_flip_it": "若新航道迅速获得多方认可、商业通行恢复且Brent回落到冲突升级前区间，则受限区的市场约束力明显下降。"
   },
   "series": {
     "NASDAQCOM": {
