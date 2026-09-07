@@ -102,10 +102,16 @@ def validate_transaction(root: Path, gate: Gate) -> None:
                  "Transaction contract must require Quality-parity preflight")
     gate.require(".github/workflows/quality.yml" in transaction,
                  "Transaction contract must read current .github/workflows/quality.yml before PR creation")
+    gate.require("scripts/validate_publish.py" in transaction,
+                 "Transaction contract must cover the transitive/base publication validator")
     gate.require("scripts/validate_frontend.py" in transaction,
                  "Transaction contract must explicitly cover the frontend visibility gate")
     gate.require("minimum-length" in lower,
                  "Transaction contract must treat frontend minimum-length checks as blocking")
+    gate.require("canonical source of truth" in lower,
+                 "Transaction contract must define daily JSON as canonical source of truth")
+    gate.require("exact-string" in lower,
+                 "Transaction contract must require exact canonical Markdown parity")
     gate.require("never knowingly submit" in lower,
                  "Transaction contract must prohibit knowingly submitting deterministic Quality failures")
     gate.require("status = `submitted_for_validation`" in lower,
@@ -120,6 +126,16 @@ def validate_transaction(root: Path, gate: Gate) -> None:
     for script in quality_validator_scripts:
         gate.require(script in transaction,
                      f"Transaction Quality-parity preflight is missing current Quality validator: {script}")
+
+    pages = read_text(root / ".github/workflows/pages.yml", gate)
+    gate.require("actions: write" in pages,
+                 "Pages workflow must be allowed to explicitly dispatch post-deploy health checks")
+    gate.require("gh workflow run site-health.yml" in pages,
+                 "Pages workflow must explicitly dispatch Public Site Health after deployment")
+    gate.require("gh workflow run editorial-health.yml" in pages,
+                 "Pages workflow must explicitly dispatch Editorial UI Health after deployment")
+    gate.require("site-health.yml" in transaction and "editorial-health.yml" in transaction,
+                 "Transaction contract must document both explicit post-Pages health handoffs")
 
 
 def main() -> int:
@@ -187,7 +203,8 @@ def main() -> int:
 
     print(
         "AUTOMATION CONTRACT PASSED — standalone 09:00/18:00 prompts, fixed modes, "
-        "Quality-parity transaction preflight, browser gate, no context-dependent wording"
+        "Quality-parity transaction preflight, canonical Markdown parity, explicit public-health handoff, "
+        "browser gate, no context-dependent wording"
     )
     return 0
 
