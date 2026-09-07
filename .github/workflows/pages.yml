@@ -15,6 +15,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: write
   contents: read
   pages: write
   id-token: write
@@ -77,3 +78,15 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v5
+      - name: Dispatch post-deploy public health checks
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Do not rely solely on workflow_run recursion after a bot-dispatched
+          # Pages run. workflow_dispatch is the explicit supported handoff.
+          gh workflow run site-health.yml --repo "$REPO" --ref main
+          gh workflow run editorial-health.yml --repo "$REPO" --ref main
+          echo "DISPATCHED Public Site Health Check and Editorial UI Health Check on main"
