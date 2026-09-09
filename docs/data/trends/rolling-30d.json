@@ -8,7 +8,7 @@
     "native_daily_days": 7,
     "reconstructed_days": 17,
     "verified_event_days": 4,
-    "historical_series_start": "2025-07-15"
+    "historical_series_start": "2025-07-16"
   },
   "methodology": {
     "native_daily": "Original published GMD daily assessment.",
@@ -976,7 +976,7 @@
         "inflation": "→",
         "rates": "→",
         "earnings": "↑",
-        "liquidity": "↓",
+        "liquidity": "→",
         "geopolitics": "↑"
       },
       "catalysts": [
@@ -1980,6 +1980,10 @@
         {
           "date": "2026-09-04",
           "value": 7718.6
+        },
+        {
+          "date": "2026-09-08",
+          "value": 7673.52
         }
       ]
     },
@@ -2064,6 +2068,14 @@
         {
           "date": "2026-09-03",
           "value": 14.32
+        },
+        {
+          "date": "2026-09-04",
+          "value": 14.53
+        },
+        {
+          "date": "2026-09-07",
+          "value": 15.3
         }
       ]
     },
@@ -2148,6 +2160,10 @@
         {
           "date": "2026-09-03",
           "value": 4.34
+        },
+        {
+          "date": "2026-09-04",
+          "value": 4.37
         }
       ]
     },
@@ -2232,6 +2248,10 @@
         {
           "date": "2026-09-03",
           "value": 4.77
+        },
+        {
+          "date": "2026-09-04",
+          "value": 4.78
         }
       ]
     },
@@ -2372,6 +2392,26 @@
         {
           "date": "2026-08-28",
           "value": 118.7479
+        },
+        {
+          "date": "2026-08-31",
+          "value": 118.5679
+        },
+        {
+          "date": "2026-09-01",
+          "value": 118.6568
+        },
+        {
+          "date": "2026-09-02",
+          "value": 118.5296
+        },
+        {
+          "date": "2026-09-03",
+          "value": 118.127
+        },
+        {
+          "date": "2026-09-04",
+          "value": 118.0732
         }
       ]
     },
@@ -2456,6 +2496,14 @@
         {
           "date": "2026-09-03",
           "value": 2.65
+        },
+        {
+          "date": "2026-09-04",
+          "value": 2.68
+        },
+        {
+          "date": "2026-09-07",
+          "value": 2.68
         }
       ]
     }
