@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-09-08",
-  "window_start": "2026-08-10",
-  "window_end": "2026-09-08",
+  "as_of": "2026-09-09",
+  "window_start": "2026-08-11",
+  "window_end": "2026-09-09",
   "coverage": {
     "market_sessions": 24,
-    "native_daily_days": 7,
-    "reconstructed_days": 17,
+    "native_daily_days": 8,
+    "reconstructed_days": 16,
     "verified_event_days": 4,
     "historical_series_start": "2025-07-16"
   },
@@ -85,62 +85,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-08-10",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "risk_off",
-      "regime_label": "Risk-Off",
-      "dominant_theme_id": "global_duration",
-      "signals": {
-        "growth": "→",
-        "inflation": "↑",
-        "rates": "↑",
-        "earnings": "↓",
-        "liquidity": "→",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "US 10Y moves +7.0bp",
-          "evidence": "DGS10 +7.0bp",
-          "market_bias": "risk_off",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "10Y ↑ → discount rate ↑ → long-duration equity valuation ↓",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
-          "theme_id": "fed_policy_path",
-          "theme_label": "Fed Policy Path",
-          "category": "central_banks_fiscal",
-          "title": "US 2Y moves +6.0bp",
-          "evidence": "DGS2 +6.0bp",
-          "market_bias": "risk_off",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "2Y ↑ → policy path reprices tighter",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "energy_inflation",
-          "theme_label": "Energy Inflation",
-          "category": "geopolitics_energy",
-          "title": "Brent daily move +5.84%",
-          "evidence": "DCOILBRENTEU +5.84%",
-          "market_bias": "risk_off",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Oil ↑ → inflation expectations ↑ → rates pressure ↑",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ]
-    },
     {
       "date": "2026-08-11",
       "source_mode": "objective_market_reconstruction",
@@ -1510,15 +1454,71 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-09-09",
+      "source_mode": "native_daily",
+      "regime_code": "event_risk",
+      "regime_label": "Event Risk / Physical Supply + Global Tightening",
+      "dominant_theme_id": "us_china_trade_controls",
+      "signals": {
+        "growth": "→",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "→",
+        "liquidity": "→",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "海湾与阿曼湾多艘商船遭 disabling fire，Brent突破100美元并把航运风险升级为实物供给压力",
+          "evidence": "Reuters援引英国海事贸易行动办公室与海事安全来源报道，海湾和阿曼湾北部多艘商业船只在夜间遭 disabling fire 并受损；至少一艘船在迪拜Port Rashid附近倾侧，暂未确认人员伤亡或环境影响。与此同时美国已摧毁五艘伊朗原油运输船，伊朗方面继续声称攻击美军舰与油轮。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "商船受损/航线受限 → 运费与保险上升、出口可用性下降 → Brent/柴油风险溢价上升 → 通胀预期与长端收益率抬升 → 风险资产折现率和信用条件收紧。",
+          "confirmation": "若Brent持续站上100美元且海事安全机构继续报告商业航运受损、Hormuz通行量进一步下降，同时10Y/VIX上行，将确认实体供给冲击正在扩散。",
+          "invalidation": "若后续没有新增商业航运损失、航线流量恢复且Brent重新跌回100美元下方并伴随运费和保险风险溢价回落，则冲击更可能维持为事件性溢价。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
+          "title": "中国8月CPI同比升至0.8%、PPI同比升至3.8%，能源与金属成本开始更清晰进入制造业价格",
+          "evidence": "中国国家统计局公布，8月CPI同比上涨0.8%、环比上涨0.4%，扣除食品和能源的核心CPI同比上涨1.0%；PPI同比上涨3.8%、环比上涨0.4%，燃料动力类购进价格同比上涨9.8%，有色金属材料及电线类上涨19.8%。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "能源/金属成本上升 → 中国PPI与企业投入成本上升 → 出口与工业品价格压力 → 全球商品/制造业通胀 → 央行宽松空间收窄。",
+          "confirmation": "若未来PPI、出口价格或企业利润率继续体现能源与金属成本传导，同时CNH与亚洲利率上行，则成本推动链条得到确认。",
+          "invalidation": "若后续核心CPI、PPI和购进价格快速回落，且制造业利润不受能源成本明显挤压，则本轮上行更可能是短期商品价格冲击。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "USDJPY约153.05且日本10年期JGB近期触及3%，BOJ加息与国内资金回流继续挤压全球carry trade",
+          "evidence": "美元兑日元在欧洲时段约153.05，较9月1日约160水平显著回落；Reuters同时报道日本10年期国债收益率近期触及3%，为1996年以来首次，Fitch认为持续通胀可能推动BOJ更快加息并加速国内保险、养老金资金回流。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "BOJ加息/JGB收益率上升 → 日本资金回流 + JPY升值 → 海外债券边际需求下降与carry平仓 → 全球长端收益率和高beta资产波动上升。",
+          "confirmation": "若USDJPY继续下行、JGB收益率维持高位且日本机构海外债券需求走弱，同时美债长端与高beta资产承压，将确认回流与carry unwind扩散。",
+          "invalidation": "若BOJ收紧预期回落、JGB收益率回落且USDJPY重新稳定走高，全球资产对日本资金回流的敏感度将下降。",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
-    {
-      "date": "2026-08-11",
-      "from": "Risk-Off",
-      "to": "Neutral",
-      "dominant_theme_id": "growth_duration_rotation"
-    },
     {
       "date": "2026-08-17",
       "from": "Neutral",
@@ -1591,9 +1591,9 @@
       "theme_id": "global_duration",
       "theme_label": "Global Duration / Term Premium",
       "category": "inflation_rates",
-      "days_in_top3": 13,
-      "best_rank": 1,
-      "first_seen": "2026-08-10",
+      "days_in_top3": 12,
+      "best_rank": 2,
+      "first_seen": "2026-08-11",
       "last_seen": "2026-09-04",
       "latest_rank": null,
       "state": "Persistent",
@@ -1607,11 +1607,11 @@
       "theme_id": "fed_policy_path",
       "theme_label": "Fed Policy Path",
       "category": "central_banks_fiscal",
-      "days_in_top3": 9,
+      "days_in_top3": 8,
       "best_rank": 1,
-      "first_seen": "2026-08-10",
+      "first_seen": "2026-08-11",
       "last_seen": "2026-09-08",
-      "latest_rank": 3,
+      "latest_rank": null,
       "state": "Escalating",
       "latest_transmission": "BOJ加息/资金回流预期 → JPY升值 → carry去杠杆 → 日本与全球股票/波动率 → 跨境久期资金流。",
       "source_modes": [
@@ -1627,7 +1627,7 @@
       "best_rank": 1,
       "first_seen": "2026-09-02",
       "last_seen": "2026-09-08",
-      "latest_rank": 1,
+      "latest_rank": null,
       "state": "Escalating",
       "latest_transmission": "沙特设施中断 → 原油/柴油风险溢价 → 通胀预期 → 美债收益率与Fed路径 → 股票久期和信用条件。",
       "source_modes": [
@@ -1695,6 +1695,22 @@
       ]
     },
     {
+      "theme_id": "us_china_trade_controls",
+      "theme_label": "U.S.–China Trade Controls",
+      "category": "china_trade_policy",
+      "days_in_top3": 4,
+      "best_rank": 1,
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-09-09",
+      "latest_rank": 3,
+      "state": "Escalating",
+      "latest_transmission": "BOJ加息/JGB收益率上升 → 日本资金回流 + JPY升值 → 海外债券边际需求下降与carry平仓 → 全球长端收益率和高beta资产波动上升。",
+      "source_modes": [
+        "native_daily",
+        "verified_event"
+      ]
+    },
+    {
       "theme_id": "china_industrial_policy",
       "theme_label": "China Industrial Policy",
       "category": "china_trade_policy",
@@ -1703,26 +1719,11 @@
       "first_seen": "2026-08-20",
       "last_seen": "2026-09-03",
       "latest_rank": null,
-      "state": "Persistent",
+      "state": "Resolved",
       "latest_transmission": "产业政策/长期资本 → SME融资可得性↑ → 新兴产业研发与扩产↑ → 机器人/AI/新材料等供应链资本开支↑",
       "source_modes": [
         "native_daily",
         "verified_event"
-      ]
-    },
-    {
-      "theme_id": "energy_inflation",
-      "theme_label": "Energy Inflation",
-      "category": "geopolitics_energy",
-      "days_in_top3": 3,
-      "best_rank": 2,
-      "first_seen": "2026-08-10",
-      "last_seen": "2026-09-01",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Oil ↑ → inflation expectations ↑ → rates pressure ↑",
-      "source_modes": [
-        "objective_market_reconstruction"
       ]
     },
     {
@@ -1741,6 +1742,22 @@
       ]
     },
     {
+      "theme_id": "energy_inflation",
+      "theme_label": "Energy Inflation",
+      "category": "geopolitics_energy",
+      "days_in_top3": 3,
+      "best_rank": 2,
+      "first_seen": "2026-08-25",
+      "last_seen": "2026-09-09",
+      "latest_rank": 2,
+      "state": "Persistent",
+      "latest_transmission": "能源/金属成本上升 → 中国PPI与企业投入成本上升 → 出口与工业品价格压力 → 全球商品/制造业通胀 → 央行宽松空间收窄。",
+      "source_modes": [
+        "native_daily",
+        "objective_market_reconstruction"
+      ]
+    },
+    {
       "theme_id": "ai_earnings",
       "theme_label": "AI / Earnings",
       "category": "earnings_ai_semis",
@@ -1749,62 +1766,38 @@
       "first_seen": "2026-09-02",
       "last_seen": "2026-09-05",
       "latest_rank": null,
-      "state": "Escalating",
+      "state": "Persistent",
       "latest_transmission": "AI server/chip demand↑ → semiconductor earnings↑; AI capex financing↑ → capital demand and long-end rate support↑ → greater intra-tech dispersion.",
-      "source_modes": [
-        "native_daily"
-      ]
-    },
-    {
-      "theme_id": "market_structure",
-      "theme_label": "Market Structure",
-      "category": "market_structure",
-      "days_in_top3": 3,
-      "best_rank": 2,
-      "first_seen": "2026-09-06",
-      "last_seen": "2026-09-07",
-      "latest_rank": null,
-      "state": "New",
-      "latest_transmission": "BOJ收紧预期/干预可信度 → JPY升值 → carry unwind → Nikkei与全球股票波动 → JGB/UST跨市场利率联动。",
       "source_modes": [
         "native_daily"
       ]
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "geopolitics_energy",
-    "theme_label": "Geopolitics / Energy",
-    "as_of": "2026-09-08",
-    "confirming": [
+    "theme_id": "us_china_trade_controls",
+    "theme_label": "U.S.–China Trade Controls",
+    "as_of": "2026-09-09",
+    "confirming": [],
+    "diverging": [
       {
-        "series_id": "DCOILBRENTEU",
-        "label": "Brent",
-        "change": "+2.06%"
+        "series_id": "NASDAQCOM",
+        "label": "Nasdaq Composite",
+        "change": "-0.32%"
+      },
+      {
+        "series_id": "SP500",
+        "label": "S&P 500",
+        "change": "-0.58%"
       },
       {
         "series_id": "VIXCLS",
         "label": "VIX",
-        "change": "+1.47%"
-      },
-      {
-        "series_id": "NASDAQCOM",
-        "label": "Nasdaq Composite",
-        "change": "-0.29%"
+        "change": "+8.04%"
       }
     ],
-    "diverging": [],
-    "unavailable": [
-      {
-        "series_id": "DGS10",
-        "label": "US 10Y Treasury Yield"
-      },
-      {
-        "series_id": "DTWEXBGS",
-        "label": "Broad Trade-Weighted USD"
-      }
-    ],
-    "interpretation_note": "3 项资产确认当前主线，0 项出现背离。",
-    "what_would_flip_it": "沙特运营快速恢复、替代路线吸收损失，且Brent回落至袭击前区间，同时收益率和波动率不再上行，则本轮冲击更接近短期风险溢价。"
+    "unavailable": [],
+    "interpretation_note": "0 项资产确认当前主线，3 项出现背离。",
+    "what_would_flip_it": "若后续没有新增商业航运损失、航线流量恢复且Brent重新跌回100美元下方并伴随运费和保险风险溢价回落，则冲击更可能维持为事件性溢价。"
   },
   "series": {
     "NASDAQCOM": {
@@ -1813,10 +1806,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-10",
-          "value": 26605.36
-        },
         {
           "date": "2026-08-11",
           "value": 26445.45
@@ -1892,6 +1881,10 @@
         {
           "date": "2026-09-04",
           "value": 26506.99
+        },
+        {
+          "date": "2026-09-08",
+          "value": 26421.41
         }
       ]
     },
@@ -1901,10 +1894,6 @@
       "source": "S&P Dow Jones Indices via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-10",
-          "value": 7753.11
-        },
         {
           "date": "2026-08-11",
           "value": 7728.2
@@ -1994,10 +1983,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-10",
-          "value": 15.46
-        },
-        {
           "date": "2026-08-11",
           "value": 15.28
         },
@@ -2086,10 +2071,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-08-10",
-          "value": 4.25
-        },
-        {
           "date": "2026-08-11",
           "value": 4.22
         },
@@ -2173,10 +2154,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-10",
-          "value": 4.72
-        },
         {
           "date": "2026-08-11",
           "value": 4.7
@@ -2262,10 +2239,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-10",
-          "value": 92.74
-        },
-        {
           "date": "2026-08-11",
           "value": 93.26
         },
@@ -2333,10 +2306,6 @@
       "source": "Federal Reserve via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-10",
-          "value": 119.1187
-        },
         {
           "date": "2026-08-11",
           "value": 119.179
@@ -2421,10 +2390,6 @@
       "source": "ICE BofA via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-10",
-          "value": 2.7
-        },
         {
           "date": "2026-08-11",
           "value": 2.72
