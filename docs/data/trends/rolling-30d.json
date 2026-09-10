@@ -8,7 +8,7 @@
     "native_daily_days": 8,
     "reconstructed_days": 16,
     "verified_event_days": 4,
-    "historical_series_start": "2025-07-16"
+    "historical_series_start": "2025-07-17"
   },
   "methodology": {
     "native_daily": "Original published GMD daily assessment.",
@@ -1973,6 +1973,10 @@
         {
           "date": "2026-09-08",
           "value": 7673.52
+        },
+        {
+          "date": "2026-09-09",
+          "value": 7636.36
         }
       ]
     },
@@ -2061,6 +2065,10 @@
         {
           "date": "2026-09-07",
           "value": 15.3
+        },
+        {
+          "date": "2026-09-08",
+          "value": 15.72
         }
       ]
     },
@@ -2145,6 +2153,10 @@
         {
           "date": "2026-09-04",
           "value": 4.37
+        },
+        {
+          "date": "2026-09-08",
+          "value": 4.39
         }
       ]
     },
@@ -2229,6 +2241,10 @@
         {
           "date": "2026-09-04",
           "value": 4.78
+        },
+        {
+          "date": "2026-09-08",
+          "value": 4.8
         }
       ]
     },
@@ -2469,6 +2485,10 @@
         {
           "date": "2026-09-07",
           "value": 2.68
+        },
+        {
+          "date": "2026-09-08",
+          "value": 2.67
         }
       ]
     }
