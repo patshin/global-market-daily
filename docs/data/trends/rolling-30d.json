@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-09-10",
-  "window_start": "2026-08-12",
-  "window_end": "2026-09-10",
+  "as_of": "2026-09-11",
+  "window_start": "2026-08-13",
+  "window_end": "2026-09-11",
   "coverage": {
     "market_sessions": 24,
-    "native_daily_days": 9,
-    "reconstructed_days": 15,
+    "native_daily_days": 10,
+    "reconstructed_days": 14,
     "verified_event_days": 4,
     "historical_series_start": "2025-07-18"
   },
@@ -85,62 +85,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-08-12",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "neutral",
-      "regime_label": "Neutral",
-      "dominant_theme_id": "growth_duration_rotation",
-      "signals": {
-        "growth": "→",
-        "inflation": "→",
-        "rates": "↓",
-        "earnings": "↑",
-        "liquidity": "→",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "theme_id": "growth_duration_rotation",
-          "theme_label": "Growth / Duration Rotation",
-          "category": "earnings_ai_semis",
-          "title": "Nasdaq relative to S&P 500 +0.28pp",
-          "evidence": "NASDAQCOM +0.54% vs SP500 +0.26%",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Growth leadership strengthens",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
-          "theme_id": "volatility_event_risk",
-          "theme_label": "Volatility / Event Risk",
-          "category": "market_structure",
-          "title": "VIX daily move -4.78%",
-          "evidence": "VIXCLS -4.78%",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Volatility ↓ → event premium eases",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "US 10Y moves -2.0bp",
-          "evidence": "DGS10 -2.0bp",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "10Y ↓ → discount rate eases",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ]
-    },
     {
       "date": "2026-08-13",
       "source_mode": "objective_market_reconstruction",
@@ -1522,6 +1466,68 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-09-11",
+      "source_mode": "native_daily",
+      "regime_code": "event_risk",
+      "regime_label": "Event Risk / Reinflation + Global Tightening",
+      "dominant_theme_id": "energy_inflation",
+      "signals": {
+        "growth": "→",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "→",
+        "liquidity": "→",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
+          "title": "IEA deepens 2026 oil-supply decline to 5.7 million bpd and pushes normal Gulf flows into 2027",
+          "evidence": "IEA将2026年全球原油供应降幅扩大至570万桶/日、约6%，并指出正常中东海湾流量恢复已被推迟到2027年；8月全球库存以日均310万桶速度下降。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Gulf supply loss → inventories → crude/diesel → inflation expectations → central-bank path → global yields and equity multiples.",
+          "confirmation": "未来数周海湾出口仍显著低于正常水平、库存继续下降且Brent维持100美元以上，将确认供给缺口正在跨月固化。",
+          "invalidation": "若形成可验证的航运安排、海湾出口快速恢复且库存停止下降，IEA所描述的持续性供给压力将开始减弱。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
+          "title": "Houthis reach Perim island, threatening a second major oil transit corridor at Bab el-Mandeb",
+          "evidence": "四名也门政府消息人士向Reuters确认胡塞武装已抵达Bab el-Mandeb海峡的战略性Perim岛，并控制面向该岛的Dhubab；沙特在Hormuz受限后正更依赖红海路线。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Perim control risk → Red Sea transit capacity/insurance → Saudi export flexibility → Brent/diesel → inflation and global rates.",
+          "confirmation": "商业船舶改道、保险成本上升或沙特红海出口受到可验证限制，将确认第二通道风险已经进入实体供给。",
+          "invalidation": "也门政府重新控制Perim/Dhubab或红海商业通行维持正常且运费回落，将削弱第二通道风险溢价。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
+          "title": "U.S. August CPI at 08:30 EDT becomes the next rate-path test with 10Y yields near 5%",
+          "evidence": "美国8月CPI尚未在research_cutoff前公布；Reuters调查显示核心CPI环比预期中心约为0.2%，而Fed下周加息25bp的市场概率已升至约67%至70%。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "CPI surprise → Fed September pricing → UST 2Y/10Y → DXY → Nasdaq/Russell and global duration assets.",
+          "confirmation": "CPI高于预期且2Y/10Y收益率重新上行、美元同步走强，将确认能源通胀正在进入更广泛的政策定价。",
+          "invalidation": "CPI明显低于预期并伴随2Y、10Y和美元同步回落，将首次给出可信的再通胀链反向确认。",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
@@ -1599,11 +1605,11 @@
       "category": "inflation_rates",
       "days_in_top3": 11,
       "best_rank": 2,
-      "first_seen": "2026-08-12",
-      "last_seen": "2026-09-04",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Fed沟通 → hike probability↓ → 2Y↓/USD↓ → duration equities↑；数据再热则反向",
+      "first_seen": "2026-08-13",
+      "last_seen": "2026-09-11",
+      "latest_rank": 3,
+      "state": "Persistent",
+      "latest_transmission": "CPI surprise → Fed September pricing → UST 2Y/10Y → DXY → Nasdaq/Russell and global duration assets.",
       "source_modes": [
         "native_daily",
         "objective_market_reconstruction"
@@ -1613,13 +1619,13 @@
       "theme_id": "geopolitics_energy",
       "theme_label": "Geopolitics / Energy",
       "category": "geopolitics_energy",
-      "days_in_top3": 9,
+      "days_in_top3": 10,
       "best_rank": 1,
       "first_seen": "2026-09-02",
-      "last_seen": "2026-09-10",
-      "latest_rank": 1,
+      "last_seen": "2026-09-11",
+      "latest_rank": 2,
       "state": "Escalating",
-      "latest_transmission": "Bab el-Mandeb + Hormuz disruption → shipping/export capacity → Brent/diesel → inflation expectations → global yields → equity and credit multiples.",
+      "latest_transmission": "Perim control risk → Red Sea transit capacity/insurance → Saudi export flexibility → Brent/diesel → inflation and global rates.",
       "source_modes": [
         "native_daily"
       ]
@@ -1633,7 +1639,7 @@
       "first_seen": "2026-08-13",
       "last_seen": "2026-09-08",
       "latest_rank": null,
-      "state": "Escalating",
+      "state": "Persistent",
       "latest_transmission": "BOJ加息/资金回流预期 → JPY升值 → carry去杠杆 → 日本与全球股票/波动率 → 跨境久期资金流。",
       "source_modes": [
         "native_daily",
@@ -1656,36 +1662,6 @@
       ]
     },
     {
-      "theme_id": "volatility_event_risk",
-      "theme_label": "Volatility / Event Risk",
-      "category": "market_structure",
-      "days_in_top3": 6,
-      "best_rank": 1,
-      "first_seen": "2026-08-12",
-      "last_seen": "2026-09-01",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
-      "source_modes": [
-        "objective_market_reconstruction"
-      ]
-    },
-    {
-      "theme_id": "growth_duration_rotation",
-      "theme_label": "Growth / Duration Rotation",
-      "category": "earnings_ai_semis",
-      "days_in_top3": 5,
-      "best_rank": 1,
-      "first_seen": "2026-08-12",
-      "last_seen": "2026-08-31",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Growth leadership strengthens",
-      "source_modes": [
-        "objective_market_reconstruction"
-      ]
-    },
-    {
       "theme_id": "us_china_trade_controls",
       "theme_label": "U.S.–China Trade Controls",
       "category": "china_trade_policy",
@@ -1693,7 +1669,7 @@
       "best_rank": 1,
       "first_seen": "2026-08-13",
       "last_seen": "2026-09-10",
-      "latest_rank": 2,
+      "latest_rank": null,
       "state": "Escalating",
       "latest_transmission": "Oil shock → inflation/term premium → UK/EU/U.S. long yields → global discount rates → duration assets and credit spreads.",
       "source_modes": [
@@ -1717,6 +1693,52 @@
       ]
     },
     {
+      "theme_id": "volatility_event_risk",
+      "theme_label": "Volatility / Event Risk",
+      "category": "market_structure",
+      "days_in_top3": 5,
+      "best_rank": 1,
+      "first_seen": "2026-08-17",
+      "last_seen": "2026-09-01",
+      "latest_rank": null,
+      "state": "Resolved",
+      "latest_transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
+      "source_modes": [
+        "objective_market_reconstruction"
+      ]
+    },
+    {
+      "theme_id": "growth_duration_rotation",
+      "theme_label": "Growth / Duration Rotation",
+      "category": "earnings_ai_semis",
+      "days_in_top3": 4,
+      "best_rank": 1,
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-31",
+      "latest_rank": null,
+      "state": "Resolved",
+      "latest_transmission": "Growth leadership strengthens",
+      "source_modes": [
+        "objective_market_reconstruction"
+      ]
+    },
+    {
+      "theme_id": "energy_inflation",
+      "theme_label": "Energy Inflation",
+      "category": "geopolitics_energy",
+      "days_in_top3": 4,
+      "best_rank": 1,
+      "first_seen": "2026-08-25",
+      "last_seen": "2026-09-11",
+      "latest_rank": 1,
+      "state": "Escalating",
+      "latest_transmission": "Gulf supply loss → inventories → crude/diesel → inflation expectations → central-bank path → global yields and equity multiples.",
+      "source_modes": [
+        "native_daily",
+        "objective_market_reconstruction"
+      ]
+    },
+    {
       "theme_id": "ai_earnings",
       "theme_label": "AI / Earnings",
       "category": "earnings_ai_semis",
@@ -1724,7 +1746,7 @@
       "best_rank": 2,
       "first_seen": "2026-09-02",
       "last_seen": "2026-09-10",
-      "latest_rank": 3,
+      "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "BOJ normalization → JPY funding cost / repatriation → carry unwind → global leverage reduction → equities, credit and duration volatility.",
       "source_modes": [
@@ -1761,60 +1783,38 @@
       "source_modes": [
         "objective_market_reconstruction"
       ]
-    },
-    {
-      "theme_id": "energy_inflation",
-      "theme_label": "Energy Inflation",
-      "category": "geopolitics_energy",
-      "days_in_top3": 3,
-      "best_rank": 2,
-      "first_seen": "2026-08-25",
-      "last_seen": "2026-09-09",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "能源/金属成本上升 → 中国PPI与企业投入成本上升 → 出口与工业品价格压力 → 全球商品/制造业通胀 → 央行宽松空间收窄。",
-      "source_modes": [
-        "native_daily",
-        "objective_market_reconstruction"
-      ]
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "geopolitics_energy",
-    "theme_label": "Geopolitics / Energy",
-    "as_of": "2026-09-10",
+    "theme_id": "energy_inflation",
+    "theme_label": "Energy Inflation",
+    "as_of": "2026-09-11",
     "confirming": [
-      {
-        "series_id": "VIXCLS",
-        "label": "VIX",
-        "change": "+4.71%"
-      },
-      {
-        "series_id": "DGS10",
-        "label": "US 10Y Treasury Yield",
-        "change": "+3bp"
-      },
       {
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
-        "change": "-0.64%"
+        "change": "-0.65%"
       }
     ],
     "diverging": [
       {
-        "series_id": "DTWEXBGS",
-        "label": "Broad Trade-Weighted USD",
-        "change": "-0.01%"
+        "series_id": "DCOILBRENTEU",
+        "label": "Brent",
+        "change": "-1.53%"
       }
     ],
     "unavailable": [
       {
-        "series_id": "DCOILBRENTEU",
-        "label": "Brent"
+        "series_id": "DGS10",
+        "label": "US 10Y Treasury Yield"
+      },
+      {
+        "series_id": "DTWEXBGS",
+        "label": "Broad Trade-Weighted USD"
       }
     ],
-    "interpretation_note": "3 项资产确认当前主线，1 项出现背离。",
-    "what_would_flip_it": "Verified de-escalation and restoration of commercial transit through at least one chokepoint that lowers shipping costs and pulls crude back toward the prior range."
+    "interpretation_note": "1 项资产确认当前主线，1 项出现背离。",
+    "what_would_flip_it": "若形成可验证的航运安排、海湾出口快速恢复且库存停止下降，IEA所描述的持续性供给压力将开始减弱。"
   },
   "series": {
     "NASDAQCOM": {
@@ -1823,10 +1823,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-12",
-          "value": 26588.49
-        },
         {
           "date": "2026-08-13",
           "value": 26803.03
@@ -1902,6 +1898,10 @@
         {
           "date": "2026-09-09",
           "value": 26253.34
+        },
+        {
+          "date": "2026-09-10",
+          "value": 26081.72
         }
       ]
     },
@@ -1911,10 +1911,6 @@
       "source": "S&P Dow Jones Indices via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-12",
-          "value": 7748.5
-        },
         {
           "date": "2026-08-13",
           "value": 7798.99
@@ -2004,10 +2000,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-12",
-          "value": 14.55
-        },
-        {
           "date": "2026-08-13",
           "value": 14.63
         },
@@ -2096,10 +2088,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-08-12",
-          "value": 4.2
-        },
-        {
           "date": "2026-08-13",
           "value": 4.15
         },
@@ -2183,10 +2171,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-12",
-          "value": 4.68
-        },
         {
           "date": "2026-08-13",
           "value": 4.63
@@ -2272,10 +2256,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-12",
-          "value": 92.52
-        },
-        {
           "date": "2026-08-13",
           "value": 92.03
         },
@@ -2360,10 +2340,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-12",
-          "value": 119.1179
-        },
-        {
           "date": "2026-08-13",
           "value": 119.1848
         },
@@ -2439,10 +2415,6 @@
       "source": "ICE BofA via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-12",
-          "value": 2.71
-        },
         {
           "date": "2026-08-13",
           "value": 2.71
