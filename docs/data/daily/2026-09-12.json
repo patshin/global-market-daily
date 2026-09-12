@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-09-12",
+  "edition": "Morning Provisional",
+  "edition_status": "provisional",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-09-12 09:33 SGT",
+  "data_cutoff_et": "2026-09-11 21:33 EDT",
+  "last_updated": "2026-09-12T09:33:16+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-09-12T09:00:00+08:00",
+    "started_at_sgt": "2026-09-12T09:27:56+08:00",
+    "research_cutoff_sgt": "2026-09-12T09:33:16+08:00",
+    "mode": "morning"
+  },
+  "publication_cycle": {
+    "status": "provisional",
+    "cycle": "morning",
+    "is_final": false,
+    "archive_eligible": false,
+    "market_lens_native_eligible": false
+  },
+  "comparison_basis": {
+    "previous_official_date": "2026-09-11",
+    "note": "What Changed compares with the 2026-09-11 formal Evening Official; all Sep12 current facts were independently re-researched through the true cutoff."
+  },
+  "sources_path": "data/sources/2026-09-12.json",
+  "thesis": "截至09:33 SGT，周末市场的绑定约束已经从“CPI是否会逼近加息”切换为“Saudi East-West 4–5m bpd Hormuz bypass停运能否在周日油市重开前恢复”：周五Brent在外交希望下回落2.81%至$104.61、美股反弹，但沙特随后确认预防性关闭East-West pipeline，叠加Hormuz航运受限与Houthi控制Perim，意味着周五风险资产的缓和定价面临明显weekend gap risk。与此同时8月CPI环比+0.4%、core +0.3%，Fed下周加息概率升至约86–90%，因此能源供给与利率两条约束正重新同向。",
+  "dominant_narrative": "周五市场给出的表面信号是risk relief：S&P 500上涨0.86%、VIX降至15.88、Brent回落2.81%；但这些价格形成在Saudi正式确认East-West pipeline关闭之前，因此不能把Friday close当作周末风险的最终答案。新的约束是三层叠加：Hormuz海运已受限、Perim令Bab el-Mandeb风险上升、4–5m bpd East-West陆上绕行又暂时关闭，而美国CPI和消费者通胀预期已经把Fed推向更鹰路径。下一个有效确认不是更多headline，而是周日/周一油价重开后WTI/Brent、UST 2Y与股指期货是否同向重新定价。",
+  "market_regime": {
+    "growth": {"state": "Resilient market tape / weakening household confidence", "evidence": "Friday equities rebounded, but Michigan preliminary sentiment fell to 47.8 from 51.7 as fuel prices and trade tension hit expectations.", "sources": ["S03", "S10"]},
+    "inflation": {"state": "Reaccelerating / energy shock broadening", "evidence": "August CPI +0.4% m/m with gasoline +3.9%, while tanker freight and Saudi pipeline constraints raise delivered-energy costs.", "sources": ["S02", "S01", "S09"]},
+    "rates": {"state": "Restrictive / September hike heavily priced", "evidence": "Official UST 2Y closed 4.63% and 10Y 4.96%; market-implied September hike odds rose to roughly 86–90%.", "sources": ["S03", "S05", "S06"]},
+    "earnings": {"state": "Selective AI resilience / funding scrutiny", "evidence": "Oracle backlog reached $664B and cash burn beat estimates, but $40B financing needs and a -1.8% close keep capital intensity in focus.", "sources": ["S11", "S03"]},
+    "liquidity": {"state": "Tactical easing / structurally tight", "evidence": "VIX fell to 15.88 and equities rallied Friday, but front-end yields rose and the new pipeline shutdown was not in cash-market closing prices.", "sources": ["S03", "S05", "S01"]},
+    "geopolitics": {"state": "Extreme / three-route energy squeeze", "evidence": "East-West pipeline is shut, Hormuz traffic is constrained and Houthis reached Perim at Bab el-Mandeb; VLCC freight hit record highs.", "sources": ["S01", "S09"]},
+    "overall": {"state": "Weekend Event Risk / Reinflation + Global Tightening", "evidence": "Post-close physical supply deterioration meets stronger monthly inflation and highly priced Fed tightening, leaving Friday risk-on vulnerable to weekend repricing.", "sources": ["S01", "S02", "S03"]}
+  },
+  "market_tape": [
+    {"asset": "S&P 500", "level": "7,656.98", "change_1d": "+0.86%", "change_5d": "-0.8%", "signal": "↑ Tactical rebound / weekly loss", "driver": "Oil eased Friday, but the Saudi pipeline shutdown was confirmed after the cash close.", "status": "Confirmed Sep11 U.S. cash close; weekend market closed", "as_of": "2026-09-11 close ET", "sources": ["S03", "S04"]},
+    {"asset": "Nasdaq Composite", "level": "26,333.04", "change_1d": "+0.96%", "change_5d": "-0.7%", "signal": "↑ Duration rebound / still rate-sensitive", "driver": "Oil relief and AI hardware gains helped, while Fed hike pricing still caps duration.", "status": "Confirmed Sep11 U.S. cash close; weekend market closed", "as_of": "2026-09-11 close ET", "sources": ["S03", "S04"]},
+    {"asset": "Dow", "level": "52,573.29", "change_1d": "+0.98%", "change_5d": "-1.6%", "signal": "↑ Broad rebound / weekly loss", "driver": "Friday breadth improved but energy and funding costs remain restrictive.", "status": "Confirmed Sep11 U.S. cash close; weekend market closed", "as_of": "2026-09-11 close ET", "sources": ["S03", "S04"]},
+    {"asset": "Russell 2000", "level": "2,903.94", "change_1d": "+0.4%", "change_5d": "-2.4%", "signal": "↑ Small-cap bounce / funding stress remains", "driver": "Small caps lagged for the week as borrowing costs stayed high.", "status": "Confirmed Sep11 U.S. cash close; weekend market closed", "as_of": "2026-09-11 close ET", "sources": ["S04"]},
+    {"asset": "VIX", "level": "15.88", "change_1d": "-2.00 points (~-11.2%)", "change_5d": "尚无法可靠确认", "signal": "↓ Friday fear premium eased", "driver": "Cash-session volatility fell before the post-close Saudi shutdown confirmation.", "status": "Confirmed Sep11 U.S. cash close; no post-pipeline repricing", "as_of": "2026-09-11 close ET", "sources": ["S03"]},
+    {"asset": "UST 2Y", "level": "4.63%", "change_1d": "+7bp", "change_5d": "+26bp", "signal": "↑ Fed-sensitive tightening", "driver": "CPI +0.4% m/m and core +0.3% pushed September hike odds sharply higher.", "status": "Official Treasury daily rate", "as_of": "2026-09-11", "sources": ["S02", "S05", "S06"]},
+    {"asset": "UST 5Y", "level": "4.78%", "change_1d": "+3bp", "change_5d": "+24bp", "signal": "↑ Policy path repriced", "driver": "Inflation and energy risks lift the medium-term policy-rate path.", "status": "Official Treasury daily rate", "as_of": "2026-09-11", "sources": ["S05"]},
+    {"asset": "UST 10Y", "level": "4.96%", "change_1d": "+1bp", "change_5d": "+18bp", "signal": "↑ Near-5% discount-rate constraint", "driver": "Inflation and term premium keep long-duration discount rates restrictive.", "status": "Official Treasury daily rate", "as_of": "2026-09-11", "sources": ["S05"]},
+    {"asset": "UST 30Y", "level": "5.35%", "change_1d": "-2bp", "change_5d": "+11bp", "signal": "→ Long-end elevated", "driver": "Friday easing did not erase the weekly rise in long-end yields.", "status": "Official Treasury daily rate", "as_of": "2026-09-11", "sources": ["S05"]},
+    {"asset": "2s10s", "level": "+33bp", "change_1d": "-6bp", "change_5d": "-8bp", "signal": "↓ Curve flattens at high yields", "driver": "CPI repriced the Fed-sensitive front end faster than 10Y yields.", "status": "Derived from official Treasury 2Y/10Y rates", "as_of": "2026-09-11", "sources": ["S05"]},
+    {"asset": "10s30s", "level": "+39bp", "change_1d": "-3bp", "change_5d": "-7bp", "signal": "↓ Long-end slope narrows", "driver": "30Y modestly outperformed 10Y while absolute yields stayed high.", "status": "Derived from official Treasury 10Y/30Y rates", "as_of": "2026-09-11", "sources": ["S05"]},
+    {"asset": "DXY", "level": "99.12", "change_1d": "~flat", "change_5d": "-0.16%", "signal": "→ Dollar supported but capped", "driver": "Fed pricing supports USD while oil risk and BOJ tightening limit a broad surge.", "status": "Reuters New York FX snapshot", "as_of": "2026-09-11 New York session", "sources": ["S06"]},
+    {"asset": "EURUSD", "level": "1.15950", "change_1d": "-0.13%", "change_5d": "~-0.23% vs Sep4 AP reference", "signal": "↓ Euro softer", "driver": "Higher U.S. rate expectations offset Europe’s own energy-inflation tightening bias.", "status": "Reuters snapshot; 5D derived from AP Sep4 reference", "as_of": "2026-09-11 New York session", "sources": ["S06", "S16"]},
+    {"asset": "USDJPY", "level": "153.69", "change_1d": "-0.45%", "change_5d": "~-1.64% vs Sep4 AP reference", "signal": "↓ Yen strengthening", "driver": "Expected BOJ tightening and persistent inflation increase yen funding costs.", "status": "Reuters snapshot; 5D derived from AP Sep4 reference", "as_of": "2026-09-11 New York session", "sources": ["S06", "S16"]},
+    {"asset": "Brent", "level": "$104.61/bbl", "change_1d": "-2.81%", "change_5d": ">+8%", "signal": "↑ Weekly supply premium despite Friday pullback", "driver": "Friday diplomacy relief is challenged by the subsequently confirmed East-West shutdown.", "status": "Confirmed Sep11 settlement; Sep12 event overlay", "as_of": "2026-09-11 settlement / Sep12 event overlay", "sources": ["S01", "S07"]},
+    {"asset": "WTI", "level": "$100.05/bbl", "change_1d": "-2.37%", "change_5d": ">+8%", "signal": "↑ Above $100 with weekend gap risk", "driver": "Hormuz, Perim and the land bypass are simultaneously impaired or threatened.", "status": "Confirmed Sep11 settlement; weekend market closed", "as_of": "2026-09-11 settlement", "sources": ["S07"]},
+    {"asset": "Gold", "level": "$4,363.01/oz", "change_1d": "+1.1%", "change_5d": "-1.5%", "signal": "↑ Haven bid vs higher yields", "driver": "Geopolitical demand supports bullion while higher rates cap upside.", "status": "Reuters Sep11 13:40 EDT spot snapshot", "as_of": "2026-09-11 13:40 EDT", "sources": ["S08"]},
+    {"asset": "Oracle", "level": "尚无法可靠确认", "change_1d": "-1.8% close", "change_5d": "尚无法可靠确认", "signal": "↓ AI growth / financing tension", "driver": "$664B backlog improved demand visibility but $40B financing needs keep cash conversion central.", "status": "Directional close move confirmed; exact close level not retained", "as_of": "2026-09-11 close ET", "sources": ["S03", "S11"]}
+  ],
+  "data_quality": {
+    "publish_status": "TARGET_MET_WITH_EXPLICIT_GAPS",
+    "market_tape_core_assets": 18,
+    "level_covered": 17,
+    "level_coverage_pct": 94.4,
+    "change_1d_covered": 18,
+    "change_1d_coverage_pct": 100.0,
+    "change_5d_covered": 16,
+    "change_5d_coverage_pct": 88.9,
+    "explicit_gaps": ["VIX 5D exact change", "Oracle exact close level", "Oracle 5D exact change"],
+    "policy": "Unverified values are omitted or marked 尚无法可靠确认; no interpolation or fabrication."
+  },
+  "what_changed": [
+    {"yesterday": "Sep11正式版的East-West pipeline仍处于受袭、损害评估中的状态。", "today": "Saudi Arabia已确认预防性关闭East-West pipeline；该线近期输送约400–500万桶/日。", "why_it_matters": "周五Brent与风险资产的收盘价没有完整计入这一确认后的实体供给约束。", "sources": ["S01", "S07"]},
+    {"yesterday": "Sep11正式版把美国8月CPI列为待公布的政策裁决。", "today": "CPI已公布：headline +0.4% m/m、+3.4% y/y，core +0.3% m/m、+2.4% y/y；Fed加息概率升至约86–90%。", "why_it_matters": "宏观二元事件已经落地为更偏鹰的利率路径。", "sources": ["S02", "S03", "S06"]},
+    {"yesterday": "美国现金股市尚未完成CPI后的价格发现。", "today": "S&P 500最终+0.86%、Nasdaq +0.96%、Dow +0.98%，VIX降至15.88，但主要指数周线仍为负。", "why_it_matters": "周五是战术性修复而不是结构性风险解除。", "sources": ["S03", "S04"]},
+    {"yesterday": "居民通胀心理缺乏新的高频确认。", "today": "Michigan消费者信心降至47.8，1年通胀预期从4.0%升至4.6%。", "why_it_matters": "能源冲击开始进入预期会增加Fed忽略油价冲击的难度。", "sources": ["S10"]},
+    {"yesterday": "Hormuz与Bab el-Mandeb风险主要通过原油价格体现。", "today": "Gulf of Oman至中国VLCC运价升至约Worldscale 450、折合约$11.50/桶的纪录水平。", "why_it_matters": "物流和保险成本会把地缘风险扩散到终端能源价格。", "sources": ["S09"]}
+  ],
+  "top_catalysts": [
+    {
+      "event": "Saudi Arabia shuts East-West pipeline after drone attack, removing a 4–5 million bpd Hormuz bypass",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-09-11 evening EDT / confirmed by Sep12 Asia morning",
+      "event_time_sgt": "2026-09-12 morning SGT",
+      "what_happened": "Saudi Arabia temporarily shut the 1,200-km East-West pipeline as a precaution after a drone attack. Reuters reports the line had recently moved roughly 4–5 million barrels per day, equal to about 4–5% of global oil supply, and had become a critical bypass while Strait of Hormuz tanker traffic was constrained.",
+      "what_changed": "Sep11 reporting described attack damage; by Sep12 Saudi Arabia had confirmed an actual shutdown, converting threatened capacity into a realized routing constraint.",
+      "why_it_matters": "Friday’s oil pullback and equity rebound closed before this confirmation, so the first liquid futures sessions must price a materially worse physical-routing state.",
+      "transmission": "Pipeline outage → less Hormuz bypass capacity → higher crude/freight premium → higher inflation expectations → higher front-end yields → pressure on duration and cyclicals.",
+      "affected_assets": ["Brent", "WTI", "UST 2Y", "DXY", "S&P 500", "Nasdaq Composite"],
+      "direction": "Risk-off / inflationary",
+      "importance": "★★★★★",
+      "confirmation": "Pipeline remains shut or repair timing extends while Hormuz and Bab el-Mandeb flows remain impaired; energy futures reopen materially above Friday settlement.",
+      "invalidation": "Saudi Arabia restores meaningful East-West throughput quickly and at least one major Gulf/Red Sea shipping route improves without new attacks.",
+      "sources": ["S01", "S07", "S09", "S13"]
+    },
+    {
+      "event": "U.S. August CPI rises 0.4% m/m and pushes September Fed hike odds to roughly 86–90%",
+      "status": "Released/Occurred / Market Pricing",
+      "event_time_et": "2026-09-11 08:30 EDT",
+      "event_time_sgt": "2026-09-11 20:30 SGT",
+      "what_happened": "August U.S. CPI rose 0.4% month-on-month and 3.4% year-on-year. Core CPI rose 0.3% month-on-month and 2.4% year-on-year; gasoline jumped 3.9%. Rate futures moved to roughly an 86–90% probability of a 25bp Fed hike while the official 2Y Treasury yield closed at 4.63%.",
+      "what_changed": "The CPI binary event is now known and has shifted the policy question from whether the Fed can hike to how much tightening is already embedded in front-end rates.",
+      "why_it_matters": "An energy-driven inflation shock is interacting with firmer monthly core inflation and higher consumer inflation expectations, increasing the risk of a broader policy response.",
+      "transmission": "CPI/core acceleration → higher Fed hike probability → higher 2Y/real yields and tighter dollar liquidity → valuation compression for long-duration and financing-sensitive assets.",
+      "affected_assets": ["UST 2Y", "UST 10Y", "DXY", "Nasdaq Composite", "Russell 2000", "Gold"],
+      "direction": "Rates higher / mixed risk assets",
+      "importance": "★★★★★",
+      "confirmation": "2Y yields hold near or above Friday levels and Fed pricing remains strongly tilted to a September hike despite any weekend decline in crude.",
+      "invalidation": "Fed pricing retreats materially before the meeting because energy risk reverses quickly or incoming data weakens enough to dominate the inflation impulse.",
+      "sources": ["S02", "S03", "S05", "S06", "S10", "S14"]
+    },
+    {
+      "event": "Perim seizure and record VLCC freight rates turn Middle East shipping risk into a two-chokepoint cost shock",
+      "status": "Ongoing / Confirmed",
+      "event_time_et": "2026-09-11 through 2026-09-12 EDT",
+      "event_time_sgt": "2026-09-12 morning SGT",
+      "what_happened": "Iran-aligned Houthis reached strategic Perim Island at Bab el-Mandeb while Strait of Hormuz traffic remained sharply reduced. Gulf of Oman-to-China VLCC freight reached roughly Worldscale 450, equivalent to about $11.50 per barrel, as tanker availability and insurance costs tightened.",
+      "what_changed": "The market is no longer pricing only a Hormuz bottleneck; Bab el-Mandeb and the Saudi land bypass are simultaneously impaired or threatened.",
+      "why_it_matters": "Freight and insurance costs can broaden the commodity shock into delivered fuel prices even if benchmark crude temporarily retreats, increasing second-round inflation risk.",
+      "transmission": "Two-chokepoint shipping stress + record freight → higher delivered energy costs → weaker real income and margins → higher inflation expectations → tighter global policy bias.",
+      "affected_assets": ["Brent", "WTI", "European equities", "USDJPY", "UST 10Y", "Global cyclicals"],
+      "direction": "Inflationary / risk-off",
+      "importance": "★★★★",
+      "confirmation": "VLCC rates stay near records, Hormuz transits remain depressed and Houthi control around Perim persists through the weekend.",
+      "invalidation": "Shipping security improves enough to restore tanker availability and freight rates fall materially while Perim ceases to constrain Bab el-Mandeb traffic.",
+      "sources": ["S01", "S07", "S09", "S13"]
+    }
+  ],
+  "section_order": ["top_catalysts", "earnings", "us_macro", "central_banks", "geopolitics", "regional_policy", "index_changes", "flows", "etf", "options", "treasury", "commodities", "financing", "breaking_news", "market_impact"],
+  "sections": {
+    "top_catalysts": {"number": 1, "title": "Top 3 Market Catalysts", "status": "重大新增 / weekend repricing risk", "summary": "Saudi替代管道关闭、美国CPI偏强和双航道运输成本上升构成同向的能源—通胀—利率约束。", "paragraphs": ["三个催化剂是同一传导链：East-West pipeline让实体供给弹性下降，CPI让Fed对通胀更敏感，Perim/Hormuz和纪录运费让冲击更容易进入终端价格。周五风险资产的修复发生在Saudi正式确认停运之前，因此周末信息具有不对称影响。"], "tables": [{"title": "Catalyst Summary", "headers": ["Catalyst", "Status", "First transmission"], "rows": [["Saudi East-West pipeline shutdown", "Confirmed", "Oil/freight → inflation"], ["August CPI +0.4% m/m", "Released", "Fed pricing → UST 2Y"], ["Perim + record VLCC freight", "Ongoing", "Delivered energy cost → margins/CPI"]]}]},
+    "earnings": {"number": 2, "title": "Important Earnings", "status": "有重大新增 / AI capex financing remains selective", "summary": "Oracle显示AI云需求仍强，但融资与现金流约束正成为市场区分AI赢家与资本强度风险的核心变量。", "paragraphs": ["Oracle的结果把AI需求强与AI资本回报尚未完全证明同时摆在市场面前：revenue backlog升至$664B，约一半预计未来36个月转化；本财年计划通过债务和股权融资$40B，重组成本升至约$2.8B。股价盘中一度+7.8%却最终约-1.8%。"], "tables": [{"title": "Oracle Funding and Cash-Flow Read-through", "headers": ["Metric", "Actual", "Reference", "Read-through"], "rows": [["Free cash flow", "-$5.40B", "Estimate -$9.56B", "Better than feared but still negative"], ["Revenue backlog", "$664B", "+$26B disclosed increase", "AI demand visible; conversion matters"], ["Fiscal-year financing plan", "$40B debt + equity", "$20B stock sale completed", "Funding cost remains material"]]}], "reported": [{"id": "earnings-orcl-2026q1", "company": "Oracle", "ticker": "ORCL", "period": "Fiscal 2026 first-quarter / post-quarter filing update", "status": "Reported / follow-up filing", "release_date": "2026-09-10", "release_time_et": "After U.S. market close / follow-up filing Sep11", "release_time_sgt": "2026-09-11 morning SGT / follow-up through Sep12 cutoff", "market_session": "U.S. Sep11 cash session", "key_takeaway": "AI cloud backlog and lower-than-feared cash burn improved demand visibility, but $40B financing needs and higher restructuring costs kept investors focused on balance-sheet and data-center returns.", "metrics": [{"metric": "Free cash flow", "actual": "-$5.40B", "consensus": "-$9.56B cash burn estimate", "previous_or_yoy": "尚无法可靠确认", "surprise": "$4.16B less negative than analyst estimate", "notes": "Reuters/LSEG comparison; still materially negative free cash flow."}], "guidance": [{"metric": "Backlog conversion", "current": "Roughly half of $664B backlog expected to convert to sales within 36 months", "previous_or_consensus": "No directly comparable prior conversion schedule reliably confirmed", "change": "New/updated disclosure", "interpretation": "Demand visibility is strong, but timing and customer-funded hardware determine cash conversion."}], "market_reaction": {"session": "2026-09-11 U.S. cash session", "move": "Closed about -1.8% after rising as much as +7.8% intraday", "as_of": "2026-09-11 close ET"}, "one_offs": ["Fiscal 2026 restructuring cost estimate increased by $700M to roughly $2.8B."], "read_through": [{"asset": "AI infrastructure", "implication": "Order visibility remains strong but ROI scrutiny persists."}, {"asset": "Credit / financing", "implication": "$40B debt-and-equity plan keeps funding cost relevant while yields are high."}], "sources": ["S11", "S03"]}], "upcoming_72h": []},
+    "us_macro": {"number": 3, "title": "U.S. Economic Data", "status": "重大新增 / CPI and sentiment released", "summary": "8月CPI与9月消费者信心共同显示月度通胀再加速、居民预期恶化，使Fed更难忽略能源冲击。", "paragraphs": ["Headline CPI 8月环比+0.4%、同比+3.4%，core CPI环比+0.3%、同比+2.4%；gasoline环比+3.9%。Michigan消费者信心初值降至47.8，1年通胀预期升至4.6%。月度core重新加速且能源冲击进入家庭预期，提高二次效应风险。"], "tables": [{"title": "U.S. Macro Release Matrix", "headers": ["Release", "Actual", "Consensus / Previous", "Implication"], "rows": [["Aug CPI m/m", "+0.4%", "Consensus +0.4%; Jul +0.1%", "Headline reaccelerates"], ["Aug core CPI m/m", "+0.3%", "Consensus +0.2%; Jul +0.2%", "Underlying monthly pressure"], ["Michigan sentiment", "47.8", "Consensus 51.0; Aug 51.7", "Confidence deterioration"], ["1Y inflation expectations", "4.6%", "Aug 4.0%", "Energy shock enters expectations"]]}]},
+    "central_banks": {"number": 4, "title": "Global Central Banks", "status": "Fed hike increasingly priced / global tightening bias", "summary": "Fed的9月会议从双向风险转向加息为主情景；BOJ收紧预期意味着全球政策方向更同步偏紧。", "paragraphs": ["Fed将于9月15–16日开会，9月16日14:00 EDT发布决议；CPI后市场对25bp加息的定价升至约86–90%。7月会议已有三位投票者支持当时加息25bp。Reuters外汇报道同时指出BOJ下周也被预期加息，日元连续第二周走强。"], "tables": [{"title": "Central-Bank Watch", "headers": ["Bank", "State", "Signal", "Channel"], "rows": [["Federal Reserve", "Sep15–16; Sep16 14:00 EDT decision", "25bp hike heavily priced", "UST 2Y → USD → equities"], ["Bank of Japan", "Expected to tighten next week", "Yen stronger", "USDJPY → carry unwind"], ["ECB", "Energy shock keeps tightening risk alive", "War-fueled inflation", "Bunds/EUR → term premium"]]}]},
+    "geopolitics": {"number": 5, "title": "Major International Events", "status": "重大升级 / physical energy infrastructure", "summary": "中东冲突已经从海上瓶颈扩大到Saudi陆上绕行管道，意味着三条关键物流路径同时承压。", "paragraphs": ["Saudi East-West pipeline停运是本期最重要的新事实，因为该线原本承担Hormuz受限后的绕行功能。与此同时Houthis抵达Perim，Bab el-Mandeb风险上升；Gulf of Oman至中国VLCC运价达到约Worldscale 450。风险需要用实际可运输桶数和每桶运输成本衡量。"], "tables": [{"title": "Physical Chokepoint Map", "headers": ["Route", "Condition", "Why it matters"], "rows": [["Saudi East-West pipeline", "Temporarily shut; 4–5m bpd recent throughput", "Land bypass impaired"], ["Strait of Hormuz", "Traffic sharply constrained", "Core Gulf export route"], ["Bab el-Mandeb / Perim", "Houthis reached Perim", "Red Sea alternative threatened"], ["Gulf of Oman→China VLCC", "~WS450 / ~$11.50 per barrel", "Record logistics cost"]]}]},
+    "regional_policy": {"number": 6, "title": "China, Japan, Europe and Canada Policy", "status": "China buffers fuel shock while advancing industrial policy", "summary": "中国限制国际油价向国内零售燃料的完全传导，同时继续推进智能汽车产业政策。", "paragraphs": ["中国从9月12日起汽油、柴油每吨分别上调260元和250元，低于标准机制对应的435元和420元，体现政策层主动平滑能源冲击。短期影响是降低居民端通胀传导，但意味着部分冲击由炼化、财政或国企体系吸收。"], "tables": [{"title": "Regional Policy Signals", "headers": ["Region", "Policy", "Read-through"], "rows": [["China", "Fuel increase capped below formula from Sep12", "Domestic inflation buffer"], ["Japan", "BOJ tightening expected next week", "Yen funding cost rises"], ["Europe", "Energy shock keeps tightening risk alive", "Higher global term premium"], ["Canada", "No high-value new policy update reliably confirmed", "No filler"]]}], "sources": ["S12", "S06", "S07"]},
+    "index_changes": {"number": 7, "title": "MSCI / FTSE / S&P / Nasdaq Index Changes", "status": "无重大新增事件", "summary": "截至research_cutoff未发现需要进入本期核心结论的MSCI、FTSE、S&P或Nasdaq成分调整公告。", "paragraphs": ["本期不以未经确认的被动资金流估算填充栏目。周五指数表现主要由宏观、利率与能源冲击驱动，而不是已确认的指数成分调整。"], "tables": []},
+    "flows": {"number": 8, "title": "Pension / Month-End / Quarter-End Flows", "status": "无重大新增事件", "summary": "截至research_cutoff没有足够高置信度的养老金、月末或季末再平衡流量估计值得作为独立催化剂。", "paragraphs": ["当前周末风险的首要变量是实物能源供给与央行定价，而不是未证实的机械资金流；没有可靠来源时不猜测养老金再平衡方向。"], "tables": []},
+    "etf": {"number": 9, "title": "ETF Rebalance / Index Reconstruction", "status": "无重大新增事件", "summary": "主要ETF未出现足以改变本期跨资产结论的已确认重构事件，避免将价格波动误写为被动资金流。", "paragraphs": ["AI与大盘科技的周五反弹主要来自宏观和盈利read-through，而不是ETF重构。下周若油价跳升，应先看指数期货与收益率确认。"], "tables": []},
+    "options": {"number": 10, "title": "Options Expiry", "status": "无重大新增事件 / no dealer-position guess", "summary": "本期没有已确认的到期结构足以取代能源与Fed成为绑定约束，因此不猜测gamma flip、max pain或dealer positioning。", "paragraphs": ["VIX周五降至15.88，但Saudi pipeline关闭在收盘后被确认。若下周波动率重新上行，应首先视为新信息定价，而不是用未核验的gamma叙事解释。"], "tables": []},
+    "treasury": {"number": 11, "title": "U.S. Treasury Auctions", "status": "No high-value auction result / curve repricing dominates", "summary": "过去24小时没有新的主要coupon auction结果成为主线，真正重要的是CPI后官方收益率曲线的前端重定价。", "paragraphs": ["Sep11官方Treasury曲线显示2Y 4.63%、5Y 4.78%、10Y 4.96%、30Y 5.35%；相对Sep4分别约+26bp、+24bp、+18bp、+11bp。2s10s由约+41bp压至+33bp，说明近期收紧主要由政策敏感前端驱动。"], "tables": [{"title": "Treasury Curve Repricing", "headers": ["Tenor", "Sep11", "1D", "vs Sep4"], "rows": [["2Y", "4.63%", "+7bp", "+26bp"], ["5Y", "4.78%", "+3bp", "+24bp"], ["10Y", "4.96%", "+1bp", "+18bp"], ["30Y", "5.35%", "-2bp", "+11bp"], ["2s10s", "+33bp", "-6bp", "-8bp"], ["10s30s", "+39bp", "-3bp", "-7bp"]]}], "sources": ["S05"]},
+    "commodities": {"number": 12, "title": "Oil / OPEC / Commodities", "status": "重大新增 / weekend supply shock", "summary": "Brent与WTI周五回落但周线仍涨逾8%，Saudi管道停运让新周首个油市开盘成为最重要的price discovery。", "paragraphs": ["Brent周五结算$104.61、WTI $100.05，分别下跌2.81%和2.37%，但一周仍上涨逾8%。IEA把2026年全球供应降幅估计扩大到570万桶/日，Saudi 8月供应降至600万桶/日；记录级VLCC运价意味着delivered-energy cost仍可能上行。Gold在Fed加息预期升温下仍涨1.1%至$4,363.01。"], "tables": [{"title": "Commodity Shock Matrix", "headers": ["Asset", "Latest", "Weekly", "Transmission"], "rows": [["Brent", "$104.61, -2.81% Friday", ">+8%", "Supply + freight → CPI"], ["WTI", "$100.05, -2.37% Friday", ">+8%", "Fuel → household inflation"], ["Gold", "$4,363.01, +1.1% Friday", "-1.5%", "Haven vs rates"], ["VLCC Gulf→China", "~$11.50/bbl freight", "Record", "Logistics → delivered energy"]]}], "sources": ["S07", "S08", "S09", "S13"]},
+    "financing": {"number": 13, "title": "IPO / Financing / Capital Cycle", "status": "AI financing active / capital intensity remains central", "summary": "AI资本周期仍能吸引大规模股债融资，但高收益率环境把订单增长与融资可持续性同时放进估值框架。", "paragraphs": ["Oracle计划本财年通过债务和股权融资$40B，说明AI基础设施扩张仍依赖外部资本。中国AI开发商Z.AI启动$2B H股配售与$3B可转债发行，用于研发和算力基础设施；高利率环境下，资本回报和现金流转换比单纯订单规模更重要。"], "tables": [{"title": "Capital-Cycle Transactions", "headers": ["Issuer", "Transaction", "Size", "Read-through"], "rows": [["Oracle", "Debt + equity fiscal-year plan", "$40B", "AI growth funded externally"], ["Z.AI", "Hong Kong placement + convertible", "$2B + $3B", "Compute/R&D capital demand remains intense"]]}], "sources": ["S11", "S17"]},
+    "breaking_news": {"number": 14, "title": "Past 24H Major Breaking News", "status": "Multiple market-moving events inside strict 24H window", "summary": "严格24小时窗口内，Saudi pipeline停运、美国CPI/信心数据和周五美股收盘共同改变了周末的起点。", "paragraphs": ["第一，Saudi确认East-West pipeline关闭，把袭击信息升级为实际吞吐约束。第二，美国CPI与Michigan调查强化通胀风险。第三，美股在油价回落下反弹、VIX下降，但这些收盘价早于Saudi停运确认，因此不是周末新风险的充分定价。"], "tables": [{"title": "Strict 24H Event Window", "headers": ["Event", "Status", "Relevance"], "rows": [["Saudi East-West pipeline shutdown", "Confirmed Sep12 Asia morning", "Post-close weekend gap risk"], ["August CPI +0.4% m/m", "Released Sep11 08:30 EDT", "Fed hike odds + front-end yields"], ["Michigan sentiment 47.8", "Released Sep11", "Consumption and inflation psychology"], ["S&P +0.86%, VIX 15.88", "Friday close", "Tactical relief baseline"]]}], "sources": ["S01", "S02", "S03", "S10"]},
+    "market_impact": {"number": 15, "title": "Integrated Market Impact", "status": "Energy shock and rates remain the binding cross-asset pair", "summary": "下周开盘需要同时观察油价与前端利率；只有至少一条明显缓和，Friday equity rebound才更可能延续。", "paragraphs": ["最关键的确认顺序是Brent/WTI → UST 2Y → USDJPY/DXY → S&P/Nasdaq/Russell。若油价因管道停运跳升、2Y同步上行且USDJPY继续下跌，则能源再通胀、Fed收紧与carry unwind形成三重确认；若油价受修复消息压低且2Y回落，risk-on才有条件延续。"], "tables": [{"title": "Integrated Asset Map", "headers": ["Asset", "Bias", "Driver", "Confirmation", "Risk"], "rows": [["S&P 500", "Neutral-to-down", "Pipeline shutdown vs Friday rebound", "Oil contained + 2Y easing", "Weekend gap"], ["Nasdaq / AI", "Mixed", "Rates vs AI earnings", "Yields stabilize", "Funding scrutiny"], ["Russell 2000", "Fragile", "Funding/energy costs", "Breadth improves", "2Y stays high"], ["UST 2Y", "Upward pressure", "CPI + Fed pricing", "Hike odds high", "Energy reversal"], ["USDJPY", "Downward bias", "BOJ / carry unwind", "Yen holds gains", "BOJ repricing"], ["Brent / WTI", "Upside gap risk", "East-West + Hormuz + Perim", "No repair", "Rapid restoration"], ["Gold", "Two-way", "Haven vs real yields", "Geopolitical escalation", "Rates rise faster"]]}], "sources": ["S01", "S02", "S03", "S05", "S06", "S07", "S08"]}
+  },
+  "signal_panel": {
+    "growth_impulse": {"label": "Growth", "current": "↓ 信心走弱", "yesterday": "韧性但受能源约束", "change_reason": "Michigan消费者信心从51.7降至47.8，高油价与贸易紧张侵蚀家庭预期。", "evidence": "Sep preliminary sentiment 47.8 vs consensus 51.0；Russell周线-2.4%。", "sources": ["S10", "S04"]},
+    "inflation_impulse": {"label": "Inflation", "current": "↑ 压力上升", "yesterday": "供给驱动上行", "change_reason": "CPI环比重新加速且Saudi替代管道停运、海运费创纪录，把能源冲击向更广泛成本传导。", "evidence": "Aug CPI +0.4% m/m；gasoline +3.9%；VLCC约$11.50/bbl freight。", "sources": ["S02", "S09", "S01"]},
+    "rates_pressure": {"label": "Rates", "current": "↑ 收紧加深", "yesterday": "高位/偏鹰", "change_reason": "CPI后Fed加息概率升至约86–90%，前端收益率重定价快于长端。", "evidence": "Official UST 2Y 4.63%（+7bp d/d、+26bp vs Sep4）；10Y 4.96%。", "sources": ["S03", "S05", "S06"]},
+    "earnings_revision": {"label": "Earnings", "current": "→ 高度分化", "yesterday": "AI选择性韧性", "change_reason": "Oracle backlog和现金消耗改善支持AI需求，但$40B融资计划与股价冲高回落暴露资本强度约束。", "evidence": "Oracle backlog $664B；FCF -$5.40B好于-$9.56B estimate，但股价最终约-1.8%。", "sources": ["S11", "S03"]},
+    "liquidity": {"label": "Liquidity", "current": "→ 战术修复/仍紧", "yesterday": "紧张但边际稳定", "change_reason": "周五VIX与股市改善，但2Y/10Y收益率维持高位，且周末新地缘事件尚未进入价格。", "evidence": "VIX 15.88；S&P +0.86%，但2Y 4.63%、10Y 4.96%。", "sources": ["S03", "S05", "S04"]},
+    "geopolitical_risk": {"label": "Geopolitical Risk", "current": "↑ 风险升级", "yesterday": "双航道高风险", "change_reason": "Saudi East-West pipeline从受袭升级为关闭，使Hormuz、Bab el-Mandeb和陆上绕行同时承压。", "evidence": "Pipeline近期4–5m bpd；Houthis控制Perim；VLCC freight约$11.50/bbl。", "sources": ["S01", "S09"]}
+  },
+  "scenario_matrix": {
+    "base_case": {"label": "Base Case", "probability": "50% scenario weight", "trigger": "Saudi partially restores East-West pipeline while no new major attack closes another route; Fed hike pricing remains dominant.", "expected_market_reaction": "Oil reopens above Friday settlement without a disorderly squeeze; front-end yields stay high and equities remain choppy.", "assets_most_sensitive": ["Brent", "WTI", "UST 2Y", "S&P 500", "Nasdaq Composite", "USDJPY"], "what_confirms_it": "Repair updates emerge before Monday cash trading, shipping remains reduced but non-zero and Fed hike odds stay elevated without another yield jump.", "what_invalidates_it": "Pipeline outage lengthens materially or another Saudi/Gulf export route is impaired.", "sources": ["S01", "S03", "S05", "S07"]},
+    "bull_case": {"label": "Bull Case", "probability": "20% scenario weight", "trigger": "Rapid pipeline restoration plus credible shipping de-escalation lowers delivered-energy risk before Monday cash sessions.", "expected_market_reaction": "Crude gives back more risk premium, yields retreat and Friday’s equity rebound broadens toward small caps and semiconductors.", "assets_most_sensitive": ["Brent", "UST 10Y", "Russell 2000", "Nasdaq Composite", "DXY", "Gold"], "what_confirms_it": "Saudi confirms restored throughput, tanker rates fall and oil futures remain below Friday settlement.", "what_invalidates_it": "Physical flows fail to improve despite constructive diplomatic headlines.", "sources": ["S01", "S07", "S09"]},
+    "bear_case": {"label": "Bear Case", "probability": "30% scenario weight", "trigger": "East-West pipeline remains shut while Houthi/Hormuz disruptions intensify or Saudi retaliation widens the conflict.", "expected_market_reaction": "Oil and freight gap higher, inflation expectations reprice, 2Y/10Y yields rise and Friday’s equity relief reverses; yen strength may amplify deleveraging.", "assets_most_sensitive": ["Brent", "WTI", "UST 2Y", "VIX", "Russell 2000", "USDJPY"], "what_confirms_it": "No repair timeline, additional attacks or renewed transit deterioration extend into the new week.", "what_invalidates_it": "Verified East-West flow restoration or meaningful reopening of a major maritime chokepoint.", "sources": ["S01", "S09", "S13"]}
+  },
+  "upcoming_market_watch": [
+    {"sgt": "2026-09-12 to 2026-09-13 continuous", "et": "2026-09-11 to 2026-09-13 EDT continuous", "event": "Saudi East-West pipeline repair / restart status", "consensus": "No reliable repair-time consensus", "previous": "Pipeline confirmed shut; recent throughput 4–5m bpd", "actual": "待公布", "importance": "★★★★★", "sources": ["S01"]},
+    {"sgt": "2026-09-14 06:00 SGT", "et": "2026-09-13 18:00 EDT", "event": "CME WTI weekly reopen after weekend pipeline news", "consensus": "No reliable point consensus; Friday WTI $100.05", "previous": "Friday WTI -2.37% d/d, >8% w/w", "actual": "待公布", "importance": "★★★★★", "sources": ["S07"]},
+    {"sgt": "2026-09-14 08:00 SGT", "et": "2026-09-13 20:00 EDT", "event": "Japan cash-market reopening / first Asian equity confirmation", "consensus": "No reliable index consensus", "previous": "USDJPY 153.69 Friday; U.S. risk assets rallied", "actual": "待公布", "importance": "★★★★", "sources": ["S06", "S03"]},
+    {"sgt": "2026-09-14 21:30 SGT", "et": "2026-09-14 09:30 EDT", "event": "U.S. cash-equity reopening after Saudi pipeline shutdown", "consensus": "No reliable index consensus", "previous": "S&P 500 7,656.98; VIX 15.88", "actual": "待公布", "importance": "★★★★", "sources": ["S03"]}
+  ],
+  "top_risks": [
+    {"risk": "Saudi East-West pipeline停运与Hormuz/Bab el-Mandeb受限叠加，替代出口能力同时收缩", "why_not_fully_priced": "Saudi正式确认停运发生在周五主要现金市场收盘之后，Friday Brent -2.81%和VIX 15.88没有完整计入周末信息。", "trigger": "周末仍无明确修复时间表，或出现新的能源设施/船舶攻击。", "transmission": "实体出口能力下降 → crude/freight risk premium → 通胀预期 → Fed/ECB更紧 → 风险资产折现率上升。", "first_asset": "Brent", "theme_id": "energy_chokepoints", "lifecycle_state": "Escalating", "first_seen_date": "2026-09-11", "last_seen_date": "2026-09-12", "confirmation_evidence": "East-West line closed; Perim held by Houthis; Hormuz constrained.", "invalidation_evidence": "Meaningful pipeline throughput restoration and improved maritime transit.", "sources": ["S01", "S07", "S09"]},
+    {"risk": "CPI与能源二次冲击共同把Fed从单次加息推向更长时间的高利率路径", "why_not_fully_priced": "市场已把Sep16加息概率推至约86–90%，但Saudi pipeline关闭发生在CPI后，新的能源信息尚未反映在周五Treasury close。", "trigger": "油价/运费周日重开上行，同时2Y在4.63%附近或更高维持。", "transmission": "能源成本 + core inflation → 更鹰Fed路径 → 2Y/real yield上升 → Nasdaq、小盘、融资密集AI资产承压。", "first_asset": "UST 2Y", "theme_id": "fed_repricing", "lifecycle_state": "Confirmed / Building", "first_seen_date": "2026-09-11", "last_seen_date": "2026-09-12", "confirmation_evidence": "August CPI +0.4% m/m; core +0.3%; 2Y 4.63%.", "invalidation_evidence": "Energy risk reverses and Fed pricing falls materially before the meeting.", "sources": ["S02", "S03", "S05", "S06"]},
+    {"risk": "Fed与BOJ同步收紧预期导致日元carry unwind独立于美元方向扩散", "why_not_fully_priced": "USDJPY周五已跌0.45%至153.69且日元连续第二周走强，但风险资产仍在周五反弹，尚未出现全面去杠杆。", "trigger": "BOJ加息预期增强，同时Fed保持鹰派且周末能源冲击抬高全球波动率。", "transmission": "日元融资成本上升 → carry仓位减持 → 高beta与杠杆资产卖出 → VIX/跨资产相关性上升。", "first_asset": "USDJPY", "theme_id": "carry_unwind", "lifecycle_state": "Building", "first_seen_date": "2026-09-08", "last_seen_date": "2026-09-12", "confirmation_evidence": "USDJPY 153.69; yen +0.45% Friday and second weekly gain.", "invalidation_evidence": "USDJPY reverses higher while BOJ expectations soften and equity breadth stays firm.", "sources": ["S06", "S03"]}
+  ],
+  "next_catalyst": {
+    "event": "CME WTI weekly reopen after Saudi East-West pipeline shutdown",
+    "status": "Confirmed Upcoming / first liquid weekend-risk price discovery",
+    "date": "2026-09-14",
+    "et": "2026-09-13 18:00 EDT standard CME energy-session reference",
+    "sgt": "2026-09-14 06:00 SGT",
+    "consensus": "No reliable point consensus; focus is the gap versus Friday $100.05 WTI settlement after the pipeline shutdown confirmation.",
+    "previous": "WTI Friday settlement $100.05/bbl, -2.37% on the day but up more than 8% on the week.",
+    "actual": "待公布",
+    "why_it_matters": "This is the first liquid benchmark able to price the confirmed 4–5 million bpd East-West pipeline shutdown together with Perim/Hormuz stress. The opening gap will determine whether Friday’s cross-asset relief survives into Monday.",
+    "first_market": "WTI futures",
+    "bull_interpretation": "WTI opens contained or below Friday settlement and stays there as credible repair/shipping updates reduce the physical premium; rates and equity futures confirm.",
+    "bear_interpretation": "WTI gaps materially above Friday settlement and persists alongside higher Treasury/fx volatility, showing the supply shock has overtaken Friday’s tactical relief.",
+    "watch_first": [
+      "WTI/Brent：比较周日重开与Friday $100.05/$104.61 settlement的gap，并观察首小时是否维持而非瞬时跳升。",
+      "UST 2Y / equity futures：若油价上行同时2Y收益率与S&P/Nasdaq futures走弱，说明能源→Fed→估值传导得到跨资产确认。",
+      "Saudi pipeline / Hormuz / Perim flow updates：只有可核验的修复吞吐或航运恢复，才足以否定纯headline驱动的risk premium。"
+    ],
+    "sources": ["S01", "S07"]
+  },
+  "sources": ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S10", "S11", "S12", "S13", "S14", "S15", "S16", "S17"]
+}
