@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-09-11",
-  "window_start": "2026-08-13",
-  "window_end": "2026-09-11",
+  "as_of": "2026-09-13",
+  "window_start": "2026-08-15",
+  "window_end": "2026-09-13",
   "coverage": {
-    "market_sessions": 24,
-    "native_daily_days": 10,
-    "reconstructed_days": 14,
-    "verified_event_days": 4,
+    "market_sessions": 23,
+    "native_daily_days": 11,
+    "reconstructed_days": 12,
+    "verified_event_days": 3,
     "historical_series_start": "2025-07-21"
   },
   "methodology": {
@@ -85,128 +85,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-08-13",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "neutral",
-      "regime_label": "Neutral",
-      "dominant_theme_id": "us_china_trade_controls",
-      "signals": {
-        "growth": "↑",
-        "inflation": "→",
-        "rates": "↓",
-        "earnings": "→",
-        "liquidity": "→",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
-          "title": "U.S. invokes Section 232 to adjust imports of unmanned aircraft systems and components",
-          "evidence": "A presidential proclamation found UAS and component imports threatened U.S. national security and directed measures to adjust imports.",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Import restrictions → drone supply-chain repricing → domestic production incentives and foreign supplier risk",
-          "confirmation": "Commerce implementation materially restricts foreign-origin UAS or components.",
-          "invalidation": "Exemptions and implementation scope leave existing supply chains largely unchanged.",
-          "source_mode": "verified_event",
-          "event_id": "policy-2026-08-13-us-uas-imports",
-          "status": "Confirmed / Announced",
-          "actual_event_date": "2026-08-13",
-          "source_name": "The White House",
-          "source_title": "Adjusting Imports of Unmanned Aircraft Systems and Unmanned Aircraft Systems Components into the United States",
-          "source_url": "https://www.whitehouse.gov/presidential-actions/2026/08/adjusting-imports-of-unmanned-aircraft-systems-and-unmanned-aircraft-systems-components-into-the-united-states/",
-          "source_tier": "Tier 1",
-          "confidence": "High",
-          "rank": 1
-        },
-        {
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "US 10Y moves -5.0bp",
-          "evidence": "DGS10 -5.0bp",
-          "market_bias": "risk_on",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "10Y ↓ → discount rate eases",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "fed_policy_path",
-          "theme_label": "Fed Policy Path",
-          "category": "central_banks_fiscal",
-          "title": "US 2Y moves -5.0bp",
-          "evidence": "DGS2 -5.0bp",
-          "market_bias": "risk_on",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "2Y ↓ → policy path reprices easier",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ]
-    },
-    {
-      "date": "2026-08-14",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "neutral",
-      "regime_label": "Neutral",
-      "dominant_theme_id": "credit_conditions",
-      "signals": {
-        "growth": "→",
-        "inflation": "→",
-        "rates": "↑",
-        "earnings": "→",
-        "liquidity": "↑",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "theme_id": "credit_conditions",
-          "theme_label": "Credit Conditions",
-          "category": "liquidity_credit",
-          "title": "HY OAS moves -4.0bp",
-          "evidence": "BAMLH0A0HYM2 -4.0bp",
-          "market_bias": "risk_on",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Credit spreads tighter → funding conditions ease",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "US 10Y moves +5.0bp",
-          "evidence": "DGS10 +5.0bp",
-          "market_bias": "risk_off",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "10Y ↑ → discount rate ↑ → long-duration equity valuation ↓",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "usd_financial_conditions",
-          "theme_label": "USD Financial Conditions",
-          "category": "liquidity_credit",
-          "title": "Broad USD daily move -0.24%",
-          "evidence": "DTWEXBGS -0.24%",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "USD ↓ → global conditions ease",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ]
-    },
     {
       "date": "2026-08-17",
       "source_mode": "objective_market_reconstruction",
@@ -1528,15 +1406,71 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-09-13",
+      "source_mode": "native_daily",
+      "regime_code": "event_risk",
+      "regime_label": "Weekend Event Risk / Reinflation + Tight Financial Conditions",
+      "dominant_theme_id": "geopolitics_energy",
+      "signals": {
+        "growth": "→",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "→",
+        "liquidity": "↓",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
+          "title": "Sunday Hormuz vessel strike adds a fresh physical-supply shock while Saudi Arabia's East-West bypass pipeline remains shut",
+          "evidence": "UKMTO reported a vessel transiting the Strait of Hormuz was hit by a projectile and caught fire, prompting crew evacuation; AP separately reported an Iranian commercial vessel struck near Qeshm. Saudi Arabia's East-West pipeline, the principal land bypass around Hormuz, remained under a precautionary shutdown with no verified restart notice through the cutoff.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Dual-route physical constraint → crude/freight premium → inflation expectations → Fed and term premium → global yields and equity multiples.",
+          "confirmation": "A persistent crude gap higher after Globex reopens, tighter tanker/freight conditions or further verified infrastructure/vessel damage would confirm the shock remains binding.",
+          "invalidation": "A verified Saudi pipeline restart plus stable Hormuz flows and a rapidly fading crude gap would weaken the immediate physical-supply thesis.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "Saudi equities register the first traded Sunday reaction to pipeline attacks, with TASI down 1.0% and Aramco down 1.1%",
+          "evidence": "Reuters reported Saudi Arabia's benchmark TASI fell 1.0% on Sunday after drone attacks on the East-West oil pipeline; Al Rajhi Bank fell 0.8%, Ma'aden 2.4%, Saudi Aramco 1.1% and Rabigh Refining 7.3%.",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Pipeline attack → Saudi equity/credit risk premium → regional funding confidence → energy and global risk sentiment into Monday futures.",
+          "confirmation": "Continued weakness in Saudi energy/financial shares and a matching risk-off move in oil-sensitive global assets after futures reopen would confirm cross-market transmission.",
+          "invalidation": "A quick local equity recovery combined with stable crude and no further infrastructure disruption would suggest the Sunday drop was a contained event premium.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "Yen speculators flip net long for the first time since February, adding an independent carry-unwind channel to the energy shock",
+          "evidence": "Reuters reported CFTC data showing speculative yen positions swung to 10,796 contracts net long in the week to September 8 from 92,227 net short previously, the first net-long stance since February 24; USDJPY had reached 152.89 during that week.",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Yen appreciation / BOJ normalization → higher funding cost → carry reduction → cross-asset deleveraging → tighter financial conditions.",
+          "confirmation": "Further yen strength after Monday reopen accompanied by weakness in high-beta equities or widening funding-sensitive spreads would confirm the carry channel.",
+          "invalidation": "A durable USDJPY rebound with stable global risk assets and no further BOJ tightening repricing would weaken the near-term carry-unwind signal.",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
-    {
-      "date": "2026-08-17",
-      "from": "Neutral",
-      "to": "Risk-Off",
-      "dominant_theme_id": "volatility_event_risk"
-    },
     {
       "date": "2026-08-19",
       "from": "Risk-Off",
@@ -1600,47 +1534,31 @@
   ],
   "persistent_themes": [
     {
-      "theme_id": "global_duration",
-      "theme_label": "Global Duration / Term Premium",
-      "category": "inflation_rates",
-      "days_in_top3": 11,
-      "best_rank": 2,
-      "first_seen": "2026-08-13",
-      "last_seen": "2026-09-11",
-      "latest_rank": 3,
-      "state": "Persistent",
-      "latest_transmission": "CPI surprise → Fed September pricing → UST 2Y/10Y → DXY → Nasdaq/Russell and global duration assets.",
-      "source_modes": [
-        "native_daily",
-        "objective_market_reconstruction"
-      ]
-    },
-    {
       "theme_id": "geopolitics_energy",
       "theme_label": "Geopolitics / Energy",
       "category": "geopolitics_energy",
-      "days_in_top3": 10,
+      "days_in_top3": 11,
       "best_rank": 1,
       "first_seen": "2026-09-02",
-      "last_seen": "2026-09-11",
-      "latest_rank": 2,
-      "state": "Escalating",
-      "latest_transmission": "Perim control risk → Red Sea transit capacity/insurance → Saudi export flexibility → Brent/diesel → inflation and global rates.",
+      "last_seen": "2026-09-13",
+      "latest_rank": 1,
+      "state": "Persistent",
+      "latest_transmission": "Dual-route physical constraint → crude/freight premium → inflation expectations → Fed and term premium → global yields and equity multiples.",
       "source_modes": [
         "native_daily"
       ]
     },
     {
-      "theme_id": "fed_policy_path",
-      "theme_label": "Fed Policy Path",
-      "category": "central_banks_fiscal",
-      "days_in_top3": 7,
-      "best_rank": 1,
-      "first_seen": "2026-08-13",
-      "last_seen": "2026-09-08",
+      "theme_id": "global_duration",
+      "theme_label": "Global Duration / Term Premium",
+      "category": "inflation_rates",
+      "days_in_top3": 9,
+      "best_rank": 2,
+      "first_seen": "2026-08-17",
+      "last_seen": "2026-09-11",
       "latest_rank": null,
       "state": "Persistent",
-      "latest_transmission": "BOJ加息/资金回流预期 → JPY升值 → carry去杠杆 → 日本与全球股票/波动率 → 跨境久期资金流。",
+      "latest_transmission": "CPI surprise → Fed September pricing → UST 2Y/10Y → DXY → Nasdaq/Russell and global duration assets.",
       "source_modes": [
         "native_daily",
         "objective_market_reconstruction"
@@ -1650,9 +1568,9 @@
       "theme_id": "credit_conditions",
       "theme_label": "Credit Conditions",
       "category": "liquidity_credit",
-      "days_in_top3": 7,
+      "days_in_top3": 6,
       "best_rank": 1,
-      "first_seen": "2026-08-14",
+      "first_seen": "2026-08-17",
       "last_seen": "2026-08-31",
       "latest_rank": null,
       "state": "Resolved",
@@ -1662,33 +1580,18 @@
       ]
     },
     {
-      "theme_id": "us_china_trade_controls",
-      "theme_label": "U.S.–China Trade Controls",
-      "category": "china_trade_policy",
-      "days_in_top3": 5,
+      "theme_id": "fed_policy_path",
+      "theme_label": "Fed Policy Path",
+      "category": "central_banks_fiscal",
+      "days_in_top3": 6,
       "best_rank": 1,
-      "first_seen": "2026-08-13",
-      "last_seen": "2026-09-10",
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-09-08",
       "latest_rank": null,
-      "state": "Escalating",
-      "latest_transmission": "Oil shock → inflation/term premium → UK/EU/U.S. long yields → global discount rates → duration assets and credit spreads.",
+      "state": "Persistent",
+      "latest_transmission": "BOJ加息/资金回流预期 → JPY升值 → carry去杠杆 → 日本与全球股票/波动率 → 跨境久期资金流。",
       "source_modes": [
         "native_daily",
-        "verified_event"
-      ]
-    },
-    {
-      "theme_id": "usd_financial_conditions",
-      "theme_label": "USD Financial Conditions",
-      "category": "liquidity_credit",
-      "days_in_top3": 5,
-      "best_rank": 1,
-      "first_seen": "2026-08-14",
-      "last_seen": "2026-08-28",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "USD ↑ → global financial conditions tighten",
-      "source_modes": [
         "objective_market_reconstruction"
       ]
     },
@@ -1708,6 +1611,21 @@
       ]
     },
     {
+      "theme_id": "us_china_trade_controls",
+      "theme_label": "U.S.–China Trade Controls",
+      "category": "china_trade_policy",
+      "days_in_top3": 5,
+      "best_rank": 1,
+      "first_seen": "2026-09-08",
+      "last_seen": "2026-09-13",
+      "latest_rank": 2,
+      "state": "Escalating",
+      "latest_transmission": "Pipeline attack → Saudi equity/credit risk premium → regional funding confidence → energy and global risk sentiment into Monday futures.",
+      "source_modes": [
+        "native_daily"
+      ]
+    },
+    {
       "theme_id": "growth_duration_rotation",
       "theme_label": "Growth / Duration Rotation",
       "category": "earnings_ai_semis",
@@ -1723,6 +1641,21 @@
       ]
     },
     {
+      "theme_id": "usd_financial_conditions",
+      "theme_label": "USD Financial Conditions",
+      "category": "liquidity_credit",
+      "days_in_top3": 4,
+      "best_rank": 1,
+      "first_seen": "2026-08-19",
+      "last_seen": "2026-08-28",
+      "latest_rank": null,
+      "state": "Resolved",
+      "latest_transmission": "USD ↑ → global financial conditions tighten",
+      "source_modes": [
+        "objective_market_reconstruction"
+      ]
+    },
+    {
       "theme_id": "energy_inflation",
       "theme_label": "Energy Inflation",
       "category": "geopolitics_energy",
@@ -1730,7 +1663,7 @@
       "best_rank": 1,
       "first_seen": "2026-08-25",
       "last_seen": "2026-09-11",
-      "latest_rank": 1,
+      "latest_rank": null,
       "state": "Escalating",
       "latest_transmission": "Gulf supply loss → inventories → crude/diesel → inflation expectations → central-bank path → global yields and equity multiples.",
       "source_modes": [
@@ -1754,6 +1687,21 @@
       ]
     },
     {
+      "theme_id": "market_structure",
+      "theme_label": "Market Structure",
+      "category": "market_structure",
+      "days_in_top3": 4,
+      "best_rank": 2,
+      "first_seen": "2026-09-06",
+      "last_seen": "2026-09-13",
+      "latest_rank": 3,
+      "state": "Persistent",
+      "latest_transmission": "Yen appreciation / BOJ normalization → higher funding cost → carry reduction → cross-asset deleveraging → tighter financial conditions.",
+      "source_modes": [
+        "native_daily"
+      ]
+    },
+    {
       "theme_id": "china_industrial_policy",
       "theme_label": "China Industrial Policy",
       "category": "china_trade_policy",
@@ -1768,53 +1716,44 @@
         "native_daily",
         "verified_event"
       ]
-    },
-    {
-      "theme_id": "equity_risk_appetite",
-      "theme_label": "Equity Risk Appetite",
-      "category": "growth_macro",
-      "days_in_top3": 3,
-      "best_rank": 2,
-      "first_seen": "2026-08-18",
-      "last_seen": "2026-09-01",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Equity move → risk appetite / duration repricing",
-      "source_modes": [
-        "objective_market_reconstruction"
-      ]
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "energy_inflation",
-    "theme_label": "Energy Inflation",
-    "as_of": "2026-09-11",
+    "theme_id": "geopolitics_energy",
+    "theme_label": "Geopolitics / Energy",
+    "as_of": "2026-09-13",
     "confirming": [
       {
-        "series_id": "NASDAQCOM",
-        "label": "Nasdaq Composite",
-        "change": "-0.65%"
+        "series_id": "DGS10",
+        "label": "US 10Y Treasury Yield",
+        "change": "+1bp"
       }
     ],
     "diverging": [
       {
         "series_id": "DCOILBRENTEU",
         "label": "Brent",
-        "change": "-1.53%"
+        "change": "-2.8%"
+      },
+      {
+        "series_id": "NASDAQCOM",
+        "label": "Nasdaq Composite",
+        "change": "+0.96%"
+      },
+      {
+        "series_id": "DTWEXBGS",
+        "label": "Broad Trade-Weighted USD",
+        "change": "-0.02%"
       }
     ],
     "unavailable": [
       {
-        "series_id": "DGS10",
-        "label": "US 10Y Treasury Yield"
-      },
-      {
-        "series_id": "DTWEXBGS",
-        "label": "Broad Trade-Weighted USD"
+        "series_id": "VIXCLS",
+        "label": "VIX"
       }
     ],
-    "interpretation_note": "1 项资产确认当前主线，1 项出现背离。",
-    "what_would_flip_it": "若形成可验证的航运安排、海湾出口快速恢复且库存停止下降，IEA所描述的持续性供给压力将开始减弱。"
+    "interpretation_note": "1 项资产确认当前主线，3 项出现背离。",
+    "what_would_flip_it": "A verified Saudi pipeline restart plus stable Hormuz flows and a rapidly fading crude gap would weaken the immediate physical-supply thesis."
   },
   "series": {
     "NASDAQCOM": {
@@ -1823,14 +1762,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-13",
-          "value": 26803.03
-        },
-        {
-          "date": "2026-08-14",
-          "value": 26729.16
-        },
         {
           "date": "2026-08-17",
           "value": 26644.91
@@ -1916,14 +1847,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-13",
-          "value": 7798.99
-        },
-        {
-          "date": "2026-08-14",
-          "value": 7785.76
-        },
-        {
           "date": "2026-08-17",
           "value": 7745.06
         },
@@ -2007,14 +1930,6 @@
       "source": "CBOE via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-13",
-          "value": 14.63
-        },
-        {
-          "date": "2026-08-14",
-          "value": 14.25
-        },
         {
           "date": "2026-08-17",
           "value": 15.19
@@ -2100,14 +2015,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-08-13",
-          "value": 4.15
-        },
-        {
-          "date": "2026-08-14",
-          "value": 4.17
-        },
-        {
           "date": "2026-08-17",
           "value": 4.19
         },
@@ -2187,14 +2094,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-13",
-          "value": 4.63
-        },
-        {
-          "date": "2026-08-14",
-          "value": 4.68
-        },
         {
           "date": "2026-08-17",
           "value": 4.72
@@ -2276,14 +2175,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-13",
-          "value": 92.03
-        },
-        {
-          "date": "2026-08-14",
-          "value": 92.02
-        },
-        {
           "date": "2026-08-17",
           "value": 92.43
         },
@@ -2360,14 +2251,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-13",
-          "value": 119.1848
-        },
-        {
-          "date": "2026-08-14",
-          "value": 118.9028
-        },
-        {
           "date": "2026-08-17",
           "value": 118.814
         },
@@ -2435,14 +2318,6 @@
       "source": "ICE BofA via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-13",
-          "value": 2.71
-        },
-        {
-          "date": "2026-08-14",
-          "value": 2.67
-        },
         {
           "date": "2026-08-17",
           "value": 2.7
