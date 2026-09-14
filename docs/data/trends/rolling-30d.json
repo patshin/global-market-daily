@@ -4,8 +4,8 @@
   "window_start": "2026-08-15",
   "window_end": "2026-09-13",
   "coverage": {
-    "market_sessions": 23,
-    "native_daily_days": 11,
+    "market_sessions": 24,
+    "native_daily_days": 12,
     "reconstructed_days": 12,
     "verified_event_days": 3,
     "historical_series_start": "2025-07-21"
@@ -1408,6 +1408,68 @@
       ]
     },
     {
+      "date": "2026-09-12",
+      "source_mode": "native_daily",
+      "regime_code": "event_risk",
+      "regime_label": "Weekend Event Risk / Reinflation + Global Tightening",
+      "dominant_theme_id": "geopolitics_energy",
+      "signals": {
+        "growth": "↓",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "→",
+        "liquidity": "→",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
+          "title": "Saudi Arabia shuts East-West pipeline after drone attack, removing a 4–5 million bpd Hormuz bypass",
+          "evidence": "Saudi Arabia confirmed a precautionary shutdown of the 1,200-km East-West pipeline after a drone attack traced to Iraqi territory; Reuters said recent throughput was roughly 4–5 million bpd.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Pipeline outage → higher crude/freight premium → inflation expectations → front-end yields → pressure on duration and cyclicals.",
+          "confirmation": "The line remains shut or no credible restart is confirmed while Gulf and Red Sea flows stay impaired.",
+          "invalidation": "Saudi restores meaningful East-West throughput and at least one major shipping route improves without new attacks.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
+          "title": "U.S. August CPI rises 0.4% m/m and pushes September Fed hike odds to roughly 86–90%",
+          "evidence": "August U.S. CPI rose 0.4% m/m and 3.4% y/y; core CPI rose 0.3% m/m and 2.4% y/y, while gasoline rose 3.9% and rate markets strongly priced a September hike.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "CPI acceleration → higher Fed hike probability → higher 2Y/real yields → tighter dollar liquidity and valuation compression.",
+          "confirmation": "2Y yields hold near Friday levels and September hike pricing remains elevated despite any crude pullback.",
+          "invalidation": "Fed pricing retreats materially because energy risk reverses or incoming data weakens enough to dominate inflation.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
+          "title": "Perim seizure and record VLCC freight rates turn Middle East shipping risk into a two-chokepoint cost shock",
+          "evidence": "Perim at Bab el-Mandeb remained under Houthi control while Hormuz traffic was constrained; Gulf of Oman-to-China VLCC freight was near record levels around Worldscale 450.",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Shipping stress + record freight → higher delivered energy costs → weaker real income → higher inflation expectations and tighter policy.",
+          "confirmation": "VLCC rates stay near records, Hormuz transit remains depressed and Perim continues to constrain Bab el-Mandeb.",
+          "invalidation": "Shipping security improves, tanker availability rises and freight rates fall materially.",
+          "source_mode": "native_daily"
+        }
+      ]
+    },
+    {
       "date": "2026-09-13",
       "source_mode": "native_daily",
       "regime_code": "event_risk",
@@ -1537,7 +1599,7 @@
       "theme_id": "geopolitics_energy",
       "theme_label": "Geopolitics / Energy",
       "category": "geopolitics_energy",
-      "days_in_top3": 11,
+      "days_in_top3": 13,
       "best_rank": 1,
       "first_seen": "2026-09-02",
       "last_seen": "2026-09-13",
@@ -1565,6 +1627,22 @@
       ]
     },
     {
+      "theme_id": "fed_policy_path",
+      "theme_label": "Fed Policy Path",
+      "category": "central_banks_fiscal",
+      "days_in_top3": 7,
+      "best_rank": 1,
+      "first_seen": "2026-08-21",
+      "last_seen": "2026-09-12",
+      "latest_rank": null,
+      "state": "Persistent",
+      "latest_transmission": "CPI acceleration → higher Fed hike probability → higher 2Y/real yields → tighter dollar liquidity and valuation compression.",
+      "source_modes": [
+        "native_daily",
+        "objective_market_reconstruction"
+      ]
+    },
+    {
       "theme_id": "credit_conditions",
       "theme_label": "Credit Conditions",
       "category": "liquidity_credit",
@@ -1576,22 +1654,6 @@
       "state": "Resolved",
       "latest_transmission": "Credit spreads wider → funding conditions tighten",
       "source_modes": [
-        "objective_market_reconstruction"
-      ]
-    },
-    {
-      "theme_id": "fed_policy_path",
-      "theme_label": "Fed Policy Path",
-      "category": "central_banks_fiscal",
-      "days_in_top3": 6,
-      "best_rank": 1,
-      "first_seen": "2026-08-21",
-      "last_seen": "2026-09-08",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "BOJ加息/资金回流预期 → JPY升值 → carry去杠杆 → 日本与全球股票/波动率 → 跨境久期资金流。",
-      "source_modes": [
-        "native_daily",
         "objective_market_reconstruction"
       ]
     },
