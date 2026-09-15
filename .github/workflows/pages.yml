@@ -8,10 +8,9 @@ on:
       - "prompts/**"
       - "scripts/**"
       - "schemas/**"
-      - ".github/workflows/pages.yml"
-  # Keep this dispatch entry: trends-refresh.yml uses it as the reliable
-  # handoff after derived data settles because GITHUB_TOKEN pushes do not
-  # recursively start push-triggered workflows.
+      - ".github/workflows/**"
+  # Keep this dispatch entry: publication-promote.yml, trends-refresh.yml and
+  # the watchdog use it as the reliable non-recursive publication handoff.
   workflow_dispatch:
 
 permissions:
