@@ -3,9 +3,11 @@ name: Twice-Daily Publication Watchdog
 on:
   schedule:
     # GitHub cron is UTC. SGT is UTC+8 year-round.
-    # ChatGPT-native tasks may start late under platform queueing, so verify after a realistic grace window.
-    - cron: "15 2 * * *"   # 10:15 SGT — morning publication grace window
-    - cron: "30 11 * * *"  # 19:30 SGT — close publication grace window
+    # Two passes make recovery resilient to ChatGPT/GitHub queueing jitter.
+    - cron: "45 1 * * *"   # 09:45 SGT — first morning recovery pass
+    - cron: "10 2 * * *"   # 10:10 SGT — second morning recovery pass
+    - cron: "45 10 * * *"  # 18:45 SGT — first close recovery pass
+    - cron: "10 11 * * *"  # 19:10 SGT — second close recovery pass
   workflow_dispatch:
     inputs:
       cycle:
@@ -32,10 +34,10 @@ jobs:
   verify-morning:
     name: Verify 09:00 SGT morning publication
     if: >-
-      (github.event_name == 'schedule' && github.event.schedule == '15 2 * * *') ||
+      (github.event_name == 'schedule' && (github.event.schedule == '45 1 * * *' || github.event.schedule == '10 2 * * *')) ||
       (github.event_name == 'workflow_dispatch' && inputs.cycle == 'morning')
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
@@ -43,18 +45,23 @@ jobs:
           python-version: "3.12"
       - name: Validate automation definitions
         run: python scripts/validate_automation_contract.py .
+
       - name: Verify morning publication state in main
+        id: main_state
+        continue-on-error: true
         env:
           EXPECTED_DATE: ${{ inputs.date }}
         run: |
           args=(--root . --cycle morning)
           if [ -n "${EXPECTED_DATE:-}" ]; then args+=(--date "$EXPECTED_DATE"); fi
           python scripts/verify_scheduled_publication.py "${args[@]}"
+
       - name: Verify morning is live on public Pages
+        id: public_state
+        if: steps.main_state.outcome == 'success'
+        continue-on-error: true
         env:
           EXPECTED_DATE: ${{ inputs.date }}
-          GH_TOKEN: ${{ github.token }}
-          REPO: ${{ github.repository }}
         shell: bash
         run: |
           set -euo pipefail
@@ -74,17 +81,35 @@ jobs:
             fi
             sleep 5
           done
-          echo "::error::Public Pages did not catch up to ${expected} morning; dispatching recovery chain"
+          exit 1
+
+      - name: Auto-recover stale public morning from current main
+        if: steps.main_state.outcome == 'success' && steps.public_state.outcome != 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "::warning::Morning exists in main but Pages is stale. Dispatching direct Pages recovery and independent 30D retry."
+          gh workflow run pages.yml --repo "$REPO" --ref main
           gh workflow run trends-refresh.yml --repo "$REPO" --ref main
+          echo "RECOVERY DISPATCHED: pages.yml + trends-refresh.yml"
+
+      - name: Fail visibly if morning never reached main
+        if: steps.main_state.outcome != 'success'
+        shell: bash
+        run: |
+          echo "::error::Expected morning publication is not present in main. GitHub recovery cannot synthesize missing research; the ChatGPT publisher/PR handoff requires intervention."
           exit 1
 
   verify-close:
     name: Verify 18:00 SGT close publication
     if: >-
-      (github.event_name == 'schedule' && github.event.schedule == '30 11 * * *') ||
+      (github.event_name == 'schedule' && (github.event.schedule == '45 10 * * *' || github.event.schedule == '10 11 * * *')) ||
       (github.event_name == 'workflow_dispatch' && inputs.cycle == 'close')
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
@@ -92,18 +117,23 @@ jobs:
           python-version: "3.12"
       - name: Validate automation definitions
         run: python scripts/validate_automation_contract.py .
+
       - name: Verify close publication state in main
+        id: main_state
+        continue-on-error: true
         env:
           EXPECTED_DATE: ${{ inputs.date }}
         run: |
           args=(--root . --cycle close)
           if [ -n "${EXPECTED_DATE:-}" ]; then args+=(--date "$EXPECTED_DATE"); fi
           python scripts/verify_scheduled_publication.py "${args[@]}"
+
       - name: Verify close is live on public Pages
+        id: public_state
+        if: steps.main_state.outcome == 'success'
+        continue-on-error: true
         env:
           EXPECTED_DATE: ${{ inputs.date }}
-          GH_TOKEN: ${{ github.token }}
-          REPO: ${{ github.repository }}
         shell: bash
         run: |
           set -euo pipefail
@@ -124,6 +154,24 @@ jobs:
             fi
             sleep 5
           done
-          echo "::error::Public Pages did not catch up to ${expected} close; dispatching recovery chain"
+          exit 1
+
+      - name: Auto-recover stale public close from current main
+        if: steps.main_state.outcome == 'success' && steps.public_state.outcome != 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "::warning::Close exists in main but Pages is stale. Dispatching direct Pages recovery and independent 30D retry."
+          gh workflow run pages.yml --repo "$REPO" --ref main
           gh workflow run trends-refresh.yml --repo "$REPO" --ref main
+          echo "RECOVERY DISPATCHED: pages.yml + trends-refresh.yml"
+
+      - name: Fail visibly if close never reached main
+        if: steps.main_state.outcome != 'success'
+        shell: bash
+        run: |
+          echo "::error::Expected close publication is not present in main. GitHub recovery cannot synthesize missing research; the ChatGPT publisher/PR handoff requires intervention."
           exit 1
