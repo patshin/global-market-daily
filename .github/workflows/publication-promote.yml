@@ -54,14 +54,26 @@ jobs:
           test -n "$merge_sha" || { echo 'Merged PR has no merge commit SHA'; exit 1; }
           echo "PROMOTED PR #$PR_NUMBER ($EXPECTED_BRANCH) -> $merge_sha"
 
-      - name: Dispatch post-merge 30D refresh
+      - name: Dispatch immediate Pages deployment
         env:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
         shell: bash
         run: |
           set -euo pipefail
-          # GITHUB_TOKEN-authored merges do not emit downstream push workflows.
-          # workflow_dispatch is the supported non-recursive handoff.
+          # Publication availability is independent from 30D derivation. Deploy
+          # the validated report immediately using the last-known-good 30D data.
+          gh workflow run pages.yml --repo "$REPO" --ref main
+          echo "DISPATCHED Deploy Global Market Daily on main"
+
+      - name: Dispatch post-merge 30D refresh independently
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          # 30D is a derived product. Its failure must be visible but must never
+          # block the newly validated daily report from reaching Pages.
           gh workflow run trends-refresh.yml --repo "$REPO" --ref main
           echo "DISPATCHED Refresh 30D Market Lens on main"
