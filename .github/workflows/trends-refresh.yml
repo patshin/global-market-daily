@@ -8,6 +8,8 @@ on:
       - "docs/data/latest.json"
       - "scripts/build_market_lens.py"
       - "scripts/validate_market_lens.py"
+      - "scripts/validate_market_lens_freshness.py"
+      - "scripts/promote_morning_fallback.py"
       - ".github/workflows/trends-refresh.yml"
   schedule:
     - cron: "35 23 * * 0-4"
@@ -38,11 +40,13 @@ jobs:
         continue-on-error: true
         run: python scripts/build_market_lens.py
 
-      - name: Validate 30D lens
+      - name: Validate 30D lens and freshness
         id: validate_lens
         if: steps.build_lens.outcome == 'success'
         continue-on-error: true
-        run: python scripts/validate_market_lens.py
+        run: |
+          python scripts/validate_market_lens.py
+          python scripts/validate_market_lens_freshness.py
 
       - name: Commit derived trend data when valid and changed
         if: steps.build_lens.outcome == 'success' && steps.validate_lens.outcome == 'success'

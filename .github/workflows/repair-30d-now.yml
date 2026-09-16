@@ -1,0 +1,82 @@
+name: Repair stale 30D lens once
+
+on:
+  push:
+    branches:
+      - repair/market-lens-fallback-staleness
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  repair:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Promote Sep14 and Sep15 Morning snapshots as fallback finals
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python scripts/promote_morning_fallback.py --through-date 2026-09-15 --strict
+
+      - name: Rebuild 30D lens from repaired formal history
+        run: python scripts/build_market_lens.py
+
+      - name: Run deterministic publication and lens gates
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          python scripts/validate_publish_v2.py --root .
+          python scripts/validate_live_contract.py --root .
+          python scripts/validate_archive_live_contract.py --root .
+          python scripts/validate_automation_contract.py .
+          python scripts/validate_editorial_ui.py .
+          python scripts/validate_frontend.py --root .
+          python scripts/validate_market_lens.py
+          python scripts/validate_market_lens_freshness.py
+          node --check docs/assets/app.js
+          node --check docs/assets/publication-compat.js
+          node --check docs/assets/editorial-v2.js
+          node --check docs/assets/p0.js
+          node --check docs/assets/trends.js
+
+      - name: Assert latest remains Sep16 Morning Provisional
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          latest=json.loads(Path('docs/data/latest.json').read_text())
+          assert latest['date']=='2026-09-16', latest
+          assert latest.get('edition_status')=='provisional', latest
+          print('latest pointer preserved:', latest['date'], latest.get('edition_status'))
+          PY
+          git diff --exit-code HEAD -- docs/data/latest.json
+
+      - name: Commit repaired canonical fallback records and derived lens
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/repair-30d-now.yml
+          git add \
+            docs/data/daily/2026-09-14.json \
+            docs/data/daily/2026-09-15.json \
+            docs/reports/2026/09/2026-09-14.md \
+            docs/reports/2026/09/2026-09-15.md \
+            docs/data/archive.json \
+            docs/data/trends/market-history.json \
+            docs/data/trends/rolling-30d.json \
+            docs/data/trends/theme-registry.json
+          git commit -m "repair: promote missing closes and refresh 30D lens"
+          git push origin HEAD:${GITHUB_REF_NAME}
