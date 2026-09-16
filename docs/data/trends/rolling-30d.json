@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-09-13",
-  "window_start": "2026-08-15",
-  "window_end": "2026-09-13",
+  "as_of": "2026-09-15",
+  "window_start": "2026-08-17",
+  "window_end": "2026-09-15",
   "coverage": {
-    "market_sessions": 24,
-    "native_daily_days": 12,
+    "market_sessions": 26,
+    "native_daily_days": 14,
     "reconstructed_days": 12,
     "verified_event_days": 3,
-    "historical_series_start": "2025-07-21"
+    "historical_series_start": "2025-07-23"
   },
   "methodology": {
     "native_daily": "Original published GMD daily assessment.",
@@ -1530,6 +1530,130 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-09-14",
+      "source_mode": "native_daily",
+      "regime_code": "neutral",
+      "regime_label": "Risk-off / reinflation plus dual-central-bank tightening",
+      "dominant_theme_id": "geopolitics_energy",
+      "signals": {
+        "growth": "↓",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "→",
+        "liquidity": "↓",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
+          "title": "Oman postpones Monday Hormuz talks as Brent jumps back above $107 with Saudi's East–West pipeline still offline",
+          "evidence": "Oman's foreign minister confirmed that the Gulf states–Iran meeting planned for Monday to discuss the Strait of Hormuz was postponed without a new date. At the same time, Saudi Arabia had not announced a restart of the East–West pipeline, which Reuters said recently rerouted about 4 million barrels per day, while Brent rose 2.6% to $107.36 and WTI 2.4% to $102.48 in Asian trading.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Diplomacy setback + impaired bypass capacity → crude/freight premium → inflation expectations → Fed/term premium → global yields and equity multiples.",
+          "confirmation": "Brent holding above $107 through Europe/U.S. trading, no verified Saudi pipeline restart and further shipping disruption would confirm the supply premium remains binding.",
+          "invalidation": "A verified partial/full East–West pipeline restart, a rescheduled Hormuz framework with broad participation and a sustained crude reversal below Friday levels would weaken the immediate thesis.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "Monday Asia delivers the first broad risk-off confirmation: Nikkei -1.7%, Korea -3.3% and Nasdaq futures -1.1%",
+          "evidence": "The Monday session translated the weekend energy shock into equities: Reuters reported Japan's Nikkei down 1.7%, South Korea's benchmark down 3.3%, S&P 500 futures down 0.5% and Nasdaq futures down 1.1%. The U.S. 10-year yield remained close to 5% at 4.967%, limiting the valuation cushion for growth stocks.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Higher oil + high sovereign yields → weaker Asia equities and U.S. futures → wider volatility/risk premium → tighter financial conditions.",
+          "confirmation": "A weak U.S. cash open with VIX higher and growth/semiconductor underperformance while crude stays firm would confirm broadening stress.",
+          "invalidation": "A rapid U.S. equity recovery, falling VIX and oil fading despite unchanged supply facts would suggest the Asia move was primarily opening-gap risk.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "Fed and BOJ hike probabilities converge in the same week while yen strength keeps the carry-unwind channel active",
+          "evidence": "Markets price roughly an 86% chance of a 25bp Fed hike this week and about a 76% chance of a 25bp BOJ hike to 1.25%. USDJPY traded near 153.49 on Monday after the yen's sharp September rally, and CFTC data showed speculators flipped net long yen for the first time since February.",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Hot inflation + BOJ normalization → higher front-end rates / stronger yen → carry reduction and higher discount rates → pressure on high-beta and long-duration assets.",
+          "confirmation": "Fed/BOJ hike probabilities staying high, USDJPY testing or breaking the 152.89 recent low and front-end yields holding elevated would confirm the channel.",
+          "invalidation": "Materially softer U.S. data, a Fed pause repricing or BOJ guidance that removes follow-on tightening would reduce the dual-policy shock.",
+          "source_mode": "native_daily"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-15",
+      "source_mode": "native_daily",
+      "regime_code": "neutral",
+      "regime_label": "Risk-off / reinflation + AI de-rating",
+      "dominant_theme_id": "ai_earnings",
+      "signals": {
+        "growth": "↓",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "↓",
+        "liquidity": "↓",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "Saudi East–West pipeline remains offline as fresh Houthi attacks keep Brent above $106",
+          "evidence": "Reuters reported Brent at $106.93 and WTI at $102.65 in Tuesday Asian trading while Saudi Arabia's East–West pipeline remained offline after attacks; the route had recently rerouted roughly 4 million barrels per day, about 4% of global supply.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Pipeline outage + constrained Hormuz traffic → crude/freight premium → inflation expectations → central-bank tightening → higher yields and lower equity multiples.",
+          "confirmation": "Brent staying above $106 through Europe/U.S. trading, no verified pipeline restart and additional shipping or infrastructure attacks would confirm a persistent physical premium.",
+          "invalidation": "A verified East–West restart, materially improved Hormuz transit and a sustained crude reversal toward pre-weekend levels would weaken the supply-shock thesis.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
+          "title": "Fed begins its September meeting with a 25bp hike now the dominant call and the U.S. 10Y testing 5%",
+          "evidence": "The Federal Reserve's September 15-16 meeting begins Tuesday. Reuters' latest economist poll has a 25bp hike to 3.75%-4.00% as the majority call, while the 10-year Treasury yield crossed 5% on Monday for the first time since 2023.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Fed decision + projections → front-end path/term premium → U.S. dollar and 10Y → global funding costs → equity/credit valuations.",
+          "confirmation": "A 25bp hike accompanied by a higher projected path, firm inflation language and 10Y yields holding near or above 5% would confirm sustained tightening.",
+          "invalidation": "A hold or a hike paired with clearly limited follow-through, falling long-end yields and a softer dollar would weaken the tightening-extension thesis.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "china_industrial_policy",
+          "theme_label": "China Industrial Policy",
+          "category": "china_trade_policy",
+          "title": "China August activity data due at 10:00 SGT after bank lending rebounded to only 60 billion yuan",
+          "evidence": "China is due to release August industrial output, retail sales and fixed-asset investment shortly after this research cutoff. A current economic calendar points to roughly 4.8% industrial growth, 0.8% retail growth and a deeper year-to-date investment contraction, after August new bank loans reached only 60 billion yuan versus a 400 billion yuan Reuters-polled expectation.",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "China activity surprise → CNH/China equities → copper and regional cyclicals → global growth expectations → commodity and risk-asset breadth.",
+          "confirmation": "Broad weakness across industrial output, retail sales and investment alongside soft credit would confirm domestic-demand fragility.",
+          "invalidation": "A broad-based upside surprise, especially in retail and private investment proxies, would challenge the weak-domestic-demand narrative.",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
@@ -1592,6 +1716,12 @@
       "from": "Risk-Off",
       "to": "Event Risk",
       "dominant_theme_id": "volatility_event_risk"
+    },
+    {
+      "date": "2026-09-14",
+      "from": "Weekend Event Risk / Reinflation + Tight Financial Conditions",
+      "to": "Risk-off / reinflation plus dual-central-bank tightening",
+      "dominant_theme_id": "geopolitics_energy"
     }
   ],
   "persistent_themes": [
@@ -1599,13 +1729,13 @@
       "theme_id": "geopolitics_energy",
       "theme_label": "Geopolitics / Energy",
       "category": "geopolitics_energy",
-      "days_in_top3": 13,
+      "days_in_top3": 14,
       "best_rank": 1,
       "first_seen": "2026-09-02",
-      "last_seen": "2026-09-13",
-      "latest_rank": 1,
+      "last_seen": "2026-09-14",
+      "latest_rank": null,
       "state": "Persistent",
-      "latest_transmission": "Dual-route physical constraint → crude/freight premium → inflation expectations → Fed and term premium → global yields and equity multiples.",
+      "latest_transmission": "Diplomacy setback + impaired bypass capacity → crude/freight premium → inflation expectations → Fed/term premium → global yields and equity multiples.",
       "source_modes": [
         "native_daily"
       ]
@@ -1614,13 +1744,13 @@
       "theme_id": "global_duration",
       "theme_label": "Global Duration / Term Premium",
       "category": "inflation_rates",
-      "days_in_top3": 9,
+      "days_in_top3": 10,
       "best_rank": 2,
       "first_seen": "2026-08-17",
-      "last_seen": "2026-09-11",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "CPI surprise → Fed September pricing → UST 2Y/10Y → DXY → Nasdaq/Russell and global duration assets.",
+      "last_seen": "2026-09-15",
+      "latest_rank": 2,
+      "state": "Escalating",
+      "latest_transmission": "Fed decision + projections → front-end path/term premium → U.S. dollar and 10Y → global funding costs → equity/credit valuations.",
       "source_modes": [
         "native_daily",
         "objective_market_reconstruction"
@@ -1658,6 +1788,36 @@
       ]
     },
     {
+      "theme_id": "ai_earnings",
+      "theme_label": "AI / Earnings",
+      "category": "earnings_ai_semis",
+      "days_in_top3": 6,
+      "best_rank": 1,
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-15",
+      "latest_rank": 1,
+      "state": "Escalating",
+      "latest_transmission": "Pipeline outage + constrained Hormuz traffic → crude/freight premium → inflation expectations → central-bank tightening → higher yields and lower equity multiples.",
+      "source_modes": [
+        "native_daily"
+      ]
+    },
+    {
+      "theme_id": "us_china_trade_controls",
+      "theme_label": "U.S.–China Trade Controls",
+      "category": "china_trade_policy",
+      "days_in_top3": 6,
+      "best_rank": 1,
+      "first_seen": "2026-09-08",
+      "last_seen": "2026-09-14",
+      "latest_rank": null,
+      "state": "Persistent",
+      "latest_transmission": "Hot inflation + BOJ normalization → higher front-end rates / stronger yen → carry reduction and higher discount rates → pressure on high-beta and long-duration assets.",
+      "source_modes": [
+        "native_daily"
+      ]
+    },
+    {
       "theme_id": "volatility_event_risk",
       "theme_label": "Volatility / Event Risk",
       "category": "market_structure",
@@ -1670,21 +1830,6 @@
       "latest_transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
       "source_modes": [
         "objective_market_reconstruction"
-      ]
-    },
-    {
-      "theme_id": "us_china_trade_controls",
-      "theme_label": "U.S.–China Trade Controls",
-      "category": "china_trade_policy",
-      "days_in_top3": 5,
-      "best_rank": 1,
-      "first_seen": "2026-09-08",
-      "last_seen": "2026-09-13",
-      "latest_rank": 2,
-      "state": "Escalating",
-      "latest_transmission": "Pipeline attack → Saudi equity/credit risk premium → regional funding confidence → energy and global risk sentiment into Monday futures.",
-      "source_modes": [
-        "native_daily"
       ]
     },
     {
@@ -1718,6 +1863,22 @@
       ]
     },
     {
+      "theme_id": "china_industrial_policy",
+      "theme_label": "China Industrial Policy",
+      "category": "china_trade_policy",
+      "days_in_top3": 4,
+      "best_rank": 1,
+      "first_seen": "2026-08-20",
+      "last_seen": "2026-09-15",
+      "latest_rank": 3,
+      "state": "Persistent",
+      "latest_transmission": "China activity surprise → CNH/China equities → copper and regional cyclicals → global growth expectations → commodity and risk-asset breadth.",
+      "source_modes": [
+        "native_daily",
+        "verified_event"
+      ]
+    },
+    {
       "theme_id": "energy_inflation",
       "theme_label": "Energy Inflation",
       "category": "geopolitics_energy",
@@ -1726,26 +1887,11 @@
       "first_seen": "2026-08-25",
       "last_seen": "2026-09-11",
       "latest_rank": null,
-      "state": "Escalating",
+      "state": "Persistent",
       "latest_transmission": "Gulf supply loss → inventories → crude/diesel → inflation expectations → central-bank path → global yields and equity multiples.",
       "source_modes": [
         "native_daily",
         "objective_market_reconstruction"
-      ]
-    },
-    {
-      "theme_id": "ai_earnings",
-      "theme_label": "AI / Earnings",
-      "category": "earnings_ai_semis",
-      "days_in_top3": 4,
-      "best_rank": 2,
-      "first_seen": "2026-09-02",
-      "last_seen": "2026-09-10",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "BOJ normalization → JPY funding cost / repatriation → carry unwind → global leverage reduction → equities, credit and duration volatility.",
-      "source_modes": [
-        "native_daily"
       ]
     },
     {
@@ -1756,66 +1902,39 @@
       "best_rank": 2,
       "first_seen": "2026-09-06",
       "last_seen": "2026-09-13",
-      "latest_rank": 3,
+      "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "Yen appreciation / BOJ normalization → higher funding cost → carry reduction → cross-asset deleveraging → tighter financial conditions.",
       "source_modes": [
         "native_daily"
       ]
-    },
-    {
-      "theme_id": "china_industrial_policy",
-      "theme_label": "China Industrial Policy",
-      "category": "china_trade_policy",
-      "days_in_top3": 3,
-      "best_rank": 1,
-      "first_seen": "2026-08-20",
-      "last_seen": "2026-09-03",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "产业政策/长期资本 → SME融资可得性↑ → 新兴产业研发与扩产↑ → 机器人/AI/新材料等供应链资本开支↑",
-      "source_modes": [
-        "native_daily",
-        "verified_event"
-      ]
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "geopolitics_energy",
-    "theme_label": "Geopolitics / Energy",
-    "as_of": "2026-09-13",
-    "confirming": [
-      {
-        "series_id": "DGS10",
-        "label": "US 10Y Treasury Yield",
-        "change": "+1bp"
-      }
-    ],
+    "theme_id": "ai_earnings",
+    "theme_label": "AI / Earnings",
+    "as_of": "2026-09-15",
+    "confirming": [],
     "diverging": [
-      {
-        "series_id": "DCOILBRENTEU",
-        "label": "Brent",
-        "change": "-2.8%"
-      },
       {
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
-        "change": "+0.96%"
+        "change": "-0.6%"
       },
       {
-        "series_id": "DTWEXBGS",
-        "label": "Broad Trade-Weighted USD",
-        "change": "-0.02%"
-      }
-    ],
-    "unavailable": [
+        "series_id": "SP500",
+        "label": "S&P 500",
+        "change": "-0.5%"
+      },
       {
         "series_id": "VIXCLS",
-        "label": "VIX"
+        "label": "VIX",
+        "change": "+8.5%"
       }
     ],
-    "interpretation_note": "1 项资产确认当前主线，3 项出现背离。",
-    "what_would_flip_it": "A verified Saudi pipeline restart plus stable Hormuz flows and a rapidly fading crude gap would weaken the immediate physical-supply thesis."
+    "unavailable": [],
+    "interpretation_note": "0 项资产确认当前主线，3 项出现背离。",
+    "what_would_flip_it": "A verified East–West restart, materially improved Hormuz transit and a sustained crude reversal toward pre-weekend levels would weaken the supply-shock thesis."
   },
   "series": {
     "NASDAQCOM": {
@@ -1899,6 +2018,14 @@
         {
           "date": "2026-09-11",
           "value": 26333.04
+        },
+        {
+          "date": "2026-09-14",
+          "value": 26186.41
+        },
+        {
+          "date": "2026-09-15",
+          "value": 25981.57
         }
       ]
     },
@@ -1983,6 +2110,14 @@
         {
           "date": "2026-09-11",
           "value": 7656.98
+        },
+        {
+          "date": "2026-09-14",
+          "value": 7619.98
+        },
+        {
+          "date": "2026-09-15",
+          "value": 7585.73
         }
       ]
     },
@@ -2067,6 +2202,14 @@
         {
           "date": "2026-09-10",
           "value": 17.84
+        },
+        {
+          "date": "2026-09-11",
+          "value": 15.84
+        },
+        {
+          "date": "2026-09-14",
+          "value": 17.1
         }
       ]
     },
@@ -2147,6 +2290,14 @@
         {
           "date": "2026-09-10",
           "value": 4.56
+        },
+        {
+          "date": "2026-09-11",
+          "value": 4.63
+        },
+        {
+          "date": "2026-09-14",
+          "value": 4.65
         }
       ]
     },
@@ -2227,6 +2378,14 @@
         {
           "date": "2026-09-10",
           "value": 4.95
+        },
+        {
+          "date": "2026-09-11",
+          "value": 4.96
+        },
+        {
+          "date": "2026-09-14",
+          "value": 4.97
         }
       ]
     },
@@ -2371,6 +2530,22 @@
         {
           "date": "2026-09-04",
           "value": 118.0732
+        },
+        {
+          "date": "2026-09-08",
+          "value": 117.9127
+        },
+        {
+          "date": "2026-09-09",
+          "value": 117.8834
+        },
+        {
+          "date": "2026-09-10",
+          "value": 118.0787
+        },
+        {
+          "date": "2026-09-11",
+          "value": 118.2126
         }
       ]
     },
@@ -2455,6 +2630,14 @@
         {
           "date": "2026-09-10",
           "value": 2.7
+        },
+        {
+          "date": "2026-09-11",
+          "value": 2.65
+        },
+        {
+          "date": "2026-09-14",
+          "value": 2.71
         }
       ]
     }
