@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-09-15",
-  "window_start": "2026-08-17",
-  "window_end": "2026-09-15",
+  "as_of": "2026-09-16",
+  "window_start": "2026-08-18",
+  "window_end": "2026-09-16",
   "coverage": {
     "market_sessions": 26,
-    "native_daily_days": 14,
-    "reconstructed_days": 12,
+    "native_daily_days": 15,
+    "reconstructed_days": 11,
     "verified_event_days": 3,
-    "historical_series_start": "2025-07-23"
+    "historical_series_start": "2025-07-24"
   },
   "methodology": {
     "native_daily": "Original published GMD daily assessment.",
@@ -85,62 +85,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-08-17",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "risk_off",
-      "regime_label": "Risk-Off",
-      "dominant_theme_id": "volatility_event_risk",
-      "signals": {
-        "growth": "↓",
-        "inflation": "→",
-        "rates": "↑",
-        "earnings": "↑",
-        "liquidity": "↓",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "theme_id": "volatility_event_risk",
-          "theme_label": "Volatility / Event Risk",
-          "category": "market_structure",
-          "title": "VIX daily move +6.60%",
-          "evidence": "VIXCLS +6.60%",
-          "market_bias": "risk_off",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
-          "theme_id": "credit_conditions",
-          "theme_label": "Credit Conditions",
-          "category": "liquidity_credit",
-          "title": "HY OAS moves +3.0bp",
-          "evidence": "BAMLH0A0HYM2 +3.0bp",
-          "market_bias": "risk_off",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Credit spreads wider → funding conditions tighten",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "US 10Y moves +4.0bp",
-          "evidence": "DGS10 +4.0bp",
-          "market_bias": "risk_off",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "10Y ↑ → discount rate ↑ → long-duration equity valuation ↓",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ]
-    },
     {
       "date": "2026-08-18",
       "source_mode": "objective_market_reconstruction",
@@ -1654,6 +1598,68 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-09-16",
+      "source_mode": "native_daily",
+      "regime_code": "neutral",
+      "regime_label": "Risk-off / reinflation",
+      "dominant_theme_id": "global_duration",
+      "signals": {
+        "growth": "→",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "↓",
+        "liquidity": "↓",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
+          "title": "Fed decision at 02:00 SGT tests whether a 5% U.S. 10Y becomes a durable valuation ceiling",
+          "evidence": "The FOMC decision lands today; Reuters' poll has 85% of economists expecting +25bp to 3.75%-4.00%, while Tuesday markets priced about 94.5% odds and the 10Y ended near 5.004%.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Fed path → yields/dollar → funding costs → equity, credit and duration valuations.",
+          "confirmation": "Hawkish language with the 10Y holding around or above 5% confirms tighter conditions.",
+          "invalidation": "Limited follow-through plus falling yields and a softer dollar weakens the sustained-tightening thesis.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "Saudi route risk stays structural even as a surprise U.S. inventory build pushes Brent to $107.82",
+          "evidence": "Brent fell 0.86% to $107.82 and WTI 0.92% to $104.86 after API data showed crude inventories +7.1m barrels versus a 1.6m draw expected; Yanbu loadings remain suspended.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Route risk vs inventories → crude/diesel → inflation expectations → rates → risk-asset discount rates.",
+          "confirmation": "Brent staying elevated with continued Yanbu suspension or new attacks confirms a durable premium.",
+          "invalidation": "Verified route restart plus sustained crude declines materially weakens the supply-shock thesis.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "Japan's 28% import jump and 19.3% export growth sharpen the BOJ trade-off before September 17–18",
+          "evidence": "Japan's August imports rose 28.0% y/y versus 26.3% expected, exports rose 19.3% versus 18.2%, and the trade deficit reached ¥1.106tn as expensive oil lifted import costs.",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Oil import bill + BOJ path → JGB/yen → carry funding → Asian equities and global leveraged growth.",
+          "confirmation": "A BOJ hike with firmer JGB yields and a stronger yen confirms tighter funding conditions.",
+          "invalidation": "A dovish hold with stable oil import costs and a weaker yen reduces the carry-unwind risk.",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
@@ -1745,12 +1751,12 @@
       "theme_label": "Global Duration / Term Premium",
       "category": "inflation_rates",
       "days_in_top3": 10,
-      "best_rank": 2,
-      "first_seen": "2026-08-17",
-      "last_seen": "2026-09-15",
-      "latest_rank": 2,
+      "best_rank": 1,
+      "first_seen": "2026-08-19",
+      "last_seen": "2026-09-16",
+      "latest_rank": 1,
       "state": "Escalating",
-      "latest_transmission": "Fed decision + projections → front-end path/term premium → U.S. dollar and 10Y → global funding costs → equity/credit valuations.",
+      "latest_transmission": "Fed path → yields/dollar → funding costs → equity, credit and duration valuations.",
       "source_modes": [
         "native_daily",
         "objective_market_reconstruction"
@@ -1773,31 +1779,16 @@
       ]
     },
     {
-      "theme_id": "credit_conditions",
-      "theme_label": "Credit Conditions",
-      "category": "liquidity_credit",
-      "days_in_top3": 6,
-      "best_rank": 1,
-      "first_seen": "2026-08-17",
-      "last_seen": "2026-08-31",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Credit spreads wider → funding conditions tighten",
-      "source_modes": [
-        "objective_market_reconstruction"
-      ]
-    },
-    {
       "theme_id": "ai_earnings",
       "theme_label": "AI / Earnings",
       "category": "earnings_ai_semis",
-      "days_in_top3": 6,
+      "days_in_top3": 7,
       "best_rank": 1,
       "first_seen": "2026-09-02",
-      "last_seen": "2026-09-15",
-      "latest_rank": 1,
+      "last_seen": "2026-09-16",
+      "latest_rank": 2,
       "state": "Escalating",
-      "latest_transmission": "Pipeline outage + constrained Hormuz traffic → crude/freight premium → inflation expectations → central-bank tightening → higher yields and lower equity multiples.",
+      "latest_transmission": "Route risk vs inventories → crude/diesel → inflation expectations → rates → risk-asset discount rates.",
       "source_modes": [
         "native_daily"
       ]
@@ -1806,28 +1797,28 @@
       "theme_id": "us_china_trade_controls",
       "theme_label": "U.S.–China Trade Controls",
       "category": "china_trade_policy",
-      "days_in_top3": 6,
+      "days_in_top3": 7,
       "best_rank": 1,
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-14",
-      "latest_rank": null,
+      "last_seen": "2026-09-16",
+      "latest_rank": 3,
       "state": "Persistent",
-      "latest_transmission": "Hot inflation + BOJ normalization → higher front-end rates / stronger yen → carry reduction and higher discount rates → pressure on high-beta and long-duration assets.",
+      "latest_transmission": "Oil import bill + BOJ path → JGB/yen → carry funding → Asian equities and global leveraged growth.",
       "source_modes": [
         "native_daily"
       ]
     },
     {
-      "theme_id": "volatility_event_risk",
-      "theme_label": "Volatility / Event Risk",
-      "category": "market_structure",
+      "theme_id": "credit_conditions",
+      "theme_label": "Credit Conditions",
+      "category": "liquidity_credit",
       "days_in_top3": 5,
       "best_rank": 1,
-      "first_seen": "2026-08-17",
-      "last_seen": "2026-09-01",
+      "first_seen": "2026-08-18",
+      "last_seen": "2026-08-31",
       "latest_rank": null,
       "state": "Resolved",
-      "latest_transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
+      "latest_transmission": "Credit spreads wider → funding conditions tighten",
       "source_modes": [
         "objective_market_reconstruction"
       ]
@@ -1863,6 +1854,21 @@
       ]
     },
     {
+      "theme_id": "volatility_event_risk",
+      "theme_label": "Volatility / Event Risk",
+      "category": "market_structure",
+      "days_in_top3": 4,
+      "best_rank": 1,
+      "first_seen": "2026-08-19",
+      "last_seen": "2026-09-01",
+      "latest_rank": null,
+      "state": "Resolved",
+      "latest_transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
+      "source_modes": [
+        "objective_market_reconstruction"
+      ]
+    },
+    {
       "theme_id": "china_industrial_policy",
       "theme_label": "China Industrial Policy",
       "category": "china_trade_policy",
@@ -1870,7 +1876,7 @@
       "best_rank": 1,
       "first_seen": "2026-08-20",
       "last_seen": "2026-09-15",
-      "latest_rank": 3,
+      "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "China activity surprise → CNH/China equities → copper and regional cyclicals → global growth expectations → commodity and risk-asset breadth.",
       "source_modes": [
@@ -1911,30 +1917,34 @@
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "ai_earnings",
-    "theme_label": "AI / Earnings",
-    "as_of": "2026-09-15",
-    "confirming": [],
-    "diverging": [
+    "theme_id": "global_duration",
+    "theme_label": "Global Duration / Term Premium",
+    "as_of": "2026-09-16",
+    "confirming": [
+      {
+        "series_id": "DGS10",
+        "label": "US 10Y Treasury Yield",
+        "change": "+4.3bp"
+      },
       {
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
-        "change": "-0.6%"
-      },
+        "change": "-0.78%"
+      }
+    ],
+    "diverging": [],
+    "unavailable": [
       {
-        "series_id": "SP500",
-        "label": "S&P 500",
-        "change": "-0.5%"
+        "series_id": "DGS2",
+        "label": "US 2Y Treasury Yield"
       },
       {
         "series_id": "VIXCLS",
-        "label": "VIX",
-        "change": "+8.5%"
+        "label": "VIX"
       }
     ],
-    "unavailable": [],
-    "interpretation_note": "0 项资产确认当前主线，3 项出现背离。",
-    "what_would_flip_it": "A verified East–West restart, materially improved Hormuz transit and a sustained crude reversal toward pre-weekend levels would weaken the supply-shock thesis."
+    "interpretation_note": "2 项资产确认当前主线，0 项出现背离。",
+    "what_would_flip_it": "Limited follow-through plus falling yields and a softer dollar weakens the sustained-tightening thesis."
   },
   "series": {
     "NASDAQCOM": {
@@ -1943,10 +1953,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-17",
-          "value": 26644.91
-        },
         {
           "date": "2026-08-18",
           "value": 26289.71
@@ -2036,10 +2042,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-17",
-          "value": 7745.06
-        },
-        {
           "date": "2026-08-18",
           "value": 7691.76
         },
@@ -2118,6 +2120,10 @@
         {
           "date": "2026-09-15",
           "value": 7585.73
+        },
+        {
+          "date": "2026-09-16",
+          "value": 7551.81
         }
       ]
     },
@@ -2127,10 +2133,6 @@
       "source": "CBOE via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-17",
-          "value": 15.19
-        },
         {
           "date": "2026-08-18",
           "value": 15.84
@@ -2210,6 +2212,10 @@
         {
           "date": "2026-09-14",
           "value": 17.1
+        },
+        {
+          "date": "2026-09-15",
+          "value": 17.2
         }
       ]
     },
@@ -2219,10 +2225,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-17",
-          "value": 4.19
-        },
         {
           "date": "2026-08-18",
           "value": 4.19
@@ -2298,6 +2300,10 @@
         {
           "date": "2026-09-14",
           "value": 4.65
+        },
+        {
+          "date": "2026-09-15",
+          "value": 4.67
         }
       ]
     },
@@ -2307,10 +2313,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-17",
-          "value": 4.72
-        },
         {
           "date": "2026-08-18",
           "value": 4.71
@@ -2386,6 +2388,10 @@
         {
           "date": "2026-09-14",
           "value": 4.97
+        },
+        {
+          "date": "2026-09-15",
+          "value": 5.0
         }
       ]
     },
@@ -2395,10 +2401,6 @@
       "source": "U.S. EIA via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-17",
-          "value": 92.43
-        },
         {
           "date": "2026-08-18",
           "value": 95.29
@@ -2462,6 +2464,22 @@
         {
           "date": "2026-09-09",
           "value": 109.51
+        },
+        {
+          "date": "2026-09-10",
+          "value": 120.98
+        },
+        {
+          "date": "2026-09-11",
+          "value": 118.06
+        },
+        {
+          "date": "2026-09-14",
+          "value": 121.25
+        },
+        {
+          "date": "2026-09-15",
+          "value": 130.8
         }
       ]
     },
@@ -2471,10 +2489,6 @@
       "source": "Federal Reserve via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-17",
-          "value": 118.814
-        },
         {
           "date": "2026-08-18",
           "value": 118.9831
@@ -2556,10 +2570,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-08-17",
-          "value": 2.7
-        },
-        {
           "date": "2026-08-18",
           "value": 2.75
         },
@@ -2638,6 +2648,10 @@
         {
           "date": "2026-09-14",
           "value": 2.71
+        },
+        {
+          "date": "2026-09-15",
+          "value": 2.76
         }
       ]
     }
