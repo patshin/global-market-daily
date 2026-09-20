@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-09-18",
-  "window_start": "2026-08-20",
-  "window_end": "2026-09-18",
+  "as_of": "2026-09-19",
+  "window_start": "2026-08-21",
+  "window_end": "2026-09-19",
   "coverage": {
     "market_sessions": 26,
-    "native_daily_days": 17,
-    "reconstructed_days": 9,
-    "verified_event_days": 3,
+    "native_daily_days": 18,
+    "reconstructed_days": 8,
+    "verified_event_days": 2,
     "historical_series_start": "2025-07-28"
   },
   "methodology": {
@@ -85,72 +85,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-08-20",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "risk_off",
-      "regime_label": "Risk-Off",
-      "dominant_theme_id": "china_industrial_policy",
-      "signals": {
-        "growth": "↓",
-        "inflation": "→",
-        "rates": "↑",
-        "earnings": "→",
-        "liquidity": "→",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "theme_id": "china_industrial_policy",
-          "theme_label": "China Industrial Policy",
-          "category": "china_trade_policy",
-          "title": "China's state-asset regulator advances a central-SOE 6G industry program",
-          "evidence": "SASAC convened 31 central enterprises, released 6G scenario co-creation tasks and called for breakthroughs in core devices, platforms and commercialization.",
-          "market_bias": "risk_on",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "State industrial coordination → 6G R&D and capex → telecom equipment, semiconductors and infrastructure demand",
-          "confirmation": "Named SOEs publish funded projects, procurement plans or commercialization milestones.",
-          "invalidation": "The program remains aspirational without budgets, tenders or implementation milestones.",
-          "source_mode": "verified_event",
-          "event_id": "policy-2026-08-20-cn-6g",
-          "status": "Confirmed / Program advanced",
-          "actual_event_date": "2026-08-20",
-          "source_name": "State-owned Assets Supervision and Administration Commission",
-          "source_title": "国务院国资委召开中央企业6G未来产业推进会",
-          "source_url": "https://wap.sasac.gov.cn/n2588025/n2643314/c35809045/content.html",
-          "source_tier": "Tier 1",
-          "confidence": "High",
-          "rank": 1
-        },
-        {
-          "theme_id": "volatility_event_risk",
-          "theme_label": "Volatility / Event Risk",
-          "category": "market_structure",
-          "title": "VIX daily move +7.52%",
-          "evidence": "VIXCLS +7.52%",
-          "market_bias": "risk_off",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "US 10Y moves +4.0bp",
-          "evidence": "DGS10 +4.0bp",
-          "market_bias": "risk_off",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "10Y ↑ → discount rate ↑ → long-duration equity valuation ↓",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ]
-    },
     {
       "date": "2026-08-21",
       "source_mode": "objective_market_reconstruction",
@@ -1672,15 +1606,71 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-09-19",
+      "source_mode": "native_daily",
+      "regime_code": "event_risk",
+      "regime_label": "Weekend Event Risk / 5% yields versus oil relief",
+      "dominant_theme_id": "us_china_trade_controls",
+      "signals": {
+        "growth": "→",
+        "inflation": "↓",
+        "rates": "↑",
+        "earnings": "→",
+        "liquidity": "↓",
+        "geopolitics": "→"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "BOJ hikes to 1.25% by 7-2, but yen weakness shifts the next risk from policy surprise to intervention and carry volatility",
+          "evidence": "The Bank of Japan raised its policy rate from 1.00% to 1.25%, the highest in 31 years, with two board members dissenting. Instead of strengthening, the yen weakened and the dollar traded as high as 158.05 yen, while Japanese officials signaled readiness to respond to disorderly currency moves.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "BOJ hike + dovish dissent → yen weakness / intervention risk → carry funding volatility → JGB and global duration → equities and leveraged growth assets.",
+          "confirmation": "Further yen weakness with Japanese rate-check or intervention signals and firm global long yields would confirm that the policy move did not close the carry channel.",
+          "invalidation": "A sustained yen recovery accompanied by stable JGBs and lower global long yields would show that policy normalization is tightening funding conditions without destabilizing risk assets.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "U.S. 10Y closes at 5.01% while S&P and Nasdaq rise narrowly, creating a direct test of technology leadership versus the discount-rate ceiling",
+          "evidence": "Official Treasury data show the U.S. 10-year par yield at 5.01%, up 7bp from Thursday and 5bp from September 11. The S&P 500 still gained 0.17% and Nasdaq 0.40%, but the Dow and Russell 2000 fell and both NYSE and Nasdaq breadth were negative.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "10Y near 5% → WACC and bond alternative rise → small-cap/cyclical breadth weakens → credit sensitivity increases → technology leadership becomes more fragile.",
+          "confirmation": "Monday reopening with the 10Y near 5%, weak breadth and continued Russell/Dow underperformance would confirm that Friday's index resilience is narrow rather than broad.",
+          "invalidation": "A sustained decline in the 10Y alongside improving breadth and small-cap participation would weaken the discount-rate ceiling thesis.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
+          "title": "China-Iran diplomatic intervention pushes oil lower, but Brent $104.87 and impaired Gulf routes keep the physical-risk premium alive",
+          "evidence": "Brent settled down 0.93% at $104.87 and WTI down 1.58% at $100.30 after China, acting on a Saudi request, asked Iran to limit Houthi attacks on Saudi oil infrastructure. Hormuz traffic remained far below normal and the Saudi East-West pipeline repair path remained uncertain.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Diplomatic relief / repair progress → crude and fuel prices → inflation expectations → central-bank path and term premium → equity and credit valuations.",
+          "confirmation": "More Hormuz vessel traffic, verified Saudi pipeline capacity restoration and continued crude declines would confirm a durable easing in the physical premium.",
+          "invalidation": "Fresh attacks, delayed repair or renewed cargo cancellations accompanied by crude moving higher would show the diplomatic relief is temporary.",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
-    {
-      "date": "2026-08-21",
-      "from": "Risk-Off",
-      "to": "Risk-On",
-      "dominant_theme_id": "fed_policy_path"
-    },
     {
       "date": "2026-08-24",
       "from": "Risk-On",
@@ -1728,6 +1718,12 @@
       "from": "Weekend Event Risk / Reinflation + Tight Financial Conditions",
       "to": "Risk-off / reinflation plus dual-central-bank tightening",
       "dominant_theme_id": "geopolitics_energy"
+    },
+    {
+      "date": "2026-09-19",
+      "from": "Relief rally / BOJ event risk",
+      "to": "Weekend Event Risk / 5% yields versus oil relief",
+      "dominant_theme_id": "us_china_trade_controls"
     }
   ],
   "persistent_themes": [
@@ -1735,13 +1731,28 @@
       "theme_id": "geopolitics_energy",
       "theme_label": "Geopolitics / Energy",
       "category": "geopolitics_energy",
-      "days_in_top3": 15,
+      "days_in_top3": 16,
       "best_rank": 1,
       "first_seen": "2026-09-02",
-      "last_seen": "2026-09-18",
-      "latest_rank": 2,
+      "last_seen": "2026-09-19",
+      "latest_rank": 3,
       "state": "Persistent",
-      "latest_transmission": "Pipeline repair pace / alternative loadings → crude and freight premium → inflation expectations → long yields and central-bank path → risk assets.",
+      "latest_transmission": "Diplomatic relief / repair progress → crude and fuel prices → inflation expectations → central-bank path and term premium → equity and credit valuations.",
+      "source_modes": [
+        "native_daily"
+      ]
+    },
+    {
+      "theme_id": "ai_earnings",
+      "theme_label": "AI / Earnings",
+      "category": "earnings_ai_semis",
+      "days_in_top3": 10,
+      "best_rank": 1,
+      "first_seen": "2026-09-02",
+      "last_seen": "2026-09-19",
+      "latest_rank": 2,
+      "state": "Escalating",
+      "latest_transmission": "10Y near 5% → WACC and bond alternative rise → small-cap/cyclical breadth weakens → credit sensitivity increases → technology leadership becomes more fragile.",
       "source_modes": [
         "native_daily"
       ]
@@ -1750,11 +1761,11 @@
       "theme_id": "global_duration",
       "theme_label": "Global Duration / Term Premium",
       "category": "inflation_rates",
-      "days_in_top3": 10,
+      "days_in_top3": 9,
       "best_rank": 1,
-      "first_seen": "2026-08-20",
+      "first_seen": "2026-08-21",
       "last_seen": "2026-09-18",
-      "latest_rank": 3,
+      "latest_rank": null,
       "state": "Escalating",
       "latest_transmission": "Lower oil/yields + event uncertainty cleared → volatility ↓ / equity breadth ↑ → easier market-based financial conditions; expiry can amplify or distort the signal.",
       "source_modes": [
@@ -1763,31 +1774,16 @@
       ]
     },
     {
-      "theme_id": "ai_earnings",
-      "theme_label": "AI / Earnings",
-      "category": "earnings_ai_semis",
-      "days_in_top3": 9,
-      "best_rank": 1,
-      "first_seen": "2026-09-02",
-      "last_seen": "2026-09-17",
-      "latest_rank": null,
-      "state": "Escalating",
-      "latest_transmission": "BoE/BOJ decisions → gilt/JGB yields and GBP/JPY → carry/funding → global duration and credit.",
-      "source_modes": [
-        "native_daily"
-      ]
-    },
-    {
       "theme_id": "us_china_trade_controls",
       "theme_label": "U.S.–China Trade Controls",
       "category": "china_trade_policy",
-      "days_in_top3": 8,
+      "days_in_top3": 9,
       "best_rank": 1,
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-18",
+      "last_seen": "2026-09-19",
       "latest_rank": 1,
       "state": "Persistent",
-      "latest_transmission": "BOJ rate/guidance → JGB curve and USDJPY → yen-funded leverage → Asian/global duration and high-beta equities.",
+      "latest_transmission": "BOJ hike + dovish dissent → yen weakness / intervention risk → carry funding volatility → JGB and global duration → equities and leveraged growth assets.",
       "source_modes": [
         "native_daily"
       ]
@@ -1825,22 +1821,6 @@
       ]
     },
     {
-      "theme_id": "china_industrial_policy",
-      "theme_label": "China Industrial Policy",
-      "category": "china_trade_policy",
-      "days_in_top3": 4,
-      "best_rank": 1,
-      "first_seen": "2026-08-20",
-      "last_seen": "2026-09-15",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "China activity surprise → CNH/China equities → copper and regional cyclicals → global growth expectations → commodity and risk-asset breadth.",
-      "source_modes": [
-        "native_daily",
-        "verified_event"
-      ]
-    },
-    {
       "theme_id": "credit_conditions",
       "theme_label": "Credit Conditions",
       "category": "liquidity_credit",
@@ -1864,25 +1844,10 @@
       "first_seen": "2026-09-06",
       "last_seen": "2026-09-13",
       "latest_rank": null,
-      "state": "Persistent",
+      "state": "Resolved",
       "latest_transmission": "Yen appreciation / BOJ normalization → higher funding cost → carry reduction → cross-asset deleveraging → tighter financial conditions.",
       "source_modes": [
         "native_daily"
-      ]
-    },
-    {
-      "theme_id": "volatility_event_risk",
-      "theme_label": "Volatility / Event Risk",
-      "category": "market_structure",
-      "days_in_top3": 3,
-      "best_rank": 1,
-      "first_seen": "2026-08-20",
-      "last_seen": "2026-09-01",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
-      "source_modes": [
-        "objective_market_reconstruction"
       ]
     },
     {
@@ -1901,6 +1866,22 @@
       ]
     },
     {
+      "theme_id": "china_industrial_policy",
+      "theme_label": "China Industrial Policy",
+      "category": "china_trade_policy",
+      "days_in_top3": 3,
+      "best_rank": 1,
+      "first_seen": "2026-08-26",
+      "last_seen": "2026-09-15",
+      "latest_rank": null,
+      "state": "Persistent",
+      "latest_transmission": "China activity surprise → CNH/China equities → copper and regional cyclicals → global growth expectations → commodity and risk-asset breadth.",
+      "source_modes": [
+        "native_daily",
+        "verified_event"
+      ]
+    },
+    {
       "theme_id": "usd_financial_conditions",
       "theme_label": "USD Financial Conditions",
       "category": "liquidity_credit",
@@ -1914,22 +1895,37 @@
       "source_modes": [
         "objective_market_reconstruction"
       ]
+    },
+    {
+      "theme_id": "volatility_event_risk",
+      "theme_label": "Volatility / Event Risk",
+      "category": "market_structure",
+      "days_in_top3": 2,
+      "best_rank": 1,
+      "first_seen": "2026-08-31",
+      "last_seen": "2026-09-01",
+      "latest_rank": null,
+      "state": "Resolved",
+      "latest_transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
+      "source_modes": [
+        "objective_market_reconstruction"
+      ]
     }
   ],
   "cross_asset_confirmation": {
     "theme_id": "us_china_trade_controls",
     "theme_label": "U.S.–China Trade Controls",
-    "as_of": "2026-09-18",
+    "as_of": "2026-09-19",
     "confirming": [
       {
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
-        "change": "+1.69%"
+        "change": "+0.40%"
       },
       {
         "series_id": "SP500",
         "label": "S&P 500",
-        "change": "+1.14%"
+        "change": "+0.17%"
       }
     ],
     "diverging": [],
@@ -1940,7 +1936,7 @@
       }
     ],
     "interpretation_note": "2 项资产确认当前主线，0 项出现背离。",
-    "what_would_flip_it": "A hawkish path that drives JGB yields and yen funding costs sharply higher, or an unexpected hold that weakens the yen further, would invalidate the controlled-normalization setup."
+    "what_would_flip_it": "A sustained yen recovery accompanied by stable JGBs and lower global long yields would show that policy normalization is tightening funding conditions without destabilizing risk assets."
   },
   "series": {
     "NASDAQCOM": {
@@ -1949,10 +1945,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-20",
-          "value": 26067.17
-        },
         {
           "date": "2026-08-21",
           "value": 26180.45
@@ -2028,6 +2020,10 @@
         {
           "date": "2026-09-17",
           "value": 26418.3
+        },
+        {
+          "date": "2026-09-18",
+          "value": 26522.55
         }
       ]
     },
@@ -2037,10 +2033,6 @@
       "source": "S&P Dow Jones Indices via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-20",
-          "value": 7641.16
-        },
         {
           "date": "2026-08-21",
           "value": 7674.37
@@ -2125,10 +2117,6 @@
       "source": "CBOE via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-20",
-          "value": 16.01
-        },
         {
           "date": "2026-08-21",
           "value": 15.13
@@ -2218,10 +2206,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-08-20",
-          "value": 4.19
-        },
-        {
           "date": "2026-08-21",
           "value": 4.24
         },
@@ -2305,10 +2289,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-20",
-          "value": 4.69
-        },
         {
           "date": "2026-08-21",
           "value": 4.74
@@ -2394,10 +2374,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-20",
-          "value": 94.0
-        },
-        {
           "date": "2026-08-21",
           "value": 96.92
         },
@@ -2474,10 +2450,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-20",
-          "value": 118.2548
-        },
-        {
           "date": "2026-08-21",
           "value": 118.0628
         },
@@ -2545,10 +2517,6 @@
       "source": "ICE BofA via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-20",
-          "value": 2.75
-        },
         {
           "date": "2026-08-21",
           "value": 2.7
