@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-09-19",
-  "window_start": "2026-08-21",
-  "window_end": "2026-09-19",
+  "as_of": "2026-09-20",
+  "window_start": "2026-08-22",
+  "window_end": "2026-09-20",
   "coverage": {
     "market_sessions": 26,
-    "native_daily_days": 18,
-    "reconstructed_days": 8,
+    "native_daily_days": 19,
+    "reconstructed_days": 7,
     "verified_event_days": 2,
     "historical_series_start": "2025-07-28"
   },
@@ -85,62 +85,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-08-21",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "risk_on",
-      "regime_label": "Risk-On",
-      "dominant_theme_id": "fed_policy_path",
-      "signals": {
-        "growth": "→",
-        "inflation": "↑",
-        "rates": "↑",
-        "earnings": "→",
-        "liquidity": "↑",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "theme_id": "fed_policy_path",
-          "theme_label": "Fed Policy Path",
-          "category": "central_banks_fiscal",
-          "title": "US 2Y moves +5.0bp",
-          "evidence": "DGS2 +5.0bp",
-          "market_bias": "risk_off",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "2Y ↑ → policy path reprices tighter",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
-          "theme_id": "credit_conditions",
-          "theme_label": "Credit Conditions",
-          "category": "liquidity_credit",
-          "title": "HY OAS moves -5.0bp",
-          "evidence": "BAMLH0A0HYM2 -5.0bp",
-          "market_bias": "risk_on",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Credit spreads tighter → funding conditions ease",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "US 10Y moves +5.0bp",
-          "evidence": "DGS10 +5.0bp",
-          "market_bias": "risk_off",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "10Y ↑ → discount rate ↑ → long-duration equity valuation ↓",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ]
-    },
     {
       "date": "2026-08-24",
       "source_mode": "objective_market_reconstruction",
@@ -1668,15 +1612,71 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-09-20",
+      "source_mode": "native_daily",
+      "regime_code": "event_risk",
+      "regime_label": "Weekend Event Risk / policy relief versus 5% yields",
+      "dominant_theme_id": "us_china_trade_controls",
+      "signals": {
+        "growth": "→",
+        "inflation": "→",
+        "rates": "↑",
+        "earnings": "→",
+        "liquidity": "↓",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "Bessent-He Sunday meeting puts AI security, trade, rare earths and the tariff truce directly in front of Monday market price discovery",
+          "evidence": "U.S. Treasury Secretary Scott Bessent and Chinese Vice Premier He Lifeng are scheduled to meet Sunday at JPMorgan's New York headquarters. Reuters reports the agenda includes artificial-intelligence security, trade and broader economic issues; separate reporting says rare earths and the tariff truce are also expected to feature.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "U.S.-China policy signal → AI/rare-earth supply expectations → CNH and semiconductor risk premium → global equity breadth and corporate capex.",
+          "confirmation": "A jointly described constructive agenda, no new restriction threat and firmer China-sensitive assets at Monday reopen would confirm a reduction in policy tail risk.",
+          "invalidation": "New tariff, export-control or rare-earth retaliation language that weakens CNH and semiconductor futures would invalidate the relief interpretation.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "china_industrial_policy",
+          "theme_label": "China Industrial Policy",
+          "category": "china_trade_policy",
+          "title": "China's policy debate shifts toward consumption and balance-sheet repair while September LPR is still expected to remain unchanged",
+          "evidence": "PBOC monetary policy committee member Huang Yiping said AI could deepen China's strong-supply/weak-demand imbalance and argued for consumption support, higher household income and balance-sheet repair for local governments and enterprises. Separately, all 21 respondents in a Reuters poll expected the one-year and five-year LPRs to remain at 3.00% and 3.50%.",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Consumption/balance-sheet support → domestic demand expectations → China equities and imports → industrial commodities and Asian growth assets.",
+          "confirmation": "Concrete fiscal or balance-sheet measures alongside stable credit conditions would confirm that support is moving toward demand repair rather than only lower policy rates.",
+          "invalidation": "No follow-through on demand support combined with continued weak household and corporate borrowing would leave the strong-supply/weak-demand imbalance unresolved.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
+          "title": "Saudi weekend attacks threaten to reverse Friday's oil relief before Gulf physical throughput is demonstrably restored",
+          "evidence": "Saudi Arabia's coalition said a ballistic missile launched toward Riyadh was intercepted and destroyed and that attempted attacks toward Yanbu, Taif, Baysh and Farasan were thwarted. Reuters and AP independently reported the escalation; the Houthis separately claimed attacks on sensitive Riyadh sites and an Aramco facility in Yanbu.",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Saudi security risk → export-route/freight premium → crude and diesel → inflation expectations → Treasury yields and equity discount rates.",
+          "confirmation": "Higher crude at reopening, new verified infrastructure damage or further attacks on Yanbu-related capacity would confirm that physical-risk premium is rebuilding.",
+          "invalidation": "No new damage, continued successful interceptions and further normalization of pipeline/Hormuz throughput alongside softer crude would weaken the escalation channel.",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
-    {
-      "date": "2026-08-24",
-      "from": "Risk-On",
-      "to": "Risk-Off",
-      "dominant_theme_id": "china_semiconductor_policy"
-    },
     {
       "date": "2026-08-25",
       "from": "Risk-Off",
@@ -1731,13 +1731,13 @@
       "theme_id": "geopolitics_energy",
       "theme_label": "Geopolitics / Energy",
       "category": "geopolitics_energy",
-      "days_in_top3": 16,
+      "days_in_top3": 17,
       "best_rank": 1,
       "first_seen": "2026-09-02",
-      "last_seen": "2026-09-19",
+      "last_seen": "2026-09-20",
       "latest_rank": 3,
       "state": "Persistent",
-      "latest_transmission": "Diplomatic relief / repair progress → crude and fuel prices → inflation expectations → central-bank path and term premium → equity and credit valuations.",
+      "latest_transmission": "Saudi security risk → export-route/freight premium → crude and diesel → inflation expectations → Treasury yields and equity discount rates.",
       "source_modes": [
         "native_daily"
       ]
@@ -1750,9 +1750,24 @@
       "best_rank": 1,
       "first_seen": "2026-09-02",
       "last_seen": "2026-09-19",
-      "latest_rank": 2,
+      "latest_rank": null,
       "state": "Escalating",
       "latest_transmission": "10Y near 5% → WACC and bond alternative rise → small-cap/cyclical breadth weakens → credit sensitivity increases → technology leadership becomes more fragile.",
+      "source_modes": [
+        "native_daily"
+      ]
+    },
+    {
+      "theme_id": "us_china_trade_controls",
+      "theme_label": "U.S.–China Trade Controls",
+      "category": "china_trade_policy",
+      "days_in_top3": 10,
+      "best_rank": 1,
+      "first_seen": "2026-09-08",
+      "last_seen": "2026-09-20",
+      "latest_rank": 1,
+      "state": "Persistent",
+      "latest_transmission": "U.S.-China policy signal → AI/rare-earth supply expectations → CNH and semiconductor risk premium → global equity breadth and corporate capex.",
       "source_modes": [
         "native_daily"
       ]
@@ -1761,9 +1776,9 @@
       "theme_id": "global_duration",
       "theme_label": "Global Duration / Term Premium",
       "category": "inflation_rates",
-      "days_in_top3": 9,
+      "days_in_top3": 8,
       "best_rank": 1,
-      "first_seen": "2026-08-21",
+      "first_seen": "2026-08-25",
       "last_seen": "2026-09-18",
       "latest_rank": null,
       "state": "Escalating",
@@ -1774,27 +1789,12 @@
       ]
     },
     {
-      "theme_id": "us_china_trade_controls",
-      "theme_label": "U.S.–China Trade Controls",
-      "category": "china_trade_policy",
-      "days_in_top3": 9,
-      "best_rank": 1,
-      "first_seen": "2026-09-08",
-      "last_seen": "2026-09-19",
-      "latest_rank": 1,
-      "state": "Persistent",
-      "latest_transmission": "BOJ hike + dovish dissent → yen weakness / intervention risk → carry funding volatility → JGB and global duration → equities and leveraged growth assets.",
-      "source_modes": [
-        "native_daily"
-      ]
-    },
-    {
       "theme_id": "fed_policy_path",
       "theme_label": "Fed Policy Path",
       "category": "central_banks_fiscal",
-      "days_in_top3": 7,
+      "days_in_top3": 6,
       "best_rank": 1,
-      "first_seen": "2026-08-21",
+      "first_seen": "2026-08-25",
       "last_seen": "2026-09-12",
       "latest_rank": null,
       "state": "Resolved",
@@ -1821,18 +1821,19 @@
       ]
     },
     {
-      "theme_id": "credit_conditions",
-      "theme_label": "Credit Conditions",
-      "category": "liquidity_credit",
+      "theme_id": "china_industrial_policy",
+      "theme_label": "China Industrial Policy",
+      "category": "china_trade_policy",
       "days_in_top3": 4,
       "best_rank": 1,
-      "first_seen": "2026-08-21",
-      "last_seen": "2026-08-31",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Credit spreads wider → funding conditions tighten",
+      "first_seen": "2026-08-26",
+      "last_seen": "2026-09-20",
+      "latest_rank": 2,
+      "state": "Escalating",
+      "latest_transmission": "Consumption/balance-sheet support → domestic demand expectations → China equities and imports → industrial commodities and Asian growth assets.",
       "source_modes": [
-        "objective_market_reconstruction"
+        "native_daily",
+        "verified_event"
       ]
     },
     {
@@ -1866,19 +1867,18 @@
       ]
     },
     {
-      "theme_id": "china_industrial_policy",
-      "theme_label": "China Industrial Policy",
-      "category": "china_trade_policy",
+      "theme_id": "credit_conditions",
+      "theme_label": "Credit Conditions",
+      "category": "liquidity_credit",
       "days_in_top3": 3,
       "best_rank": 1,
       "first_seen": "2026-08-26",
-      "last_seen": "2026-09-15",
+      "last_seen": "2026-08-31",
       "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "China activity surprise → CNH/China equities → copper and regional cyclicals → global growth expectations → commodity and risk-asset breadth.",
+      "state": "Resolved",
+      "latest_transmission": "Credit spreads wider → funding conditions tighten",
       "source_modes": [
-        "native_daily",
-        "verified_event"
+        "objective_market_reconstruction"
       ]
     },
     {
@@ -1915,7 +1915,7 @@
   "cross_asset_confirmation": {
     "theme_id": "us_china_trade_controls",
     "theme_label": "U.S.–China Trade Controls",
-    "as_of": "2026-09-19",
+    "as_of": "2026-09-20",
     "confirming": [
       {
         "series_id": "NASDAQCOM",
@@ -1936,7 +1936,7 @@
       }
     ],
     "interpretation_note": "2 项资产确认当前主线，0 项出现背离。",
-    "what_would_flip_it": "A sustained yen recovery accompanied by stable JGBs and lower global long yields would show that policy normalization is tightening funding conditions without destabilizing risk assets."
+    "what_would_flip_it": "New tariff, export-control or rare-earth retaliation language that weakens CNH and semiconductor futures would invalidate the relief interpretation."
   },
   "series": {
     "NASDAQCOM": {
@@ -1945,10 +1945,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-21",
-          "value": 26180.45
-        },
         {
           "date": "2026-08-24",
           "value": 25980.19
@@ -2034,10 +2030,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-21",
-          "value": 7674.37
-        },
-        {
           "date": "2026-08-24",
           "value": 7652.86
         },
@@ -2117,10 +2109,6 @@
       "source": "CBOE via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-21",
-          "value": 15.13
-        },
         {
           "date": "2026-08-24",
           "value": 15.85
@@ -2206,10 +2194,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-08-21",
-          "value": 4.24
-        },
-        {
           "date": "2026-08-24",
           "value": 4.24
         },
@@ -2289,10 +2273,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-21",
-          "value": 4.74
-        },
         {
           "date": "2026-08-24",
           "value": 4.7
@@ -2374,10 +2354,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-21",
-          "value": 96.92
-        },
-        {
           "date": "2026-08-24",
           "value": 92.71
         },
@@ -2450,10 +2426,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-08-21",
-          "value": 118.0628
-        },
-        {
           "date": "2026-08-24",
           "value": 118.3195
         },
@@ -2517,10 +2489,6 @@
       "source": "ICE BofA via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-21",
-          "value": 2.7
-        },
         {
           "date": "2026-08-24",
           "value": 2.69
