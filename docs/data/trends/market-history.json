@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "retrieved_for": "Global Market Daily 30D Lens",
-  "as_of": "2026-09-20",
+  "as_of": "2026-09-21",
   "series": {
     "NASDAQCOM": {
       "label": "Nasdaq Composite",
@@ -9,10 +9,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2025-07-28",
-          "value": 21178.58
-        },
         {
           "date": "2025-07-29",
           "value": 21098.29
@@ -1174,10 +1170,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2025-07-28",
-          "value": 6389.77
-        },
-        {
           "date": "2025-07-29",
           "value": 6370.86
         },
@@ -2324,6 +2316,14 @@
         {
           "date": "2026-09-17",
           "value": 7637.76
+        },
+        {
+          "date": "2026-09-18",
+          "value": 7650.5
+        },
+        {
+          "date": "2026-09-21",
+          "value": 7764.7
         }
       ]
     },
@@ -2333,10 +2333,6 @@
       "source": "CBOE via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2025-07-28",
-          "value": 15.03
-        },
         {
           "date": "2025-07-29",
           "value": 15.98
@@ -3516,6 +3512,10 @@
         {
           "date": "2026-09-17",
           "value": 15.44
+        },
+        {
+          "date": "2026-09-18",
+          "value": 14.81
         }
       ]
     },
@@ -3525,10 +3525,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2025-07-28",
-          "value": 3.91
-        },
         {
           "date": "2025-07-29",
           "value": 3.86
@@ -4672,6 +4668,10 @@
         {
           "date": "2026-09-17",
           "value": 4.67
+        },
+        {
+          "date": "2026-09-18",
+          "value": 4.76
         }
       ]
     },
@@ -4681,10 +4681,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2025-07-28",
-          "value": 4.42
-        },
         {
           "date": "2025-07-29",
           "value": 4.34
@@ -5828,6 +5824,10 @@
         {
           "date": "2026-09-17",
           "value": 4.94
+        },
+        {
+          "date": "2026-09-18",
+          "value": 5.01
         }
       ]
     },
@@ -5837,10 +5837,6 @@
       "source": "U.S. EIA via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2025-07-28",
-          "value": 70.87
-        },
         {
           "date": "2025-07-29",
           "value": 73.21
@@ -6998,10 +6994,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2025-07-28",
-          "value": 120.6149
-        },
-        {
           "date": "2025-07-29",
           "value": 120.9674
         },
@@ -8128,6 +8120,26 @@
         {
           "date": "2026-09-11",
           "value": 118.2126
+        },
+        {
+          "date": "2026-09-14",
+          "value": 118.6923
+        },
+        {
+          "date": "2026-09-15",
+          "value": 118.8822
+        },
+        {
+          "date": "2026-09-16",
+          "value": 118.9206
+        },
+        {
+          "date": "2026-09-17",
+          "value": 119.3489
+        },
+        {
+          "date": "2026-09-18",
+          "value": 119.5133
         }
       ]
     },
@@ -8137,10 +8149,6 @@
       "source": "ICE BofA via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2025-07-28",
-          "value": 2.82
-        },
         {
           "date": "2025-07-29",
           "value": 2.86
@@ -9344,6 +9352,10 @@
         {
           "date": "2026-09-17",
           "value": 2.7
+        },
+        {
+          "date": "2026-09-18",
+          "value": 2.68
         }
       ]
     }
