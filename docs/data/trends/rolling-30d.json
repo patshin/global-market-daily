@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-09-21",
-  "window_start": "2026-08-23",
-  "window_end": "2026-09-21",
+  "as_of": "2026-09-22",
+  "window_start": "2026-08-24",
+  "window_end": "2026-09-22",
   "coverage": {
-    "market_sessions": 27,
-    "native_daily_days": 20,
+    "market_sessions": 28,
+    "native_daily_days": 21,
     "reconstructed_days": 7,
     "verified_event_days": 2,
-    "historical_series_start": "2025-07-29"
+    "historical_series_start": "2025-07-30"
   },
   "methodology": {
     "native_daily": "Original published GMD daily assessment.",
@@ -1736,6 +1736,68 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-09-22",
+      "source_mode": "native_daily",
+      "regime_code": "neutral",
+      "regime_label": "Selective risk-on / valuation relief with carry still tight",
+      "dominant_theme_id": "ai_earnings",
+      "signals": {
+        "growth": "↑",
+        "inflation": "↓",
+        "rates": "↓",
+        "earnings": "↑",
+        "liquidity": "→",
+        "geopolitics": "→"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "Nasdaq closes at a record as SOX +4.3% and AMD crosses $1 trillion while the U.S. 10Y falls below 5%",
+          "evidence": "The Nasdaq rose 2.26% to 27,122.09, the S&P 500 gained 1.49%, SOX jumped 4.3%, and AMD rose about 10% as its market capitalization crossed $1 trillion; the official U.S. 10Y yield closed at 4.96%.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "10Y yield ↓ + AI demand confidence ↑ → discount rate relief + semiconductor multiples ↑ → Nasdaq/SOX leadership → potential broader equity rotation.",
+          "confirmation": "Russell 2000 and cyclical breadth joining the rally while the 10Y remains below 5% would confirm broader financial-condition relief.",
+          "invalidation": "A renewed 10Y break above 5% with semiconductor underperformance or a sharp reversal in AMD/SOX would weaken the duration-relief thesis.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "Oil stabilizes near $100 Brent after Monday's selloff as Saudi export rerouting meets a possible U.S.-Iran diplomatic window",
+          "evidence": "Brent fell sharply on Monday and traded at $100.57 early Tuesday, while WTI October was $95.80. Saudi Aramco loaded roughly 14 million barrels on seven VLCCs near Ras Tanura on Sunday as Gulf exports recovered, while markets awaited any U.S.-Iran contact around the UN General Assembly.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Saudi Gulf loadings ↑ + diplomacy probability ↑ → crude/freight premium ↓ → inflation impulse ↓ → long yields ↓ → equity valuation support.",
+          "confirmation": "Brent holding near or below $100 alongside continued Saudi Gulf loadings and no new major supply outage would confirm a lower physical premium.",
+          "invalidation": "A failed diplomacy window plus renewed Houthi/Saudi infrastructure disruption that pushes Brent materially higher would restore the inflation-risk chain.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "U.S. and China formalize an AI-safety dialogue and incident line ahead of the September 23–25 leaders' summit",
+          "evidence": "U.S. Treasury Secretary Scott Bessent said the two sides agreed to a formal AI-safety dialogue, including an incident communication line, and plan to meet again in about two months in Shenzhen; the current tariff truce expires November 10 and no extension was agreed in the latest talks.",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Policy communication ↑ → AI/trade tail risk ↓ → semiconductor/supply-chain risk premium ↓; unresolved tariffs → CNH/exporters remain headline-sensitive.",
+          "confirmation": "Concrete summit language on AI protocols, trade stability or a tariff-truce extension would confirm lower policy tail risk.",
+          "invalidation": "New export controls, tariff escalation or failure to preserve the November truce would reverse the policy-relief channel.",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
@@ -1803,7 +1865,7 @@
       "best_rank": 1,
       "first_seen": "2026-09-02",
       "last_seen": "2026-09-21",
-      "latest_rank": 2,
+      "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "Saudi export recovery → crude/freight premium ↓ → inflation expectations ↓ → rate pressure eases → risk-asset discount rates improve.",
       "source_modes": [
@@ -1814,13 +1876,13 @@
       "theme_id": "ai_earnings",
       "theme_label": "AI / Earnings",
       "category": "earnings_ai_semis",
-      "days_in_top3": 11,
+      "days_in_top3": 12,
       "best_rank": 1,
       "first_seen": "2026-09-02",
-      "last_seen": "2026-09-21",
+      "last_seen": "2026-09-22",
       "latest_rank": 1,
       "state": "Escalating",
-      "latest_transmission": "AI demand optimism → chip/tech equities ↑; high 2Y/10Y yields → financing hurdle remains → breadth and small caps lag.",
+      "latest_transmission": "10Y yield ↓ + AI demand confidence ↑ → discount rate relief + semiconductor multiples ↑ → Nasdaq/SOX leadership → potential broader equity rotation.",
       "source_modes": [
         "native_daily"
       ]
@@ -1829,13 +1891,13 @@
       "theme_id": "us_china_trade_controls",
       "theme_label": "U.S.–China Trade Controls",
       "category": "china_trade_policy",
-      "days_in_top3": 10,
+      "days_in_top3": 12,
       "best_rank": 1,
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-20",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "U.S.-China policy signal → AI/rare-earth supply expectations → CNH and semiconductor risk premium → global equity breadth and corporate capex.",
+      "last_seen": "2026-09-22",
+      "latest_rank": 3,
+      "state": "Escalating",
+      "latest_transmission": "Policy communication ↑ → AI/trade tail risk ↓ → semiconductor/supply-chain risk premium ↓; unresolved tariffs → CNH/exporters remain headline-sensitive.",
       "source_modes": [
         "native_daily"
       ]
@@ -1896,7 +1958,7 @@
       "best_rank": 1,
       "first_seen": "2026-08-26",
       "last_seen": "2026-09-21",
-      "latest_rank": 3,
+      "latest_rank": null,
       "state": "Escalating",
       "latest_transmission": "LPR hold + U.S.-China talks → CNH/China credit expectations and AI supply-chain risk → Asian cyclicals, semiconductors and commodities.",
       "source_modes": [
@@ -1983,17 +2045,17 @@
   "cross_asset_confirmation": {
     "theme_id": "ai_earnings",
     "theme_label": "AI / Earnings",
-    "as_of": "2026-09-21",
+    "as_of": "2026-09-22",
     "confirming": [
       {
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
-        "change": "+0.40%"
+        "change": "+2.26%"
       },
       {
         "series_id": "SP500",
         "label": "S&P 500",
-        "change": "+0.17%"
+        "change": "+1.49%"
       }
     ],
     "diverging": [],
@@ -2004,7 +2066,7 @@
       }
     ],
     "interpretation_note": "2 项资产确认当前主线，0 项出现背离。",
-    "what_would_flip_it": "A reversal in chip shares or U.S. futures while yields remain high would show the opening rally was a thin-liquidity sector move."
+    "what_would_flip_it": "A renewed 10Y break above 5% with semiconductor underperformance or a sharp reversal in AMD/SOX would weaken the duration-relief thesis."
   },
   "series": {
     "NASDAQCOM": {
@@ -2088,6 +2150,10 @@
         {
           "date": "2026-09-18",
           "value": 26522.55
+        },
+        {
+          "date": "2026-09-21",
+          "value": 27122.09
         }
       ]
     },
@@ -2176,6 +2242,10 @@
         {
           "date": "2026-09-21",
           "value": 7764.7
+        },
+        {
+          "date": "2026-09-22",
+          "value": 7764.64
         }
       ]
     },
@@ -2264,6 +2334,10 @@
         {
           "date": "2026-09-18",
           "value": 14.81
+        },
+        {
+          "date": "2026-09-21",
+          "value": 14.87
         }
       ]
     },
@@ -2347,6 +2421,10 @@
         },
         {
           "date": "2026-09-18",
+          "value": 4.76
+        },
+        {
+          "date": "2026-09-21",
           "value": 4.76
         }
       ]
@@ -2432,6 +2510,10 @@
         {
           "date": "2026-09-18",
           "value": 5.01
+        },
+        {
+          "date": "2026-09-21",
+          "value": 4.96
         }
       ]
     },
@@ -2676,6 +2758,10 @@
         {
           "date": "2026-09-18",
           "value": 2.68
+        },
+        {
+          "date": "2026-09-21",
+          "value": 2.66
         }
       ]
     }
