@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-09-22",
-  "window_start": "2026-08-24",
-  "window_end": "2026-09-22",
+  "as_of": "2026-09-23",
+  "window_start": "2026-08-25",
+  "window_end": "2026-09-23",
   "coverage": {
     "market_sessions": 28,
-    "native_daily_days": 21,
-    "reconstructed_days": 7,
-    "verified_event_days": 2,
-    "historical_series_start": "2025-07-30"
+    "native_daily_days": 22,
+    "reconstructed_days": 6,
+    "verified_event_days": 1,
+    "historical_series_start": "2025-07-31"
   },
   "methodology": {
     "native_daily": "Original published GMD daily assessment.",
@@ -85,72 +85,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-08-24",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "risk_off",
-      "regime_label": "Risk-Off",
-      "dominant_theme_id": "china_semiconductor_policy",
-      "signals": {
-        "growth": "↓",
-        "inflation": "↓",
-        "rates": "→",
-        "earnings": "↓",
-        "liquidity": "↓",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "theme_id": "china_semiconductor_policy",
-          "theme_label": "China Semiconductor Policy",
-          "category": "china_trade_policy",
-          "title": "Beijing E-Town issues the 2026–2028 AI4Chip industrial action plan",
-          "evidence": "The official plan sets 20 tasks for applying AI across chip design, manufacturing, packaging, equipment, materials and the supporting ecosystem.",
-          "market_bias": "risk_on",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Local policy support → EDA, equipment, advanced packaging and memory R&D → China semiconductor capex",
-          "confirmation": "Funding, model/computing vouchers and named demonstration projects are awarded to companies.",
-          "invalidation": "Targets are not followed by funded projects or measurable adoption milestones.",
-          "source_mode": "verified_event",
-          "event_id": "policy-2026-08-23-cn-ai4chip",
-          "status": "Confirmed / Issued",
-          "actual_event_date": "2026-08-23",
-          "source_name": "Beijing Economic-Technological Development Area",
-          "source_title": "“AI4Chip”人工智能赋能集成电路产业跨越式发展行动计划（2026-2028）",
-          "source_url": "https://www.ncsti.gov.cn/kjdt/tzgg/202608/t20260826_254432.html",
-          "source_tier": "Tier 1",
-          "confidence": "High",
-          "rank": 1
-        },
-        {
-          "theme_id": "growth_duration_rotation",
-          "theme_label": "Growth / Duration Rotation",
-          "category": "earnings_ai_semis",
-          "title": "Nasdaq relative to S&P 500 -0.48pp",
-          "evidence": "NASDAQCOM -0.76% vs SP500 -0.28%",
-          "market_bias": "risk_off",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Long-duration growth underperforms",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "usd_financial_conditions",
-          "theme_label": "USD Financial Conditions",
-          "category": "liquidity_credit",
-          "title": "Broad USD daily move +0.22%",
-          "evidence": "DTWEXBGS +0.22%",
-          "market_bias": "risk_off",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "USD ↑ → global financial conditions tighten",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ]
-    },
     {
       "date": "2026-08-25",
       "source_mode": "objective_market_reconstruction",
@@ -1798,15 +1732,71 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-09-23",
+      "source_mode": "native_daily",
+      "regime_code": "neutral",
+      "regime_label": "Selective risk-on / energy relief versus funding-cost constraint",
+      "dominant_theme_id": "ai_earnings",
+      "signals": {
+        "growth": "→",
+        "inflation": "↓",
+        "rates": "→",
+        "earnings": "↑",
+        "liquidity": "→",
+        "geopolitics": "↓"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "Nasdaq extends to a record close while the S&P stalls and the U.S. 2Y auction clears at 4.787%",
+          "evidence": "The Nasdaq Composite rose 0.45% to 27,244.28 and set another record close, while the S&P 500 was virtually unchanged and the Dow fell 0.36%. The official Treasury 2Y par yield ended at 4.71%, but a $69 billion two-year auction cleared at 4.787% with a 2.63 bid-to-cover ratio and a small tail to the when-issued level.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "AI optimism → Nasdaq leadership; restrictive front-end yield → funding hurdle → weaker breadth outside cash-rich technology.",
+          "confirmation": "Nasdaq leadership accompanied by improving Russell 2000 and bank breadth while the 2Y stays stable or falls would confirm a healthier broadening.",
+          "invalidation": "A renewed rise in the 2Y/auction clearing yields alongside Nasdaq reversal and weaker credit would invalidate the selective-risk-on setup.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "Saudi Arabia restarts the East-West pipeline as Brent falls below $100 and Hormuz diplomacy becomes a live supply catalyst",
+          "evidence": "Saudi Arabia restarted pumping through the East-West pipeline at a reduced rate after the September 11 attack, while full 7 million bpd capacity may take six to eight weeks to restore. Reuters also reported an Iranian offer to reopen the Strait of Hormuz within a week if U.S. military pressure and the blockade are eased. Brent traded around $99.92 and WTI around $95.33 in the latest retained global-market snapshot.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Pipeline restart + potential Hormuz reopening → crude/freight premium ↓ → inflation expectations ↓ → long-yield pressure ↓ → broader risk-asset support.",
+          "confirmation": "Sustained Yanbu loading growth, Brent holding below $100 and verified progress on Hormuz access would confirm that physical-route risk is fading.",
+          "invalidation": "Fresh attacks, stalled pipeline throughput or failed U.S.-Iran diplomacy that pushes Brent rapidly back above recent levels would reverse the relief.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "Alibaba unveils its Zhenwu V900 AI chip while AI debt spreads widen, exposing the split between compute demand and financing cost",
+          "evidence": "Alibaba unveiled the Zhenwu V900 AI chip, said it is developing a 5–10 trillion-parameter model and targeted more than 20GW of data-center capacity by 2032. Separately, Reuters reported AI-linked corporate bonds trading around 115bp spreads versus roughly 78bp for the broader market, while SoftBank launched an $11 billion bond package to finance its OpenAI investment.",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "AI model/chip demand ↑ → data-center capex ↑ → debt supply ↑ → credit concession ↑ → project hurdle rates and equity multiples become more financing-sensitive.",
+          "confirmation": "Continued AI revenue growth, successful bond absorption and stable or tighter AI-credit spreads would confirm that funding markets can finance the capex cycle.",
+          "invalidation": "Further spread widening, weaker primary-market demand or capex guidance cuts despite strong model demand would break the funding leg of the AI thesis.",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
-    {
-      "date": "2026-08-25",
-      "from": "Risk-Off",
-      "to": "Risk-On",
-      "dominant_theme_id": "fed_policy_path"
-    },
     {
       "date": "2026-08-26",
       "from": "Risk-On",
@@ -1876,13 +1866,13 @@
       "theme_id": "ai_earnings",
       "theme_label": "AI / Earnings",
       "category": "earnings_ai_semis",
-      "days_in_top3": 12,
+      "days_in_top3": 14,
       "best_rank": 1,
       "first_seen": "2026-09-02",
-      "last_seen": "2026-09-22",
-      "latest_rank": 1,
-      "state": "Escalating",
-      "latest_transmission": "10Y yield ↓ + AI demand confidence ↑ → discount rate relief + semiconductor multiples ↑ → Nasdaq/SOX leadership → potential broader equity rotation.",
+      "last_seen": "2026-09-23",
+      "latest_rank": 3,
+      "state": "Persistent",
+      "latest_transmission": "AI model/chip demand ↑ → data-center capex ↑ → debt supply ↑ → credit concession ↑ → project hurdle rates and equity multiples become more financing-sensitive.",
       "source_modes": [
         "native_daily"
       ]
@@ -1891,13 +1881,13 @@
       "theme_id": "us_china_trade_controls",
       "theme_label": "U.S.–China Trade Controls",
       "category": "china_trade_policy",
-      "days_in_top3": 12,
+      "days_in_top3": 13,
       "best_rank": 1,
       "first_seen": "2026-09-08",
-      "last_seen": "2026-09-22",
-      "latest_rank": 3,
+      "last_seen": "2026-09-23",
+      "latest_rank": 2,
       "state": "Escalating",
-      "latest_transmission": "Policy communication ↑ → AI/trade tail risk ↓ → semiconductor/supply-chain risk premium ↓; unresolved tariffs → CNH/exporters remain headline-sensitive.",
+      "latest_transmission": "Pipeline restart + potential Hormuz reopening → crude/freight premium ↓ → inflation expectations ↓ → long-yield pressure ↓ → broader risk-asset support.",
       "source_modes": [
         "native_daily"
       ]
@@ -1943,7 +1933,7 @@
       "first_seen": "2026-08-25",
       "last_seen": "2026-09-17",
       "latest_rank": null,
-      "state": "Persistent",
+      "state": "Resolved",
       "latest_transmission": "Alternative export capacity → crude/freight premium ↓ → inflation pressure ↓ → term premium/policy pressure ↓.",
       "source_modes": [
         "native_daily",
@@ -1982,21 +1972,6 @@
       ]
     },
     {
-      "theme_id": "growth_duration_rotation",
-      "theme_label": "Growth / Duration Rotation",
-      "category": "earnings_ai_semis",
-      "days_in_top3": 3,
-      "best_rank": 1,
-      "first_seen": "2026-08-24",
-      "last_seen": "2026-08-31",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Growth leadership strengthens",
-      "source_modes": [
-        "objective_market_reconstruction"
-      ]
-    },
-    {
       "theme_id": "credit_conditions",
       "theme_label": "Credit Conditions",
       "category": "liquidity_credit",
@@ -2012,16 +1987,16 @@
       ]
     },
     {
-      "theme_id": "usd_financial_conditions",
-      "theme_label": "USD Financial Conditions",
-      "category": "liquidity_credit",
-      "days_in_top3": 3,
-      "best_rank": 2,
-      "first_seen": "2026-08-24",
-      "last_seen": "2026-08-28",
+      "theme_id": "growth_duration_rotation",
+      "theme_label": "Growth / Duration Rotation",
+      "category": "earnings_ai_semis",
+      "days_in_top3": 2,
+      "best_rank": 1,
+      "first_seen": "2026-08-27",
+      "last_seen": "2026-08-31",
       "latest_rank": null,
       "state": "Resolved",
-      "latest_transmission": "USD ↑ → global financial conditions tighten",
+      "latest_transmission": "Growth leadership strengthens",
       "source_modes": [
         "objective_market_reconstruction"
       ]
@@ -2040,33 +2015,49 @@
       "source_modes": [
         "objective_market_reconstruction"
       ]
+    },
+    {
+      "theme_id": "usd_financial_conditions",
+      "theme_label": "USD Financial Conditions",
+      "category": "liquidity_credit",
+      "days_in_top3": 2,
+      "best_rank": 2,
+      "first_seen": "2026-08-26",
+      "last_seen": "2026-08-28",
+      "latest_rank": null,
+      "state": "Resolved",
+      "latest_transmission": "USD ↑ → global financial conditions tighten",
+      "source_modes": [
+        "objective_market_reconstruction"
+      ]
     }
   ],
   "cross_asset_confirmation": {
     "theme_id": "ai_earnings",
     "theme_label": "AI / Earnings",
-    "as_of": "2026-09-22",
+    "as_of": "2026-09-23",
     "confirming": [
       {
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
-        "change": "+2.26%"
-      },
+        "change": "+0.45%"
+      }
+    ],
+    "diverging": [
       {
         "series_id": "SP500",
         "label": "S&P 500",
-        "change": "+1.49%"
+        "change": "flat (-0.00%)"
       }
     ],
-    "diverging": [],
     "unavailable": [
       {
         "series_id": "VIXCLS",
         "label": "VIX"
       }
     ],
-    "interpretation_note": "2 项资产确认当前主线，0 项出现背离。",
-    "what_would_flip_it": "A renewed 10Y break above 5% with semiconductor underperformance or a sharp reversal in AMD/SOX would weaken the duration-relief thesis."
+    "interpretation_note": "1 项资产确认当前主线，1 项出现背离。",
+    "what_would_flip_it": "A renewed rise in the 2Y/auction clearing yields alongside Nasdaq reversal and weaker credit would invalidate the selective-risk-on setup."
   },
   "series": {
     "NASDAQCOM": {
@@ -2075,10 +2066,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-24",
-          "value": 25980.19
-        },
         {
           "date": "2026-08-25",
           "value": 26151.3
@@ -2154,6 +2141,10 @@
         {
           "date": "2026-09-21",
           "value": 27122.09
+        },
+        {
+          "date": "2026-09-22",
+          "value": 27244.28
         }
       ]
     },
@@ -2163,10 +2154,6 @@
       "source": "S&P Dow Jones Indices via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-24",
-          "value": 7652.86
-        },
         {
           "date": "2026-08-25",
           "value": 7677.28
@@ -2246,6 +2233,10 @@
         {
           "date": "2026-09-22",
           "value": 7764.64
+        },
+        {
+          "date": "2026-09-23",
+          "value": 7706.03
         }
       ]
     },
@@ -2255,10 +2246,6 @@
       "source": "CBOE via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-24",
-          "value": 15.85
-        },
         {
           "date": "2026-08-25",
           "value": 15.45
@@ -2338,6 +2325,10 @@
         {
           "date": "2026-09-21",
           "value": 14.87
+        },
+        {
+          "date": "2026-09-22",
+          "value": 14.21
         }
       ]
     },
@@ -2347,10 +2338,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-24",
-          "value": 4.24
-        },
         {
           "date": "2026-08-25",
           "value": 4.17
@@ -2426,6 +2413,10 @@
         {
           "date": "2026-09-21",
           "value": 4.76
+        },
+        {
+          "date": "2026-09-22",
+          "value": 4.71
         }
       ]
     },
@@ -2435,10 +2426,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-24",
-          "value": 4.7
-        },
         {
           "date": "2026-08-25",
           "value": 4.64
@@ -2514,6 +2501,10 @@
         {
           "date": "2026-09-21",
           "value": 4.96
+        },
+        {
+          "date": "2026-09-22",
+          "value": 4.96
         }
       ]
     },
@@ -2523,10 +2514,6 @@
       "source": "U.S. EIA via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-24",
-          "value": 92.71
-        },
         {
           "date": "2026-08-25",
           "value": 88.24
@@ -2586,6 +2573,26 @@
         {
           "date": "2026-09-15",
           "value": 130.8
+        },
+        {
+          "date": "2026-09-16",
+          "value": 127.84
+        },
+        {
+          "date": "2026-09-17",
+          "value": 121.18
+        },
+        {
+          "date": "2026-09-18",
+          "value": 119.66
+        },
+        {
+          "date": "2026-09-21",
+          "value": 116.15
+        },
+        {
+          "date": "2026-09-22",
+          "value": 114.89
         }
       ]
     },
@@ -2595,10 +2602,6 @@
       "source": "Federal Reserve via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-24",
-          "value": 118.3195
-        },
         {
           "date": "2026-08-25",
           "value": 118.2283
@@ -2680,10 +2683,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-08-24",
-          "value": 2.69
-        },
-        {
           "date": "2026-08-25",
           "value": 2.7
         },
@@ -2762,6 +2761,10 @@
         {
           "date": "2026-09-21",
           "value": 2.66
+        },
+        {
+          "date": "2026-09-22",
+          "value": 2.68
         }
       ]
     }
