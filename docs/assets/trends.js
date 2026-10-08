@@ -13,7 +13,7 @@ function themeLabel(data,id){return data.themes?.[id]?.label||id||"—"}
 function categoryLabel(data,id){return data.category_labels?.[id]||id}
 function renderHero(data){
   const meta=q("#lens-hero-meta");
-  [["Window",`${data.window_start} → ${data.window_end}`],["Sessions",data.coverage.market_sessions],["Native Daily",data.coverage.native_daily_days],["Verified Event Days",data.coverage.verified_event_days||0]].forEach(([l,v])=>{const x=e("div");x.append(e("span","",l),e("strong","",v));meta.append(x)});
+  [["Window",`${data.window_start} → ${data.window_end}`],["Sessions",data.coverage.market_sessions],["Native Daily",data.coverage.native_daily_days],["Historical Backfills",data.coverage.reconstructed_daily_days||0],["Verified Event Days",data.coverage.verified_event_days||0]].forEach(([l,v])=>{const x=e("div");x.append(e("span","",l),e("strong","",v));meta.append(x)});
   const current=data.days.at(-1),top=data.persistent_themes?.[0],transition=data.regime_transitions?.at(-1),strip=q("#lens-summary-strip");
   [["Current Regime",current?.regime_label],["Dominant Theme",themeLabel(data,current?.dominant_theme_id)],["Most Persistent",top?.theme_label],["Last Regime Shift",transition?`${transition.date} · ${transition.from} → ${transition.to}`:"No change in window"],["Historical Series",data.coverage.historical_series_start]].forEach(([l,v])=>{const x=e("div");x.append(e("span","",l),e("strong","",v||"—"));strip.append(x)});
   q("#lens-footer").textContent=`As of ${data.as_of}`;

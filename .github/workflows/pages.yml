@@ -37,6 +37,8 @@ jobs:
           python-version: "3.12"
       - name: Run deterministic publication gate
         run: python scripts/validate_publish_v2.py --root .
+      - name: Validate historical reconstruction provenance
+        run: python scripts/validate_reconstruction.py
       - name: Enforce live renderer contract
         run: python scripts/validate_live_contract.py --root .
       - name: Enforce formal archive renderer contracts
@@ -89,3 +91,4 @@ jobs:
           gh workflow run site-health.yml --repo "$REPO" --ref main
           gh workflow run editorial-health.yml --repo "$REPO" --ref main
           echo "DISPATCHED Public Site Health Check and Editorial UI Health Check on main"
+

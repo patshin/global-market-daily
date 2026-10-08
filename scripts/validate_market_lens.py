@@ -14,7 +14,7 @@ req(sum(data.get('coverage',{}).get(k,0) for k in ('native_daily_days','reconstr
 # A fully native window is valid; reconstruction is not mandatory forever.
 for i,d in enumerate(days):
     req(d.get('source_mode') in {'native_daily','reconstructed_daily','objective_market_reconstruction'},f'day {i} source_mode invalid')
-    req(d.get('regime_code') in {'risk_on','neutral','risk_off','event_risk','unavailable'},f'day {i} regime invalid')
+    req(d.get('regime_code') in {'risk_on','neutral','risk_off','event_risk','unavailable','unclassified'},f'day {i} regime invalid')
     catalysts=d.get('catalysts',[])
     quality=d.get('data_quality',{})
     partial=d.get('source_mode')=='objective_market_reconstruction' and quality.get('status')=='partial'

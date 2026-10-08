@@ -23,6 +23,8 @@ jobs:
           python-version: "3.12"
       - name: Run deterministic publication gate
         run: python scripts/validate_publish_v2.py --root .
+      - name: Validate historical reconstruction provenance
+        run: python scripts/validate_reconstruction.py
       - name: Enforce live renderer contract
         run: python scripts/validate_live_contract.py --root .
       - name: Enforce formal archive renderer contracts
@@ -41,6 +43,7 @@ jobs:
         run: |
           python scripts/test_publication_transition.py
           python scripts/test_publication_watchdog.py
+          python scripts/test_reconstruction.py
       - name: Check JavaScript syntax
         run: |
           node --check docs/assets/app.js
@@ -49,3 +52,13 @@ jobs:
           node --check docs/assets/p0.js
           node --check docs/assets/trends.js
 
+
+      - name: Render candidate desktop and mobile in real Chromium
+        run: python scripts/verify_candidate_browser.py
+      - name: Preserve candidate browser DOM evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidate-browser-dom
+          path: /tmp/gmd-browser-artifacts
+          if-no-files-found: ignore

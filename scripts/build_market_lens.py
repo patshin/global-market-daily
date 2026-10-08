@@ -218,8 +218,8 @@ def build(refresh=True):
             r=native[d]
             report_mode = 'reconstructed_daily' if (r.get('reconstruction') or {}).get('is_reconstructed') else 'native_daily'
             regime_item=(r.get('market_regime') or {}).get('overall')
-            regime_label=regime_item.get('state') if isinstance(regime_item,dict) else (regime_item or 'Neutral')
-            code={'Risk-On':'risk_on','Neutral':'neutral','Risk-Off':'risk_off','Event Risk':'event_risk'}.get(regime_label,'event_risk' if 'Event' in str(regime_label) else 'neutral')
+            regime_label=regime_item.get('state') if isinstance(regime_item,dict) else (regime_item or 'Unclassified')
+            code={'Risk-On':'risk_on','Neutral':'neutral','Risk-Off':'risk_off','Event Risk':'event_risk'}.get(regime_label,'event_risk' if 'Event' in str(regime_label) else 'unclassified')
             catalysts=[]
             for i,c in enumerate(r.get('top_catalysts') or []):
                 tid=theme_from_text(c.get('event','')+' '+c.get('what_happened',''))
@@ -235,8 +235,8 @@ def build(refresh=True):
             sp=r.get('signal_panel') or {}
             for key,source_key in smap.items():
                 item=sp.get(source_key) or {}
-                cur=item.get('current','→') if isinstance(item,dict) else '→'
-                signals[key]='↑' if '↑' in str(cur) else '↓' if '↓' in str(cur) else '→'
+                cur=item.get('current','?') if isinstance(item,dict) else '?'
+                signals[key]='↑' if '↑' in str(cur) else '↓' if '↓' in str(cur) else '→' if '→' in str(cur) else '?'
             risks=[]
             for rr in r.get('top_risks') or []:
                 tid=theme_from_text(rr.get('risk','')+' '+rr.get('transmission',''))

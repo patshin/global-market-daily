@@ -296,7 +296,7 @@ A successful commit, HTTP 200, reachable JSON file or green static check is not 
 - no page or console error prevents rendering;
 - there is no horizontal overflow at desktop and mobile widths.
 
-Only report success after this browser gate passes.
+GitHub owns downstream deployment and browser verification after the complete candidate PR exists. Report `SUBMITTED_FOR_VALIDATION` at that bounded handoff; only the downstream receipt may say `PUBLISHED_AND_VERIFIED` after this browser gate passes.
 
 ## 11. Failure behavior
 
@@ -305,10 +305,21 @@ If research, source verification, schema validation, renderer-contract validatio
 - do not fabricate completion;
 - do not advance `latest.json` before the pre-latest gate;
 - if `latest` already advanced and the browser fails, restore the last known-good live state or complete an explicit product repair;
-- do not insert a morning edition into formal archive as a workaround;
+- do not archive the current provisional morning edition. The separately authorized D-1 Morning Fallback Final process below is allowed only for an already published, validated historical snapshot;
 - preserve safe non-live diagnostic artifacts when useful;
 - report the failed stage, exact error and last known-good edition.
 
 ## 12. Output behavior
 
-This is a production publication task. Perform the research, validation, repository writes, deployment monitoring and browser verification. Do not stop at a draft JSON response or a plan.
+This is a production publication task. Perform research, validation and the complete candidate PR handoff; GitHub performs downstream deployment monitoring and browser verification. Do not stop at a draft JSON response or a plan.
+
+
+## Recovery, idempotence and truthful status
+
+At start, read current main/latest and search the exact date/cycle publication branch and PR. If the same edition is already merged, verify its receipt without regenerating or duplicating it. Never replace a newer latest date with an older candidate, or replace a same-date official edition with a provisional one. Re-read main before handoff; rebuild the candidate from current main if another publication has advanced. A same-date official correction requires a separately reviewed correction PR. Run `scripts/validate_publication_transition.py` where available.
+
+For D-1 or older dates with an existing published Morning snapshot but no Evening final, use `scripts/promote_morning_fallback.py --through-date YYYY-MM-DD --strict` after verifying no valid open Close PR exists. The lossless promotion preserves factual content and original data cutoff, sets `edition=Morning Fallback Final`, `is_morning_fallback=true`, `source_cycle=morning`, `fallback_reason=evening_missing`, and admits one archive/native observation. Never fabricate a missing Morning snapshot, add later facts, or present it as independently researched Evening. Include this historical catch-up with the current candidate without regressing latest. Real independently researched Evening may later supersede the fallback.
+
+A retrospective reconstruction is different: preserve the historical information cutoff, record the actual reconstruction timestamp and evidence gaps, visibly label historical backfill, set reconstruction.is_reconstructed=true and market_lens_native_eligible=false. It is never counted as contemporaneously published native research.
+
+A failed GitHub write must leave the candidate unpromoted, with the exact failing action and error reported. Do not pause, delete or change schedules automatically. Routine success may remain quiet according to the user's notification preference; meaningful failure must not be silently described as success. Never request or create API keys for this native connected-agent architecture.

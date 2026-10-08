@@ -98,7 +98,7 @@ def validate_source_doc(path: Path, expected_date: str, gate: Gate) -> tuple[dic
     return doc, set(ids)
 
 
-def validate_earnings_section(section: dict[str, Any], path: Path, gate: Gate) -> None:
+def validate_earnings_section(section: dict[str, Any], path: Path, gate: Gate, reconstructed: bool = False) -> None:
     # Validate N reported and N upcoming earnings events; never a single-company slot.
     label = f"{path}: sections.earnings"
     reported = section.get("reported")
@@ -171,7 +171,8 @@ def validate_earnings_section(section: dict[str, Any], path: Path, gate: Gate) -
         )
 
     gate.require(len(ids) == len(set(ids)), f"{label} contains duplicate earnings event IDs")
-    if not re.search(r"无重大新增", str(section.get("status", ""))):
+    evidence_gap = reconstructed and "证据缺口" in str(section.get("status", "")) and len(str(section.get("summary", ""))) >= 40
+    if not evidence_gap and not re.search(r"无重大新增", str(section.get("status", ""))):
         gate.require(bool(reported or upcoming),
                      f"{label} is marked as an update but contains no earnings events")
 
@@ -263,7 +264,7 @@ def validate_daily(path: Path, root: Path, gate: Gate) -> str | None:
         gate.require(isinstance(earnings_section, dict),
                      f"{path}: sections.earnings must be an object")
         if isinstance(earnings_section, dict):
-            validate_earnings_section(earnings_section, path, gate)
+            validate_earnings_section(earnings_section, path, gate, (report.get("reconstruction") or {}).get("is_reconstructed") is True)
 
     panel = report.get("signal_panel")
     gate.require(isinstance(panel, dict) and len(panel) == 6, f"{path}: signal_panel must contain 6 signals")
@@ -409,3 +410,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
