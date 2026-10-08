@@ -34,3 +34,7 @@
 .mobile-catalyst:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 .policy-lane-state{display:flex;justify-content:space-between;gap:18px;margin:18px 0 0;padding:12px 14px;border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline);font-size:.82rem}.policy-lane-state strong{font-family:var(--serif);font-size:.92rem}.policy-lane-state span{color:var(--muted);text-align:right}@media(max-width:560px){.policy-lane-state{display:block}.policy-lane-state span{display:block;margin-top:4px;text-align:left}}
+
+
+/* Missing observations are visibly unknown, never neutral. */
+.regime-ribbon__cell--unavailable,.lens-full-ribbon .unavailable{background:repeating-linear-gradient(45deg,#e9e5dd,#e9e5dd 4px,#cbc6bd 4px,#cbc6bd 5px);color:#555}

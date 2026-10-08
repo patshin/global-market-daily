@@ -128,6 +128,26 @@ jobs:
           if [ -n "${EXPECTED_DATE:-}" ]; then args+=(--date "$EXPECTED_DATE"); fi
           python scripts/verify_scheduled_publication.py "${args[@]}"
 
+      - name: Check derived close lens independently
+        id: lens_state
+        if: steps.main_state.outcome == 'success'
+        continue-on-error: true
+        env:
+          EXPECTED_DATE: ${{ inputs.date }}
+        run: |
+          args=(--root . --cycle close --require-lens)
+          if [ -n "${EXPECTED_DATE:-}" ]; then args+=(--date "$EXPECTED_DATE"); fi
+          python scripts/verify_scheduled_publication.py "${args[@]}"
+
+      - name: Recover derived lens without blocking public report verification
+        if: steps.main_state.outcome == 'success' && steps.lens_state.outcome != 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          echo "::warning::Close is published; derived 30D coverage is delayed."
+          gh workflow run trends-refresh.yml --repo "$REPO" --ref main
+
       - name: Verify close is live on public Pages
         id: public_state
         if: steps.main_state.outcome == 'success'
@@ -175,3 +195,4 @@ jobs:
         run: |
           echo "::error::Expected close publication is not present in main. GitHub recovery cannot synthesize missing research; the ChatGPT publisher/PR handoff requires intervention."
           exit 1
+

@@ -26,6 +26,7 @@ def main() -> int:
     parser.add_argument("--root", default=".")
     parser.add_argument("--cycle", required=True, choices=("morning", "close"))
     parser.add_argument("--date", help="Expected SGT date, YYYY-MM-DD. Defaults to now in Asia/Singapore.")
+    parser.add_argument("--require-lens", action="store_true", help="Also require derived lens coverage; use separately from core publication verification.")
     args = parser.parse_args()
 
     root = Path(args.root).resolve()
@@ -56,7 +57,13 @@ def main() -> int:
 
     archive = load(root / "docs/data/archive.json")
     archive_dates = [item.get("date") for item in archive.get("entries", [])]
-    rolling = load(root / "docs/data/trends/rolling-30d.json")
+    try:
+        rolling = load(root / "docs/data/trends/rolling-30d.json")
+    except (OSError, ValueError):
+        if args.require_lens:
+            raise AssertionError("DERIVED LENS UNAVAILABLE: cannot read rolling data")
+        rolling = {}
+        print("DERIVED LENS UNAVAILABLE: continuing core publication verification")
     native_dates = {
         item.get("date")
         for item in rolling.get("days", [])
@@ -77,7 +84,10 @@ def main() -> int:
                 "Close publication must be native 30D eligible")
         require(archive_dates.count(expected_date) == 1,
                 "Close publication must appear exactly once in formal archive")
-        require(expected_date in native_dates, "Close publication is missing from native 30D history")
+        if args.require_lens:
+            require(expected_date in native_dates, "DERIVED LENS LAG: close is published but not yet in native 30D history")
+        elif expected_date not in native_dates:
+            print("DERIVED LENS PENDING: core close publication is valid; refresh 30D independently")
 
     print(
         f"SCHEDULED PUBLICATION VERIFIED: cycle={args.cycle}, date={expected_date}, "
@@ -88,3 +98,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

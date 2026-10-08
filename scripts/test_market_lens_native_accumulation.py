@@ -1,91 +1,66 @@
 #!/usr/bin/env python3
-"""Regression test: every native daily report in the window overrides reconstruction."""
-from __future__ import annotations
-
+"""Offline regression coverage against the actual builder, including delayed releases."""
+import contextlib
 import importlib.util
+import io
+import json
+import tempfile
 from datetime import date, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-spec = importlib.util.spec_from_file_location("market_lens_builder", ROOT / "scripts/build_market_lens.py")
-module = importlib.util.module_from_spec(spec)
-assert spec.loader is not None
-spec.loader.exec_module(module)
+spec = importlib.util.spec_from_file_location('builder', ROOT/'scripts/build_market_lens.py')
+builder = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(builder)
 
+def report(day, reconstructed=False, provisional=False):
+    return {'date':day,'publication_cycle':{'is_final':not provisional},
+            'reconstruction':{'is_reconstructed':reconstructed},
+            'market_regime':{'overall':{'state':'Neutral'}},
+            'top_catalysts':[{'rank':i,'event':f'Fed catalyst {i}','what_happened':'Fixture only'} for i in range(1,4)]}
 
-def native_report(day: str, label: str) -> dict:
-    catalysts = []
-    risks = []
-    for rank, theme_id in enumerate(("global_duration", "energy_inflation", "ai_earnings"), 1):
-        theme = module.THEMES[theme_id]
-        catalysts.append({
-            "rank": rank,
-            "event": f"{label} catalyst {rank}",
-            "status": "Confirmed",
-            "event_time_et": f"{day} 08:30 EDT",
-            "event_time_sgt": f"{day} 20:30 SGT",
-            "what_happened": f"Native published evidence for {label} item {rank} with dated and quantitative context.",
-            "what_changed": "The published market interpretation changed from the prior edition.",
-            "why_it_matters": "This item changes the transmission path across rates, equities and commodities.",
-            "transmission": theme["transmission"],
-            "affected_assets": [theme["primary_asset"], "Nasdaq", "USD"],
-            "direction": "Mixed",
-            "importance": "★★★★★" if rank == 1 else "★★★★",
-            "confirmation": "The primary asset continues in the expected direction.",
-            "invalidation": theme["flip"],
-            "theme_id": theme_id,
-            "category": theme["category"],
-            "sources": ["TEST"],
-        })
-        risks.append({
-            "risk": theme["risk_label"],
-            "first_asset": theme["primary_asset"],
-            "trigger": "Synthetic regression trigger",
-            "transmission": theme["transmission"],
-            "theme_id": theme_id,
-        })
-    signal_panel = {
-        "growth_impulse": {"current": "→"},
-        "inflation_impulse": {"current": "↑"},
-        "rates_pressure": {"current": "↑"},
-        "earnings_revision": {"current": "→"},
-        "liquidity": {"current": "↓"},
-        "geopolitical_risk": {"current": "→"},
-    }
-    return {
-        "date": day,
-        "market_regime": {"overall": {"state": "Event Risk"}},
-        "top_catalysts": catalysts,
-        "top_risks": risks,
-        "signal_panel": signal_panel,
-    }
-
-
-start = date(2026, 1, 5)
-rows = []
-for index in range(15):
-    day = start + timedelta(days=index)
-    values = {
-        "sp500": 6000 + index * 8,
-        "nasdaq": 20000 + index * 24,
-        "vix": 17 + (index % 3),
-        "ust2y": 4.0 + index * 0.005,
-        "ust10y": 4.3 + index * 0.008,
-        "brent": 80 + index * 0.2,
-        "broad_usd": 120 + index * 0.05,
-        "hy_spread": 3.1 + index * 0.01,
-    }
-    rows.append({"date": day.isoformat(), "values": values, "stale_days": {key: 0 for key in values}})
-
-native_dates = [rows[5]["date"], rows[12]["date"]]
-reports = {
-    native_dates[0]: native_report(native_dates[0], "EARLIER"),
-    native_dates[1]: native_report(native_dates[1], "LATEST"),
-}
-result = module.build_session_days(rows, reports, date.fromisoformat(rows[2]["date"]), date.fromisoformat(rows[-1]["date"]))
-observed_native = [item["date"] for item in result if item["source_mode"] == "native_daily"]
-assert observed_native == native_dates, (observed_native, native_dates)
-assert next(item for item in result if item["date"] == native_dates[0])["catalysts"][0]["title"].startswith("EARLIER")
-assert next(item for item in result if item["date"] == native_dates[1])["catalysts"][0]["title"].startswith("LATEST")
-assert all(item["source_mode"] == "objective_market_reconstruction" for item in result if item["date"] not in native_dates)
-print("NATIVE HISTORY ACCUMULATION TEST PASSED — 2 archived editions override reconstruction")
+with tempfile.TemporaryDirectory() as tmp:
+    base=Path(tmp)
+    builder.HISTORY_DIR=base/'history';builder.HISTORY_DIR.mkdir()
+    builder.DAILY_DIR=base/'daily';builder.DAILY_DIR.mkdir()
+    builder.OUT_DIR=base/'out';builder.OUT_DIR.mkdir()
+    builder.VERIFIED_EVENTS_PATH=base/'events.json'
+    builder.ARCHIVE_PATH=base/'archive.json'
+    dates=[(date(2026,8,22)+timedelta(days=i)).isoformat() for i in range(40)]
+    for sid in builder.SERIES:
+        # Latest equity session precedes all other providers' last release.
+        rows=dates if sid in {'NASDAQCOM','SP500'} else dates[:-1]
+        (builder.HISTORY_DIR/f'{sid}.csv').write_text('observation_date,'+sid+'\n'+''.join(f'{day},{100+i}\n' for i,day in enumerate(rows)))
+    for day,reconstructed,provisional in [(dates[15],False,False),(dates[25],False,False),(dates[26],True,False),(dates[27],False,True)]:
+        (builder.DAILY_DIR/f'{day}.json').write_text(json.dumps(report(day,reconstructed,provisional)))
+    builder.ARCHIVE_PATH.write_text(json.dumps({'entries':[{'date':d} for d in (dates[15],dates[25],dates[26])]}))
+    with contextlib.redirect_stdout(io.StringIO()):builder.build(refresh=False)
+    data=json.loads((builder.OUT_DIR/'rolling-30d.json').read_text())
+    native=[d['date'] for d in data['days'] if d['source_mode']=='native_daily']
+    assert native==[dates[15],dates[25]],native
+    assert next(d for d in data['days'] if d['date']==dates[26])['source_mode']=='reconstructed_daily'
+    assert next(d for d in data['days'] if d['date']==dates[27])['source_mode']=='objective_market_reconstruction'
+    last=data['days'][-1]
+    assert last['data_quality']['status']=='partial',last
+    assert len(last['catalysts'])==2,last
+    assert last['regime_code']=='unavailable',last
+    assert last['signals']['rates']=='?' and last['signals']['liquidity']=='?'
+    assert data['coverage']['native_daily_days']==2
+    assert data['coverage']['reconstructed_daily_days']==1
+    assert data['coverage']['partial_days']==1
+    # Three ranked proxies do not mean full macro observation coverage.
+    vix=builder.HISTORY_DIR/'VIXCLS.csv'
+    vix.write_text(vix.read_text()+f'{dates[-1]},150\n')
+    with contextlib.redirect_stdout(io.StringIO()):builder.build(refresh=False)
+    last=json.loads((builder.OUT_DIR/'rolling-30d.json').read_text())['days'][-1]
+    assert len(last['catalysts'])==3 and last['data_quality']['status']=='partial'
+    assert last['regime_code']=='unavailable'
+    # A historical editorial edition cannot borrow a later same-date cash close.
+    latest_report=report(dates[-1],reconstructed=True)
+    latest_report['market_tape']=[{'asset':'DXY','change_1d':'+1.0%'},{'asset':'Brent','change_1d':'+2.0%'}]
+    (builder.DAILY_DIR/f'{dates[-1]}.json').write_text(json.dumps(latest_report))
+    archived=json.loads(builder.ARCHIVE_PATH.read_text());archived['entries'].append({'date':dates[-1]});builder.ARCHIVE_PATH.write_text(json.dumps(archived))
+    with contextlib.redirect_stdout(io.StringIO()):builder.build(refresh=False)
+    confirmation=json.loads((builder.OUT_DIR/'rolling-30d.json').read_text())['cross_asset_confirmation']
+    assert not confirmation['confirming'] and not confirmation['diverging']
+print('MARKET LENS REGRESSION PASSED — native accumulation, provisional exclusion, historical provenance, delayed releases')

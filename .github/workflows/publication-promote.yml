@@ -24,6 +24,9 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
       - name: Resolve and merge publication PR
         env:
           GH_TOKEN: ${{ github.token }}
@@ -35,19 +38,32 @@ jobs:
         run: |
           set -euo pipefail
           test -n "${PR_NUMBER:-}" || { echo 'Quality run has no PR number'; exit 1; }
-          meta="$(gh pr view "$PR_NUMBER" --repo "$REPO" --json state,headRefName,headRefOid,baseRefName,title)"
+          meta="$(gh pr view "$PR_NUMBER" --repo "$REPO" --json state,headRefName,headRefOid,baseRefName,title,isDraft,headRepositoryOwner)"
           echo "$meta"
           state="$(jq -r .state <<<"$meta")"
           head="$(jq -r .headRefName <<<"$meta")"
           oid="$(jq -r .headRefOid <<<"$meta")"
           base="$(jq -r .baseRefName <<<"$meta")"
           title="$(jq -r .title <<<"$meta")"
+          if [ "$state" = "MERGED" ] && [ "$oid" = "$EXPECTED_HEAD" ]; then
+            echo "Already promoted this exact publication; continuing verification handoff."
+            exit 0
+          fi
           test "$state" = "OPEN"
           test "$head" = "$EXPECTED_BRANCH"
           test "$oid" = "$EXPECTED_HEAD"
           test "$base" = "main"
           [[ "$title" == GMD\ Publish* ]]
-          gh pr merge "$PR_NUMBER" --repo "$REPO" --squash --delete-branch \
+          test "$(jq -r .isDraft <<<"$meta")" = "false"
+          test "$(jq -r .headRepositoryOwner.login <<<"$meta")" = "${REPO%%/*}"
+          # Re-read current main after Quality finishes. Old/duplicate jobs must
+          # not roll back the latest pointer or downgrade an official edition.
+          checked_main="$(gh api "repos/$REPO/git/ref/heads/main" --jq .object.sha)"
+          gh api "repos/$REPO/contents/docs/data/latest.json?ref=$checked_main" --jq .content | base64 --decode > /tmp/current-latest.json
+          gh api "repos/$REPO/contents/docs/data/latest.json?ref=$EXPECTED_HEAD" --jq .content | base64 --decode > /tmp/candidate-latest.json
+          python scripts/validate_publication_transition.py /tmp/current-latest.json /tmp/candidate-latest.json
+          test "$(gh api "repos/$REPO/git/ref/heads/main" --jq .object.sha)" = "$checked_main" || { echo "Main changed during preflight; rerun Quality against current main."; exit 1; }
+          gh pr merge "$PR_NUMBER" --repo "$REPO" --squash --delete-branch --match-head-commit "$EXPECTED_HEAD" \
             --subject "${title}" \
             --body "Automatically promoted after Publication Quality Gate passed."
           merge_sha="$(gh pr view "$PR_NUMBER" --repo "$REPO" --json mergeCommit --jq '.mergeCommit.oid // empty')"
@@ -77,3 +93,4 @@ jobs:
           # block the newly validated daily report from reaching Pages.
           gh workflow run trends-refresh.yml --repo "$REPO" --ref main
           echo "DISPATCHED Refresh 30D Market Lens on main"
+

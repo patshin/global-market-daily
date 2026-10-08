@@ -56,7 +56,7 @@ def main() -> int:
         }
         if not as_of or as_of < expected_latest:
             errors.append(f"rolling-30d stale: as_of={as_of!r}, latest native-eligible final={expected_latest}")
-        if expected_latest not in native_dates:
+        if window_start <= expected_latest <= window_end and expected_latest not in native_dates:
             errors.append(f"latest native-eligible final {expected_latest} missing from rolling-30d native days")
         for day in sorted(eligible):
             if window_start <= day <= window_end and day not in native_dates:
@@ -73,3 +73,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

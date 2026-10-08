@@ -1,16 +1,19 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-09-23",
-  "window_start": "2026-08-25",
-  "window_end": "2026-09-23",
+  "as_of": "2026-10-07",
+  "window_start": "2026-09-08",
+  "window_end": "2026-10-07",
   "coverage": {
-    "market_sessions": 28,
-    "native_daily_days": 22,
-    "reconstructed_days": 6,
-    "verified_event_days": 1,
-    "historical_series_start": "2025-07-31"
+    "market_sessions": 26,
+    "native_daily_days": 17,
+    "reconstructed_daily_days": 0,
+    "reconstructed_days": 9,
+    "partial_days": 3,
+    "verified_event_days": 0,
+    "historical_series_start": "2025-08-14"
   },
   "methodology": {
+    "reconstructed_daily": "Source-backed historical editorial reconstruction produced later; not a contemporaneously published assessment.",
     "native_daily": "Original published GMD daily assessment.",
     "verified_event": "Primary-source policy or trade event aligned to its first market session.",
     "objective_market_reconstruction": "Rule-based reconstruction from contemporaneous market-price/rate changes; not a retroactive claim about the day’s news narrative.",
@@ -85,724 +88,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-08-25",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "risk_on",
-      "regime_label": "Risk-On",
-      "dominant_theme_id": "fed_policy_path",
-      "signals": {
-        "growth": "→",
-        "inflation": "↓",
-        "rates": "↓",
-        "earnings": "↑",
-        "liquidity": "→",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "theme_id": "fed_policy_path",
-          "theme_label": "Fed Policy Path",
-          "category": "central_banks_fiscal",
-          "title": "US 2Y moves -7.0bp",
-          "evidence": "DGS2 -7.0bp",
-          "market_bias": "risk_on",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "2Y ↓ → policy path reprices easier",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "US 10Y moves -6.0bp",
-          "evidence": "DGS10 -6.0bp",
-          "market_bias": "risk_on",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "10Y ↓ → discount rate eases",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "energy_inflation",
-          "theme_label": "Energy Inflation",
-          "category": "geopolitics_energy",
-          "title": "Brent daily move -4.82%",
-          "evidence": "DCOILBRENTEU -4.82%",
-          "market_bias": "risk_on",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Oil ↓ → inflation impulse eases",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ]
-    },
-    {
-      "date": "2026-08-26",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "neutral",
-      "regime_label": "Neutral",
-      "dominant_theme_id": "china_industrial_policy",
-      "signals": {
-        "growth": "→",
-        "inflation": "→",
-        "rates": "↑",
-        "earnings": "→",
-        "liquidity": "→",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "theme_id": "china_industrial_policy",
-          "theme_label": "China Industrial Policy",
-          "category": "china_trade_policy",
-          "title": "China outlines a five-year industrial-upgrading roadmap centered on AI, advanced manufacturing and NEVs",
-          "evidence": "At a State Council Information Office briefing, officials said China had formulated nearly 200 key AI standards and planned 500 zero-carbon factories while optimizing NEV policy.",
-          "market_bias": "risk_on",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "National industrial roadmap → manufacturing standards and investment → AI, robotics, EV and clean-industry supply chains",
-          "confirmation": "Ministries publish funded implementation plans, standards and sector-specific targets.",
-          "invalidation": "Implementation lacks budgets, timetables or measurable sector deployment.",
-          "source_mode": "verified_event",
-          "event_id": "policy-2026-08-26-cn-industrial-roadmap",
-          "status": "Confirmed / Roadmap announced",
-          "actual_event_date": "2026-08-26",
-          "source_name": "State Council Information Office / Xinhua",
-          "source_title": "China unveils roadmap for AI, NEV industrial upgrading",
-          "source_url": "https://english.scio.gov.cn/pressroom/2026-08/26/content_118665742.html",
-          "source_tier": "Tier 1",
-          "confidence": "High",
-          "rank": 1
-        },
-        {
-          "theme_id": "usd_financial_conditions",
-          "theme_label": "USD Financial Conditions",
-          "category": "liquidity_credit",
-          "title": "Broad USD daily move +0.18%",
-          "evidence": "DTWEXBGS +0.18%",
-          "market_bias": "risk_off",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "USD ↑ → global financial conditions tighten",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "credit_conditions",
-          "theme_label": "Credit Conditions",
-          "category": "liquidity_credit",
-          "title": "HY OAS moves -3.0bp",
-          "evidence": "BAMLH0A0HYM2 -3.0bp",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Credit spreads tighter → funding conditions ease",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ]
-    },
-    {
-      "date": "2026-08-27",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "risk_on",
-      "regime_label": "Risk-On",
-      "dominant_theme_id": "growth_duration_rotation",
-      "signals": {
-        "growth": "↑",
-        "inflation": "↑",
-        "rates": "→",
-        "earnings": "↑",
-        "liquidity": "→",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "theme_id": "growth_duration_rotation",
-          "theme_label": "Growth / Duration Rotation",
-          "category": "earnings_ai_semis",
-          "title": "Nasdaq relative to S&P 500 +0.85pp",
-          "evidence": "NASDAQCOM +1.57% vs SP500 +0.72%",
-          "market_bias": "risk_on",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Growth leadership strengthens",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
-          "theme_id": "equity_risk_appetite",
-          "theme_label": "Equity Risk Appetite",
-          "category": "growth_macro",
-          "title": "Nasdaq daily move +1.57%",
-          "evidence": "NASDAQCOM +1.57% vs prior close",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Equity move → risk appetite / duration repricing",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "credit_conditions",
-          "theme_label": "Credit Conditions",
-          "category": "liquidity_credit",
-          "title": "HY OAS moves -4.0bp",
-          "evidence": "BAMLH0A0HYM2 -4.0bp",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Credit spreads tighter → funding conditions ease",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ]
-    },
-    {
-      "date": "2026-08-28",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "event_risk",
-      "regime_label": "Event Risk",
-      "dominant_theme_id": "fed_policy_path",
-      "signals": {
-        "growth": "↓",
-        "inflation": "→",
-        "rates": "↑",
-        "earnings": "↓",
-        "liquidity": "↓",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "theme_id": "fed_policy_path",
-          "theme_label": "Fed Policy Path",
-          "category": "central_banks_fiscal",
-          "title": "US 2Y moves +14.0bp",
-          "evidence": "DGS2 +14.0bp",
-          "market_bias": "risk_off",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "2Y ↑ → policy path reprices tighter",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
-          "theme_id": "usd_financial_conditions",
-          "theme_label": "USD Financial Conditions",
-          "category": "liquidity_credit",
-          "title": "Broad USD daily move +0.33%",
-          "evidence": "DTWEXBGS +0.33%",
-          "market_bias": "risk_off",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "USD ↑ → global financial conditions tighten",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "US 10Y moves +6.0bp",
-          "evidence": "DGS10 +6.0bp",
-          "market_bias": "risk_off",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "10Y ↑ → discount rate ↑ → long-duration equity valuation ↓",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ]
-    },
-    {
-      "date": "2026-08-31",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "risk_off",
-      "regime_label": "Risk-Off",
-      "dominant_theme_id": "credit_conditions",
-      "signals": {
-        "growth": "↓",
-        "inflation": "→",
-        "rates": "→",
-        "earnings": "↑",
-        "liquidity": "→",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "theme_id": "credit_conditions",
-          "theme_label": "Credit Conditions",
-          "category": "liquidity_credit",
-          "title": "HY OAS moves +3.0bp",
-          "evidence": "BAMLH0A0HYM2 +3.0bp",
-          "market_bias": "risk_off",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Credit spreads wider → funding conditions tighten",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
-          "theme_id": "volatility_event_risk",
-          "theme_label": "Volatility / Event Risk",
-          "category": "market_structure",
-          "title": "VIX daily move +3.40%",
-          "evidence": "VIXCLS +3.40%",
-          "market_bias": "risk_off",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "growth_duration_rotation",
-          "theme_label": "Growth / Duration Rotation",
-          "category": "earnings_ai_semis",
-          "title": "Nasdaq relative to S&P 500 +0.21pp",
-          "evidence": "NASDAQCOM -0.12% vs SP500 -0.33%",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Growth leadership strengthens",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ]
-    },
-    {
-      "date": "2026-09-01",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "event_risk",
-      "regime_label": "Event Risk",
-      "dominant_theme_id": "volatility_event_risk",
-      "signals": {
-        "growth": "↓",
-        "inflation": "↑",
-        "rates": "↑",
-        "earnings": "↓",
-        "liquidity": "↓",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "theme_id": "volatility_event_risk",
-          "theme_label": "Volatility / Event Risk",
-          "category": "market_structure",
-          "title": "VIX daily move +9.52%",
-          "evidence": "VIXCLS +9.52%",
-          "market_bias": "risk_off",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
-          "theme_id": "energy_inflation",
-          "theme_label": "Energy Inflation",
-          "category": "geopolitics_energy",
-          "title": "Brent daily move +6.99%",
-          "evidence": "DCOILBRENTEU +6.99%",
-          "market_bias": "risk_off",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Oil ↑ → inflation expectations ↑ → rates pressure ↑",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "equity_risk_appetite",
-          "theme_label": "Equity Risk Appetite",
-          "category": "growth_macro",
-          "title": "Nasdaq daily move -1.03%",
-          "evidence": "NASDAQCOM -1.03% vs prior close",
-          "market_bias": "risk_off",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Equity move → risk appetite / duration repricing",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ]
-    },
-    {
-      "date": "2026-09-02",
-      "source_mode": "native_daily",
-      "regime_code": "event_risk",
-      "regime_label": "Event Risk",
-      "dominant_theme_id": "geopolitics_energy",
-      "signals": {
-        "growth": "→",
-        "inflation": "↑",
-        "rates": "↑",
-        "earnings": "↑",
-        "liquidity": "↓",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "geopolitics_energy",
-          "theme_label": "Geopolitics / Energy",
-          "category": "geopolitics_energy",
-          "title": "美伊再度互袭，Hormuz风险重新进入实体供应链",
-          "evidence": "CENTCOM确认完成对伊朗IRGC目标的新一轮打击；Reuters报道伊朗作出反击，商业航运此前也出现遭袭与通行受限迹象。Brent在前一交易日大涨后继续站上95美元。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Hormuz/航运受扰 → 原油与运费↑ → 通胀预期↑ → 2Y/10Y收益率↑ → Nasdaq估值↓",
-          "confirmation": "Brent持续高于95美元、商业航运量进一步下降，或官方确认更多实体设施/船舶受损。",
-          "invalidation": "双方停止新增军事行动、航运恢复且Brent快速回落至冲突前区间。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "全球主权债抛售升级：UST 10Y触及4.8122%，JGB 10Y突破3%",
-          "evidence": "美国10年期国债收益率升至2023年11月以来最高；日本10年期收益率升破3%，澳大利亚与欧洲债市也同步承压。UST 2Y约4.41%，反映政策利率预期同步转鹰。",
-          "market_bias": "risk_off",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Oil/财政/债券供给↑ → 全球期限溢价↑ → 融资成本↑ → EPS估值倍数↓ → 风险资产去杠杆",
-          "confirmation": "UST 10Y持续高于4.80%、2Y继续上行，或Broadcom后出现更多大型AI债券融资供给。",
-          "invalidation": "就业显著弱于预期、油价回落并带动10Y重新跌破4.70%。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
-          "title": "Dell确认AI基础设施需求强劲；Broadcom成为下一项核心验证",
-          "evidence": "Dell季度收入约470亿美元、调整后EPS 7.04美元，均显著高于市场预期；公司将全年收入指引由1670亿美元上调至1920亿美元，并将FY27 AI服务器收入预期由600亿美元上调至740亿美元。",
-          "market_bias": "risk_on",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "AI订单/指引↑ → 半导体与网络盈利预期↑；但10Y↑ → 估值倍数↓ → 股价方向取决于盈利上修幅度",
-          "confirmation": "Broadcom AI收入与下一季指引高于市场门槛，且毛利/运营利润率没有明显恶化。",
-          "invalidation": "Broadcom AI增长或指引低于预期，或供应/融资成本导致利润率显著承压。",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-03",
-      "source_mode": "native_daily",
-      "regime_code": "event_risk",
-      "regime_label": "Event Risk / Mixed",
-      "dominant_theme_id": "geopolitics_energy",
-      "signals": {
-        "growth": "↓",
-        "inflation": "↑",
-        "rates": "↑",
-        "earnings": "↑",
-        "liquidity": "→",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "geopolitics_energy",
-          "theme_label": "Geopolitics / Energy",
-          "category": "geopolitics_energy",
-          "title": "Hormuz实体航运风险未解除，Brent继续维持高位",
-          "evidence": "美伊新一轮军事行动后，Brent与WTI维持六周高位附近；Reuters报道Hormuz船舶通行仍明显低于近期常态，实体供应链风险没有解除。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Hormuz/军事风险 → 原油与运保成本↑ → 通胀预期↑ → Fed/全球央行更鹰 → UST与全球折现率↑ → Nasdaq估值承压",
-          "confirmation": "Brent继续处于高位且Hormuz船舶通行量持续低于正常水平。",
-          "invalidation": "冲突实质降级、Hormuz船舶通行恢复且Brent回落至冲突前区间。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
-          "title": "Broadcom确认AI基础设施需求更强，但近端指引没有完全满足高预期",
-          "evidence": "Broadcom Q3营收约295.9亿美元、调整后EPS 3.32美元；AI芯片销售167亿美元。公司把FY2027 AI芯片收入预期提高至约1150亿美元，并预计FY2028约2300亿美元。",
-          "market_bias": "risk_on",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "AI bookings/ASIC/networking需求↑ → AI基础设施营收可见度↑ → 半导体基本面↑；同时指引轻微不及高预期 → 估值敏感度↑",
-          "confirmation": "AI收入、订单与客户容量承诺继续上修，并转化为收入与自由现金流。",
-          "invalidation": "后续AI收入、订单、毛利率或客户容量承诺连续低于当前高增长路径，并导致未来两个季度的收入指引同步下修。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "china_industrial_policy",
-          "theme_label": "China Industrial Policy",
-          "category": "china_trade_policy",
-          "title": "中国发布“十五五”中小企业规划，强化专精特新与先进制造资本支持",
-          "evidence": "工信部等十部门发布促进中小企业发展“十五五”规划：到2030年专精特新“小巨人”目标2.2万家、国家级中小企业特色产业集群600个，规上工业中小企业研发支出年均增长8%以上，并强调机器人、量子、脑机接口和具身智能等方向。",
-          "market_bias": "risk_on",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "产业政策/长期资本 → SME融资可得性↑ → 新兴产业研发与扩产↑ → 机器人/AI/新材料等供应链资本开支↑",
-          "confirmation": "后续专项基金、信贷、上市融资和地方配套政策形成可量化资金落地。",
-          "invalidation": "目标缺少财政/金融执行工具，或后续资金与项目落地明显弱于规划。",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-04",
-      "source_mode": "native_daily",
-      "regime_code": "event_risk",
-      "regime_label": "Event Risk / Mixed",
-      "dominant_theme_id": "fed_policy_path",
-      "signals": {
-        "growth": "→",
-        "inflation": "↑",
-        "rates": "↓",
-        "earnings": "→",
-        "liquidity": "→",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "fed_policy_path",
-          "theme_label": "Fed Policy Path",
-          "category": "central_banks_fiscal",
-          "title": "美国8月非农就业报告：20:30 SGT将重新定价9月Fed路径",
-          "evidence": "截至19:03 SGT，BLS尚未公布8月Employment Situation；Reuters调查共识为非农约+56K，7月为-23K，失业率预期约4.1%。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "NFP/失业率 → 9月Fed定价 → UST 2Y/10Y → DXY → Nasdaq/SOX/Gold",
-          "confirmation": "非农、失业率和修订呈同向强/弱信号，并得到2Y与美元同步确认。",
-          "invalidation": "头条接近预期、但工资/修订/失业率相互抵消，市场继续等待CPI。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "Waller条件性偏鸽把利率尾部从“高概率加息”拉回数据依赖",
-          "evidence": "Waller表示若未来两周通胀改善延续，他倾向9月维持利率；Sep 3美股大涨，2Y官方收于4.34%。 政策沟通进一步验证短端压力可下降，但并未消除高服务通胀与高长端收益率。",
-          "market_bias": "risk_on",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Fed沟通 → hike probability↓ → 2Y↓/USD↓ → duration equities↑；数据再热则反向",
-          "confirmation": "后续就业与CPI继续降温，2Y与美元不重新突破本周高位。",
-          "invalidation": "就业、工资或CPI再热，前端利率和加息定价同步回升。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "geopolitics_energy",
-          "theme_label": "Geopolitics / Energy",
-          "category": "geopolitics_energy",
-          "title": "Hormuz实体通行仍偏低：油价周内大涨继续约束全球久期",
-          "evidence": "Reuters援引Kpler称周四仅4艘商品船通过Hormuz，低于10日均值15艘；Brent/WTI周内约+6.5%/+8.8%。CENTCOM 9月1日确认对与海上威胁相关的IRGC目标实施打击。",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Hormuz traffic↓ → oil risk premium↑ → inflation expectations↑ → long yields↑ → growth multiples↓",
-          "confirmation": "航运量继续显著低于近期均值且油价重新上冲。；后续需看到Brent、WTI、UST 10Y、Nasdaq 100的盈利兑现、指引或市场反应继续支持当前传导判断。",
-          "invalidation": "可持续外交降级并伴随Hormuz商业通行连续恢复、油价风险溢价回落。",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-05",
-      "source_mode": "native_daily",
-      "regime_code": "event_risk",
-      "regime_label": "Event Risk / Mixed",
-      "dominant_theme_id": "fed_policy_path",
-      "signals": {
-        "growth": "↑",
-        "inflation": "↑",
-        "rates": "↑",
-        "earnings": "→",
-        "liquidity": "↓",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "fed_policy_path",
-          "theme_label": "Fed Policy Path",
-          "category": "central_banks_fiscal",
-          "title": "美国8月非农+162k显著超预期，9月Fed加息概率重新抬升",
-          "evidence": "BLS公布8月非农新增162,000人，失业率维持4.1%，劳动参与率升至61.6%；Reuters调查共识仅56,000，且6月和7月合计再上修55,000，显示劳动力市场没有按此前担忧的速度失速。",
-          "market_bias": "risk_off",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Payrolls↑ → Fed hike odds↑ → UST 2Y/DXY↑ → long-duration equity valuation↓; softer inflation can reverse the chain.",
-          "confirmation": "Sep 10 PPI and Sep 11 CPI stay firm while 2Y and Fed pricing remain elevated, confirming renewed tightening pressure.",
-          "invalidation": "Price data cools clearly, 2Y and DXY fall together and equity breadth improves beyond semiconductors.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "geopolitics_energy",
-          "theme_label": "Geopolitics / Energy",
-          "category": "geopolitics_energy",
-          "title": "Kharg附近油轮遭袭报告抬高周末能源尾部，但美方归因尚未官方确认",
-          "evidence": "Reuters转述伊朗半官方Tasnim称，一艘停在Kharg岛锚地附近的伊朗油轮遭四枚美方导弹击中，无人员伤亡且船员正在撤离；截至研究截止，伊朗官方未正式宣布，CENTCOM也未即时确认美方归因。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Kharg/export risk↑ → Brent/products↑ → inflation expectations↑ → global yields↑ → duration and consumer margins↓.",
-          "confirmation": "Official confirmation or observable export/shipping impairment plus a synchronized oil-price gap higher would validate escalation.",
-          "invalidation": "Attribution is denied or physical exports continue normally and oil gives back the weekend risk premium.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
-          "title": "Foxconn与韩国出口把AI需求韧性从公司指引扩展到供应链实物数据",
-          "evidence": "Foxconn公布8月营收T$921.8B，同比增51.98%，创历史同期纪录并连续第二个月超过T$900B，同时预计第三季度整体表现优于市场预期；韩国年内出口也已超过去年全年纪录，半导体是核心驱动。",
-          "market_bias": "risk_on",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "AI server/chip demand↑ → semiconductor earnings↑; AI capex financing↑ → capital demand and long-end rate support↑ → greater intra-tech dispersion.",
-          "confirmation": "Server orders, semiconductor exports and company guidance keep improving while SOX retains relative strength.",
-          "invalidation": "Order cancellations, inventory build or financing-cost pressure force AI capex and earnings revisions lower.",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-06",
-      "source_mode": "native_daily",
-      "regime_code": "event_risk",
-      "regime_label": "Event Risk / Energy-Inflation Tightening",
-      "dominant_theme_id": "geopolitics_energy",
-      "signals": {
-        "growth": "→",
-        "inflation": "↑",
-        "rates": "↑",
-        "earnings": "→",
-        "liquidity": "→",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "geopolitics_energy",
-          "theme_label": "Geopolitics / Energy",
-          "category": "geopolitics_energy",
-          "title": "CENTCOM确认打击三艘伊朗原油船，周末能源风险从归因不确定升级为直接美伊海上冲突",
-          "evidence": "CENTCOM公开确认，IRGC向两艘美国海军军舰发射弹道导弹后，美军打击三艘伊朗原油运输船；美方称无美国人员伤亡，该事件同时获得Reuters独立报道确认。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Verified tanker strikes → oil/shipping risk premium↑ → inflation expectations↑ → UST yields/Fed tightness↑ → duration assets↓",
-          "confirmation": "亚洲油价上行并伴随可观察船流、出口量或保险/运价恶化，随后由2Y与美元同步确认更紧金融条件。",
-          "invalidation": "实体供应与航运未进一步恶化，油价快速回吐风险溢价且利率不跟随。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "中国启动约3160亿元国有银行与保险机构资本补充，形成区域信用供给缓冲",
-          "evidence": "Reuters统计银行与保险相关资本支持约3160亿元；农业银行拟最多募资1600亿元、工商银行1000亿元补充核心一级资本，另有约570亿元用于三家国有保险机构资本补强。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "State capital → core Tier-1/solvency↑ → lending capacity↑ → China credit support↑ → regional risk sentiment↑",
-          "confirmation": "审批推进、资本落地并伴随信贷扩张或金融股与人民币相对走强。",
-          "invalidation": "发行规模明显削减、审批延后或新增资本未转化为信用供给。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "geopolitics_energy",
-          "theme_label": "Geopolitics / Energy",
-          "category": "geopolitics_energy",
-          "title": "OPEC+周日料维持10月产量政策不变，市场暂看不到立即对冲Hormuz风险的新增供给",
-          "evidence": "截至18:51 SGT，两名知情人士告诉Reuters，OPEC+周日会议倾向维持10月产量政策不变；在9月完成此前自愿减产回撤后，第四季度可能暂停进一步增产，正式决议尚未发布。",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "No new OPEC+ supply cushion → geopolitical barrel risk matters more → Brent risk premium↑ → inflation/yields↑",
-          "confirmation": "OPEC+正式公告维持10月政策不变且现货、航运或出口紧张延续。",
-          "invalidation": "正式会议意外宣布更大幅增产或实体供应风险快速缓解。",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-07",
-      "source_mode": "native_daily",
-      "regime_code": "event_risk",
-      "regime_label": "Event Risk / Energy-Inflation + Global Tightening",
-      "dominant_theme_id": "geopolitics_energy",
-      "signals": {
-        "growth": "→",
-        "inflation": "↑",
-        "rates": "↑",
-        "earnings": "→",
-        "liquidity": "→",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "geopolitics_energy",
-          "theme_label": "Geopolitics / Energy",
-          "category": "geopolitics_energy",
-          "title": "伊朗拟公布Hormuz附近新受限区，Brent日内最高触及$97.93",
-          "evidence": "Reuters在9月7日更新称，伊朗表示未来数日将在海湾公布新的受限区，并称该区域将从美方封锁线起始；同时伊朗与阿曼已就一条新国际航道的地图达成一致，计划由伊朗管理。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "受限区/航线调整 → 商船通行与保险成本 → Brent/柴油 → 通胀预期 → UST 2Y/Fed → DXY与Nasdaq。",
-          "confirmation": "未来24–72小时若Hormuz商业通行继续维持低位、运费或保险成本上升且Brent重新站上97.93美元，说明制度性航运风险正在兑现。",
-          "invalidation": "若新航道迅速获得多方认可、商业通行恢复且Brent回落到冲突升级前区间，则受限区的市场约束力明显下降。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "OPEC+正式维持2026年10月产量政策不变",
-          "evidence": "OPEC一级来源确认沙特、俄罗斯、伊拉克、科威特、哈萨克斯坦、阿尔及利亚和阿曼将在10月维持9月所需产量安排，并将下一次会议定于10月4日。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "OPEC+政策不变 → 缺少新增名义供给缓冲 → 实物中断敏感度上升 → Brent/柴油 → 全球通胀与利率。",
-          "confirmation": "若Hormuz流量仍低且Brent期限结构和柴油裂解价差继续紧张，说明名义政策不变无法抵消实物供应约束。",
-          "invalidation": "若Hormuz流量快速恢复、成员国实际出口明显上升或出现新的紧急增供安排，该催化剂的边际约束将下降。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "USDJPY跌至154.42，日元升至七个月高位并强化BOJ收紧交易",
-          "evidence": "Reuters报道美元兑日元下跌1.14%至154.42，日元升至七个月高位；同时日本财务省数据显示8月底外储为1.207524万亿美元，单月减少795.75亿美元。",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "BOJ收紧预期/干预可信度 → JPY升值 → carry unwind → Nikkei与全球股票波动 → JGB/UST跨市场利率联动。",
-          "confirmation": "USDJPY持续低于155且Sep 18 BOJ加息概率保持高位，同时JGB收益率与日元方向一致，将确认套息交易正在重估。",
-          "invalidation": "USDJPY快速重回157上方、BOJ公开弱化近期加息信号或市场大幅撤回Sep 18加息定价，会削弱该链条。",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
     {
       "date": "2026-09-08",
       "source_mode": "native_daily",
@@ -1794,39 +1079,709 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-09-24",
+      "source_mode": "native_daily",
+      "regime_code": "neutral",
+      "regime_label": "Risk-off / growth-inflation and term-premium repricing",
+      "dominant_theme_id": "us_china_trade_controls",
+      "signals": {
+        "growth": "↑",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "→",
+        "liquidity": "↓",
+        "geopolitics": "→"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "U.S. flash Composite PMI jumps to 58.4 as the 10Y reaches 5.11%, reversing the prior duration-relief trade",
+          "evidence": "S&P Global's September flash Composite PMI rose to 58.4 from 56.0, the highest since July 2021, while new orders, backlogs and input prices strengthened. The U.S. 10Y yield rose to 5.11%; S&P 500 fell 0.8%, Nasdaq 1.1% and Russell 2000 1.8%.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Hot growth/prices → Fed path and term premium ↑ → 10Y/WACC ↑ → long-duration and funding-sensitive equity multiples ↓.",
+          "confirmation": "A sustained 10Y above 5% with Russell 2000 and non-cash-rich growth underperforming would confirm that the rate shock is binding across risk assets.",
+          "invalidation": "A decisive fall in the 10Y alongside better equity breadth, without a renewed oil spike, would weaken the growth-to-rates tightening thesis.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "The $70B U.S. 5Y auction clears at 5.033% with a 3.1bp tail, showing weak demand beyond the front end",
+          "evidence": "Treasury sold $70 billion of five-year notes at 5.033%, above the 5.002% when-issued yield. The 2.21 bid-to-cover ratio was below the recent six-month average of 2.33, and the on-the-run five-year yield traded near 5.023% after the result.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Weak Treasury demand → term premium / 5Y yield ↑ → corporate and project financing spreads ↑ → capex hurdle and equity discount rate ↑.",
+          "confirmation": "Additional Treasury supply clearing with tails or low indirect demand while 5Y/10Y yields stay above 5% would confirm a persistent supply-driven financing premium.",
+          "invalidation": "Strong subsequent auctions with stop-throughs, higher indirect participation and a sustained yield retracement would weaken the Treasury-supply stress signal.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "china_industrial_policy",
+          "theme_label": "China Industrial Policy",
+          "category": "china_trade_policy",
+          "title": "Trump–Xi meeting on September 24 becomes the immediate trade, AI-safety and critical-mineral policy catalyst",
+          "evidence": "Xi Jinping is visiting the United States from September 23-25. Ahead of the leaders' meeting, U.S. and Chinese officials discussed an AI-safety notification mechanism, tariff treatment, trade and critical minerals, while several unresolved issues remained open.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Trade/AI/critical-mineral outcome → tariff and supply-chain risk premium → semiconductors, CNH and cyclicals → global equity breadth.",
+          "confirmation": "An official joint or parallel announcement extending trade stability or formalizing AI-risk communication would confirm a policy-relief channel.",
+          "invalidation": "No verifiable progress, renewed tariff threats or tighter critical-mineral/technology restrictions would invalidate the de-escalation case.",
+          "source_mode": "native_daily"
+        }
+      ]
+    },
+    {
+      "date": "2026-09-25",
+      "source_mode": "objective_market_reconstruction",
+      "regime_code": "risk_on",
+      "regime_label": "Risk-On",
+      "dominant_theme_id": "credit_conditions",
+      "signals": {
+        "growth": "↑",
+        "inflation": "↓",
+        "rates": "↓",
+        "earnings": "→",
+        "liquidity": "↓",
+        "geopolitics": "↓"
+      },
+      "catalysts": [
+        {
+          "theme_id": "credit_conditions",
+          "theme_label": "Credit Conditions",
+          "category": "liquidity_credit",
+          "title": "HY OAS moves +13.0bp",
+          "evidence": "BAMLH0A0HYM2 +13.0bp",
+          "market_bias": "risk_off",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Credit spreads wider → funding conditions tighten",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 1
+        },
+        {
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
+          "title": "US 2Y moves -6.0bp",
+          "evidence": "DGS2 -6.0bp",
+          "market_bias": "risk_on",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "2Y ↓ → policy path reprices easier",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 2
+        },
+        {
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
+          "title": "Brent daily move -4.06%",
+          "evidence": "DCOILBRENTEU -4.06%",
+          "market_bias": "risk_on",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Oil ↓ → inflation impulse eases",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 3
+        }
+      ],
+      "data_quality": {
+        "status": "complete",
+        "available_driver_count": 3,
+        "available_series": [
+          "NASDAQCOM",
+          "SP500",
+          "VIXCLS",
+          "DGS2",
+          "DGS10",
+          "DCOILBRENTEU",
+          "DTWEXBGS",
+          "BAMLH0A0HYM2"
+        ],
+        "missing_series": [],
+        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
+      }
+    },
+    {
+      "date": "2026-09-28",
+      "source_mode": "objective_market_reconstruction",
+      "regime_code": "event_risk",
+      "regime_label": "Event Risk",
+      "dominant_theme_id": "credit_conditions",
+      "signals": {
+        "growth": "↓",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "→",
+        "liquidity": "↓",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "theme_id": "credit_conditions",
+          "theme_label": "Credit Conditions",
+          "category": "liquidity_credit",
+          "title": "HY OAS moves +9.0bp",
+          "evidence": "BAMLH0A0HYM2 +9.0bp",
+          "market_bias": "risk_off",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Credit spreads wider → funding conditions tighten",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 1
+        },
+        {
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
+          "title": "US 2Y moves +11.0bp",
+          "evidence": "DGS2 +11.0bp",
+          "market_bias": "risk_off",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "2Y ↑ → policy path reprices tighter",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 2
+        },
+        {
+          "theme_id": "volatility_event_risk",
+          "theme_label": "Volatility / Event Risk",
+          "category": "market_structure",
+          "title": "VIX daily move +8.07%",
+          "evidence": "VIXCLS +8.07%",
+          "market_bias": "risk_off",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 3
+        }
+      ],
+      "data_quality": {
+        "status": "complete",
+        "available_driver_count": 3,
+        "available_series": [
+          "NASDAQCOM",
+          "SP500",
+          "VIXCLS",
+          "DGS2",
+          "DGS10",
+          "DCOILBRENTEU",
+          "DTWEXBGS",
+          "BAMLH0A0HYM2"
+        ],
+        "missing_series": [],
+        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
+      }
+    },
+    {
+      "date": "2026-09-29",
+      "source_mode": "objective_market_reconstruction",
+      "regime_code": "risk_off",
+      "regime_label": "Risk-Off",
+      "dominant_theme_id": "energy_inflation",
+      "signals": {
+        "growth": "→",
+        "inflation": "↓",
+        "rates": "↓",
+        "earnings": "→",
+        "liquidity": "↓",
+        "geopolitics": "→"
+      },
+      "catalysts": [
+        {
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
+          "title": "Brent daily move -5.01%",
+          "evidence": "DCOILBRENTEU -5.01%",
+          "market_bias": "risk_on",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Oil ↓ → inflation impulse eases",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 1
+        },
+        {
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
+          "title": "US 2Y moves -3.0bp",
+          "evidence": "DGS2 -3.0bp",
+          "market_bias": "risk_on",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "2Y ↓ → policy path reprices easier",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 2
+        },
+        {
+          "theme_id": "usd_financial_conditions",
+          "theme_label": "USD Financial Conditions",
+          "category": "liquidity_credit",
+          "title": "Broad USD daily move +0.28%",
+          "evidence": "DTWEXBGS +0.28%",
+          "market_bias": "risk_off",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "USD ↑ → global financial conditions tighten",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 3
+        }
+      ],
+      "data_quality": {
+        "status": "complete",
+        "available_driver_count": 3,
+        "available_series": [
+          "NASDAQCOM",
+          "SP500",
+          "VIXCLS",
+          "DGS2",
+          "DGS10",
+          "DCOILBRENTEU",
+          "DTWEXBGS",
+          "BAMLH0A0HYM2"
+        ],
+        "missing_series": [],
+        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
+      }
+    },
+    {
+      "date": "2026-09-30",
+      "source_mode": "objective_market_reconstruction",
+      "regime_code": "neutral",
+      "regime_label": "Neutral",
+      "dominant_theme_id": "growth_duration_rotation",
+      "signals": {
+        "growth": "→",
+        "inflation": "→",
+        "rates": "→",
+        "earnings": "↑",
+        "liquidity": "→",
+        "geopolitics": "→"
+      },
+      "catalysts": [
+        {
+          "theme_id": "growth_duration_rotation",
+          "theme_label": "Growth / Duration Rotation",
+          "category": "earnings_ai_semis",
+          "title": "Nasdaq relative to S&P 500 +0.49pp",
+          "evidence": "NASDAQCOM +0.24% vs SP500 -0.25%",
+          "market_bias": "risk_on",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Growth leadership strengthens",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 1
+        },
+        {
+          "theme_id": "usd_financial_conditions",
+          "theme_label": "USD Financial Conditions",
+          "category": "liquidity_credit",
+          "title": "Broad USD daily move -0.05%",
+          "evidence": "DTWEXBGS -0.05%",
+          "market_bias": "risk_on",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "USD ↓ → global conditions ease",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 2
+        },
+        {
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
+          "title": "US 2Y moves -1.0bp",
+          "evidence": "DGS2 -1.0bp",
+          "market_bias": "risk_on",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "2Y ↓ → policy path reprices easier",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 3
+        }
+      ],
+      "data_quality": {
+        "status": "complete",
+        "available_driver_count": 3,
+        "available_series": [
+          "NASDAQCOM",
+          "SP500",
+          "VIXCLS",
+          "DGS2",
+          "DGS10",
+          "DCOILBRENTEU",
+          "DTWEXBGS",
+          "BAMLH0A0HYM2"
+        ],
+        "missing_series": [],
+        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
+      }
+    },
+    {
+      "date": "2026-10-01",
+      "source_mode": "objective_market_reconstruction",
+      "regime_code": "risk_off",
+      "regime_label": "Risk-Off",
+      "dominant_theme_id": "usd_financial_conditions",
+      "signals": {
+        "growth": "→",
+        "inflation": "↓",
+        "rates": "↓",
+        "earnings": "→",
+        "liquidity": "↓",
+        "geopolitics": "→"
+      },
+      "catalysts": [
+        {
+          "theme_id": "usd_financial_conditions",
+          "theme_label": "USD Financial Conditions",
+          "category": "liquidity_credit",
+          "title": "Broad USD daily move +0.68%",
+          "evidence": "DTWEXBGS +0.68%",
+          "market_bias": "risk_off",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "USD ↑ → global financial conditions tighten",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 1
+        },
+        {
+          "theme_id": "credit_conditions",
+          "theme_label": "Credit Conditions",
+          "category": "liquidity_credit",
+          "title": "HY OAS moves +12.0bp",
+          "evidence": "BAMLH0A0HYM2 +12.0bp",
+          "market_bias": "risk_off",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Credit spreads wider → funding conditions tighten",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 2
+        },
+        {
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
+          "title": "US 2Y moves -10.0bp",
+          "evidence": "DGS2 -10.0bp",
+          "market_bias": "risk_on",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "2Y ↓ → policy path reprices easier",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 3
+        }
+      ],
+      "data_quality": {
+        "status": "complete",
+        "available_driver_count": 3,
+        "available_series": [
+          "NASDAQCOM",
+          "SP500",
+          "VIXCLS",
+          "DGS2",
+          "DGS10",
+          "DCOILBRENTEU",
+          "DTWEXBGS",
+          "BAMLH0A0HYM2"
+        ],
+        "missing_series": [],
+        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
+      }
+    },
+    {
+      "date": "2026-10-02",
+      "source_mode": "objective_market_reconstruction",
+      "regime_code": "risk_on",
+      "regime_label": "Risk-On",
+      "dominant_theme_id": "energy_inflation",
+      "signals": {
+        "growth": "↑",
+        "inflation": "↑",
+        "rates": "→",
+        "earnings": "↑",
+        "liquidity": "↑",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
+          "title": "Brent daily move +18.02%",
+          "evidence": "DCOILBRENTEU +18.02%",
+          "market_bias": "risk_off",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Oil ↑ → inflation expectations ↑ → rates pressure ↑",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 1
+        },
+        {
+          "theme_id": "credit_conditions",
+          "theme_label": "Credit Conditions",
+          "category": "liquidity_credit",
+          "title": "HY OAS moves -14.0bp",
+          "evidence": "BAMLH0A0HYM2 -14.0bp",
+          "market_bias": "risk_on",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Credit spreads tighter → funding conditions ease",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 2
+        },
+        {
+          "theme_id": "usd_financial_conditions",
+          "theme_label": "USD Financial Conditions",
+          "category": "liquidity_credit",
+          "title": "Broad USD daily move -0.33%",
+          "evidence": "DTWEXBGS -0.33%",
+          "market_bias": "risk_on",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "USD ↓ → global conditions ease",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 3
+        }
+      ],
+      "data_quality": {
+        "status": "complete",
+        "available_driver_count": 3,
+        "available_series": [
+          "NASDAQCOM",
+          "SP500",
+          "VIXCLS",
+          "DGS2",
+          "DGS10",
+          "DCOILBRENTEU",
+          "DTWEXBGS",
+          "BAMLH0A0HYM2"
+        ],
+        "missing_series": [],
+        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
+      }
+    },
+    {
+      "date": "2026-10-05",
+      "source_mode": "objective_market_reconstruction",
+      "regime_code": "unavailable",
+      "regime_label": "Insufficient data",
+      "dominant_theme_id": "energy_inflation",
+      "signals": {
+        "growth": "↑",
+        "inflation": "↓",
+        "rates": "→",
+        "earnings": "↑",
+        "liquidity": "?",
+        "geopolitics": "→"
+      },
+      "catalysts": [
+        {
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
+          "title": "Brent daily move -7.38%",
+          "evidence": "DCOILBRENTEU -7.38%",
+          "market_bias": "risk_on",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Oil ↓ → inflation impulse eases",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 1
+        },
+        {
+          "theme_id": "growth_duration_rotation",
+          "theme_label": "Growth / Duration Rotation",
+          "category": "earnings_ai_semis",
+          "title": "Nasdaq relative to S&P 500 +0.39pp",
+          "evidence": "NASDAQCOM +1.05% vs SP500 +0.66%",
+          "market_bias": "risk_on",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "Growth leadership strengthens",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 2
+        },
+        {
+          "theme_id": "equity_risk_appetite",
+          "theme_label": "Equity Risk Appetite",
+          "category": "growth_macro",
+          "title": "Nasdaq daily move +1.05%",
+          "evidence": "NASDAQCOM +1.05% vs prior close",
+          "market_bias": "risk_on",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "Equity move → risk appetite / duration repricing",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 3
+        }
+      ],
+      "data_quality": {
+        "status": "partial",
+        "available_driver_count": 3,
+        "available_series": [
+          "NASDAQCOM",
+          "SP500",
+          "VIXCLS",
+          "DGS2",
+          "DGS10",
+          "DCOILBRENTEU",
+          "BAMLH0A0HYM2"
+        ],
+        "missing_series": [
+          "DTWEXBGS"
+        ],
+        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
+      }
+    },
+    {
+      "date": "2026-10-06",
+      "source_mode": "objective_market_reconstruction",
+      "regime_code": "unavailable",
+      "regime_label": "Insufficient data",
+      "dominant_theme_id": "credit_conditions",
+      "signals": {
+        "growth": "↑",
+        "inflation": "→",
+        "rates": "↓",
+        "earnings": "→",
+        "liquidity": "?",
+        "geopolitics": "→"
+      },
+      "catalysts": [
+        {
+          "theme_id": "credit_conditions",
+          "theme_label": "Credit Conditions",
+          "category": "liquidity_credit",
+          "title": "HY OAS moves -9.0bp",
+          "evidence": "BAMLH0A0HYM2 -9.0bp",
+          "market_bias": "risk_on",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Credit spreads tighter → funding conditions ease",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 1
+        },
+        {
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
+          "title": "US 10Y moves -4.0bp",
+          "evidence": "DGS10 -4.0bp",
+          "market_bias": "risk_on",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "10Y ↓ → discount rate eases",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 2
+        },
+        {
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
+          "title": "US 2Y moves -5.0bp",
+          "evidence": "DGS2 -5.0bp",
+          "market_bias": "risk_on",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "2Y ↓ → policy path reprices easier",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 3
+        }
+      ],
+      "data_quality": {
+        "status": "partial",
+        "available_driver_count": 3,
+        "available_series": [
+          "NASDAQCOM",
+          "SP500",
+          "VIXCLS",
+          "DGS2",
+          "DGS10",
+          "DCOILBRENTEU",
+          "BAMLH0A0HYM2"
+        ],
+        "missing_series": [
+          "DTWEXBGS"
+        ],
+        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
+      }
+    },
+    {
+      "date": "2026-10-07",
+      "source_mode": "objective_market_reconstruction",
+      "regime_code": "unavailable",
+      "regime_label": "Insufficient data",
+      "dominant_theme_id": "equity_risk_appetite",
+      "signals": {
+        "growth": "↓",
+        "inflation": "?",
+        "rates": "?",
+        "earnings": "→",
+        "liquidity": "?",
+        "geopolitics": "?"
+      },
+      "catalysts": [
+        {
+          "theme_id": "equity_risk_appetite",
+          "theme_label": "Equity Risk Appetite",
+          "category": "growth_macro",
+          "title": "Nasdaq daily move -0.22%",
+          "evidence": "NASDAQCOM -0.22% vs prior close",
+          "market_bias": "risk_off",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "Equity move → risk appetite / duration repricing",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 1
+        },
+        {
+          "theme_id": "growth_duration_rotation",
+          "theme_label": "Growth / Duration Rotation",
+          "category": "earnings_ai_semis",
+          "title": "Nasdaq relative to S&P 500 -0.00pp",
+          "evidence": "NASDAQCOM -0.22% vs SP500 -0.22%",
+          "market_bias": "risk_off",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "Long-duration growth underperforms",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 2
+        }
+      ],
+      "data_quality": {
+        "status": "partial",
+        "available_driver_count": 2,
+        "available_series": [
+          "NASDAQCOM",
+          "SP500"
+        ],
+        "missing_series": [
+          "VIXCLS",
+          "DGS2",
+          "DGS10",
+          "DCOILBRENTEU",
+          "DTWEXBGS",
+          "BAMLH0A0HYM2"
+        ],
+        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
+      }
     }
   ],
   "regime_transitions": [
-    {
-      "date": "2026-08-26",
-      "from": "Risk-On",
-      "to": "Neutral",
-      "dominant_theme_id": "china_industrial_policy"
-    },
-    {
-      "date": "2026-08-27",
-      "from": "Neutral",
-      "to": "Risk-On",
-      "dominant_theme_id": "growth_duration_rotation"
-    },
-    {
-      "date": "2026-08-28",
-      "from": "Risk-On",
-      "to": "Event Risk",
-      "dominant_theme_id": "fed_policy_path"
-    },
-    {
-      "date": "2026-08-31",
-      "from": "Event Risk",
-      "to": "Risk-Off",
-      "dominant_theme_id": "credit_conditions"
-    },
-    {
-      "date": "2026-09-01",
-      "from": "Risk-Off",
-      "to": "Event Risk",
-      "dominant_theme_id": "volatility_event_risk"
-    },
     {
       "date": "2026-09-14",
       "from": "Weekend Event Risk / Reinflation + Tight Financial Conditions",
@@ -1844,19 +1799,76 @@
       "from": "Weekend Event Risk / policy relief versus 5% yields",
       "to": "Selective risk-on / rates remain restrictive",
       "dominant_theme_id": "ai_earnings"
+    },
+    {
+      "date": "2026-09-25",
+      "from": "Risk-off / growth-inflation and term-premium repricing",
+      "to": "Risk-On",
+      "dominant_theme_id": "credit_conditions"
+    },
+    {
+      "date": "2026-09-28",
+      "from": "Risk-On",
+      "to": "Event Risk",
+      "dominant_theme_id": "credit_conditions"
+    },
+    {
+      "date": "2026-09-29",
+      "from": "Event Risk",
+      "to": "Risk-Off",
+      "dominant_theme_id": "energy_inflation"
+    },
+    {
+      "date": "2026-09-30",
+      "from": "Risk-Off",
+      "to": "Neutral",
+      "dominant_theme_id": "growth_duration_rotation"
+    },
+    {
+      "date": "2026-10-01",
+      "from": "Neutral",
+      "to": "Risk-Off",
+      "dominant_theme_id": "usd_financial_conditions"
+    },
+    {
+      "date": "2026-10-02",
+      "from": "Risk-Off",
+      "to": "Risk-On",
+      "dominant_theme_id": "energy_inflation"
+    },
+    {
+      "date": "2026-10-05",
+      "from": "Risk-On",
+      "to": "Insufficient data",
+      "dominant_theme_id": "energy_inflation"
     }
   ],
   "persistent_themes": [
     {
+      "theme_id": "us_china_trade_controls",
+      "theme_label": "U.S.–China Trade Controls",
+      "category": "china_trade_policy",
+      "days_in_top3": 15,
+      "best_rank": 1,
+      "first_seen": "2026-09-08",
+      "last_seen": "2026-09-24",
+      "latest_rank": null,
+      "state": "Resolved",
+      "latest_transmission": "Weak Treasury demand → term premium / 5Y yield ↑ → corporate and project financing spreads ↑ → capex hurdle and equity discount rate ↑.",
+      "source_modes": [
+        "native_daily"
+      ]
+    },
+    {
       "theme_id": "geopolitics_energy",
       "theme_label": "Geopolitics / Energy",
       "category": "geopolitics_energy",
-      "days_in_top3": 18,
+      "days_in_top3": 11,
       "best_rank": 1,
-      "first_seen": "2026-09-02",
+      "first_seen": "2026-09-08",
       "last_seen": "2026-09-21",
       "latest_rank": null,
-      "state": "Persistent",
+      "state": "Resolved",
       "latest_transmission": "Saudi export recovery → crude/freight premium ↓ → inflation expectations ↓ → rate pressure eases → risk-asset discount rates improve.",
       "source_modes": [
         "native_daily"
@@ -1866,59 +1878,28 @@
       "theme_id": "ai_earnings",
       "theme_label": "AI / Earnings",
       "category": "earnings_ai_semis",
-      "days_in_top3": 14,
+      "days_in_top3": 11,
       "best_rank": 1,
-      "first_seen": "2026-09-02",
+      "first_seen": "2026-09-10",
       "last_seen": "2026-09-23",
-      "latest_rank": 3,
-      "state": "Persistent",
+      "latest_rank": null,
+      "state": "Resolved",
       "latest_transmission": "AI model/chip demand ↑ → data-center capex ↑ → debt supply ↑ → credit concession ↑ → project hurdle rates and equity multiples become more financing-sensitive.",
       "source_modes": [
         "native_daily"
       ]
     },
     {
-      "theme_id": "us_china_trade_controls",
-      "theme_label": "U.S.–China Trade Controls",
-      "category": "china_trade_policy",
-      "days_in_top3": 13,
-      "best_rank": 1,
-      "first_seen": "2026-09-08",
-      "last_seen": "2026-09-23",
-      "latest_rank": 2,
-      "state": "Escalating",
-      "latest_transmission": "Pipeline restart + potential Hormuz reopening → crude/freight premium ↓ → inflation expectations ↓ → long-yield pressure ↓ → broader risk-asset support.",
-      "source_modes": [
-        "native_daily"
-      ]
-    },
-    {
-      "theme_id": "global_duration",
-      "theme_label": "Global Duration / Term Premium",
-      "category": "inflation_rates",
-      "days_in_top3": 8,
-      "best_rank": 1,
-      "first_seen": "2026-08-25",
-      "last_seen": "2026-09-18",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "Lower oil/yields + event uncertainty cleared → volatility ↓ / equity breadth ↑ → easier market-based financial conditions; expiry can amplify or distort the signal.",
-      "source_modes": [
-        "native_daily",
-        "objective_market_reconstruction"
-      ]
-    },
-    {
       "theme_id": "fed_policy_path",
       "theme_label": "Fed Policy Path",
       "category": "central_banks_fiscal",
-      "days_in_top3": 6,
-      "best_rank": 1,
-      "first_seen": "2026-08-25",
-      "last_seen": "2026-09-12",
+      "days_in_top3": 8,
+      "best_rank": 2,
+      "first_seen": "2026-09-08",
+      "last_seen": "2026-10-06",
       "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "CPI acceleration → higher Fed hike probability → higher 2Y/real yields → tighter dollar liquidity and valuation compression.",
+      "state": "Persistent",
+      "latest_transmission": "2Y ↓ → policy path reprices easier",
       "source_modes": [
         "native_daily",
         "objective_market_reconstruction"
@@ -1928,90 +1909,45 @@
       "theme_id": "energy_inflation",
       "theme_label": "Energy Inflation",
       "category": "geopolitics_energy",
-      "days_in_top3": 5,
+      "days_in_top3": 7,
       "best_rank": 1,
-      "first_seen": "2026-08-25",
-      "last_seen": "2026-09-17",
+      "first_seen": "2026-09-09",
+      "last_seen": "2026-10-05",
       "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Alternative export capacity → crude/freight premium ↓ → inflation pressure ↓ → term premium/policy pressure ↓.",
+      "state": "Persistent",
+      "latest_transmission": "Oil ↓ → inflation impulse eases",
       "source_modes": [
         "native_daily",
         "objective_market_reconstruction"
       ]
     },
     {
-      "theme_id": "china_industrial_policy",
-      "theme_label": "China Industrial Policy",
-      "category": "china_trade_policy",
+      "theme_id": "global_duration",
+      "theme_label": "Global Duration / Term Premium",
+      "category": "inflation_rates",
       "days_in_top3": 5,
       "best_rank": 1,
-      "first_seen": "2026-08-26",
-      "last_seen": "2026-09-21",
+      "first_seen": "2026-09-11",
+      "last_seen": "2026-10-06",
       "latest_rank": null,
-      "state": "Escalating",
-      "latest_transmission": "LPR hold + U.S.-China talks → CNH/China credit expectations and AI supply-chain risk → Asian cyclicals, semiconductors and commodities.",
+      "state": "Persistent",
+      "latest_transmission": "10Y ↓ → discount rate eases",
       "source_modes": [
         "native_daily",
-        "verified_event"
-      ]
-    },
-    {
-      "theme_id": "market_structure",
-      "theme_label": "Market Structure",
-      "category": "market_structure",
-      "days_in_top3": 4,
-      "best_rank": 2,
-      "first_seen": "2026-09-06",
-      "last_seen": "2026-09-13",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Yen appreciation / BOJ normalization → higher funding cost → carry reduction → cross-asset deleveraging → tighter financial conditions.",
-      "source_modes": [
-        "native_daily"
+        "objective_market_reconstruction"
       ]
     },
     {
       "theme_id": "credit_conditions",
       "theme_label": "Credit Conditions",
       "category": "liquidity_credit",
-      "days_in_top3": 3,
+      "days_in_top3": 5,
       "best_rank": 1,
-      "first_seen": "2026-08-26",
-      "last_seen": "2026-08-31",
+      "first_seen": "2026-09-25",
+      "last_seen": "2026-10-06",
       "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Credit spreads wider → funding conditions tighten",
-      "source_modes": [
-        "objective_market_reconstruction"
-      ]
-    },
-    {
-      "theme_id": "growth_duration_rotation",
-      "theme_label": "Growth / Duration Rotation",
-      "category": "earnings_ai_semis",
-      "days_in_top3": 2,
-      "best_rank": 1,
-      "first_seen": "2026-08-27",
-      "last_seen": "2026-08-31",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Growth leadership strengthens",
-      "source_modes": [
-        "objective_market_reconstruction"
-      ]
-    },
-    {
-      "theme_id": "volatility_event_risk",
-      "theme_label": "Volatility / Event Risk",
-      "category": "market_structure",
-      "days_in_top3": 2,
-      "best_rank": 1,
-      "first_seen": "2026-08-31",
-      "last_seen": "2026-09-01",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
+      "state": "Persistent",
+      "latest_transmission": "Credit spreads tighter → funding conditions ease",
       "source_modes": [
         "objective_market_reconstruction"
       ]
@@ -2020,34 +1956,97 @@
       "theme_id": "usd_financial_conditions",
       "theme_label": "USD Financial Conditions",
       "category": "liquidity_credit",
-      "days_in_top3": 2,
-      "best_rank": 2,
-      "first_seen": "2026-08-26",
-      "last_seen": "2026-08-28",
+      "days_in_top3": 4,
+      "best_rank": 1,
+      "first_seen": "2026-09-29",
+      "last_seen": "2026-10-02",
       "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "USD ↑ → global financial conditions tighten",
+      "state": "Persistent",
+      "latest_transmission": "USD ↓ → global conditions ease",
       "source_modes": [
         "objective_market_reconstruction"
+      ]
+    },
+    {
+      "theme_id": "china_industrial_policy",
+      "theme_label": "China Industrial Policy",
+      "category": "china_trade_policy",
+      "days_in_top3": 4,
+      "best_rank": 2,
+      "first_seen": "2026-09-15",
+      "last_seen": "2026-09-24",
+      "latest_rank": null,
+      "state": "Resolved",
+      "latest_transmission": "Trade/AI/critical-mineral outcome → tariff and supply-chain risk premium → semiconductors, CNH and cyclicals → global equity breadth.",
+      "source_modes": [
+        "native_daily"
+      ]
+    },
+    {
+      "theme_id": "growth_duration_rotation",
+      "theme_label": "Growth / Duration Rotation",
+      "category": "earnings_ai_semis",
+      "days_in_top3": 3,
+      "best_rank": 1,
+      "first_seen": "2026-09-30",
+      "last_seen": "2026-10-07",
+      "latest_rank": 2,
+      "state": "Escalating",
+      "latest_transmission": "Long-duration growth underperforms",
+      "source_modes": [
+        "objective_market_reconstruction"
+      ]
+    },
+    {
+      "theme_id": "equity_risk_appetite",
+      "theme_label": "Equity Risk Appetite",
+      "category": "growth_macro",
+      "days_in_top3": 2,
+      "best_rank": 1,
+      "first_seen": "2026-10-05",
+      "last_seen": "2026-10-07",
+      "latest_rank": 1,
+      "state": "New",
+      "latest_transmission": "Equity move → risk appetite / duration repricing",
+      "source_modes": [
+        "objective_market_reconstruction"
+      ]
+    },
+    {
+      "theme_id": "market_structure",
+      "theme_label": "Market Structure",
+      "category": "market_structure",
+      "days_in_top3": 1,
+      "best_rank": 3,
+      "first_seen": "2026-09-13",
+      "last_seen": "2026-09-13",
+      "latest_rank": null,
+      "state": "Resolved",
+      "latest_transmission": "Yen appreciation / BOJ normalization → higher funding cost → carry reduction → cross-asset deleveraging → tighter financial conditions.",
+      "source_modes": [
+        "native_daily"
       ]
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "ai_earnings",
-    "theme_label": "AI / Earnings",
-    "as_of": "2026-09-23",
-    "confirming": [
+    "theme_id": "equity_risk_appetite",
+    "theme_label": "Equity Risk Appetite",
+    "as_of": "2026-10-07",
+    "confirming": [],
+    "diverging": [
       {
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
-        "change": "+0.45%"
-      }
-    ],
-    "diverging": [
+        "as_of": "2026-10-07",
+        "source_mode": "objective_market_reconstruction",
+        "change": "-0.22%"
+      },
       {
         "series_id": "SP500",
         "label": "S&P 500",
-        "change": "flat (-0.00%)"
+        "as_of": "2026-10-07",
+        "source_mode": "objective_market_reconstruction",
+        "change": "-0.22%"
       }
     ],
     "unavailable": [
@@ -2056,8 +2055,8 @@
         "label": "VIX"
       }
     ],
-    "interpretation_note": "1 项资产确认当前主线，1 项出现背离。",
-    "what_would_flip_it": "A renewed rise in the 2Y/auction clearing yields alongside Nasdaq reversal and weaker credit would invalidate the selective-risk-on setup."
+    "interpretation_note": "0 项资产确认当前主线，2 项出现背离。",
+    "what_would_flip_it": "A material reversal in the key confirming assets."
   },
   "series": {
     "NASDAQCOM": {
@@ -2066,42 +2065,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-25",
-          "value": 26151.3
-        },
-        {
-          "date": "2026-08-26",
-          "value": 26130.2
-        },
-        {
-          "date": "2026-08-27",
-          "value": 26541.35
-        },
-        {
-          "date": "2026-08-28",
-          "value": 26402.42
-        },
-        {
-          "date": "2026-08-31",
-          "value": 26370.89
-        },
-        {
-          "date": "2026-09-01",
-          "value": 26099.77
-        },
-        {
-          "date": "2026-09-02",
-          "value": 26217.83
-        },
-        {
-          "date": "2026-09-03",
-          "value": 26584.06
-        },
-        {
-          "date": "2026-09-04",
-          "value": 26506.99
-        },
         {
           "date": "2026-09-08",
           "value": 26421.41
@@ -2145,6 +2108,50 @@
         {
           "date": "2026-09-22",
           "value": 27244.28
+        },
+        {
+          "date": "2026-09-23",
+          "value": 26936.04
+        },
+        {
+          "date": "2026-09-24",
+          "value": 26939.37
+        },
+        {
+          "date": "2026-09-25",
+          "value": 27068.72
+        },
+        {
+          "date": "2026-09-28",
+          "value": 26820.38
+        },
+        {
+          "date": "2026-09-29",
+          "value": 26797.54
+        },
+        {
+          "date": "2026-09-30",
+          "value": 26861.06
+        },
+        {
+          "date": "2026-10-01",
+          "value": 26871.6
+        },
+        {
+          "date": "2026-10-02",
+          "value": 27190.86
+        },
+        {
+          "date": "2026-10-05",
+          "value": 27477.31
+        },
+        {
+          "date": "2026-10-06",
+          "value": 27599.89
+        },
+        {
+          "date": "2026-10-07",
+          "value": 27538.69
         }
       ]
     },
@@ -2154,42 +2161,6 @@
       "source": "S&P Dow Jones Indices via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-25",
-          "value": 7677.28
-        },
-        {
-          "date": "2026-08-26",
-          "value": 7675.7
-        },
-        {
-          "date": "2026-08-27",
-          "value": 7730.99
-        },
-        {
-          "date": "2026-08-28",
-          "value": 7711.76
-        },
-        {
-          "date": "2026-08-31",
-          "value": 7686.14
-        },
-        {
-          "date": "2026-09-01",
-          "value": 7631.47
-        },
-        {
-          "date": "2026-09-02",
-          "value": 7666.6
-        },
-        {
-          "date": "2026-09-03",
-          "value": 7747.71
-        },
-        {
-          "date": "2026-09-04",
-          "value": 7718.6
-        },
         {
           "date": "2026-09-08",
           "value": 7673.52
@@ -2237,6 +2208,46 @@
         {
           "date": "2026-09-23",
           "value": 7706.03
+        },
+        {
+          "date": "2026-09-24",
+          "value": 7704.13
+        },
+        {
+          "date": "2026-09-25",
+          "value": 7743.41
+        },
+        {
+          "date": "2026-09-28",
+          "value": 7683.69
+        },
+        {
+          "date": "2026-09-29",
+          "value": 7670.84
+        },
+        {
+          "date": "2026-09-30",
+          "value": 7651.54
+        },
+        {
+          "date": "2026-10-01",
+          "value": 7666.45
+        },
+        {
+          "date": "2026-10-02",
+          "value": 7722.72
+        },
+        {
+          "date": "2026-10-05",
+          "value": 7773.95
+        },
+        {
+          "date": "2026-10-06",
+          "value": 7818.93
+        },
+        {
+          "date": "2026-10-07",
+          "value": 7801.77
         }
       ]
     },
@@ -2246,46 +2257,6 @@
       "source": "CBOE via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-25",
-          "value": 15.45
-        },
-        {
-          "date": "2026-08-26",
-          "value": 15.21
-        },
-        {
-          "date": "2026-08-27",
-          "value": 14.51
-        },
-        {
-          "date": "2026-08-28",
-          "value": 14.43
-        },
-        {
-          "date": "2026-08-31",
-          "value": 14.92
-        },
-        {
-          "date": "2026-09-01",
-          "value": 16.34
-        },
-        {
-          "date": "2026-09-02",
-          "value": 15.2
-        },
-        {
-          "date": "2026-09-03",
-          "value": 14.32
-        },
-        {
-          "date": "2026-09-04",
-          "value": 14.53
-        },
-        {
-          "date": "2026-09-07",
-          "value": 15.3
-        },
         {
           "date": "2026-09-08",
           "value": 15.72
@@ -2329,6 +2300,46 @@
         {
           "date": "2026-09-22",
           "value": 14.21
+        },
+        {
+          "date": "2026-09-23",
+          "value": 15.18
+        },
+        {
+          "date": "2026-09-24",
+          "value": 15.67
+        },
+        {
+          "date": "2026-09-25",
+          "value": 14.87
+        },
+        {
+          "date": "2026-09-28",
+          "value": 16.07
+        },
+        {
+          "date": "2026-09-29",
+          "value": 16.04
+        },
+        {
+          "date": "2026-09-30",
+          "value": 16.34
+        },
+        {
+          "date": "2026-10-01",
+          "value": 16.39
+        },
+        {
+          "date": "2026-10-02",
+          "value": 15.31
+        },
+        {
+          "date": "2026-10-05",
+          "value": 15.52
+        },
+        {
+          "date": "2026-10-06",
+          "value": 15.01
         }
       ]
     },
@@ -2338,42 +2349,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-25",
-          "value": 4.17
-        },
-        {
-          "date": "2026-08-26",
-          "value": 4.19
-        },
-        {
-          "date": "2026-08-27",
-          "value": 4.2
-        },
-        {
-          "date": "2026-08-28",
-          "value": 4.34
-        },
-        {
-          "date": "2026-08-31",
-          "value": 4.34
-        },
-        {
-          "date": "2026-09-01",
-          "value": 4.39
-        },
-        {
-          "date": "2026-09-02",
-          "value": 4.39
-        },
-        {
-          "date": "2026-09-03",
-          "value": 4.34
-        },
-        {
-          "date": "2026-09-04",
-          "value": 4.37
-        },
         {
           "date": "2026-09-08",
           "value": 4.39
@@ -2417,6 +2392,46 @@
         {
           "date": "2026-09-22",
           "value": 4.71
+        },
+        {
+          "date": "2026-09-23",
+          "value": 4.85
+        },
+        {
+          "date": "2026-09-24",
+          "value": 4.87
+        },
+        {
+          "date": "2026-09-25",
+          "value": 4.81
+        },
+        {
+          "date": "2026-09-28",
+          "value": 4.92
+        },
+        {
+          "date": "2026-09-29",
+          "value": 4.89
+        },
+        {
+          "date": "2026-09-30",
+          "value": 4.88
+        },
+        {
+          "date": "2026-10-01",
+          "value": 4.78
+        },
+        {
+          "date": "2026-10-02",
+          "value": 4.83
+        },
+        {
+          "date": "2026-10-05",
+          "value": 4.84
+        },
+        {
+          "date": "2026-10-06",
+          "value": 4.79
         }
       ]
     },
@@ -2426,42 +2441,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-25",
-          "value": 4.64
-        },
-        {
-          "date": "2026-08-26",
-          "value": 4.66
-        },
-        {
-          "date": "2026-08-27",
-          "value": 4.67
-        },
-        {
-          "date": "2026-08-28",
-          "value": 4.73
-        },
-        {
-          "date": "2026-08-31",
-          "value": 4.75
-        },
-        {
-          "date": "2026-09-01",
-          "value": 4.79
-        },
-        {
-          "date": "2026-09-02",
-          "value": 4.79
-        },
-        {
-          "date": "2026-09-03",
-          "value": 4.77
-        },
-        {
-          "date": "2026-09-04",
-          "value": 4.78
-        },
         {
           "date": "2026-09-08",
           "value": 4.8
@@ -2505,6 +2484,46 @@
         {
           "date": "2026-09-22",
           "value": 4.96
+        },
+        {
+          "date": "2026-09-23",
+          "value": 5.11
+        },
+        {
+          "date": "2026-09-24",
+          "value": 5.18
+        },
+        {
+          "date": "2026-09-25",
+          "value": 5.17
+        },
+        {
+          "date": "2026-09-28",
+          "value": 5.24
+        },
+        {
+          "date": "2026-09-29",
+          "value": 5.26
+        },
+        {
+          "date": "2026-09-30",
+          "value": 5.29
+        },
+        {
+          "date": "2026-10-01",
+          "value": 5.24
+        },
+        {
+          "date": "2026-10-02",
+          "value": 5.28
+        },
+        {
+          "date": "2026-10-05",
+          "value": 5.31
+        },
+        {
+          "date": "2026-10-06",
+          "value": 5.27
         }
       ]
     },
@@ -2514,42 +2533,6 @@
       "source": "U.S. EIA via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-25",
-          "value": 88.24
-        },
-        {
-          "date": "2026-08-26",
-          "value": 87.77
-        },
-        {
-          "date": "2026-08-27",
-          "value": 90.18
-        },
-        {
-          "date": "2026-08-28",
-          "value": 89.75
-        },
-        {
-          "date": "2026-09-01",
-          "value": 96.02
-        },
-        {
-          "date": "2026-09-02",
-          "value": 97.59
-        },
-        {
-          "date": "2026-09-03",
-          "value": 100.52
-        },
-        {
-          "date": "2026-09-04",
-          "value": 102.24
-        },
-        {
-          "date": "2026-09-07",
-          "value": 104.47
-        },
         {
           "date": "2026-09-08",
           "value": 106.12
@@ -2593,6 +2576,46 @@
         {
           "date": "2026-09-22",
           "value": 114.89
+        },
+        {
+          "date": "2026-09-23",
+          "value": 117.45
+        },
+        {
+          "date": "2026-09-24",
+          "value": 120.92
+        },
+        {
+          "date": "2026-09-25",
+          "value": 116.01
+        },
+        {
+          "date": "2026-09-28",
+          "value": 119.97
+        },
+        {
+          "date": "2026-09-29",
+          "value": 113.96
+        },
+        {
+          "date": "2026-09-30",
+          "value": 115.91
+        },
+        {
+          "date": "2026-10-01",
+          "value": 114.82
+        },
+        {
+          "date": "2026-10-02",
+          "value": 135.51
+        },
+        {
+          "date": "2026-10-05",
+          "value": 125.51
+        },
+        {
+          "date": "2026-10-06",
+          "value": 125.44
         }
       ]
     },
@@ -2602,42 +2625,6 @@
       "source": "Federal Reserve via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-08-25",
-          "value": 118.2283
-        },
-        {
-          "date": "2026-08-26",
-          "value": 118.4461
-        },
-        {
-          "date": "2026-08-27",
-          "value": 118.3583
-        },
-        {
-          "date": "2026-08-28",
-          "value": 118.7479
-        },
-        {
-          "date": "2026-08-31",
-          "value": 118.5679
-        },
-        {
-          "date": "2026-09-01",
-          "value": 118.6568
-        },
-        {
-          "date": "2026-09-02",
-          "value": 118.5296
-        },
-        {
-          "date": "2026-09-03",
-          "value": 118.127
-        },
-        {
-          "date": "2026-09-04",
-          "value": 118.0732
-        },
         {
           "date": "2026-09-08",
           "value": 117.9127
@@ -2673,6 +2660,46 @@
         {
           "date": "2026-09-18",
           "value": 119.5133
+        },
+        {
+          "date": "2026-09-21",
+          "value": 119.4014
+        },
+        {
+          "date": "2026-09-22",
+          "value": 119.5933
+        },
+        {
+          "date": "2026-09-23",
+          "value": 120.1169
+        },
+        {
+          "date": "2026-09-24",
+          "value": 120.5521
+        },
+        {
+          "date": "2026-09-25",
+          "value": 120.33
+        },
+        {
+          "date": "2026-09-28",
+          "value": 120.6958
+        },
+        {
+          "date": "2026-09-29",
+          "value": 121.0296
+        },
+        {
+          "date": "2026-09-30",
+          "value": 120.9693
+        },
+        {
+          "date": "2026-10-01",
+          "value": 121.7882
+        },
+        {
+          "date": "2026-10-02",
+          "value": 121.3848
         }
       ]
     },
@@ -2682,46 +2709,6 @@
       "source": "ICE BofA via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-08-25",
-          "value": 2.7
-        },
-        {
-          "date": "2026-08-26",
-          "value": 2.67
-        },
-        {
-          "date": "2026-08-27",
-          "value": 2.63
-        },
-        {
-          "date": "2026-08-28",
-          "value": 2.6
-        },
-        {
-          "date": "2026-08-31",
-          "value": 2.63
-        },
-        {
-          "date": "2026-09-01",
-          "value": 2.65
-        },
-        {
-          "date": "2026-09-02",
-          "value": 2.66
-        },
-        {
-          "date": "2026-09-03",
-          "value": 2.65
-        },
-        {
-          "date": "2026-09-04",
-          "value": 2.68
-        },
-        {
-          "date": "2026-09-07",
-          "value": 2.68
-        },
         {
           "date": "2026-09-08",
           "value": 2.67
@@ -2765,6 +2752,46 @@
         {
           "date": "2026-09-22",
           "value": 2.68
+        },
+        {
+          "date": "2026-09-23",
+          "value": 2.73
+        },
+        {
+          "date": "2026-09-24",
+          "value": 2.8
+        },
+        {
+          "date": "2026-09-25",
+          "value": 2.93
+        },
+        {
+          "date": "2026-09-28",
+          "value": 3.02
+        },
+        {
+          "date": "2026-09-29",
+          "value": 3.08
+        },
+        {
+          "date": "2026-09-30",
+          "value": 3.12
+        },
+        {
+          "date": "2026-10-01",
+          "value": 3.24
+        },
+        {
+          "date": "2026-10-02",
+          "value": 3.1
+        },
+        {
+          "date": "2026-10-05",
+          "value": 3.12
+        },
+        {
+          "date": "2026-10-06",
+          "value": 3.03
         }
       ]
     }

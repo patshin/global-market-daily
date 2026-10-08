@@ -142,3 +142,12 @@ Open `http://localhost:8000` rather than double-clicking the HTML file, because 
 Primary sources take priority. Major events require a primary source plus independent high-quality confirmation when available. Market pricing is not an official policy decision. Announcement, implementation and effective dates are distinct. Article time and actual event time are distinct. Every important claim is traceable to the source archive.
 
 This publication is market intelligence, not investment advice.
+
+
+## Recovery and provenance
+
+Historical backfills carry `reconstruction.is_reconstructed`, the actual reconstruction time, the historical information cutoff and explicit evidence gaps. They are displayed as historical backfills and counted separately from contemporaneous native daily reports. An unavailable historical fact must remain unavailable.
+
+A delayed FRED release may leave fewer than three observed drivers or missing signal inputs. The lens exposes partial observation coverage and an unavailable regime rather than inventing a third catalyst or treating missing values as neutral. Run `python scripts/test_market_lens_native_accumulation.py` for offline regression coverage.
+
+The legacy `scripts/scheduled_publish.py` API entrypoint is retired. Production research runs only through the connected scheduled-agent prompts. Core daily publication checks and derived lens freshness checks are separate; a delayed lens triggers its own refresh and must not be described as missing research. Scheduled promotion rejects stale dates and official-to-provisional downgrades, pins the validated head, and rechecks main before merge.

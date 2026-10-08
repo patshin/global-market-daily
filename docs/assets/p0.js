@@ -106,7 +106,7 @@ function renderPreview(data) {
   const ribbon = lensEl("div", "regime-ribbon");
   data.days.forEach((day) => {
     const cell = lensEl("span", `regime-ribbon__cell regime-ribbon__cell--${day.regime_code}${day.source_mode === "native_daily" ? " regime-ribbon__cell--native" : ""}`);
-    cell.title = `${day.date} · ${day.regime_label} · ${day.source_mode === "native_daily" ? "Native Daily" : "Market Reconstruction"}`;
+    cell.title = `${day.date} · ${day.regime_label} · ${day.source_mode === "native_daily" ? "Native Daily" : day.source_mode === "reconstructed_daily" ? "Historical Backfill" : "Market Reconstruction"}`;
     ribbon.appendChild(cell);
   });
   primary.appendChild(ribbon);
@@ -234,3 +234,4 @@ async function initP0() {
 }
 
 document.addEventListener("DOMContentLoaded", initP0);
+
