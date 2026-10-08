@@ -22,6 +22,16 @@ def is_final_report(report: dict) -> bool:
     return cycle.get("is_final") is not False
 
 
+def validate_current_publication_policy(report: dict, path, gate) -> None:
+    if str(report.get("date", "")) >= "2026-10-08":
+        gate.require(report.get("edition_status") == "official", f"{path}: canonical morning edition_status must be official")
+        cycle = report.get("publication_cycle") or {}
+        reconstructed = (report.get("reconstruction") or {}).get("is_reconstructed") is True
+        gate.require(cycle.get("cycle") == "morning", f"{path}: morning-only policy requires morning cycle")
+        gate.require(cycle.get("is_final") is True and cycle.get("archive_eligible") is True, f"{path}: canonical morning must be final and archived")
+        gate.require(cycle.get("market_lens_native_eligible") is (not reconstructed), f"{path}: native eligibility must match actual vs reconstructed provenance")
+
+
 def validate_repository(root: Path) -> int:
     gate = Gate()
     for relative in REQUIRED_FILES:
@@ -52,6 +62,7 @@ def validate_repository(root: Path) -> int:
         if not resolved_sources.is_file():
             continue
 
+        validate_current_publication_policy(report, path, gate)
         date = validate_daily(path, root, gate)
         if not date:
             continue
@@ -149,3 +160,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

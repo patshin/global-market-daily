@@ -7,4 +7,7 @@ bad=deepcopy(report);bad['publication_cycle']['market_lens_native_eligible']=Tru
 bad=deepcopy(report);bad['market_tape'][0]['recovery_observation']['session_date']='2026-10-02';assert check_report(bad,sources,{'2026-10-02'})
 bad=deepcopy(report);bad['market_tape'][0]['recovery_observation']['level']=float('nan');assert check_report(bad,sources,{'2026-10-02'})
 assert check_report(report,{'sources':[{'id':'S01','available_by_utc':'2026-10-02T12:30:00Z'}]},{'2026-10-02'})
+assert check_report(report,{'sources':[{'id':'S01','published_at':'2099-01-01'}]},{'2026-10-02'})
+assert check_report(report,{'sources':[{'id':'S01','published_at':'unknown'}]},{'2026-10-02'})
+bad=deepcopy(report);bad['market_tape']=[{'asset':'Brent','as_of':'2026-10-02 US settlement'}];assert check_report(bad,sources,{'2026-10-02'})
 print('RECONSTRUCTION REGRESSION PASSED — rejects future facts, false provenance and invalid observations')

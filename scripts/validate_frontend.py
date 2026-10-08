@@ -231,7 +231,8 @@ def validate_daily_visibility(path: Path, gate: Gate) -> None:
             ]
             gate.require(len(event_ids) == len(set(event_ids)),
                          f"{path}: earnings event IDs must be unique")
-            if "无重大新增" not in str(earnings.get("status", "")):
+            reconstruction_gap = (report.get("reconstruction") or {}).get("is_reconstructed") is True and "证据缺口" in str(earnings.get("status", "")) and len(str(earnings.get("summary", ""))) >= 40
+            if not reconstruction_gap and "无重大新增" not in str(earnings.get("status", "")):
                 gate.require(bool(reported or upcoming),
                              f"{path}: updated earnings section has no event objects")
             for index, item in enumerate(reported):
@@ -284,3 +285,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

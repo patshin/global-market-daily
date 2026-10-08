@@ -7,6 +7,9 @@ def validate_transition(current, candidate):
     old_day=str(current.get('date',''));new_day=str(candidate.get('date',''))
     if not old_day or not new_day:
         raise ValueError('both publication pointers must carry a date')
+    if new_day >= '2026-10-08':
+        if candidate.get('publication_cycle') != 'morning' or candidate.get('edition_status') != 'official':
+            raise ValueError('morning-only policy requires a canonical official morning candidate')
     if new_day < old_day:
         raise ValueError(f'stale candidate {new_day} would replace latest {old_day}')
     if new_day == old_day:

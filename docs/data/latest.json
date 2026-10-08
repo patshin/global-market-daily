@@ -1,1 +1,29 @@
-{"schema_version":"1.1.0","date":"2026-09-24","edition_status":"official","publication_cycle":"close","thesis":"截至09:32 SGT，市场的绑定约束已从“油价回落能否推动广泛金融条件宽松”重新切回“美国增长与价格压力是否把5%以上的中长期美债收益率固化为新的估值上限”：9月美国综合PMI升至58.4，10年期美债收益率跳至5.11%，700亿美元5年期国债拍卖以5.033%的高收益率成交并明显tail，S&P 500、Nasdaq和Russell 2000分别下跌0.8%、1.1%和1.8%。与此同时EIA原油库存意外增加300万桶，但Brent仍反弹至101.64美元附近。今天Trump–Xi会晤是贸易、AI与关键矿产风险溢价的首要政策裁决；若长端收益率不回落，即使油价或贸易尾部风险缓和，风险资产的扩散仍会被资本成本约束。","dominant_narrative":"过去24小时最重要的变化是“能源缓和交易”被更强的美国增长、通胀与国债供给重新夺回主导权。第一，S&P Global的9月美国综合PMI从56.0升至58.4，为2021年7月以来最高，新订单和未完成订单同步上升，投入价格指数跃升至66.4；市场因此把强增长从盈利利好重新解释为更长时间的政策收紧压力。第二，这种宏观重定价被国债一级市场放大：700亿美元5年期拍卖以5.033%成交，相对5.002%的when-issued水平tail约3.1bp，bid-to-cover仅2.21；10年期收益率升至5.11%，S&P 500和Nasdaq下跌，Russell 2000跌幅更大，说明资本成本重新压过周初的AI估值修复。第三，能源链并未提供干净的反向确认：EIA显示原油库存增加300万桶、Cushing增加220万桶，但汽油和馏分油库存下降，Brent仍反弹至101.64美元附近；Saudi East-West pipeline虽已低速恢复，Hormuz商业船流量仍极低。今天的Trump–Xi会晤因此成为第二条潜在缓和链：若贸易休战、AI事件通知或关键矿产出现可验证进展，同时10Y回落，风险资产才有条件重新扩散；若政策进展有限且5%+收益率持续，则当前约束将从能源风险正式切换为增长、通胀和财政融资共同抬高的折现率。","market_regime":"Risk-off / growth-inflation and term-premium repricing","top_catalysts":[{"event":"U.S. flash Composite PMI jumps to 58.4 as the 10Y reaches 5.11%, reversing the prior duration-relief trade","status":"Released/Occurred — Confirmed macro and market repricing"},{"event":"The $70B U.S. 5Y auction clears at 5.033% with a 3.1bp tail, showing weak demand beyond the front end","status":"Occurred / Confirmed Treasury auction"},{"event":"Trump–Xi meeting on September 24 becomes the immediate trade, AI-safety and critical-mineral policy catalyst","status":"Confirmed Upcoming / exact meeting time 尚无法可靠确认"}],"top_risks":[{"risk":"A 5%+ Treasury term-premium regime becomes persistent even if energy prices and geopolitical risk continue to ease","first_asset":"UST 5Y / UST 10Y"},{"risk":"Middle East energy-route relief reverses before the Saudi East-West pipeline and Hormuz access are durably normalized","first_asset":"Brent / WTI"},{"risk":"The Trump–Xi summit fails to extend policy stability and reopens technology, tariff or critical-mineral risk while rates are already restrictive","first_asset":"Semiconductors / USD-CNH"}],"next_catalyst":{"event":"Trump–Xi U.S.-China leaders meeting during Xi Jinping's September 23-25 state visit","date":"2026-09-24","sgt":"2026-09-24 — exact meeting time 尚无法可靠确认"},"daily_json_path":"data/daily/2026-09-24.json","report_path":"reports/2026/09/2026-09-24.md","sources_path":"data/sources/2026-09-24.json","updated_at":"2026-09-24T09:32:41+08:00","edition":"Morning Fallback Final"}
+{
+  "schema_version": "1.1.0",
+  "date": "2026-10-08",
+  "thesis": "纪要保留再加息倾向，IEA加速既有库存释放；AI与消费财报必须拆解质量。 本期是带时点限制的历史重建，数据缺口保留，不代表原稿曾按时发布。",
+  "overall_regime": "多重约束 / reconstructed conditional assessment",
+  "dominant_narrative": "截至10月8日09:00 SGT，9月FOMC纪要、IEA声明及Levi和Applied Digital财报均已可获得。纪要描述9月会议的信息集，不能被解释成对10月就业报告的新反应；储备行动是加快既有承诺，而非全新增供给。公司结果则要求区分关税退款、并表差异、建设服务与经常性需求。重建分析聚焦政策约束、能源缓冲和盈利质量之间的相互作用。",
+  "report_path": "reports/2026/10/2026-10-08.md",
+  "daily_json_path": "data/daily/2026-10-08.json",
+  "sources_path": "data/sources/2026-10-08.json",
+  "edition": "Historical Reconstruction — Morning Official",
+  "edition_status": "official",
+  "publication_cycle": "morning",
+  "reconstruction": {
+    "is_reconstructed": true,
+    "reconstructed_at": "2026-10-08T14:40:50+08:00",
+    "historical_cutoff_sgt": "2026-10-08 09:00 SGT",
+    "limitations": [
+      "本期于10月8日事后重建，不是恢复出来的当时已发布原稿。",
+      "所列事实只使用截止线前可获得资料；分析和情景于重建时形成，不是历史建议。",
+      "官方日度行情为当前可下载历史序列，未恢复当时数据库版本；部分品种5交易日变化缺失。",
+      "Gold 10月7日可靠报价未恢复；不将10月6日旧报价冒充10月7日。",
+      "已恢复Nasdaq成分公告、Cboe交易量比率及官方拍卖；全面指数覆盖、ETF权重、单日机构流、dealer gamma和拍卖WI/尾差仍缺失。",
+      "历史财报共识、发布后盘口和完整GAAP调整桥未恢复；行业周度资金流与单日流动性必须区分。",
+      "价格参考为前一美国交易日的可核验历史日度记录，不是恢复出的09:00/18:00 SGT盘中快照；不同品种保持各自标明的价格口径。"
+    ],
+    "market_session": "2026-10-07"
+  },
+  "last_updated": "2026-10-08T14:40:50+08:00"
+}

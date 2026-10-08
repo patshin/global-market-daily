@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fail-closed watchdog for the external 09:00 and 18:00 publisher tasks."""
+"""Fail-closed watchdog for the sole 09:00 Beijing official publisher (legacy cycles remain inspectable)."""
 from __future__ import annotations
 
 import argparse
@@ -9,7 +9,8 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 
-SGT = ZoneInfo("Asia/Singapore")
+SGT = ZoneInfo("Asia/Shanghai")
+POLICY_EFFECTIVE_DATE = "2026-10-08"
 
 
 def load(path: Path):
@@ -70,7 +71,7 @@ def main() -> int:
         if item.get("source_mode") == "native_daily"
     }
 
-    if args.cycle == "morning":
+    if args.cycle == "morning" and expected_date < POLICY_EFFECTIVE_DATE:
         require(cycle.get("is_final") is False, "Morning publication must be provisional")
         require(cycle.get("archive_eligible") is False, "Morning publication cannot be archive eligible")
         require(cycle.get("market_lens_native_eligible") is False,
@@ -78,16 +79,20 @@ def main() -> int:
         require(expected_date not in archive_dates, "Morning publication leaked into formal archive")
         require(expected_date not in native_dates, "Morning publication leaked into native 30D history")
     else:
-        require(cycle.get("is_final") is True, "Close publication must be final")
+        require(args.cycle == "morning" or expected_date < POLICY_EFFECTIVE_DATE, "Evening publication is retired under morning-only policy")
+        require(cycle.get("is_final") is True, "Canonical publication must be final")
         require(cycle.get("archive_eligible") is True, "Close publication must be archive eligible")
-        require(cycle.get("market_lens_native_eligible") is True,
-                "Close publication must be native 30D eligible")
+        reconstructed=(report.get("reconstruction") or {}).get("is_reconstructed") is True
+        require(cycle.get("market_lens_native_eligible") is (not reconstructed),
+                "Native eligibility must distinguish actual publications from retrospective backfills")
+        expected_mode="reconstructed_daily" if reconstructed else "native_daily"
+        eligible_dates={item.get("date") for item in rolling.get("days",[]) if item.get("source_mode")==expected_mode}
         require(archive_dates.count(expected_date) == 1,
                 "Close publication must appear exactly once in formal archive")
         if args.require_lens:
-            require(expected_date in native_dates, "DERIVED LENS LAG: close is published but not yet in native 30D history")
-        elif expected_date not in native_dates:
-            print("DERIVED LENS PENDING: core close publication is valid; refresh 30D independently")
+            require(expected_date in eligible_dates, "DERIVED LENS LAG: official publication exists but its correctly labeled lens observation is pending")
+        elif expected_date not in eligible_dates:
+            print("DERIVED LENS PENDING: core official publication is valid; refresh 30D independently")
 
     print(
         f"SCHEDULED PUBLICATION VERIFIED: cycle={args.cycle}, date={expected_date}, "

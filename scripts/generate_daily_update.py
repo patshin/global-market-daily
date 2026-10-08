@@ -190,6 +190,10 @@ def render_markdown(report: dict, sources: list[dict]) -> str:
                 metrics = item.get("metrics", [])
                 if metrics:
                     lines += [markdown_table(["Metric", "Actual", "Consensus", "Previous/YoY", "Surprise", "Notes"], [[m.get("metric"), m.get("actual"), m.get("consensus"), m.get("previous_or_yoy"), m.get("surprise"), m.get("notes")] for m in metrics]), ""]
+                for field in ("guidance", "market_reaction", "one_offs", "read_through"):
+                    value=item.get(field)
+                    if value:
+                        lines += [f"#### {field.replace('_',' ').title()}", "", json.dumps(value,ensure_ascii=False,indent=2), ""]
             for item in section.get("upcoming_72h", []):
                 lines += [f"### {item.get('company')} ({item.get('ticker')}) — Upcoming", "", f"{item.get('date')} · {item.get('et')} / {item.get('sgt')} · Actual: {item.get('actual','待公布')}", ""]
     lines += ["## Market Signal Panel", ""]
@@ -215,6 +219,8 @@ def render_markdown(report: dict, sources: list[dict]) -> str:
     lines += ["## 下一关键催化剂", "", f"**{n.get('event','—')}**", ""]
     for field in ["status", "date", "et", "sgt", "consensus", "previous", "actual", "why_it_matters", "first_market", "bull_interpretation", "bear_interpretation"]:
         lines.append(f"- **{field.replace('_',' ').title()}：** {n.get(field,'—')}")
+    lines += ["", "### What I Would Watch First", ""]
+    lines.extend("- "+str(item) for item in n.get("watch_first", []))
     lines += ["", "## Sources", ""]
     for source in sources:
         url = source.get("source_url")
@@ -293,6 +299,7 @@ def update_archive_and_latest(report: dict, sources: list[dict], now_sgt: dateti
 
 
 def main() -> int:
+    raise SystemExit("RETIRED API publisher: only render_markdown is retained as a deterministic library. Use the official 09:00 connected-agent publication prompt and validated PR handoff.")
     parser = argparse.ArgumentParser()
     parser.add_argument("--edition", choices=("morning", "close"), required=True)
     parser.add_argument("--date", help="Override SGT date for controlled recovery runs")
@@ -366,3 +373,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

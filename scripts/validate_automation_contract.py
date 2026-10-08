@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the standalone twice-daily automation prompt and transaction contract."""
+"""Validate the standalone morning-only automation prompt and transaction contract."""
 from __future__ import annotations
 
 import json
@@ -144,36 +144,30 @@ def main() -> int:
 
     registry_path = root / "prompts/automation-registry.json"
     registry = load_json(registry_path, gate)
-    gate.require(registry.get("timezone") == "Asia/Singapore", "Automation timezone must be Asia/Singapore")
+    gate.require(registry.get("timezone") == "Asia/Shanghai", "Automation timezone must be Asia/Shanghai")
     gate.require(registry.get("repository") == "patshin/global-market-daily", "Automation repository mismatch")
     gate.require(registry.get("branch") == "main", "Automation branch must be main")
     gate.require(registry.get("publisher_architecture") == "connected_scheduled_agent",
                  "Research publisher architecture must remain connected_scheduled_agent")
 
     tasks = registry.get("tasks")
-    gate.require(isinstance(tasks, list) and len(tasks) == 2,
-                 "Automation registry must contain exactly morning and close tasks")
+    gate.require(isinstance(tasks, list) and len(tasks) == 1,
+                 "Automation registry must contain exactly one morning task")
 
     expected = {
         "morning": {
             "schedule_sgt": "09:00",
             "cron_utc": "0 1 * * *",
             "prompt_path": "prompts/automation-morning.md",
-            "archive_eligible": False,
-            "market_lens_native_eligible": False,
-        },
-        "close": {
-            "schedule_sgt": "18:00",
-            "cron_utc": "0 10 * * *",
-            "prompt_path": "prompts/automation-close.md",
             "archive_eligible": True,
             "market_lens_native_eligible": True,
         },
+
     }
 
     if isinstance(tasks, list):
         indexed = {task.get("run_mode"): task for task in tasks if isinstance(task, dict)}
-        gate.require(set(indexed) == set(expected), "Automation registry modes must be morning and close")
+        gate.require(set(indexed) == set(expected), "Automation registry mode must be morning only")
         for mode, contract in expected.items():
             task = indexed.get(mode, {})
             for key, value in contract.items():
@@ -202,7 +196,7 @@ def main() -> int:
         return 1
 
     print(
-        "AUTOMATION CONTRACT PASSED — standalone 09:00/18:00 prompts, fixed modes, "
+        "AUTOMATION CONTRACT PASSED — standalone official 09:00 morning prompt, fixed modes, "
         "Quality-parity transaction preflight, canonical Markdown parity, explicit public-health handoff, "
         "browser gate, no context-dependent wording"
     )
@@ -211,3 +205,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

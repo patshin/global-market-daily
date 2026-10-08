@@ -190,7 +190,7 @@
     if (!kicker) return;
     const cycle = String(report?.publication_cycle?.cycle || "").toLowerCase();
     const edition = String(report?.edition || "").toLowerCase();
-    kicker.textContent = cycle === "close" || /close|closing|evening|final/.test(edition)
+    kicker.textContent = cycle !== "morning" && (cycle === "close" || /close|closing|evening/.test(edition))
       ? "Closing Dashboard"
       : "Morning Dashboard";
   };
@@ -344,3 +344,4 @@
     }));
   };
 })();
+

@@ -104,5 +104,5 @@ if errors:
     print('MARKET LENS GATE FAILED')
     for x in errors: print(' -',x)
     sys.exit(1)
-print(f"MARKET LENS GATE PASSED — {len(days)} sessions, {data['coverage']['native_daily_days']} native, {data['coverage']['reconstructed_days']} reconstructed, {data['coverage'].get('verified_event_days',0)} verified-event days, {len(data['persistent_themes'])} lifecycle themes")
+print(f"MARKET LENS GATE PASSED — {len(days)} sessions, {data['coverage']['native_daily_days']} native, {data['coverage'].get('reconstructed_daily_days',0)} historical backfills, {data['coverage']['reconstructed_days']} price reconstructed, {data['coverage'].get('verified_event_days',0)} verified-event days, {len(data['persistent_themes'])} lifecycle themes")
 

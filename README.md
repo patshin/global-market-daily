@@ -7,7 +7,7 @@ The live site is an editorial dashboard with a warm-paper visual system, serif-l
 ## Production architecture
 
 ```text
-09:00 / 18:00 SGT connected scheduled agent
+09:00 Beijing / SGT connected scheduled agent (morning only)
         ↓ independent web research and source verification
 standalone cycle prompt + canonical renderer contract
         ↓
@@ -24,18 +24,23 @@ real Chromium desktop/mobile verification
 
 GitHub Actions does **not** generate the report and does not call an LLM. It validates, derives existing trend products, deploys Pages, checks the public browser result and detects missing scheduled publications.
 
-## Twice-daily schedule
+## Daily morning schedule
 
-- **09:00 Asia/Singapore** — `morning`; full provisional edition, visible as latest, excluded from formal archive and native 30D history.
-- **18:00 Asia/Singapore** — `close`; independently researched final edition, formal archive entry and native 30D observation.
+Effective **2026-10-08**, the only active publication is **09:00 Beijing time, Asia/Shanghai** every day (`01:00 UTC`). This is also 09:00 SGT; existing JSON `Asia/Singapore` and SGT-named fields remain unchanged for renderer compatibility.
+
+- Mode: `morning`
+- Status: official/final and the canonical daily edition
+- Formal archive: exactly one entry for the date
+- Native 30D: eligible when genuinely contemporaneous; retrospective reconstructions remain excluded
+- Evening: retired, with no 18:00 publication or fallback expectation
 
 Canonical task definitions:
 
 - `prompts/automation-registry.json`
-- `prompts/automation-morning.md`
-- `prompts/automation-close.md`
+- `prompts/automation-morning.md` (complete standalone research and PR handoff prompt)
+- `prompts/automation-transaction.md` (candidate transaction and downstream ownership)
 
-Both cycle prompts are complete and standalone. They must not rely on conversation history, another prompt or unstated context.
+`prompts/automation-close.md` is retained solely as a retired historical reference. The morning task does not depend on conversation history, a separate master prompt or an evening run.
 
 ## Repository structure
 
@@ -97,10 +102,12 @@ The write order is fixed:
 2. `docs/reports/YYYY/MM/YYYY-MM-DD.md`
 3. `docs/data/sources/YYYY-MM-DD.json`
 4. trend-derived data and necessary indexes
-5. `docs/data/archive.json` only for the final close edition
+5. `docs/data/archive.json`, with one same-date official morning entry
 6. `docs/data/latest.json` last
 
-A provisional morning edition may be the live `latest` without appearing in formal `archive.json`.
+The complete bundle is submitted on one idempotent `publish/gmd-YYYY-MM-DD-morning` PR after Quality-parity preflight; ordinary scheduled runs never push directly to `main`. The agent reports `SUBMITTED_FOR_VALIDATION` at PR handoff. GitHub validates and promotes the exact candidate head, deploys Pages and verifies the live result.
+
+Pre-2026-10-08 provisional morning editions retain their historical meaning and may be absent from formal archive. The new policy does not relabel them or erase explicit Morning Fallback Final provenance.
 
 ## Core data and renderer contract
 
@@ -122,8 +129,8 @@ python3 scripts/validate_publish_v2.py --root .
 python3 scripts/validate_live_contract.py --root .
 python3 scripts/validate_archive_live_contract.py --root .
 python3 scripts/validate_frontend.py --root .
-python3 scripts/validate_editorial_ui.py --root .
-python3 scripts/validate_automation_contract.py --root .
+python3 scripts/validate_editorial_ui.py .
+python3 scripts/validate_automation_contract.py .
 python3 scripts/validate_market_lens.py
 ```
 
@@ -150,4 +157,4 @@ Historical backfills carry `reconstruction.is_reconstructed`, the actual reconst
 
 A delayed FRED release may leave fewer than three observed drivers or missing signal inputs. The lens exposes partial observation coverage and an unavailable regime rather than inventing a third catalyst or treating missing values as neutral. Run `python scripts/test_market_lens_native_accumulation.py` for offline regression coverage.
 
-The legacy `scripts/scheduled_publish.py` API entrypoint is retired. Production research runs only through the connected scheduled-agent prompts. Core daily publication checks and derived lens freshness checks are separate; a delayed lens triggers its own refresh and must not be described as missing research. Scheduled promotion rejects stale dates and official-to-provisional downgrades, pins the validated head, and rechecks main before merge.
+The legacy `scripts/scheduled_publish.py` API entrypoint is retired. Production research runs only through the connected scheduled-agent prompts. Core daily publication checks and derived lens freshness checks are separate; a delayed lens triggers its own refresh and must not be described as missing research. Scheduled promotion rejects stale dates and official-to-provisional downgrades, pins the validated head, and rechecks main before merge. A current official morning needs no evening final. Lossless historical fallback recovery is limited to pre-2026-10-08 snapshots and preserves their factual content and original cutoff.

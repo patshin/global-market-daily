@@ -1,0 +1,299 @@
+{
+  "audited_at": "2026-10-08T06:50:26.988160+00:00",
+  "repository": "patshin/global-market-daily",
+  "original_last_publication": "2026-09-24 Morning 09:32 SGT",
+  "original_latest_final": "2026-09-23 Morning Fallback Final",
+  "recoveries": [
+    {
+      "date": "2026-09-25",
+      "edition_status": "reconstructed",
+      "historical_cutoff_sgt": "2026-09-25 18:00 SGT",
+      "reconstructed_at": "2026-10-08T14:46:50+08:00",
+      "market_reference_session": "2026-09-24",
+      "assets": 22,
+      "source_count": 25,
+      "archive_eligible": true,
+      "native_eligible": false,
+      "limitations": [
+        "10月8日事后重建，不是恢复的原始18:00 SGT出版物；分析、排序和情景不代表当时已发布观点。",
+        "美国现金价格使用2026-09-24最近完整交易日；不能代表本日期稍后美国收盘。",
+        "官方和供应商历史数值在10月8日重新取得，未恢复原始数据版本；可能存在修订。",
+        "没有完整恢复18:00 SGT的FX、商品、期权和信用逐笔快照；来源时间各自标注。",
+        "指数变更、养老金/季末流量、ETF篮子、做市商仓位及部分公司预期/市场反应资料不足；不能据此断言没有事件。",
+        "没有混用未经核对的滚动原油价格序列；未恢复同合约可比变化处保持空缺。",
+        "价格参考为前一美国交易日的可核验历史日度记录，不是恢复出的09:00/18:00 SGT盘中快照；不同品种保持各自标明的价格口径。"
+      ]
+    },
+    {
+      "date": "2026-09-26",
+      "edition_status": "reconstructed",
+      "historical_cutoff_sgt": "2026-09-26 18:00 SGT",
+      "reconstructed_at": "2026-10-08T14:46:50+08:00",
+      "market_reference_session": "2026-09-25",
+      "assets": 22,
+      "source_count": 23,
+      "archive_eligible": true,
+      "native_eligible": false,
+      "limitations": [
+        "10月8日事后重建，不是恢复的原始18:00 SGT出版物；分析、排序和情景不代表当时已发布观点。",
+        "美国现金价格使用2026-09-25最近完整交易日；不能代表本日期稍后美国收盘。",
+        "官方和供应商历史数值在10月8日重新取得，未恢复原始数据版本；可能存在修订。",
+        "没有完整恢复18:00 SGT的FX、商品、期权和信用逐笔快照；来源时间各自标注。",
+        "指数变更、养老金/季末流量、ETF篮子、做市商仓位及部分公司预期/市场反应资料不足；不能据此断言没有事件。",
+        "没有混用未经核对的滚动原油价格序列；未恢复同合约可比变化处保持空缺。",
+        "价格参考为前一美国交易日的可核验历史日度记录，不是恢复出的09:00/18:00 SGT盘中快照；不同品种保持各自标明的价格口径。"
+      ]
+    },
+    {
+      "date": "2026-09-27",
+      "edition_status": "reconstructed",
+      "historical_cutoff_sgt": "2026-09-27 18:00 SGT",
+      "reconstructed_at": "2026-10-08T14:46:50+08:00",
+      "market_reference_session": "2026-09-25",
+      "assets": 22,
+      "source_count": 25,
+      "archive_eligible": true,
+      "native_eligible": false,
+      "limitations": [
+        "10月8日事后重建，不是恢复的原始18:00 SGT出版物；分析、排序和情景不代表当时已发布观点。",
+        "美国现金价格使用2026-09-25最近完整交易日；不能代表本日期稍后美国收盘。",
+        "官方和供应商历史数值在10月8日重新取得，未恢复原始数据版本；可能存在修订。",
+        "没有完整恢复18:00 SGT的FX、商品、期权和信用逐笔快照；来源时间各自标注。",
+        "指数变更、养老金/季末流量、ETF篮子、做市商仓位及部分公司预期/市场反应资料不足；不能据此断言没有事件。",
+        "没有混用未经核对的滚动原油价格序列；未恢复同合约可比变化处保持空缺。",
+        "价格参考为前一美国交易日的可核验历史日度记录，不是恢复出的09:00/18:00 SGT盘中快照；不同品种保持各自标明的价格口径。"
+      ]
+    },
+    {
+      "date": "2026-09-28",
+      "edition_status": "reconstructed",
+      "historical_cutoff_sgt": "2026-09-28 18:00 SGT",
+      "reconstructed_at": "2026-10-08T14:46:50+08:00",
+      "market_reference_session": "2026-09-25",
+      "assets": 22,
+      "source_count": 24,
+      "archive_eligible": true,
+      "native_eligible": false,
+      "limitations": [
+        "10月8日事后重建，不是恢复的原始18:00 SGT出版物；分析、排序和情景不代表当时已发布观点。",
+        "美国现金价格使用2026-09-25最近完整交易日；不能代表本日期稍后美国收盘。",
+        "官方和供应商历史数值在10月8日重新取得，未恢复原始数据版本；可能存在修订。",
+        "没有完整恢复18:00 SGT的FX、商品、期权和信用逐笔快照；来源时间各自标注。",
+        "指数变更、养老金/季末流量、ETF篮子、做市商仓位及部分公司预期/市场反应资料不足；不能据此断言没有事件。",
+        "没有混用未经核对的滚动原油价格序列；未恢复同合约可比变化处保持空缺。",
+        "价格参考为前一美国交易日的可核验历史日度记录，不是恢复出的09:00/18:00 SGT盘中快照；不同品种保持各自标明的价格口径。"
+      ]
+    },
+    {
+      "date": "2026-09-29",
+      "edition_status": "reconstructed",
+      "historical_cutoff_sgt": "2026-09-29 18:00 SGT",
+      "reconstructed_at": "2026-10-08T14:46:50+08:00",
+      "market_reference_session": "2026-09-28",
+      "assets": 22,
+      "source_count": 25,
+      "archive_eligible": true,
+      "native_eligible": false,
+      "limitations": [
+        "10月8日事后重建，不是恢复的原始18:00 SGT出版物；分析、排序和情景不代表当时已发布观点。",
+        "美国现金价格使用2026-09-28最近完整交易日；不能代表本日期稍后美国收盘。",
+        "官方和供应商历史数值在10月8日重新取得，未恢复原始数据版本；可能存在修订。",
+        "没有完整恢复18:00 SGT的FX、商品、期权和信用逐笔快照；来源时间各自标注。",
+        "指数变更、养老金/季末流量、ETF篮子、做市商仓位及部分公司预期/市场反应资料不足；不能据此断言没有事件。",
+        "没有混用未经核对的滚动原油价格序列；未恢复同合约可比变化处保持空缺。",
+        "价格参考为前一美国交易日的可核验历史日度记录，不是恢复出的09:00/18:00 SGT盘中快照；不同品种保持各自标明的价格口径。"
+      ]
+    },
+    {
+      "date": "2026-09-30",
+      "edition_status": "reconstructed",
+      "historical_cutoff_sgt": "2026-09-30 18:00 SGT",
+      "reconstructed_at": "2026-10-08T14:46:50+08:00",
+      "market_reference_session": "2026-09-29",
+      "assets": 22,
+      "source_count": 26,
+      "archive_eligible": true,
+      "native_eligible": false,
+      "limitations": [
+        "10月8日事后重建，不是恢复的原始18:00 SGT出版物；分析、排序和情景不代表当时已发布观点。",
+        "美国现金价格使用2026-09-29最近完整交易日；不能代表本日期稍后美国收盘。",
+        "官方和供应商历史数值在10月8日重新取得，未恢复原始数据版本；可能存在修订。",
+        "没有完整恢复18:00 SGT的FX、商品、期权和信用逐笔快照；来源时间各自标注。",
+        "指数变更、养老金/季末流量、ETF篮子、做市商仓位及部分公司预期/市场反应资料不足；不能据此断言没有事件。",
+        "没有混用未经核对的滚动原油价格序列；未恢复同合约可比变化处保持空缺。",
+        "价格参考为前一美国交易日的可核验历史日度记录，不是恢复出的09:00/18:00 SGT盘中快照；不同品种保持各自标明的价格口径。"
+      ]
+    },
+    {
+      "date": "2026-10-01",
+      "edition_status": "reconstructed",
+      "historical_cutoff_sgt": "2026-10-01 18:00 SGT",
+      "reconstructed_at": "2026-10-08T14:46:50+08:00",
+      "market_reference_session": "2026-09-30",
+      "assets": 22,
+      "source_count": 24,
+      "archive_eligible": true,
+      "native_eligible": false,
+      "limitations": [
+        "10月8日事后重建，不是恢复的原始18:00 SGT出版物；分析、排序和情景不代表当时已发布观点。",
+        "美国现金价格使用2026-09-30最近完整交易日；不能代表本日期稍后美国收盘。",
+        "官方和供应商历史数值在10月8日重新取得，未恢复原始数据版本；可能存在修订。",
+        "没有完整恢复18:00 SGT的FX、商品、期权和信用逐笔快照；来源时间各自标注。",
+        "指数变更、养老金/季末流量、ETF篮子、做市商仓位及部分公司预期/市场反应资料不足；不能据此断言没有事件。",
+        "没有混用未经核对的滚动原油价格序列；未恢复同合约可比变化处保持空缺。",
+        "价格参考为前一美国交易日的可核验历史日度记录，不是恢复出的09:00/18:00 SGT盘中快照；不同品种保持各自标明的价格口径。"
+      ]
+    },
+    {
+      "date": "2026-10-02",
+      "edition_status": "final",
+      "historical_cutoff_sgt": "2026-10-02 18:00 SGT",
+      "reconstructed_at": "2026-10-08T14:40:50+08:00",
+      "market_reference_session": "2026-10-01",
+      "assets": 22,
+      "source_count": 23,
+      "archive_eligible": true,
+      "native_eligible": false,
+      "limitations": [
+        "本期于10月8日事后重建，不是恢复出来的当时已发布原稿。",
+        "所列事实只使用截止线前可获得资料；分析和情景于重建时形成，不是历史建议。",
+        "官方日度行情为当前可下载历史序列，未恢复当时数据库版本；部分品种5交易日变化缺失。",
+        "已恢复Nasdaq成分公告、Cboe交易量比率及官方拍卖；全面指数覆盖、ETF权重、单日机构流、dealer gamma和拍卖WI/尾差仍缺失。",
+        "历史财报共识、发布后盘口和完整GAAP调整桥未恢复；行业周度资金流与单日流动性必须区分。",
+        "价格参考为前一美国交易日的可核验历史日度记录，不是恢复出的09:00/18:00 SGT盘中快照；不同品种保持各自标明的价格口径。"
+      ]
+    },
+    {
+      "date": "2026-10-03",
+      "edition_status": "final",
+      "historical_cutoff_sgt": "2026-10-03 18:00 SGT",
+      "reconstructed_at": "2026-10-08T14:40:50+08:00",
+      "market_reference_session": "2026-10-02",
+      "assets": 22,
+      "source_count": 22,
+      "archive_eligible": true,
+      "native_eligible": false,
+      "limitations": [
+        "本期于10月8日事后重建，不是恢复出来的当时已发布原稿。",
+        "所列事实只使用截止线前可获得资料；分析和情景于重建时形成，不是历史建议。",
+        "官方日度行情为当前可下载历史序列，未恢复当时数据库版本；部分品种5交易日变化缺失。",
+        "已恢复Nasdaq成分公告、Cboe交易量比率及官方拍卖；全面指数覆盖、ETF权重、单日机构流、dealer gamma和拍卖WI/尾差仍缺失。",
+        "历史财报共识、发布后盘口和完整GAAP调整桥未恢复；行业周度资金流与单日流动性必须区分。",
+        "价格参考为前一美国交易日的可核验历史日度记录，不是恢复出的09:00/18:00 SGT盘中快照；不同品种保持各自标明的价格口径。"
+      ]
+    },
+    {
+      "date": "2026-10-04",
+      "edition_status": "final",
+      "historical_cutoff_sgt": "2026-10-04 18:00 SGT",
+      "reconstructed_at": "2026-10-08T14:40:50+08:00",
+      "market_reference_session": "2026-10-02",
+      "assets": 22,
+      "source_count": 23,
+      "archive_eligible": true,
+      "native_eligible": false,
+      "limitations": [
+        "本期于10月8日事后重建，不是恢复出来的当时已发布原稿。",
+        "所列事实只使用截止线前可获得资料；分析和情景于重建时形成，不是历史建议。",
+        "官方日度行情为当前可下载历史序列，未恢复当时数据库版本；部分品种5交易日变化缺失。",
+        "OPEC10月4日声明只有日期，无法证明18SGT前公开，故排除。",
+        "已恢复Nasdaq成分公告、Cboe交易量比率及官方拍卖；全面指数覆盖、ETF权重、单日机构流、dealer gamma和拍卖WI/尾差仍缺失。",
+        "历史财报共识、发布后盘口和完整GAAP调整桥未恢复；行业周度资金流与单日流动性必须区分。",
+        "价格参考为前一美国交易日的可核验历史日度记录，不是恢复出的09:00/18:00 SGT盘中快照；不同品种保持各自标明的价格口径。"
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "edition_status": "final",
+      "historical_cutoff_sgt": "2026-10-05 18:00 SGT",
+      "reconstructed_at": "2026-10-08T14:40:50+08:00",
+      "market_reference_session": "2026-10-02",
+      "assets": 22,
+      "source_count": 27,
+      "archive_eligible": true,
+      "native_eligible": false,
+      "limitations": [
+        "本期于10月8日事后重建，不是恢复出来的当时已发布原稿。",
+        "所列事实只使用截止线前可获得资料；分析和情景于重建时形成，不是历史建议。",
+        "官方日度行情为当前可下载历史序列，未恢复当时数据库版本；部分品种5交易日变化缺失。",
+        "已恢复Nasdaq成分公告、Cboe交易量比率及官方拍卖；全面指数覆盖、ETF权重、单日机构流、dealer gamma和拍卖WI/尾差仍缺失。",
+        "历史财报共识、发布后盘口和完整GAAP调整桥未恢复；行业周度资金流与单日流动性必须区分。",
+        "价格参考为前一美国交易日的可核验历史日度记录，不是恢复出的09:00/18:00 SGT盘中快照；不同品种保持各自标明的价格口径。"
+      ]
+    },
+    {
+      "date": "2026-10-06",
+      "edition_status": "final",
+      "historical_cutoff_sgt": "2026-10-06 18:00 SGT",
+      "reconstructed_at": "2026-10-08T14:40:50+08:00",
+      "market_reference_session": "2026-10-05",
+      "assets": 22,
+      "source_count": 26,
+      "archive_eligible": true,
+      "native_eligible": false,
+      "limitations": [
+        "本期于10月8日事后重建，不是恢复出来的当时已发布原稿。",
+        "所列事实只使用截止线前可获得资料；分析和情景于重建时形成，不是历史建议。",
+        "官方日度行情为当前可下载历史序列，未恢复当时数据库版本；部分品种5交易日变化缺失。",
+        "已恢复Nasdaq成分公告、Cboe交易量比率及官方拍卖；全面指数覆盖、ETF权重、单日机构流、dealer gamma和拍卖WI/尾差仍缺失。",
+        "历史财报共识、发布后盘口和完整GAAP调整桥未恢复；行业周度资金流与单日流动性必须区分。",
+        "价格参考为前一美国交易日的可核验历史日度记录，不是恢复出的09:00/18:00 SGT盘中快照；不同品种保持各自标明的价格口径。"
+      ]
+    },
+    {
+      "date": "2026-10-07",
+      "edition_status": "final",
+      "historical_cutoff_sgt": "2026-10-07 18:00 SGT",
+      "reconstructed_at": "2026-10-08T14:40:50+08:00",
+      "market_reference_session": "2026-10-06",
+      "assets": 22,
+      "source_count": 26,
+      "archive_eligible": true,
+      "native_eligible": false,
+      "limitations": [
+        "本期于10月8日事后重建，不是恢复出来的当时已发布原稿。",
+        "所列事实只使用截止线前可获得资料；分析和情景于重建时形成，不是历史建议。",
+        "官方日度行情为当前可下载历史序列，未恢复当时数据库版本；部分品种5交易日变化缺失。",
+        "已恢复Nasdaq成分公告、Cboe交易量比率及官方拍卖；全面指数覆盖、ETF权重、单日机构流、dealer gamma和拍卖WI/尾差仍缺失。",
+        "历史财报共识、发布后盘口和完整GAAP调整桥未恢复；行业周度资金流与单日流动性必须区分。",
+        "价格参考为前一美国交易日的可核验历史日度记录，不是恢复出的09:00/18:00 SGT盘中快照；不同品种保持各自标明的价格口径。"
+      ]
+    },
+    {
+      "date": "2026-10-08",
+      "edition_status": "official",
+      "historical_cutoff_sgt": "2026-10-08 09:00 SGT",
+      "reconstructed_at": "2026-10-08T14:40:50+08:00",
+      "market_reference_session": "2026-10-07",
+      "assets": 22,
+      "source_count": 27,
+      "archive_eligible": true,
+      "native_eligible": false,
+      "limitations": [
+        "本期于10月8日事后重建，不是恢复出来的当时已发布原稿。",
+        "所列事实只使用截止线前可获得资料；分析和情景于重建时形成，不是历史建议。",
+        "官方日度行情为当前可下载历史序列，未恢复当时数据库版本；部分品种5交易日变化缺失。",
+        "Gold 10月7日可靠报价未恢复；不将10月6日旧报价冒充10月7日。",
+        "已恢复Nasdaq成分公告、Cboe交易量比率及官方拍卖；全面指数覆盖、ETF权重、单日机构流、dealer gamma和拍卖WI/尾差仍缺失。",
+        "历史财报共识、发布后盘口和完整GAAP调整桥未恢复；行业周度资金流与单日流动性必须区分。",
+        "价格参考为前一美国交易日的可核验历史日度记录，不是恢复出的09:00/18:00 SGT盘中快照；不同品种保持各自标明的价格口径。"
+      ]
+    }
+  ],
+  "original_fallback": {
+    "date": "2026-09-24",
+    "factual_snapshot_preserved": true,
+    "original_cutoff": "2026-09-24 09:32 SGT"
+  },
+  "quarantined": "Unreconciled rolling Brent/WTI history excluded; Reuters dated settlements used, same-contract five-day change unavailable.",
+  "source_basis": "Original point-in-time snapshots were not recovered. Historical reports are explicitly reconstructed, primary and secondary source series preserve instrument/time basis.",
+  "publication_policy": {
+    "effective_date": "2026-10-08",
+    "timezone": "Asia/Shanghai",
+    "schedule": "09:00 daily",
+    "canonical_cycle": "morning",
+    "evening_scheduled": false,
+    "actual_morning_native_eligible": true,
+    "historical_reconstructions_native_eligible": false
+  }
+}

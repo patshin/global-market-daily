@@ -426,7 +426,7 @@ def build(refresh=True):
     (OUT_DIR/'market-history.json').write_text(json.dumps(market_history,ensure_ascii=False,indent=2),encoding='utf-8')
     (OUT_DIR/'rolling-30d.json').write_text(json.dumps(rolling,ensure_ascii=False,indent=2),encoding='utf-8')
     (OUT_DIR/'theme-registry.json').write_text(json.dumps({'schema_version':'1.0.0','themes':rolling['themes'],'categories':CATEGORY_LABELS},ensure_ascii=False,indent=2),encoding='utf-8')
-    print(json.dumps({'as_of':as_of,'window_start':window_start,'sessions':len(days),'native':rolling['coverage']['native_daily_days'],'reconstructed':rolling['coverage']['reconstructed_days'],'themes':len(persistent)},ensure_ascii=False))
+    print(json.dumps({'as_of':as_of,'window_start':window_start,'sessions':len(days),'native':rolling['coverage']['native_daily_days'],'historical_backfills':rolling['coverage']['reconstructed_daily_days'],'reconstructed':rolling['coverage']['reconstructed_days'],'themes':len(persistent)},ensure_ascii=False))
 
 if __name__=='__main__':
     import argparse

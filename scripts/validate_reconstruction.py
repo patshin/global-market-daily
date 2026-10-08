@@ -2,7 +2,8 @@
 """Extra honesty and no-look-ahead gates for retrospective editions only."""
 import json
 import math
-from datetime import datetime, timezone
+import re
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 ROOT=Path(__file__).resolve().parents[1]
@@ -32,8 +33,14 @@ def check_report(report,source_doc,archive_dates):
     for source in source_doc.get('sources',[]):
         available=source.get('available_by_utc')
         published=source.get('published_at')
-        if not available and isinstance(published,str) and 'T' in published:
-            available=published
+        if not available and isinstance(published,str):
+            if 'T' in published:
+                available=published
+            elif re.fullmatch(r'\d{4}-\d{2}-\d{2}',published):
+                available=(datetime.fromisoformat(published)+timedelta(days=1)).replace(tzinfo=timezone.utc).isoformat()
+        if not available:
+            note=source.get('historical_availability_note') or source.get('availability_basis') or source.get('vintage_note')
+            require(bool(note),f"source {source.get('id')} needs explicit historical availability limitation")
         if available:
             try:
                 dt=datetime.fromisoformat(available.replace('Z','+00:00'))
@@ -41,6 +48,9 @@ def check_report(report,source_doc,archive_dates):
             except (TypeError,ValueError):require(False,f"source {source.get('id')} has invalid available_by_utc")
     for item in report.get('market_tape',[]):
         recovered=item.get('recovery_observation') or {}
+        if not recovered:
+            observed=re.search(r'\d{4}-\d{2}-\d{2}',str(item.get('as_of','')))
+            require(bool(observed) and observed.group()<day,f"{item.get('asset')} requires prior-session as_of or explicit recovery observation metadata")
         if recovered:
             require(recovered.get('session_date','')<day,f"{item.get('asset')} uses same-day/later US close")
             require(recovered.get('original_snapshot_recovered') is False,'historical series must not claim original SGT snapshot')
