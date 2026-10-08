@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 from __future__ import annotations
-import csv, json, math, statistics
+import csv, json, math, statistics, re
 from urllib.request import Request, urlopen
 from collections import defaultdict, Counter
 from datetime import date, datetime, timedelta, timezone
@@ -115,16 +115,16 @@ def theme_from_text(text: str):
     t=text.lower()
     china=any(k in t for k in ['china','chinese','中国','北京','国资委','工信部'])
     policy=any(k in t for k in ['policy','roadmap','standards','subsid','industrial','产业','政策','标准','规划','行动计划','6g','nev'])
-    trade=any(k in t for k in ['tariff','trade','export control','import restriction','sanction','关税','贸易','出口管制','进口限制','制裁'])
+    trade=bool(re.search(r'\b(?:tariffs?|trade|export controls?|import restrictions?|sanctions?)\b',t)) or any(k in t for k in ['关税','贸易','出口管制','进口限制','制裁'])
     semis=any(k in t for k in ['semiconductor','chip','eda','集成电路','芯片','半导体'])
     if china and semis and policy: return 'china_semiconductor_policy'
     if china and policy: return 'china_industrial_policy'
-    if trade or (china and any(k in t for k in ['u.s.','us ','美国'])): return 'us_china_trade_controls'
-    if any(k in t for k in ['hormuz','iran','伊朗','美伊','war','航运']): return 'geopolitics_energy'
-    if any(k in t for k in ['dell','broadcom','avgo','nvda','ai','semiconductor','半导体','财报']): return 'ai_earnings'
-    if any(k in t for k in ['10y','yield','treasury','jgb','主权债','收益率','term premium']): return 'global_duration'
+    if trade or (china and (re.search(r'(?<![a-z])u\.?s\.?(?![a-z])',t) or '美国' in t)): return 'us_china_trade_controls'
+    if re.search(r'\b(?:hormuz|iran(?:ian)?|war)\b',t) or any(k in t for k in ['伊朗','美伊','航运']): return 'geopolitics_energy'
     if any(k in t for k in ['fed','fomc','加息','降息']): return 'fed_policy_path'
-    if any(k in t for k in ['oil','brent','wti','原油','能源']): return 'energy_inflation'
+    if any(k in t for k in ['10y','yield','treasury','jgb','主权债','收益率','term premium']): return 'global_duration'
+    if re.search(r'(?<![a-z])(?:ai|dell|broadcom|avgo|nvda|applied digital)(?![a-z])|semiconductor|半导体|财报', t): return 'ai_earnings'
+    if any(k in t for k in ['oil','brent','wti','iea','diesel','emergency-stock','原油','能源','库存释放']): return 'energy_inflation'
     if any(k in t for k in ['credit','spread','融资','liquidity']): return 'credit_conditions'
     return 'market_structure'
 
@@ -357,8 +357,13 @@ def build(refresh=True):
     # lifecycle
     occurrences=defaultdict(list)
     for day in days:
+        best_by_theme={}
         for c in day['catalysts']:
-            occurrences[c['theme_id']].append((day,c))
+            tid=c['theme_id']
+            if tid not in best_by_theme or c['rank'] < best_by_theme[tid]['rank']:
+                best_by_theme[tid]=c
+        for tid,c in best_by_theme.items():
+            occurrences[tid].append((day,c))
     persistent=[]
     for tid, occ in occurrences.items():
         ranks=[c['rank'] for _,c in occ]

@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import hashlib
 import re
 import sys
 from pathlib import Path
@@ -103,8 +104,9 @@ def validate_frontend_sources(root: Path, gate: Gate) -> None:
                  "Market-tape neutral colour requires a dark-background override")
 
     # Cache-busting prevents the old collapsed/tiny-font bundle from surviving deployment.
-    gate.require("styles.css?v=1.2.1" in index, "index.html must load styles.css?v=1.2.1")
-    gate.require("app.js?v=1.2.1" in index, "index.html must load app.js?v=1.2.1")
+    for asset in ("styles.css", "app.js"):
+        digest=hashlib.sha256((root / "docs/assets" / asset).read_bytes()).hexdigest()[:12]
+        gate.require(f"{asset}?v={digest}" in index, f"index.html must load current content-hashed {asset}")
     gate.require('class="catalyst-grid" id="top-catalysts"' in index,
                  "Top 3 catalysts must have a dedicated full-width evidence grid")
     gate.require('id="report-sections"' in index, "Missing continuous report container")

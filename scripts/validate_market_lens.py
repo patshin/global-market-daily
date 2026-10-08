@@ -48,6 +48,9 @@ if verified_path.exists():
     for category in eligible:
         req(category in displayed,f'eligible verified event category not displayed: {category}')
 
+for theme in data.get('persistent_themes',[]):
+    unique_dates={day['date'] for day in days if any(c.get('theme_id')==theme.get('theme_id') for c in day.get('catalysts',[]))}
+    req(theme.get('days_in_top3')==len(unique_dates),f"theme {theme.get('theme_id')} day count must use unique dates")
 req(len(data.get('persistent_themes',[]))>=5,'persistent theme lifecycle too thin')
 series=data.get('series',{}); req(len(series)>=7,'cross-asset series coverage too thin')
 for sid,s in series.items(): req(len(s.get('points',[]))>=10,f'{sid} too few 30D observations')
