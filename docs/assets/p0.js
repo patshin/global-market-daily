@@ -106,14 +106,14 @@ function renderPreview(data) {
   const ribbon = lensEl("div", "regime-ribbon");
   data.days.forEach((day) => {
     const cell = lensEl("span", `regime-ribbon__cell regime-ribbon__cell--${day.regime_code}${day.source_mode === "native_daily" ? " regime-ribbon__cell--native" : ""}`);
-    cell.title = `${day.date} · ${day.regime_label} · ${day.source_mode === "native_daily" ? "Native Daily" : "Market Reconstruction"}`;
+    cell.title = `${day.date} · ${day.regime_label} · ${day.source_mode === "native_daily" ? "Native Daily" : day.source_mode === "reconstructed_daily" ? "Historical Backfill" : "Market Reconstruction"}`;
     ribbon.appendChild(cell);
   });
   primary.appendChild(ribbon);
   const axis = lensEl("div", "regime-ribbon__axis");
   axis.append(lensEl("span", "", data.window_start), lensEl("span", "", data.window_end));
   primary.appendChild(axis);
-  primary.appendChild(lensEl("p", "lens-method-note", `${data.coverage.market_sessions} 个市场日 · ${data.coverage.native_daily_days} 个原生日报 · ${data.coverage.verified_event_days || 0} 个官方事件日`));
+  primary.appendChild(lensEl("p", "lens-method-note", `${data.coverage.market_sessions} 个覆盖日 · ${data.coverage.native_daily_days} 个原生日报 · ${data.coverage.reconstructed_daily_days || 0} 个历史补档 · ${data.coverage.verified_event_days || 0} 个官方事件日`));
 
   const side = lensEl("div", "lens-preview-side");
   side.appendChild(lensEl("div", "section-kicker", "Persistent Risk Themes"));
@@ -234,3 +234,4 @@ async function initP0() {
 }
 
 document.addEventListener("DOMContentLoaded", initP0);
+

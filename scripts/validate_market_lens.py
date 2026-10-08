@@ -10,17 +10,28 @@ data=json.loads((ROOT/'docs/data/trends/rolling-30d.json').read_text(encoding='u
 req(data.get('schema_version')=='1.0.0','rolling schema version')
 req(data.get('methodology',{}).get('no_black_box_score') is True,'black-box score must be prohibited')
 days=data.get('days',[]); req(len(days)>=20,'need at least 20 market sessions for Day-1 30D lens')
-req(data.get('coverage',{}).get('native_daily_days',0)>=1,'need at least one native daily assessment')
-req(data.get('coverage',{}).get('reconstructed_days',0)>=1,'historical reconstruction coverage missing')
+req(sum(data.get('coverage',{}).get(k,0) for k in ('native_daily_days','reconstructed_daily_days','reconstructed_days'))==len(days),'coverage counts must equal observed days')
+# A fully native window is valid; reconstruction is not mandatory forever.
 for i,d in enumerate(days):
-    req(d.get('source_mode') in {'native_daily','objective_market_reconstruction'},f'day {i} source_mode invalid')
-    req(d.get('regime_code') in {'risk_on','neutral','risk_off','event_risk'},f'day {i} regime invalid')
-    req(len(d.get('catalysts',[]))==3,f'day {i} must expose three ranked driver proxies/catalysts')
+    req(d.get('source_mode') in {'native_daily','reconstructed_daily','objective_market_reconstruction'},f'day {i} source_mode invalid')
+    req(d.get('regime_code') in {'risk_on','neutral','risk_off','event_risk','unavailable','unclassified'},f'day {i} regime invalid')
+    catalysts=d.get('catalysts',[])
+    quality=d.get('data_quality',{})
+    partial=d.get('source_mode')=='objective_market_reconstruction' and quality.get('status')=='partial'
+    if partial:
+        req(0<=len(catalysts)<=3,f'day {i} partial must have at most three observed drivers')
+        req(quality.get('available_driver_count')==len(catalysts),f'day {i} partial count mismatch')
+        req(bool(quality.get('missing_series')) and bool(quality.get('note')),f'day {i} partial coverage disclosure missing')
+        req(d.get('regime_code')=='unavailable',f'day {i} partial regime must not imply a neutral assessment')
+    else:
+        req(len(catalysts)==3,f'day {i} must expose three ranked driver proxies/catalysts')
+        req(d.get('regime_code')!='unavailable',f'day {i} unavailable regime requires partial coverage')
+    req([c.get('rank') for c in catalysts]==list(range(1,len(catalysts)+1)),f'day {i} catalyst ranks invalid')
     for j,c in enumerate(d.get('catalysts',[])):
         req(c.get('theme_id'),f'day {i} catalyst {j} theme_id missing')
         req(c.get('category'),f'day {i} catalyst {j} category missing')
-        req(c.get('source_mode') in {'native_daily','objective_market_reconstruction','verified_event'},f'day {i} catalyst {j} provenance invalid')
-        if d.get('source_mode')=='native_daily': req(c.get('source_mode')=='native_daily',f'day {i} native catalyst {j} provenance mismatch')
+        req(c.get('source_mode') in {'native_daily','reconstructed_daily','objective_market_reconstruction','verified_event'},f'day {i} catalyst {j} provenance invalid')
+        if d.get('source_mode') in {'native_daily','reconstructed_daily'}: req(c.get('source_mode')==d.get('source_mode'),f'day {i} native catalyst {j} provenance mismatch')
         if c.get('source_mode')=='verified_event':
             req(str(c.get('source_url','')).startswith('https://'),f'day {i} verified catalyst {j} source_url missing')
             req(bool(c.get('source_name')),f'day {i} verified catalyst {j} source_name missing')
@@ -93,4 +104,5 @@ if errors:
     print('MARKET LENS GATE FAILED')
     for x in errors: print(' -',x)
     sys.exit(1)
-print(f"MARKET LENS GATE PASSED — {len(days)} sessions, {data['coverage']['native_daily_days']} native, {data['coverage']['reconstructed_days']} reconstructed, {data['coverage'].get('verified_event_days',0)} verified-event days, {len(data['persistent_themes'])} lifecycle themes")
+print(f"MARKET LENS GATE PASSED — {len(days)} sessions, {data['coverage']['native_daily_days']} native, {data['coverage'].get('reconstructed_daily_days',0)} historical backfills, {data['coverage']['reconstructed_days']} price reconstructed, {data['coverage'].get('verified_event_days',0)} verified-event days, {len(data['persistent_themes'])} lifecycle themes")
+

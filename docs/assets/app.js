@@ -513,6 +513,12 @@ function renderMasthead(report) {
     line("Equivalent ET", report.data_cutoff_et),
     line("Last Updated", report.last_updated)
   );
+  if (report.reconstruction?.is_reconstructed) {
+    $("#cutoff-block").appendChild(line("历史补档", `于 ${report.reconstruction.reconstructed_at} 重建；按原历史截止时间整理，并非当日发布。`));
+    (report.reconstruction.limitations || []).forEach(value => $("#cutoff-block").appendChild(line("证据范围", value)));
+  } else if (report.is_morning_fallback) {
+    $("#cutoff-block").appendChild(line("归档说明", "沿用早报原始截止时间，晚报缺失；未补入之后的事实。"));
+  }
   $("#footer-updated").textContent = `Updated ${report.last_updated}`;
   document.title = `${report.date} — Global Market Daily`;
 }
@@ -1012,3 +1018,4 @@ window.addEventListener("hashchange", () => {
 });
 
 document.addEventListener("DOMContentLoaded", initialize);
+

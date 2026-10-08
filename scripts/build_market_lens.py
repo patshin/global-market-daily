@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 HISTORY_DIR = ROOT / 'history'
 DAILY_DIR = ROOT / 'docs/data/daily'
+ARCHIVE_PATH = ROOT / 'docs/data/archive.json'
 OUT_DIR = ROOT / 'docs/data/trends'
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 VERIFIED_EVENTS_PATH = OUT_DIR / 'verified-events.json'
@@ -152,18 +153,25 @@ def load_verified_events():
 
 def load_native_reports():
     native={}
+    archived={entry.get('date') for entry in json.loads(ARCHIVE_PATH.read_text(encoding='utf-8')).get('entries',[])}
     for p in sorted(DAILY_DIR.glob('*.json')):
         try: r=json.loads(p.read_text(encoding='utf-8'))
         except Exception: continue
         cycle=r.get('publication_cycle') or {}
         if cycle.get('is_final') is False:
             continue
+        reconstructed=(r.get('reconstruction') or {}).get('is_reconstructed') is True
+        if cycle.get('market_lens_native_eligible') is False and not reconstructed:
+            continue
+        if cycle.get('archive_eligible') is False:
+            continue
         d=r.get('date')
-        if d: native[d]=r
+        if d and d in archived: native[d]=r
     return native
 
-def build():
-    ensure_history()
+def build(refresh=True):
+    if refresh:
+        ensure_history()
     raw={sid:read_csv(HISTORY_DIR/f'{sid}.csv',sid) for sid in SERIES}
     maps={sid:{p['date']:p['value'] for p in pts} for sid,pts in raw.items()}
     master_dates=sorted(set(maps['NASDAQCOM']) | set(maps['SP500']))
@@ -208,9 +216,10 @@ def build():
     for d in dates:
         if d in native:
             r=native[d]
+            report_mode = 'reconstructed_daily' if (r.get('reconstruction') or {}).get('is_reconstructed') else 'native_daily'
             regime_item=(r.get('market_regime') or {}).get('overall')
-            regime_label=regime_item.get('state') if isinstance(regime_item,dict) else (regime_item or 'Neutral')
-            code={'Risk-On':'risk_on','Neutral':'neutral','Risk-Off':'risk_off','Event Risk':'event_risk'}.get(regime_label,'event_risk' if 'Event' in str(regime_label) else 'neutral')
+            regime_label=regime_item.get('state') if isinstance(regime_item,dict) else (regime_item or 'Unclassified')
+            code={'Risk-On':'risk_on','Neutral':'neutral','Risk-Off':'risk_off','Event Risk':'event_risk'}.get(regime_label,'event_risk' if 'Event' in str(regime_label) else 'unclassified')
             catalysts=[]
             for i,c in enumerate(r.get('top_catalysts') or []):
                 tid=theme_from_text(c.get('event','')+' '+c.get('what_happened',''))
@@ -219,20 +228,20 @@ def build():
                     'title':c.get('event',''),'evidence':c.get('what_happened',''),'market_bias':market_bias_from_direction(c.get('direction')),
                     'importance_level':importance_to_level(c.get('importance')),'importance':c.get('importance',''),
                     'transmission':c.get('transmission',''),'confirmation':c.get('confirmation',''),'invalidation':c.get('invalidation',''),
-                    'source_mode':'native_daily'
+                    'source_mode':report_mode
                 })
             signals={}
             smap={'growth':'growth_impulse','inflation':'inflation_impulse','rates':'rates_pressure','earnings':'earnings_revision','liquidity':'liquidity','geopolitics':'geopolitical_risk'}
             sp=r.get('signal_panel') or {}
             for key,source_key in smap.items():
                 item=sp.get(source_key) or {}
-                cur=item.get('current','→') if isinstance(item,dict) else '→'
-                signals[key]='↑' if '↑' in str(cur) else '↓' if '↓' in str(cur) else '→'
+                cur=item.get('current','?') if isinstance(item,dict) else '?'
+                signals[key]='↑' if '↑' in str(cur) else '↓' if '↓' in str(cur) else '→' if '→' in str(cur) else '?'
             risks=[]
             for rr in r.get('top_risks') or []:
                 tid=theme_from_text(rr.get('risk','')+' '+rr.get('transmission',''))
-                risks.append({'theme_id':tid,'title':rr.get('risk',''),'first_asset':rr.get('first_asset',''),'transmission':rr.get('transmission',''),'source_mode':'native_daily'})
-            days.append({'date':d,'source_mode':'native_daily','regime_code':code,'regime_label':regime_label,
+                risks.append({'theme_id':tid,'title':rr.get('risk',''),'first_asset':rr.get('first_asset',''),'transmission':rr.get('transmission',''),'source_mode':report_mode})
+            days.append({'date':d,'source_mode':report_mode,'regime_code':code,'regime_label':regime_label,
                          'dominant_theme_id':catalysts[0]['theme_id'] if catalysts else 'market_structure','signals':signals,
                          'catalysts':catalysts[:3]})
             continue
@@ -288,6 +297,8 @@ def build():
             if c['theme_id'] in seen: continue
             seen.add(c['theme_id']); c=dict(c); c['rank']=len(top)+1; c.pop('score',None); top.append(c)
             if len(top)==3: break
+        available_series=[sid for sid in SERIES if v(sid,d,'change') is not None]
+        missing_series=[sid for sid in SERIES if sid not in available_series]
         # Transparent regime rules: count observable stress/relief conditions.
         # No weighted composite score is created or displayed.
         def z(sid): return v(sid,d,'z') or 0.0
@@ -323,8 +334,17 @@ def build():
             'liquidity':sign_symbol(-(z('BAMLH0A0HYM2')+z('DTWEXBGS'))/2),
             'geopolitics':sign_symbol((z('VIXCLS')+max(0,z('DCOILBRENTEU')))/2),
         }
+        required_signals={'growth':['NASDAQCOM','SP500'],'inflation':['DCOILBRENTEU'],'rates':['DGS2','DGS10'],'earnings':['NASDAQCOM','SP500'],'liquidity':['BAMLH0A0HYM2','DTWEXBGS'],'geopolitics':['VIXCLS','DCOILBRENTEU']}
+        for key, required in required_signals.items():
+            if any(sid not in available_series for sid in required):
+                signals[key]='?'
+        incomplete=bool(missing_series) or len(top)<3
+        if incomplete:
+            code='unavailable'; label='Insufficient data'
         days.append({'date':d,'source_mode':'objective_market_reconstruction','regime_code':code,'regime_label':label,
-                     'dominant_theme_id':top[0]['theme_id'] if top else 'market_structure','signals':signals,'catalysts':top})
+                     'dominant_theme_id':top[0]['theme_id'] if top else 'market_structure','signals':signals,'catalysts':top,
+                     'data_quality':{'status':'partial' if incomplete else 'complete','available_driver_count':len(top),'available_series':available_series,'missing_series':missing_series,
+                     'note':'Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral.'}})
 
     # transitions
     transitions=[]
@@ -369,10 +389,11 @@ def build():
     # use native tape if present for current day; otherwise historical changes
     current_report=native.get(current['date'],{})
     tape={item.get('asset'):item for item in current_report.get('market_tape',[]) if isinstance(item,dict)}
-    aliases={'NASDAQCOM':'Nasdaq Composite','SP500':'S&P 500','VIXCLS':'VIX','DGS2':'UST 2Y','DGS10':'UST 10Y','DCOILBRENTEU':'Brent','DTWEXBGS':'DXY','BAMLH0A0HYM2':'US High Yield OAS'}
+    aliases={'NASDAQCOM':'Nasdaq Composite','SP500':'S&P 500','VIXCLS':'VIX','DGS2':'UST 2Y','DGS10':'UST 10Y','DCOILBRENTEU':'Europe Brent Spot','DTWEXBGS':'Broad Trade-Weighted USD','BAMLH0A0HYM2':'US High Yield OAS'}
     confirms=[]; diverges=[]; unavailable=[]
     for sid,sgn in expected.items():
-        delta=v(sid,current['date'],'change')
+        # Editorial snapshots must never borrow later same-day US closing data.
+        delta=None if current_report else v(sid,current['date'],'change')
         display_delta=None
         # native tape parsing when possible
         asset=tape.get(aliases.get(sid,''))
@@ -382,11 +403,12 @@ def build():
                 num=float(rawc.replace('%','').replace('bp','').replace('+','').strip())
                 delta=num
             except Exception: pass
-            display_delta=rawc
+            if delta is not None:
+                display_delta=rawc
         if delta is None:
             unavailable.append({'series_id':sid,'label':SERIES[sid]['label']}); continue
         actual=1 if delta>0 else -1 if delta<0 else 0
-        item={'series_id':sid,'label':SERIES[sid]['label'],'change':display_delta or (f'{delta:+.1f}bp' if SERIES[sid]['kind']=='yield' else f'{delta:+.2f}%')}
+        item={'series_id':sid,'label':SERIES[sid]['label'],'as_of':asset.get('as_of') if asset else current['date'],'source_mode':current.get('source_mode'),'change':display_delta or (f'{delta:+.1f}bp' if SERIES[sid]['kind']=='yield' else f'{delta:+.2f}%')}
         (confirms if actual==sgn else diverges).append(item)
     confirmation={'theme_id':tid,'theme_label':THEMES.get(tid,(tid,''))[0],'as_of':current['date'],'confirming':confirms,'diverging':diverges,'unavailable':unavailable,
                   'interpretation_note':f"{len(confirms)} 项资产确认当前主线，{len(diverges)} 项出现背离。",
@@ -394,9 +416,9 @@ def build():
 
     rolling={
         'schema_version':'1.0.0','as_of':as_of,'window_start':window_start,'window_end':as_of,
-        'coverage':{'market_sessions':len(days),'native_daily_days':sum(1 for x in days if x['source_mode']=='native_daily'),'reconstructed_days':sum(1 for x in days if x['source_mode']!='native_daily'),'verified_event_days':sum(1 for x in days if any(c.get('source_mode')=='verified_event' for c in x.get('catalysts',[]))),
+        'coverage':{'market_sessions':len(days),'native_daily_days':sum(1 for x in days if x['source_mode']=='native_daily'),'reconstructed_daily_days':sum(1 for x in days if x['source_mode']=='reconstructed_daily'),'reconstructed_days':sum(1 for x in days if x['source_mode']=='objective_market_reconstruction'),'partial_days':sum(1 for x in days if x.get('data_quality',{}).get('status')=='partial'),'verified_event_days':sum(1 for x in days if any(c.get('source_mode')=='verified_event' for c in x.get('catalysts',[]))),
                     'historical_series_start':min(p['date'] for pts in raw.values() for p in pts)},
-        'methodology':{'native_daily':'Original published GMD daily assessment.','verified_event':'Primary-source policy or trade event aligned to its first market session.','objective_market_reconstruction':'Rule-based reconstruction from contemporaneous market-price/rate changes; not a retroactive claim about the day’s news narrative.','no_black_box_score':True},
+        'methodology':{'reconstructed_daily':'Source-backed historical editorial reconstruction produced later; not a contemporaneously published assessment.','native_daily':'Original published GMD daily assessment.','verified_event':'Primary-source policy or trade event aligned to its first market session.','objective_market_reconstruction':'Rule-based reconstruction from contemporaneous market-price/rate changes; not a retroactive claim about the day’s news narrative.','no_black_box_score':True},
         'category_labels':CATEGORY_LABELS,'themes':{k:{'label':v[0],'category':v[1]} for k,v in THEMES.items()},
         'days':days,'regime_transitions':transitions,'persistent_themes':persistent[:12],'cross_asset_confirmation':confirmation,
         'series':{sid:{**SERIES[sid], 'points':[p for p in market_history['series'][sid]['points'] if window_start<=p['date']<=as_of]} for sid in SERIES}
@@ -404,6 +426,12 @@ def build():
     (OUT_DIR/'market-history.json').write_text(json.dumps(market_history,ensure_ascii=False,indent=2),encoding='utf-8')
     (OUT_DIR/'rolling-30d.json').write_text(json.dumps(rolling,ensure_ascii=False,indent=2),encoding='utf-8')
     (OUT_DIR/'theme-registry.json').write_text(json.dumps({'schema_version':'1.0.0','themes':rolling['themes'],'categories':CATEGORY_LABELS},ensure_ascii=False,indent=2),encoding='utf-8')
-    print(json.dumps({'as_of':as_of,'window_start':window_start,'sessions':len(days),'native':rolling['coverage']['native_daily_days'],'reconstructed':rolling['coverage']['reconstructed_days'],'themes':len(persistent)},ensure_ascii=False))
+    print(json.dumps({'as_of':as_of,'window_start':window_start,'sessions':len(days),'native':rolling['coverage']['native_daily_days'],'historical_backfills':rolling['coverage']['reconstructed_daily_days'],'reconstructed':rolling['coverage']['reconstructed_days'],'themes':len(persistent)},ensure_ascii=False))
 
-if __name__=='__main__': build()
+if __name__=='__main__':
+    import argparse
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--offline',action='store_true',help='Use already verified local history CSVs without network refresh.')
+    args=parser.parse_args()
+    build(refresh=not args.offline)
+

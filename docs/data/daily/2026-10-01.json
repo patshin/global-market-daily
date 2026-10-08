@@ -1,0 +1,1289 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-10-01",
+  "edition": "Historical Reconstruction / 历史重建",
+  "edition_status": "reconstructed",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-10-01 18:00 SGT",
+  "data_cutoff_et": "2026-10-01 06:00 EDT",
+  "last_updated": "2026-10-08T14:46:50+08:00",
+  "sources_path": "data/sources/2026-10-01.json",
+  "source_mode": "reconstructed_daily",
+  "publication_cycle": {
+    "status": "reconstructed",
+    "cycle": "historical_reconstruction",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": false
+  },
+  "reconstruction": {
+    "is_reconstructed": true,
+    "reconstructed_at": "2026-10-08T14:46:50+08:00",
+    "historical_cutoff_sgt": "2026-10-01T18:00:00+08:00",
+    "limitations": [
+      "10月8日事后重建，不是恢复的原始18:00 SGT出版物；分析、排序和情景不代表当时已发布观点。",
+      "美国现金价格使用2026-09-30最近完整交易日；不能代表本日期稍后美国收盘。",
+      "官方和供应商历史数值在10月8日重新取得，未恢复原始数据版本；可能存在修订。",
+      "没有完整恢复18:00 SGT的FX、商品、期权和信用逐笔快照；来源时间各自标注。",
+      "指数变更、养老金/季末流量、ETF篮子、做市商仓位及部分公司预期/市场反应资料不足；不能据此断言没有事件。",
+      "没有混用未经核对的滚动原油价格序列；未恢复同合约可比变化处保持空缺。",
+      "价格参考为前一美国交易日的可核验历史日度记录，不是恢复出的09:00/18:00 SGT盘中快照；不同品种保持各自标明的价格口径。"
+    ],
+    "market_session": "2026-09-30"
+  },
+  "thesis": "历史重建：10月1日18:00 SGT前，BEA消费和价格数据及Micron财报已更新，但长端收益率压力未随前端加息预期同步消失。BOJ意见摘要提示价格风险仍被重视；美国ISM与Accenture电话会在截点之后，结果不能提前纳入。",
+  "dominant_narrative": "事实边界：本期只使用历史截点前已发布或明确预告的证据；价格表包含标明口径的历史参考。历史重建：10月1日18:00 SGT前，BEA消费和价格数据及Micron财报已更新，但长端收益率压力未随前端加息预期同步消失。BOJ意见摘要提示价格风险仍被重视；美国ISM与Accenture电话会在截点之后，结果不能提前纳入。 分析是重建而非原稿；条件情景不赋予事后概率，缺口不被写成无重大事件。",
+  "market_regime": {
+    "growth": {
+      "state": "消费韧性与较温和核心价格并存",
+      "evidence": "实际PCE环比增长0.6%，核心价格0.2%；这次发布含年度修订，旧月份数值不与旧版本直接混算。",
+      "sources": [
+        "S19"
+      ]
+    },
+    "inflation": {
+      "state": "能源、核心价格与需求分开评估",
+      "evidence": "BEA单月核心PCE较温和，但同比仍高于2%；能源传导尚须跟踪。",
+      "sources": [
+        "S19"
+      ]
+    },
+    "rates": {
+      "state": "政策时间与期限溢价分开",
+      "evidence": "最近完整交易日10Y为5.29%；美国数据可影响下一次加息概率；BOJ摘要则体现日本自己的增长、成本和价格权衡。",
+      "sources": [
+        "S19",
+        "S21",
+        "S91"
+      ]
+    },
+    "earnings": {
+      "state": "Micron正式公布",
+      "evidence": "财报已经进入本截点；Accenture只恢复会前日程，未确认精确发布时刻，因此本期不使用其当天结果。",
+      "sources": [
+        "S20",
+        "S24"
+      ]
+    },
+    "liquidity": {
+      "state": "资金流与系统流动性尚无法可靠确认",
+      "evidence": "没有恢复足够的回购、准备金或基金申赎资料；较高融资成本本身不证明系统流动性危机。",
+      "sources": []
+    },
+    "geopolitics": {
+      "state": "和平进展仍未充分确认",
+      "evidence": "Reuters亚洲报道仍将美伊谈判停滞列为背景。没有可验证的海峡全面恢复证据。",
+      "sources": [
+        "S22"
+      ]
+    },
+    "overall": {
+      "state": "历史重建 / 融资约束与需求韧性并存",
+      "evidence": "历史重建：10月1日18:00 SGT前，BEA消费和价格数据及Micron财报已更新，但长端收益率压力未随前端加息预期同步消失。BOJ意见摘要提示价格风险仍被重视；美国ISM与Accenture电话会在截点之后，结果不能提前纳入。",
+      "sources": [
+        "S19",
+        "S20",
+        "S21"
+      ]
+    }
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,651.54 ",
+      "change_1d": "-0.25%",
+      "change_5d": "-0.71%",
+      "signal": "↓ 历史日度变动，非当时盘中判断",
+      "driver": "Published historical daily level; exact original SGT snapshot not recovered；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S90",
+        "S500"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Published historical daily level; exact original SGT snapshot not recovered",
+        "level": 7651.54,
+        "change_1d": -0.2516,
+        "change_5d": -0.7071,
+        "change_unit": "%",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "Dow",
+      "level": "50,906.05 ",
+      "change_1d": "-0.86%",
+      "change_5d": "-1.18%",
+      "signal": "↓ 历史日度变动，非当时盘中判断",
+      "driver": "Published historical daily level; exact original SGT snapshot not recovered；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S90",
+        "S500"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Published historical daily level; exact original SGT snapshot not recovered",
+        "level": 50906.05,
+        "change_1d": -0.8644,
+        "change_5d": -1.1755,
+        "change_unit": "%",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "26,861.06 ",
+      "change_1d": "+0.24%",
+      "change_5d": "-0.28%",
+      "signal": "↑ 历史日度变动，非当时盘中判断",
+      "driver": "Published historical daily level; exact original SGT snapshot not recovered；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S90",
+        "S500"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Published historical daily level; exact original SGT snapshot not recovered",
+        "level": 26861.06,
+        "change_1d": 0.237,
+        "change_5d": -0.2784,
+        "change_unit": "%",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,796.86 ",
+      "change_1d": "-0.39%",
+      "change_5d": "-1.47%",
+      "signal": "↓ 历史日度变动，非当时盘中判断",
+      "driver": "Published historical daily level; exact original SGT snapshot not recovered；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S90",
+        "S500"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Published historical daily level; exact original SGT snapshot not recovered",
+        "level": 2796.86,
+        "change_1d": -0.3939,
+        "change_5d": -1.4725,
+        "change_unit": "%",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "UST 2Y",
+      "level": "4.88%",
+      "change_1d": "-1.00bp",
+      "change_5d": "+3.00bp",
+      "signal": "↓ 历史日度变动，非当时盘中判断",
+      "driver": "Official Treasury daily constant-maturity yield; not auction or intraday quote；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S91"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Official Treasury daily constant-maturity yield; not auction or intraday quote",
+        "level": 4.88,
+        "change_1d": -1.0,
+        "change_5d": 3.0,
+        "change_unit": "bp",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "UST 5Y",
+      "level": "5.09%",
+      "change_1d": "+3.00bp",
+      "change_5d": "+10.00bp",
+      "signal": "↑ 历史日度变动，非当时盘中判断",
+      "driver": "Official Treasury daily constant-maturity yield; not auction or intraday quote；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S91"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Official Treasury daily constant-maturity yield; not auction or intraday quote",
+        "level": 5.09,
+        "change_1d": 3.0,
+        "change_5d": 10.0,
+        "change_unit": "bp",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "UST 10Y",
+      "level": "5.29%",
+      "change_1d": "+3.00bp",
+      "change_5d": "+18.00bp",
+      "signal": "↑ 历史日度变动，非当时盘中判断",
+      "driver": "Official Treasury daily constant-maturity yield; not auction or intraday quote；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S91"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Official Treasury daily constant-maturity yield; not auction or intraday quote",
+        "level": 5.29,
+        "change_1d": 3.0,
+        "change_5d": 18.0,
+        "change_unit": "bp",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "UST 30Y",
+      "level": "5.64%",
+      "change_1d": "+5.00bp",
+      "change_5d": "+24.00bp",
+      "signal": "↑ 历史日度变动，非当时盘中判断",
+      "driver": "Official Treasury daily constant-maturity yield; not auction or intraday quote；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S91"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Official Treasury daily constant-maturity yield; not auction or intraday quote",
+        "level": 5.64,
+        "change_1d": 5.0,
+        "change_5d": 24.0,
+        "change_unit": "bp",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "VIX",
+      "level": "16.34 ",
+      "change_1d": "+1.87%",
+      "change_5d": "+7.64%",
+      "signal": "↑ 历史日度变动，非当时盘中判断",
+      "driver": "Cboe official VIX daily close；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S92"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Cboe official VIX daily close",
+        "level": 16.34,
+        "change_1d": 1.8703,
+        "change_5d": 7.6416,
+        "change_unit": "%",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "DXY",
+      "level": "101.45 index points",
+      "change_1d": "+0.08%",
+      "change_5d": "+0.35%",
+      "signal": "↑ 历史日度变动，非当时盘中判断",
+      "driver": "Investing DXY cash-index historical daily price; not DX futures and not broad trade-weighted USD.；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S93"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Investing DXY cash-index historical daily price; not DX futures and not broad trade-weighted USD.",
+        "level": 101.45,
+        "change_1d": 0.0789,
+        "change_5d": 0.3462,
+        "change_unit": "%",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "Gold",
+      "level": "4,157.34 USD/oz",
+      "change_1d": "-0.61%",
+      "change_5d": "-3.04%",
+      "signal": "↓ 历史日度变动，非当时盘中判断",
+      "driver": "Investing XAU/USD spot historical daily price; not futures.；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S94"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Investing XAU/USD spot historical daily price; not futures.",
+        "level": 4157.34,
+        "change_1d": -0.6087,
+        "change_5d": -3.036,
+        "change_unit": "%",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "Copper",
+      "level": "14,455 USD/tonne",
+      "change_1d": "+0.05%",
+      "change_5d": "-1.38%",
+      "signal": "↑ 历史日度变动，非当时盘中判断",
+      "driver": "Westmetall LME Copper 3-month daily table, USD per metric tonne; not COMEX USD/lb. Third-party published LME reference, not Reuters intraday quote.；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S95"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Westmetall LME Copper 3-month daily table, USD per metric tonne; not COMEX USD/lb. Third-party published LME reference, not Reuters intraday quote.",
+        "level": 14455.0,
+        "change_1d": 0.0484,
+        "change_5d": -1.3849,
+        "change_unit": "%",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "EUR/USD",
+      "level": "1.133 USD per EUR",
+      "change_1d": "-0.11%",
+      "change_5d": "-0.46%",
+      "signal": "↓ 历史日度变动，非当时盘中判断",
+      "driver": "Published historical daily level; exact original SGT snapshot not recovered；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S501"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Published historical daily level; exact original SGT snapshot not recovered",
+        "level": 1.133,
+        "change_1d": -0.1058,
+        "change_5d": -0.4569,
+        "change_unit": "%",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "USD/JPY",
+      "level": "157.42 JPY per USD",
+      "change_1d": "+0.08%",
+      "change_5d": "-0.56%",
+      "signal": "↑ 历史日度变动，非当时盘中判断",
+      "driver": "Published historical daily level; exact original SGT snapshot not recovered；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S502"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Published historical daily level; exact original SGT snapshot not recovered",
+        "level": 157.42,
+        "change_1d": 0.0763,
+        "change_5d": -0.5622,
+        "change_unit": "%",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "USD/CAD",
+      "level": "1.4232 CAD per USD",
+      "change_1d": "+0.29%",
+      "change_5d": "+0.91%",
+      "signal": "↑ 历史日度变动，非当时盘中判断",
+      "driver": "Published historical daily level; exact original SGT snapshot not recovered；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S503"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Published historical daily level; exact original SGT snapshot not recovered",
+        "level": 1.4232,
+        "change_1d": 0.2889,
+        "change_5d": 0.9147,
+        "change_unit": "%",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "USD/CNH",
+      "level": "6.7089 CNH per USD",
+      "change_1d": "+0.01%",
+      "change_5d": "-0.04%",
+      "signal": "↑ 历史日度变动，非当时盘中判断",
+      "driver": "Published historical daily level; exact original SGT snapshot not recovered；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S504"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Published historical daily level; exact original SGT snapshot not recovered",
+        "level": 6.7089,
+        "change_1d": 0.0119,
+        "change_5d": -0.0417,
+        "change_unit": "%",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "Nasdaq 100",
+      "level": "30,408.5 index points",
+      "change_1d": "+0.23%",
+      "change_5d": "-0.20%",
+      "signal": "↑ 历史日度变动，非当时盘中判断",
+      "driver": "Published historical daily level; exact original SGT snapshot not recovered；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S505"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Published historical daily level; exact original SGT snapshot not recovered",
+        "level": 30408.5,
+        "change_1d": 0.228,
+        "change_5d": -0.2028,
+        "change_unit": "%",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "SOX",
+      "level": "12,628.6 index points",
+      "change_1d": "-0.00%",
+      "change_5d": "+0.75%",
+      "signal": "↓ 历史日度变动，非当时盘中判断",
+      "driver": "Published historical daily level; exact original SGT snapshot not recovered；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S506"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Published historical daily level; exact original SGT snapshot not recovered",
+        "level": 12628.6,
+        "change_1d": -0.0048,
+        "change_5d": 0.7523,
+        "change_unit": "%",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "UST 2s10s",
+      "level": "41bp",
+      "change_1d": "+4.00bp",
+      "change_5d": "+15.00bp",
+      "signal": "↑ 历史日度变动，非当时盘中判断",
+      "driver": "Official Treasury CMT 10 Yr minus 2 Yr, basis points；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S91"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Official Treasury CMT 10 Yr minus 2 Yr, basis points",
+        "level": 41.0,
+        "change_1d": 4.0,
+        "change_5d": 15.0,
+        "change_unit": "bp",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "UST 10s30s",
+      "level": "35bp",
+      "change_1d": "+2.00bp",
+      "change_5d": "+6.00bp",
+      "signal": "↑ 历史日度变动，非当时盘中判断",
+      "driver": "Official Treasury CMT 30 Yr minus 10 Yr, basis points；日度变化不等于新闻因果证明。",
+      "status": "历史日度参考；原SGT截点快照未恢复",
+      "as_of": "2026-09-30 daily historical reference",
+      "sources": [
+        "S91"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-09-30",
+        "instrument_basis": "Official Treasury CMT 30 Yr minus 10 Yr, basis points",
+        "level": 35.0,
+        "change_1d": 2.0,
+        "change_5d": 6.0,
+        "change_unit": "bp",
+        "original_snapshot_recovered": false
+      }
+    },
+    {
+      "asset": "Brent",
+      "level": "$98.03/bbl",
+      "change_1d": "+1.9% reported for December contract",
+      "change_5d": "尚无法可靠确认 — same-contract five-session baseline not recovered",
+      "signal": "Prior-session settlement rose",
+      "driver": "Reuters reported stalled US–Iran talks and tighter US fuel markets supporting futures; Brent November expiry and December pricing must be kept separate.",
+      "status": "Verified Reuters prior-session settlement / historical reconstruction",
+      "as_of": "2026-09-30 settlement; December Brent more-active contract; expiring November settled103.50, must not mix; WTI front-month expiry not verified",
+      "sources": [
+        "S905"
+      ],
+      "historical_observation_type": "prior_session_settlement",
+      "instrument_basis": "December Brent more-active contract; expiring November settled103.50, must not mix; WTI front-month expiry not verified"
+    },
+    {
+      "asset": "WTI",
+      "level": "$90.42/bbl",
+      "change_1d": "+1.2% reported",
+      "change_5d": "尚无法可靠确认 — same-contract five-session baseline not recovered",
+      "signal": "Prior-session settlement rose",
+      "driver": "Reuters reported stalled US–Iran talks and tighter US fuel markets supporting futures; Brent November expiry and December pricing must be kept separate.",
+      "status": "Verified Reuters prior-session settlement / historical reconstruction",
+      "as_of": "2026-09-30 settlement; December Brent more-active contract; expiring November settled103.50, must not mix; WTI front-month expiry not verified",
+      "sources": [
+        "S905"
+      ],
+      "historical_observation_type": "prior_session_settlement",
+      "instrument_basis": "December Brent more-active contract; expiring November settled103.50, must not mix; WTI front-month expiry not verified"
+    }
+  ],
+  "what_changed": [
+    {
+      "yesterday": "此前已知基线或未来事件；没有声称恢复原始前日观点。",
+      "today": "前一期待公布事件转为实绩；同期年度修订需保留版本。",
+      "why_it_matters": "消费与价格→政策预期；温和单月核心价格并不证明通胀已回到目标。",
+      "sources": [
+        "S19"
+      ]
+    },
+    {
+      "yesterday": "此前已知基线或未来事件；没有声称恢复原始前日观点。",
+      "today": "财报从未来催化转为可核对的盈利证据。",
+      "why_it_matters": "存储定价和出货→毛利与现金流→半导体预期；估值仍受长债约束。",
+      "sources": [
+        "S20"
+      ]
+    },
+    {
+      "yesterday": "此前已知基线或未来事件；没有声称恢复原始前日观点。",
+      "today": "新增的是会议观点透明度，并非当天再次加息。",
+      "why_it_matters": "价格风险与政策节奏→日债和日元→金融及出口企业估值。",
+      "sources": [
+        "S21"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "event": "8月核心PCE环比0.2%，真实消费保持增长",
+      "what_happened": "BEA reported August PCE inflation of 0.3% month on month and 3.4% year on year; core was 0.2% and 3.0%, and real PCE increased 0.6%.",
+      "what_changed": "The previously scheduled release became available, together with annual revisions that affect comparisons with earlier data vintages.",
+      "why_it_matters": "Actual demand remained positive while core monthly inflation was milder; one observation does not establish a sustained return to the inflation target.",
+      "transmission": "Actual demand remained positive while core monthly inflation was milder; one observation does not establish a sustained return to the inflation target.",
+      "confirmation": "Subsequent price and wage measures remain moderate while demand follows a sustainable path.",
+      "invalidation": "Energy pass-through or data revisions restore a more persistent inflation trajectory.",
+      "sources": [
+        "S19"
+      ],
+      "status": "已发生 / 由历史来源验证",
+      "event_time_et": "2026-09-30 08:30 EDT",
+      "event_time_sgt": "详见来源发布时间；历史信息截点18:00 SGT",
+      "importance": "★★★★★",
+      "direction": "双向，取决于确认条件",
+      "affected_assets": [
+        "UST 2Y",
+        "DXY",
+        "Consumer discretionary"
+      ],
+      "rank": 1
+    },
+    {
+      "event": "Micron新财报验证存储需求，指引仍属预测",
+      "what_happened": "Micron reported fiscal fourth-quarter revenue of $54.23 billion, GAAP EPS of $32.87 and non-GAAP EPS of $33.42; first-quarter revenue guidance was $61.5 billion plus or minus $1.5 billion.",
+      "what_changed": "The memory earnings event moved from a future test into verifiable company results and forward guidance.",
+      "why_it_matters": "Memory pricing and shipments affect earnings, but valuation still depends on discount rates and the durability of cash generation.",
+      "transmission": "Memory pricing and shipments affect earnings, but valuation still depends on discount rates and the durability of cash generation.",
+      "confirmation": "Later deliveries and cash generation support the company’s revenue and margin outlook.",
+      "invalidation": "Pricing normalization, competing supply or excessive investment weakens the sustainability of reported profitability.",
+      "sources": [
+        "S20"
+      ],
+      "status": "已发生 / 由历史来源验证",
+      "event_time_et": "2026-09-30 16:01 EDT",
+      "event_time_sgt": "详见来源发布时间；历史信息截点18:00 SGT",
+      "importance": "★★★★★",
+      "direction": "双向，取决于确认条件",
+      "affected_assets": [
+        "MU",
+        "Memory-chip peers",
+        "Nasdaq Composite"
+      ],
+      "rank": 2
+    },
+    {
+      "event": "BOJ意见摘要聚焦价格上行风险与增长分歧",
+      "what_happened": "The October 1 BOJ summary described Middle East effects, AI demand and upside price risks, while also recording concerns about the strength of domestic demand.",
+      "what_changed": "The new information was a summary of prior meeting opinions rather than another interest-rate decision on publication day.",
+      "why_it_matters": "Different views on growth and price risks matter for the expected pace of policy normalization, the yen and financing-sensitive Japanese equities.",
+      "transmission": "Different views on growth and price risks matter for the expected pace of policy normalization, the yen and financing-sensitive Japanese equities.",
+      "confirmation": "Later policy decisions align with realized wage, price and domestic-demand evidence.",
+      "invalidation": "Weaker domestic or external activity changes the balance of risks and the case for tightening.",
+      "sources": [
+        "S21"
+      ],
+      "status": "已发生 / 由历史来源验证",
+      "event_time_et": "2026-09-30 19:50 EDT",
+      "event_time_sgt": "详见来源发布时间；历史信息截点18:00 SGT",
+      "importance": "★★★★★",
+      "direction": "双向，取决于确认条件",
+      "affected_assets": [
+        "JPY",
+        "Japanese government bonds",
+        "Japanese bank and exporter shares"
+      ],
+      "rank": 3
+    }
+  ],
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "Growth",
+      "current": "消费韧性与较温和核心价格并存",
+      "yesterday": "原始当日信号未恢复；不追溯填入历史观点",
+      "change_reason": "仅由截点前证据重新归纳；参见事实与限制。",
+      "evidence": "实际PCE环比增长0.6%，核心价格0.2%；这次发布含年度修订，旧月份数值不与旧版本直接混算。",
+      "sources": [
+        "S19"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "Inflation",
+      "current": "能源、核心价格与需求分开评估",
+      "yesterday": "原始当日信号未恢复；不追溯填入历史观点",
+      "change_reason": "仅由截点前证据重新归纳；参见事实与限制。",
+      "evidence": "BEA单月核心PCE较温和，但同比仍高于2%；能源传导尚须跟踪。",
+      "sources": [
+        "S19"
+      ]
+    },
+    "rates_pressure": {
+      "label": "Rates",
+      "current": "政策时间与期限溢价分开",
+      "yesterday": "原始当日信号未恢复；不追溯填入历史观点",
+      "change_reason": "仅由截点前证据重新归纳；参见事实与限制。",
+      "evidence": "最近完整交易日10Y为5.29%；美国数据可影响下一次加息概率；BOJ摘要则体现日本自己的增长、成本和价格权衡。",
+      "sources": [
+        "S19",
+        "S21",
+        "S91"
+      ]
+    },
+    "earnings_revision": {
+      "label": "Earnings",
+      "current": "Micron正式公布",
+      "yesterday": "原始当日信号未恢复；不追溯填入历史观点",
+      "change_reason": "仅由截点前证据重新归纳；参见事实与限制。",
+      "evidence": "财报已经进入本截点；Accenture只恢复会前日程，未确认精确发布时刻，因此本期不使用其当天结果。",
+      "sources": [
+        "S20",
+        "S24"
+      ]
+    },
+    "liquidity": {
+      "label": "Liquidity",
+      "current": "资金流与系统流动性尚无法可靠确认",
+      "yesterday": "原始当日信号未恢复；不追溯填入历史观点",
+      "change_reason": "仅由截点前证据重新归纳；参见事实与限制。",
+      "evidence": "没有恢复足够的回购、准备金或基金申赎资料；较高融资成本本身不证明系统流动性危机。",
+      "sources": []
+    },
+    "geopolitical_risk": {
+      "label": "Geopolitical Risk",
+      "current": "和平进展仍未充分确认",
+      "yesterday": "原始当日信号未恢复；不追溯填入历史观点",
+      "change_reason": "仅由截点前证据重新归纳；参见事实与限制。",
+      "evidence": "Reuters亚洲报道仍将美伊谈判停滞列为背景。没有可验证的海峡全面恢复证据。",
+      "sources": [
+        "S22"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "条件情景：压力与盈利分化",
+      "probability": "未恢复当时概率；本次不追溯赋值",
+      "trigger": "能源和利率没有持续单向变化，企业需求证据继续分化。",
+      "expected_market_reaction": "行业表现分散，不能把个别公司增长等同全市场扩张。",
+      "assets_most_sensitive": [
+        "UST 10Y",
+        "能源",
+        "美国股票"
+      ],
+      "what_confirms_it": "价格与公司披露符合分化特征。",
+      "what_invalidates_it": "出现广泛、持续的融资改善或新的供应冲击。",
+      "analysis_provenance": "2026-10-08条件分析重建；非原始当日预测"
+    },
+    "bull_case": {
+      "label": "条件情景：融资压力缓和",
+      "probability": "未恢复当时概率；本次不追溯赋值",
+      "trigger": "可验证能源供应改善，长端收益率回落且公司现金流保持。",
+      "expected_market_reaction": "较低折现率有利估值，需求受压行业可能获得缓冲。",
+      "assets_most_sensitive": [
+        "UST 10Y",
+        "能源",
+        "美国股票"
+      ],
+      "what_confirms_it": "油价、收益率和股票参与面共同确认。",
+      "what_invalidates_it": "收益率重新上行或盈利证据无法兑现。",
+      "analysis_provenance": "2026-10-08条件分析重建；非原始当日预测"
+    },
+    "bear_case": {
+      "label": "条件情景：成本冲击压过收入",
+      "probability": "未恢复当时概率；本次不追溯赋值",
+      "trigger": "能源供应风险恶化，借款成本上升而公司利润承压。",
+      "expected_market_reaction": "融资敏感和长久期资产面临估值压力，需求风险可能扩大。",
+      "assets_most_sensitive": [
+        "UST 10Y",
+        "能源",
+        "美国股票"
+      ],
+      "what_confirms_it": "价格、利润率及融资资料显示同向恶化。",
+      "what_invalidates_it": "供应恢复、收益率回落且现金流稳定。",
+      "analysis_provenance": "2026-10-08条件分析重建；非原始当日预测"
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "event": "Accenture FY26财报电话会（公告在会前，精确发布时间未知）",
+      "date": "2026-10-01",
+      "et": "2026-10-01 08:00 EDT",
+      "sgt": "2026-10-01 20:00 SGT",
+      "consensus": "尚无法可靠确认；未恢复截点时的一致预期",
+      "previous": "尚无法可靠确认",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S24"
+      ],
+      "status": "已确认日历 / 非穷尽日历"
+    },
+    {
+      "event": "美国9月ISM制造业PMI",
+      "date": "2026-10-01",
+      "et": "2026-10-01 10:00 EDT",
+      "sgt": "2026-10-01 22:00 SGT",
+      "consensus": "尚无法可靠确认；未恢复截点时的一致预期",
+      "previous": "8月54.6",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S23"
+      ],
+      "status": "已确认日历 / 非穷尽日历"
+    },
+    {
+      "event": "美国9月就业报告",
+      "date": "2026-10-02",
+      "et": "2026-10-02 08:30 EDT",
+      "sgt": "2026-10-02 20:30 SGT",
+      "consensus": "尚无法可靠确认；未恢复截点时的一致预期",
+      "previous": "尚无法可靠确认",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S07"
+      ],
+      "status": "已确认日历 / 非穷尽日历"
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "能源风险重新传导至核心成本",
+      "why_not_fully_priced": "定价充分性未恢复；此处列风险机制，不声称市场遗漏。",
+      "trigger": "供应受扰、运输和产品成本再升。",
+      "transmission": "能源→通胀→融资与利润率。",
+      "first_asset": "原油与长期收益率",
+      "sources": [
+        "S22"
+      ]
+    },
+    {
+      "risk": "盈利增长未转化为可持续自由现金流",
+      "why_not_fully_priced": "定价充分性未恢复；此处列风险机制，不声称市场遗漏。",
+      "trigger": "资本开支先行、毛利或回款走弱。",
+      "transmission": "收入→现金流→估值与偿债。",
+      "first_asset": "公司现金流与信用成本",
+      "sources": [
+        "S20",
+        "S24"
+      ]
+    },
+    {
+      "risk": "把局部缓和误读为全面金融条件宽松",
+      "why_not_fully_priced": "定价充分性未恢复；此处列风险机制，不声称市场遗漏。",
+      "trigger": "短端下行但长端或信用成本保持高位。",
+      "transmission": "政策节奏与期限溢价分离→融资敏感行业。",
+      "first_asset": "UST 10Y / 30Y",
+      "sources": [
+        "S91"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "Accenture FY26财报电话会（公告在会前，精确发布时间未知）",
+    "date": "2026-10-01",
+    "et": "2026-10-01 08:00 EDT",
+    "sgt": "2026-10-01 20:00 SGT",
+    "consensus": "尚无法可靠确认；未恢复截点时的一致预期",
+    "previous": "尚无法可靠确认",
+    "actual": "待公布",
+    "importance": "★★★★★",
+    "sources": [
+      "S24"
+    ],
+    "status": "已确认日历 / 非穷尽日历",
+    "why_it_matters": "恢复日历中最近的已确认事件，可检验增长、通胀或融资渠道；日历非穷尽。",
+    "first_market": "相应货币、利率和股票",
+    "bull_interpretation": "必须结合实际值、当时预期和市场反应，不预设结果。",
+    "bear_interpretation": "不使用截点之后的实际结果。",
+    "watch_first": [
+      "官方发布时间和版本",
+      "实际数据与可验证预期",
+      "相同口径资产反应"
+    ]
+  },
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "关键催化剂 / Top Catalysts",
+      "status": "历史证据已核对",
+      "summary": "本节涵盖关键催化剂 / Top Catalysts；状态：历史证据已核对。",
+      "paragraphs": [
+        "本期三个可追溯事件见Top 3。排序为10月8日重建分析，不声称恢复了当日原稿排序。"
+      ],
+      "tables": [],
+      "sources": [
+        "S19",
+        "S20",
+        "S21"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "重点财报 / Important Earnings",
+      "status": "Micron正式公布",
+      "summary": "本节涵盖重点财报 / Important Earnings；状态：Micron正式公布。",
+      "paragraphs": [
+        "财报已经进入本截点；Accenture只恢复会前日程，未确认精确发布时刻，因此本期不使用其当天结果。"
+      ],
+      "tables": [],
+      "sources": [
+        "S20",
+        "S24"
+      ],
+      "reported": [
+        {
+          "id": "MU-2026-09-30",
+          "company": "Micron Technology",
+          "ticker": "MU",
+          "period": "Fiscal Q4 2026",
+          "status": "历史已公布 / 本次重建核对",
+          "release_date": "2026-09-30",
+          "release_time_et": "2026-09-30 16:01 EDT",
+          "release_time_sgt": "2026-10-01 04:01 SGT",
+          "market_session": "After hours",
+          "key_takeaway": "财报已经进入本截点；Accenture只恢复会前日程，未确认精确发布时刻，因此本期不使用其当天结果。",
+          "metrics": [
+            {
+              "metric": "Revenue",
+              "actual": "$54.23 billion",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "$41.46 billion prior quarter / $11.32 billion year-earlier",
+              "surprise": "尚无法可靠确认；未计算预期差",
+              "notes": "采用公司新闻稿十亿美元口径"
+            },
+            {
+              "metric": "GAAP diluted EPS",
+              "actual": "$32.87",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "尚无法可靠确认",
+              "surprise": "尚无法可靠确认；未计算预期差",
+              "notes": "与non-GAAP分开"
+            },
+            {
+              "metric": "Non-GAAP diluted EPS",
+              "actual": "$33.42",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "尚无法可靠确认",
+              "surprise": "尚无法可靠确认；未计算预期差",
+              "notes": "公司调整后口径，不与GAAP混算"
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "Management outlook / plan",
+              "current": "FQ1 FY27 revenue: $61.5 billion ± $1.5 billion.",
+              "previous_or_consensus": "尚无法可靠确认",
+              "change": "未恢复可比指引版本，不计算变化",
+              "interpretation": "公司前瞻陈述；执行和实际结果仍有不确定性。"
+            },
+            {
+              "metric": "Management outlook / plan",
+              "current": "FQ1 FY27 non-GAAP diluted EPS: $38.15 ± $1.00.",
+              "previous_or_consensus": "尚无法可靠确认",
+              "change": "未恢复可比指引版本，不计算变化",
+              "interpretation": "公司前瞻陈述；执行和实际结果仍有不确定性。"
+            }
+          ],
+          "market_reaction": {
+            "session": "尚无法可靠确认",
+            "move": "尚无法可靠确认",
+            "as_of": "本次未恢复与公告严格对应的可比市场反应"
+          },
+          "one_offs": [
+            "GAAP与non-GAAP差异详见原始调节表；未将调整后指标视为GAAP。"
+          ],
+          "read_through": [
+            {
+              "asset": "MU",
+              "implication": "分析重建：区分收入增长、单位盈利、现金流与估值；不构成当时已发布的投资建议。"
+            }
+          ],
+          "sources": [
+            "S20"
+          ]
+        }
+      ],
+      "upcoming_72h": [
+        {
+          "id": "ACN-upcoming-2026-10-01",
+          "company": "Accenture",
+          "ticker": "ACN",
+          "period": "FY26 Q4 and full year",
+          "status": "电话会时间已确认；公告精确时间未恢复",
+          "date": "2026-10-01",
+          "et": "2026-10-01 08:00 EDT",
+          "sgt": "2026-10-01 20:00 SGT",
+          "market_session": "Before market call",
+          "consensus": {
+            "revenue": "尚无法可靠确认",
+            "eps": "尚无法可靠确认"
+          },
+          "previous_guidance": "尚无法可靠确认；未恢复当时指引版本",
+          "actual": "待公布",
+          "what_matters": [
+            "收入、盈利质量、现金流和资本投入；不追溯制造一致预期。"
+          ],
+          "read_through_targets": [
+            "IT服务与企业支出"
+          ],
+          "sources": [
+            "S24"
+          ]
+        }
+      ]
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "美国宏观 / U.S. Macro",
+      "status": "消费韧性与较温和核心价格并存",
+      "summary": "本节涵盖美国宏观 / U.S. Macro；状态：消费韧性与较温和核心价格并存。",
+      "paragraphs": [
+        "实际PCE环比增长0.6%，核心价格0.2%；这次发布含年度修订，旧月份数值不与旧版本直接混算。"
+      ],
+      "tables": [],
+      "sources": [
+        "S19"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "全球央行 / Central Banks",
+      "status": "政策时间与期限溢价分开",
+      "summary": "本节涵盖全球央行 / Central Banks；状态：政策时间与期限溢价分开。",
+      "paragraphs": [
+        "美国数据可影响下一次加息概率；BOJ摘要则体现日本自己的增长、成本和价格权衡。"
+      ],
+      "tables": [],
+      "sources": [
+        "S19",
+        "S21"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "地缘政治 / Geopolitics",
+      "status": "和平进展仍未充分确认",
+      "summary": "本节涵盖地缘政治 / Geopolitics；状态：和平进展仍未充分确认。",
+      "paragraphs": [
+        "Reuters亚洲报道仍将美伊谈判停滞列为背景。没有可验证的海峡全面恢复证据。"
+      ],
+      "tables": [],
+      "sources": [
+        "S22"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "区域政策 / Regional Policy",
+      "status": "BOJ意见不是新利率决定",
+      "summary": "本节涵盖区域政策 / Regional Policy；状态：BOJ意见不是新利率决定。",
+      "paragraphs": [
+        "摘要同时列出复苏支持和内需质疑，应避免将个别意见误读为一致、立即行动。"
+      ],
+      "tables": [],
+      "sources": [
+        "S21"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "指数调整 / Index Changes",
+      "status": "方法调整已宣布；权重与实施流量未恢复",
+      "summary": "WisdomTree于9月28日公告涉及9月30日筛选的再平衡方法调整。",
+      "paragraphs": [
+        "国际股票指数行业上限25%、房地产15%；高股息对应上限30%和15%；国际小盘国家上限40%。日欧小盘引入±0.20%权重缓冲。公告不等于已完成交易，最终成分权重尚未恢复。"
+      ],
+      "tables": [],
+      "sources": [
+        "S28"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "资金流 / Institutional and Quarter-End Flows",
+      "status": "证据覆盖缺口 / 未作无事件断言",
+      "summary": "本节涵盖资金流 / Institutional and Quarter-End Flows；状态：证据覆盖缺口 / 未作无事件断言。",
+      "paragraphs": [
+        "未恢复可核对的养老金、月末或季末净流量估计；价格变化和回购授权不能替代真实资金流数据。"
+      ],
+      "tables": [],
+      "sources": []
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF再平衡 / ETF Rebalance",
+      "status": "指数方法可核对；基金实施资料有缺口",
+      "summary": "指数约束变化可能影响跟踪组合，但本期没有恢复基金层面的交易清单。",
+      "paragraphs": [
+        "需进一步核对具体跟踪基金、正式生效时点、最终篮子以及资产规模后，才能估算被动交易量。本期不把方法上限或回购授权转化为确定的ETF资金流。"
+      ],
+      "tables": [],
+      "sources": [
+        "S28"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "期权与波动率 / Options and Volatility",
+      "status": "Cboe日期化成交统计已恢复；dealer仓位未恢复",
+      "summary": "最近完整美国交易日的VIX与Cboe分类put/call成交量比率可核对。",
+      "paragraphs": [
+        "最近完整美国交易日VIX为16.34，1D +1.87%（同系列计算）。VIX是隐含波动指标，不能据此推出做市商gamma、0DTE仓位或确定的资金流。",
+        "以下是Cboe公布的交易所统计，不是OCC全市场汇总。Put/call是成交量比率；无法区分买入、卖出、开仓、平仓或组合策略，不能直接推断看空仓位或dealer gamma。"
+      ],
+      "tables": [
+        {
+          "title": "2026-09-30 Cboe put/call volume ratios",
+          "headers": [
+            "Series",
+            "Put/call volume ratio"
+          ],
+          "rows": [
+            [
+              "TOTAL PUT/CALL RATIO",
+              "0.88"
+            ],
+            [
+              "INDEX PUT/CALL RATIO",
+              "1.03"
+            ],
+            [
+              "EXCHANGE TRADED PRODUCTS PUT/CALL RATIO",
+              "1.04"
+            ],
+            [
+              "EQUITY PUT/CALL RATIO",
+              "0.53"
+            ],
+            [
+              "CBOE VOLATILITY INDEX (VIX) PUT/CALL RATIO",
+              "0.56"
+            ],
+            [
+              "SPX + SPXW PUT/CALL RATIO",
+              "1.09"
+            ]
+          ]
+        }
+      ],
+      "sources": [
+        "S92",
+        "S97"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "美国国债 / U.S. Treasury",
+      "status": "历史证据已核对",
+      "summary": "2026-09-30官方每日10年par收益率5.29%，30年5.64%。本表是曲线估值参考；未恢复逐笔WI、投标分配或此后日内报价时，不据其判定拍卖tail。",
+      "paragraphs": [
+        "拍卖结果来自TreasuryDirect。投标者比例按competitive accepted计算，不包括SOMA和非竞争投标；票据采用investment rate，非discount rate。未恢复WI报价，不计算tail。"
+      ],
+      "tables": [
+        {
+          "title": "官方拍卖结果（自上期截点后公布）",
+          "headers": [
+            "Auction date ET",
+            "Term",
+            "CUSIP",
+            "Offered",
+            "Yield basis",
+            "Bid/cover",
+            "Direct / competitive accepted",
+            "Indirect / competitive accepted",
+            "Dealer / competitive accepted"
+          ],
+          "rows": [
+            [
+              "2026-09-30",
+              "17-Week",
+              "912797WS2",
+              "$75B",
+              "4.230% investment rate",
+              "2.89",
+              "6.014%",
+              "57.753%",
+              "36.232%"
+            ]
+          ]
+        }
+      ],
+      "sources": [
+        "S91",
+        "S96"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "油价与大宗商品 / Commodities",
+      "status": "亚洲Brent参考低于100美元",
+      "summary": "本节涵盖油价与大宗商品 / Commodities；状态：亚洲Brent参考低于100美元。",
+      "paragraphs": [
+        "Reuters早盘Brent98.15美元；这是特定时间快照，不能将后来同日美国市场油价变化加入本期。"
+      ],
+      "tables": [],
+      "sources": [
+        "S22"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "融资与资本周期 / Financing",
+      "status": "盈利兑现与资本效率仍须分开",
+      "summary": "本节涵盖融资与资本周期 / Financing；状态：盈利兑现与资本效率仍须分开。",
+      "paragraphs": [
+        "Micron强劲实绩和未来指引为AI需求提供公司证据；高长债收益率仍影响市场愿付的估值倍数。"
+      ],
+      "tables": [],
+      "sources": [
+        "S20",
+        "S91"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "过去24H更新 / Past 24H Updates",
+      "status": "严格按可用信息重建；已知背景和未来日历分别标注",
+      "summary": "本节涵盖过去24H更新 / Past 24H Updates；状态：严格按可用信息重建；已知背景和未来日历分别标注。",
+      "paragraphs": [
+        "8月核心PCE环比0.2%，真实消费保持增长；Micron新财报验证存储需求，指引仍属预测；BOJ意见摘要聚焦价格上行风险与增长分歧"
+      ],
+      "tables": [],
+      "sources": [
+        "S19",
+        "S20",
+        "S21"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "综合市场影响 / Integrated Market Impact",
+      "status": "历史证据已核对",
+      "summary": "本节涵盖综合市场影响 / Integrated Market Impact；状态：历史证据已核对。",
+      "paragraphs": [
+        "分析重建：先核对能源和长端融资成本，再检验公司盈利能否抵消估值压力；观察条件在情景矩阵列明，不追溯生成交易建议。"
+      ],
+      "tables": [],
+      "sources": [
+        "S19",
+        "S20",
+        "S21"
+      ]
+    }
+  },
+  "market_tape_data_quality": {
+    "status": "historical_reconstruction",
+    "verified_assets": 22,
+    "original_snapshot_recovered": false,
+    "oil_five_day_returns": "尚无法可靠确认；换月和合约口径未完全统一，不使用隔离的滚动连续序列。"
+  },
+  "sources": [
+    "S07",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S28",
+    "S90",
+    "S91",
+    "S92",
+    "S93",
+    "S94",
+    "S95",
+    "S96",
+    "S97",
+    "S905",
+    "S500",
+    "S501",
+    "S502",
+    "S503",
+    "S504",
+    "S505",
+    "S506"
+  ]
+}

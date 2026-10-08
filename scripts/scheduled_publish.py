@@ -207,6 +207,7 @@ Return exactly one valid JSON object with keys: daily, markdown, sources. Do not
 
 
 def main() -> int:
+    raise SystemExit("RETIRED: this legacy API publisher does not implement the current publication contract. Use the standalone connected-agent prompts and validated PR handoff; no API key is required.")
     parser = argparse.ArgumentParser()
     parser.add_argument("--edition", choices=("morning", "evening"), required=True)
     parser.add_argument("--date", help="YYYY-MM-DD in Asia/Singapore; default is now")
@@ -222,3 +223,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

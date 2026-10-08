@@ -1,64 +1,62 @@
-# Global Market Daily — Twice-Daily Production Automation
+# Global Market Daily — Morning-Only Production Automation
 
 ## Authoritative architecture
 
-Market research and publication are executed by two **connected scheduled-agent tasks**. GitHub Actions does not call a research model and does not require an OpenAI API key. Its responsibilities are deterministic validation, trend derivation, GitHub Pages deployment, public-browser verification and missing-publication watchdog checks.
+One **connected scheduled-agent task** independently researches and submits the full official daily edition. GitHub Actions does not call a research model and does not require an OpenAI API key. Its responsibilities are deterministic validation, guarded candidate promotion, trend derivation, GitHub Pages deployment, public-browser verification and missing-publication watchdog checks.
 
-The repository is `patshin/global-market-daily`, the production branch is `main`, the Pages source is `docs/`, and the public site is `https://patshin.github.io/global-market-daily/`.
+The repository is `patshin/global-market-daily`, production branch is `main`, Pages source is `docs/`, and public site is `https://patshin.github.io/global-market-daily/`.
 
-The machine-readable schedule and prompt mapping live in:
+The machine-readable schedule and canonical prompts are:
 
 - `prompts/automation-registry.json`
-- `prompts/automation-morning.md`
-- `prompts/automation-close.md`
+- `prompts/automation-morning.md`, the full standalone execution prompt
+- `prompts/automation-transaction.md`, candidate and downstream handoff contract
 
-The two prompt files are intentionally complete and standalone. A scheduler must use the complete prompt for its cycle; it must not depend on chat history, earlier messages, a shared master prompt or undocumented context.
+The scheduler must embed the complete morning prompt, without depending on chat history, earlier messages, a shared master prompt or undocumented context. `prompts/automation-close.md` is a retired historical reference and must not be installed as an active task.
 
-## Production schedules
+## Production schedule, effective 2026-10-08
 
-| Task | Asia/Singapore | UTC cron reference | Mode | Live status | Formal archive | Native 30D |
+| Task | Asia/Shanghai / Beijing | UTC cron reference | Mode | Live status | Formal archive | Native 30D |
 |---|---:|---:|---|---|---|---|
-| Morning | 09:00 daily | `0 1 * * *` | `morning` | provisional | no | no |
-| Close | 18:00 daily | `0 10 * * *` | `close` | official/final | yes | yes |
+| Morning | 09:00 daily | `0 1 * * *` | `morning` | official/final | yes | yes, if contemporaneous |
 
-The close run is an independent research cycle. It must not merely edit the morning text.
+There is no evening schedule, no evening watchdog expectation and no need to wait for an evening final. Weekends and market holidays are included. The schema and renderer retain `Asia/Singapore` and SGT-named fields, which represent the same UTC+08:00 wall-clock time. The scheduler uses `Asia/Shanghai`. Real start/cutoff and planned run time must be recorded separately.
+
+When migrating an existing scheduler, reuse/update the matching morning task instead of creating a duplicate. The old evening task must be disabled or removed only under the user's schedule-change authorization, then the actual scheduler state must be verified. Updating this repository alone is not proof that a remote schedule was changed or will run. A write failure never authorizes silently pausing, deleting or recreating tasks.
 
 ## Publication transaction
 
-A successful run writes in this order:
+Prepare the complete candidate tree in this order:
 
 1. `docs/data/daily/YYYY-MM-DD.json`
 2. `docs/reports/YYYY/MM/YYYY-MM-DD.md`
 3. `docs/data/sources/YYYY-MM-DD.json`
-4. existing derived trend/index data when required
-5. `docs/data/archive.json` only for an archive-eligible close edition
+4. existing required derived trend/index data
+5. `docs/data/archive.json`, exactly one same-date official morning entry
 6. `docs/data/latest.json` last
 
-`latest.json` must never point at an incomplete or contract-invalid bundle.
+The current daily edition uses `edition_status="official"`, `publication_cycle.cycle="morning"`, `publication_cycle.status="official"`, `publication_cycle.is_final=true`, `publication_cycle.archive_eligible=true`, and native eligibility true for genuine contemporaneous research. Retrospective reconstructions remain native-ineligible. Preserve historical pre-policy provisional and fallback metadata.
+
+Use a single idempotent branch `publish/gmd-YYYY-MM-DD-morning` and PR `GMD Publish YYYY-MM-DD Morning`. Reuse them on retry. The candidate includes all publication artifacts and passes a current Quality-parity preflight, including canonical Markdown exact-string parity, before the PR is created or updated. Never push scheduled publication directly to main. Re-read main, reject stale/downgrading transitions and pin the validated head before promotion. A matching already-merged official edition is an idempotent no-op; official corrections require separate reviewed authorization.
+
+The scheduled task reports `SUBMITTED_FOR_VALIDATION` with the PR URL/head and exits without synchronously waiting for CI. GitHub owns authoritative Quality, guarded promotion, independent Pages and trend dispatch, and explicit post-deploy `site-health.yml` / `editorial-health.yml` dispatch. `latest.json` must never point at an incomplete or contract-invalid bundle.
 
 ## Required gates
 
-Before `latest.json` advances, the generated edition must pass the daily schema, renderer contract, source integrity, cross-file consistency, future-event status and publication-cycle isolation checks.
+Before a candidate is submitted and before production latest advances, validate the daily schema, renderer contract, source integrity, exact cross-file canonical literals, future-event status, final/archive/native provenance and stale-transition checks against the current `.github/workflows/quality.yml`. Never lower thresholds or knowingly submit a deterministic failure.
 
-After Pages deployment, a real Chromium run must verify that JavaScript renders the current date and thesis, the report shell is visible, the error state is hidden, all six editorial signal cards are complete and nonduplicative, `What I Would Watch First` contains two or three instructions, and neither the desktop nor mobile viewport has horizontal overflow.
+After deployment, a real Chromium run must verify that JavaScript renders the current date and thesis, the report shell is visible, the error state is hidden, all six editorial signal cards are complete and nonduplicative, `What I Would Watch First` contains two or three instructions, and desktop/mobile viewports have no horizontal overflow. Only verified downstream evidence permits `PUBLISHED_AND_VERIFIED`.
 
-## Watchdogs
+## Watchdogs and independent lens recovery
 
-`.github/workflows/publication-watchdog.yml` runs after the expected publication windows:
+`.github/workflows/publication-watchdog.yml` makes two checks after the one expected morning window: **09:45 and 10:10 Beijing / SGT** (`01:45` and `02:10 UTC`). These are health/recovery passes, not additional publications. It verifies repository and public Pages state and does not generate research. It fails visibly when the expected official morning is missing, stale, late, in the wrong cycle, contract-invalid, incorrectly archived or incorrectly admitted to native history. It must not require an 18:00 edition.
 
-- 09:35 SGT for the morning edition
-- 18:45 SGT for the close edition
+Core report freshness and derived lens freshness are separate checks. A delayed provider observation or delayed 30D refresh must not be described as a missing core report; lens recovery may dispatch independently. No provider gaps may be replaced with fabricated observations.
 
-The watchdog does not generate a report. It fails visibly when the expected connected-agent publication is missing, late, in the wrong cycle, contract-invalid, incorrectly archived or incorrectly admitted to native 30D history.
+`.github/workflows/editorial-health.yml` also runs after a successful Pages deployment and performs scheduled browser health checks. Deployment success alone does not establish fresh research.
 
-`.github/workflows/editorial-health.yml` runs after a successful Pages deployment and also performs a scheduled browser check.
+## Historical and failure safeguards
 
-## Credentials and ownership
+Pre-2026-10-08 provisional mornings, independent close editions and Morning Fallback Final records keep their original meaning. Lossless fallback recovery, if separately authorized, is restricted to existing validated pre-policy snapshots and requires no valid matching Close PR. Historical reconstruction always carries an actual reconstruction timestamp, historical cutoff and evidence gaps, remains visibly labeled and is excluded from native 30D, even when official/archive eligible.
 
-Static Pages deployment requires no research-model secret. There must be no GitHub Actions workflow that calls the OpenAI API or another LLM to create the daily report.
-
-The connected scheduled-agent environment owns research, reasoning, GitHub writes and the embedded standalone prompt. The repository owns the canonical prompt text, data contract, validators, deployment and watchdog evidence.
-
-## Failure behavior
-
-Research, source verification, contract validation, GitHub writes, deployment or browser rendering failure means the run is failed. Do not report success from an HTTP 200 response alone. If `latest.json` has already advanced to a broken publication, restore the last known-good live state or repair and revalidate it before declaring recovery.
+Research, verification, preflight or GitHub write failure leaves the candidate unpromoted and reports the exact blocked stage. A failed authoritative Quality gate leaves the PR open and main unchanged. HTTP 200 is not sufficient for success. If production has advanced to broken content, downstream recovery must restore a known-good state or repair and revalidate it before declaring recovery. Ordinary scheduled research does not authorize changes to product code or schedules.
