@@ -51,6 +51,8 @@ jobs:
         run: python scripts/validate_frontend.py --root .
       - name: Run 30D market lens gate
         run: python scripts/validate_market_lens.py
+      - name: Enforce content-addressed asset cache URLs
+        run: python scripts/stamp_assets.py --check
       - name: Check JavaScript syntax
         run: |
           node --check docs/assets/app.js

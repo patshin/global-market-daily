@@ -44,6 +44,8 @@ jobs:
           python scripts/test_publication_transition.py
           python scripts/test_publication_watchdog.py
           python scripts/test_reconstruction.py
+      - name: Enforce content-addressed asset cache URLs
+        run: python scripts/stamp_assets.py --check
       - name: Check JavaScript syntax
         run: |
           node --check docs/assets/app.js

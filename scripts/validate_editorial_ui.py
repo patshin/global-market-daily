@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import sys
 from pathlib import Path
 
@@ -32,13 +33,14 @@ def main() -> int:
     js = read(root / "docs/assets/editorial-v2.js", gate)
     css = read(root / "docs/assets/editorial-v2.css", gate)
 
-    gate.require("editorial-v2.css?v=2.0.0" in index, "index.html does not load editorial-v2.css v2.0.0")
-    gate.require("editorial-v2.js?v=2.0.0" in index, "index.html does not load editorial-v2.js v2.0.0")
+    for asset in ("editorial-v2.css", "editorial-v2.js"):
+        digest=hashlib.sha256((root / "docs/assets" / asset).read_bytes()).hexdigest()[:12]
+        gate.require(f"{asset}?v={digest}" in index, f"index.html must load current content-hashed {asset}")
     order = [
-        index.find("app.js?v=1.2.1"),
-        index.find("publication-compat.js?v=1.1.0"),
-        index.find("editorial-v2.js?v=2.0.0"),
-        index.find("p0.js?v=2.1.1"),
+        index.find("app.js?v="),
+        index.find("publication-compat.js?v="),
+        index.find("editorial-v2.js?v="),
+        index.find("p0.js?v="),
     ]
     gate.require(all(position >= 0 for position in order) and order == sorted(order),
                  "JavaScript load order must be app → compatibility → editorial-v2 → p0")
@@ -117,3 +119,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+

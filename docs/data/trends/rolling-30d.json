@@ -182,9 +182,9 @@
         },
         {
           "rank": 2,
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
           "title": "Global bond yields jump as oil shock deepens, with UK 10Y gilts at 5.378% ahead of ECB and U.S. PPI",
           "evidence": "Reuters reported UK 10-year gilt yields at 5.378%, their highest since 2007, while 20-year and 30-year yields reached roughly 5.895% and 5.948%, the highest since 1998, as oil traded above $105 and investors awaited the still-unreleased ECB decision and U.S. PPI.",
           "market_bias": "mixed",
@@ -197,9 +197,9 @@
         },
         {
           "rank": 3,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
           "title": "BOJ board member Masu says rapid rate hikes may be needed if inflation accelerates, reinforcing September tightening risk",
           "evidence": "BOJ board member Kazuyuki Masu said the central bank might need to raise rates rapidly if inflation accelerates, with the policy rate at 1% and analysts expecting a possible September increase to 1.25%, reinforcing the normalization signal while USDJPY remained near 153.70.",
           "market_bias": "mixed",
@@ -244,8 +244,8 @@
         },
         {
           "rank": 2,
-          "theme_id": "geopolitics_energy",
-          "theme_label": "Geopolitics / Energy",
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
           "category": "geopolitics_energy",
           "title": "Houthis reach Perim island, threatening a second major oil transit corridor at Bab el-Mandeb",
           "evidence": "四名也门政府消息人士向Reuters确认胡塞武装已抵达Bab el-Mandeb海峡的战略性Perim岛，并控制面向该岛的Dhubab；沙特在Hormuz受限后正更依赖红海路线。",
@@ -259,9 +259,9 @@
         },
         {
           "rank": 3,
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
           "title": "U.S. August CPI at 08:30 EDT becomes the next rate-path test with 10Y yields near 5%",
           "evidence": "美国8月CPI尚未在research_cutoff前公布；Reuters调查显示核心CPI环比预期中心约为0.2%，而Fed下周加息25bp的市场概率已升至约67%至70%。",
           "market_bias": "mixed",
@@ -368,9 +368,9 @@
         },
         {
           "rank": 2,
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
           "title": "Saudi equities register the first traded Sunday reaction to pipeline attacks, with TASI down 1.0% and Aramco down 1.1%",
           "evidence": "Reuters reported Saudi Arabia's benchmark TASI fell 1.0% on Sunday after drone attacks on the East-West oil pipeline; Al Rajhi Bank fell 0.8%, Ma'aden 2.4%, Saudi Aramco 1.1% and Rabigh Refining 7.3%.",
           "market_bias": "mixed",
@@ -430,9 +430,9 @@
         },
         {
           "rank": 2,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
           "title": "Monday Asia delivers the first broad risk-off confirmation: Nikkei -1.7%, Korea -3.3% and Nasdaq futures -1.1%",
           "evidence": "The Monday session translated the weekend energy shock into equities: Reuters reported Japan's Nikkei down 1.7%, South Korea's benchmark down 3.3%, S&P 500 futures down 0.5% and Nasdaq futures down 1.1%. The U.S. 10-year yield remained close to 5% at 4.967%, limiting the valuation cushion for growth stocks.",
           "market_bias": "mixed",
@@ -445,9 +445,9 @@
         },
         {
           "rank": 3,
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
           "title": "Fed and BOJ hike probabilities converge in the same week while yen strength keeps the carry-unwind channel active",
           "evidence": "Markets price roughly an 86% chance of a 25bp Fed hike this week and about a 76% chance of a 25bp BOJ hike to 1.25%. USDJPY traded near 153.49 on Monday after the yen's sharp September rally, and CFTC data showed speculators flipped net long yen for the first time since February.",
           "market_bias": "mixed",
@@ -465,7 +465,7 @@
       "source_mode": "native_daily",
       "regime_code": "unclassified",
       "regime_label": "Risk-off / reinflation + AI de-rating",
-      "dominant_theme_id": "ai_earnings",
+      "dominant_theme_id": "energy_inflation",
       "signals": {
         "growth": "↓",
         "inflation": "↑",
@@ -477,9 +477,9 @@
       "catalysts": [
         {
           "rank": 1,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
           "title": "Saudi East–West pipeline remains offline as fresh Houthi attacks keep Brent above $106",
           "evidence": "Reuters reported Brent at $106.93 and WTI at $102.65 in Tuesday Asian trading while Saudi Arabia's East–West pipeline remained offline after attacks; the route had recently rerouted roughly 4 million barrels per day, about 4% of global supply.",
           "market_bias": "mixed",
@@ -492,9 +492,9 @@
         },
         {
           "rank": 2,
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
           "title": "Fed begins its September meeting with a 25bp hike now the dominant call and the U.S. 10Y testing 5%",
           "evidence": "The Federal Reserve's September 15-16 meeting begins Tuesday. Reuters' latest economist poll has a 25bp hike to 3.75%-4.00% as the majority call, while the 10-year Treasury yield crossed 5% on Monday for the first time since 2023.",
           "market_bias": "mixed",
@@ -527,7 +527,7 @@
       "source_mode": "native_daily",
       "regime_code": "unclassified",
       "regime_label": "Risk-off / reinflation",
-      "dominant_theme_id": "global_duration",
+      "dominant_theme_id": "fed_policy_path",
       "signals": {
         "growth": "→",
         "inflation": "↑",
@@ -539,9 +539,9 @@
       "catalysts": [
         {
           "rank": 1,
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
           "title": "Fed decision at 02:00 SGT tests whether a 5% U.S. 10Y becomes a durable valuation ceiling",
           "evidence": "The FOMC decision lands today; Reuters' poll has 85% of economists expecting +25bp to 3.75%-4.00%, while Tuesday markets priced about 94.5% odds and the 10Y ended near 5.004%.",
           "market_bias": "mixed",
@@ -554,9 +554,9 @@
         },
         {
           "rank": 2,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
           "title": "Saudi route risk stays structural even as a surprise U.S. inventory build pushes Brent to $107.82",
           "evidence": "Brent fell 0.86% to $107.82 and WTI 0.92% to $104.86 after API data showed crude inventories +7.1m barrels versus a 1.6m draw expected; Yanbu loadings remain suspended.",
           "market_bias": "mixed",
@@ -589,7 +589,7 @@
       "source_mode": "native_daily",
       "regime_code": "unclassified",
       "regime_label": "Risk-off / synchronized-tightening watch",
-      "dominant_theme_id": "ai_earnings",
+      "dominant_theme_id": "fed_policy_path",
       "signals": {
         "growth": "↑",
         "inflation": "→",
@@ -601,9 +601,9 @@
       "catalysts": [
         {
           "rank": 1,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
           "title": "Fed restarts tightening with a unanimous 25bp hike while the 2026 policy-rate median remains near 4.1%",
           "evidence": "The FOMC voted 12-0 to raise the target range to 3.75%-4.00%; September projections show a 2026 median policy-rate path near 4.1%, leaving another hike consistent with the outlook.",
           "market_bias": "mixed",
@@ -631,9 +631,9 @@
         },
         {
           "rank": 3,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
           "title": "BoE today and BOJ Friday become the next test of synchronized global tightening after the Fed hike",
           "evidence": "The BoE is due at 12:00 London today; Reuters expects a 3.75% hold. Reuters expects the BOJ to raise its policy rate to 1.25% Friday, a 31-year high.",
           "market_bias": "mixed",
@@ -678,8 +678,8 @@
         },
         {
           "rank": 2,
-          "theme_id": "geopolitics_energy",
-          "theme_label": "Geopolitics / Energy",
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
           "category": "geopolitics_energy",
           "title": "Oil falls toward $103 Brent even as Saudi pipeline damage expands to three pumping stations, separating tactical logistics relief from structural supply risk",
           "evidence": "Reuters reported that three pumping stations on Saudi Arabia's East-West pipeline were damaged and several sources estimated full repairs could take five to six weeks. Yet Brent fell to about $103.74 in early Asia as partial restoration and Oman loading workarounds reduced immediate scarcity fears.",
@@ -693,9 +693,9 @@
         },
         {
           "rank": 3,
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
           "title": "Post-Fed risk relief broadens as U.S. equities rebound and long yields fall, but Friday quarterly expiry will test whether the move survives event-flow normalization",
           "evidence": "The S&P 500 rose 1.14%, Nasdaq 1.69% and Russell 2000 0.55% on Thursday while the U.S. 10-year yield fell to about 4.93%. CME's calendar marks September 18 as the quarterly U.S. equity-index futures expiration date.",
           "market_bias": "mixed",
@@ -713,7 +713,7 @@
       "source_mode": "native_daily",
       "regime_code": "event_risk",
       "regime_label": "Weekend Event Risk / 5% yields versus oil relief",
-      "dominant_theme_id": "us_china_trade_controls",
+      "dominant_theme_id": "market_structure",
       "signals": {
         "growth": "→",
         "inflation": "↓",
@@ -725,9 +725,9 @@
       "catalysts": [
         {
           "rank": 1,
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
           "title": "BOJ hikes to 1.25% by 7-2, but yen weakness shifts the next risk from policy surprise to intervention and carry volatility",
           "evidence": "The Bank of Japan raised its policy rate from 1.00% to 1.25%, the highest in 31 years, with two board members dissenting. Instead of strengthening, the yen weakened and the dollar traded as high as 158.05 yen, while Japanese officials signaled readiness to respond to disorderly currency moves.",
           "market_bias": "mixed",
@@ -740,9 +740,9 @@
         },
         {
           "rank": 2,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
           "title": "U.S. 10Y closes at 5.01% while S&P and Nasdaq rise narrowly, creating a direct test of technology leadership versus the discount-rate ceiling",
           "evidence": "Official Treasury data show the U.S. 10-year par yield at 5.01%, up 7bp from Thursday and 5bp from September 11. The S&P 500 still gained 0.17% and Nasdaq 0.40%, but the Dow and Russell 2000 fell and both NYSE and Nasdaq breadth were negative.",
           "market_bias": "mixed",
@@ -817,8 +817,8 @@
         },
         {
           "rank": 3,
-          "theme_id": "geopolitics_energy",
-          "theme_label": "Geopolitics / Energy",
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
           "category": "geopolitics_energy",
           "title": "Saudi weekend attacks threaten to reverse Friday's oil relief before Gulf physical throughput is demonstrably restored",
           "evidence": "Saudi Arabia's coalition said a ballistic missile launched toward Riyadh was intercepted and destroyed and that attempted attacks toward Yanbu, Taif, Baysh and Farasan were thwarted. Reuters and AP independently reported the escalation; the Houthis separately claimed attacks on sensitive Riyadh sites and an Aramco facility in Yanbu.",
@@ -837,7 +837,7 @@
       "source_mode": "native_daily",
       "regime_code": "unclassified",
       "regime_label": "Selective risk-on / rates remain restrictive",
-      "dominant_theme_id": "ai_earnings",
+      "dominant_theme_id": "global_duration",
       "signals": {
         "growth": "↑",
         "inflation": "↓",
@@ -849,9 +849,9 @@
       "catalysts": [
         {
           "rank": 1,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
           "title": "Monday Asia opens risk-on in technology while U.S. front-end yields remain near cycle highs",
           "evidence": "South Korea's tech-heavy index rose about 1.1%, MSCI Asia-Pacific ex-Japan gained 0.3%, S&P 500 futures rose 0.3% and Nasdaq futures 0.4%; Japan was closed for Silver Week while the U.S. 2-year yield remained around 4.7604%.",
           "market_bias": "mixed",
@@ -899,7 +899,7 @@
       "source_mode": "native_daily",
       "regime_code": "unclassified",
       "regime_label": "Selective risk-on / valuation relief with carry still tight",
-      "dominant_theme_id": "ai_earnings",
+      "dominant_theme_id": "global_duration",
       "signals": {
         "growth": "↑",
         "inflation": "↓",
@@ -911,9 +911,9 @@
       "catalysts": [
         {
           "rank": 1,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
           "title": "Nasdaq closes at a record as SOX +4.3% and AMD crosses $1 trillion while the U.S. 10Y falls below 5%",
           "evidence": "The Nasdaq rose 2.26% to 27,122.09, the S&P 500 gained 1.49%, SOX jumped 4.3%, and AMD rose about 10% as its market capitalization crossed $1 trillion; the official U.S. 10Y yield closed at 4.96%.",
           "market_bias": "mixed",
@@ -926,9 +926,9 @@
         },
         {
           "rank": 2,
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
           "title": "Oil stabilizes near $100 Brent after Monday's selloff as Saudi export rerouting meets a possible U.S.-Iran diplomatic window",
           "evidence": "Brent fell sharply on Monday and traded at $100.57 early Tuesday, while WTI October was $95.80. Saudi Aramco loaded roughly 14 million barrels on seven VLCCs near Ras Tanura on Sunday as Gulf exports recovered, while markets awaited any U.S.-Iran contact around the UN General Assembly.",
           "market_bias": "mixed",
@@ -961,7 +961,7 @@
       "source_mode": "native_daily",
       "regime_code": "unclassified",
       "regime_label": "Selective risk-on / energy relief versus funding-cost constraint",
-      "dominant_theme_id": "ai_earnings",
+      "dominant_theme_id": "global_duration",
       "signals": {
         "growth": "→",
         "inflation": "↓",
@@ -973,9 +973,9 @@
       "catalysts": [
         {
           "rank": 1,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
           "title": "Nasdaq extends to a record close while the S&P stalls and the U.S. 2Y auction clears at 4.787%",
           "evidence": "The Nasdaq Composite rose 0.45% to 27,244.28 and set another record close, while the S&P 500 was virtually unchanged and the Dow fell 0.36%. The official Treasury 2Y par yield ended at 4.71%, but a $69 billion two-year auction cleared at 4.787% with a 2.63 bid-to-cover ratio and a small tail to the when-issued level.",
           "market_bias": "mixed",
@@ -988,9 +988,9 @@
         },
         {
           "rank": 2,
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
           "title": "Saudi Arabia restarts the East-West pipeline as Brent falls below $100 and Hormuz diplomacy becomes a live supply catalyst",
           "evidence": "Saudi Arabia restarted pumping through the East-West pipeline at a reduced rate after the September 11 attack, while full 7 million bpd capacity may take six to eight weeks to restore. Reuters also reported an Iranian offer to reopen the Strait of Hormuz within a week if U.S. military pressure and the blockade are eased. Brent traded around $99.92 and WTI around $95.33 in the latest retained global-market snapshot.",
           "market_bias": "mixed",
@@ -1050,9 +1050,9 @@
         },
         {
           "rank": 2,
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
           "title": "The $70B U.S. 5Y auction clears at 5.033% with a 3.1bp tail, showing weak demand beyond the front end",
           "evidence": "Treasury sold $70 billion of five-year notes at 5.033%, above the 5.002% when-issued yield. The 2.21 bid-to-cover ratio was below the recent six-month average of 2.33, and the on-the-run five-year yield traded near 5.023% after the result.",
           "market_bias": "mixed",
@@ -1147,7 +1147,7 @@
       "source_mode": "reconstructed_daily",
       "regime_code": "unclassified",
       "regime_label": "历史重建 / 融资约束与需求韧性并存",
-      "dominant_theme_id": "ai_earnings",
+      "dominant_theme_id": "global_duration",
       "signals": {
         "growth": "?",
         "inflation": "?",
@@ -1159,9 +1159,9 @@
       "catalysts": [
         {
           "rank": 1,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
           "title": "周五油价回落与股票反弹形成短暂缓冲",
           "evidence": "Reuters reported oil falling about 3% on Friday, Treasury yields stabilizing after intraday highs, and AI enthusiasm supporting stocks.",
           "market_bias": "mixed",
@@ -1236,9 +1236,9 @@
         },
         {
           "rank": 2,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
           "title": "周末没有新的美股现金收盘可验证风险定价",
           "evidence": "The latest completed US cash session remained September 25; the weekend diplomatic report arrived after those equity and volatility closing observations.",
           "market_bias": "mixed",
@@ -1251,9 +1251,9 @@
         },
         {
           "rank": 3,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
           "title": "新一周数据将区分真实需求与调查疲弱",
           "evidence": "Previously published calendars scheduled PCE for September 30 and the employment report for October 2; neither release was available at this cutoff.",
           "market_bias": "mixed",
@@ -1333,7 +1333,7 @@
       "source_mode": "reconstructed_daily",
       "regime_code": "unclassified",
       "regime_label": "历史重建 / 融资约束与需求韧性并存",
-      "dominant_theme_id": "ai_earnings",
+      "dominant_theme_id": "fed_policy_path",
       "signals": {
         "growth": "?",
         "inflation": "?",
@@ -1345,9 +1345,9 @@
       "catalysts": [
         {
           "rank": 1,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
           "title": "RBA加息25bp至4.60%，通胀压力得到政策回应",
           "evidence": "The RBA unanimously raised its cash-rate target by 25 basis points to 4.60%, citing energy, AI-related goods prices and domestic capacity pressures.",
           "market_bias": "mixed",
@@ -1360,9 +1360,9 @@
         },
         {
           "rank": 2,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
           "title": "NVIDIA回购授权增强资本回报，不能等同现货买盘",
           "evidence": "NVIDIA announced $150 billion of additional repurchase authorization, taking the remaining program to $235 billion, expected to be executed through fiscal 2028.",
           "market_bias": "mixed",
@@ -1375,9 +1375,9 @@
         },
         {
           "rank": 3,
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
           "title": "全球债券压力延续，不能被单一科技股事件覆盖",
           "evidence": "Reuters reported the ten-year Treasury yield exceeding 5.27% overnight and pressure across Asian bond markets; these traded levels differ from official daily par yields.",
           "market_bias": "mixed",
@@ -1395,7 +1395,7 @@
       "source_mode": "reconstructed_daily",
       "regime_code": "unclassified",
       "regime_label": "历史重建 / 融资约束与需求韧性并存",
-      "dominant_theme_id": "ai_earnings",
+      "dominant_theme_id": "fed_policy_path",
       "signals": {
         "growth": "?",
         "inflation": "?",
@@ -1407,9 +1407,9 @@
       "catalysts": [
         {
           "rank": 1,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
           "title": "Williams缓和加息时间压力，但没有承诺宽松",
           "evidence": "Williams said there was no urgency for another policy action after September, while his forecast still allowed one further increase late in the year.",
           "market_bias": "mixed",
@@ -1437,9 +1437,9 @@
         },
         {
           "rank": 3,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
           "title": "CarMax销量恢复伴随单车毛利压力",
           "evidence": "CarMax reported $7.9 billion of quarterly revenue, up 19.5%, while retail used-car units rose 13.8% and gross profit per unit fell $111 to $2,105.",
           "market_bias": "mixed",
@@ -1519,7 +1519,7 @@
       "source_mode": "reconstructed_daily",
       "regime_code": "unclassified",
       "regime_label": "多重约束 / reconstructed conditional assessment",
-      "dominant_theme_id": "ai_earnings",
+      "dominant_theme_id": "market_structure",
       "signals": {
         "growth": "?",
         "inflation": "?",
@@ -1531,9 +1531,9 @@
       "catalysts": [
         {
           "rank": 1,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
           "title": "September manufacturing remains expansionary while input-cost pressure rises",
           "evidence": "ISM manufacturing was 54.5 in September; the prices index rose to 77.9 from 71.1 and new orders reached 55.3. These are diffusion measures, not inflation rates.",
           "market_bias": "mixed",
@@ -1581,7 +1581,7 @@
       "source_mode": "reconstructed_daily",
       "regime_code": "unclassified",
       "regime_label": "多重约束 / reconstructed conditional assessment",
-      "dominant_theme_id": "ai_earnings",
+      "dominant_theme_id": "market_structure",
       "signals": {
         "growth": "?",
         "inflation": "?",
@@ -1593,9 +1593,9 @@
       "catalysts": [
         {
           "rank": 1,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
           "title": "September hiring slows and prior payroll gains are revised lower",
           "evidence": "BLS reported 29,000 September payroll additions and 4.2% unemployment. July and August payrolls were revised down by 60,000 combined; the release was October 2 at 08:30EDT.",
           "market_bias": "mixed",
@@ -1608,9 +1608,9 @@
         },
         {
           "rank": 2,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
           "title": "European diesel reserve-release reports add a supply buffer",
           "evidence": "Reuters reported European agreement to release diesel reserves on October 2. Brent settled at $102.25 and WTI at $91.11; the late-session figures were not available at the October 2 Asian cutoff.",
           "market_bias": "mixed",
@@ -1623,9 +1623,9 @@
         },
         {
           "rank": 3,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
           "title": "September manufacturing remains expansionary while input-cost pressure rises",
           "evidence": "ISM manufacturing was 54.5 in September; the prices index rose to 77.9 from 71.1 and new orders reached 55.3. These are diffusion measures, not inflation rates.",
           "market_bias": "mixed",
@@ -1643,7 +1643,7 @@
       "source_mode": "reconstructed_daily",
       "regime_code": "unclassified",
       "regime_label": "多重约束 / reconstructed conditional assessment",
-      "dominant_theme_id": "ai_earnings",
+      "dominant_theme_id": "market_structure",
       "signals": {
         "growth": "?",
         "inflation": "?",
@@ -1655,9 +1655,9 @@
       "catalysts": [
         {
           "rank": 1,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
           "title": "September hiring slows and prior payroll gains are revised lower",
           "evidence": "BLS reported 29,000 September payroll additions and 4.2% unemployment. July and August payrolls were revised down by 60,000 combined; the release was October 2 at 08:30EDT.",
           "market_bias": "mixed",
@@ -1670,9 +1670,9 @@
         },
         {
           "rank": 2,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
           "title": "European diesel reserve-release reports add a supply buffer",
           "evidence": "Reuters reported European agreement to release diesel reserves on October 2. Brent settled at $102.25 and WTI at $91.11; the late-session figures were not available at the October 2 Asian cutoff.",
           "market_bias": "mixed",
@@ -1705,7 +1705,7 @@
       "source_mode": "reconstructed_daily",
       "regime_code": "unclassified",
       "regime_label": "多重约束 / reconstructed conditional assessment",
-      "dominant_theme_id": "ai_earnings",
+      "dominant_theme_id": "market_structure",
       "signals": {
         "growth": "?",
         "inflation": "?",
@@ -1717,9 +1717,9 @@
       "catalysts": [
         {
           "rank": 1,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
           "title": "OPEC+ leaves November production requirements unchanged",
           "evidence": "Seven participating OPEC+ countries said on October 4 that November required production would remain atSeptember levels. The statement has no verified intraday timestamp and is first used here on October 5.",
           "market_bias": "mixed",
@@ -1732,9 +1732,9 @@
         },
         {
           "rank": 2,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
           "title": "Houthi claims create an unquantified Saudi supply-risk test",
           "evidence": "Reuters reported during theOctober 5 Asian session that Yemen's Houthis claimed missile and drone attacks onSaudi Aramco sites. This reconstruction did not independently establish resulting output losses.",
           "market_bias": "mixed",
@@ -1767,7 +1767,7 @@
       "source_mode": "reconstructed_daily",
       "regime_code": "unclassified",
       "regime_label": "多重约束 / reconstructed conditional assessment",
-      "dominant_theme_id": "ai_earnings",
+      "dominant_theme_id": "market_structure",
       "signals": {
         "growth": "?",
         "inflation": "?",
@@ -1779,9 +1779,9 @@
       "catalysts": [
         {
           "rank": 1,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
           "title": "Services expand while input prices remain elevated",
           "evidence": "September ISM services registered 54.9, prices 74.0 and employment 50.1. The October 5 release was available only after 22:00SGT, so it first enters theOctober 6 reconstruction.",
           "market_bias": "mixed",
@@ -1856,9 +1856,9 @@
         },
         {
           "rank": 2,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
           "title": "Consumer issuers report different demand and earnings outcomes",
           "evidence": "Lamb Weston raised its annual adjusted-EPS outlook afterOctober 6 results. Constellation reaffirmed comparable-EPS guidance, while its reported beer depletions fell 0.6%.",
           "market_bias": "mixed",
@@ -1871,9 +1871,9 @@
         },
         {
           "rank": 3,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
           "title": "September FOMC minutes remain ahead of the historical cutoff",
           "evidence": "The datedOctober 5 economic calendar lists theSeptember meeting minutes forOctober 7. They had not been released at 18:00SGT; the precise pre-cutoff calendar time was not retained.",
           "market_bias": "mixed",
@@ -1891,7 +1891,7 @@
       "source_mode": "reconstructed_daily",
       "regime_code": "unclassified",
       "regime_label": "多重约束 / reconstructed conditional assessment",
-      "dominant_theme_id": "ai_earnings",
+      "dominant_theme_id": "global_duration",
       "signals": {
         "growth": "?",
         "inflation": "?",
@@ -1903,9 +1903,9 @@
       "catalysts": [
         {
           "rank": 1,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
           "title": "September minutes retain a further-hike bias and discuss market function",
           "evidence": "Released October 7 at 14:00EDT, the minutes show most participants expected another hike by year end to be appropriate. A few also called for preparation against possible Treasury-market dysfunction.",
           "market_bias": "mixed",
@@ -1918,9 +1918,9 @@
         },
         {
           "rank": 2,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
           "title": "IEA accelerates existing emergency-stock commitments and prioritizes diesel",
           "evidence": "IEA members supported faster completion of theMarch 2026 stock action and prioritizing diesel. About 100 million barrels remained pledged but unreleased; this was not a newly announced 100 million-barrel commitment.",
           "market_bias": "mixed",
@@ -1933,9 +1933,9 @@
         },
         {
           "rank": 3,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
           "title": "Applied Digital highlights rapid growth and a large accounting bridge",
           "evidence": "Applied Digital reported FY2027Q1 revenue of $341.9 million, GAAP loss per share$0.76 and adjusted loss per share$0.01. GAAP includes ChronoScale, while presented non-GAAP measures exclude it.",
           "market_bias": "mixed",
@@ -1960,23 +1960,39 @@
       "date": "2026-09-19",
       "from": "Relief rally / BOJ event risk",
       "to": "Weekend Event Risk / 5% yields versus oil relief",
-      "dominant_theme_id": "us_china_trade_controls"
+      "dominant_theme_id": "market_structure"
     },
     {
       "date": "2026-09-21",
       "from": "Weekend Event Risk / policy relief versus 5% yields",
       "to": "Selective risk-on / rates remain restrictive",
-      "dominant_theme_id": "ai_earnings"
+      "dominant_theme_id": "global_duration"
     }
   ],
   "persistent_themes": [
     {
-      "theme_id": "ai_earnings",
-      "theme_label": "AI / Earnings",
-      "category": "earnings_ai_semis",
-      "days_in_top3": 37,
+      "theme_id": "market_structure",
+      "theme_label": "Market Structure",
+      "category": "market_structure",
+      "days_in_top3": 15,
       "best_rank": 1,
       "first_seen": "2026-09-10",
+      "last_seen": "2026-10-07",
+      "latest_rank": null,
+      "state": "Persistent",
+      "latest_transmission": "份额/成本控制→个股盈利；不足以推断全体消费者走强。 LW is the first observable transmission channel, not a guaranteed price direction.",
+      "source_modes": [
+        "native_daily",
+        "reconstructed_daily"
+      ]
+    },
+    {
+      "theme_id": "energy_inflation",
+      "theme_label": "Energy Inflation",
+      "category": "geopolitics_energy",
+      "days_in_top3": 13,
+      "best_rank": 1,
+      "first_seen": "2026-09-09",
       "last_seen": "2026-10-08",
       "latest_rank": 2,
       "state": "Escalating",
@@ -1987,10 +2003,42 @@
       ]
     },
     {
+      "theme_id": "global_duration",
+      "theme_label": "Global Duration / Term Premium",
+      "category": "inflation_rates",
+      "days_in_top3": 11,
+      "best_rank": 1,
+      "first_seen": "2026-09-10",
+      "last_seen": "2026-10-08",
+      "latest_rank": 1,
+      "state": "Persistent",
+      "latest_transmission": "政策路径/期限溢价→融资与估值；市场功能讨论不是救市承诺。 UST2Y is the first observable transmission channel, not a guaranteed price direction.",
+      "source_modes": [
+        "native_daily",
+        "reconstructed_daily"
+      ]
+    },
+    {
+      "theme_id": "fed_policy_path",
+      "theme_label": "Fed Policy Path",
+      "category": "central_banks_fiscal",
+      "days_in_top3": 10,
+      "best_rank": 1,
+      "first_seen": "2026-09-11",
+      "last_seen": "2026-10-07",
+      "latest_rank": null,
+      "state": "Persistent",
+      "latest_transmission": "政策讨论→加息路径理解；会议纪要信息本身早于10月就业数据。 UST2Y is the first observable transmission channel, not a guaranteed price direction.",
+      "source_modes": [
+        "native_daily",
+        "reconstructed_daily"
+      ]
+    },
+    {
       "theme_id": "us_china_trade_controls",
       "theme_label": "U.S.–China Trade Controls",
       "category": "china_trade_policy",
-      "days_in_top3": 18,
+      "days_in_top3": 9,
       "best_rank": 1,
       "first_seen": "2026-09-09",
       "last_seen": "2026-10-07",
@@ -2006,7 +2054,7 @@
       "theme_id": "geopolitics_energy",
       "theme_label": "Geopolitics / Energy",
       "category": "geopolitics_energy",
-      "days_in_top3": 11,
+      "days_in_top3": 9,
       "best_rank": 1,
       "first_seen": "2026-09-10",
       "last_seen": "2026-09-27",
@@ -2019,48 +2067,16 @@
       ]
     },
     {
-      "theme_id": "market_structure",
-      "theme_label": "Market Structure",
-      "category": "market_structure",
-      "days_in_top3": 9,
-      "best_rank": 1,
-      "first_seen": "2026-09-13",
+      "theme_id": "ai_earnings",
+      "theme_label": "AI / Earnings",
+      "category": "earnings_ai_semis",
+      "days_in_top3": 7,
+      "best_rank": 2,
+      "first_seen": "2026-09-23",
       "last_seen": "2026-10-08",
       "latest_rank": 3,
       "state": "Persistent",
       "latest_transmission": "AI建设收入→现金转化/融资需求→估值质量。 APLD is the first observable transmission channel, not a guaranteed price direction.",
-      "source_modes": [
-        "native_daily",
-        "reconstructed_daily"
-      ]
-    },
-    {
-      "theme_id": "energy_inflation",
-      "theme_label": "Energy Inflation",
-      "category": "geopolitics_energy",
-      "days_in_top3": 5,
-      "best_rank": 1,
-      "first_seen": "2026-09-09",
-      "last_seen": "2026-10-06",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "能源回落→成本缓冲；需观察是否传递至长端利率。 Brent December 2026 is the first observable transmission channel, not a guaranteed price direction.",
-      "source_modes": [
-        "native_daily",
-        "reconstructed_daily"
-      ]
-    },
-    {
-      "theme_id": "global_duration",
-      "theme_label": "Global Duration / Term Premium",
-      "category": "inflation_rates",
-      "days_in_top3": 5,
-      "best_rank": 1,
-      "first_seen": "2026-09-11",
-      "last_seen": "2026-09-25",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Energy costs can lift inflation compensation and required returns, pressuring financing-sensitive equity valuations.",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -2080,39 +2096,23 @@
       "source_modes": [
         "native_daily"
       ]
-    },
-    {
-      "theme_id": "fed_policy_path",
-      "theme_label": "Fed Policy Path",
-      "category": "central_banks_fiscal",
-      "days_in_top3": 1,
-      "best_rank": 2,
-      "first_seen": "2026-09-12",
-      "last_seen": "2026-09-12",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "CPI acceleration → higher Fed hike probability → higher 2Y/real yields → tighter dollar liquidity and valuation compression.",
-      "source_modes": [
-        "native_daily"
-      ]
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "ai_earnings",
-    "theme_label": "AI / Earnings",
+    "theme_id": "global_duration",
+    "theme_label": "Global Duration / Term Premium",
     "as_of": "2026-10-08",
-    "confirming": [],
-    "diverging": [
+    "confirming": [
+      {
+        "series_id": "DGS10",
+        "label": "US 10Y Treasury Yield",
+        "as_of": "2026-10-07 daily historical reference",
+        "source_mode": "reconstructed_daily",
+        "change": "+1.00bp"
+      },
       {
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
-        "as_of": "2026-10-07 daily historical reference",
-        "source_mode": "reconstructed_daily",
-        "change": "-0.22%"
-      },
-      {
-        "series_id": "SP500",
-        "label": "S&P 500",
         "as_of": "2026-10-07 daily historical reference",
         "source_mode": "reconstructed_daily",
         "change": "-0.22%"
@@ -2125,8 +2125,17 @@
         "change": "+0.47%"
       }
     ],
+    "diverging": [
+      {
+        "series_id": "DGS2",
+        "label": "US 2Y Treasury Yield",
+        "as_of": "2026-10-07 daily historical reference",
+        "source_mode": "reconstructed_daily",
+        "change": "-2.00bp"
+      }
+    ],
     "unavailable": [],
-    "interpretation_note": "0 项资产确认当前主线，3 项出现背离。",
+    "interpretation_note": "3 项资产确认当前主线，1 项出现背离。",
     "what_would_flip_it": "New labor or inflation data change the risk balance, or officials explicitly distinguish current policy from theSeptember assessment."
   },
   "series": {
