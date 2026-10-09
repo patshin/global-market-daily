@@ -1,0 +1,1028 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-10-09",
+  "edition": "Morning Official",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-10-09 15:34 SGT",
+  "data_cutoff_et": "2026-10-09 03:34 EDT",
+  "last_updated": "2026-10-09T15:34:04+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-10-09T09:00:00+08:00",
+    "started_at_sgt": "2026-10-09T15:13:37+08:00",
+    "research_cutoff_sgt": "2026-10-09T15:34:04+08:00",
+    "mode": "morning",
+    "recovery_note": "Late independent research after the scheduled ChatGPT run was blocked before GitHub PR handoff. No fabricated 09:00 research cutoff."
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": true
+  },
+  "publication_policy": "morning_official_2026-10-08",
+  "source_mode": "native_daily",
+  "sources_path": "data/sources/2026-10-09.json",
+  "comparison_basis": {
+    "previous_official_date": "2026-10-08",
+    "note": "The previous Oct 8 final was explicitly reconstructed to a historical 09:00 cutoff. This Oct 9 official report is independently researched to a later true cutoff and compares new price discovery without retrospectively changing the Oct 8 facts."
+  },
+  "thesis": "截至2026-10-09 15:34 SGT，真正约束全球风险资产的已不只是油价，而是“实体能源供应冲击与5%以上美债长端折现率，是否继续压制高资本开支AI资产的现金回收”：10月8日Brent结算上涨4.1%至104.28美元、Nasdaq下跌1.25%，而30年国债拍卖以5.618%发行、认购倍数2.54为利率提供局部缓冲。10月9日亚洲Brent又回落至约102.91美元，说明短期供给溢价开始双向交易；今晚22:00 SGT密歇根大学初步消费者信心将决定市场先交易增长趋弱还是通胀预期顽固。",
+  "dominant_narrative": "本次日报为10月9日延迟完成的独立研究，所有时间截至真实research_cutoff，不伪装成09:00 SGT已发表。过去一天的可核验价格发现是：美股并非全盘崩跌，Dow上涨0.10%，但Nasdaq因AI融资与盈利质量争议跌1.25%；Brent周四以104.28美元上涨4.1%结算，周五亚洲又因美伊外交评论回到约102.91美元，尚不能因此认定霍尔木兹海运或美国墨西哥湾产能已经恢复。美国30年期国债拍卖收益率5.618%、投标倍数2.54与间接获配72.3%提供实质资金吸收信号，但H.15同口径10年收益率仍达5.28%，高折现率约束没有消失。PepsiCo第三季度营收增长而全年核心EPS增长指引降至1%–2%，再次说明销售与现金盈利转换必须分开。接下来的验证顺序是石油回落能否延续、长端真实交易收益率能否同步下行、今晚消费者信心及通胀预期是否改写政策预期，最后看Nasdaq与VIX能否给出跨资产一致确认。",
+  "market_regime": {
+    "growth": {
+      "state": "Uneven but not collapsing",
+      "evidence": "US initial claims were 197,000 while consumer sentiment September final was 48.1; Friday October preliminary reading remains ahead at 10:00 EDT.",
+      "sources": [
+        "S16",
+        "S17"
+      ]
+    },
+    "inflation": {
+      "state": "Energy-led upside risk with Friday relief",
+      "evidence": "Brent settled $104.28 +4.1% October 8, then fell to around $102.91 in Friday Asia reporting as diplomatic comments eased the immediate premium.",
+      "sources": [
+        "S07",
+        "S06"
+      ]
+    },
+    "rates": {
+      "state": "Restrictive long-end, auction relief only",
+      "evidence": "H.15 10Y is 5.28% and 30Y 5.67% October 8; the $22bn 30-year auction stopped at 5.618% with 2.54 bid-cover.",
+      "sources": [
+        "S04",
+        "S05"
+      ]
+    },
+    "earnings": {
+      "state": "Selective cash conversion / capex stress",
+      "evidence": "Nasdaq -1.25% contrasted with Dow +0.10%; PEP reported $25.27bn revenue but trimmed FY core EPS-growth guidance.",
+      "sources": [
+        "S02",
+        "S03",
+        "S15"
+      ]
+    },
+    "liquidity": {
+      "state": "Funding selective; auction absorbed",
+      "evidence": "Indirect award 72.3% of Treasury 30Y auction, while long yields remain elevated and AI-related financing needs are under review.",
+      "sources": [
+        "S05",
+        "S23"
+      ]
+    },
+    "geopolitics": {
+      "state": "Elevated chokepoint / Gulf weather risk",
+      "evidence": "Supply risks and Gulf hurricane shut-ins remain materially unconfirmed as repaired, despite softer oil futures on Friday diplomacy commentary.",
+      "sources": [
+        "S06",
+        "S07"
+      ]
+    },
+    "overall": {
+      "state": "Event Risk / Oil–Duration and AI Funding",
+      "evidence": "Thursday oil shock and Nasdaq selloff were partly buffered by Treasury auction demand; Friday Asia tests oil relief without proof of physical repairs.",
+      "sources": [
+        "S01",
+        "S02",
+        "S05"
+      ]
+    }
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,765.36",
+      "change_1d": "-0.47%",
+      "change_5d": "+1.29% vs 2026-10-01 close",
+      "signal": "↓ Growth/AI multiple pressure",
+      "driver": "US cash equities declined, with chip-linked duration names lagging amid high long yields and AI financing scrutiny.",
+      "status": "Confirmed Oct 8 US cash close; 5D based on indexed historical Oct 1 close",
+      "as_of": "2026-10-08 16:00 EDT",
+      "sources": [
+        "S02",
+        "S03",
+        "S11"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "27,193.34",
+      "change_1d": "-1.25%",
+      "change_5d": "+1.20% vs 2026-10-01 close",
+      "signal": "↓ AI financing drag",
+      "driver": "A reported debate about future AI cash conversion coincided with weaker semiconductors; the market move does not independently verify projected company revenue.",
+      "status": "Confirmed Oct 8 cash close; Oct 1 baseline separately sourced",
+      "as_of": "2026-10-08 16:00 EDT",
+      "sources": [
+        "S02",
+        "S03",
+        "S12"
+      ]
+    },
+    {
+      "asset": "Dow",
+      "level": "51,231.64",
+      "change_1d": "+0.10%",
+      "change_5d": "+0.60% vs 2026-10-01 close",
+      "signal": "→ Relative value rotation",
+      "driver": "Dow barely rose while Nasdaq sank, consistent with a rotation away from growth multiples rather than a uniform US stock selloff.",
+      "status": "Confirmed Oct 8 cash close and historical Oct 1 comparison",
+      "as_of": "2026-10-08 16:00 EDT",
+      "sources": [
+        "S03",
+        "S10"
+      ]
+    },
+    {
+      "asset": "VIX",
+      "level": "15.41",
+      "change_1d": "+2.19%",
+      "change_5d": "-5.98% vs Oct 1",
+      "signal": "↑ Equity hedging premium",
+      "driver": "VIX increased from 15.08 on Oct 7 even as its five-session level remained below Oct 1; a daily uptick is not proof of systemic stress.",
+      "status": "Cboe spot index close, same-index historical comparisons",
+      "as_of": "2026-10-08 US close",
+      "sources": [
+        "S09"
+      ]
+    },
+    {
+      "asset": "UST 2Y",
+      "level": "4.77%",
+      "change_1d": "-2bp",
+      "change_5d": "-1bp vs Oct 1",
+      "signal": "↓ Front end slightly eases",
+      "driver": "Federal Reserve H.15 constant maturity 2Y fell from 4.79 to 4.77; do not mix this with Reuters intraday traded yields.",
+      "status": "Official Treasury constant-maturity series; US daily basis",
+      "as_of": "2026-10-08 H.15",
+      "sources": [
+        "S04"
+      ]
+    },
+    {
+      "asset": "UST 5Y",
+      "level": "5.03%",
+      "change_1d": "0bp",
+      "change_5d": "+2bp vs Oct 1",
+      "signal": "→ Mid-curve sticky",
+      "driver": "Five-year official constant maturity remained 5.03 after Oct 7 despite Thursday’s late bond-market recovery.",
+      "status": "Official H.15 same-series comparisons",
+      "as_of": "2026-10-08 H.15",
+      "sources": [
+        "S04"
+      ]
+    },
+    {
+      "asset": "UST 10Y",
+      "level": "5.28%",
+      "change_1d": "+1bp",
+      "change_5d": "+4bp vs Oct 1",
+      "signal": "↑ High discount-rate hurdle",
+      "driver": "Official 10Y constant maturity rose one basis point from Oct 7; late traded 10Y near 5.227 after auction uses a different observation basis.",
+      "status": "Official H.15 close proxy, not Reuters live traded yield",
+      "as_of": "2026-10-08 H.15",
+      "sources": [
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "asset": "UST 30Y",
+      "level": "5.67%",
+      "change_1d": "+3bp",
+      "change_5d": "+6bp vs Oct 1",
+      "signal": "↑ Term-premium pressure",
+      "driver": "H.15 30-year constant maturity stayed elevated despite solid 30-year auction demand; auction stop 5.618 is a distinct instrument.",
+      "status": "Official H.15 same-series basis",
+      "as_of": "2026-10-08 H.15",
+      "sources": [
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "asset": "2s10s",
+      "level": "+51bp",
+      "change_1d": "+3bp",
+      "change_5d": "+5bp vs Oct 1",
+      "signal": "↑ Curve steepening",
+      "driver": "Calculated mechanically from the same-date H.15 2Y and 10Y constant maturity rates; not a dealer trading quote.",
+      "status": "Derived: 10Y CMT less 2Y CMT in bp",
+      "as_of": "2026-10-08 H.15",
+      "sources": [
+        "S04"
+      ]
+    },
+    {
+      "asset": "Brent",
+      "level": "$104.28/bbl",
+      "change_1d": "+4.1%",
+      "change_5d": "+1.93% vs Oct 1 settlement",
+      "signal": "↑ Shock at Thursday settlement",
+      "driver": "Thursday Brent settlement reflected supply risk and US Gulf hurricane shut-ins; Friday Asia futures separately reversed to about $102.91 and must not be confused with the settlement.",
+      "status": "Reuters verified Oct8 settlement; Oct1 same contract reference; Friday futures noted separately",
+      "as_of": "2026-10-08 settlement, Friday Oct9 Asia reference",
+      "sources": [
+        "S06",
+        "S07",
+        "S08"
+      ]
+    },
+    {
+      "asset": "WTI",
+      "level": "$91.49/bbl",
+      "change_1d": "+3.6%",
+      "change_5d": "-1.49% vs Oct 1 settlement",
+      "signal": "↑ Daily spike, below 5D reference",
+      "driver": "WTI October 8 settlement was lifted by hurricane disruption; Friday futures around $90.40 subsequently softened on diplomacy commentary.",
+      "status": "Reuters verified Oct8 settlement and Oct1 contract reference",
+      "as_of": "2026-10-08 settlement, Oct9 Asia context",
+      "sources": [
+        "S06",
+        "S07",
+        "S08"
+      ]
+    },
+    {
+      "asset": "Gold",
+      "level": "$4,190.57/oz",
+      "change_1d": "约+1% Friday Asia",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ Safe haven bid",
+      "driver": "Friday spot gold rose on a softer dollar while policy and debt uncertainty persisted; exact same-clock five-session spot move not verified.",
+      "status": "Reuters Friday intraday spot, explicitly not Oct8 settlement; reliable 5D missing",
+      "as_of": "2026-10-09 Asia reporting snapshot",
+      "sources": [
+        "S20"
+      ]
+    },
+    {
+      "asset": "DXY",
+      "level": "102.037",
+      "change_1d": "约-0.1% Friday Asia",
+      "change_5d": "尚无法可靠确认",
+      "signal": "→ Broad dollar consolidates",
+      "driver": "Asian FX indication from market reporting; not a synchronized New York DXY settlement and no verified same-basis five-session move.",
+      "status": "Market reporting Friday Asia indicative; 5D missing",
+      "as_of": "2026-10-09 Asia reporting snapshot",
+      "sources": [
+        "S21",
+        "S19"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "TARGET_MET_WITH_EXPLICIT_GAPS",
+    "asset_count": 13,
+    "level_coverage": {
+      "count": 13,
+      "total": 13,
+      "pct": 100,
+      "target_pct": 90
+    },
+    "change_1d_coverage": {
+      "count": 13,
+      "total": 13,
+      "pct": 100,
+      "target_pct": 90
+    },
+    "change_5d_coverage": {
+      "count": 11,
+      "total": 13,
+      "pct": 84.6,
+      "target_pct": 80
+    },
+    "explicit_gaps": [
+      "Gold five-session same-clock spot comparison not reliably verified",
+      "DXY five-session same-contract indicator not reliably verified"
+    ],
+    "policy": "Source-matched cash close, benchmark Treasury CMT and Friday Asia indicative quotes use explicitly distinct as_of labels; no interpolation or later-session price is presented as the October 8 close."
+  },
+  "what_changed": [
+    {
+      "yesterday": "The Oct 8 official archive is a time-stamped historical reconstruction covering evidence only to Oct 8 09:00 SGT; it does not contain the following US cash session.",
+      "today": "The Oct 8 actual US cash close is now verified: Nasdaq -1.25%, SPX -0.47%, Dow +0.10%, alongside oil +4.1% and a completed Treasury 30Y auction.",
+      "why_it_matters": "The new market tape closes a real information gap rather than back-writing the historical 09:00 edition; cross-asset divergence requires separate energy, duration and tech financing transmission tests.",
+      "sources": [
+        "S02",
+        "S03",
+        "S05",
+        "S07"
+      ]
+    },
+    {
+      "yesterday": "Before Oct 8 US settlement, Gulf supply uncertainty and high Treasury yields were binding but Thursday's clearing prices were not yet published at the historical cutoff.",
+      "today": "Reuters reports Brent settled at $104.28 Thursday and retraced toward $102.91 in Friday Asia after renewed diplomatic signaling.",
+      "why_it_matters": "Oil price relief may weaken short-term inflation hedges, but only sustained physical flow restoration can invalidate a supply-side shock.",
+      "sources": [
+        "S06",
+        "S07"
+      ]
+    },
+    {
+      "yesterday": "The prior reconstructed edition identified corporate cash conversion as a watch item, without Oct 8 issuer financial results being available at its historical cutoff.",
+      "today": "PepsiCo posted $25.27bn sales, +3.1% organic revenue, but reduced projected FY core EPS growth; Fast Retailing issued FY2026 results.",
+      "why_it_matters": "Verified issuer filings show why sales growth and operating-margin/financing sensitivity should be evaluated separately from general market AI expectations.",
+      "sources": [
+        "S13",
+        "S14",
+        "S15"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "Oct 8 oil settlement spike gives way to Friday Asia relief while Saudi and Hormuz risks remain unresolved",
+      "status": "Occurred / Confirmed market reporting",
+      "event_time_et": "2026-10-08 US close EDT / Oct 9 early EDT",
+      "event_time_sgt": "2026-10-09 morning SGT",
+      "what_happened": "Brent settled at $104.28/bbl (+4.1%) and WTI at $91.49 (+3.6%) on October 8 after supply concerns and Gulf storm shut-ins. On Friday Asia reporting, Brent had eased around $102.91 as US-Iran diplomacy commentary changed the near-term risk premium.",
+      "what_changed": "The binding test shifted from the scale of Thursday’s crude rally to whether Friday’s retracement survives while physical Gulf production and maritime constraints persist.",
+      "why_it_matters": "A sustained oil reversal would ease headline inflation/term-premium stress; another supply disruption would lift energy prices and duration discount rates even as equities remain weak.",
+      "transmission": "Gulf disruption / storm output → crude and freight → inflation expectations → Treasury yields → long-duration equity valuations.",
+      "affected_assets": [
+        "Brent",
+        "WTI",
+        "UST 10Y",
+        "Nasdaq Composite"
+      ],
+      "direction": "Risk-off / mixed",
+      "importance": "★★★★★",
+      "confirmation": "Brent stabilizing below the Thursday settlement with verified shipping improvements and lower traded Treasury yields would support a genuine moderation.",
+      "invalidation": "Renewed verified attacks or prolonged Gulf shut-ins alongside sustained crude reacceleration would invalidate the relief trade.",
+      "sources": [
+        "S01",
+        "S06",
+        "S07"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "Oct 8 Nasdaq falls 1.25% as AI funding scrutiny overpowers broader Wall Street resilience",
+      "status": "Occurred / Confirmed market reporting",
+      "event_time_et": "2026-10-08 16:00 EDT",
+      "event_time_sgt": "2026-10-09 04:00 SGT",
+      "what_happened": "Nasdaq Composite closed at 27,193.34 (-1.25%) against S&P 500 -0.47% and Dow +0.10%; financial press debated the revenue-to-capex bridge of AI infrastructure, while the report itself did not establish audited revenue for all involved firms.",
+      "what_changed": "The split between Nasdaq and the Dow grew wider, signaling a valuation and financing-quality reassessment rather than a uniform collapse in economic demand.",
+      "why_it_matters": "At a 5%+ US long-end rate, external debt/equity needs and cash conversion matter more for multiple support; refinancing concerns can spill into credit and semiconductors.",
+      "transmission": "Capital intensity / unverified revenue projections → financing costs → equity discount rates → tech leadership breadth and credit risk.",
+      "affected_assets": [
+        "Nasdaq Composite",
+        "S&P 500",
+        "UST 10Y",
+        "VIX"
+      ],
+      "direction": "Risk-off / mixed",
+      "importance": "★★★★★",
+      "confirmation": "Improved semiconductor breadth and independently reported funded AI contracts with stable Treasury yields would confirm a temporary rotation.",
+      "invalidation": "New bond spreads or broad Nasdaq drawdown with persistently high long yields and weak AI cash conversion would undermine the stabilization case.",
+      "sources": [
+        "S02",
+        "S03",
+        "S23"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "US $22bn 30-year Treasury auction stops at 5.618% with 2.54 bid-cover and 72.3% indirect allocation",
+      "status": "Occurred / Confirmed market reporting",
+      "event_time_et": "2026-10-08 US auction session",
+      "event_time_sgt": "2026-10-09 early morning SGT",
+      "what_happened": "The October 8 Treasury auction priced $22bn of 30-year securities at 5.618%, with a 2.54 bid-to-cover ratio and indirect bidders taking 72.3%; traded 10-year yield retreated to around 5.227% afterward, distinct from H.15 10Y constant maturity of 5.28%.",
+      "what_changed": "Auction demand offered a real liquidity clearing signal after the pre-auction global bond selloff, but did not erase the elevated level of Treasury yields.",
+      "why_it_matters": "The bid matters because term-premium repricing and funding costs are now binding for AI infrastructure, small caps and credit even when one auction is well covered.",
+      "transmission": "Auction absorption → traded long-end yield relief → lower discount-rate impulse; persistent inflation and issuance still constrain the medium-term yield floor.",
+      "affected_assets": [
+        "UST 10Y",
+        "UST 30Y",
+        "Nasdaq Composite"
+      ],
+      "direction": "Risk-off / mixed",
+      "importance": "★★★★★",
+      "confirmation": "Traded 10Y and 30Y yields staying lower on fresh issuance and tighter funding spreads would validate follow-through.",
+      "invalidation": "Renewed long-end selloff despite similar auction demand or upward inflation expectations would invalidate the relief interpretation.",
+      "sources": [
+        "S04",
+        "S05"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top 3 Market Catalysts",
+      "status": "Three verified cross-asset catalysts",
+      "summary": "The oil supply/political premium remains the first test, followed by valuation pressure in Nasdaq and Treasury auction absorption. Each catalyst above has dated evidence, an asset transmission chain and independent confirmation/invalidation rules.",
+      "paragraphs": [
+        "The oil supply/political premium remains the first test, followed by valuation pressure in Nasdaq and Treasury auction absorption. Each catalyst above has dated evidence, an asset transmission chain and independent confirmation/invalidation rules."
+      ],
+      "tables": [],
+      "sources": [
+        "S06",
+        "S02",
+        "S05"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings",
+      "status": "Two reported issuer releases and financing-quality divergence",
+      "summary": "PepsiCo Q3 net revenue grew 5.6% with organic revenue up 3.1% and adjusted EPS reported at $2.34; the company cut full-year core EPS growth expectations to 1–2%. Fast Retailing’s October 8 annual results show strong overseas demand, while raw growth must be assessed alongside FX and execution costs.",
+      "paragraphs": [
+        "PepsiCo Q3 net revenue grew 5.6% with organic revenue up 3.1% and adjusted EPS reported at $2.34; the company cut full-year core EPS growth expectations to 1–2%. Fast Retailing’s October 8 annual results show strong overseas demand, while raw growth must be assessed alongside FX and execution costs."
+      ],
+      "tables": [],
+      "sources": [
+        "S13",
+        "S14",
+        "S15"
+      ],
+      "reported": [
+        {
+          "id": "PEP-2026Q3",
+          "company": "PepsiCo",
+          "ticker": "PEP",
+          "period": "2026 Q3 (12 weeks ended 2026-09-05)",
+          "status": "Reported",
+          "release_date": "2026-10-08",
+          "release_time_et": "approximately 06:00 EDT",
+          "release_time_sgt": "approximately 18:00 SGT 2026-10-08",
+          "market_session": "Before US cash market",
+          "key_takeaway": "Net revenue and organic growth improved, but full-year adjusted EPS outlook was reduced and the North American unit remains a margin execution risk.",
+          "metrics": [
+            {
+              "metric": "Net revenue",
+              "actual": "$25.27bn",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "+5.6% y/y",
+              "surprise": "Above prior-year level; consensus exact not independently retained",
+              "notes": "Reported in issuer release and corroborated by WSJ."
+            },
+            {
+              "metric": "Organic net revenue growth",
+              "actual": "+3.1%",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "Q3 year-on-year",
+              "surprise": "Sequential organic trend improved",
+              "notes": "Issuer-defined organic/non-GAAP growth."
+            },
+            {
+              "metric": "Core EPS",
+              "actual": "$2.34",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "Core EPS +2% y/y",
+              "surprise": "Reported beat in financial coverage; numerical consensus not retained",
+              "notes": "Distinguish core/adjusted EPS from GAAP EPS."
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "FY2026 core EPS growth",
+              "current": "+1% to +2%",
+              "previous_or_consensus": "Prior outlook +4% to +6%",
+              "change": "Reduced",
+              "interpretation": "Cost inflation, promotions and North American execution pressures constrain the conversion of sales into adjusted earnings."
+            }
+          ],
+          "market_reaction": {
+            "session": "2026-10-08 US cash",
+            "move": "+3.7% according to Reuters",
+            "as_of": "2026-10-08 EDT"
+          },
+          "one_offs": [
+            "Non-GAAP core EPS and reported GAAP results require a separate reconciliation; no unverified one-time adjustment is invented."
+          ],
+          "read_through": [
+            {
+              "asset": "US consumer staples",
+              "implication": "Volume/margin mix matters more than headline nominal revenue under still-elevated input costs."
+            },
+            {
+              "asset": "PepsiCo equity",
+              "implication": "Favorable immediate stock reaction coexists with weaker medium-term adjusted EPS guidance."
+            }
+          ],
+          "sources": [
+            "S13",
+            "S15",
+            "S02"
+          ]
+        },
+        {
+          "id": "9983-2026FY",
+          "company": "Fast Retailing",
+          "ticker": "9983.T",
+          "period": "FY2026 year ended 2026-08-31",
+          "status": "Reported",
+          "release_date": "2026-10-08",
+          "release_time_et": "Date verified, exact time 尚无法可靠确认",
+          "release_time_sgt": "2026-10-08; exact time 尚无法可靠确认",
+          "market_session": "Japan reporting day; exact release time unknown",
+          "key_takeaway": "Full-year sales and net earnings reached strong levels, led by international UNIQLO; do not infer future profit from revenue alone.",
+          "metrics": [
+            {
+              "metric": "Revenue",
+              "actual": "approximately ¥3.963tn",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "+17% y/y",
+              "surprise": "Exact analyst consensus not retained",
+              "notes": "Issuer results and financial press; rounded figures."
+            },
+            {
+              "metric": "Net profit",
+              "actual": "approximately ¥542.5bn",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "+25% y/y",
+              "surprise": "Exact consensus not independently retained",
+              "notes": "Parent reported annual result."
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "FY2027 net profit",
+              "current": "approximately ¥560bn forecast",
+              "previous_or_consensus": "FY2026 about ¥542.5bn reported",
+              "change": "Management target above FY2026",
+              "interpretation": "Guidance is a company projection, not a realized subsequent outcome."
+            }
+          ],
+          "market_reaction": {
+            "session": "Oct 8 Japan / after-results exact cash response",
+            "move": "尚无法可靠确认",
+            "as_of": "Oct 8 release; subsequent price not claimed"
+          },
+          "one_offs": [
+            "Foreign exchange effects and overseas store momentum should be separated from comparable-store volume to assess profitability."
+          ],
+          "read_through": [
+            {
+              "asset": "Japan/Asia consumer discretionary",
+              "implication": "International store demand offers a distinct support channel despite higher oil and bond yields."
+            },
+            {
+              "asset": "JPY and imported costs",
+              "implication": "FX and input-price volatility could alter the translation of future group margin."
+            }
+          ],
+          "sources": [
+            "S14"
+          ]
+        }
+      ],
+      "upcoming_72h": []
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "U.S. Economic Data",
+      "status": "Latest labor claims ahead of Michigan sentiment",
+      "summary": "US weekly initial jobless claims fell to 197,000 in the latest release with continuing claims around 1.716 million. September final Michigan Consumer Sentiment was 48.1. Today’s October preliminary reading is scheduled at 10:00 EDT, after this edition’s research cutoff.",
+      "paragraphs": [
+        "US weekly initial jobless claims fell to 197,000 in the latest release with continuing claims around 1.716 million. September final Michigan Consumer Sentiment was 48.1. Today’s October preliminary reading is scheduled at 10:00 EDT, after this edition’s research cutoff."
+      ],
+      "tables": [],
+      "sources": [
+        "S16",
+        "S17"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Global Central Banks",
+      "status": "Hawkish optionality, no new decision at cutoff",
+      "summary": "September FOMC minutes leave restrictive policy on the table, but the October 9 morning contains no new Fed rate decision. Reuters reports market pricing still favors patience at October’s meeting versus a greater likelihood of a December increase. Do not turn market odds into a signed central-bank commitment.",
+      "paragraphs": [
+        "September FOMC minutes leave restrictive policy on the table, but the October 9 morning contains no new Fed rate decision. Reuters reports market pricing still favors patience at October’s meeting versus a greater likelihood of a December increase. Do not turn market odds into a signed central-bank commitment."
+      ],
+      "tables": [],
+      "sources": [
+        "S04",
+        "S20",
+        "S23"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Major International Events",
+      "status": "Shipping risk versus diplomatic signaling",
+      "summary": "Friday Reuters reported softer oil after US-Iran comments on talks and no near-term strikes, even as shipping, sanctions and hurricane-driven production uncertainties persist. Public remarks are not proof of repaired physical flows; seek maritime and loading evidence before treating the supply premium as removed.",
+      "paragraphs": [
+        "Friday Reuters reported softer oil after US-Iran comments on talks and no near-term strikes, even as shipping, sanctions and hurricane-driven production uncertainties persist. Public remarks are not proof of repaired physical flows; seek maritime and loading evidence before treating the supply premium as removed."
+      ],
+      "tables": [],
+      "sources": [
+        "S06",
+        "S07"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "China, Japan, Europe and Canada Policy",
+      "status": "Uneven regional growth and fiscal stress",
+      "summary": "China’s refined-product export posture after its holiday may ease fuel availability, per Reuters market reporting. France’s budget and sovereign spread scrutiny are contributing to euro weakness. Japanese risk assets remained rate- and import-cost sensitive; no comparable high-confidence new Canadian policy decision was verified at this cutoff.",
+      "paragraphs": [
+        "China’s refined-product export posture after its holiday may ease fuel availability, per Reuters market reporting. France’s budget and sovereign spread scrutiny are contributing to euro weakness. Japanese risk assets remained rate- and import-cost sensitive; no comparable high-confidence new Canadian policy decision was verified at this cutoff."
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S06",
+        "S19"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "MSCI / FTSE / S&P / Nasdaq Index Changes",
+      "status": "Nasdaq-100 inclusion effective pre-open Friday",
+      "summary": "Nasdaq officially announced Moderna (MRNA) would replace Warner Bros. Discovery (WBD) as a Nasdaq-100 constituent before US market open on October 9. This is an index membership fact, not proof of the size, timing or direction of every ETF’s actual order flow.",
+      "paragraphs": [
+        "Nasdaq officially announced Moderna (MRNA) would replace Warner Bros. Discovery (WBD) as a Nasdaq-100 constituent before US market open on October 9. This is an index membership fact, not proof of the size, timing or direction of every ETF’s actual order flow."
+      ],
+      "tables": [],
+      "sources": [
+        "S18"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "Pension / Month-End / Quarter-End Flows",
+      "status": "Auction allocation observed; pension flows unverified",
+      "summary": "Indirect buyers accounted for 72.3% of the October 8 30-year Treasury auction, an observable primary issuance allocation. This must not be relabeled as pension buying or ETF subscriptions. No independent high-quality daily pension/month-end/quarter-end flow estimate was verified in time.",
+      "paragraphs": [
+        "Indirect buyers accounted for 72.3% of the October 8 30-year Treasury auction, an observable primary issuance allocation. This must not be relabeled as pension buying or ETF subscriptions. No independent high-quality daily pension/month-end/quarter-end flow estimate was verified in time."
+      ],
+      "tables": [],
+      "sources": [
+        "S05"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF Rebalance / Index Reconstruction",
+      "status": "Nasdaq-100 tracker implementation not quantified",
+      "summary": "Moderna’s announced entry before October 9 US open is relevant to Nasdaq-100 tracking funds. The issuer/index provider has not supplied a fund-by-fund live execution tape here; avoid inventing weights, dollars, dealer inventory changes or realized ETF net flows.",
+      "paragraphs": [
+        "Moderna’s announced entry before October 9 US open is relevant to Nasdaq-100 tracking funds. The issuer/index provider has not supplied a fund-by-fund live execution tape here; avoid inventing weights, dollars, dealer inventory changes or realized ETF net flows."
+      ],
+      "tables": [],
+      "sources": [
+        "S18"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "Options Expiry",
+      "status": "Volatility proxy verified; dealer positioning not inferred",
+      "summary": "Cboe VIX closed 15.41 on October 8, up 2.19% day on day, while Nasdaq fell 1.25%. That pairing indicates a higher short-dated hedging price, but does not identify dealer gamma flip, max pain, 0DTE inventory or a specific expiration pin.",
+      "paragraphs": [
+        "Cboe VIX closed 15.41 on October 8, up 2.19% day on day, while Nasdaq fell 1.25%. That pairing indicates a higher short-dated hedging price, but does not identify dealer gamma flip, max pain, 0DTE inventory or a specific expiration pin."
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S09"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "U.S. Treasury Auctions",
+      "status": "Long-duration supply found buyers at high yield",
+      "summary": "The $22bn October 8 US 30-year sale stopped at 5.618%, bid-to-cover 2.54, indirect award 72.3%. Auction statistics refer to the issued bond; H.15 2Y 4.77%, 10Y 5.28% and 30Y 5.67% are constant-maturity quotes and cannot be conflated with intraday traded prices.",
+      "paragraphs": [
+        "The $22bn October 8 US 30-year sale stopped at 5.618%, bid-to-cover 2.54, indirect award 72.3%. Auction statistics refer to the issued bond; H.15 2Y 4.77%, 10Y 5.28% and 30Y 5.67% are constant-maturity quotes and cannot be conflated with intraday traded prices."
+      ],
+      "tables": [],
+      "sources": [
+        "S04",
+        "S05"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Oil / OPEC / Commodities",
+      "status": "Brent reversal tests energy-to-rates pathway",
+      "summary": "Brent settled Thursday at $104.28 (+4.1%) and WTI at $91.49 (+3.6%); Reuters’ Friday Asia snapshots subsequently showed Brent around $102.91 and WTI $90.40, a lower but still supply-sensitive market. Friday spot gold rose to about $4,190.57 as dollar/yields eased. These are different asset/time bases, not one synchronized close.",
+      "paragraphs": [
+        "Brent settled Thursday at $104.28 (+4.1%) and WTI at $91.49 (+3.6%); Reuters’ Friday Asia snapshots subsequently showed Brent around $102.91 and WTI $90.40, a lower but still supply-sensitive market. Friday spot gold rose to about $4,190.57 as dollar/yields eased. These are different asset/time bases, not one synchronized close."
+      ],
+      "tables": [],
+      "sources": [
+        "S06",
+        "S07",
+        "S20"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "IPO / Financing / Capital Cycle",
+      "status": "AI capital demand meets sovereign yield hurdle",
+      "summary": "Friday market analysis highlighted large forthcoming AI/data-center financing needs against a Treasury 10Y H.15 reference of 5.28%. Reports of privately projected company revenue must not substitute for filed earnings or cash-flow data. Debt service, contract enforceability and prepayment funding are key selection criteria.",
+      "paragraphs": [
+        "Friday market analysis highlighted large forthcoming AI/data-center financing needs against a Treasury 10Y H.15 reference of 5.28%. Reports of privately projected company revenue must not substitute for filed earnings or cash-flow data. Debt service, contract enforceability and prepayment funding are key selection criteria."
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S23"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Past 24H Major Breaking News",
+      "status": "October 8 US close and Friday Asia revisions",
+      "summary": "Inside the last approximately 24 hours, the US market confirmed Nasdaq -1.25%, Brent Thursday settlement +4.1%, and a $22bn Treasury 30Y auction with 2.54 bid-cover. Friday Asian oil retracement followed fresh political commentary. Different publication and observation times are explicitly retained rather than rewriting the prior US close.",
+      "paragraphs": [
+        "Inside the last approximately 24 hours, the US market confirmed Nasdaq -1.25%, Brent Thursday settlement +4.1%, and a $22bn Treasury 30Y auction with 2.54 bid-cover. Friday Asian oil retracement followed fresh political commentary. Different publication and observation times are explicitly retained rather than rewriting the prior US close."
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S05",
+        "S06"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "Integrated Market Impact",
+      "status": "Two channels must confirm a durable reversal",
+      "summary": "Risk-on relief requires lower Brent AND sustainably lower traded 10Y yields together with stronger Nasdaq breadth; a single well-covered auction or a one-session oil drop is insufficient. Bear confirmation needs elevated oil, rate pressure and funding-sensitive equity weakness; the immediate decision points are Friday US pre-open index implementation and Michigan sentiment.",
+      "paragraphs": [
+        "Risk-on relief requires lower Brent AND sustainably lower traded 10Y yields together with stronger Nasdaq breadth; a single well-covered auction or a one-session oil drop is insufficient. Bear confirmation needs elevated oil, rate pressure and funding-sensitive equity weakness; the immediate decision points are Friday US pre-open index implementation and Michigan sentiment."
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S05",
+        "S17"
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "Growth",
+      "current": "→ 就业韧性、信心待验证",
+      "yesterday": "→ 需求与招聘分化",
+      "change_reason": "就业初请下降而消费调查尚未公布，增长压力需要今晚同口径数据再判断。",
+      "evidence": "截至10月8日发布，首次申领失业救济197,000；密歇根9月终值48.1。",
+      "sources": [
+        "S16",
+        "S17"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "Inflation",
+      "current": "↑ 原油供应风险仍高",
+      "yesterday": "↑ 石油实物冲击",
+      "change_reason": "周四原油结算急涨，周五亚洲盘回落但港口和飓风影响仍可能持续。",
+      "evidence": "10月8日Brent $104.28/bbl(+4.1%)，10月9日亚洲时段回到约$102.91。",
+      "sources": [
+        "S07",
+        "S06"
+      ]
+    },
+    "rates_pressure": {
+      "label": "Rates",
+      "current": "↑ 长端利率高位",
+      "yesterday": "↑ 国债期限溢价压力",
+      "change_reason": "30年券拍卖吸收良好，但同口径H.15长端利率保持高位，实物能源价格仍约束实际收益率。",
+      "evidence": "30Y拍卖5.618%、bid-cover2.54；H.15 10Y5.28%、30Y5.67%。",
+      "sources": [
+        "S05",
+        "S04"
+      ]
+    },
+    "earnings_revision": {
+      "label": "Earnings",
+      "current": "↓ AI估值分化加深",
+      "yesterday": "→ 盈利质量选择",
+      "change_reason": "纳指跑输道指、AI融资问题受到审视，同时PepsiCo上调销售质量但下调EPS展望。",
+      "evidence": "Nasdaq10月8日-1.25%、Dow+0.10%；PEP全年core EPS增长预期降至1%–2%。",
+      "sources": [
+        "S02",
+        "S15"
+      ]
+    },
+    "liquidity": {
+      "label": "Liquidity",
+      "current": "→ 拍卖缓冲与融资拉锯",
+      "yesterday": "↓ 长端融资约束",
+      "change_reason": "间接投标者需求缓冲了一次发债压力，但大规模AI资本支出融资需求没有消失。",
+      "evidence": "10月8日30Y拍卖间接获配72.3%，国债10Y H.15仍在5.28%。",
+      "sources": [
+        "S05",
+        "S04"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "Geopolitical Risk",
+      "current": "↑ 航运与飓风风险",
+      "yesterday": "↑ 地缘能源压力",
+      "change_reason": "外交信号让油价回落，但美国湾区停产和海运保障仍需要实物证据确认。",
+      "evidence": "Reuters称美国墨西哥湾生产临时关闭超过60%；Friday Brent期货低于周四结算。",
+      "sources": [
+        "S06",
+        "S07"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base Case · volatile stabilization",
+      "probability": "Base-weighted; not a numerical prediction",
+      "trigger": "Friday Brent holds below Thursday settlement; longer US traded Treasury yields do not reaccelerate; cash equity breadth stays mixed.",
+      "expected_market_reaction": "Risk assets remain selective: energy volatility elevated, Nasdaq bounce fragile, defensives relatively resilient, no forced broad de-risking.",
+      "assets_most_sensitive": [
+        "Brent",
+        "UST 10Y",
+        "Nasdaq Composite",
+        "VIX"
+      ],
+      "what_confirms_it": "Oil remains softer, bid funding remains orderly and the consumer sentiment report does not revive near-term hike urgency.",
+      "what_invalidates_it": "An additional verified supply interruption or renewed yield surge despite lower oil raises the probability of the bear case."
+    },
+    "bull_case": {
+      "label": "Bull Case · inflation relief",
+      "probability": "Conditional upside alternative",
+      "trigger": "Shipping and Gulf output restoration are verified, crude retraces, and US long yields ease after Michigan sentiment without credit strain.",
+      "expected_market_reaction": "Duration-sensitive tech and selected consumer equities recover, dollar softens, volatility fades while oil-linked inflation premia compress.",
+      "assets_most_sensitive": [
+        "Nasdaq Composite",
+        "Brent",
+        "UST 30Y",
+        "Gold"
+      ],
+      "what_confirms_it": "Independent maritime/output indicators improve alongside falling oil and broad positive equity breadth rather than isolated futures strength.",
+      "what_invalidates_it": "Higher crude, worsening shipping claims or a 30Y yield selloff without offsetting growth would eliminate this relief chain."
+    },
+    "bear_case": {
+      "label": "Bear Case · two-shock tightening",
+      "probability": "Material risk scenario; not a base forecast",
+      "trigger": "New physical Gulf outage lifts Brent again while US long yields and corporate financing spreads widen and AI breadth weakens.",
+      "expected_market_reaction": "Equity duration de-rates, credit risk premium widens, emerging-market funding tightens; some energy exposures outperform on a relative basis.",
+      "assets_most_sensitive": [
+        "Brent",
+        "UST 10Y",
+        "Nasdaq Composite",
+        "DXY"
+      ],
+      "what_confirms_it": "Sustained oil advance and rate pressure coincide with broader Nasdaq and credit-market weakness through US cash trading.",
+      "what_invalidates_it": "Supply recovery plus lower yields and improved breadth breaks the two-shock tightening mechanism."
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-10-09 21:30 SGT",
+      "et": "2026-10-09 09:30 EDT",
+      "event": "US cash equity market opens after the October 8 Nasdaq/energy divergence and Friday index change",
+      "consensus": "No quantitative consensus",
+      "previous": "Oct 8: Nasdaq -1.25%, SPX -0.47%, Dow +0.10%",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S02",
+        "S18"
+      ]
+    },
+    {
+      "sgt": "2026-10-09 22:00 SGT",
+      "et": "2026-10-09 10:00 EDT",
+      "event": "University of Michigan Preliminary October 2026 Consumer Sentiment Index",
+      "consensus": "尚无法可靠确认（口径一致的高质量共识未核验）",
+      "previous": "September final 48.1",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S17"
+      ]
+    },
+    {
+      "sgt": "2026-10-09 US cash regular session",
+      "et": "2026-10-09 before 09:30 EDT constituent change",
+      "event": "Moderna (MRNA) replaces WBD in Nasdaq-100 before Friday US market open",
+      "consensus": "Official index change; execution flow unknown",
+      "previous": "WBD was a constituent in the pre-change index",
+      "actual": "待公布",
+      "importance": "★★★",
+      "sources": [
+        "S18"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "Oil risk premium reaccelerates as Hormuz security and Gulf output remain exposed",
+      "why_not_fully_priced": "Friday crude relief can reflect commentary rather than restored tanker flows or repaired Gulf oil production; supply and insurance outcomes remain time dependent.",
+      "trigger": "Verified renewed maritime attacks, another major production curtailment or Brent rally back through Thursday’s settlement.",
+      "transmission": "Physical supply / freight premium ↑ → inflation expectations ↑ → long yields ↑ → high-duration asset multiples ↓.",
+      "first_asset": "Brent / WTI",
+      "theme_id": "geopolitics_energy",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
+      "sources": [
+        "S06",
+        "S07"
+      ]
+    },
+    {
+      "risk": "AI investment financing exceeds independently demonstrated cash generation",
+      "why_not_fully_priced": "Revenue projections circulated in market reporting are not audited net cash receipts, and bond financing risk can change sharply when Treasury long yields remain above 5%.",
+      "trigger": "Disappointing funding terms, new debt spreads or further equity underperformance concentrated in suppliers and leveraged AI infrastructure.",
+      "transmission": "Financing / capex gap → funding costs and leverage ↑ → credit stress / semiconductor multiple compression → index breadth weakens.",
+      "first_asset": "Nasdaq Composite / UST 10Y",
+      "theme_id": "ai_earnings",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-08",
+      "last_seen": "2026-10-09",
+      "sources": [
+        "S02",
+        "S23"
+      ]
+    },
+    {
+      "risk": "Government bond duration shock returns if rate-sensitive debt supply overwhelms auction relief",
+      "why_not_fully_priced": "A well-bid 30-year auction is a one-time clearing result; H.15 rates remain high and French fiscal concerns can reprice global term premia independently.",
+      "trigger": "Long-end traded yields rise again after the auction while fiscal spreads widen and energy prices remain firm.",
+      "transmission": "Treasury/French sovereign risk premium → global discount rates / USD funding → risk appetite and capex project hurdles.",
+      "first_asset": "UST 30Y / French OAT",
+      "theme_id": "global_duration",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-07",
+      "last_seen": "2026-10-09",
+      "sources": [
+        "S04",
+        "S05",
+        "S19"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "University of Michigan preliminary October 2026 Consumer Sentiment",
+    "status": "Confirmed Upcoming / scheduled official release",
+    "date": "2026-10-09",
+    "et": "2026-10-09 10:00 EDT",
+    "sgt": "2026-10-09 22:00 SGT",
+    "consensus": "尚无法可靠确认",
+    "previous": "September final sentiment 48.1",
+    "actual": "待公布",
+    "why_it_matters": "At high oil and sovereign term premiums, a weak sentiment print could weaken cyclicals and yields; a firm print with inflation expectations rising could keep the Fed restrictive. The first price move is not the final causal interpretation.",
+    "first_market": "UST 2Y / UST 10Y / Nasdaq Composite / DXY",
+    "bull_interpretation": "A moderation in inflation expectations accompanied by softer Treasury yields and improving Nasdaq breadth is constructive even if headline confidence is weak.",
+    "bear_interpretation": "A sentiment/inflation combination that pushes yields higher while growth equities fall confirms the two-shock tightening regime.",
+    "watch_first": [
+      "UST 2Y and traded 10Y first 15–30 minutes: check whether inflation expectations, not just headline sentiment, reprice the policy and duration curve.",
+      "Nasdaq/S&P cash breadth versus Brent: verify whether a bond-yield move actually propagates to financing-sensitive equities while energy retraces.",
+      "DXY and VIX together: confirm broader financial-conditions direction rather than assuming that one risk-asset tick proves the event narrative."
+    ],
+    "sources": [
+      "S17",
+      "S04",
+      "S02"
+    ]
+  },
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S23"
+  ]
+}
