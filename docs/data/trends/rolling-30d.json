@@ -10,7 +10,7 @@
     "reconstructed_days": 0,
     "partial_days": 0,
     "verified_event_days": 0,
-    "historical_series_start": "2025-08-14"
+    "historical_series_start": "2025-08-15"
   },
   "methodology": {
     "reconstructed_daily": "Source-backed historical editorial reconstruction produced later; not a contemporaneously published assessment.",
@@ -2320,6 +2320,10 @@
         {
           "date": "2026-10-07",
           "value": 7801.77
+        },
+        {
+          "date": "2026-10-08",
+          "value": 7765.36
         }
       ]
     },
@@ -2408,6 +2412,10 @@
         {
           "date": "2026-10-06",
           "value": 15.01
+        },
+        {
+          "date": "2026-10-07",
+          "value": 15.08
         }
       ]
     },
@@ -2496,6 +2504,10 @@
         {
           "date": "2026-10-06",
           "value": 4.79
+        },
+        {
+          "date": "2026-10-07",
+          "value": 4.77
         }
       ]
     },
@@ -2584,6 +2596,10 @@
         {
           "date": "2026-10-06",
           "value": 5.27
+        },
+        {
+          "date": "2026-10-07",
+          "value": 5.28
         }
       ]
     },
@@ -2840,6 +2856,10 @@
         {
           "date": "2026-10-06",
           "value": 3.03
+        },
+        {
+          "date": "2026-10-07",
+          "value": 3.09
         }
       ]
     }
