@@ -515,7 +515,7 @@ function renderMasthead(report) {
   );
   if (report.reconstruction?.is_reconstructed) {
     $("#cutoff-block").appendChild(line("历史补档", `于 ${report.reconstruction.reconstructed_at} 重建；按原历史截止时间整理，并非当日发布。`));
-    (report.reconstruction.limitations || []).forEach(value => $("#cutoff-block").appendChild(line("证据范围", value)));
+    // Keep the header compact; detailed historical evidence limitations remain in canonical JSON and Markdown.
   } else if (report.is_morning_fallback) {
     $("#cutoff-block").appendChild(line("归档说明", "沿用早报原始截止时间，晚报缺失；未补入之后的事实。"));
   }
