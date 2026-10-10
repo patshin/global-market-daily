@@ -127,6 +127,25 @@ def validate_transaction(root: Path, gate: Gate) -> None:
         gate.require(script in transaction,
                      f"Transaction Quality-parity preflight is missing current Quality validator: {script}")
 
+    # The canonical ET cutoff includes HH:MM; schema and base publication gate
+    # must not silently accept incompatible timestamp shapes.
+    schema = load_json(root / "schemas/daily.schema.json", gate)
+    schema_properties = schema.get("properties", {})
+    for field, accepted, rejected in (
+        ("data_cutoff_sgt", "2026-10-10 09:15 SGT", "2026-10-10 09 SGT"),
+        ("data_cutoff_et", "2026-10-09 21:15 EDT", "2026-10-09 21 EDT"),
+    ):
+        pattern = schema_properties.get(field, {}).get("pattern", "")
+        try:
+            matcher = re.compile(pattern)
+        except re.error as exc:
+            gate.require(False, f"Invalid schema pattern for {field}: {exc}")
+            continue
+        gate.require(bool(matcher.fullmatch(accepted)),
+                     f"Schema {field} must accept the canonical timestamp with minutes")
+        gate.require(not matcher.fullmatch(rejected),
+                     f"Schema {field} must reject a timestamp without minutes")
+
     pages = read_text(root / ".github/workflows/pages.yml", gate)
     gate.require("actions: write" in pages,
                  "Pages workflow must be allowed to explicitly dispatch post-deploy health checks")
