@@ -33,8 +33,36 @@ function renderDayDetail(data,day,target){
   day.catalysts.forEach(c=>{const li=e("li");const line=e("div","lens-detail__catalyst-line");line.append(e("strong","",`${c.rank}. ${c.title}`),modeBadge(c.source_mode));li.append(line,e("p","",c.evidence));appendSource(li,c);ol.append(li)});
   target.append(ol);
 }
-function renderRibbon(data){const root=q("#lens-full-ribbon");root.style.setProperty("--cols",data.days.length);data.days.forEach(day=>{const b=e("button",`${day.regime_code} ${day.source_mode==="native_daily"?"native":""}`,day.date.slice(5).replace("-","/"));b.type="button";b.title=`${day.date} · ${day.regime_label}`;b.onclick=()=>renderDayDetail(data,day,q("#regime-detail"));root.append(b)});renderDayDetail(data,data.days.at(-1),q("#regime-detail"))}
-function renderSignals(data){const root=q("#signal-matrix");root.style.setProperty("--cols",data.days.length);root.append(e("div","signal-matrix__rowlabel","Signal / Date"));data.days.forEach(d=>root.append(e("div","",d.date.slice(5))));const rows=[['growth','Growth Proxy'],['inflation','Inflation'],['rates','Rates'],['earnings','Earnings / Growth'],['liquidity','Liquidity'],['geopolitics','Geopolitics']];rows.forEach(([key,label])=>{root.append(e("div","signal-matrix__rowlabel",label));data.days.forEach(d=>{const s=d.signals?.[key]||'→',cls=s==='↑'?'signal-cell--up':s==='↓'?'signal-cell--down':'signal-cell--flat';root.append(e("div",cls,s))})})}
+function renderRibbon(data){
+  const root=q("#lens-full-ribbon");root.style.setProperty("--cols",data.days.length);
+  data.days.forEach(day=>{
+    const provenance=day.source_mode==="native_daily"?"原生日报":day.source_mode==="reconstructed_daily"?"历史补档":"市场重建";
+    const code=day.regime_code||"unclassified";
+    const b=e("button",`${code} ${day.source_mode==="native_daily"?"native":""}`.trim(),day.date.slice(5).replace("-","/"));
+    b.type="button";
+    b.title=`${day.date} · ${day.regime_label} · ${provenance}${code==="unclassified"?" · 未归类，不代表中性或无风险":""}`;
+    b.setAttribute("aria-label",b.title);
+    b.onclick=()=>renderDayDetail(data,day,q("#regime-detail"));root.append(b);
+  });
+  renderDayDetail(data,data.days.at(-1),q("#regime-detail"));
+}
+function renderSignals(data){
+  const root=q("#signal-matrix");root.style.setProperty("--cols",data.days.length);
+  root.append(e("div","signal-matrix__rowlabel","Signal / Date"));
+  data.days.forEach(d=>root.append(e("div","",d.date.slice(5))));
+  const rows=[["growth","Growth Proxy"],["inflation","Inflation"],["rates","Rates"],["earnings","Earnings / Growth"],["liquidity","Liquidity"],["geopolitics","Geopolitics"]];
+  rows.forEach(([key,label])=>{
+    root.append(e("div","signal-matrix__rowlabel",label));
+    data.days.forEach(d=>{
+      const value=d.signals?.[key],direction=["↑","↓","→"].includes(value)?value:"?";
+      const cls=direction==="↑"?"signal-cell--up":direction==="↓"?"signal-cell--down":direction==="→"?"signal-cell--flat":"signal-cell--unknown";
+      const cell=e("div",cls,direction);
+      cell.title=`${d.date} · ${label}：${direction==="?"?"方向未判定；不是中性":direction}`;
+      cell.setAttribute("aria-label",cell.title);
+      root.append(cell);
+    });
+  });
+}
 function biasColor(bias){return bias==='risk_off'?'#8b1e2d':bias==='risk_on'?'#245f43':'#817c73'}
 function renderCatalystDetail(data,c,day){
   const target=q("#catalyst-detail");target.replaceChildren();

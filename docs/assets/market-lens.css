@@ -38,3 +38,19 @@
 
 /* Missing observations are visibly unknown, never neutral. */
 .regime-ribbon__cell--unavailable,.lens-full-ribbon .unavailable{background:repeating-linear-gradient(45deg,#e9e5dd,#e9e5dd 4px,#cbc6bd 4px,#cbc6bd 5px);color:#555}
+
+/* Explicitly distinguish editorial 'unclassified' and unknown arrows from neutral. */
+.regime-ribbon__cell--unclassified,.lens-full-ribbon button.unclassified{
+  background:repeating-linear-gradient(135deg,#eee5d9 0,#eee5d9 6px,#ac9e8c 6px,#ac9e8c 7px);
+  color:var(--ink);
+}
+.signal-cell--unknown{
+  background:repeating-linear-gradient(135deg,#f8f4ed 0,#f8f4ed 6px,#c6b8a3 6px,#c6b8a3 7px);
+  color:#625340;
+  font-weight:800;
+}
+.legend-unclassified::before{
+  content:"";display:inline-block;width:18px;height:12px;
+  background:repeating-linear-gradient(135deg,#eee5d9 0,#eee5d9 6px,#ac9e8c 6px,#ac9e8c 7px);
+  border:1px solid #ac9e8c;
+}

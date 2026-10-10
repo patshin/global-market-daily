@@ -25,6 +25,18 @@ assert builder.theme_from_text('Officials said the plan remains unchanged')!='ai
 assert builder.theme_from_text('AI服务器需求增长')=='ai_earnings'
 assert builder.theme_from_text('Stocks traded higher')!='us_china_trade_controls'
 assert builder.theme_from_text('Forward outlook toward rewards')!='geopolitics_energy'
+# Regime colors must follow explicit editor labels, not literal-only equality.
+for label, expected in [["Risk-off / reinflation plus dual-central-bank tightening","risk_off"],["Risk-off / synchronized-tightening watch","risk_off"],["Selective risk-on / rates remain restrictive","risk_on"],["Relief rally / BOJ event risk","risk_on"],["Weekend Event Risk / 5% yields versus oil relief","event_risk"],["Event Risk / Oil–Duration","event_risk"],["Neutral","neutral"],["历史重建 / 融资约束与需求韧性并存","unclassified"],["多重约束 / reconstructed conditional assessment","unclassified"]]:
+    actual=builder.regime_code_from_label(label)
+    assert actual==expected,(label,expected,actual)
+lens_css=(ROOT/'docs/assets/market-lens.css').read_text(encoding='utf-8')
+lens_js=(ROOT/'docs/assets/trends.js').read_text(encoding='utf-8')
+lens_html=(ROOT/'docs/trends.html').read_text(encoding='utf-8')
+assert '.regime-ribbon__cell--unclassified' in lens_css
+assert '.lens-full-ribbon button.unclassified' in lens_css
+assert '.signal-cell--unknown' in lens_css and 'signal-cell--unknown' in lens_js
+assert 'legend-unclassified' in lens_html and '下划线：原生日报' in lens_html
+
 with tempfile.TemporaryDirectory() as tmp:
     base=Path(tmp)
     builder.HISTORY_DIR=base/'history';builder.HISTORY_DIR.mkdir()
