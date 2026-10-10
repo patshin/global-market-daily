@@ -1,0 +1,912 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-10-10",
+  "edition": "Morning Official",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-10-10 09:15 SGT",
+  "data_cutoff_et": "2026-10-09 21:15 EDT",
+  "last_updated": "2026-10-10T09:15:27+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-10-10T09:00:00+08:00",
+    "started_at_sgt": "2026-10-10T09:00:41+08:00",
+    "research_cutoff_sgt": "2026-10-10T09:15:27+08:00",
+    "mode": "morning",
+    "recovery_note": "Normal scheduled Saturday report, using verified Friday US close and not fabricating a Saturday US cash session."
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": true
+  },
+  "publication_policy": "morning_official_2026-10-08",
+  "source_mode": "native_daily",
+  "sources_path": "data/sources/2026-10-10.json",
+  "comparison_basis": {
+    "previous_official_date": "2026-10-09",
+    "note": "Compared with previous official edition actually researched through October 9 15:34 SGT, before Friday US cash close and Michigan release."
+  },
+  "thesis": "截至2026-10-10 09:15 SGT，美股10月9日反弹与居民信心下降、能源通胀并存：S&P 500涨0.59%至7,811.54，但密歇根大学10月消费者信心初值降至46.3，未来一年通胀预期升至4.7%；Brent在美国墨西哥湾飓风停产与霍尔木兹风险下收于104.72美元。美债10年期约5.24%的高折现率仍约束高资本开支资产，10月12日美股开市而美债休市，需分阶段验证反弹广度及周二长端收益率。",
+  "dominant_narrative": "本期为2026年10月10日周六北京时间的唯一Morning Official，采用10月9日16:00 EDT周五美国现金股票收盘，没有虚构周六美国行情。已核实S&P 500 7,811.54（+0.59%）、Nasdaq 27,366.17（+0.64%），但Russell 2000整周仍跌0.9%。密歇根大学10月消费者信心46.3低于9月48.1，同时1年通胀预期4.7%、5年3.5%，构成“增长↓、物价预期↑”矛盾。油价先因美伊外交表态回落，又在飓风导致美国墨西哥湾离岸生产大面积关闭时回升，December Brent收于104.72美元。Delta最新季报调整后收入176亿美元、调整后EPS 1.72美元，但将FY调整后EPS指引从6.50–7.50美元降至5.10–5.60美元，明确展示能源成本向利润转换的压力。加拿大9月就业-68,300人、欧中混动汽车贸易初步理解、SpaceX约80亿美元频谱协议分别带来增长、政策与电信竞争差异化冲击。周一美股与美国债券现金市场交易日错位，应先观察现货股票广度和原油实物供应，待债市恢复后再确认折现率是否缓解。",
+  "market_regime": {
+    "growth": "↓ 10月密歇根消费者信心46.3、加拿大就业-68,300；美股上涨不等于需求重新加速。",
+    "inflation": "↑ Michigan一年期预期通胀4.7%、五年期3.5%，Brent 104.72美元继续施压成本。",
+    "rates": "→ 十年期美债市场报价约5.24%，不假设与Fed H.15恒定期限收益率同基准。",
+    "earnings": "↓ Delta全年调整后EPS预测下修至5.10–5.60美元，成本挤压抵消名义收入增长。",
+    "liquidity": "→ 截至10月7日全球货币基金一周净流入1538.1亿美元，现金偏好仍明显。",
+    "geopolitics": "↑ 美伊外交信息未恢复航运，飓风导致美国墨西哥湾离岸原油临时停产。",
+    "overall": "Event Risk / Oil–Inflation Expectations and Duration"
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,811.54",
+      "change_1d": "+0.59%",
+      "change_5d": "+1.2%",
+      "signal": "↑ US equity rebound",
+      "driver": "AP final Friday US cash close; high-duration constraint remains",
+      "status": "Confirmed US cash close",
+      "as_of": "2026-10-09 16:00 EDT",
+      "sources": [
+        "S01",
+        "S17"
+      ]
+    },
+    {
+      "asset": "Dow Jones Industrial Average",
+      "level": "51,654.95",
+      "change_1d": "+0.83%",
+      "change_5d": "+0.9%",
+      "signal": "↑ Cyclical bounce",
+      "driver": "AP verified Oct9 cash close and full-week return",
+      "status": "Confirmed US cash close",
+      "as_of": "2026-10-09 16:00 EDT",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "27,366.17",
+      "change_1d": "+0.64%",
+      "change_5d": "+0.6%",
+      "signal": "↑ Growth-stock rebound",
+      "driver": "Friday AI/high-growth multiples regained some ground after Oct8 weakness",
+      "status": "Confirmed US cash close",
+      "as_of": "2026-10-09 16:00 EDT",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,806.98",
+      "change_1d": "+0.46%",
+      "change_5d": "-0.9%",
+      "signal": "→ Small-cap relative lag",
+      "driver": "Friday advance contrasts with negative weekly return; breadth must confirm",
+      "status": "Confirmed US cash close",
+      "as_of": "2026-10-09 16:00 EDT",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "Brent futures (December)",
+      "level": "$104.72/bbl",
+      "change_1d": "+0.42%",
+      "change_5d": "+2.4%",
+      "signal": "↑ Oil supply premium",
+      "driver": "December Brent settlement, US Gulf shut-ins and Hormuz risks",
+      "status": "Confirmed futures settlement",
+      "as_of": "2026-10-09 US oil settlement EDT",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "asset": "WTI futures (November)",
+      "level": "$91.85/bbl",
+      "change_1d": "+0.39%",
+      "change_5d": "+0.8%",
+      "signal": "↑ Gulf storm risk",
+      "driver": "November WTI settlement after early intraday diplomacy relief",
+      "status": "Confirmed futures settlement",
+      "as_of": "2026-10-09 US oil settlement EDT",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "asset": "DXY",
+      "level": "102.25",
+      "change_1d": "+0.13%",
+      "change_5d": "~+0.3%",
+      "signal": "↑ Dollar rate support",
+      "driver": "Reuters US afternoon spot index snapshot and weekly change",
+      "status": "Reuters indicative, not official close",
+      "as_of": "2026-10-09 afternoon EDT",
+      "sources": [
+        "S10"
+      ]
+    },
+    {
+      "asset": "EUR/USD",
+      "level": "1.1198",
+      "change_1d": "-0.10%",
+      "change_5d": "~-0.5%",
+      "signal": "↓ Euro fiscal sensitivity",
+      "driver": "French public-debt pressure offsets Friday market stability",
+      "status": "Reuters indicative FX snapshot",
+      "as_of": "2026-10-09 afternoon EDT",
+      "sources": [
+        "S10"
+      ]
+    },
+    {
+      "asset": "USD/JPY",
+      "level": "158.25",
+      "change_1d": "+0.25%",
+      "change_5d": "~+0.2%",
+      "signal": "↑ Yen weakness",
+      "driver": "Reuters Friday dollar/yen snapshot; yen about 0.2% softer weekly",
+      "status": "Reuters indicative FX snapshot",
+      "as_of": "2026-10-09 afternoon EDT",
+      "sources": [
+        "S10"
+      ]
+    },
+    {
+      "asset": "Spot gold",
+      "level": "$4,194.36/oz",
+      "change_1d": "+1.5%",
+      "change_5d": "~+1.3%",
+      "signal": "↑ Defensive demand",
+      "driver": "Reuters spot gold 15:29 EDT snapshot; not a futures settlement",
+      "status": "Reuters intraday spot quote",
+      "as_of": "2026-10-09 15:29 EDT",
+      "sources": [
+        "S11"
+      ]
+    },
+    {
+      "asset": "USD/CAD",
+      "level": "1.4275",
+      "change_1d": "~+0.4%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ CAD labor shock",
+      "driver": "Reuters afternoon 1.4275 after Canada -68300 jobs; matched weekly basis missing",
+      "status": "Reuters indicative FX snapshot",
+      "as_of": "2026-10-09 afternoon EDT",
+      "sources": [
+        "S08",
+        "S09"
+      ]
+    },
+    {
+      "asset": "US Treasury 10Y yield",
+      "level": "~5.24%",
+      "change_1d": "尚无法可靠确认",
+      "change_5d": "尚无法可靠确认",
+      "signal": "→ Elevated duration cost",
+      "driver": "AP rounded Friday benchmark quotation, exact same-series daily/week changes unverified",
+      "status": "AP approximate Friday yield, not H.15 fix",
+      "as_of": "2026-10-09 late US EDT",
+      "sources": [
+        "S17"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "TARGET_MET_WITH_EXPLICIT_GAPS",
+    "asset_count": 12,
+    "level_coverage": {
+      "count": 12,
+      "total": 12,
+      "pct": 100,
+      "target_pct": 90
+    },
+    "change_1d_coverage": {
+      "count": 11,
+      "total": 12,
+      "pct": 91.7,
+      "target_pct": 90
+    },
+    "change_5d_coverage": {
+      "count": 10,
+      "total": 12,
+      "pct": 83.3,
+      "target_pct": 80
+    },
+    "explicit_gaps": [
+      "USD/CAD exact same-hour weekly return cannot be independently established.",
+      "US10Y same-basis one-day and weekly moves cannot be inferred from a rounded AP snapshot."
+    ],
+    "policy": "Saturday SGT uses Friday US cash close. Futures use Friday settlement and specific contract months; FX/spot gold are timestamped indicative quotes; UST10 is AP approximate, not Fed CMT."
+  },
+  "what_changed": [
+    {
+      "yesterday": "Oct9 official cutoff 15:34 SGT preceded the US Friday stock-market close.",
+      "today": "Oct9 S&P 500 +0.59% to 7811.54 and Nasdaq +0.64% to 27366.17; Russell 2000 still -0.9% week.",
+      "why_it_matters": "Selective market relief must be checked against small-cap breadth and long-rate persistence, not assumed to imply faster growth.",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "yesterday": "October Michigan preliminary survey remained an upcoming event before prior cutoff.",
+      "today": "October Michigan sentiment actually printed 46.3 from 48.1 with one-year inflation expectations 4.7%.",
+      "why_it_matters": "Growth confidence and price expectations diverged, creating conflicting policy and term-premium signals.",
+      "sources": [
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "yesterday": "Friday Asia Brent near 102.91 reflected preliminary diplomatic relief, not final settlement.",
+      "today": "December Brent finished at 104.72 (+0.42%), November WTI 91.85 (+0.39%) as Gulf storm outages expanded.",
+      "why_it_matters": "Real offshore production losses overturned the intraday relief interpretation and sustain transport-cost inflation risks.",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "yesterday": "Delta's new quarterly report was not included in the Oct9 morning-cutoff account.",
+      "today": "Delta reported adjusted EPS $1.72 but lowered FY2026 adjusted EPS guidance to $5.10–$5.60 from $6.50–$7.50.",
+      "why_it_matters": "This issuer provides observable oil-to-corporate-profit transmission despite solid top-line travel demand.",
+      "sources": [
+        "S06",
+        "S07"
+      ]
+    },
+    {
+      "yesterday": "The new Canada employment release and SpaceX spectrum agreement were not yet incorporated.",
+      "today": "Canada lost 68,300 jobs in September; SpaceX outlined an ~$8bn spectrum transaction pending FCC approval.",
+      "why_it_matters": "Growth deterioration and telecom competition are separate shocks and must not be mistaken for deployed transaction cash.",
+      "sources": [
+        "S08",
+        "S15",
+        "S16"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "Oct 9 oil settlement $104.72: Gulf hurricane shut-ins withstand Iran diplomacy relief",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-09 US crude settlement EDT",
+      "event_time_sgt": "2026-10-10 early SGT",
+      "what_happened": "Brent December ended at $104.72 (+0.42%) and WTI November at $91.85 (+0.39%) on Oct9 after early declines; Gulf offshore crude production shutdowns surpassed 70% as Hurricane Isaias approached.",
+      "what_changed": "The final settlements reversed early diplomacy-led oil declines and leave Hormuz transit and offshore production constraints unverified as restored.",
+      "why_it_matters": "Higher oil and fuel premiums directly erode household real income and airline margins while feeding inflation expectations and longer-duration discount rates.",
+      "transmission": "Physical Gulf outage and shipping → oil/refined fuel premiums → household inflation expectations → bond yields → risk equity multiples.",
+      "affected_assets": [
+        "Brent",
+        "WTI",
+        "UST 10Y",
+        "US airlines"
+      ],
+      "direction": "Oil supply-driven inflation pressure",
+      "importance": "★★★★★",
+      "confirmation": "Verified restoration in U.S. Gulf offshore production and shipping with sustained lower Brent and Treasury yields confirms real easing.",
+      "invalidation": "Fresh audited Gulf outage extension, verified shipping attacks or oil-price reacceleration rejects near-term supply normalization.",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "Oct 9 Michigan confidence 46.3 with one-year inflation expectations 4.7%",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-09 10:00 EDT",
+      "event_time_sgt": "2026-10-09 22:00 SGT",
+      "what_happened": "The University of Michigan October preliminary sentiment index fell to 46.3 from September 48.1; current conditions were 44.7 while one-year inflation expectations rose to 4.7% and five-year to 3.5%.",
+      "what_changed": "The earlier pending survey became an actual data release showing weaker household confidence alongside rising expected inflation at both horizons.",
+      "why_it_matters": "Growth concerns cannot be read as automatically dovish when anticipated prices remain sticky, so US yields and rate-sensitive equities face offsetting forces.",
+      "transmission": "Energy/real income stress → worse sentiment plus higher expected CPI → uncertainty in Fed reaction → rates and credit/tech multiples.",
+      "affected_assets": [
+        "UST 10Y",
+        "DXY",
+        "Nasdaq Composite",
+        "Russell 2000"
+      ],
+      "direction": "Growth↓ / inflation expectations↑",
+      "importance": "★★★★★",
+      "confirmation": "Follow-up inflation/consumption prints and matched US Treasury yields can show whether weaker demand outweighs price expectations.",
+      "invalidation": "New surveys contradict rising inflation expectations and reveal clear disinflation despite energy pressure.",
+      "sources": [
+        "S04",
+        "S05"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "Oct 9 Delta cuts adjusted FY2026 EPS guidance to $5.10–$5.60 despite growing revenue",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-09 06:30 EDT",
+      "event_time_sgt": "2026-10-09 18:30 SGT",
+      "what_happened": "Delta reported September-quarter GAAP revenue $20.2bn, adjusted revenue $17.6bn and adjusted EPS $1.72; FY adjusted EPS was cut to $5.10–$5.60 versus prior $6.50–$7.50 in the high fuel-cost environment.",
+      "what_changed": "The airline's new primary results quantify the margin difference between nominal revenue expansion and significantly weaker earnings outlook.",
+      "why_it_matters": "The roughly $6bn increased annual fuel burden highlights tangible commodity inflation transmission to corporate cash generation and carrier credit quality.",
+      "transmission": "Jet fuel↑ → airline adjusted margins and free cash flow↓ → EPS revisions↓ → cyclical consumer and credit risk premium↑.",
+      "affected_assets": [
+        "Delta Air Lines",
+        "US airlines",
+        "Brent",
+        "consumer discretionary"
+      ],
+      "direction": "Earnings quality pressure",
+      "importance": "★★★★",
+      "confirmation": "Documented jet fuel retreat together with improved airline cash flow and maintained travel yields confirms recovery.",
+      "invalidation": "Another issuer profit downgrade, higher fuel, or worsening quarterly cash conversion invalidates margin resilience.",
+      "sources": [
+        "S06",
+        "S07"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top 3 Market Catalysts",
+      "status": "Energy, Michigan and Delta: competing Friday drivers",
+      "summary": "Friday settlement, a released consumer survey and an issuer earnings revision establish cross-asset causality: oil-driven inflation expectations and corporate cost pressure remain after a broad equity bounce.",
+      "paragraphs": [
+        "Friday settlement, a released consumer survey and an issuer earnings revision establish cross-asset causality: oil-driven inflation expectations and corporate cost pressure remain after a broad equity bounce. Therefore, evaluate the observable asset and cash-flow transmission before extrapolating a Friday snapshot into Monday's thinner-liquidity market."
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S04",
+        "S06"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings",
+      "status": "Delta 2026Q3 release; US bank earnings next week",
+      "summary": "Delta reported $20.2bn GAAP revenue, $17.6bn adjusted revenue and adjusted EPS $1.72; FY adjusted EPS guidance fell to $5.10–$5.60 from $6.50–$7.50 as fuel costs worsened. Bank results begin Oct13, beyond immediate 72-hour window.",
+      "paragraphs": [
+        "Delta reported $20.2bn GAAP revenue, $17.6bn adjusted revenue and adjusted EPS $1.72; FY adjusted EPS guidance fell to $5.10–$5.60 from $6.50–$7.50 as fuel costs worsened. Bank results begin Oct13, beyond immediate 72-hour window. Therefore, evaluate the observable asset and cash-flow transmission before extrapolating a Friday snapshot into Monday's thinner-liquidity market."
+      ],
+      "tables": [],
+      "sources": [
+        "S06",
+        "S07",
+        "S19"
+      ],
+      "reported": [
+        {
+          "id": "DAL-2026Q3",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "period": "September quarter 2026",
+          "status": "Reported",
+          "release_date": "2026-10-09",
+          "release_time_et": "2026-10-09 06:30 EDT",
+          "release_time_sgt": "2026-10-09 18:30 SGT",
+          "market_session": "Pre-US-cash market",
+          "key_takeaway": "Strong adjusted revenue but lower full-year profit guidance from sharply higher fuel costs.",
+          "metrics": [
+            {
+              "metric": "GAAP revenue",
+              "actual": "$20.2bn",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "September quarter 2026 compared with prior period as identified by issuer",
+              "surprise": "Numerical consensus not established; no beat/miss inferred",
+              "notes": "Issuer GAAP definition"
+            },
+            {
+              "metric": "Adjusted revenue",
+              "actual": "$17.6bn",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "September quarter 2026 compared with prior period as identified by issuer",
+              "surprise": "Numerical consensus not established; no beat/miss inferred",
+              "notes": "Non-GAAP; about +16% y/y"
+            },
+            {
+              "metric": "Adjusted EPS",
+              "actual": "$1.72",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "September quarter 2026 compared with prior period as identified by issuer",
+              "surprise": "Numerical consensus not established; no beat/miss inferred",
+              "notes": "Issuer adjusted earnings"
+            },
+            {
+              "metric": "GAAP EPS",
+              "actual": "$1.15",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "September quarter 2026 compared with prior period as identified by issuer",
+              "surprise": "Numerical consensus not established; no beat/miss inferred",
+              "notes": "Not equal to adjusted EPS"
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "FY2026 adjusted EPS",
+              "current": "$5.10–$5.60",
+              "previous_or_consensus": "$6.50–$7.50",
+              "change": "Down",
+              "interpretation": "About $6bn extra fuel expense offsets robust demand."
+            },
+            {
+              "metric": "FY2026 free cash flow",
+              "current": "About $2.5bn",
+              "previous_or_consensus": "Prior guidance not independently confirmed",
+              "change": "Revised issuer outlook",
+              "interpretation": "Real cash conversion must be tested separately from adjusted revenue."
+            }
+          ],
+          "market_reaction": {
+            "session": "Oct9 US cash",
+            "move": "尚无法可靠确认",
+            "as_of": "2026-10-09 EDT; exact DAL cash close change not independently verified"
+          },
+          "one_offs": [
+            "Delta owns refinery exposure and presents non-GAAP reconciling items; no unverified one-off gain inserted."
+          ],
+          "read_through": [
+            {
+              "asset": "US airlines",
+              "implication": "Fuel costs can lower adjusted guidance despite revenue growth."
+            },
+            {
+              "asset": "US consumer discretionary",
+              "implication": "Strong premium travel revenue is not a proxy for broad consumer real income."
+            }
+          ],
+          "sources": [
+            "S06",
+            "S07"
+          ]
+        }
+      ],
+      "upcoming_72h": []
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "U.S. Economic Data",
+      "status": "US October sentiment falls to 46.3",
+      "summary": "Released Oct9 Michigan preliminary consumer sentiment fell to 46.3 versus September 48.1, while current conditions declined to 44.7 and inflation expectations rose at both near and long horizons.",
+      "paragraphs": [
+        "Released Oct9 Michigan preliminary consumer sentiment fell to 46.3 versus September 48.1, while current conditions declined to 44.7 and inflation expectations rose at both near and long horizons. Therefore, evaluate the observable asset and cash-flow transmission before extrapolating a Friday snapshot into Monday's thinner-liquidity market."
+      ],
+      "tables": [],
+      "sources": [
+        "S04",
+        "S05"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Global Central Banks",
+      "status": "Fed must balance soft confidence against 4.7% expected inflation",
+      "summary": "Reuters Friday FedWatch indicated near 19.4% October hike odds and 85.8% December hike odds in that snapshot, not a central-bank promise; Canada weak labor shifted BoC tightening expectations. UST10 finished around 5.24% by AP.",
+      "paragraphs": [
+        "Reuters Friday FedWatch indicated near 19.4% October hike odds and 85.8% December hike odds in that snapshot, not a central-bank promise; Canada weak labor shifted BoC tightening expectations. UST10 finished around 5.24% by AP. Therefore, evaluate the observable asset and cash-flow transmission before extrapolating a Friday snapshot into Monday's thinner-liquidity market."
+      ],
+      "tables": [],
+      "sources": [
+        "S10",
+        "S08",
+        "S17"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Major International Events",
+      "status": "US-Iran diplomatic statements do not reopen Hormuz",
+      "summary": "Statements about productive Iran talks and no pre-election attack cannot establish physical tanker access or insurance normalization, while Hurricane Isaias forced US Gulf offshore production shut-ins.",
+      "paragraphs": [
+        "Statements about productive Iran talks and no pre-election attack cannot establish physical tanker access or insurance normalization, while Hurricane Isaias forced US Gulf offshore production shut-ins. Therefore, evaluate the observable asset and cash-flow transmission before extrapolating a Friday snapshot into Monday's thinner-liquidity market."
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "China, Japan, Europe and Canada Policy",
+      "status": "China–EU hybrid trade understanding remains preliminary",
+      "summary": "EU and China announced a framework over hybrid vehicle exports, market access and rare earth licensing, with EU approvals pending; Canada lost 68,300 jobs, French fiscal concerns weakened EUR and USDJPY was near 158.25, with no new BoJ intervention verified.",
+      "paragraphs": [
+        "EU and China announced a framework over hybrid vehicle exports, market access and rare earth licensing, with EU approvals pending; Canada lost 68,300 jobs, French fiscal concerns weakened EUR and USDJPY was near 158.25, with no new BoJ intervention verified. Therefore, evaluate the observable asset and cash-flow transmission before extrapolating a Friday snapshot into Monday's thinner-liquidity market."
+      ],
+      "tables": [],
+      "sources": [
+        "S12",
+        "S13",
+        "S08",
+        "S10"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "MSCI / FTSE / S&P / Nasdaq Index Changes",
+      "status": "Nasdaq October 9 constituent change",
+      "summary": "Nasdaq had announced Moderna joining the Nasdaq-100 effective before Oct9 cash open; exact passive ETF demand, forced purchase notional or additional index turnover were not verified, so the announcement is not called Friday inflow.",
+      "paragraphs": [
+        "Nasdaq had announced Moderna joining the Nasdaq-100 effective before Oct9 cash open; exact passive ETF demand, forced purchase notional or additional index turnover were not verified, so the announcement is not called Friday inflow. Therefore, evaluate the observable asset and cash-flow transmission before extrapolating a Friday snapshot into Monday's thinner-liquidity market."
+      ],
+      "tables": [],
+      "sources": [
+        "S20"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "Pension / Month-End / Quarter-End Flows",
+      "status": "Global cash fund inflows $153.81bn in week through Oct7",
+      "summary": "Reuters reported global money-market funds took in $153.81bn in the week through October 7 while global bond funds gained about $26.03bn and US equity funds lost $5.11bn, which are lagged weekly flows and not Friday session trading.",
+      "paragraphs": [
+        "Reuters reported global money-market funds took in $153.81bn in the week through October 7 while global bond funds gained about $26.03bn and US equity funds lost $5.11bn, which are lagged weekly flows and not Friday session trading. Therefore, evaluate the observable asset and cash-flow transmission before extrapolating a Friday snapshot into Monday's thinner-liquidity market."
+      ],
+      "tables": [],
+      "sources": [
+        "S14"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF Rebalance / Index Reconstruction",
+      "status": "No independently verified material fresh ETF rebalance",
+      "summary": "No primary verified October 9 large ETF creation/redemption notional was established for this issue. Nasdaq announced a constituent change but neither holdings turnover nor passive net share purchases can responsibly be inferred from that event.",
+      "paragraphs": [
+        "No primary verified October 9 large ETF creation/redemption notional was established for this issue. Nasdaq announced a constituent change but neither holdings turnover nor passive net share purchases can responsibly be inferred from that event. Therefore, evaluate the observable asset and cash-flow transmission before extrapolating a Friday snapshot into Monday's thinner-liquidity market."
+      ],
+      "tables": [],
+      "sources": [
+        "S20",
+        "S14"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "Options Expiry",
+      "status": "Unverified dealer positioning not treated as evidence",
+      "summary": "No auditable Friday-specific gamma flip, 0DTE dealer inventory, strike pin or max-pain estimates were independently verified; a Friday equity bounce cannot be assigned to invented dealer hedging. Monitor actual option volumes only after timestamped feeds.",
+      "paragraphs": [
+        "No auditable Friday-specific gamma flip, 0DTE dealer inventory, strike pin or max-pain estimates were independently verified; a Friday equity bounce cannot be assigned to invented dealer hedging. Monitor actual option volumes only after timestamped feeds. Therefore, evaluate the observable asset and cash-flow transmission before extrapolating a Friday snapshot into Monday's thinner-liquidity market."
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S18"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "U.S. Treasury Auctions",
+      "status": "10Y ~5.24% Friday; US Treasury cash closed Monday",
+      "summary": "AP reported benchmark 10-year yields near 5.24% Friday late US market hours; exact official-matched daily and weekly changes were not verified. NYSE/Nasdaq open on October 12 while cash bond market observes the federal holiday.",
+      "paragraphs": [
+        "AP reported benchmark 10-year yields near 5.24% Friday late US market hours; exact official-matched daily and weekly changes were not verified. NYSE/Nasdaq open on October 12 while cash bond market observes the federal holiday. Therefore, evaluate the observable asset and cash-flow transmission before extrapolating a Friday snapshot into Monday's thinner-liquidity market."
+      ],
+      "tables": [],
+      "sources": [
+        "S17",
+        "S18"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Oil / OPEC / Commodities",
+      "status": "Brent $104.72, WTI $91.85, gold spot near $4194",
+      "summary": "Friday December Brent settled at $104.72 (+0.42%), November WTI $91.85 (+0.39%); Reuters spot gold at 15:29 EDT reached $4,194.36 (+1.5%) with a separate instrument and snapshot time. Supply → inflation → rates → equity discounting remains the chain.",
+      "paragraphs": [
+        "Friday December Brent settled at $104.72 (+0.42%), November WTI $91.85 (+0.39%); Reuters spot gold at 15:29 EDT reached $4,194.36 (+1.5%) with a separate instrument and snapshot time. Supply → inflation → rates → equity discounting remains the chain. Therefore, evaluate the observable asset and cash-flow transmission before extrapolating a Friday snapshot into Monday's thinner-liquidity market."
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S11"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "IPO / Financing / Capital Cycle",
+      "status": "SpaceX ~$8bn 800MHz spectrum pact still conditional",
+      "summary": "Reuters said SpaceX planned up to 14MHz low-band 800MHz spectrum purchase for about $8bn subject to FCC transfer approval; U.S./EU telecom incumbents sold off on Starlink Mobile risk. Announced transaction value is neither paid capital nor deployed infrastructure.",
+      "paragraphs": [
+        "Reuters said SpaceX planned up to 14MHz low-band 800MHz spectrum purchase for about $8bn subject to FCC transfer approval; U.S./EU telecom incumbents sold off on Starlink Mobile risk. Announced transaction value is neither paid capital nor deployed infrastructure. Therefore, evaluate the observable asset and cash-flow transmission before extrapolating a Friday snapshot into Monday's thinner-liquidity market."
+      ],
+      "tables": [],
+      "sources": [
+        "S15",
+        "S16"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Past 24H Major Breaking News",
+      "status": "Friday released macro, earnings, oil and preliminary trade deals",
+      "summary": "Within the latest fully observed US trading session Michigan Oct confidence printed 46.3, Delta published a margin-sensitive FY guidance reduction, crude settled above earlier intraday lows, and Chinese/EU officials announced a provisional trade framework.",
+      "paragraphs": [
+        "Within the latest fully observed US trading session Michigan Oct confidence printed 46.3, Delta published a margin-sensitive FY guidance reduction, crude settled above earlier intraday lows, and Chinese/EU officials announced a provisional trade framework. Therefore, evaluate the observable asset and cash-flow transmission before extrapolating a Friday snapshot into Monday's thinner-liquidity market."
+      ],
+      "tables": [],
+      "sources": [
+        "S04",
+        "S06",
+        "S02",
+        "S12",
+        "S13"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "Integrated Market Impact",
+      "status": "Selective equity relief vs sticky oil and duration constraints",
+      "summary": "Oct9 S&P 500 +0.59% contrasted with Russell 2000 -0.9% weekly, 10Y yields ~5.24%, Brent $104.72 and sentiment 46.3. A bull case requires verified supply relief and Treasury easing, while a bear case couples physical outages with margin downgrades.",
+      "paragraphs": [
+        "Oct9 S&P 500 +0.59% contrasted with Russell 2000 -0.9% weekly, 10Y yields ~5.24%, Brent $104.72 and sentiment 46.3. A bull case requires verified supply relief and Treasury easing, while a bear case couples physical outages with margin downgrades. Therefore, evaluate the observable asset and cash-flow transmission before extrapolating a Friday snapshot into Monday's thinner-liquidity market."
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S04",
+        "S17"
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "Growth Impulse",
+      "current": "↓ 消费与加拿大就业承压",
+      "yesterday": "→ 增长分化",
+      "change_reason": "Michigan sentiment and Canada employment evidence signal weaker demand even as US cash equities rallied.",
+      "evidence": "US sentiment 46.3 vs 48.1; Canada jobs -68,300 and unemployment 6.5%.",
+      "sources": [
+        "S04",
+        "S08"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "Inflation Impulse",
+      "current": "↑ 能源与预期偏高",
+      "yesterday": "↑ 油价压力",
+      "change_reason": "Oil settlement above early Friday lows and rising inflation-expectations horizons preserve sticky price pressure.",
+      "evidence": "Brent $104.72; 1Y expected inflation 4.7%, 5Y 3.5%.",
+      "sources": [
+        "S02",
+        "S04"
+      ]
+    },
+    "rates_pressure": {
+      "label": "Rates Pressure",
+      "current": "→ 10Y约5.24%",
+      "yesterday": "↑ 长端高位",
+      "change_reason": "The high long Treasury yield is unresolved by Friday stocks and cannot be synchronously tested during Monday's US cash-bond holiday.",
+      "evidence": "AP UST10 market indication ~5.24%; bonds closed Oct12.",
+      "sources": [
+        "S17",
+        "S18"
+      ]
+    },
+    "earnings_revision": {
+      "label": "Earnings Revisions",
+      "current": "↓ 航空利润指引下修",
+      "yesterday": "→ 行业分化",
+      "change_reason": "Energy fuel-cost drag is visible directly in Delta annual adjusted EPS forecast revisions.",
+      "evidence": "Delta FY adjusted EPS $5.10–$5.60 down from $6.50–$7.50.",
+      "sources": [
+        "S06",
+        "S07"
+      ]
+    },
+    "liquidity": {
+      "label": "Liquidity",
+      "current": "→ 货币基金净流入",
+      "yesterday": "→ 防御性现金",
+      "change_reason": "Large lagged global money-market inflows coexist with Friday equities; no same-day flow attribution is claimed.",
+      "evidence": "Reuters week through Oct7 cash fund inflows $153.81bn.",
+      "sources": [
+        "S14"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "Geopolitical Risk",
+      "current": "↑ 飓风与海峡双风险",
+      "yesterday": "↑ 供应约束",
+      "change_reason": "Iran rhetoric and physical US Gulf shutdowns are distinct and the latter helped reverse intraday oil relief.",
+      "evidence": "Over 70% US Gulf offshore shut-in Friday; Brent Friday settlement $104.72.",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base: selective rebound",
+      "probability": "Conditional scenario weight; no numeric probability asserted",
+      "trigger": "Oil stays high but not accelerating; Monday stocks trade without US bonds.",
+      "expected_market_reaction": "Selective equities and oil-sensitive airline/telecom sectors diverge; long-duration repricing waits for Treasury reopening.",
+      "assets_most_sensitive": [
+        "S&P 500",
+        "Brent",
+        "UST10Y"
+      ],
+      "what_confirms_it": "Positive cash breadth Monday and stable Tuesday long yields.",
+      "what_invalidates_it": "Another verified Gulf physical outage and broad equity weakness."
+    },
+    "bull_case": {
+      "label": "Bull: physical supply restoration",
+      "probability": "Conditional scenario weight; no numeric probability asserted",
+      "trigger": "Verified US Gulf production restart and restored ship movements lower oil settlements.",
+      "expected_market_reaction": "Lower inflation premium and easing Tuesday yields support consumer cash margins and broader equity participation.",
+      "assets_most_sensitive": [
+        "Brent",
+        "Russell 2000",
+        "Nasdaq Composite"
+      ],
+      "what_confirms_it": "Verified restored output with oil and cash yields both declining.",
+      "what_invalidates_it": "Fresh vessel disruptions or rising yields despite crude declines."
+    },
+    "bear_case": {
+      "label": "Bear: stagflation feedback",
+      "probability": "Conditional scenario weight; no numeric probability asserted",
+      "trigger": "Production outages persist and inflation expectations remain elevated despite weaker demand.",
+      "expected_market_reaction": "Airline and high-capex equity earnings compress while Treasury and credit funding stay restrictive.",
+      "assets_most_sensitive": [
+        "Brent",
+        "UST10Y",
+        "US airlines"
+      ],
+      "what_confirms_it": "Oil and yield reaccelerate as guidance falls and equity breadth narrows.",
+      "what_invalidates_it": "Sustained oil price weakness, matched yield easing and improved guidance."
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-10-12 21:30 SGT",
+      "et": "2026-10-12 09:30 EDT",
+      "event": "NYSE and Nasdaq Monday equity reopening while US cash Treasuries remain closed",
+      "consensus": "No numeric consensus; holiday liquidity divergence",
+      "previous": "Friday S&P 500 7811.54 and Nasdaq 27366.17",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S18",
+        "S01"
+      ]
+    },
+    {
+      "sgt": "2026-10-12 22:30 SGT",
+      "et": "2026-10-12 10:30 EDT",
+      "event": "Monday first hour US cash breadth and energy-input cost observation checkpoint",
+      "consensus": "Monitoring checkpoint, not an economic release",
+      "previous": "Friday Russell 2000 +0.46% 1D but -0.9% weekly",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S01",
+        "S02",
+        "S18"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "Physical Gulf supply and Hormuz route disruptions revive oil inflation premium",
+      "why_not_fully_priced": "Oil briefly fell on diplomacy news while Gulf production shut-ins expanded; physical transit restoration not independently established.",
+      "trigger": "Gulf shutdown persists or independently confirmed maritime attack reduces effective supply.",
+      "transmission": "Physical barrels↓ → diesel/jet fuel↑ → expected inflation and corporate costs↑ → long-yield / equity duration risk.",
+      "first_asset": "Brent and WTI",
+      "theme_id": "geopolitics_energy",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-08",
+      "last_seen": "2026-10-10",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "risk": "AI and high-capex firm cash generation fails to offset cost-of-capital and energy pressure",
+      "why_not_fully_priced": "Delta is a verified analog of high top-line revenue but weaker profit guidance, while fresh industry-wide AI unit economics were not independently verified.",
+      "trigger": "Additional corporate guidance reductions or financing commitments larger than demonstrated free cash flow.",
+      "transmission": "Capex/fuel outlays↑ → free cash flow↓ → equity EPS revisions↓ → debt funding stress↑.",
+      "first_asset": "High-capex growth and airline equities",
+      "theme_id": "ai_earnings",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-08",
+      "last_seen": "2026-10-10",
+      "sources": [
+        "S06",
+        "S07"
+      ]
+    },
+    {
+      "risk": "Treasury discount-rate shock reasserts as growth confidence falls but inflation expectations rise",
+      "why_not_fully_priced": "Friday equities rebounded while 10Y remained near 5.24% and households expected 4.7% one-year inflation; Monday Treasury closure delays confirmation.",
+      "trigger": "Tuesday Treasury cash reopening reveals renewed yields or risk term-premium increase.",
+      "transmission": "Inflation expectations↑ → term premium↑ → mortgages and equity capitalization rates↑ → small-cap and consumer financing↓.",
+      "first_asset": "US Treasury 10Y and Russell 2000",
+      "theme_id": "global_duration",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-07",
+      "last_seen": "2026-10-10",
+      "sources": [
+        "S04",
+        "S17",
+        "S18"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "Oct 12 NYSE/Nasdaq US cash opening while Treasury bond cash market is closed",
+    "status": "Confirmed Upcoming",
+    "date": "2026-10-12",
+    "et": "2026-10-12 09:30 EDT",
+    "sgt": "2026-10-12 21:30 SGT",
+    "consensus": "No numerical consensus; equity holiday-liquid market session",
+    "previous": "Oct9 SPX 7811.54 (+0.59%), Nasdaq 27366.17 (+0.64%), Russell week -0.9%",
+    "actual": "待公布",
+    "why_it_matters": "The next US cash stock session arrives without synchronized Treasury cash price discovery, making Tuesday Treasury yields essential to judge whether inflation-duration relief is real.",
+    "first_market": "S&P500/Russell 2000 and energy contracts; treasury cash yields assessed on next bond trading day",
+    "bull_interpretation": "Broad Monday stock gains and lower oil with Tuesday yield easing confirm healthier risk appetite.",
+    "bear_interpretation": "Narrow Monday gains and crude resurgence before yield reconfirmation reveal rebound fragility.",
+    "watch_first": [
+      "Watch Monday first-hour S&P 500 vs Russell 2000 breadth; broad gains confirm risk appetite whereas mega-cap-only gains weaken it.",
+      "Watch confirmed Gulf output/restoration and Brent/WTI settlements; verified output recovery and lower oil confirm inflation relief, new shut-ins invalidate.",
+      "Watch Tuesday US Treasury 10Y on matched cash basis vs Friday ~5.24%; declining yields confirm discount-rate easing while renewed yield pressure negates Monday risk relief."
+    ],
+    "sources": [
+      "S18",
+      "S01",
+      "S02",
+      "S17"
+    ]
+  },
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20"
+  ]
+}
