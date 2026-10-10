@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-10-09",
-  "window_start": "2026-09-10",
-  "window_end": "2026-10-09",
+  "as_of": "2026-10-10",
+  "window_start": "2026-09-11",
+  "window_end": "2026-10-10",
   "coverage": {
     "market_sessions": 30,
     "native_daily_days": 16,
@@ -10,7 +10,7 @@
     "reconstructed_days": 0,
     "partial_days": 0,
     "verified_event_days": 0,
-    "historical_series_start": "2025-08-15"
+    "historical_series_start": "2025-08-18"
   },
   "methodology": {
     "reconstructed_daily": "Source-backed historical editorial reconstruction produced later; not a contemporaneously published assessment.",
@@ -88,68 +88,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-09-10",
-      "source_mode": "native_daily",
-      "regime_code": "event_risk",
-      "regime_label": "Event Risk / Two-Chokepoint Energy + Global Rates Tightening",
-      "dominant_theme_id": "geopolitics_energy",
-      "signals": {
-        "growth": "→",
-        "inflation": "↑",
-        "rates": "↑",
-        "earnings": "→",
-        "liquidity": "↓",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "geopolitics_energy",
-          "theme_label": "Geopolitics / Energy",
-          "category": "geopolitics_energy",
-          "title": "Houthis seize Mocha and reach Hanish islands, pushing Brent above $105 before the 18:00 SGT cutoff",
-          "evidence": "Reuters reported before the historical cutoff that Houthi forces seized Yemen's Red Sea port of Mocha and reached the Hanish islands area, threatening a route Saudi Arabia increasingly relied on while Hormuz traffic was impaired; Brent rose above $105 per barrel intraday.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Bab el-Mandeb + Hormuz disruption → shipping/export capacity → Brent/diesel → inflation expectations → global yields → equity and credit multiples.",
-          "confirmation": "Further verified disruption to Red Sea or Hormuz transit, sustained crude above the pre-cutoff highs, or continued evidence that Gulf exports remain materially below normal.",
-          "invalidation": "Verified de-escalation and restoration of commercial transit through at least one chokepoint that lowers shipping costs and pulls crude back toward the prior range.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "Global bond yields jump as oil shock deepens, with UK 10Y gilts at 5.378% ahead of ECB and U.S. PPI",
-          "evidence": "Reuters reported UK 10-year gilt yields at 5.378%, their highest since 2007, while 20-year and 30-year yields reached roughly 5.895% and 5.948%, the highest since 1998, as oil traded above $105 and investors awaited the still-unreleased ECB decision and U.S. PPI.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Oil shock → inflation/term premium → UK/EU/U.S. long yields → global discount rates → duration assets and credit spreads.",
-          "confirmation": "Post-event rate markets continue to hold near or above the pre-cutoff highs and equity duration underperforms as the oil shock persists.",
-          "invalidation": "Soft inflation evidence or clearly dovish central-bank guidance drives a sustained global yield reversal despite still-elevated oil.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "BOJ board member Masu says rapid rate hikes may be needed if inflation accelerates, reinforcing September tightening risk",
-          "evidence": "BOJ board member Kazuyuki Masu said the central bank might need to raise rates rapidly if inflation accelerates, with the policy rate at 1% and analysts expecting a possible September increase to 1.25%, reinforcing the normalization signal while USDJPY remained near 153.70.",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "BOJ normalization → JPY funding cost / repatriation → carry unwind → global leverage reduction → equities, credit and duration volatility.",
-          "confirmation": "USDJPY remains materially below early-September levels, BOJ hike pricing stays elevated, and global leveraged assets weaken alongside firmer Japanese yields.",
-          "invalidation": "BOJ communication turns materially less hawkish and USDJPY retraces the recent yen rally without broader leverage stress.",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
     {
       "date": "2026-09-11",
       "source_mode": "native_daily",
@@ -1947,6 +1885,68 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-10-10",
+      "source_mode": "native_daily",
+      "regime_code": "event_risk",
+      "regime_label": "Event Risk / Oil–Inflation Expectations and Duration",
+      "dominant_theme_id": "geopolitics_energy",
+      "signals": {
+        "growth": "↓",
+        "inflation": "↑",
+        "rates": "→",
+        "earnings": "↓",
+        "liquidity": "→",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
+          "title": "Oct 9 oil settlement $104.72: Gulf hurricane shut-ins withstand Iran diplomacy relief",
+          "evidence": "Brent December ended at $104.72 (+0.42%) and WTI November at $91.85 (+0.39%) on Oct9 after early declines; Gulf offshore crude production shutdowns surpassed 70% as Hurricane Isaias approached.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Physical Gulf outage and shipping → oil/refined fuel premiums → household inflation expectations → bond yields → risk equity multiples.",
+          "confirmation": "Verified restoration in U.S. Gulf offshore production and shipping with sustained lower Brent and Treasury yields confirms real easing.",
+          "invalidation": "Fresh audited Gulf outage extension, verified shipping attacks or oil-price reacceleration rejects near-term supply normalization.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "Oct 9 Michigan confidence 46.3 with one-year inflation expectations 4.7%",
+          "evidence": "The University of Michigan October preliminary sentiment index fell to 46.3 from September 48.1; current conditions were 44.7 while one-year inflation expectations rose to 4.7% and five-year to 3.5%.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Energy/real income stress → worse sentiment plus higher expected CPI → uncertainty in Fed reaction → rates and credit/tech multiples.",
+          "confirmation": "Follow-up inflation/consumption prints and matched US Treasury yields can show whether weaker demand outweighs price expectations.",
+          "invalidation": "New surveys contradict rising inflation expectations and reveal clear disinflation despite energy pressure.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "Oct 9 Delta cuts adjusted FY2026 EPS guidance to $5.10–$5.60 despite growing revenue",
+          "evidence": "Delta reported September-quarter GAAP revenue $20.2bn, adjusted revenue $17.6bn and adjusted EPS $1.72; FY adjusted EPS was cut to $5.10–$5.60 versus prior $6.50–$7.50 in the high fuel-cost environment.",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Jet fuel↑ → airline adjusted margins and free cash flow↓ → EPS revisions↓ → cyclical consumer and credit risk premium↑.",
+          "confirmation": "Documented jet fuel retreat together with improved airline cash flow and maintained travel yields confirms recovery.",
+          "invalidation": "Another issuer profit downgrade, higher fuel, or worsening quarterly cash conversion invalidates margin resilience.",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
@@ -1982,27 +1982,11 @@
       "category": "market_structure",
       "days_in_top3": 15,
       "best_rank": 1,
-      "first_seen": "2026-09-10",
-      "last_seen": "2026-10-07",
-      "latest_rank": null,
+      "first_seen": "2026-09-13",
+      "last_seen": "2026-10-10",
+      "latest_rank": 2,
       "state": "Persistent",
-      "latest_transmission": "份额/成本控制→个股盈利；不足以推断全体消费者走强。 LW is the first observable transmission channel, not a guaranteed price direction.",
-      "source_modes": [
-        "native_daily",
-        "reconstructed_daily"
-      ]
-    },
-    {
-      "theme_id": "global_duration",
-      "theme_label": "Global Duration / Term Premium",
-      "category": "inflation_rates",
-      "days_in_top3": 12,
-      "best_rank": 1,
-      "first_seen": "2026-09-10",
-      "last_seen": "2026-10-09",
-      "latest_rank": 3,
-      "state": "Escalating",
-      "latest_transmission": "Auction absorption → traded long-end yield relief → lower discount-rate impulse; persistent inflation and issuance still constrain the medium-term yield floor.",
+      "latest_transmission": "Energy/real income stress → worse sentiment plus higher expected CPI → uncertainty in Fed reaction → rates and credit/tech multiples.",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -2017,7 +2001,7 @@
       "first_seen": "2026-09-11",
       "last_seen": "2026-10-08",
       "latest_rank": null,
-      "state": "Escalating",
+      "state": "Persistent",
       "latest_transmission": "实际投放→柴油紧张缓和→成本与通胀。 European diesel is the first observable transmission channel, not a guaranteed price direction.",
       "source_modes": [
         "native_daily",
@@ -2025,16 +2009,16 @@
       ]
     },
     {
-      "theme_id": "geopolitics_energy",
-      "theme_label": "Geopolitics / Energy",
-      "category": "geopolitics_energy",
-      "days_in_top3": 10,
+      "theme_id": "global_duration",
+      "theme_label": "Global Duration / Term Premium",
+      "category": "inflation_rates",
+      "days_in_top3": 11,
       "best_rank": 1,
-      "first_seen": "2026-09-10",
+      "first_seen": "2026-09-14",
       "last_seen": "2026-10-09",
-      "latest_rank": 1,
-      "state": "Persistent",
-      "latest_transmission": "Gulf disruption / storm output → crude and freight → inflation expectations → Treasury yields → long-duration equity valuations.",
+      "latest_rank": null,
+      "state": "Escalating",
+      "latest_transmission": "Auction absorption → traded long-end yield relief → lower discount-rate impulse; persistent inflation and issuance still constrain the medium-term yield floor.",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -2051,6 +2035,22 @@
       "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "政策讨论→加息路径理解；会议纪要信息本身早于10月就业数据。 UST2Y is the first observable transmission channel, not a guaranteed price direction.",
+      "source_modes": [
+        "native_daily",
+        "reconstructed_daily"
+      ]
+    },
+    {
+      "theme_id": "geopolitics_energy",
+      "theme_label": "Geopolitics / Energy",
+      "category": "geopolitics_energy",
+      "days_in_top3": 10,
+      "best_rank": 1,
+      "first_seen": "2026-09-12",
+      "last_seen": "2026-10-10",
+      "latest_rank": 1,
+      "state": "Escalating",
+      "latest_transmission": "Physical Gulf outage and shipping → oil/refined fuel premiums → household inflation expectations → bond yields → risk equity multiples.",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -2080,7 +2080,7 @@
       "best_rank": 2,
       "first_seen": "2026-09-23",
       "last_seen": "2026-10-09",
-      "latest_rank": 2,
+      "latest_rank": null,
       "state": "Escalating",
       "latest_transmission": "Capital intensity / unverified revenue projections → financing costs → equity discount rates → tech leadership breadth and credit risk.",
       "source_modes": [
@@ -2107,43 +2107,37 @@
   "cross_asset_confirmation": {
     "theme_id": "geopolitics_energy",
     "theme_label": "Geopolitics / Energy",
-    "as_of": "2026-10-09",
-    "confirming": [
-      {
-        "series_id": "VIXCLS",
-        "label": "VIX",
-        "as_of": "2026-10-08 US close",
-        "source_mode": "native_daily",
-        "change": "+2.19%"
-      },
-      {
-        "series_id": "DGS10",
-        "label": "US 10Y Treasury Yield",
-        "as_of": "2026-10-08 H.15",
-        "source_mode": "native_daily",
-        "change": "+1bp"
-      },
+    "as_of": "2026-10-10",
+    "confirming": [],
+    "diverging": [
       {
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
-        "as_of": "2026-10-08 16:00 EDT",
+        "as_of": "2026-10-09 16:00 EDT",
         "source_mode": "native_daily",
-        "change": "-1.25%"
+        "change": "+0.64%"
       }
     ],
-    "diverging": [],
     "unavailable": [
       {
         "series_id": "DCOILBRENTEU",
         "label": "Brent"
       },
       {
+        "series_id": "VIXCLS",
+        "label": "VIX"
+      },
+      {
+        "series_id": "DGS10",
+        "label": "US 10Y Treasury Yield"
+      },
+      {
         "series_id": "DTWEXBGS",
         "label": "Broad Trade-Weighted USD"
       }
     ],
-    "interpretation_note": "3 项资产确认当前主线，0 项出现背离。",
-    "what_would_flip_it": "Renewed verified attacks or prolonged Gulf shut-ins alongside sustained crude reacceleration would invalidate the relief trade."
+    "interpretation_note": "0 项资产确认当前主线，1 项出现背离。",
+    "what_would_flip_it": "Fresh audited Gulf outage extension, verified shipping attacks or oil-price reacceleration rejects near-term supply normalization."
   },
   "series": {
     "NASDAQCOM": {
@@ -2152,10 +2146,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-09-10",
-          "value": 26081.72
-        },
         {
           "date": "2026-09-11",
           "value": 26333.04
@@ -2245,10 +2235,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-09-10",
-          "value": 7591.7
-        },
-        {
           "date": "2026-09-11",
           "value": 7656.98
         },
@@ -2327,6 +2313,10 @@
         {
           "date": "2026-10-08",
           "value": 7765.36
+        },
+        {
+          "date": "2026-10-09",
+          "value": 7811.54
         }
       ]
     },
@@ -2336,10 +2326,6 @@
       "source": "CBOE via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-09-10",
-          "value": 17.84
-        },
         {
           "date": "2026-09-11",
           "value": 15.84
@@ -2415,6 +2401,10 @@
         {
           "date": "2026-10-07",
           "value": 15.08
+        },
+        {
+          "date": "2026-10-08",
+          "value": 15.41
         }
       ]
     },
@@ -2424,10 +2414,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-09-10",
-          "value": 4.56
-        },
         {
           "date": "2026-09-11",
           "value": 4.63
@@ -2503,6 +2489,10 @@
         {
           "date": "2026-10-07",
           "value": 4.77
+        },
+        {
+          "date": "2026-10-08",
+          "value": 4.75
         }
       ]
     },
@@ -2512,10 +2502,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-09-10",
-          "value": 4.95
-        },
         {
           "date": "2026-09-11",
           "value": 4.96
@@ -2591,6 +2577,10 @@
         {
           "date": "2026-10-07",
           "value": 5.28
+        },
+        {
+          "date": "2026-10-08",
+          "value": 5.22
         }
       ]
     },
@@ -2600,10 +2590,6 @@
       "source": "U.S. EIA via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-09-10",
-          "value": 120.98
-        },
         {
           "date": "2026-09-11",
           "value": 118.06
@@ -2685,10 +2671,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-09-10",
-          "value": 118.0787
-        },
-        {
           "date": "2026-09-11",
           "value": 118.2126
         },
@@ -2760,10 +2742,6 @@
       "source": "ICE BofA via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-09-10",
-          "value": 2.7
-        },
         {
           "date": "2026-09-11",
           "value": 2.65
@@ -2839,6 +2817,10 @@
         {
           "date": "2026-10-07",
           "value": 3.09
+        },
+        {
+          "date": "2026-10-08",
+          "value": 3.15
         }
       ]
     }
