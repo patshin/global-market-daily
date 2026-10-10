@@ -140,6 +140,20 @@ def market_bias_from_direction(x):
 
 
 
+def regime_code_from_label(label):
+    """Classify only explicit editorial regime wording; never infer missing risk calls.
+
+    Historical backfills with descriptive/non-directional regime labels remain
+    unclassified, which is NOT neutral and never means an absence of risk.
+    """
+    normalized=re.sub(r'\s+',' ',str(label or '').strip().lower().replace('–','-').replace('‑','-'))
+    if re.match(r'^risk[- ]?off\b',normalized): return 'risk_off'
+    if re.match(r'^(?:risk[- ]?on|selective risk[- ]?on|relief rally)\b',normalized): return 'risk_on'
+    if re.match(r'^neutral\b',normalized): return 'neutral'
+    if re.match(r'^(?:weekend )?event risk\b',normalized): return 'event_risk'
+    return 'unclassified'
+
+
 def load_verified_events():
     if not VERIFIED_EVENTS_PATH.exists():
         return {}
@@ -219,7 +233,7 @@ def build(refresh=True):
             report_mode = 'reconstructed_daily' if (r.get('reconstruction') or {}).get('is_reconstructed') else 'native_daily'
             regime_item=(r.get('market_regime') or {}).get('overall')
             regime_label=regime_item.get('state') if isinstance(regime_item,dict) else (regime_item or 'Unclassified')
-            code={'Risk-On':'risk_on','Neutral':'neutral','Risk-Off':'risk_off','Event Risk':'event_risk'}.get(regime_label,'event_risk' if 'Event' in str(regime_label) else 'unclassified')
+            code=regime_code_from_label(regime_label)
             catalysts=[]
             for i,c in enumerate(r.get('top_catalysts') or []):
                 tid=theme_from_text(c.get('event','')+' '+c.get('what_happened',''))
