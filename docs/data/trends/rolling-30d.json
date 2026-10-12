@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-10-10",
-  "window_start": "2026-09-11",
-  "window_end": "2026-10-10",
+  "as_of": "2026-10-11",
+  "window_start": "2026-09-12",
+  "window_end": "2026-10-11",
   "coverage": {
     "market_sessions": 30,
     "native_daily_days": 16,
@@ -88,68 +88,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-09-11",
-      "source_mode": "native_daily",
-      "regime_code": "event_risk",
-      "regime_label": "Event Risk / Reinflation + Global Tightening",
-      "dominant_theme_id": "energy_inflation",
-      "signals": {
-        "growth": "→",
-        "inflation": "↑",
-        "rates": "↑",
-        "earnings": "→",
-        "liquidity": "→",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "energy_inflation",
-          "theme_label": "Energy Inflation",
-          "category": "geopolitics_energy",
-          "title": "IEA deepens 2026 oil-supply decline to 5.7 million bpd and pushes normal Gulf flows into 2027",
-          "evidence": "IEA将2026年全球原油供应降幅扩大至570万桶/日、约6%，并指出正常中东海湾流量恢复已被推迟到2027年；8月全球库存以日均310万桶速度下降。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Gulf supply loss → inventories → crude/diesel → inflation expectations → central-bank path → global yields and equity multiples.",
-          "confirmation": "未来数周海湾出口仍显著低于正常水平、库存继续下降且Brent维持100美元以上，将确认供给缺口正在跨月固化。",
-          "invalidation": "若形成可验证的航运安排、海湾出口快速恢复且库存停止下降，IEA所描述的持续性供给压力将开始减弱。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "energy_inflation",
-          "theme_label": "Energy Inflation",
-          "category": "geopolitics_energy",
-          "title": "Houthis reach Perim island, threatening a second major oil transit corridor at Bab el-Mandeb",
-          "evidence": "四名也门政府消息人士向Reuters确认胡塞武装已抵达Bab el-Mandeb海峡的战略性Perim岛，并控制面向该岛的Dhubab；沙特在Hormuz受限后正更依赖红海路线。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Perim control risk → Red Sea transit capacity/insurance → Saudi export flexibility → Brent/diesel → inflation and global rates.",
-          "confirmation": "商业船舶改道、保险成本上升或沙特红海出口受到可验证限制，将确认第二通道风险已经进入实体供给。",
-          "invalidation": "也门政府重新控制Perim/Dhubab或红海商业通行维持正常且运费回落，将削弱第二通道风险溢价。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "fed_policy_path",
-          "theme_label": "Fed Policy Path",
-          "category": "central_banks_fiscal",
-          "title": "U.S. August CPI at 08:30 EDT becomes the next rate-path test with 10Y yields near 5%",
-          "evidence": "美国8月CPI尚未在research_cutoff前公布；Reuters调查显示核心CPI环比预期中心约为0.2%，而Fed下周加息25bp的市场概率已升至约67%至70%。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "CPI surprise → Fed September pricing → UST 2Y/10Y → DXY → Nasdaq/Russell and global duration assets.",
-          "confirmation": "CPI高于预期且2Y/10Y收益率重新上行、美元同步走强，将确认能源通胀正在进入更广泛的政策定价。",
-          "invalidation": "CPI明显低于预期并伴随2Y、10Y和美元同步回落，将首次给出可信的再通胀链反向确认。",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
     {
       "date": "2026-09-12",
       "source_mode": "native_daily",
@@ -1947,6 +1885,68 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-10-11",
+      "source_mode": "native_daily",
+      "regime_code": "event_risk",
+      "regime_label": "Event Risk / Oil–FX Intervention, Diesel Diplomacy and Duration",
+      "dominant_theme_id": "energy_inflation",
+      "signals": {
+        "growth": "↓",
+        "inflation": "↑",
+        "rates": "→",
+        "earnings": "→",
+        "liquidity": "↓",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
+          "title": "Oct 10 RBI opens Oct 12 oil-company USD window and tightens INR derivative access",
+          "evidence": "印度储备银行宣布经指定银行直接出售美元，满足IOC、HPCL、BPCL每日美元需求；另将部分无基础敞口凭证衍生品门槛从1亿美元降至500万美元，对超过200万美元的特定合约设置20%外汇风险储备。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "原油美元计价与进口账单↑ → 油企即期买汇↑ → 卢比压力↑ → RBI定向美元供给/衍生品资本约束 → EM FX与信贷定价。",
+          "confirmation": "10月12日USD/INR、央行外储投放信息和油企实际美元窗口使用可确认即期需求转移。",
+          "invalidation": "窗口未落实、卢比继续贬值且外储加速减少，将削弱短期政策缓冲。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "Oct 9–10 US–Russia diesel supply announcement meets Ukraine and EU objections",
+          "evidence": "Reuters和AP报道美国宣布俄罗斯将初步供应30万吨柴油给美国及国际市场、并对相关俄能源制裁做暂时调整；10月10日乌克兰及欧洲方面公开批评该安排可能增加俄方收入。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "俄柴油承诺与部分制裁缓解 → 预期柴油供应↑/炼厂裂解价差↓ → 运费及通胀预期；政治反弹→兑现不确定性。",
+          "confirmation": "独立核实运输船期、到港海关数据、柴油价格和裂解价差同步改善可确认供给兑现。",
+          "invalidation": "制裁安排逆转、实际到港不足或柴油裂解价差继续走高，将否定宣布即现货缓解。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "Oct 12 stock–bond holiday split precedes Oct 13 JPMorgan/Citi Q3 earnings",
+          "evidence": "美国10月12日NYSE/Nasdaq正常开市、美国美元债交易按SIFMA假日建议关闭；Citi官方确认10月13日08:00 EDT公布第三季度业绩，JPMorgan确认08:30 EDT业绩电话会。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "周一股债交易日错配 → 资产间信号异步 → 周二银行盈利/准备金揭示资金成本和信贷质量 → 期限溢价与风险估值再定价。",
+          "confirmation": "周一股票广度与油价改善、周二美债收益率同步回落且银行净息差/信用质量稳健，支持风险缓和。",
+          "invalidation": "周一出现窄幅指数上涨、周二美债收益率上冲或银行大幅提高坏账拨备，意味着此前风险缓和是错配假象。",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
@@ -1998,13 +1998,13 @@
       "theme_id": "market_structure",
       "theme_label": "Market Structure",
       "category": "market_structure",
-      "days_in_top3": 15,
+      "days_in_top3": 16,
       "best_rank": 1,
       "first_seen": "2026-09-13",
-      "last_seen": "2026-10-10",
-      "latest_rank": 2,
+      "last_seen": "2026-10-11",
+      "latest_rank": 3,
       "state": "Persistent",
-      "latest_transmission": "Energy/real income stress → worse sentiment plus higher expected CPI → uncertainty in Fed reaction → rates and credit/tech multiples.",
+      "latest_transmission": "周一股债交易日错配 → 资产间信号异步 → 周二银行盈利/准备金揭示资金成本和信贷质量 → 期限溢价与风险估值再定价。",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -2016,11 +2016,11 @@
       "category": "geopolitics_energy",
       "days_in_top3": 12,
       "best_rank": 1,
-      "first_seen": "2026-09-11",
-      "last_seen": "2026-10-08",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "实际投放→柴油紧张缓和→成本与通胀。 European diesel is the first observable transmission channel, not a guaranteed price direction.",
+      "first_seen": "2026-09-13",
+      "last_seen": "2026-10-11",
+      "latest_rank": 1,
+      "state": "Escalating",
+      "latest_transmission": "原油美元计价与进口账单↑ → 油企即期买汇↑ → 卢比压力↑ → RBI定向美元供给/衍生品资本约束 → EM FX与信贷定价。",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -2043,12 +2043,28 @@
       ]
     },
     {
+      "theme_id": "geopolitics_energy",
+      "theme_label": "Geopolitics / Energy",
+      "category": "geopolitics_energy",
+      "days_in_top3": 10,
+      "best_rank": 1,
+      "first_seen": "2026-09-12",
+      "last_seen": "2026-10-10",
+      "latest_rank": null,
+      "state": "Escalating",
+      "latest_transmission": "Physical Gulf outage and shipping → oil/refined fuel premiums → household inflation expectations → bond yields → risk equity multiples.",
+      "source_modes": [
+        "native_daily",
+        "reconstructed_daily"
+      ]
+    },
+    {
       "theme_id": "fed_policy_path",
       "theme_label": "Fed Policy Path",
       "category": "central_banks_fiscal",
-      "days_in_top3": 10,
+      "days_in_top3": 9,
       "best_rank": 1,
-      "first_seen": "2026-09-11",
+      "first_seen": "2026-09-12",
       "last_seen": "2026-10-07",
       "latest_rank": null,
       "state": "Persistent",
@@ -2059,32 +2075,16 @@
       ]
     },
     {
-      "theme_id": "geopolitics_energy",
-      "theme_label": "Geopolitics / Energy",
-      "category": "geopolitics_energy",
-      "days_in_top3": 10,
-      "best_rank": 1,
-      "first_seen": "2026-09-12",
-      "last_seen": "2026-10-10",
-      "latest_rank": 1,
-      "state": "Escalating",
-      "latest_transmission": "Physical Gulf outage and shipping → oil/refined fuel premiums → household inflation expectations → bond yields → risk equity multiples.",
-      "source_modes": [
-        "native_daily",
-        "reconstructed_daily"
-      ]
-    },
-    {
       "theme_id": "us_china_trade_controls",
       "theme_label": "U.S.–China Trade Controls",
       "category": "china_trade_policy",
-      "days_in_top3": 8,
+      "days_in_top3": 9,
       "best_rank": 1,
       "first_seen": "2026-09-16",
-      "last_seen": "2026-10-07",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "进口扩张→净出口核算拖累；需分辨需求与提前备货。 DXY is the first observable transmission channel, not a guaranteed price direction.",
+      "last_seen": "2026-10-11",
+      "latest_rank": 2,
+      "state": "Escalating",
+      "latest_transmission": "俄柴油承诺与部分制裁缓解 → 预期柴油供应↑/炼厂裂解价差↓ → 运费及通胀预期；政治反弹→兑现不确定性。",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -2123,9 +2123,9 @@
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "geopolitics_energy",
-    "theme_label": "Geopolitics / Energy",
-    "as_of": "2026-10-10",
+    "theme_id": "energy_inflation",
+    "theme_label": "Energy Inflation",
+    "as_of": "2026-10-11",
     "confirming": [],
     "diverging": [
       {
@@ -2142,10 +2142,6 @@
         "label": "Brent"
       },
       {
-        "series_id": "VIXCLS",
-        "label": "VIX"
-      },
-      {
         "series_id": "DGS10",
         "label": "US 10Y Treasury Yield"
       },
@@ -2155,7 +2151,7 @@
       }
     ],
     "interpretation_note": "0 项资产确认当前主线，1 项出现背离。",
-    "what_would_flip_it": "Fresh audited Gulf outage extension, verified shipping attacks or oil-price reacceleration rejects near-term supply normalization."
+    "what_would_flip_it": "窗口未落实、卢比继续贬值且外储加速减少，将削弱短期政策缓冲。"
   },
   "series": {
     "NASDAQCOM": {
@@ -2164,10 +2160,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-09-11",
-          "value": 26333.04
-        },
         {
           "date": "2026-09-14",
           "value": 26186.41
@@ -2257,10 +2249,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-09-11",
-          "value": 7656.98
-        },
-        {
           "date": "2026-09-14",
           "value": 7619.98
         },
@@ -2349,10 +2337,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-09-11",
-          "value": 15.84
-        },
-        {
           "date": "2026-09-14",
           "value": 17.1
         },
@@ -2436,10 +2420,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-09-11",
-          "value": 4.63
-        },
         {
           "date": "2026-09-14",
           "value": 4.65
@@ -2525,10 +2505,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-09-11",
-          "value": 4.96
-        },
-        {
           "date": "2026-09-14",
           "value": 4.97
         },
@@ -2613,10 +2589,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-09-11",
-          "value": 118.06
-        },
-        {
           "date": "2026-09-14",
           "value": 121.25
         },
@@ -2693,10 +2665,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-09-11",
-          "value": 118.2126
-        },
-        {
           "date": "2026-09-14",
           "value": 118.6923
         },
@@ -2764,10 +2732,6 @@
       "source": "ICE BofA via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-09-11",
-          "value": 2.65
-        },
         {
           "date": "2026-09-14",
           "value": 2.71
