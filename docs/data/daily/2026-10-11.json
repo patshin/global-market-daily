@@ -1,0 +1,1022 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-10-11",
+  "edition": "Morning Official",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-10-11 09:04 SGT",
+  "data_cutoff_et": "2026-10-10 21:04 EDT",
+  "last_updated": "2026-10-11T09:04:38+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-10-11T09:00:00+08:00",
+    "started_at_sgt": "2026-10-11T08:58:27+08:00",
+    "research_cutoff_sgt": "2026-10-11T09:04:38+08:00",
+    "mode": "morning",
+    "recovery_note": "独立当日研究，实际任务在计划时刻前启动；所有价格均为最近可靠交易日（2026-10-09 EDT），没有虚构周末交易。"
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": true
+  },
+  "publication_policy": "morning_official_2026-10-08",
+  "source_mode": "native_daily",
+  "sources_path": "data/sources/2026-10-11.json",
+  "comparison_basis": {
+    "previous_official_date": "2026-10-10",
+    "note": "仅与前一份正式日报的已知信息集比较；周末美股/美债没有新的现金交易，市场报价不重复记为周日新变动。"
+  },
+  "thesis": "截至2026-10-11 09:04 SGT，跨资产的新增约束是“高油价如何进一步挤压进口国汇率与政策空间”：印度储备银行10月10日宣布从10月12日起向三家国有炼油/营销企业直接提供美元，并同步提高卢比衍生品约束；美俄柴油供应协议虽可能缓解成品油紧张，却不能等同于已交付或霍尔木兹恢复。美国10月9日S&P 500收7,811.54、Brent十二月合约结算104.72美元、美债10年收益率约5.24%均是周五数据。周一美股开市而美元债现货休市、周二美国大行公布财报，需按“卢比—油品实物交付—信用与期限利差”顺序核验风险。",
+  "dominant_narrative": "2026年10月11日周日北京时间的唯一Morning Official，最新可核验美股、原油期货、外汇和债券价位均截至10月9日周五，周末没有制造新的S&P 500、债券或石油结算。与昨日官方版相比，真正新增的政策证据发生在10月10日：印度储备银行宣布在10月12日启用专项美元销售窗口，为IOC、HPCL、BPCL满足每日美元需求；同时收紧部分无实际敞口的外汇衍生品交易门槛，从1亿美元减至500万美元，并对超过200万美元、符合范围的卢比外汇对冲交易提出20%风险储备要求。它减少油企在普通即期市场的买汇竞争，却把部分美元供给成本转移至外汇储备，不能直接推导卢比将升值。另一边，10月9日美俄宣布的初始30万吨柴油供应方案和临时制裁安排在10月10日继续引发欧洲和乌克兰质疑；此时它仍是宣布/承诺，并非经海关确认的实际到港。美油与成品油供应、美国墨西哥湾飓风停产以及伊朗航运风险构成相互矛盾的成本传导。10月9日密歇根消费者信心降至46.3、1年通胀预期升至4.7%，配合长债5%以上的高融资成本，使银行净息差、坏账准备和高资本开支企业现金流成为10月13日美股财报检验的核心。10月12日美股现金市场正常开市但美国债券现金市场依照SIFMA建议休市，应先观察印度开市后USD/INR、原油/柴油差价及美股广度，再等周二美债恢复交易与JPM/Citi正式财报，避免从周末新闻直接推断不存在的周日价格变动。",
+  "market_regime": {
+    "growth": "↓ 美国10月密歇根消费者信心46.3、加拿大9月就业-68,300提示需求压力；这些是10月9日已发布的最后宏观数据。",
+    "inflation": "↑ 10月9日Brent 104.72美元与密歇根一年期通胀预期4.7%仍构成成本传导；俄柴油方案尚未有经核实交付量。",
+    "rates": "→ 10月9日美国10年期国债收益率约5.24%；10月12日债券市场休市，新的同口径现金价格需待10月13日。",
+    "earnings": "→ Delta盈利指引下修已证实燃油成本侵蚀利润；10月13日JPM/Citi财报尚未发布，不能预填业绩。",
+    "liquidity": "↓ 印度储备银行10月10日设立油企美元专用窗口并收紧卢比衍生品规则；短期削减即期美元买盘但增加外储使用压力。",
+    "geopolitics": "↑ 美俄柴油供应/制裁安排引发盟友政治阻力；霍尔木兹航运及美国墨西哥湾产能恢复未获充分可核实证据。",
+    "overall": "Event Risk / Oil–FX Intervention, Diesel Diplomacy and Duration"
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,811.54",
+      "change_1d": "+0.59%",
+      "change_5d": "+1.2%",
+      "signal": "↑ US equity rebound",
+      "driver": "AP final Friday US cash close; high-duration constraint remains；此数据为10月9日最近交易日快照，不是10月11日行情",
+      "status": "Confirmed US cash close；周日无同市场新收盘",
+      "as_of": "2026-10-09 16:00 EDT",
+      "sources": [
+        "S01",
+        "S17"
+      ]
+    },
+    {
+      "asset": "Dow Jones Industrial Average",
+      "level": "51,654.95",
+      "change_1d": "+0.83%",
+      "change_5d": "+0.9%",
+      "signal": "↑ Cyclical bounce",
+      "driver": "AP verified Oct9 cash close and full-week return；此数据为10月9日最近交易日快照，不是10月11日行情",
+      "status": "Confirmed US cash close；周日无同市场新收盘",
+      "as_of": "2026-10-09 16:00 EDT",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "27,366.17",
+      "change_1d": "+0.64%",
+      "change_5d": "+0.6%",
+      "signal": "↑ Growth-stock rebound",
+      "driver": "Friday AI/high-growth multiples regained some ground after Oct8 weakness；此数据为10月9日最近交易日快照，不是10月11日行情",
+      "status": "Confirmed US cash close；周日无同市场新收盘",
+      "as_of": "2026-10-09 16:00 EDT",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,806.98",
+      "change_1d": "+0.46%",
+      "change_5d": "-0.9%",
+      "signal": "→ Small-cap relative lag",
+      "driver": "Friday advance contrasts with negative weekly return; breadth must confirm；此数据为10月9日最近交易日快照，不是10月11日行情",
+      "status": "Confirmed US cash close；周日无同市场新收盘",
+      "as_of": "2026-10-09 16:00 EDT",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "Brent futures (December)",
+      "level": "$104.72/bbl",
+      "change_1d": "+0.42%",
+      "change_5d": "+2.4%",
+      "signal": "↑ Oil supply premium",
+      "driver": "December Brent settlement, US Gulf shut-ins and Hormuz risks；此数据为10月9日最近交易日快照，不是10月11日行情",
+      "status": "Confirmed futures settlement；周日无同市场新收盘",
+      "as_of": "2026-10-09 US oil settlement EDT",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "asset": "WTI futures (November)",
+      "level": "$91.85/bbl",
+      "change_1d": "+0.39%",
+      "change_5d": "+0.8%",
+      "signal": "↑ Gulf storm risk",
+      "driver": "November WTI settlement after early intraday diplomacy relief；此数据为10月9日最近交易日快照，不是10月11日行情",
+      "status": "Confirmed futures settlement；周日无同市场新收盘",
+      "as_of": "2026-10-09 US oil settlement EDT",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "asset": "DXY",
+      "level": "102.25",
+      "change_1d": "+0.13%",
+      "change_5d": "~+0.3%",
+      "signal": "↑ Dollar rate support",
+      "driver": "Reuters US afternoon spot index snapshot and weekly change；此数据为10月9日最近交易日快照，不是10月11日行情",
+      "status": "Reuters indicative, not official close；周日无同市场新收盘",
+      "as_of": "2026-10-09 afternoon EDT",
+      "sources": [
+        "S10"
+      ]
+    },
+    {
+      "asset": "EUR/USD",
+      "level": "1.1198",
+      "change_1d": "-0.10%",
+      "change_5d": "~-0.5%",
+      "signal": "↓ Euro fiscal sensitivity",
+      "driver": "French public-debt pressure offsets Friday market stability；此数据为10月9日最近交易日快照，不是10月11日行情",
+      "status": "Reuters indicative FX snapshot；周日无同市场新收盘",
+      "as_of": "2026-10-09 afternoon EDT",
+      "sources": [
+        "S10"
+      ]
+    },
+    {
+      "asset": "USD/JPY",
+      "level": "158.25",
+      "change_1d": "+0.25%",
+      "change_5d": "~+0.2%",
+      "signal": "↑ Yen weakness",
+      "driver": "Reuters Friday dollar/yen snapshot; yen about 0.2% softer weekly；此数据为10月9日最近交易日快照，不是10月11日行情",
+      "status": "Reuters indicative FX snapshot；周日无同市场新收盘",
+      "as_of": "2026-10-09 afternoon EDT",
+      "sources": [
+        "S10"
+      ]
+    },
+    {
+      "asset": "Spot gold",
+      "level": "$4,194.36/oz",
+      "change_1d": "+1.5%",
+      "change_5d": "~+1.3%",
+      "signal": "↑ Defensive demand",
+      "driver": "Reuters spot gold 15:29 EDT snapshot; not a futures settlement；此数据为10月9日最近交易日快照，不是10月11日行情",
+      "status": "Reuters intraday spot quote；周日无同市场新收盘",
+      "as_of": "2026-10-09 15:29 EDT",
+      "sources": [
+        "S11"
+      ]
+    },
+    {
+      "asset": "USD/CAD",
+      "level": "1.4275",
+      "change_1d": "~+0.4%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ CAD labor shock",
+      "driver": "Reuters afternoon 1.4275 after Canada -68300 jobs; matched weekly basis missing；此数据为10月9日最近交易日快照，不是10月11日行情",
+      "status": "Reuters indicative FX snapshot；周日无同市场新收盘",
+      "as_of": "2026-10-09 afternoon EDT",
+      "sources": [
+        "S08",
+        "S09"
+      ]
+    },
+    {
+      "asset": "US Treasury 10Y yield",
+      "level": "~5.24%",
+      "change_1d": "尚无法可靠确认",
+      "change_5d": "尚无法可靠确认",
+      "signal": "→ Elevated duration cost",
+      "driver": "AP rounded Friday benchmark quotation, exact same-series daily/week changes unverified；此数据为10月9日最近交易日快照，不是10月11日行情",
+      "status": "AP approximate Friday yield, not H.15 fix；周日无同市场新收盘",
+      "as_of": "2026-10-09 late US EDT",
+      "sources": [
+        "S17"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "TARGET_MET_WITH_EXPLICIT_GAPS",
+    "asset_count": 12,
+    "level_coverage": "12/12 = 100.0%",
+    "change_1d_coverage": "11/12 = 91.7%",
+    "change_5d_coverage": "10/12 = 83.3%",
+    "explicit_gaps": [
+      "USD/CAD同口径五日变动尚无法可靠确认",
+      "美国十年期国债约5.24%为周五媒体取整报价，无法无偏推导同口径1D/5D",
+      "周六、周日没有美国现金市场/原油周末结算，所有这些价格仍标注10月9日实际as_of"
+    ],
+    "policy": "周日只保留最近可信的10月9日周五已发布报价及当时1D/5D，不将旧交易日变动冒充周末价格更新。"
+  },
+  "what_changed": [
+    {
+      "yesterday": "10月10日官方早报已报道周五Brent 104.72美元与伊朗/美国墨西哥湾供应风险，尚未包含10月10日印度外汇新举措。",
+      "today": "10月10日RBI宣布10月12日起向IOC、HPCL、BPCL提供专项美元窗口，同时将部分无敞口凭证外汇衍生品阈值由1亿美元降至500万美元。",
+      "why_it_matters": "进口能源冲击正在从商品价格外溢到新兴市场FX市场结构；即期美元需求可能降但储备消耗风险升，必须关注USD/INR而非事前断言升值。",
+      "sources": [
+        "S21",
+        "S22",
+        "S29"
+      ]
+    },
+    {
+      "yesterday": "昨日版关注原油供应风险及航空公司盈利，尚未评估完整俄罗斯柴油协议及次日外交反应。",
+      "today": "10月9日美俄宣布初步30万吨柴油供应意向及临时制裁便利；10月10日欧洲与乌克兰公开反对，交付数量与抵港时点尚待证实。",
+      "why_it_matters": "新增成品油供给承诺可能压缩柴油裂解价差，但政治与物流执行风险会限制实际缓解效果，不能记作供应已兑现。",
+      "sources": [
+        "S23",
+        "S24",
+        "S25"
+      ]
+    },
+    {
+      "yesterday": "10月10日报已确认周一美股开市、美债休市，但未连接印度新政策执行日。",
+      "today": "10月12日印度美元窗口拟生效，NYSE/Nasdaq开市，美国美元债现金市场因假日按SIFMA建议休市。",
+      "why_it_matters": "印度FX和美国股票先行反馈，长债期限风险到10月13日才有同步现货验证，避免将不同交易日价格混为一谈。",
+      "sources": [
+        "S21",
+        "S28",
+        "S18"
+      ]
+    },
+    {
+      "yesterday": "前期以Delta盈利指引下修证明能源成本对企业利润的挤压。",
+      "today": "JPMorgan官方投资者日历确认10月13日08:30 EDT业绩电话会；Citi公告确认10月13日08:00 EDT发布第三季度财报。",
+      "why_it_matters": "银行净利息收入、存款定价、信贷损失和投行业务是判断5%以上美债折现率是否演变成信用压力的具体可检验窗口。",
+      "sources": [
+        "S26",
+        "S27",
+        "S19"
+      ]
+    },
+    {
+      "yesterday": "美国10月9日收盘S&P 500 7,811.54、Nasdaq 27,366.17，Brent 104.72美元。",
+      "today": "10月11日周日无美国股票、美国债券现货或ICE周日正式结算；不存在可核实的新日涨跌幅。",
+      "why_it_matters": "数据可用性本身必须披露，避免把10月9日的1D/5D收益错误标为10月11日的周末市场变化。",
+      "sources": [
+        "S01",
+        "S02",
+        "S17"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "Oct 10 RBI opens Oct 12 oil-company USD window and tightens INR derivative access",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-10 EDT（印度公告时点跨时区，精确ET分钟未核实）",
+      "event_time_sgt": "2026-10-10 SGT（印度央行周六公告；10月12日执行）",
+      "what_happened": "印度储备银行宣布经指定银行直接出售美元，满足IOC、HPCL、BPCL每日美元需求；另将部分无基础敞口凭证衍生品门槛从1亿美元降至500万美元，对超过200万美元的特定合约设置20%外汇风险储备。",
+      "what_changed": "周五卢比承压与原油超100美元已知，周六出现新增可核验央行市场干预方案，10月12日才开始执行，实际成交量尚无公告。",
+      "why_it_matters": "能源进口国正在以外汇储备和市场结构规则对冲原油美元需求；这可以缓和即期抢汇，但代价是央行风险承担和衍生品流动性调整。",
+      "transmission": "原油美元计价与进口账单↑ → 油企即期买汇↑ → 卢比压力↑ → RBI定向美元供给/衍生品资本约束 → EM FX与信贷定价。",
+      "affected_assets": [
+        "USD/INR",
+        "印度外汇储备",
+        "Brent",
+        "印度油企和银行"
+      ],
+      "direction": "印度进口能源的外汇约束",
+      "importance": "★★★★★",
+      "confirmation": "10月12日USD/INR、央行外储投放信息和油企实际美元窗口使用可确认即期需求转移。",
+      "invalidation": "窗口未落实、卢比继续贬值且外储加速减少，将削弱短期政策缓冲。",
+      "sources": [
+        "S21",
+        "S22",
+        "S29"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "Oct 9–10 US–Russia diesel supply announcement meets Ukraine and EU objections",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-09 EDT（初始公布）；2026-10-10 EDT（后续外交评论）",
+      "event_time_sgt": "2026-10-10 SGT（初始公告与后续反应）",
+      "what_happened": "Reuters和AP报道美国宣布俄罗斯将初步供应30万吨柴油给美国及国际市场、并对相关俄能源制裁做暂时调整；10月10日乌克兰及欧洲方面公开批评该安排可能增加俄方收入。",
+      "what_changed": "此前能源讨论集中原油与霍尔木兹实际供给；成品油政策供应承诺成为额外因素，但尚没有可核验的船期、卸货量和到港日期。",
+      "why_it_matters": "柴油价格向运输、农业和工业成本传导快；外交与制裁争议意味着“宣布名义吨数”不能等同成品油已进入消费市场。",
+      "transmission": "俄柴油承诺与部分制裁缓解 → 预期柴油供应↑/炼厂裂解价差↓ → 运费及通胀预期；政治反弹→兑现不确定性。",
+      "affected_assets": [
+        "US diesel crack spread",
+        "Brent",
+        "US inflation expectations",
+        "European refiners"
+      ],
+      "direction": "柴油供应预期与外交执行风险",
+      "importance": "★★★★★",
+      "confirmation": "独立核实运输船期、到港海关数据、柴油价格和裂解价差同步改善可确认供给兑现。",
+      "invalidation": "制裁安排逆转、实际到港不足或柴油裂解价差继续走高，将否定宣布即现货缓解。",
+      "sources": [
+        "S23",
+        "S24",
+        "S25"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "Oct 12 stock–bond holiday split precedes Oct 13 JPMorgan/Citi Q3 earnings",
+      "status": "Confirmed Upcoming",
+      "event_time_et": "2026-10-12 09:30 EDT equities open；2026-10-13 08:00–08:30 EDT earnings",
+      "event_time_sgt": "2026-10-12 21:30 SGT equities open；2026-10-13 20:00–20:30 SGT earnings",
+      "what_happened": "美国10月12日NYSE/Nasdaq正常开市、美国美元债交易按SIFMA假日建议关闭；Citi官方确认10月13日08:00 EDT公布第三季度业绩，JPMorgan确认08:30 EDT业绩电话会。",
+      "what_changed": "宏观与油价的周末信息将首先进入股票、美元/原油交易价格，而美国债券现货的最新价格发现及大行实际盈利证据要等到周二。",
+      "why_it_matters": "10月9日十年期美债约5.24%仍是关键折现率锚；银行净息差、存款成本与信用损失会决定高收益率是否由股市估值约束变为实体信用约束。",
+      "transmission": "周一股债交易日错配 → 资产间信号异步 → 周二银行盈利/准备金揭示资金成本和信贷质量 → 期限溢价与风险估值再定价。",
+      "affected_assets": [
+        "S&P 500",
+        "US Treasury 10Y",
+        "JPM",
+        "C",
+        "bank credit"
+      ],
+      "direction": "事件窗口/资金成本确认",
+      "importance": "★★★★",
+      "confirmation": "周一股票广度与油价改善、周二美债收益率同步回落且银行净息差/信用质量稳健，支持风险缓和。",
+      "invalidation": "周一出现窄幅指数上涨、周二美债收益率上冲或银行大幅提高坏账拨备，意味着此前风险缓和是错配假象。",
+      "sources": [
+        "S26",
+        "S27",
+        "S28",
+        "S17"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top 3 Market Catalysts",
+      "status": "RBI、柴油外交与美股/美债错位成为周末三大驱动",
+      "summary": "10月10日印度储备银行对油企买汇设置专项美元窗口；美俄柴油承诺虽改变燃料供应预期但尚未见实际交付；周一股市开盘、债市休市与周二大行财报形成连续验证链。",
+      "paragraphs": [
+        "10月10日印度储备银行对油企买汇设置专项美元窗口；美俄柴油承诺虽改变燃料供应预期但尚未见实际交付；周一股市开盘、债市休市与周二大行财报形成连续验证链。 因此，应优先依据标注实际日期的实物交付、官方披露和跨资产同交易日数据检验该传导，而不是使用未经核实的周末价格或资金流作结论。"
+      ],
+      "tables": [],
+      "sources": [
+        "S21",
+        "S23",
+        "S26",
+        "S28"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings",
+      "status": "Delta已披露；JPMorgan与Citi于10月13日待公布",
+      "summary": "Delta截至10月9日已报告GAAP营收202亿美元、调整后营收176亿美元和调整后EPS 1.72美元，但FY2026调整后EPS指导下修为5.10–5.60美元；未来72小时关注JPMorgan、Citi银行信用成本而非臆测财报。",
+      "paragraphs": [
+        "Delta截至10月9日已报告GAAP营收202亿美元、调整后营收176亿美元和调整后EPS 1.72美元，但FY2026调整后EPS指导下修为5.10–5.60美元；未来72小时关注JPMorgan、Citi银行信用成本而非臆测财报。 因此，应优先依据标注实际日期的实物交付、官方披露和跨资产同交易日数据检验该传导，而不是使用未经核实的周末价格或资金流作结论。"
+      ],
+      "tables": [],
+      "sources": [
+        "S06",
+        "S07",
+        "S26",
+        "S27"
+      ],
+      "reported": [
+        {
+          "id": "DAL-2026Q3",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "period": "September quarter 2026",
+          "status": "Reported",
+          "release_date": "2026-10-09",
+          "release_time_et": "2026-10-09 06:30 EDT",
+          "release_time_sgt": "2026-10-09 18:30 SGT",
+          "market_session": "Pre-US-cash market",
+          "key_takeaway": "Strong adjusted revenue but lower full-year profit guidance from sharply higher fuel costs.",
+          "metrics": [
+            {
+              "metric": "GAAP revenue",
+              "actual": "$20.2bn",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "September quarter 2026 compared with prior period as identified by issuer",
+              "surprise": "Numerical consensus not established; no beat/miss inferred",
+              "notes": "Issuer GAAP definition"
+            },
+            {
+              "metric": "Adjusted revenue",
+              "actual": "$17.6bn",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "September quarter 2026 compared with prior period as identified by issuer",
+              "surprise": "Numerical consensus not established; no beat/miss inferred",
+              "notes": "Non-GAAP; about +16% y/y"
+            },
+            {
+              "metric": "Adjusted EPS",
+              "actual": "$1.72",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "September quarter 2026 compared with prior period as identified by issuer",
+              "surprise": "Numerical consensus not established; no beat/miss inferred",
+              "notes": "Issuer adjusted earnings"
+            },
+            {
+              "metric": "GAAP EPS",
+              "actual": "$1.15",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "September quarter 2026 compared with prior period as identified by issuer",
+              "surprise": "Numerical consensus not established; no beat/miss inferred",
+              "notes": "Not equal to adjusted EPS"
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "FY2026 adjusted EPS",
+              "current": "$5.10–$5.60",
+              "previous_or_consensus": "$6.50–$7.50",
+              "change": "Down",
+              "interpretation": "About $6bn extra fuel expense offsets robust demand."
+            },
+            {
+              "metric": "FY2026 free cash flow",
+              "current": "About $2.5bn",
+              "previous_or_consensus": "Prior guidance not independently confirmed",
+              "change": "Revised issuer outlook",
+              "interpretation": "Real cash conversion must be tested separately from adjusted revenue."
+            }
+          ],
+          "market_reaction": {
+            "session": "Oct9 US cash",
+            "move": "尚无法可靠确认",
+            "as_of": "2026-10-09 EDT; exact DAL cash close change not independently verified"
+          },
+          "one_offs": [
+            "Delta owns refinery exposure and presents non-GAAP reconciling items; no unverified one-off gain inserted."
+          ],
+          "read_through": [
+            {
+              "asset": "US airlines",
+              "implication": "Fuel costs can lower adjusted guidance despite revenue growth."
+            },
+            {
+              "asset": "US consumer discretionary",
+              "implication": "Strong premium travel revenue is not a proxy for broad consumer real income."
+            }
+          ],
+          "sources": [
+            "S06",
+            "S07"
+          ]
+        }
+      ],
+      "upcoming_72h": [
+        {
+          "id": "JPM-2026Q3",
+          "company": "JPMorgan Chase",
+          "ticker": "JPM",
+          "period": "2026 Q3",
+          "status": "Confirmed Upcoming",
+          "date": "2026-10-13",
+          "et": "2026-10-13 08:30 EDT业绩电话会；公告发布时间未独立确认",
+          "sgt": "2026-10-13 20:30 SGT业绩电话会",
+          "market_session": "Before US cash open / earnings call",
+          "consensus": {
+            "revenue": "尚无法可靠确认",
+            "eps": "尚无法可靠确认"
+          },
+          "previous_guidance": "当季公司业绩未发布；不以市场评论冒充指引",
+          "actual": "待公布",
+          "what_matters": [
+            "净利息收入和存款成本变化",
+            "信用卡及商业贷款净冲销率和拨备",
+            "投行与交易收入及下一季前瞻指引"
+          ],
+          "read_through_targets": [
+            "JPM",
+            "KBE",
+            "US Treasury 10Y",
+            "US credit spreads"
+          ],
+          "sources": [
+            "S26",
+            "S19"
+          ]
+        },
+        {
+          "id": "C-2026Q3",
+          "company": "Citigroup",
+          "ticker": "C",
+          "period": "2026 Q3",
+          "status": "Confirmed Upcoming",
+          "date": "2026-10-13",
+          "et": "2026-10-13 08:00 EDT披露、11:00 EDT电话会",
+          "sgt": "2026-10-13 20:00 SGT披露、23:00 SGT电话会",
+          "market_session": "Before US cash open",
+          "consensus": {
+            "revenue": "尚无法可靠确认",
+            "eps": "尚无法可靠确认"
+          },
+          "previous_guidance": "Q3正式报告未出；不提前使用未经核实的营收与EPS",
+          "actual": "待公布",
+          "what_matters": [
+            "净利息收入和存款beta",
+            "消费者贷款风险与准备金",
+            "交易/承销业务及资本回报政策"
+          ],
+          "read_through_targets": [
+            "C",
+            "US banks",
+            "Consumer credit",
+            "USD funding"
+          ],
+          "sources": [
+            "S27",
+            "S19"
+          ]
+        }
+      ]
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "U.S. Economic Data",
+      "status": "美国消费信心弱、通胀预期高；周日无新交易日宏观释放",
+      "summary": "10月9日密歇根消费者信心初值46.3（9月48.1），未来一年通胀预期4.7%、五年3.5%。油价与居民实际购买力的方向相反，必须区分价格预期与已经发布的CPI数据。",
+      "paragraphs": [
+        "10月9日密歇根消费者信心初值46.3（9月48.1），未来一年通胀预期4.7%、五年3.5%。油价与居民实际购买力的方向相反，必须区分价格预期与已经发布的CPI数据。 因此，应优先依据标注实际日期的实物交付、官方披露和跨资产同交易日数据检验该传导，而不是使用未经核实的周末价格或资金流作结论。"
+      ],
+      "tables": [],
+      "sources": [
+        "S04",
+        "S05"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Global Central Banks",
+      "status": "印度RBI新增FX窗口，美联储政策约束仍未解除",
+      "summary": "RBI10月10日宣布从10月12日定向供给油企美元，并改变衍生品风险储备与敞口门槛；这不是利率变化。美国10月9日十年期收益率约5.24%，美联储不能仅凭低消费信心忽略4.7%通胀预期。",
+      "paragraphs": [
+        "RBI10月10日宣布从10月12日定向供给油企美元，并改变衍生品风险储备与敞口门槛；这不是利率变化。美国10月9日十年期收益率约5.24%，美联储不能仅凭低消费信心忽略4.7%通胀预期。 因此，应优先依据标注实际日期的实物交付、官方披露和跨资产同交易日数据检验该传导，而不是使用未经核实的周末价格或资金流作结论。"
+      ],
+      "tables": [],
+      "sources": [
+        "S21",
+        "S22",
+        "S29",
+        "S17"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Major International Events",
+      "status": "俄柴油协议受欧洲与乌克兰反对；伊朗海运与飓风停产尚待核实",
+      "summary": "美国与俄罗斯宣布柴油供应与部分制裁临时松绑后，欧洲和乌克兰方面10月10日公开反对；俄油供应与物流进度仍需分别核实。特朗普有关伊朗谈判的言论不等于霍尔木兹油轮运输恢复，美国墨西哥湾飓风停产最新恢复规模亦未确证。",
+      "paragraphs": [
+        "美国与俄罗斯宣布柴油供应与部分制裁临时松绑后，欧洲和乌克兰方面10月10日公开反对；俄油供应与物流进度仍需分别核实。特朗普有关伊朗谈判的言论不等于霍尔木兹油轮运输恢复，美国墨西哥湾飓风停产最新恢复规模亦未确证。 因此，应优先依据标注实际日期的实物交付、官方披露和跨资产同交易日数据检验该传导，而不是使用未经核实的周末价格或资金流作结论。"
+      ],
+      "tables": [],
+      "sources": [
+        "S23",
+        "S24",
+        "S25",
+        "S02"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "China, Japan, Europe and Canada Policy",
+      "status": "印度油企美元政策新增；欧中混动贸易协议仍待批准",
+      "summary": "RBI10月10日设立IOC/HPCL/BPCL美元买汇窗口并收紧部分INR衍生品，10月12日生效；中欧混动汽车出口安排尚属初步贸易理解并待审批。加拿大9月就业-68,300推动加元承压，日元近期美元兑日元报价约158.25但未有最新日本央行干预证据。",
+      "paragraphs": [
+        "RBI10月10日设立IOC/HPCL/BPCL美元买汇窗口并收紧部分INR衍生品，10月12日生效；中欧混动汽车出口安排尚属初步贸易理解并待审批。加拿大9月就业-68,300推动加元承压，日元近期美元兑日元报价约158.25但未有最新日本央行干预证据。 因此，应优先依据标注实际日期的实物交付、官方披露和跨资产同交易日数据检验该传导，而不是使用未经核实的周末价格或资金流作结论。"
+      ],
+      "tables": [],
+      "sources": [
+        "S21",
+        "S22",
+        "S12",
+        "S13",
+        "S08",
+        "S10"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "MSCI / FTSE / S&P / Nasdaq Index Changes",
+      "status": "纳指100既有成分调整；周末未发现新生效变更",
+      "summary": "纳斯达克先前公告Moderna自10月9日加入Nasdaq-100；这是已公告的公司行动，不是10月11日新增。周末未核实新的MSCI、FTSE、标普或纳指被动资金实际买入量，不能把成分股调整外推成ETF现金净流入。",
+      "paragraphs": [
+        "纳斯达克先前公告Moderna自10月9日加入Nasdaq-100；这是已公告的公司行动，不是10月11日新增。周末未核实新的MSCI、FTSE、标普或纳指被动资金实际买入量，不能把成分股调整外推成ETF现金净流入。 因此，应优先依据标注实际日期的实物交付、官方披露和跨资产同交易日数据检验该传导，而不是使用未经核实的周末价格或资金流作结论。"
+      ],
+      "tables": [],
+      "sources": [
+        "S20"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "Pension / Month-End / Quarter-End Flows",
+      "status": "美元现金偏好有周度证据；周末无官方新交易日资金流",
+      "summary": "10月7日结束的一周全球货币市场基金净流入约1538.1亿美元，属于有时滞的周度资金流；10月10日印度央行供汇窗口改变未来资金分配而不是已实现本周基金申赎。风险资产流动性需等待下次合法市场/基金更新。",
+      "paragraphs": [
+        "10月7日结束的一周全球货币市场基金净流入约1538.1亿美元，属于有时滞的周度资金流；10月10日印度央行供汇窗口改变未来资金分配而不是已实现本周基金申赎。风险资产流动性需等待下次合法市场/基金更新。 因此，应优先依据标注实际日期的实物交付、官方披露和跨资产同交易日数据检验该传导，而不是使用未经核实的周末价格或资金流作结论。"
+      ],
+      "tables": [],
+      "sources": [
+        "S14",
+        "S21"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF Rebalance / Index Reconstruction",
+      "status": "暂无可信周末新ETF申赎；被动指数变动不等于资金流",
+      "summary": "周六、周日没有可信的美国ETF新净申赎结算观察，Moderna纳指100调整的被动交易规模亦未获得审计来源。下周应以基金份额、持仓披露及指数公司公告核对，而不造ETF flow或再平衡点位。",
+      "paragraphs": [
+        "周六、周日没有可信的美国ETF新净申赎结算观察，Moderna纳指100调整的被动交易规模亦未获得审计来源。下周应以基金份额、持仓披露及指数公司公告核对，而不造ETF flow或再平衡点位。 因此，应优先依据标注实际日期的实物交付、官方披露和跨资产同交易日数据检验该传导，而不是使用未经核实的周末价格或资金流作结论。"
+      ],
+      "tables": [],
+      "sources": [
+        "S20",
+        "S14"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "Options Expiry",
+      "status": "期权gamma与0DTE头寸不可核实；节日流动性需警惕",
+      "summary": "没有可验证的10月9日收盘期权dealer gamma flip、pin strike或max-pain实测，不以指数周五上涨推断做市商挤空；10月12日股市开市与美元债休市会影响跨资产套保流动性，等待交易所分时成交与期权O/I更新。",
+      "paragraphs": [
+        "没有可验证的10月9日收盘期权dealer gamma flip、pin strike或max-pain实测，不以指数周五上涨推断做市商挤空；10月12日股市开市与美元债休市会影响跨资产套保流动性，等待交易所分时成交与期权O/I更新。 因此，应优先依据标注实际日期的实物交付、官方披露和跨资产同交易日数据检验该传导，而不是使用未经核实的周末价格或资金流作结论。"
+      ],
+      "tables": [],
+      "sources": [
+        "S28",
+        "S01"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "U.S. Treasury Auctions",
+      "status": "周一固定收益休市；周二匹配期限观察收益率",
+      "summary": "AP记录美国10年期国债10月9日约5.24%，是取整媒体市场报价，未得到与前日匹配的官方1D/5D序列，故缺口保留。SIFMA确认10月12日美国美元计价固定收益建议休市而美股开市，10月13日恢复现金交易后再验证利率冲击。",
+      "paragraphs": [
+        "AP记录美国10年期国债10月9日约5.24%，是取整媒体市场报价，未得到与前日匹配的官方1D/5D序列，故缺口保留。SIFMA确认10月12日美国美元计价固定收益建议休市而美股开市，10月13日恢复现金交易后再验证利率冲击。 因此，应优先依据标注实际日期的实物交付、官方披露和跨资产同交易日数据检验该传导，而不是使用未经核实的周末价格或资金流作结论。"
+      ],
+      "tables": [],
+      "sources": [
+        "S17",
+        "S28"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Oil / OPEC / Commodities",
+      "status": "高油价与柴油供应承诺同时存在；实际交付是关键",
+      "summary": "10月9日十二月Brent期货结算104.72美元、十一月WTI结算91.85美元，不能称为周日价格。美国墨西哥湾飓风导致停产、伊朗航运限制和俄柴油30万吨初始承诺在物理供应层面作用不同：只有实际供给恢复才能压低通胀与长端贴现率。",
+      "paragraphs": [
+        "10月9日十二月Brent期货结算104.72美元、十一月WTI结算91.85美元，不能称为周日价格。美国墨西哥湾飓风导致停产、伊朗航运限制和俄柴油30万吨初始承诺在物理供应层面作用不同：只有实际供给恢复才能压低通胀与长端贴现率。 因此，应优先依据标注实际日期的实物交付、官方披露和跨资产同交易日数据检验该传导，而不是使用未经核实的周末价格或资金流作结论。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S23",
+        "S24"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "IPO / Financing / Capital Cycle",
+      "status": "SpaceX频谱采购仍待监管批准，AI投入现金转换仍承压",
+      "summary": "SpaceX此前约80亿美元、最多14MHz的低频频谱交易仍需FCC批准；宣布的投资额不是已经支付的现金，更不能当作AI算力capex实际回报。高达5.24%的美债十年收益率与油价压力提高长期融资门槛，下周大行财报可核验信贷资金价格。",
+      "paragraphs": [
+        "SpaceX此前约80亿美元、最多14MHz的低频频谱交易仍需FCC批准；宣布的投资额不是已经支付的现金，更不能当作AI算力capex实际回报。高达5.24%的美债十年收益率与油价压力提高长期融资门槛，下周大行财报可核验信贷资金价格。 因此，应优先依据标注实际日期的实物交付、官方披露和跨资产同交易日数据检验该传导，而不是使用未经核实的周末价格或资金流作结论。"
+      ],
+      "tables": [],
+      "sources": [
+        "S15",
+        "S16",
+        "S17",
+        "S26",
+        "S27"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Past 24H Major Breaking News",
+      "status": "过去24小时焦点：印度RBI周六监管举措与柴油外交争议",
+      "summary": "10月10日印度储备银行周六宣布油企美元专项窗口与卢比衍生品收紧政策，定于10月12日生效；10月10日乌克兰与欧洲针对俄柴油制裁调整出现新的政治反对。周五早已收盘的股票与石油价位不是新的24小时交易事件。",
+      "paragraphs": [
+        "10月10日印度储备银行周六宣布油企美元专项窗口与卢比衍生品收紧政策，定于10月12日生效；10月10日乌克兰与欧洲针对俄柴油制裁调整出现新的政治反对。周五早已收盘的股票与石油价位不是新的24小时交易事件。 因此，应优先依据标注实际日期的实物交付、官方披露和跨资产同交易日数据检验该传导，而不是使用未经核实的周末价格或资金流作结论。"
+      ],
+      "tables": [],
+      "sources": [
+        "S21",
+        "S22",
+        "S24",
+        "S25"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "Integrated Market Impact",
+      "status": "能源进口FX、油品兑现与美国银行信用是下周三道关",
+      "summary": "周末消息引入RBI油企美元供给与俄柴油合同预期，但10月9日Brent仍在104.72美元、十年美债收益率约5.24%。周一首看USD/INR与实际油品走势、美国股市广度，周二再看JPM/Citi净息差、信用损失和同口径国债收益率，以区分信心反弹和真实金融条件改善。",
+      "paragraphs": [
+        "周末消息引入RBI油企美元供给与俄柴油合同预期，但10月9日Brent仍在104.72美元、十年美债收益率约5.24%。周一首看USD/INR与实际油品走势、美国股市广度，周二再看JPM/Citi净息差、信用损失和同口径国债收益率，以区分信心反弹和真实金融条件改善。 因此，应优先依据标注实际日期的实物交付、官方披露和跨资产同交易日数据检验该传导，而不是使用未经核实的周末价格或资金流作结论。"
+      ],
+      "tables": [],
+      "sources": [
+        "S21",
+        "S23",
+        "S17",
+        "S26",
+        "S27"
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "Growth Impulse",
+      "current": "↓ 消费信心疲软",
+      "yesterday": "↓ 需求担忧",
+      "change_reason": "10月9日美国信心与加拿大就业表现仍指向增长疲软；周末未公布新的可比消费实际值。",
+      "evidence": "美国密歇根10月消费者信心46.3对比9月48.1；加拿大9月就业-68,300。",
+      "sources": [
+        "S04",
+        "S08"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "Inflation Impulse",
+      "current": "↑ 燃料通胀仍高",
+      "yesterday": "↑ 油价/预期压力",
+      "change_reason": "美俄柴油计划虽能改善供应预期，但物流与制裁阻力令真实燃料成本缓解仍无法确认。",
+      "evidence": "10月9日Brent十二月结算104.72美元；密歇根1年通胀预期4.7%。",
+      "sources": [
+        "S02",
+        "S04",
+        "S23"
+      ]
+    },
+    "rates_pressure": {
+      "label": "Rates Pressure",
+      "current": "→ 高利率待周二验真",
+      "yesterday": "↑ 十年期收益率压力",
+      "change_reason": "周一美国美元债交易按假日计划暂停，新的周一股票表现不能代表现货收益率已改善。",
+      "evidence": "10月9日美国10年期收益率约5.24%；SIFMA 10月12日建议全日休市。",
+      "sources": [
+        "S17",
+        "S28"
+      ]
+    },
+    "earnings_revision": {
+      "label": "Earnings Revision",
+      "current": "→ 大行财报尚待公布",
+      "yesterday": "↓ Delta下修",
+      "change_reason": "航空公司燃料成本上升已影响利润指引；银行信用损失与息差下周二才有真实数据。",
+      "evidence": "Delta FY调整后EPS指引5.10–5.60美元；Citi Q3报告10月13日08:00 EDT。",
+      "sources": [
+        "S06",
+        "S07",
+        "S27"
+      ]
+    },
+    "liquidity": {
+      "label": "Liquidity",
+      "current": "↓ 印度外汇市场收紧",
+      "yesterday": "→ 现金偏好",
+      "change_reason": "RBI定向卖美元同时收紧INR衍生品门槛，意在遏制汇率波动但可能影响对冲市场流动性。",
+      "evidence": "10月10日宣布油企窗口10月12日生效；部分阈值1亿美元降至500万美元。",
+      "sources": [
+        "S21",
+        "S22",
+        "S29"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "Geopolitical Risk",
+      "current": "↑ 油品外交争议",
+      "yesterday": "↑ 霍尔木兹/飓风",
+      "change_reason": "俄柴油计划遭乌克兰和欧洲批评，伊朗航运及墨西哥湾供给恢复仍有不确定性。",
+      "evidence": "Reuters/AP 10月10日报道乌欧反对柴油供应安排；10月9日Brent仍104.72美元。",
+      "sources": [
+        "S23",
+        "S24",
+        "S25",
+        "S02"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base — policy buffers, high risk premia",
+      "probability": "条件性基准情景（不虚构精确概率）",
+      "trigger": "印度美元窗口按计划运作；柴油协议仍待交付；Brent高位但未进一步冲击。",
+      "expected_market_reaction": "周一印度汇市、油价和美股分化；美国债券现货缺位，周二财报与利率恢复后进行二次定价。",
+      "assets_most_sensitive": [
+        "USD/INR",
+        "Brent",
+        "S&P 500",
+        "UST 10Y"
+      ],
+      "what_confirms_it": "油企美元窗口实际运行而USD/INR波动受控，股市广度改善且周二收益率稳定。",
+      "what_invalidates_it": "RBI供汇效果不明显、油价继续飙升或周二银行增加坏账准备。"
+    },
+    "bull_case": {
+      "label": "Bull — fuel supply actually normalizes",
+      "probability": "条件性乐观情景（不虚构精确概率）",
+      "trigger": "核实俄罗斯柴油实际交付、美国墨西哥湾产能恢复，并有价格同步反应。",
+      "expected_market_reaction": "柴油裂解价差与原油风险溢价下行，通胀预期与期限溢价缓解，银行资金成本及高久期股估值改善。",
+      "assets_most_sensitive": [
+        "Diesel",
+        "Brent",
+        "UST 10Y",
+        "Nasdaq"
+      ],
+      "what_confirms_it": "可验证到港、生产恢复和周二美国长债收益率回落同时出现。",
+      "what_invalidates_it": "有名义协议却没有物流兑现，或通胀预期继续上行。"
+    },
+    "bear_case": {
+      "label": "Bear — FX intervention insufficient",
+      "probability": "条件性风险情景（不虚构精确概率）",
+      "trigger": "印度卢比与外汇储备同步承压、俄柴油交易受阻，伊朗或墨西哥湾供应持续受限。",
+      "expected_market_reaction": "新兴市场货币偏弱，柴油/原油上涨使通胀黏性增强、十年收益率或信用利差扩张，股市内部再度分化。",
+      "assets_most_sensitive": [
+        "USD/INR",
+        "Brent",
+        "US 10Y",
+        "Banks",
+        "Small caps"
+      ],
+      "what_confirms_it": "官方外储下降、实际油品供应缺失、周二债券现金收益率与信用损失同步走弱。",
+      "what_invalidates_it": "RBI稳定即期市场且实体供应和银行信贷指标均改善。"
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-10-12 SGT（印度开市时段，官方未指明具体小时）",
+      "et": "2026-10-11/12 EDT（依当地时段，非精确发布时点）",
+      "event": "印度RBI向三家国有油企供应美元专项窗口开始生效",
+      "consensus": "尚无可靠成交量预测",
+      "previous": "10月9日卢比约96.71/USD（印度现金市场报价）",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S21",
+        "S22"
+      ]
+    },
+    {
+      "sgt": "2026-10-12 21:30 SGT",
+      "et": "2026-10-12 09:30 EDT",
+      "event": "NYSE/Nasdaq开市而美元债市场按SIFMA假日建议休市",
+      "consensus": "无数值共识，观察周一股市和柴油原油先行反应",
+      "previous": "10月9日S&P 500收7,811.54，美债十年收益率约5.24%",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S01",
+        "S17",
+        "S28"
+      ]
+    },
+    {
+      "sgt": "2026-10-13 20:00 SGT",
+      "et": "2026-10-13 08:00 EDT",
+      "event": "Citigroup第三季度2026正式业绩披露（JPMorgan电话会20:30 SGT）",
+      "consensus": "Revenue/EPS：尚无法可靠确认，不构造共识",
+      "previous": "前一季度银行指标与2026 Q3实际尚须等待官方公告",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S26",
+        "S27"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "Oil import bill overwhelms India FX policy buffer despite RBI directed dollar window",
+      "why_not_fully_priced": "定向供汇仅改变美元买盘渠道，不创造新的美元收入；10月12日实施前没有可证实的有效交易数据。",
+      "trigger": "10月12日卢比继续明显承压、外汇储备快速消耗或油企窗口执行受阻。",
+      "transmission": "Brent与美元账单↑ → 印度油企买汇需求↑ → 外储/对冲流动性承压 → 新兴市场信用风险溢价↑。",
+      "first_asset": "USD/INR、印度外储和印度银行股",
+      "theme_id": "india_fx_liquidity",
+      "lifecycle_state": "new",
+      "first_seen": "2026-10-11",
+      "last_seen": "2026-10-11",
+      "sources": [
+        "S21",
+        "S22",
+        "S29"
+      ]
+    },
+    {
+      "risk": "Russian diesel pledge fails to translate into verified cargoes, leaving fuel inflation elevated",
+      "why_not_fully_priced": "30万吨为宣布的初始供应意向而非到港海关口径，欧美政治反对令航运与制裁执行存在不确定性。",
+      "trigger": "俄柴油制裁条件变化、到港物流无证据或柴油价格/裂解价差不跌反涨。",
+      "transmission": "实际柴油可用量未增长 → 运费/工农业成本↑ → 居民价格预期↑ → 国债期限溢价与股市贴现率↑。",
+      "first_asset": "Diesel crack spreads与Brent",
+      "theme_id": "geopolitics_energy",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-08",
+      "last_seen": "2026-10-11",
+      "sources": [
+        "S23",
+        "S24",
+        "S25"
+      ]
+    },
+    {
+      "risk": "US bond holiday delays price discovery as banks report into elevated financing costs",
+      "why_not_fully_priced": "美股周一交易但美国美元债周一休市，10月9日约5.24%的长债利率与银行资金成本之间的反馈要等周二同步验真。",
+      "trigger": "10月13日美国长债收益率反弹且银行信用减值拨备、存款成本明显上升。",
+      "transmission": "高折现率与能源成本 → 银行NIM/贷款需求/损失准备压力 → 信贷供给下降与风险资产估值回落。",
+      "first_asset": "US Treasury 10Y、JPM、C、Russell 2000",
+      "theme_id": "global_duration",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-07",
+      "last_seen": "2026-10-11",
+      "sources": [
+        "S17",
+        "S26",
+        "S27",
+        "S28"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "2026-10-12 India RBI oil-company dollar window begins; monitor USD/INR first",
+    "status": "Confirmed Upcoming",
+    "date": "2026-10-12",
+    "et": "2026-10-11/12 EDT（印度开市换算依具体交易时刻；未公告固定时刻）",
+    "sgt": "2026-10-12 SGT（生效日，未公告确切小时）",
+    "consensus": "无经证实的美元供给量、USD/INR点位共识",
+    "previous": "印度卢比10月9日约96.71兑1美元；Brent十二月合约104.72美元",
+    "actual": "待公布",
+    "why_it_matters": "这是能源成本外溢至外汇微观结构的首个可操作政策测试；它比美国股市开盘更早，且决定全球柴油/原油冲击是否进一步转为EM美元流动性压力。",
+    "first_market": "USD/INR、印度油企及银行现货市场；随后Brent柴油价差与10月12日美股",
+    "bull_interpretation": "可确认的实际美元供给抑制卢比现货波动且没有失序外储流出，市场定价认为进口融资压力可控。",
+    "bear_interpretation": "窗口开放后卢比仍持续承压或外储异常消耗，意味着高油价外部冲击未被政策缓冲。",
+    "watch_first": [
+      "观察10月12日开市USD/INR相对10月9日96.71的方向并核验RBI油企窗口真实启用：汇价稳定且交易渠道正常才算短期缓冲奏效。",
+      "核实俄柴油初始30万吨是否有实际船期、抵港及柴油裂解价差变化：只有物理交付和价格双向确认才能降低燃料通胀风险。",
+      "10月12日21:30 SGT跟踪美股S&P500与Russell广度，待10月13日美债现金重开再与10年期约5.24%的旧报价同口径比较；孤立周一反弹不是期限风险缓解。"
+    ],
+    "sources": [
+      "S21",
+      "S22",
+      "S29",
+      "S23",
+      "S28",
+      "S17"
+    ]
+  },
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S25",
+    "S26",
+    "S27",
+    "S28",
+    "S29"
+  ]
+}
