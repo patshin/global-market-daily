@@ -1,0 +1,1061 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-10-12",
+  "edition": "Morning Official",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-10-12 10:43 SGT",
+  "data_cutoff_et": "2026-10-11 22:43 EDT",
+  "last_updated": "2026-10-12T10:43:08+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-10-12T09:00:00+08:00",
+    "started_at_sgt": "2026-10-12T10:29:43+08:00",
+    "recovery_started_at_sgt": "2026-10-12T10:29:43+08:00",
+    "research_cutoff_sgt": "2026-10-12T10:43:08+08:00",
+    "mode": "morning",
+    "recovery_note": "Independent contemporaneous recovery research after 09:00; Oct9 US Friday cash closes remain explicitly dated historical market-tape observations. Not a 09:00 observation, not a retrospective reconstruction."
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": true
+  },
+  "publication_policy": "morning_official_2026-10-08",
+  "source_mode": "native_daily",
+  "sources_path": "data/sources/2026-10-12.json",
+  "comparison_basis": {
+    "previous_official_date": "2026-10-10",
+    "note": "Previous formal official observed Oct10; Oct11 official missing on main at recovery. Do not infer Oct11 market moves. Friday Oct9 quoted levels are retained as historical last verified cash-session observations, and Monday Oct12 Asia indications are separately timestamped; no synthetic Monday US stock/bond closes."
+  },
+  "thesis": "截至2026-10-12 10:43 SGT，市场定价面临“中东交通基础设施袭击抬升能源与保险尾部风险、但亚洲盘初油价随后回落”与“周三美国9月CPI及周二银行业财报重新定价盈利和长端利率”的双重约束。Reuters周一亚洲时段记录Brent约103.50美元、DXY约102.14，均为当时指示性快照而非收盘；美股现金市场今夜开放、美债现金市场依SIFMA建议休市，因此不得把周一股指波动直接解释为收益率已验证改善。",
+  "dominant_narrative": "今天的新增信息与10月10日正式日报不同：10月10日至11日利雅得机场发生连续袭击，Reuters及AP记录大量人员伤亡和航空中断，但没有可靠证据证明沙特油田已因机场袭击而直接减产。10月12日Reuters亚洲早盘显示市场分化、韩国股市盘初约跌1.1%，标普500与纳指期货分别约涨0.2%和0.5%；另一次行情快照显示Brent约103.50美元及美国原油约90.73美元，和前一时点Brent 105.48美元并非同一时间，因此不能拼成虚构日收益率。美元指数约102.14。特朗普关于俄乌能源停火的说法尚未获交战双方完整共同确认，俄罗斯柴油政策也有美国国内法律争议；印度央行10月12日为三家国有炼油/营销企业开设特殊美元购汇窗口，对亚洲能源进口汇率压力提供局部缓冲。美国10月12日股市交易、债市休市，日本现金股票因体育之日休市但JPX部分衍生品提供假日交易。真正可检验的传导链是能源现货与运输风险溢价→通胀预期→10月13日恢复后的美国国债现金收益率，再叠加10月13日摩根大通及花旗财报与10月14日CPI。所有10月9日的市场收盘数值都注明历史取价时点，并不伪装成今天的实时收盘。",
+  "market_regime": {
+    "growth": "→ 亚洲周一开局分化，韩国股票盘初回撤；美国最新家庭信心仍弱，未见新的美国现金股票交易日。",
+    "inflation": "↑ 中东航空与航运风险可传递至保险和燃料成本；亚洲Brent快照后来回落，等待同口径收盘确认。",
+    "rates": "→ 美债现金市场周一假日休市，10年期约5.24%仅为10月9日有明确基准限制的旧报价；周二再核验。",
+    "earnings": "→ 周二美国银行业季报将把贷款损失、净利息收入与融资成本区分于科技股反弹预期。",
+    "liquidity": "→ 假日股债交易错位及日本休市增加跨资产确认滞后，不能把期货报价当作美国债券现金流动性。",
+    "geopolitics": "↑ 沙特机场连袭已见报道；俄乌能源停火表态未获双方独立确认，市场需要物理流量证据。",
+    "overall": "Event Risk / Middle-East Transit, CPI and Bank Earnings"
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,811.54",
+      "change_1d": "+0.59%",
+      "change_5d": "+1.2%",
+      "signal": "↑ US equity rebound",
+      "driver": "AP final Friday US cash close; high-duration constraint remains; Oct12 SGT tape reuses verified dated Oct9 observation, not a new mark",
+      "status": "Confirmed US cash close | Latest independently retained prior-session quote (NOT Oct12 same-day cash close)",
+      "as_of": "2026-10-09 16:00 EDT",
+      "sources": [
+        "S01",
+        "S17"
+      ]
+    },
+    {
+      "asset": "Dow Jones Industrial Average",
+      "level": "51,654.95",
+      "change_1d": "+0.83%",
+      "change_5d": "+0.9%",
+      "signal": "↑ Cyclical bounce",
+      "driver": "AP verified Oct9 cash close and full-week return; Oct12 SGT tape reuses verified dated Oct9 observation, not a new mark",
+      "status": "Confirmed US cash close | Latest independently retained prior-session quote (NOT Oct12 same-day cash close)",
+      "as_of": "2026-10-09 16:00 EDT",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "27,366.17",
+      "change_1d": "+0.64%",
+      "change_5d": "+0.6%",
+      "signal": "↑ Growth-stock rebound",
+      "driver": "Friday AI/high-growth multiples regained some ground after Oct8 weakness; Oct12 SGT tape reuses verified dated Oct9 observation, not a new mark",
+      "status": "Confirmed US cash close | Latest independently retained prior-session quote (NOT Oct12 same-day cash close)",
+      "as_of": "2026-10-09 16:00 EDT",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,806.98",
+      "change_1d": "+0.46%",
+      "change_5d": "-0.9%",
+      "signal": "→ Small-cap relative lag",
+      "driver": "Friday advance contrasts with negative weekly return; breadth must confirm; Oct12 SGT tape reuses verified dated Oct9 observation, not a new mark",
+      "status": "Confirmed US cash close | Latest independently retained prior-session quote (NOT Oct12 same-day cash close)",
+      "as_of": "2026-10-09 16:00 EDT",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "Brent futures (December)",
+      "level": "$104.72/bbl",
+      "change_1d": "+0.42%",
+      "change_5d": "+2.4%",
+      "signal": "↑ Oil supply premium",
+      "driver": "December Brent settlement, US Gulf shut-ins and Hormuz risks; Oct12 SGT tape reuses verified dated Oct9 observation, not a new mark",
+      "status": "Confirmed futures settlement | Latest independently retained prior-session quote (NOT Oct12 same-day cash close)",
+      "as_of": "2026-10-09 US oil settlement EDT",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "asset": "WTI futures (November)",
+      "level": "$91.85/bbl",
+      "change_1d": "+0.39%",
+      "change_5d": "+0.8%",
+      "signal": "↑ Gulf storm risk",
+      "driver": "November WTI settlement after early intraday diplomacy relief; Oct12 SGT tape reuses verified dated Oct9 observation, not a new mark",
+      "status": "Confirmed futures settlement | Latest independently retained prior-session quote (NOT Oct12 same-day cash close)",
+      "as_of": "2026-10-09 US oil settlement EDT",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "asset": "DXY",
+      "level": "102.25",
+      "change_1d": "+0.13%",
+      "change_5d": "~+0.3%",
+      "signal": "↑ Dollar rate support",
+      "driver": "Reuters US afternoon spot index snapshot and weekly change; Oct12 SGT tape reuses verified dated Oct9 observation, not a new mark",
+      "status": "Reuters indicative, not official close | Latest independently retained prior-session quote (NOT Oct12 same-day cash close)",
+      "as_of": "2026-10-09 afternoon EDT",
+      "sources": [
+        "S10"
+      ]
+    },
+    {
+      "asset": "EUR/USD",
+      "level": "1.1198",
+      "change_1d": "-0.10%",
+      "change_5d": "~-0.5%",
+      "signal": "↓ Euro fiscal sensitivity",
+      "driver": "French public-debt pressure offsets Friday market stability; Oct12 SGT tape reuses verified dated Oct9 observation, not a new mark",
+      "status": "Reuters indicative FX snapshot | Latest independently retained prior-session quote (NOT Oct12 same-day cash close)",
+      "as_of": "2026-10-09 afternoon EDT",
+      "sources": [
+        "S10"
+      ]
+    },
+    {
+      "asset": "USD/JPY",
+      "level": "158.25",
+      "change_1d": "+0.25%",
+      "change_5d": "~+0.2%",
+      "signal": "↑ Yen weakness",
+      "driver": "Reuters Friday dollar/yen snapshot; yen about 0.2% softer weekly; Oct12 SGT tape reuses verified dated Oct9 observation, not a new mark",
+      "status": "Reuters indicative FX snapshot | Latest independently retained prior-session quote (NOT Oct12 same-day cash close)",
+      "as_of": "2026-10-09 afternoon EDT",
+      "sources": [
+        "S10"
+      ]
+    },
+    {
+      "asset": "Spot gold",
+      "level": "$4,194.36/oz",
+      "change_1d": "+1.5%",
+      "change_5d": "~+1.3%",
+      "signal": "↑ Defensive demand",
+      "driver": "Reuters spot gold 15:29 EDT snapshot; not a futures settlement; Oct12 SGT tape reuses verified dated Oct9 observation, not a new mark",
+      "status": "Reuters intraday spot quote | Latest independently retained prior-session quote (NOT Oct12 same-day cash close)",
+      "as_of": "2026-10-09 15:29 EDT",
+      "sources": [
+        "S11"
+      ]
+    },
+    {
+      "asset": "USD/CAD",
+      "level": "1.4275",
+      "change_1d": "~+0.4%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ CAD labor shock",
+      "driver": "Reuters afternoon 1.4275 after Canada -68300 jobs; matched weekly basis missing; Oct12 SGT tape reuses verified dated Oct9 observation, not a new mark",
+      "status": "Reuters indicative FX snapshot | Latest independently retained prior-session quote (NOT Oct12 same-day cash close)",
+      "as_of": "2026-10-09 afternoon EDT",
+      "sources": [
+        "S08",
+        "S09"
+      ]
+    },
+    {
+      "asset": "US Treasury 10Y yield",
+      "level": "~5.24%",
+      "change_1d": "尚无法可靠确认",
+      "change_5d": "尚无法可靠确认",
+      "signal": "→ Elevated duration cost",
+      "driver": "AP rounded Friday benchmark quotation, exact same-series daily/week changes unverified; Oct12 SGT tape reuses verified dated Oct9 observation, not a new mark",
+      "status": "AP approximate Friday yield, not H.15 fix | Latest independently retained prior-session quote (NOT Oct12 same-day cash close)",
+      "as_of": "2026-10-09 late US EDT",
+      "sources": [
+        "S17"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "PRIOR_SESSION_REFERENCE_WITH_EXPLICIT_GAPS",
+    "asset_count": 12,
+    "level_coverage": {
+      "count": 12,
+      "total": 12,
+      "pct": 100,
+      "target_pct": 90
+    },
+    "change_1d_coverage": {
+      "count": 11,
+      "total": 12,
+      "pct": 91.7,
+      "target_pct": 90
+    },
+    "change_5d_coverage": {
+      "count": 10,
+      "total": 12,
+      "pct": 83.3,
+      "target_pct": 80
+    },
+    "explicit_gaps": [
+      "USD/CAD Oct9 exact matched-week return not independently established.",
+      "UST10Y Oct9 same-series 1D and 5D changes unverified.",
+      "Oct12 Monday US cash indexes and cash UST10Y have not traded at research cutoff; all 1D/5D figures refer to the original Oct9 observation window, not Oct12 changes.",
+      "Monday Asia Reuters quote snapshots of Brent differ by reporting time; do not infer synthetic 1D return."
+    ],
+    "policy": "All 12 Level/1D/5D fields are carried as dated verified historical Friday Oct9 observations with the previous report source IDs and original timestamps. New Monday Asian indicated prices appear separately in Asia snapshot and narrative, not deceptively mixed into the Friday returns. Market closure holiday basis and cash bond closure disclosed."
+  },
+  "what_changed": [
+    {
+      "yesterday": "Oct10 official mainly assessed Oct9 US cash closes, Gulf hurricane production interruptions and high inflation expectations.",
+      "today": "Oct10–11 Saudi Riyadh airport sustained repeated strikes with reported civilian deaths, flight disruption and widening retaliation risk; direct Saudi oil output loss was not established.",
+      "why_it_matters": "Aviation insurance, Red Sea logistics and imported energy costs can move without a verified disruption of crude production; avoid conflating these channels.",
+      "sources": [
+        "S23",
+        "S24"
+      ]
+    },
+    {
+      "yesterday": "The previous official edition lacked a verified Moscow–Kyiv energy ceasefire announcement.",
+      "today": "Oct11 Trump publicly claimed a Russia–Ukraine energy ceasefire; Reuters and AP reported the agreement/status remained unconfirmed or disputed by separate participant accounts.",
+      "why_it_matters": "A political statement cannot be marked as restored diesel/energy flow until independently verified cessation and export movements occur.",
+      "sources": [
+        "S25",
+        "S26"
+      ]
+    },
+    {
+      "yesterday": "The Oct10 report used Friday Brent December settlement at $104.72 and previous close rates.",
+      "today": "Oct12 Reuters Asian cross-asset snapshot showed Brent about $103.50, US crude $90.73, DXY 102.14 and mixed equity futures; an earlier oil story quoted Brent $105.48.",
+      "why_it_matters": "Time-specific snapshots demonstrate intraday risk-premium volatility, not an indisputable close-to-close move; oil-to-duration confirmation awaits matched prices.",
+      "sources": [
+        "S21",
+        "S22",
+        "S33"
+      ]
+    },
+    {
+      "yesterday": "No verified special RBI dollar purchase window for Indian state oil importers was described in Oct10 edition.",
+      "today": "Oct12 RBI special U.S. dollar window for three state-owned oil marketing companies took effect according to WSJ/industry reporting.",
+      "why_it_matters": "Central-bank FX supply may smooth energy importer dollar demand and INR liquidity without proving crude import costs or inflation have fallen.",
+      "sources": [
+        "S32"
+      ]
+    },
+    {
+      "yesterday": "Previous watch list focused on Oct12 U.S. stock reopening before Monday Treasury holiday.",
+      "today": "Oct13 JPMorgan/Citi Q3 release schedules and Oct14 08:30 EDT U.S. September CPI calendar are now the next hard data and earnings checkpoints.",
+      "why_it_matters": "Loan-loss, funding and inflation outcomes can test whether optimistic equity futures are consistent with actual earnings and the Treasury discount-rate reset.",
+      "sources": [
+        "S29",
+        "S30",
+        "S31",
+        "S27"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "Oct 10–11 Saudi airport strikes renew aviation and regional transit risk before Oct 12 oil trading",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-10 and 2026-10-11 (exact intraday times unverified) EDT",
+      "event_time_sgt": "2026-10-10 and 2026-10-11 SGT; exact hours unverified",
+      "what_happened": "Reuters and AP reported deadly Houthi attacks and a repeat strike at Riyadh international airport, at least 12 reported dead in the initial attack and hundreds hurt; airline operations were disrupted. Verified Saudi oilfield production loss from these airport strikes has not been established.",
+      "what_changed": "The weekend escalated physical aviation security and retaliation risks after Friday US trading; the events are not evidence that a Saudi oilfield was struck.",
+      "why_it_matters": "Flight curtailment, regional insurance and tanker corridor threat premia can transmit to fuel logistics and inflation expectations even before upstream supply is impaired.",
+      "transmission": "Airport strikes and regional confrontation → airline routing/insurance and tanker risk premiums↑ → transport fuel costs and expected inflation↑ → discount-rate / airline margins pressure.",
+      "affected_assets": [
+        "Brent",
+        "Saudi equities",
+        "Global airlines",
+        "US Treasury long end",
+        "DXY"
+      ],
+      "direction": "↑ Regional supply-chain tail risk",
+      "importance": "★★★★★",
+      "confirmation": "Documented airport reopening, reduced regional security incidents and verified lower matched Brent quotes would confirm physical-risk normalization.",
+      "invalidation": "Fresh verified transport attacks, durable flight closures or proven new supply interruption would invalidate a quick normalization narrative.",
+      "sources": [
+        "S23",
+        "S24",
+        "S34"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "Oct 12 Monday equities and FX trade against a SIFMA-recommended U.S. cash-bond holiday",
+      "status": "Confirmed Upcoming",
+      "event_time_et": "2026-10-12 09:30 EDT US equities; cash fixed income holiday recommendation",
+      "event_time_sgt": "2026-10-12 21:30 SGT US equities; fixed income holiday recommendation",
+      "what_happened": "Reuters Monday Asia snapshot indicated S&P500 futures near +0.2%, Nasdaq futures near +0.5% and DXY about 102.14, while SIFMA recommends U.S. fixed-income cash market closure for Columbus Day and Japan cash equities also observe Sports Day.",
+      "what_changed": "After Friday cash indexes rebounded, Monday starts with partial market participation and delayed cash Treasury price discovery; exchange-traded futures may still operate.",
+      "why_it_matters": "A directional stock or FX move in holiday-thinned liquidity cannot be assumed to have been confirmed by contemporaneous Treasury cash yields.",
+      "transmission": "Holiday calendar and reduced liquidity → thinner cross-asset confirmation → futures/equity volatility → Tuesday UST cash reopen tests term premium → equity duration repricing.",
+      "affected_assets": [
+        "S&P500 futures",
+        "Nasdaq Composite",
+        "DXY",
+        "US Treasury 10Y",
+        "JPY"
+      ],
+      "direction": "→ Two-stage asset-price confirmation",
+      "importance": "★★★★",
+      "confirmation": "Tuesday actual cash Treasury reopening with same-basis lower 10Y yields and Monday broad stock participation confirms duration relief.",
+      "invalidation": "Tuesday matched cash UST yields return higher while Monday only megacaps advanced, rejecting a broad sustainable risk-on signal.",
+      "sources": [
+        "S21",
+        "S22",
+        "S27",
+        "S28"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "Oct 13 bank earnings and Oct 14 U.S. September CPI test duration and earnings simultaneously",
+      "status": "Confirmed Upcoming",
+      "event_time_et": "2026-10-13 07:00/08:00 EDT banks; 2026-10-14 08:30 EDT CPI",
+      "event_time_sgt": "2026-10-13 19:00/20:00 SGT banks; 2026-10-14 20:30 SGT CPI",
+      "what_happened": "Issuer investor-relations calendars confirm JPMorgan Chase Q3 results on October 13 around 07:00 EDT and Citigroup around 08:00 EDT. U.S. BLS schedules September CPI for October 14 at 08:30 EDT; neither upcoming result is released at this research cutoff.",
+      "what_changed": "The next 72-hour hard checkpoints are now bank funding and credit metrics followed by consumer inflation, not extrapolation from old index closes.",
+      "why_it_matters": "Actual bank net-interest margin, loan-loss reserves and CPI will test whether durable corporate cash flow can withstand a high and potentially sticky bond discount rate.",
+      "transmission": "Bank credit/funding margins and CPI surprise → policy/UST rate path → bank credit supply and equity multiples → S&P500/Russell sector breadth.",
+      "affected_assets": [
+        "JPMorgan",
+        "Citigroup",
+        "US Treasury 2Y and 10Y",
+        "S&P500",
+        "USD"
+      ],
+      "direction": "Binary scheduled data checkpoints",
+      "importance": "★★★★★",
+      "confirmation": "CPI undercuts price pressure while bank releases show resilient real credit quality and matched Treasury yields ease.",
+      "invalidation": "CPI upside surprise together with weaker bank loan-loss trends and renewed yield pressure rejects the favorable base case.",
+      "sources": [
+        "S29",
+        "S30",
+        "S31"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top 3 Market Catalysts",
+      "status": "Regional aviation escalation; holiday rates mismatch; CPI and bank earnings",
+      "summary": "Three live mechanisms: Saudi airport disruption raises insurance tail premia; Monday equity futures face a U.S. cash-bond closure; bank results and September CPI will jointly test capital costs and profitability. No verified Saudi crude-production loss from the airport incidents is asserted.",
+      "paragraphs": [
+        "The ranking separates occurred physical events from confirmed future calendar events. Saudi attack reports need independent verification of actual insurance/fuel propagation; preliminary Asia Brent quotes are not same-basis settlements."
+      ],
+      "tables": [],
+      "sources": [
+        "S21",
+        "S23",
+        "S24",
+        "S27",
+        "S29",
+        "S30"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings",
+      "status": "U.S. banks Tue Oct13; Delta Fri Oct9 is prior verified report",
+      "summary": "JPMorgan Chase and Citigroup have issuer-confirmed Oct13 Q3 releases pending; neither future result may be filled with an actual EPS or invented sell-side consensus. Delta's Oct9 adjusted EPS guidance cut remains a dated cross-sector fuel-margin reference, not newly announced Monday.",
+      "paragraphs": [
+        "Watch bank net interest income, deposit beta, provision/charge-offs, investment banking fee capture and credit commentary. Report release precedes the U.S. Tuesday cash equity session; call timing differs from press-release timing."
+      ],
+      "tables": [],
+      "sources": [
+        "S30",
+        "S31",
+        "S06",
+        "S07"
+      ],
+      "reported": [
+        {
+          "id": "DAL-2026Q3",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "period": "September quarter 2026",
+          "status": "Reported",
+          "release_date": "2026-10-09",
+          "release_time_et": "2026-10-09 06:30 EDT",
+          "release_time_sgt": "2026-10-09 18:30 SGT",
+          "market_session": "Pre-US-cash market",
+          "key_takeaway": "Previously released Oct9, NOT a new Oct12 disclosure. Strong adjusted revenue but lower full-year profit guidance from sharply higher fuel costs.",
+          "metrics": [
+            {
+              "metric": "GAAP revenue",
+              "actual": "$20.2bn",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "September quarter 2026 compared with prior period as identified by issuer",
+              "surprise": "Numerical consensus not established; no beat/miss inferred",
+              "notes": "Issuer GAAP definition"
+            },
+            {
+              "metric": "Adjusted revenue",
+              "actual": "$17.6bn",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "September quarter 2026 compared with prior period as identified by issuer",
+              "surprise": "Numerical consensus not established; no beat/miss inferred",
+              "notes": "Non-GAAP; about +16% y/y"
+            },
+            {
+              "metric": "Adjusted EPS",
+              "actual": "$1.72",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "September quarter 2026 compared with prior period as identified by issuer",
+              "surprise": "Numerical consensus not established; no beat/miss inferred",
+              "notes": "Issuer adjusted earnings"
+            },
+            {
+              "metric": "GAAP EPS",
+              "actual": "$1.15",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "September quarter 2026 compared with prior period as identified by issuer",
+              "surprise": "Numerical consensus not established; no beat/miss inferred",
+              "notes": "Not equal to adjusted EPS"
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "FY2026 adjusted EPS",
+              "current": "$5.10–$5.60",
+              "previous_or_consensus": "$6.50–$7.50",
+              "change": "Down",
+              "interpretation": "About $6bn extra fuel expense offsets robust demand."
+            },
+            {
+              "metric": "FY2026 free cash flow",
+              "current": "About $2.5bn",
+              "previous_or_consensus": "Prior guidance not independently confirmed",
+              "change": "Revised issuer outlook",
+              "interpretation": "Real cash conversion must be tested separately from adjusted revenue."
+            }
+          ],
+          "market_reaction": {
+            "session": "Oct9 US cash",
+            "move": "尚无法可靠确认",
+            "as_of": "2026-10-09 EDT; exact DAL cash close change not independently verified"
+          },
+          "one_offs": [
+            "Delta owns refinery exposure and presents non-GAAP reconciling items; no unverified one-off gain inserted."
+          ],
+          "read_through": [
+            {
+              "asset": "US airlines",
+              "implication": "Fuel costs can lower adjusted guidance despite revenue growth."
+            },
+            {
+              "asset": "US consumer discretionary",
+              "implication": "Strong premium travel revenue is not a proxy for broad consumer real income."
+            }
+          ],
+          "sources": [
+            "S06",
+            "S07"
+          ]
+        }
+      ],
+      "upcoming_72h": [
+        {
+          "id": "JPM-2026Q3-20261013",
+          "company": "JPMorgan Chase",
+          "ticker": "JPM",
+          "period": "Q3 2026",
+          "status": "Confirmed Upcoming",
+          "date": "2026-10-13",
+          "et": "2026-10-13 approximately 07:00 EDT",
+          "sgt": "2026-10-13 approximately 19:00 SGT",
+          "market_session": "Before Oct13 US cash equity open; investor call later",
+          "consensus": {
+            "revenue": "尚无法可靠确认",
+            "eps": "尚无法可靠确认"
+          },
+          "previous_guidance": "尚无法可靠确认",
+          "actual": "待公布",
+          "what_matters": [
+            "Net interest income and deposit/funding costs",
+            "Credit losses, charge-offs and provisions versus loan balances",
+            "Investment banking/trading revenues and management capital outlook"
+          ],
+          "read_through_targets": [
+            "US bank equity",
+            "UST 2Y/10Y",
+            "Credit spreads"
+          ],
+          "sources": [
+            "S30"
+          ]
+        },
+        {
+          "id": "C-2026Q3-20261013",
+          "company": "Citigroup",
+          "ticker": "C",
+          "period": "Q3 2026",
+          "status": "Confirmed Upcoming",
+          "date": "2026-10-13",
+          "et": "2026-10-13 approximately 08:00 EDT",
+          "sgt": "2026-10-13 approximately 20:00 SGT",
+          "market_session": "Before Oct13 US cash equity open; investor call at 11:00 EDT",
+          "consensus": {
+            "revenue": "尚无法可靠确认",
+            "eps": "尚无法可靠确认"
+          },
+          "previous_guidance": "尚无法可靠确认",
+          "actual": "待公布",
+          "what_matters": [
+            "Bank net interest margin and funding",
+            "Cost of credit, reserves and international consumer exposure",
+            "Markets and services revenues versus expenses"
+          ],
+          "read_through_targets": [
+            "Global bank credit",
+            "US large-cap banks",
+            "USD funding"
+          ],
+          "sources": [
+            "S31"
+          ]
+        }
+      ]
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "U.S. Economic Data",
+      "status": "U.S. CPI Wed Oct14; Michigan Oct9 reference",
+      "summary": "BLS confirms September consumer price index release for Oct14 08:30 EDT / 20:30 SGT; actual remains pending. October 9 Michigan preliminary sentiment 46.3 and one-year inflation expectations 4.7% are already released and remain prior-period constraints.",
+      "paragraphs": [
+        "Avoid fabricated consensus CPI numbers. A hot headline driven by energy versus sticky core services has different persistence and should be evaluated through matched 2Y/10Y yields and FX rather than one index alone."
+      ],
+      "tables": [],
+      "sources": [
+        "S29",
+        "S04",
+        "S05"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Global Central Banks",
+      "status": "Fed awaits CPI; RBI dollar window stabilizes Indian oil importer FX",
+      "summary": "No fresh Fed decision at this cutoff. The RBI's Oct12 special dollar window for three public-sector oil marketing firms provides a demand-channel FX intervention, not proof of lower underlying oil import bills.",
+      "paragraphs": [
+        "Energy-driven inflation and weak household confidence create a trade-off for central banks. RBI intervention directly changes spot dollar liquidity while the U.S. Fed path remains contingent on Wednesday CPI and the next actual data releases."
+      ],
+      "tables": [],
+      "sources": [
+        "S32",
+        "S29",
+        "S22"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Major International Events",
+      "status": "Saudi airport attacks confirmed; Russia–Ukraine claim not independently established",
+      "summary": "Reuters and AP report Riyadh airport suffered repeated Houthi strikes and civilian casualties over Oct10–11, affecting flight operations; this must not be mislabeled as verified direct output loss at Saudi oil fields. Trump's claimed Russia–Ukraine energy ceasefire lacks jointly established compliance.",
+      "paragraphs": [
+        "Iran-related regional escalation and Red Sea transportation risks can be priced through shipping insurance, diesel and air logistics. Russian diesel sanction changes remain legally contested in U.S. politics; policy status does not equal physical trade arrival."
+      ],
+      "tables": [],
+      "sources": [
+        "S23",
+        "S24",
+        "S25",
+        "S26"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "China, Japan, Europe and Canada Policy",
+      "status": "India RBI FX defense; Japan holiday; China–EU framework remains preliminary",
+      "summary": "India's Oct12 special dollar window for public oil marketing companies is targeted relief for importers. Japan closes ordinary cash equities for Sports Day while JPX derivatives have holiday trading. The China–EU hybrid-vehicle trade understanding previously reported remains preliminary pending implementation.",
+      "paragraphs": [
+        "Trade/industrial policy transmission is heterogeneous: INR spot-market liquidity can ease without a global oil-price fall; Japan thin Asian cash equity participation changes liquidity; China–EU automotive tariff implementation needs a dated official act."
+      ],
+      "tables": [],
+      "sources": [
+        "S32",
+        "S28",
+        "S12",
+        "S13"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "MSCI / FTSE / S&P / Nasdaq Index Changes",
+      "status": "No independently verified new Oct12 MSCI/FTSE/S&P/Nasdaq rebalance",
+      "summary": "Last official edition cited a Nasdaq-100 constituent change effective Friday October 9; no fresh Oct12 audited index-change notice or ETF rebalance notional was independently established by this recovery cutoff.",
+      "paragraphs": [
+        "Do not extrapolate announced membership changes into invented passive notional flows. Source a fresh official index provider notice before adding a daily corporate-flow catalyst."
+      ],
+      "tables": [],
+      "sources": [
+        "S20"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "Pension / Month-End / Quarter-End Flows",
+      "status": "No credible new same-day pension or institution flow notional",
+      "summary": "Previous verified Reuters flow report through October 7 showed large global cash-fund inflows. No genuine October 12 same-session pension reallocations or margin financing flow amounts have been independently confirmed.",
+      "paragraphs": [
+        "Holiday and earnings season make stocks/futures positioning easier to overinterpret; keep lagged mutual-fund aggregates separate from current intraday trading and from cash Treasury volumes."
+      ],
+      "tables": [],
+      "sources": [
+        "S14",
+        "S27"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF Rebalance / Index Reconstruction",
+      "status": "No independently verified new Oct12 primary-market ETF basket notional",
+      "summary": "No trusted public evidence at this cutoff establishes specific U.S. ETF creations/redemptions or index-reconstitution order size for October 12; the Oct9 Nasdaq constituent reference is background only.",
+      "paragraphs": [
+        "Treat passive ETF demand as unknown rather than backsolve trades from a stock move. An actual fund sponsor basket/holdings disclosure is required for quantified allocation claims."
+      ],
+      "tables": [],
+      "sources": [
+        "S20",
+        "S21"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "Options Expiry",
+      "status": "Do not infer dealer gamma while U.S. markets await opening",
+      "summary": "No real-time October 12 options positioning, 0DTE net gamma, strike-pin or dealer hedge totals have been independently verified. Monday exchange equity activity can coexist with the recommended U.S. cash-bond holiday.",
+      "paragraphs": [
+        "Use observed volatility, contract volume and official open interest after markets trade. Holiday liquidity and Asian futures prices do not license invented gamma-flip or put-wall levels."
+      ],
+      "tables": [],
+      "sources": [
+        "S27",
+        "S21"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "U.S. Treasury Auctions",
+      "status": "U.S. bond-cash holiday Monday; Tuesday yield is the real confirmation",
+      "summary": "SIFMA recommends U.S. fixed-income cash market closure October 12 for Columbus Day, although U.S. listed stocks open. The previously cited UST10Y ~5.24% is an explicitly rounded October 9 quote with no independently matched 1D/5D series.",
+      "paragraphs": [
+        "For upcoming auctions, do not claim any unannounced sizes, when-issued yields, stop-through, indirect bidder shares or bid-to-cover. The first fresh cash 2Y/10Y observations Tuesday are necessary to confirm inflation-duration transmission."
+      ],
+      "tables": [],
+      "sources": [
+        "S27",
+        "S17"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Oil / OPEC / Commodities",
+      "status": "Two different Monday Brent snapshots; don't force an artificial return",
+      "summary": "Reuters Monday early oil report quoted Brent near $105.48 and WTI $92.44 at 23:04 GMT; a separate later Asia cross-asset report quoted Brent around $103.50 and U.S. crude about $90.73. These are different moments and potentially delivery/contract-basis references, not competing certified settlements.",
+      "paragraphs": [
+        "Physical disruption risk → oil/fuel and shipping insurance → household CPI and airline margins → Treasury term premium → duration equity valuation. Don't compute 1D changes between asynchronous quotes; wait for same-contract settlement and actual Gulf infrastructure reports."
+      ],
+      "tables": [],
+      "sources": [
+        "S33",
+        "S21",
+        "S23",
+        "S02"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "IPO / Financing / Capital Cycle",
+      "status": "Upcoming bank financing and AI capex test; no new deployed AI investment proven",
+      "summary": "The previously announced roughly $8bn SpaceX spectrum transaction was conditional and cannot be described as cash already deployed. Tuesday bank results will offer verified funding, deposit costs and credit origination evidence; no primary-source October 12 AI datacenter funded drawdown has been established.",
+      "paragraphs": [
+        "Separate announced size, signed commitment, drawdown and deployed capital. Duration-sensitive AI infrastructure needs demonstrated financing and free cash flow, not inference from S&P technology futures gains."
+      ],
+      "tables": [],
+      "sources": [
+        "S15",
+        "S16",
+        "S30",
+        "S21"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Past 24H Major Breaking News",
+      "status": "October 12 Asia verified market and FX reports; earlier attack clock-time uncertain",
+      "summary": "Within the current October 12 Asian trading/news window Reuters reported mixed Asia stock markets, dollar index ~102.14, Brent cross-asset snapshot around $103.50 and continuing geopolitical concerns. Earlier Oct11 Saudi attack reporting is tracked in the geopolitics section because precise intraday event-hour confirmation for the rolling last 24 hours was not established.",
+      "paragraphs": [
+        "A data point entering an article on October 12 is not a new underlying market event if it belongs to the previous Friday close. Fresh risk-pricing and the US holiday participation constraint matter more than recycled Friday levels."
+      ],
+      "tables": [],
+      "sources": [
+        "S21",
+        "S22",
+        "S23",
+        "S33"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "Integrated Market Impact",
+      "status": "Prefer matched evidence across energy → CPI → UST → bank earnings",
+      "summary": "Base path: oil risk premiums remain volatile, mixed Asian futures do not prove U.S. cash rate relief, and Tuesday banks plus Wednesday CPI provide the next independent evidence. Bull path requires verified supply and inflation easing with broad participation; bear path requires renewed transport attacks, higher oil, sticky CPI and weaker profit/credit quality.",
+      "paragraphs": [
+        "First assets: dated Asia Brent, airline transport and USD indicators; then Monday U.S. breadth; then Tuesday cash Treasury and actual JPM/Citi margins; finally Wednesday CPI decomposition. No causal attribution to unverified ceasefire, refinery repairs or hypothetical dealer positioning."
+      ],
+      "tables": [],
+      "sources": [
+        "S21",
+        "S22",
+        "S23",
+        "S27",
+        "S29",
+        "S30",
+        "S31"
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "Growth Impulse",
+      "current": "→ 亚洲增长与股指分化",
+      "yesterday": "↓ 消费信心承压",
+      "change_reason": "Asian equity markets diverged on Monday while no new US cash session could overwrite Friday demand and earnings readings.",
+      "evidence": "Reuters Oct12 Korea stocks opened around -1.1%; Oct9 Michigan sentiment 46.3 was prior official information.",
+      "sources": [
+        "S21",
+        "S04"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "Inflation Impulse",
+      "current": "↑ 运输与能源风险",
+      "yesterday": "↑ 海湾停产与预期偏高",
+      "change_reason": "Repeated attacks raise aviation/shipping-risk premiums despite subsequent easing in an Asia Brent snapshot; no certified same-contract close yet.",
+      "evidence": "Reuters early Brent $105.48 versus separate Asia cross-asset snapshot near $103.50; quotes differ in moment and basis.",
+      "sources": [
+        "S33",
+        "S21",
+        "S23"
+      ]
+    },
+    "rates_pressure": {
+      "label": "Rates Pressure",
+      "current": "→ 美债现金市场休市",
+      "yesterday": "→ 10Y旧报价约5.24%",
+      "change_reason": "SIFMA recommends fixed income cash closure Monday, so equities cannot be cross-confirmed against the same day's 10Y cash quote.",
+      "evidence": "SIFMA Oct12 US fixed-income holiday recommendation; Friday Oct9 UST10Y ~5.24% was a rounded older indication.",
+      "sources": [
+        "S27",
+        "S17"
+      ]
+    },
+    "earnings_revision": {
+      "label": "Earnings Revisions",
+      "current": "→ 等待周二银行季报",
+      "yesterday": "↓ 航空利润指引下修",
+      "change_reason": "JPM and Citi investor calendars identify Tuesday reports; fresh banking provision, NII and credit margin evidence has not been published.",
+      "evidence": "JPM Q3 Oct13 approx 07:00 EDT and Citi Q3 Oct13 approx 08:00 EDT confirmed by issuer IR notices.",
+      "sources": [
+        "S30",
+        "S31"
+      ]
+    },
+    "liquidity": {
+      "label": "Liquidity",
+      "current": "→ 股债与日本假日错位",
+      "yesterday": "→ 货币基金现金偏好",
+      "change_reason": "U.S. listed equity and bond cash trading differ on Columbus Day, while Japan's ordinary stock venues are on holiday.",
+      "evidence": "SIFMA October 12 fixed-income closure recommendation, JPX Sports Day cash/equity holiday and holiday-traded derivatives distinction.",
+      "sources": [
+        "S27",
+        "S28"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "Geopolitical Risk",
+      "current": "↑ 沙特机场连袭",
+      "yesterday": "↑ 海峡与飓风双风险",
+      "change_reason": "Saudi airport attacks are verified, while a claimed Russia–Ukraine energy ceasefire still lacks independent mutually verified execution.",
+      "evidence": "Reuters/AP Oct10–11 airport reporting; Reuters Oct11 US statement with Ukraine/Russia confirmation uncertainty.",
+      "sources": [
+        "S23",
+        "S24",
+        "S25"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base: holiday-priced event risk",
+      "probability": "Conditional qualitative base case; no numerical probability implied",
+      "trigger": "Asia Brent retraces some risk premium, US equity market opens while cash bonds are unavailable, and CPI remains pending.",
+      "expected_market_reaction": "Stock/index futures diverge by sector and risk exposure until bank results and Tuesday cash Treasury market can jointly validate inflation-duration pricing.",
+      "assets_most_sensitive": [
+        "Brent",
+        "DXY",
+        "S&P500",
+        "US Treasury 10Y"
+      ],
+      "what_confirms_it": "Monday U.S. breadth not restricted to megacaps and Tuesday UST yields stable on actual cash basis, with credible transport normalization.",
+      "what_invalidates_it": "Verified repeat supply/aviation attacks, sharply renewed same-basis oil rise or hot CPI and bank credit deterioration."
+    },
+    "bull_case": {
+      "label": "Bull: verified risk-premium compression",
+      "probability": "Conditional favorable scenario; no numerical probability implied",
+      "trigger": "Saudi civil aviation and transit restoration becomes verified, oil declines on matched contract, and CPI shows disinflation.",
+      "expected_market_reaction": "Transport and consumer equities rebound, UST yields ease when cash trading resumes, and growth/credit markets broaden beyond a narrow technology bounce.",
+      "assets_most_sensitive": [
+        "Airlines",
+        "Russell 2000",
+        "UST 10Y",
+        "Brent",
+        "USD"
+      ],
+      "what_confirms_it": "Independent physical reopening data, matched oil declines, benign CPI and healthy bank margins/credit quality.",
+      "what_invalidates_it": "Further verified attacks, sticky CPI or higher Treasury yields despite risk-premium headline relief."
+    },
+    "bear_case": {
+      "label": "Bear: escalation meets sticky prices",
+      "probability": "Conditional adverse scenario; no numerical probability implied",
+      "trigger": "Regional aviation/shipping disruptions widen, CPI exceeds independently documented expectations and banks report weaker credit quality.",
+      "expected_market_reaction": "Higher sustained oil and dollar safety demand feed cash Treasury term premium, compress high-duration multiples and impair transport/cyclical earnings.",
+      "assets_most_sensitive": [
+        "Brent",
+        "US 2Y/10Y",
+        "Nasdaq",
+        "Bank credit",
+        "Airlines"
+      ],
+      "what_confirms_it": "Verified disruptions accompanied by same-contract oil strength, firm core CPI, higher cash yields and weaker bank credit metrics.",
+      "what_invalidates_it": "Verified regional security improvement alongside easing inflation and solid bank earning power."
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-10-12 21:30 SGT",
+      "et": "2026-10-12 09:30 EDT",
+      "event": "U.S. NYSE/Nasdaq cash stock open; SIFMA-recommended fixed income cash closure",
+      "consensus": "Not a numerical macro release",
+      "previous": "Oct9 S&P500 7811.54; Oct9 Nasdaq 27366.17 (dated close)",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S21",
+        "S27"
+      ]
+    },
+    {
+      "sgt": "2026-10-13 19:00 SGT",
+      "et": "2026-10-13 approximately 07:00 EDT",
+      "event": "JPMorgan Q3 2026 results release",
+      "consensus": "尚无法可靠确认；不得推断共识营收/EPS",
+      "previous": "Issuer prior earnings/guidance not re-verified here",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S30"
+      ]
+    },
+    {
+      "sgt": "2026-10-13 20:00 SGT",
+      "et": "2026-10-13 approximately 08:00 EDT",
+      "event": "Citigroup Q3 2026 results release",
+      "consensus": "尚无法可靠确认；不得推断共识营收/EPS",
+      "previous": "Issuer prior earnings/guidance not re-verified here",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S31"
+      ]
+    },
+    {
+      "sgt": "2026-10-14 20:30 SGT",
+      "et": "2026-10-14 08:30 EDT",
+      "event": "U.S. September CPI and core CPI",
+      "consensus": "尚无法可靠确认，不用未核实市场预测",
+      "previous": "Sep2026 actual pending at cutoff; last released Michigan 1Y expectation 4.7% is a different series",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S29",
+        "S04"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "Saudi aviation and maritime spillover raises insurance and fuel inflation without verified upstream damage",
+      "why_not_fully_priced": "Friday cash prices predate Oct10–11 airport events; Monday Asian prices are indicative and contain both rising and later softer Brent snapshots.",
+      "trigger": "Additional independently verified attacks or sustained flight/tanker disruption; oil field output loss must be separately confirmed.",
+      "transmission": "Airport/shipping attacks → insurance, rerouting, jet fuel costs↑ → inflation expectations↑ → Treasury duration / airline margins risk.",
+      "first_asset": "Brent, global airlines and Saudi equities",
+      "theme_id": "geopolitics_energy",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-08",
+      "last_seen": "2026-10-12",
+      "sources": [
+        "S23",
+        "S24",
+        "S21",
+        "S33"
+      ]
+    },
+    {
+      "risk": "Wednesday U.S. CPI triggers a higher-for-longer discount rate despite weak consumer confidence",
+      "why_not_fully_priced": "Monday equities trade without U.S. cash Treasury yields, preventing matched rate confirmation; prior Michigan confidence weakened but 1Y inflation expectations stayed 4.7%.",
+      "trigger": "Above-expectation independently verified actual CPI or persistent core components at Oct14 08:30 EDT.",
+      "transmission": "CPI / expectations↑ → short and long Treasury yields↑ → financing costs↑ → growth equity multiples and credit margins↓.",
+      "first_asset": "UST 2Y/10Y, DXY and Russell 2000",
+      "theme_id": "global_duration",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-07",
+      "last_seen": "2026-10-12",
+      "sources": [
+        "S29",
+        "S27",
+        "S04"
+      ]
+    },
+    {
+      "risk": "Bank earnings expose credit-quality or funding fragility beneath narrow equity-futures optimism",
+      "why_not_fully_priced": "Monday Nasdaq futures advance does not resolve tomorrow's actual bank loan-loss provisions, deposit costs or net-interest margins; analyst numerical estimates were not independently verified.",
+      "trigger": "JPM/Citi results show unexpected deterioration in provision trend, deposit beta, credit costs or funded earnings.",
+      "transmission": "Bank margin / loan-loss deterioration → credit supply↓ and funding premium↑ → cyclicals and high-capex refinancing cost↑.",
+      "first_asset": "U.S. bank shares, credit spreads and high-capex firms",
+      "theme_id": "ai_earnings",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-08",
+      "last_seen": "2026-10-12",
+      "sources": [
+        "S30",
+        "S31",
+        "S21"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "October 14 U.S. September CPI release after Oct13 bank results and cash Treasury reopening",
+    "status": "Confirmed Upcoming",
+    "date": "2026-10-14",
+    "et": "2026-10-14 08:30 EDT",
+    "sgt": "2026-10-14 20:30 SGT",
+    "consensus": "尚无法可靠确认；不得编造市场一致预期",
+    "previous": "October 9 University of Michigan 1-year inflation expectation 4.7% is not prior CPI; prior comparable CPI figure not independently rechecked",
+    "actual": "待公布",
+    "why_it_matters": "The first new September CPI actual combined with Tuesday matched US cash yields and JPM/Citi loan-loss and funding commentary will determine whether fragile growth and higher energy costs translate into persistent policy-term-premium pressure.",
+    "first_market": "UST 2Y/10Y futures then cash, DXY, front-end policy repricing, S&P500/Russell and oil-sensitive airlines",
+    "bull_interpretation": "Benign headline and core components followed by sustainable lower matched Treasury yields and resilient bank loan metrics supports broad risk recovery.",
+    "bear_interpretation": "Upside inflation surprise with rising Treasury yields and worsening bank credit costs signals further duration and equity-cash-flow compression.",
+    "watch_first": [
+      "Watch Tuesday actual 2Y/10Y US cash Treasury yields on a matched benchmark after Monday holiday; lower yields confirm duration relief while fresh yield highs invalidate it.",
+      "Watch Wednesday 08:30 EDT BLS headline CPI versus core components and verified consensus before drawing a policy conclusion; an energy-only shock differs from persistent services inflation.",
+      "Watch Oct13 JPM and Citi provision, charge-offs, net interest and credit guidance versus Monday S&P500/Russell participation; robust bank credit with broader stocks confirms growth resilience, divergence invalidates."
+    ],
+    "sources": [
+      "S29",
+      "S27",
+      "S30",
+      "S31",
+      "S04"
+    ]
+  },
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S25",
+    "S26",
+    "S27",
+    "S28",
+    "S29",
+    "S30",
+    "S31",
+    "S32",
+    "S33",
+    "S34"
+  ],
+  "asia_snapshot": {
+    "as_of": "2026-10-12 Monday Asia (Reuters dated snapshot; minute-level quote timestamp not established)",
+    "brent": "approximately $103.50/bbl in Reuters cross-asset Asia report; separate earlier Reuters energy snapshot was $105.48; quotes are time-dependent, not a single settlement.",
+    "wti": "approximately $90.73/bbl in Reuters Asia cross-asset report",
+    "dxy": "approximately 102.14 in Reuters Asia FX report",
+    "s_and_p_futures": "approximately +0.2% in Reuters Asia cross-asset report",
+    "nasdaq_futures": "approximately +0.5% in Reuters Asia cross-asset report",
+    "korea_equities": "approximately -1.1% in Reuters Asia cross-asset report",
+    "sources": [
+      "S21",
+      "S22",
+      "S33"
+    ]
+  }
+}
