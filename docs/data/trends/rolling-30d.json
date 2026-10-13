@@ -10,7 +10,7 @@
     "reconstructed_days": 0,
     "partial_days": 0,
     "verified_event_days": 0,
-    "historical_series_start": "2025-08-18"
+    "historical_series_start": "2025-08-19"
   },
   "methodology": {
     "reconstructed_daily": "Source-backed historical editorial reconstruction produced later; not a contemporaneously published assessment.",
@@ -2239,6 +2239,10 @@
         {
           "date": "2026-10-09",
           "value": 27366.17
+        },
+        {
+          "date": "2026-10-12",
+          "value": 27245.9
         }
       ]
     },
@@ -2327,6 +2331,10 @@
         {
           "date": "2026-10-09",
           "value": 7811.54
+        },
+        {
+          "date": "2026-10-12",
+          "value": 7807.24
         }
       ]
     },
@@ -2411,6 +2419,10 @@
         {
           "date": "2026-10-08",
           "value": 15.41
+        },
+        {
+          "date": "2026-10-09",
+          "value": 14.84
         }
       ]
     },
