@@ -1,0 +1,1187 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-10-14",
+  "edition": "Morning Official",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-10-14 09:18 SGT",
+  "data_cutoff_et": "2026-10-13 21:18 EDT",
+  "last_updated": "2026-10-14T09:18:35+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-10-14T09:00:00+08:00",
+    "started_at_sgt": "2026-10-14T09:03:29+08:00",
+    "research_cutoff_sgt": "2026-10-14T09:18:35+08:00",
+    "mode": "morning",
+    "research_note": "Contemporaneous independent research. Latest verified U.S. market closes dated Oct13; CPI at Oct14 20:30 SGT is future."
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": true
+  },
+  "publication_policy": "morning_official_2026-10-08",
+  "source_mode": "native_daily",
+  "sources_path": "data/sources/2026-10-14.json",
+  "comparison_basis": {
+    "previous_official_date": "2026-10-12",
+    "note": "Main latest Oct12 official; Oct13 main has no official candidate in this snapshot. Comparison does not fabricate a missing edition."
+  },
+  "thesis": "截至2026-10-14 09:18 SGT（等值2026-10-13 21:18 EDT），全球市场进入美国9月CPI揭晓前的跨资产再定价窗口：10月13日已发布的大型银行季报显示盈利改善与股价确认并不一致，同时AI资本开支回报疑虑压制芯片与成长股；海湾能源风险仍高。AP验证美股标普500昨日收7,805.45点（−0.02%）、道指51,670.10点（−0.35%），Reuters验证10年期美债二级基准收益率约5.22%（−2.72bp）、Brent约105.69美元（−0.9%）；9月CPI计划于今日20:30 SGT公布，截至此刻绝不能称其已发布。",
+  "dominant_narrative": "与10月12日主站最近的正式晨报不同，本次已有2026年10月13日美国股债市场收盘和银行Q3真实业绩可验证。AP记录10月13日标普500收7805.45点（−0.02%）、道指51670.10点（−0.35%）、纳指27204.38点（−0.15%）、Russell 2000收2783.37点（−0.40%），大盘轻微下跌掩盖小盘和金融疲弱。Reuters记录10年基准美债收益率下降2.72bp至约5.22%，不是财政部恒定期限收益率；JPM股价约跌0.86%，WFC约跌3.1%，说明报告利润增长并不自动转化为信用质量和股票估值确认。发行人公告高盛EPS17.01美元、收入186.8亿美元；Reuters报道JPM EPS5.57美元低于调查预期，花旗EPS2.85美元高于Reuters一致预测2.66美元。油市Brent约105.69美元下跌0.9%，WTI约94.14美元上涨0.4%，海湾交通与俄罗斯柴油协议不等于原油实物产能变化已获证实。Reuters记录AI资本开支回报及中国存储技术竞争担忧，但此前技术进展不能伪称10月13日新出口管制。10月14日美国08:30 EDT即20:30 SGT正式9月CPI数据尚未公布；随后应以核心与标题CPI不同贡献、UST2Y/10Y同一基准收益率、美元、科技与小盘广度的联合确认来判断风险制度。10月6日和13日同序列股指历史收盘可算5交易日回报，未取得相同合约与日期的外汇、大宗商品5日值必须显式留空。",
+  "market_regime": {
+    "growth": "↓ 道指及Russell 2000相对标普500更弱，金融和小盘广度约束增长叙事；数据来自AP10月13日现金收盘。",
+    "inflation": "→ Brent 10月13日跌0.9%但WTI涨0.4%；油价仍高而9月CPI尚待BLS于14日20:30 SGT发布。",
+    "rates": "↓ Reuters二级基准UST10Y约5.22%，相对上一观察下降2.72bp；非美财政部CMT，也非CPI正式反应。",
+    "earnings": "→ 高盛EPS17.01美元、JPM EPS5.57美元，Citi EPS2.85美元；银行股涨跌与Headline利润分化。",
+    "liquidity": "→ 没有可靠一致口径的单日ETF净申赎数据，不把价格下跌直接称作明确机构资金流出。",
+    "geopolitics": "→ 海湾航运及柴油供应不确定性仍影响燃料/保险溢价，未证实具体油田因此损失产能。",
+    "overall": "Event Risk / CPI-Day Duration, Bank Earnings and AI Valuation Breadth"
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,805.45",
+      "change_1d": "−0.02%",
+      "change_5d": "-0.17% (10/06→10/13)",
+      "signal": "→ 大盘横盘",
+      "driver": "10月13日美国现金收盘；CPI前通胀和期限成本约束成长估值",
+      "status": "Dated market close or explicitly timed Reuters indicative quote; distinct bases not combined",
+      "as_of": "2026-10-13 US close/settlement EDT",
+      "sources": [
+        "S35",
+        "S36",
+        "S37"
+      ]
+    },
+    {
+      "asset": "Dow Jones",
+      "level": "51,670.10",
+      "change_1d": "−0.35%",
+      "change_5d": "+0.29% (10/06→10/13)",
+      "signal": "↓ 银行拖累",
+      "driver": "10月13日正式收盘；金融股对信用和资金成本更敏感",
+      "status": "Dated market close or explicitly timed Reuters indicative quote; distinct bases not combined",
+      "as_of": "2026-10-13 US close/settlement EDT",
+      "sources": [
+        "S35",
+        "S36",
+        "S37"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "27,204.38",
+      "change_1d": "−0.15%",
+      "change_5d": "-1.43% (10/06→10/13)",
+      "signal": "↓ AI回报重估",
+      "driver": "10月13日正式收盘；资本开支与现金回报预期分歧压制成长股",
+      "status": "Dated market close or explicitly timed Reuters indicative quote; distinct bases not combined",
+      "as_of": "2026-10-13 US close/settlement EDT",
+      "sources": [
+        "S35",
+        "S36",
+        "S37",
+        "S49"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,783.37",
+      "change_1d": "−0.40%",
+      "change_5d": "-1.66% (10/06→10/13)",
+      "signal": "↓ 小盘信用约束",
+      "driver": "10月13日正式收盘；对实际利率、银行贷款和消费需求敏感",
+      "status": "Dated market close or explicitly timed Reuters indicative quote; distinct bases not combined",
+      "as_of": "2026-10-13 US close/settlement EDT",
+      "sources": [
+        "S35",
+        "S36",
+        "S37"
+      ]
+    },
+    {
+      "asset": "Nasdaq 100",
+      "level": "30,492.70",
+      "change_1d": "−0.56%",
+      "change_5d": "-2.34% (10/06→10/13)",
+      "signal": "↓ 科技集中度",
+      "driver": "Yahoo历史同一指数收盘序列；与网站盘中动态报价不混用",
+      "status": "Dated market close or explicitly timed Reuters indicative quote; distinct bases not combined",
+      "as_of": "2026-10-13 US close/settlement EDT",
+      "sources": [
+        "S45"
+      ]
+    },
+    {
+      "asset": "SOX (PHLX Semiconductor)",
+      "level": "12,208.79",
+      "change_1d": "−0.23%",
+      "change_5d": "-7.63% (10/06→10/13)",
+      "signal": "↓ 芯片竞争压力",
+      "driver": "Yahoo历史收盘；Reuters所述>2%可能为另一时点/口径，异议须独立核对",
+      "status": "Dated market close or explicitly timed Reuters indicative quote; distinct bases not combined",
+      "as_of": "2026-10-13 US close/settlement EDT",
+      "sources": [
+        "S46",
+        "S37",
+        "S49"
+      ]
+    },
+    {
+      "asset": "Brent crude futures",
+      "level": "$105.69/bbl",
+      "change_1d": "−0.90%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "→ 高能源风险",
+      "driver": "Reuters10月13日市场快照；5D主力合约换月与配对结算未独立核验",
+      "status": "Dated market close or explicitly timed Reuters indicative quote; distinct bases not combined",
+      "as_of": "2026-10-13 US close/settlement EDT",
+      "sources": [
+        "S38",
+        "S37"
+      ]
+    },
+    {
+      "asset": "WTI crude futures",
+      "level": "$94.14/bbl",
+      "change_1d": "+0.40%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ 原油基准分化",
+      "driver": "Reuters10月13日油市结算报道；不可与Brent不同合约拼算周收益",
+      "status": "Dated market close or explicitly timed Reuters indicative quote; distinct bases not combined",
+      "as_of": "2026-10-13 US close/settlement EDT",
+      "sources": [
+        "S38"
+      ]
+    },
+    {
+      "asset": "DXY",
+      "level": "102.18",
+      "change_1d": "−0.37%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 美元自高位回落",
+      "driver": "Reuters外汇专稿指示性现汇时点；与全球盘报−0.34%快照时间不同",
+      "status": "Dated market close or explicitly timed Reuters indicative quote; distinct bases not combined",
+      "as_of": "2026-10-13 US afternoon EDT, indicative",
+      "sources": [
+        "S47",
+        "S37"
+      ]
+    },
+    {
+      "asset": "EUR/USD",
+      "level": "1.1199",
+      "change_1d": "+0.01%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "→ 现汇稳定",
+      "driver": "Reuters跨资产美盘快照；无中央固定收盘及可靠同口径5日变动",
+      "status": "Dated market close or explicitly timed Reuters indicative quote; distinct bases not combined",
+      "as_of": "2026-10-13 US afternoon EDT, indicative",
+      "sources": [
+        "S37"
+      ]
+    },
+    {
+      "asset": "US Treasury 10Y benchmark",
+      "level": "5.22%",
+      "change_1d": "−2.72 bp",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 期限利率降温",
+      "driver": "Reuters二级市场基准收益率；并非Treasury CMT或拍卖收益率",
+      "status": "Dated market close or explicitly timed Reuters indicative quote; distinct bases not combined",
+      "as_of": "2026-10-13 late US EDT",
+      "sources": [
+        "S37"
+      ]
+    },
+    {
+      "asset": "COMEX gold Oct futures",
+      "level": "$4,152.90/oz",
+      "change_1d": "−0.31%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "→ 黄金与实际利率博弈",
+      "driver": "WSJ期货合约报价非现货；同合约5日配对未可靠建立",
+      "status": "Dated market close or explicitly timed Reuters indicative quote; distinct bases not combined",
+      "as_of": "2026-10-13 US futures session EDT",
+      "sources": [
+        "S48"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "EXPLICIT_5D_VERIFICATION_GAPS",
+    "asset_count": 12,
+    "level_coverage": {
+      "count": 12,
+      "total": 12,
+      "pct": 100,
+      "target_pct": 90
+    },
+    "change_1d_coverage": {
+      "count": 12,
+      "total": 12,
+      "pct": 100,
+      "target_pct": 90
+    },
+    "change_5d_coverage": {
+      "count": 6,
+      "total": 12,
+      "pct": 50,
+      "target_pct": 80
+    },
+    "explicit_gaps": [
+      "Brent crude futures: 未取得相同合约/同基准10月6日至13日两端可信收盘，不能估算5D。",
+      "WTI crude futures: 未取得相同合约/同基准10月6日至13日两端可信收盘，不能估算5D。",
+      "DXY: 未取得相同合约/同基准10月6日至13日两端可信收盘，不能估算5D。",
+      "EUR/USD: 未取得相同合约/同基准10月6日至13日两端可信收盘，不能估算5D。",
+      "US Treasury 10Y benchmark: 未取得相同合约/同基准10月6日至13日两端可信收盘，不能估算5D。",
+      "COMEX gold Oct futures: 未取得相同合约/同基准10月6日至13日两端可信收盘，不能估算5D。"
+    ],
+    "policy": "12/12 verified level and 1D; 6/12 verified 5D; every unsupported 5D explicitly labeled and not fabricated."
+  },
+  "what_changed": [
+    {
+      "yesterday": "10月12日主站正式版仍等待美国10月13日银行业业绩与现金美债开市。",
+      "today": "10月13日JPM/GS/C/WFC季报已发布、10年基准收益率Reuters观察5.22%且当日回落2.72bp。",
+      "why_it_matters": "真实季度收益与债市贴现率现在都可核查；必须看信用质量和费用，不可将利润增长当作全面估值修复。",
+      "sources": [
+        "S37",
+        "S39",
+        "S40",
+        "S41",
+        "S51"
+      ]
+    },
+    {
+      "yesterday": "上次正式版多沿用10月9日美国现金收盘与12日亚洲盘中指示性行情。",
+      "today": "AP确认10月13日S&P500收7805.45跌0.02%、Russell2000跌0.40%、道指跌0.35%。",
+      "why_it_matters": "大盘接近持平掩盖市场广度收缩，银行信用和长债利率仍是小盘股复苏约束。",
+      "sources": [
+        "S35",
+        "S37"
+      ]
+    },
+    {
+      "yesterday": "此前运输安全与俄罗斯柴油供给只是方向性风险，并非可靠产量证明。",
+      "today": "Reuters10月13日记录Brent跌0.9%至105.69美元，而WTI升0.4%至94.14美元。",
+      "why_it_matters": "品种差异与地区运费溢价要单独分析，不能从新闻推断沙特油田已发生减产。",
+      "sources": [
+        "S38",
+        "S37"
+      ]
+    },
+    {
+      "yesterday": "前一正式版以地缘事件和未来CPI为主要市场叙事。",
+      "today": "Reuters10月13日侧重AI资本开支回报风险和中国存储芯片竞争，科技与小盘同步弱于大盘。",
+      "why_it_matters": "高估值板块估值可能从算力投入转向真实订单及自由现金流，影响科技权重和数据中心融资。",
+      "sources": [
+        "S37",
+        "S49",
+        "S50"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "10月14日美国9月CPI于08:30 EDT公布：核心通胀决定久期重估",
+      "status": "Confirmed Upcoming",
+      "event_time_et": "2026-10-14 08:30 EDT",
+      "event_time_sgt": "2026-10-14 20:30 SGT",
+      "what_happened": "BLS正式2026年日程安排9月消费者价格指数于10月14日08:30 EDT发布；在本次2026年10月14日09时后研究截止时，该数据尚未正式发布，不可填入任何实际值。",
+      "what_changed": "10月13日美债现金基准10年收益率已下降2.72bp至Reuters观察的5.22%；这与12日版本等待交易恢复的状态不同。",
+      "why_it_matters": "区分能源驱动的标题CPI与服务驱动的核心CPI将影响市场判断联储对高油价与实际需求的响应程度。",
+      "transmission": "BLS总体/核心CPI→UST 2Y和10Y→DXY、Nasdaq与Russell→信用融资成本。",
+      "affected_assets": [
+        "UST 2Y",
+        "UST 10Y",
+        "DXY",
+        "Nasdaq 100",
+        "Russell 2000"
+      ],
+      "direction": "→ 事件风险",
+      "importance": "★★★★★",
+      "confirmation": "BLS官方数字及分项和同窗口现金国债、美元走势一致时才确认通胀传导。",
+      "invalidation": "若真实核心数据或股票/利率反应方向与单一叙事不一致，则不能把所有盘面变化归因于CPI。",
+      "sources": [
+        "S42",
+        "S37"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "10月13日美国大银行Q3利润改善但市场价格确认分化",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-13 US premarket through 16:00 EDT",
+      "event_time_sgt": "2026-10-13 evening to 2026-10-14 04:00 SGT",
+      "what_happened": "高盛10月13日已报告2026Q3 EPS 17.01美元、营收186.8亿美元；Reuters报道JPM EPS 5.57美元低于调查预期约5.85美元，花旗EPS2.85美元高于一致预测2.66美元。",
+      "what_changed": "12日正式晨报仍将JPM/Citi列为待公布；10月13日收盘Reuters记录JPM股价跌约0.86%、WFC跌约3.1%，证明利润与股价不必同步。",
+      "why_it_matters": "银行信贷拨备、净利息收入质量与资金成本可比单季交易收入更有效预测实体融资支持和金融板块广度。",
+      "transmission": "银行EPS与信用准备→贷款价格/信贷需求→小盘股估值与企业融资成本。",
+      "affected_assets": [
+        "JPM",
+        "C",
+        "GS",
+        "WFC",
+        "Russell 2000"
+      ],
+      "direction": "↔ 银行盈利/股价背离",
+      "importance": "★★★★★",
+      "confirmation": "检查净利息收入、坏账和费用指引，叠加金融股10月13日真实收盘反应确认质量。",
+      "invalidation": "如果利润增长来自不可持续的交易或一次性项目、贷款信用恶化，将否定全面银行复苏的叙事。",
+      "sources": [
+        "S37",
+        "S39",
+        "S40",
+        "S41",
+        "S51",
+        "S52"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "10月13日全球半导体与AI资本开支回报担忧持续冲击市场宽度",
+      "status": "Ongoing",
+      "event_time_et": "2026-10-13 US cash session EDT",
+      "event_time_sgt": "2026-10-14 04:00 SGT US close",
+      "what_happened": "Reuters10月13日记录芯片行业受到AI资本开支实际回报、潜在中国存储竞争和企业估值的共同检验，科技龙头集中度风险持续。",
+      "what_changed": "10月12日主站晨报偏向油价及银行业预期；10月13日NASDAQ收27204.38跌0.15%、小盘跌0.40%，市场新增AI现金回报担忧。",
+      "why_it_matters": "高资本开支需要后续订单与现金流转化，否则科技大权重估值与AI基础设施融资成本可能放大指数波动。",
+      "transmission": "中国芯片竞争/算力回报→半导体利润率→Nasdaq权重→科技融资与数据中心建设。",
+      "affected_assets": [
+        "Semiconductors",
+        "Nasdaq 100",
+        "Data-center credit"
+      ],
+      "direction": "↓ 估值复核",
+      "importance": "★★★★",
+      "confirmation": "以企业后续真实订单、资本支出现金回报和同口径SOX与Nasdaq-100股价验证持续性。",
+      "invalidation": "若芯片订单与现金回报证明强于预期且市场广度恢复，则AI估值风险可能下降。",
+      "sources": [
+        "S37",
+        "S49",
+        "S50",
+        "S45",
+        "S46"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top 3 Market Catalysts",
+      "status": "Released/Occurred / Ongoing",
+      "summary": "9月CPI正式日历、已公布大行财报和芯片/AI回报担忧构成三个催化；事件未来与已发生状态明确分开。",
+      "paragraphs": [
+        "第一传导链是CPI→UST收益率→美元与股市久期；第二链是银行净息与信用→小盘融资；第三链是AI投资回收→芯片毛利→大盘集中度。"
+      ],
+      "tables": [],
+      "sources": [
+        "S42",
+        "S37",
+        "S39",
+        "S49"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings",
+      "status": "Released/Occurred (banks) / Confirmed Upcoming (BAC & MS)",
+      "summary": "10月13日JPM/GS/C/WFC Q3财报已经披露；10月14日BAC与MS按发行人日历尚待公布，不能提前填写后者实际值。",
+      "paragraphs": [
+        "高盛原始公告EPS17.01美元、营收186.8亿美元；JPM EPS5.57美元低于Reuters调查预期约5.85美元；花旗EPS2.85美元。利润增长与JPM股价跌0.86%、WFC跌3.1%方向不一致，需查拨备及资金成本。"
+      ],
+      "tables": [],
+      "sources": [
+        "S37",
+        "S39",
+        "S40",
+        "S41",
+        "S51",
+        "S52",
+        "S43",
+        "S44"
+      ],
+      "reported": [
+        {
+          "id": "JPM-2026Q3",
+          "company": "JPMorgan Chase",
+          "ticker": "JPM",
+          "period": "Q3 2026",
+          "status": "Released/Occurred",
+          "release_date": "2026-10-13",
+          "release_time_et": "2026-10-13 pre-market EDT (exact minute unverified)",
+          "release_time_sgt": "2026-10-13 pre-US-session SGT (exact minute unverified)",
+          "market_session": "US premarket release; equity reaction uses Oct13 cash close",
+          "key_takeaway": "净利润增长与每股预期失误并存；要分解投行交易收益、信贷拨备和资金成本。",
+          "metrics": [
+            {
+              "metric": "EPS / 每股收益",
+              "actual": "$5.57",
+              "consensus": "Reuters/LSEG expected $5.85",
+              "previous_or_yoy": "2026 Q3 and prior comparative disclosures",
+              "surprise": "与所引调查预期相比的结果需留意非经常性项目",
+              "notes": "以发行人/Reuters明确披露为准"
+            },
+            {
+              "metric": "Net income / 净利润",
+              "actual": "约$15.3bn",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "2026 Q3 as reported",
+              "surprise": "尚无法可靠确认",
+              "notes": "仅记录已核实披露值"
+            }
+          ],
+          "guidance": [],
+          "market_reaction": {
+            "session": "2026-10-13 US cash",
+            "move": "约−0.86%",
+            "as_of": "2026-10-13 16:00 EDT"
+          },
+          "one_offs": [
+            "公司披露的会计调整需按原始公告核验，未将未经验证的一次性收益计入核心盈利。"
+          ],
+          "read_through": [
+            {
+              "asset": "US banks",
+              "implication": "交易收入、净息差和坏账准备同时约束金融股收益质量。"
+            },
+            {
+              "asset": "Credit spreads and small caps",
+              "implication": "融资条件和信贷预期影响小盘股广度及信用风险溢价。"
+            }
+          ],
+          "sources": [
+            "S39",
+            "S37",
+            "S52"
+          ]
+        },
+        {
+          "id": "GS-2026Q3",
+          "company": "Goldman Sachs",
+          "ticker": "GS",
+          "period": "Q3 2026",
+          "status": "Released/Occurred",
+          "release_date": "2026-10-13",
+          "release_time_et": "2026-10-13 pre-market EDT (exact minute unverified)",
+          "release_time_sgt": "2026-10-13 pre-US-session SGT (exact minute unverified)",
+          "market_session": "US premarket release; equity reaction uses Oct13 cash close",
+          "key_takeaway": "公司IR核实EPS17.01美元、营收186.8亿美元和年化ROE18.7%，短期交易强势须与业务可持续性分开。",
+          "metrics": [
+            {
+              "metric": "EPS / 每股收益",
+              "actual": "$17.01",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "2026 Q3 and prior comparative disclosures",
+              "surprise": "调查预期未可靠核对",
+              "notes": "以发行人/Reuters明确披露为准"
+            },
+            {
+              "metric": "Net revenue / 营收",
+              "actual": "$18.68bn",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "2026 Q3 as reported",
+              "surprise": "尚无法可靠确认",
+              "notes": "仅记录已核实披露值"
+            }
+          ],
+          "guidance": [],
+          "market_reaction": {
+            "session": "2026-10-13 US cash",
+            "move": "Reuters约−0.23%",
+            "as_of": "2026-10-13 16:00 EDT"
+          },
+          "one_offs": [
+            "公司披露的会计调整需按原始公告核验，未将未经验证的一次性收益计入核心盈利。"
+          ],
+          "read_through": [
+            {
+              "asset": "US banks",
+              "implication": "交易收入、净息差和坏账准备同时约束金融股收益质量。"
+            },
+            {
+              "asset": "Credit spreads and small caps",
+              "implication": "融资条件和信贷预期影响小盘股广度及信用风险溢价。"
+            }
+          ],
+          "sources": [
+            "S40",
+            "S37"
+          ]
+        },
+        {
+          "id": "C-2026Q3",
+          "company": "Citigroup",
+          "ticker": "C",
+          "period": "Q3 2026",
+          "status": "Released/Occurred",
+          "release_date": "2026-10-13",
+          "release_time_et": "2026-10-13 pre-market EDT (exact minute unverified)",
+          "release_time_sgt": "2026-10-13 pre-US-session SGT (exact minute unverified)",
+          "market_session": "US premarket release; equity reaction uses Oct13 cash close",
+          "key_takeaway": "Reuters记录Citi EPS优于预期，但服务与财富增长及信用卡获利压力并存，股价确认不能简单从Headline推断。",
+          "metrics": [
+            {
+              "metric": "EPS / 每股收益",
+              "actual": "$2.85",
+              "consensus": "Reuters estimate $2.66",
+              "previous_or_yoy": "2026 Q3 and prior comparative disclosures",
+              "surprise": "与所引调查预期相比的结果需留意非经常性项目",
+              "notes": "以发行人/Reuters明确披露为准"
+            },
+            {
+              "metric": "Net income / 净利润",
+              "actual": "约$5.25bn",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "2026 Q3 as reported",
+              "surprise": "尚无法可靠确认",
+              "notes": "仅记录已核实披露值"
+            }
+          ],
+          "guidance": [],
+          "market_reaction": {
+            "session": "2026-10-13 US cash",
+            "move": "约−5.6%（财经报道）",
+            "as_of": "2026-10-13 16:00 EDT"
+          },
+          "one_offs": [
+            "公司披露的会计调整需按原始公告核验，未将未经验证的一次性收益计入核心盈利。"
+          ],
+          "read_through": [
+            {
+              "asset": "US banks",
+              "implication": "交易收入、净息差和坏账准备同时约束金融股收益质量。"
+            },
+            {
+              "asset": "Credit spreads and small caps",
+              "implication": "融资条件和信贷预期影响小盘股广度及信用风险溢价。"
+            }
+          ],
+          "sources": [
+            "S41",
+            "S51",
+            "S37"
+          ]
+        },
+        {
+          "id": "WFC-2026Q3",
+          "company": "Wells Fargo",
+          "ticker": "WFC",
+          "period": "Q3 2026",
+          "status": "Released/Occurred",
+          "release_date": "2026-10-13",
+          "release_time_et": "2026-10-13 pre-market EDT (exact minute unverified)",
+          "release_time_sgt": "2026-10-13 pre-US-session SGT (exact minute unverified)",
+          "market_session": "US premarket release; equity reaction uses Oct13 cash close",
+          "key_takeaway": "财报利润仍有增长，但营收、净息与资产质量需逐项检验，而非等同全面信贷改善。",
+          "metrics": [
+            {
+              "metric": "EPS / 每股收益",
+              "actual": "$1.87",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "2026 Q3 and prior comparative disclosures",
+              "surprise": "调查预期未可靠核对",
+              "notes": "以发行人/Reuters明确披露为准"
+            },
+            {
+              "metric": "Revenue / 营收",
+              "actual": "约$21.87bn",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "2026 Q3 as reported",
+              "surprise": "尚无法可靠确认",
+              "notes": "仅记录已核实披露值"
+            }
+          ],
+          "guidance": [],
+          "market_reaction": {
+            "session": "2026-10-13 US cash",
+            "move": "约−3.1%",
+            "as_of": "2026-10-13 16:00 EDT"
+          },
+          "one_offs": [
+            "公司披露的会计调整需按原始公告核验，未将未经验证的一次性收益计入核心盈利。"
+          ],
+          "read_through": [
+            {
+              "asset": "US banks",
+              "implication": "交易收入、净息差和坏账准备同时约束金融股收益质量。"
+            },
+            {
+              "asset": "Credit spreads and small caps",
+              "implication": "融资条件和信贷预期影响小盘股广度及信用风险溢价。"
+            }
+          ],
+          "sources": [
+            "S52",
+            "S37"
+          ]
+        }
+      ],
+      "upcoming_72h": [
+        {
+          "id": "BAC-2026Q3",
+          "company": "Bank of America",
+          "ticker": "BAC",
+          "period": "Q3 2026",
+          "status": "Confirmed Upcoming",
+          "date": "2026-10-14",
+          "et": "2026-10-14 06:45 EDT release / 08:30 EDT call",
+          "sgt": "2026-10-14 18:45 SGT release / 20:30 SGT call",
+          "market_session": "Before Oct13 US cash equity open; investor call later",
+          "consensus": {
+            "revenue": "尚无法可靠确认",
+            "eps": "尚无法可靠确认"
+          },
+          "previous_guidance": "尚无法可靠确认",
+          "actual": "待公布",
+          "what_matters": [
+            "Net interest income and deposit beta",
+            "Loan-loss provisions and consumer delinquencies",
+            "Capital and management guidance"
+          ],
+          "read_through_targets": [
+            "US bank equities",
+            "UST yield curve",
+            "Credit spreads"
+          ],
+          "sources": [
+            "S43"
+          ]
+        },
+        {
+          "id": "MS-2026Q3",
+          "company": "Morgan Stanley",
+          "ticker": "MS",
+          "period": "Q3 2026",
+          "status": "Confirmed Upcoming",
+          "date": "2026-10-14",
+          "et": "2026-10-14 before cash / 09:30 EDT conference call",
+          "sgt": "2026-10-14 before 21:30 SGT call",
+          "market_session": "Before Oct13 US cash equity open; investor call later",
+          "consensus": {
+            "revenue": "尚无法可靠确认",
+            "eps": "尚无法可靠确认"
+          },
+          "previous_guidance": "尚无法可靠确认",
+          "actual": "待公布",
+          "what_matters": [
+            "Wealth management net flows",
+            "Capital markets underwriting",
+            "Trading revenues and expenses"
+          ],
+          "read_through_targets": [
+            "US brokers",
+            "Financial credit",
+            "Nasdaq 100"
+          ],
+          "sources": [
+            "S44"
+          ]
+        }
+      ]
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "U.S. Economic Data",
+      "status": "Confirmed Upcoming (CPI)",
+      "summary": "美国9月消费者价格指数BLS确认将于10月14日08:30 EDT发布；研究截止前不得虚构结果。",
+      "paragraphs": [
+        "10月13日二级基准10年期收益率Reuters报价约5.22%、下降2.72bp。公布后要分别比较标题、核心及服务分项，再观察利率、美元、成长与小盘是否同向反应。"
+      ],
+      "tables": [],
+      "sources": [
+        "S42",
+        "S37"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Global Central Banks",
+      "status": "Released/Occurred / Ongoing",
+      "summary": "本窗口无新联储议息决议；Reuters提到市场隐含本月不变利率概率约80.6%仅是带时点价格预期。",
+      "paragraphs": [
+        "央行决策未发生而市场定价可以改变：9月CPI若推动UST2Y/10Y和DXY同向上行，才是政策路径紧缩概率调整的证据；不能把期货隐含概率写成实际政策。"
+      ],
+      "tables": [],
+      "sources": [
+        "S37",
+        "S42"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Major International Events",
+      "status": "Released/Occurred / Ongoing",
+      "summary": "沙特航空、海湾航运与俄柴油交易可影响油品与保险风险溢价，但无可靠证据确认机场袭击直接造成油田实际减产。",
+      "paragraphs": [
+        "10月13日Brent约105.69美元跌0.9%，WTI约94.14美元涨0.4%。两油种期货合约差异不能被误当成实物流量证明；需要航运、港口和油田运营数据才可写实际供应。"
+      ],
+      "tables": [],
+      "sources": [
+        "S37",
+        "S38",
+        "S53"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "China, Japan, Europe and Canada Policy",
+      "status": "Market Reporting / 本窗无重大经核实新增",
+      "summary": "中国存储芯片竞争正在影响全球AI硬件定价预期；日本、欧洲和加拿大本窗口新财政、税务或央行公告尚无法可靠确认。",
+      "paragraphs": [
+        "Reuters报道中国存储产业潜在竞争影响科技公司毛利率和AI资本开支回报；此前技术进展并非10月13日新颁布的出口管制。中国/贸易/产业政策需区分宣布与生效日期。"
+      ],
+      "tables": [],
+      "sources": [
+        "S37",
+        "S49",
+        "S50"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "MSCI / FTSE / S&P / Nasdaq Index Changes",
+      "status": "Market Reporting / 本窗无重大经核实新增",
+      "summary": "本窗口无权威渠道确认MSCI、标普与纳斯达克重大指数成员调整，不以股价变化推断指数编制调整。",
+      "paragraphs": [
+        "Reuters10月12日研究提示年内标普500约四成成分股表现为负，说明市值加权指数并不能代表多数股票上涨。应优先观察真实成分广度而非创造指数名单新闻。"
+      ],
+      "tables": [],
+      "sources": [
+        "S50",
+        "S35"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "Pension / Month-End / Quarter-End Flows",
+      "status": "Market Reporting / 本窗无重大经核实新增",
+      "summary": "10月13日机构股票、债券及ETF实际资金净流量缺少可比权威统计；不得用指数负收益伪称大规模净流出。",
+      "paragraphs": [
+        "标普500下跌仅0.02%而Russell下跌0.40%，反映相对表现不一致；持仓变动和基金净申赎仍需实际官方数据，当前用股债价格验证风险偏好更可靠。"
+      ],
+      "tables": [],
+      "sources": [
+        "S35",
+        "S37"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF Rebalance / Index Reconstruction",
+      "status": "Market Reporting / 本窗无重大经核实新增",
+      "summary": "未取得10月13日ETF产品级真实净申赎、资金路径与NAV折溢价匹配数据，无法给出可信资金流排名。",
+      "paragraphs": [
+        "权重集中风险可从Nasdaq-100、标普500、小盘差异观察，但不代表已经看到ETF净流出；等待已核证基金申赎文件前应保持量化空值。"
+      ],
+      "tables": [],
+      "sources": [
+        "S35",
+        "S45",
+        "S50"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "Options Expiry",
+      "status": "Market Reporting / 本窗无重大经核实新增",
+      "summary": "10月13日VIX、MOVE和0DTE交易商Gamma仓位没有足以支持精确结论的完整同口径数据，避免虚构Max Pain和Flip。",
+      "paragraphs": [
+        "周三08:30 EDT CPI为确定性跳跃时点，先看正式分项与实际UST2Y、UST10Y以及DXY后再核实期权波动率期限结构，不能从大盘跌幅直接推断做市商Gamma。"
+      ],
+      "tables": [],
+      "sources": [
+        "S42",
+        "S37"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "U.S. Treasury Auctions",
+      "status": "Released/Occurred / Ongoing",
+      "summary": "美债二级基准10年期Reuters观察10月13日约5.22%且下降2.72bp，这不是财政部恒定期限收益率也不是新券拍卖高收益率。",
+      "paragraphs": [
+        "10月12日美国债市假日后13日现金恢复的基准有助比较CPI反应。未取得包括WI、尾差、投标倍数和认购分布在内的完整真实标售结果，故不造当日拍卖表格。"
+      ],
+      "tables": [],
+      "sources": [
+        "S37"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Oil / OPEC / Commodities",
+      "status": "Released/Occurred / Ongoing",
+      "summary": "10月13日Brent约105.69美元下跌0.9%，WTI约94.14美元上涨0.4%，不应以一种油种概括全部能源风险。",
+      "paragraphs": [
+        "航运/供应不确定性→燃料与保险成本→CPI标题及预期→UST实际利率→航空、科技与小盘资产估值。WSJ黄金报价属于期货合约而非即期现货，禁止混算回报。"
+      ],
+      "tables": [],
+      "sources": [
+        "S38",
+        "S37",
+        "S48"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "IPO / Financing / Capital Cycle",
+      "status": "Market Reporting / 本窗无重大经核实新增",
+      "summary": "AI数据中心与能源配套的资本投入规模并不等同现金回收，Reuters记录市场更加审视大型算力投资商业回报。",
+      "paragraphs": [
+        "在10年美债二级收益率约5.22%的环境下，数据中心债务成本和投资回收期具有重要约束。没有核实的融资目标、承诺和实际放款不应混写为资金已经投入。"
+      ],
+      "tables": [],
+      "sources": [
+        "S37",
+        "S49",
+        "S50"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Past 24H Major Breaking News",
+      "status": "Released/Occurred / Ongoing",
+      "summary": "截至本次真实新加坡取数截止，10月13日美股收盘及美国大行第三季正式结果属于最近24小时已发生事实；今天CPI尚未公布。",
+      "paragraphs": [
+        "10月13日16:00 EDT美股收盘对应10月14日04:00 SGT；高盛公告EPS17.01美元，Reuters记录JPM EPS5.57美元。区分公告时间、取数时间和未来CPI发布时间，禁止前瞻冒充事实。"
+      ],
+      "tables": [],
+      "sources": [
+        "S35",
+        "S37",
+        "S39",
+        "S40",
+        "S42"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "Integrated Market Impact",
+      "status": "Released/Occurred / Ongoing",
+      "summary": "标普50010月13日接近持平，但金融、小盘及AI产业链定价受压；油价高位和美债收益率回落并存，尚未形成单一方向的风险开关。",
+      "paragraphs": [
+        "先评估银行贷款质量、能源实物流量与芯片现金回报，再于10月14日20:30 SGT用BLS正式CPI、短长端UST及美元/股市同步方向验证主导约束。没有相应确认时结论保持条件式。"
+      ],
+      "tables": [],
+      "sources": [
+        "S35",
+        "S37",
+        "S38",
+        "S42",
+        "S50"
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "Growth Impulse",
+      "current": "↓ 小盘与银行偏弱",
+      "yesterday": "→ 股指交易时点错位",
+      "change_reason": "美国10月13日小盘和道指下跌幅度大于大盘，真实信贷与银行业数据尚未支持全面周期复苏。",
+      "evidence": "AP确认10月13日Russell −0.40%、道指−0.35%、标普500−0.02%。",
+      "sources": [
+        "S35",
+        "S37"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "Inflation Impulse",
+      "current": "→ 高油价等待CPI",
+      "yesterday": "↑ 运输与能源风险",
+      "change_reason": "Brent回落但WTI反向上涨，油价冲击不能直接外推为核心服务通胀；官方CPI仍待发布。",
+      "evidence": "10月13日Brent 105.69美元−0.9%、WTI 94.14美元+0.4%；BLS CPI 10月14日待发。",
+      "sources": [
+        "S38",
+        "S42"
+      ]
+    },
+    "rates_pressure": {
+      "label": "Rates Pressure",
+      "current": "↓ 基准10Y略缓",
+      "yesterday": "→ 假日美债现金缺位",
+      "change_reason": "美国10月13日美债现金恢复后基准10年收益率小幅回落，但短端和核心通胀仍要接受正式CPI检验。",
+      "evidence": "Reuters10月13日二级10年基准约5.22%，相对上一报价下降2.72bp。",
+      "sources": [
+        "S37"
+      ]
+    },
+    "earnings_revision": {
+      "label": "Earnings Revisions",
+      "current": "→ 银行季报分化",
+      "yesterday": "→ 周二银行业待发布",
+      "change_reason": "交易与投行业务支撑收益，但EPS预期差及费用、坏账质量使银行利润和股票表现未同步。",
+      "evidence": "JPM EPS5.57美元vs调查5.85美元；GS公司公告EPS17.01美元、营收186.8亿美元。",
+      "sources": [
+        "S39",
+        "S40",
+        "S37"
+      ]
+    },
+    "liquidity": {
+      "label": "Liquidity",
+      "current": "→ 流量证据仍不足",
+      "yesterday": "→ 节假日流动性错位",
+      "change_reason": "美国债市开市并不意味着获得可靠ETF净申赎与现金流量，股指涨跌不足以说明实物资金方向。",
+      "evidence": "10月13日道指−0.35%而标普500−0.02%；本版不虚构ETF单日净申赎额。",
+      "sources": [
+        "S35",
+        "S37"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "Geopolitical Risk",
+      "current": "→ 航运风险未消退",
+      "yesterday": "↑ 海湾运输溢价",
+      "change_reason": "航运安全和俄罗斯柴油供给计划的实际履约仍不确定，尚未确认直接油田产能损失。",
+      "evidence": "Reuters10月13日Brent跌0.9%而WTI涨0.4%，证明油种定价并非单一冲突方向。",
+      "sources": [
+        "S38",
+        "S37"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base: CPI前交易仍分化",
+      "probability": "50%",
+      "trigger": "9月CPI未有极端发布冲击且中东实际供应未有新确认中断。",
+      "expected_market_reaction": "美国股指与银行/科技板块相对回报差异持续，期限收益率在CPI前受限于观望。",
+      "assets_most_sensitive": [
+        "UST 2Y",
+        "UST 10Y",
+        "S&P 500",
+        "DXY",
+        "Brent"
+      ],
+      "what_confirms_it": "同口径Brent和现金债收益率平稳，银行实际信用拨备并无新增明显恶化。",
+      "what_invalidates_it": "CPI核心显著超出事前有证据共识，或海湾实际油品运输和银行信用出现已证实异常。"
+    },
+    "bull_case": {
+      "label": "Bull: 核心通胀与银行质量共振",
+      "probability": "25%",
+      "trigger": "BLS核心服务价格温和且BAC/MS营运现金流、净息收入和信贷质量稳健。",
+      "expected_market_reaction": "UST短中端收益率持续下降、美元缓和，科技及小盘出现比大盘更广泛反弹。",
+      "assets_most_sensitive": [
+        "UST 2Y",
+        "Nasdaq 100",
+        "Russell 2000",
+        "Bank credit"
+      ],
+      "what_confirms_it": "CPI发布后2Y/10Y与DXY反应一致，同时银行股和等权股市广度改善。",
+      "what_invalidates_it": "核心CPI仍强且收益率上升，或银行信贷准备率增加抵消盈利增长。"
+    },
+    "bear_case": {
+      "label": "Bear: 能源尾部风险与AI兑现危机",
+      "probability": "25%",
+      "trigger": "CPI核心持续性高于事前共识、AI现金流回收转弱或运输实际中断被核实。",
+      "expected_market_reaction": "UST短端与美元走强、科技和小盘估值压缩，银行信用利差承压且原油风险溢价走高。",
+      "assets_most_sensitive": [
+        "Brent",
+        "UST 2Y",
+        "DXY",
+        "SOX",
+        "Nasdaq 100"
+      ],
+      "what_confirms_it": "实际核心CPI、同基准收益率和美元与广度弱势共同确认；有独立实物流量证据。",
+      "what_invalidates_it": "CPI核心温和、芯片现金回报强而运输风险缓解，市场广度明显改善。"
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-10-14 18:45 SGT",
+      "et": "2026-10-14 06:45 EDT",
+      "event": "Bank of America Q3 release",
+      "consensus": "尚无法可靠确认",
+      "previous": "尚无法可靠确认",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S43"
+      ]
+    },
+    {
+      "sgt": "2026-10-14 US premarket SGT (minute unverified)",
+      "et": "2026-10-14 US premarket EDT (minute unverified)",
+      "event": "Morgan Stanley Q3 release / call at 09:30 EDT",
+      "consensus": "尚无法可靠确认",
+      "previous": "尚无法可靠确认",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S44"
+      ]
+    },
+    {
+      "sgt": "2026-10-14 20:30 SGT",
+      "et": "2026-10-14 08:30 EDT",
+      "event": "BLS September CPI",
+      "consensus": "尚无法可靠确认",
+      "previous": "尚无法可靠确认",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S42"
+      ]
+    },
+    {
+      "sgt": "2026-10-15 20:30 SGT",
+      "et": "2026-10-15 08:30 EDT",
+      "event": "BLS scheduled producer price data",
+      "consensus": "尚无法可靠确认",
+      "previous": "尚无法可靠确认",
+      "actual": "待公布",
+      "importance": "★★★",
+      "sources": [
+        "S42"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "9月CPI核心分项高于可靠事前预期引发久期和融资成本再上行",
+      "why_not_fully_priced": "10月13日10年收益率回落不能代替今日正式CPI，能源风险溢价仍在。",
+      "trigger": "BLS核心/服务CPI实际偏强，UST2Y和10Y同窗口收益率上升。",
+      "transmission": "粘性价格→联储紧缩路径预期→美债收益率与美元→科技及小盘折现率与信用成本。",
+      "first_asset": "UST 2Y",
+      "theme_id": "us_inflation_duration",
+      "lifecycle_state": "Ongoing",
+      "first_seen": "2026-10-09",
+      "last_seen": "2026-10-14",
+      "sources": [
+        "S42",
+        "S37"
+      ]
+    },
+    {
+      "risk": "AI资本开支现金回收不足与半导体供给竞争压缩科技估值",
+      "why_not_fully_priced": "指数收益依赖少数高权重公司，AI投入与现金回收期错配尚待业绩验证。",
+      "trigger": "企业毛利率/订单和AI现金流转化下修且科技相对收益持续疲弱。",
+      "transmission": "芯片竞争与算力资本支出→公司毛利和自由现金流→半导体估值→Nasdaq及科技融资成本。",
+      "first_asset": "SOX and Nasdaq 100",
+      "theme_id": "ai_capex_returns",
+      "lifecycle_state": "Ongoing",
+      "first_seen": "2026-10-12",
+      "last_seen": "2026-10-14",
+      "sources": [
+        "S37",
+        "S49",
+        "S50"
+      ]
+    },
+    {
+      "risk": "海湾航运与柴油供给不确定性引发原油和运输保险溢价再次扩大",
+      "why_not_fully_priced": "10月13日Brent回落并不能证明运输风险完全解除，缺少独立实际物流数据。",
+      "trigger": "可信来源证实船运、航空燃料流量下降或柴油交付计划无法执行。",
+      "transmission": "运输和油品成本上升→CPI标题及通胀预期→美国期限风险溢价→航空利润与广义风险偏好。",
+      "first_asset": "Brent futures",
+      "theme_id": "middle_east_energy",
+      "lifecycle_state": "Ongoing",
+      "first_seen": "2026-10-10",
+      "last_seen": "2026-10-14",
+      "sources": [
+        "S38",
+        "S37",
+        "S53"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "United States September 2026 CPI — October 14 at 08:30 EDT / 20:30 SGT",
+    "status": "Confirmed Upcoming",
+    "date": "2026-10-14",
+    "et": "2026-10-14 08:30 EDT",
+    "sgt": "2026-10-14 20:30 SGT",
+    "consensus": "尚无法可靠确认；不得虚构一致预期，公布后须对照有时间戳的事前调查。",
+    "previous": "上月可比CPI本次未交叉核实，故不使用其他物价预期指数冒充前值。",
+    "actual": "待公布",
+    "why_it_matters": "在10月13日银行季报、长债收益率回落以及高油价背景下，标题与核心CPI分项将决定市场能否验证持续性通胀与期限利率定价。",
+    "first_market": "UST 2Y/10Y same-basis cash, DXY, Nasdaq 100 and Russell 2000",
+    "bull_interpretation": "核心和服务分项温和且2Y/10Y收益率共同下降、美元缓和、小盘股扩散反弹。",
+    "bear_interpretation": "核心价格强且收益率美元同时上升、科技小盘疲弱，证明紧缩贴现率重估。",
+    "watch_first": [
+      "20:30 SGT核对BLS正式9月标题、核心及服务分项与有证据的事前一致调查，不以发布前预测冒充实际。",
+      "CPI后同步核对同基准UST2Y及10Y收益率和DXY，若三者方向与单一叙事不一致，不应仓促归因。",
+      "检查Nasdaq 100、Russell 2000、银行股与Brent价格是否相互印证；若成长股反弹但信贷不配合，谨慎看待全面Risk-on。"
+    ],
+    "sources": [
+      "S42",
+      "S37"
+    ]
+  },
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S25",
+    "S26",
+    "S27",
+    "S28",
+    "S29",
+    "S30",
+    "S31",
+    "S32",
+    "S33",
+    "S34",
+    "S35",
+    "S36",
+    "S37",
+    "S38",
+    "S39",
+    "S40",
+    "S41",
+    "S42",
+    "S43",
+    "S44",
+    "S45",
+    "S46",
+    "S47",
+    "S48",
+    "S49",
+    "S50",
+    "S51",
+    "S52",
+    "S53"
+  ]
+}
