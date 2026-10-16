@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "retrieved_for": "Global Market Daily 30D Lens",
-  "as_of": "2026-10-14",
+  "as_of": "2026-10-15",
   "series": {
     "NASDAQCOM": {
       "label": "Nasdaq Composite",
@@ -9,10 +9,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2025-08-21",
-          "value": 21100.31
-        },
         {
           "date": "2025-08-22",
           "value": 21496.53
@@ -1160,6 +1156,10 @@
         {
           "date": "2026-10-13",
           "value": 27204.38
+        },
+        {
+          "date": "2026-10-14",
+          "value": 26692.87
         }
       ]
     },
@@ -1169,10 +1169,6 @@
       "source": "S&P Dow Jones Indices via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2025-08-21",
-          "value": 6370.17
-        },
         {
           "date": "2025-08-22",
           "value": 6466.91
@@ -2324,6 +2320,10 @@
         {
           "date": "2026-10-14",
           "value": 7718.94
+        },
+        {
+          "date": "2026-10-15",
+          "value": 7744.06
         }
       ]
     },
@@ -2333,10 +2333,6 @@
       "source": "CBOE via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2025-08-21",
-          "value": 16.6
-        },
         {
           "date": "2025-08-22",
           "value": 14.22
@@ -3516,6 +3512,10 @@
         {
           "date": "2026-10-13",
           "value": 15.27
+        },
+        {
+          "date": "2026-10-14",
+          "value": 16.87
         }
       ]
     },
@@ -3525,10 +3525,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2025-08-21",
-          "value": 3.79
-        },
         {
           "date": "2025-08-22",
           "value": 3.68
@@ -4668,6 +4664,10 @@
         {
           "date": "2026-10-13",
           "value": 4.79
+        },
+        {
+          "date": "2026-10-14",
+          "value": 4.82
         }
       ]
     },
@@ -4677,10 +4677,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2025-08-21",
-          "value": 4.33
-        },
         {
           "date": "2025-08-22",
           "value": 4.26
@@ -5820,6 +5816,10 @@
         {
           "date": "2026-10-13",
           "value": 5.21
+        },
+        {
+          "date": "2026-10-14",
+          "value": 5.19
         }
       ]
     },
@@ -5829,10 +5829,6 @@
       "source": "U.S. EIA via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2025-08-21",
-          "value": 68.41
-        },
         {
           "date": "2025-08-22",
           "value": 68.29
@@ -6968,6 +6964,30 @@
         {
           "date": "2026-10-06",
           "value": 125.44
+        },
+        {
+          "date": "2026-10-07",
+          "value": 126.0
+        },
+        {
+          "date": "2026-10-08",
+          "value": 130.18
+        },
+        {
+          "date": "2026-10-09",
+          "value": 130.03
+        },
+        {
+          "date": "2026-10-12",
+          "value": 129.95
+        },
+        {
+          "date": "2026-10-13",
+          "value": 125.78
+        },
+        {
+          "date": "2026-10-14",
+          "value": 126.55
         }
       ]
     },
@@ -6977,10 +6997,6 @@
       "source": "Federal Reserve via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2025-08-21",
-          "value": 121.0843
-        },
         {
           "date": "2025-08-22",
           "value": 120.2774
@@ -8125,10 +8141,6 @@
       "source": "ICE BofA via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2025-08-21",
-          "value": 2.95
-        },
         {
           "date": "2025-08-22",
           "value": 2.88
@@ -9332,6 +9344,10 @@
         {
           "date": "2026-10-13",
           "value": 3.16
+        },
+        {
+          "date": "2026-10-14",
+          "value": 3.25
         }
       ]
     }
