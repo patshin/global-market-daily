@@ -1,44 +1,159 @@
-name: October Backfill Audit Snapshot
+name: October Backfill Candidate Build
 on:
   push:
     branches: [fix/gmd-october-backfill-lens]
     paths: [.github/workflows/october-backfill-prepare.yml]
 permissions:
-  contents: read
+  contents: write
+  actions: read
+concurrency:
+  group: october-backfill-candidate
+  cancel-in-progress: false
 jobs:
-  snapshot:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
+    env:
+      REPAIR_BRANCH: fix/gmd-october-backfill-lens
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
     steps:
       - uses: actions/checkout@v7
         with:
-          persist-credentials: false
+          fetch-depth: 0
+          ref: fix/gmd-october-backfill-lens
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      - name: Retrieve Treasury public historical yield table
+      - name: Verify branch and read immutable source artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = "$REPAIR_BRANCH"
+          test "$(git branch --show-current)" = "$REPAIR_BRANCH"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git fetch origin main
+          git merge --no-edit origin/main
+          git show origin/main:docs/data/latest.json > /tmp/october-original-latest.json
+          mkdir -p /tmp/october-inputs/{audit,treasury,cboe} /tmp/october-evidence
+          gh api "repos/$REPO/actions/artifacts/12159015529/zip" > /tmp/october-inputs/audit.zip
+          gh api "repos/$REPO/actions/artifacts/12158833381/zip" > /tmp/october-inputs/treasury.zip
+          gh api "repos/$REPO/actions/artifacts/12159117121/zip" > /tmp/october-inputs/cboe.zip
+          printf '%s\n' 'ab5e5be06a19d9bd06b5816d80dc7f4b433f6b50cc5bbb33ae19c7e337954981  /tmp/october-inputs/audit.zip' 'a7fbf859108e2bda2015446a0479f81ba1c7f019d71da6b9e44a01746425f437  /tmp/october-inputs/treasury.zip' 'de7ffce695c0493f9b65413ffb449bb2ce14f1648de44d0c9ad13779dc386edb  /tmp/october-inputs/cboe.zip' | sha256sum --check
+          unzip -q /tmp/october-inputs/audit.zip -d /tmp/october-inputs/audit
+          unzip -q /tmp/october-inputs/treasury.zip -d /tmp/october-inputs/treasury
+          unzip -q /tmp/october-inputs/cboe.zip -d /tmp/october-inputs/cboe
+          python -m pip install 'PyYAML==6.0.3' 'jsonschema==4.25.1' 'playwright==1.56.0'
+      - name: Build five historical bundles without moving latest
+        run: |
+          python -m py_compile scripts/repair_october_backfill.py scripts/apply_october_lens_repair.py scripts/lens_history_support.py
+          python scripts/repair_october_backfill.py --snapshot /tmp/october-inputs/audit --treasury /tmp/october-inputs/treasury --cboe /tmp/october-inputs/cboe --built-at '2026-10-19T11:49:45+08:00' > /tmp/october-evidence/build-receipt.json
+          python scripts/apply_october_lens_repair.py
+          python scripts/build_market_lens.py --offline
+          python scripts/stamp_assets.py
+          cmp docs/data/latest.json /tmp/october-original-latest.json
+      - name: Run every current Quality command including real Chromium
         run: |
           python - <<'PY'
-          import pathlib,json,concurrent.futures
-          from urllib.request import Request,urlopen
-          from datetime import datetime,timezone
-          out=pathlib.Path('/tmp/gmd-treasury-source');out.mkdir()
-          urls={'treasury.html':'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve','treasury.xml':'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026','DGS5.csv':'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS5','DGS30.csv':'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS30'}
-          def get(item):
-              name,url=item;r={'file':name,'source_url':url,'retrieved_at':datetime.now(timezone.utc).isoformat()}
-              try:
-                  with urlopen(Request(url,headers={'User-Agent':'Mozilla/5.0 GlobalMarketDailyHistoricalAudit'}),timeout=25) as response:payload=response.read();r.update(status=response.status,bytes=len(payload))
-                  if len(payload)>5000000:raise ValueError('Unexpected payload size')
-                  (out/name).write_bytes(payload)
-              except Exception as exc:r['error']=str(exc)
-              return r
-          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:manifest=list(pool.map(get,urls.items()))
-          (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n');print(json.dumps(manifest,indent=2))
+          import json,pathlib,subprocess,yaml
+          root=pathlib.Path('.');quality=yaml.safe_load((root/'.github/workflows/quality.yml').read_text());receipts=[]
+          for job in quality['jobs'].values():
+              for step in job['steps']:
+                  if 'run' not in step:continue
+                  command=step['run'];print('QUALITY:',step['name'],flush=True)
+                  result=subprocess.run(['bash','-e','-o','pipefail','-c',command],text=True,capture_output=True,timeout=240)
+                  print(result.stdout);print(result.stderr)
+                  receipts.append({'name':step['name'],'command':command,'returncode':result.returncode,'stdout':result.stdout,'stderr':result.stderr})
+                  pathlib.Path('/tmp/october-evidence/quality.json').write_text(json.dumps(receipts,ensure_ascii=False,indent=2))
+                  if result.returncode:raise SystemExit(result.returncode)
           PY
+      - name: Verify schemas, exact parity, provenance and full October coverage
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib
+          from jsonschema import Draft202012Validator
+          root=pathlib.Path('.');schema=json.loads((root/'schemas/daily.schema.json').read_text());validator=Draft202012Validator(schema)
+          load=lambda p:json.loads(pathlib.Path(p).read_text())
+          archive=load('docs/data/archive.json');rows=[]
+          for n in range(13,18):
+              day=f'2026-10-{n:02}';r=load(f'docs/data/daily/{day}.json');validator.validate(r)
+              m=pathlib.Path(f'docs/reports/2026/10/{day}.md').read_text();s=load('docs/'+r['sources_path'])
+              literals=[r['data_cutoff_sgt'],r['data_cutoff_et'],r['thesis'],r['dominant_narrative'],*[r['sections'][k]['title'] for k in r['section_order']],*[c['event'] for c in r['top_catalysts']],*[c['risk'] for c in r['top_risks']]]
+              assert len(literals)==25 and all(x in m for x in literals)
+              assert sum(e['date']==day for e in archive['entries'])==1
+              assert set(r['sources'])=={x['id'] for x in s['sources']}
+              assert r['publication_cycle']['market_lens_native_eligible'] is (n<15)
+              if n>=15:assert r['reconstruction']['is_reconstructed'] and r['data_cutoff_sgt']==day+' 09:00 SGT'
+              rows.append({'date':day,'canonical_parity':'25/25','native':r['publication_cycle']['market_lens_native_eligible'],'source_count':len(s['sources'])})
+          lens=load('docs/data/trends/rolling-30d.json');days=[d for d in lens['days'] if '2026-10-01'<=d['date']<='2026-10-18']
+          assert len(days)==18 and {d['date'] for d in days}=={f'2026-10-{n:02}' for n in range(1,19)}
+          assert not any(d['regime_code'] in {'unavailable','unclassified'} or '?' in d['signals'].values() for d in days)
+          for d in days:
+              if d.get('price_proxy'):
+                  assert d['source_mode']=='reconstructed_daily'
+                  for metric in d['price_proxy']['details'].values():
+                      assert all(o['session_date']<d['date'] and o['sources'] for o in metric['observations'])
+          assert pathlib.Path('docs/data/latest.json').read_bytes()==pathlib.Path('/tmp/october-original-latest.json').read_bytes()
+          receipt={'reports':rows,'monthly_coverage':lens['monthly_coverage'],'series_freshness':lens['series_freshness'],'latest_preserved':load('docs/data/latest.json')['date']}
+          pathlib.Path('/tmp/october-evidence/final-checks.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2));print(json.dumps(receipt,ensure_ascii=False,indent=2))
+          PY
+      - name: Verify actual archive and lens routes in desktop and mobile Chromium
+        run: |
+          python - <<'PY'
+          import functools,http.server,json,pathlib,shutil,threading
+          from playwright.sync_api import sync_playwright
+          root=pathlib.Path('.').resolve();out=pathlib.Path('/tmp/october-evidence');rows=[]
+          handler=functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root/'docs'))
+          server=http.server.ThreadingHTTPServer(('127.0.0.1',0),handler);threading.Thread(target=server.serve_forever,daemon=True).start()
+          base=f'http://127.0.0.1:{server.server_port}';binary=next(shutil.which(x) for x in ('google-chrome','chromium','chromium-browser') if shutil.which(x))
+          try:
+              with sync_playwright() as p:
+                  browser=p.chromium.launch(executable_path=binary,headless=True,args=['--no-sandbox','--disable-dev-shm-usage'])
+                  for view,w,h in [('desktop',1440,1200),('mobile',390,844)]:
+                      for n in range(13,19):
+                          day=f'2026-10-{n:02}';page=browser.new_page(viewport={'width':w,'height':h});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+                          page.goto(base+'/?date='+day,wait_until='networkidle');page.wait_for_function("document.documentElement.dataset.gmdEditorialReady==='true'")
+                          r=json.loads((root/f'docs/data/daily/{day}.json').read_text());dataset=page.locator('html').evaluate('(n)=>Object.assign({},n.dataset)')
+                          assert page.locator('#report-shell').is_visible() and not page.locator('#error-state').is_visible()
+                          assert day in page.locator('#edition-title').inner_text() and page.locator('#thesis').inner_text().strip()==r['thesis'].strip()
+                          assert dataset['gmdSignalCount']=='6' and dataset['gmdWatchCount'] in {'2','3'} and dataset['gmdSignalFactsDistinct']=='true' and dataset['gmdHorizontalOverflow']=='false'
+                          assert not errors,errors
+                          (out/f'{view}-{day}.html').write_text(page.content());rows.append({'view':view,'date':day,'result':'PASS','transport':'real HTTP candidate tree'});page.close()
+                      page=browser.new_page(viewport={'width':w,'height':h});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
+                      page.goto(base+'/trends.html',wait_until='networkidle');page.wait_for_function("document.querySelectorAll('#lens-full-ribbon button').length>=30")
+                      cells=page.locator('#lens-full-ribbon button').evaluate_all("nodes=>nodes.filter(n=>n.textContent.startsWith('10/')).map(n=>({date:n.textContent,cls:n.className,bg:getComputedStyle(n).backgroundColor,image:getComputedStyle(n).backgroundImage,native:n.classList.contains('native')}))")
+                      assert len([c for c in cells if c['date']<='10/18'])==18
+                      for n in range(1,9):
+                          c=next(c for c in cells if c['date']==f'10/{n:02}');assert not c['native'] and 'proxy' in c['cls'] and c['image']!='none'
+                      page.locator('#lens-full-ribbon button').filter(has_text='10/01').click();assert '市场价格代理' in page.locator('#regime-detail').inner_text()
+                      assert not errors,errors
+                      page.screenshot(path=str(out/f'{view}-lens.png'));(out/f'{view}-lens.html').write_text(page.content());rows.append({'view':view,'route':'trends.html','result':'PASS','october_cells':cells});page.close()
+                  browser.close()
+          finally:
+              server.shutdown();(out/'browser-results.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2))
+          print(json.dumps(rows,ensure_ascii=False))
+          PY
+      - name: Commit validated candidate to the same repair branch only
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git branch --show-current)" = "$REPAIR_BRANCH"
+          cmp docs/data/latest.json /tmp/october-original-latest.json
+          git rm .github/workflows/october-backfill-prepare.yml
+          git add docs scripts
+          git diff --cached --stat
+          git commit -m 'repair: recover Oct13–17 archive and complete October lens with explicit provenance'
+          git push origin "HEAD:$REPAIR_BRANCH"
+          git rev-parse HEAD | tee /tmp/october-evidence/candidate-head.txt
+          git diff --name-only origin/main HEAD > /tmp/october-evidence/changed-files.txt
+          tar --exclude='scripts/__pycache__' -czf /tmp/october-evidence/candidate.tar.gz docs scripts schemas .github/workflows prompts
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: october-treasury-primary
-          path: /tmp/gmd-treasury-source
-          retention-days: 2
+          name: october-backfill-complete-validation
+          path: |
+            /tmp/october-evidence
+            /tmp/gmd-browser-artifacts
+          retention-days: 7
           if-no-files-found: error
