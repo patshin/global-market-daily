@@ -1,0 +1,179 @@
+{
+  "status": "CANDIDATE_BUILT_NOT_PUBLISHED",
+  "built_at": "2026-10-19T11:49:45+08:00",
+  "latest_preserved": "2026-10-18",
+  "latest_sha256": "6fee798196dbb2a7f9fce5c50cd0a2f36d280767ddd9d918bbcb2243b06497b4",
+  "dates": {
+    "2026-10-13": {
+      "mode": "original_contemporaneous_candidate_delayed_publication",
+      "original_commit": "b522c2a732a0cefc20a4199c216e4239c8cadc53",
+      "original_cutoff": "2026-10-13 10:39 SGT",
+      "original_sha256": {
+        "data/daily/2026-10-13.json": "6a1afe10645b9de891c5ae320014db9b3c23364111dc84c0e98f5cfaf997f013",
+        "data/sources/2026-10-13.json": "5c49d6f59bcaf11ed8be713662ffed39c50526f15db7c1d3d1e1d4fe03997c42",
+        "reports/2026/10/2026-10-13.md": "eb4961867d364374a8cf243af217d71aab6d51c7d5b3071bb89c56754c76f401"
+      },
+      "schema_normalizations": [
+        "market_regime.growth: string -> state/evidence object; identical original literal retained",
+        "market_regime.inflation: string -> state/evidence object; identical original literal retained",
+        "market_regime.rates: string -> state/evidence object; identical original literal retained",
+        "market_regime.earnings: string -> state/evidence object; identical original literal retained",
+        "market_regime.liquidity: string -> state/evidence object; identical original literal retained",
+        "market_regime.geopolitics: string -> state/evidence object; identical original literal retained",
+        "market_regime.overall: string -> state/evidence object; identical original literal retained"
+      ],
+      "sha256": {
+        "data/daily/2026-10-13.json": "b32de74d3ac61c240979bbf62c07d8f85cf048e09a3192f59d5e8e2acd1724f7",
+        "data/sources/2026-10-13.json": "5c49d6f59bcaf11ed8be713662ffed39c50526f15db7c1d3d1e1d4fe03997c42",
+        "reports/2026/10/2026-10-13.md": "a420b088e600b3d9c2be52fe3ec82d9f3dc6d6ef846cd1640e44280f61054fdc"
+      },
+      "canonical_parity": "25/25"
+    },
+    "2026-10-14": {
+      "mode": "original_contemporaneous_candidate_delayed_publication",
+      "original_commit": "f4240ca83fa8dc4bd1bf49d598de32a9b7f95837",
+      "original_cutoff": "2026-10-14 10:40 SGT",
+      "original_sha256": {
+        "data/daily/2026-10-14.json": "1306e4d7039f25681346e3da601f27c0c918f121f7269a6692a98106621a0812",
+        "data/sources/2026-10-14.json": "2225b9c5d9464c814d6e3829e6d505b225892f0a581f35edcdf80527e64e7c51",
+        "reports/2026/10/2026-10-14.md": "72e09d0b8c3af007c13ec7ea95a0fd55a9889a284493c6ca64a092be2f9b7f6f"
+      },
+      "schema_normalizations": [
+        "market_regime.growth: string -> state/evidence object; identical original literal retained",
+        "market_regime.inflation: string -> state/evidence object; identical original literal retained",
+        "market_regime.rates: string -> state/evidence object; identical original literal retained",
+        "market_regime.earnings: string -> state/evidence object; identical original literal retained",
+        "market_regime.liquidity: string -> state/evidence object; identical original literal retained",
+        "market_regime.geopolitics: string -> state/evidence object; identical original literal retained",
+        "market_regime.overall: string -> state/evidence object; identical original literal retained"
+      ],
+      "sha256": {
+        "data/daily/2026-10-14.json": "55aedcff002166b5bfeaf9879b6af24e8711a3dfbf5d415f20f215a1112f88ab",
+        "data/sources/2026-10-14.json": "2225b9c5d9464c814d6e3829e6d505b225892f0a581f35edcdf80527e64e7c51",
+        "reports/2026/10/2026-10-14.md": "4326a4bd543e5621de86bbb4d94f169712094efd3b2fb731241c554b66895a55"
+      },
+      "canonical_parity": "25/25"
+    },
+    "2026-10-15": {
+      "mode": "reconstructed_daily",
+      "historical_cutoff": "2026-10-15 09:00 SGT",
+      "reconstructed_at": "2026-10-19T11:49:45+08:00",
+      "coverage": {
+        "asset_count": 14,
+        "publish_status": "HISTORICAL_RECONSTRUCTION_WITH_VINTAGE_AND_LAG_DISCLOSURE",
+        "explicit_gaps": [
+          "Dow Jones Industrial Average: 5D 尚无法可靠确认",
+          "Russell 2000: 5D 尚无法可靠确认"
+        ],
+        "level_coverage": {
+          "count": 14,
+          "total": 14,
+          "pct": 100.0,
+          "target_pct": 90
+        },
+        "change_1d_coverage": {
+          "count": 14,
+          "total": 14,
+          "pct": 100.0,
+          "target_pct": 90
+        },
+        "change_5d_coverage": {
+          "count": 12,
+          "total": 14,
+          "pct": 85.7,
+          "target_pct": 80
+        },
+        "fresh_session_coverage": {
+          "count": 13,
+          "total": 14,
+          "reference_session": "2026-10-14",
+          "note": "Verified historical values and same-session freshness are distinct. Lagged Brent/HY/broad USD remain dated, never filled forward."
+        },
+        "policy": "CMT yields are not Yahoo TNX; Europe Brent spot is not ICE futures; broad trade-weighted USD is not DXY. Missing original vintage, tape-wide synchronized snapshot and some 5D observations remain disclosed."
+      },
+      "canonical_parity": "25/25"
+    },
+    "2026-10-16": {
+      "mode": "reconstructed_daily",
+      "historical_cutoff": "2026-10-16 09:00 SGT",
+      "reconstructed_at": "2026-10-19T11:49:45+08:00",
+      "coverage": {
+        "asset_count": 14,
+        "publish_status": "HISTORICAL_RECONSTRUCTION_WITH_VINTAGE_AND_LAG_DISCLOSURE",
+        "explicit_gaps": [
+          "Dow Jones Industrial Average: 5D 尚无法可靠确认",
+          "Russell 2000: 5D 尚无法可靠确认"
+        ],
+        "level_coverage": {
+          "count": 14,
+          "total": 14,
+          "pct": 100.0,
+          "target_pct": 90
+        },
+        "change_1d_coverage": {
+          "count": 14,
+          "total": 14,
+          "pct": 100.0,
+          "target_pct": 90
+        },
+        "change_5d_coverage": {
+          "count": 12,
+          "total": 14,
+          "pct": 85.7,
+          "target_pct": 80
+        },
+        "fresh_session_coverage": {
+          "count": 12,
+          "total": 14,
+          "reference_session": "2026-10-15",
+          "note": "Verified historical values and same-session freshness are distinct. Lagged Brent/HY/broad USD remain dated, never filled forward."
+        },
+        "policy": "CMT yields are not Yahoo TNX; Europe Brent spot is not ICE futures; broad trade-weighted USD is not DXY. Missing original vintage, tape-wide synchronized snapshot and some 5D observations remain disclosed."
+      },
+      "canonical_parity": "25/25"
+    },
+    "2026-10-17": {
+      "mode": "reconstructed_daily",
+      "historical_cutoff": "2026-10-17 09:00 SGT",
+      "reconstructed_at": "2026-10-19T11:49:45+08:00",
+      "coverage": {
+        "asset_count": 14,
+        "publish_status": "HISTORICAL_RECONSTRUCTION_WITH_VINTAGE_AND_LAG_DISCLOSURE",
+        "explicit_gaps": [
+          "Dow Jones Industrial Average: 5D 尚无法可靠确认",
+          "Russell 2000: 5D 尚无法可靠确认"
+        ],
+        "level_coverage": {
+          "count": 14,
+          "total": 14,
+          "pct": 100.0,
+          "target_pct": 90
+        },
+        "change_1d_coverage": {
+          "count": 14,
+          "total": 14,
+          "pct": 100.0,
+          "target_pct": 90
+        },
+        "change_5d_coverage": {
+          "count": 12,
+          "total": 14,
+          "pct": 85.7,
+          "target_pct": 80
+        },
+        "fresh_session_coverage": {
+          "count": 11,
+          "total": 14,
+          "reference_session": "2026-10-16",
+          "note": "Verified historical values and same-session freshness are distinct. Lagged Brent/HY/broad USD remain dated, never filled forward."
+        },
+        "policy": "CMT yields are not Yahoo TNX; Europe Brent spot is not ICE futures; broad trade-weighted USD is not DXY. Missing original vintage, tape-wide synchronized snapshot and some 5D observations remain disclosed."
+      },
+      "canonical_parity": "25/25"
+    }
+  },
+  "limits": [
+    "Publication recovery does not establish that a historical edition was on time.",
+    "Provider-vintage and release-lag limitations are not silently erased."
+  ]
+}

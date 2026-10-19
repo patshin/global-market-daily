@@ -5,6 +5,7 @@ from urllib.request import Request, urlopen
 from collections import defaultdict, Counter
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
+from lens_history_support import cached_points, merge_history, historical_proxy, editorial_direction
 
 ROOT = Path(__file__).resolve().parents[1]
 HISTORY_DIR = ROOT / 'history'
@@ -44,7 +45,11 @@ def ensure_history():
             tmp.replace(path)
         except Exception:
             if not path.exists() or path.stat().st_size<=100:
-                raise
+                cached=cached_points(HISTORY_DIR.parent,sid)
+                if not cached: raise
+                with path.open('w',encoding='utf-8',newline='') as output:
+                    writer=csv.writer(output);writer.writerow(['observation_date',sid])
+                    writer.writerows((p['date'],p['value']) for p in cached)
 
 SERIES = {
     'NASDAQCOM': {'label':'Nasdaq Composite','unit':'Index','source':'Nasdaq, Inc. via FRED','kind':'price'},
@@ -186,7 +191,7 @@ def load_native_reports():
 def build(refresh=True):
     if refresh:
         ensure_history()
-    raw={sid:read_csv(HISTORY_DIR/f'{sid}.csv',sid) for sid in SERIES}
+    raw={sid:merge_history(HISTORY_DIR.parent,sid,read_csv(HISTORY_DIR/f'{sid}.csv',sid) if (HISTORY_DIR/f'{sid}.csv').is_file() else []) for sid in SERIES}
     maps={sid:{p['date']:p['value'] for p in pts} for sid,pts in raw.items()}
     master_dates=sorted(set(maps['NASDAQCOM']) | set(maps['SP500']))
     native=load_native_reports()
@@ -219,7 +224,7 @@ def build(refresh=True):
             if changes[i] is not None: zs[i]=zscore([x if x is not None else 0 for x in changes],i)
         enriched=[]
         for p,ch,z in zip(pts,changes,zs):
-            enriched.append({'date':p['date'],'value':p['value']})
+            enriched.append(dict(p))
         market_history['series'][sid]={**meta,'points':enriched}
         series_changes[sid]={p['date']:{'value':p['value'],'change':ch,'z':z} for p,ch,z in zip(pts,changes,zs)}
 
@@ -250,14 +255,25 @@ def build(refresh=True):
             for key,source_key in smap.items():
                 item=sp.get(source_key) or {}
                 cur=item.get('current','?') if isinstance(item,dict) else '?'
-                signals[key]='↑' if '↑' in str(cur) else '↓' if '↓' in str(cur) else '→' if '→' in str(cur) else '?'
+                signals[key]=editorial_direction(cur)
             risks=[]
             for rr in r.get('top_risks') or []:
                 tid=theme_from_text(rr.get('risk','')+' '+rr.get('transmission',''))
                 risks.append({'theme_id':tid,'title':rr.get('risk',''),'first_asset':rr.get('first_asset',''),'transmission':rr.get('transmission',''),'source_mode':report_mode})
-            days.append({'date':d,'source_mode':report_mode,'regime_code':code,'regime_label':regime_label,
-                         'dominant_theme_id':catalysts[0]['theme_id'] if catalysts else 'market_structure','signals':signals,
-                         'catalysts':catalysts[:3]})
+            day={'date':d,'source_mode':report_mode,'regime_code':code,'regime_label':regime_label,
+                 'dominant_theme_id':catalysts[0]['theme_id'] if catalysts else 'market_structure','signals':signals,
+                 'catalysts':catalysts[:3]}
+            proxy=historical_proxy(HISTORY_DIR.parent,r)
+            if proxy:
+                day['price_proxy']=proxy
+                day['editorial_regime_label']=regime_label
+                for key,value in proxy['signals'].items():
+                    if day['signals'].get(key)=='?': day['signals'][key]=value
+                if code=='unclassified' and proxy['regime_code']!='unclassified':
+                    day['regime_code']=proxy['regime_code']
+                    day['regime_label']='市场价格代理（非原编辑判断） · '+proxy['regime_code']
+                    day['regime_basis']='historical_price_proxy'
+            days.append(day)
             continue
 
         candidates=[]
@@ -405,6 +421,14 @@ def build(refresh=True):
         'ai_earnings': {'NASDAQCOM':1,'SP500':1,'VIXCLS':-1},
         'fed_policy_path': {'DGS2':1,'DGS10':1,'NASDAQCOM':-1,'DTWEXBGS':1},
     }.get(tid, {'NASDAQCOM':1,'SP500':1,'VIXCLS':-1})
+    # The explicit directional statement overrides a positive generic theme template.
+    # In particular, a selloff/negative AI call must not treat falling AI equities as divergence.
+    current_source=native.get(current['date'],{})
+    lead=(current_source.get('top_catalysts') or [{}])[0]
+    lead_direction=str(lead.get('direction',''))
+    negative_ai=(tid=='ai_earnings' and (re.search(r'^\s*↓[^/]*(?:AI|semiconductor|科技|半导体)',lead_direction,re.I) or re.search(r'\brisk[- ]off\b|bearish',lead_direction,re.I)))
+    if negative_ai: expected={'NASDAQCOM':-1,'SP500':-1,'VIXCLS':1}
+    expectation_note='Explicit leading catalyst: '+lead_direction if lead_direction else 'Thematic conditional comparison; not a verified causal attribution.'
     # use native tape if present for current day; otherwise historical changes
     current_report=native.get(current['date'],{})
     tape={item.get('asset'):item for item in current_report.get('market_tape',[]) if isinstance(item,dict)}
@@ -416,11 +440,12 @@ def build(refresh=True):
         display_delta=None
         # native tape parsing when possible
         asset=tape.get(aliases.get(sid,''))
+        if asset is None and sid=='VIXCLS':asset=tape.get('CBOE VIX') or tape.get('Cboe VIX')
         if asset:
             rawc=str(asset.get('change_1d',''))
             try:
-                num=float(rawc.replace('%','').replace('bp','').replace('+','').strip())
-                delta=num
+                match=re.fullmatch(r'\s*([+-]?\d+(?:\.\d+)?)\s*(?:%|bp|bps|pp|pts|points)?\s*',rawc)
+                if match:delta=float(match.group(1))
             except Exception: pass
             if delta is not None:
                 display_delta=rawc
@@ -430,7 +455,7 @@ def build(refresh=True):
         item={'series_id':sid,'label':SERIES[sid]['label'],'as_of':asset.get('as_of') if asset else current['date'],'source_mode':current.get('source_mode'),'change':display_delta or (f'{delta:+.1f}bp' if SERIES[sid]['kind']=='yield' else f'{delta:+.2f}%')}
         (confirms if actual==sgn else diverges).append(item)
     confirmation={'theme_id':tid,'theme_label':THEMES.get(tid,(tid,''))[0],'as_of':current['date'],'confirming':confirms,'diverging':diverges,'unavailable':unavailable,
-                  'interpretation_note':f"{len(confirms)} 项资产确认当前主线，{len(diverges)} 项出现背离。",
+                  'expectation_basis':expectation_note,'interpretation_note':f"{len(confirms)} 项资产方向与当前主线一致，{len(diverges)} 项出现背离；不是因果证明。",
                   'what_would_flip_it':current['catalysts'][0].get('invalidation','A material reversal in the key confirming assets.') if current['catalysts'] else ''}
 
     rolling={
@@ -442,6 +467,17 @@ def build(refresh=True):
         'days':days,'regime_transitions':transitions,'persistent_themes':persistent[:12],'cross_asset_confirmation':confirmation,
         'series':{sid:{**SERIES[sid], 'points':[p for p in market_history['series'][sid]['points'] if window_start<=p['date']<=as_of]} for sid in SERIES}
     }
+    month_start=as_of[:7]+'-01'
+    expected=[(date.fromisoformat(month_start)+timedelta(days=i)).isoformat() for i in range((as_of_date-date.fromisoformat(month_start)).days+1)]
+    month_days=[d for d in days if month_start<=d['date']<=as_of]
+    rolling['monthly_coverage']={'month':as_of[:7],'through':as_of,'expected_days':len(expected),'present_days':len(month_days),
+        'missing_dates':[d for d in expected if not any(x['date']==d for x in month_days)],
+        'unclassified_dates':[d['date'] for d in month_days if d['regime_code'] in {'unclassified','unavailable'}],
+        'unknown_signal_cells':sum(v=='?' for d in month_days for v in d.get('signals',{}).values()),
+        'price_proxy_dates':[d['date'] for d in month_days if d.get('price_proxy')],
+        'note':'Calendar coverage, editorial provenance and underlying-provider freshness are separate; price proxies do not restore missing original judgments.'}
+    rolling['series_freshness']={sid:{'last_observation':s['points'][-1]['date'] if s['points'] else None,'source':s['source'],
+        'note':'Independent provider as_of; no forward-fill or cross-instrument substitution.'} for sid,s in rolling['series'].items()}
     (OUT_DIR/'market-history.json').write_text(json.dumps(market_history,ensure_ascii=False,indent=2),encoding='utf-8')
     (OUT_DIR/'rolling-30d.json').write_text(json.dumps(rolling,ensure_ascii=False,indent=2),encoding='utf-8')
     (OUT_DIR/'theme-registry.json').write_text(json.dumps({'schema_version':'1.0.0','themes':rolling['themes'],'categories':CATEGORY_LABELS},ensure_ascii=False,indent=2),encoding='utf-8')

@@ -17,6 +17,8 @@ function renderHero(data){
   const current=data.days.at(-1),top=data.persistent_themes?.[0],transition=data.regime_transitions?.at(-1),strip=q("#lens-summary-strip");
   [["Current Regime",current?.regime_label],["Dominant Theme",themeLabel(data,current?.dominant_theme_id)],["Most Persistent",top?.theme_label],["Last Regime Shift",transition?`${transition.date} · ${transition.from} → ${transition.to}`:"No change in window"],["Historical Series",data.coverage.historical_series_start]].forEach(([l,v])=>{const x=e("div");x.append(e("span","",l),e("strong","",v||"—"));strip.append(x)});
   q("#lens-footer").textContent=`As of ${data.as_of}`;
+  if(data.monthly_coverage){const c=data.monthly_coverage,note=e("p","lens-proxy-note",`${c.month} 截至 ${c.through}：${c.present_days}/${c.expected_days} 个覆盖日；${c.price_proxy_dates.length} 日采用有来源的价格代理；${c.missing_dates.length} 日缺失。下划线仅代表原生来源，不代表风险大小。`);q("#lens-hero-meta").after(note);}
+
 }
 function appendSource(target,c){
   if(!(c.source_name||c.source_url))return;
@@ -29,6 +31,14 @@ function renderDayDetail(data,day,target){
   target.replaceChildren();
   target.append(e("div","lens-detail__title",`${day.date} · ${day.regime_label} · ${themeLabel(data,day.dominant_theme_id)}`));
   if(day.data_quality?.status==="partial")target.append(e("p","",`数据待齐：仅有 ${day.catalysts.length} 项可验证驱动；${day.data_quality.missing_series.join(", ")} 尚无当日观测。`));
+  if(day.price_proxy){
+    target.append(e("p","lens-proxy-note",day.price_proxy.note));
+    const detail=e("ul","lens-proxy-details");
+    Object.entries(day.price_proxy.details).forEach(([key,item])=>{
+      const observations=item.observations.map(o=>`${o.asset} ${o.change_1d} · ${o.session_date} · ${o.sources.join(",")}`).join("; ");
+      detail.append(e("li","",`${key}: ${item.direction} · ${item.formula} · ${observations||"证据未恢复"}`));
+    });target.append(detail);
+  }
   const ol=e("ol");
   day.catalysts.forEach(c=>{const li=e("li");const line=e("div","lens-detail__catalyst-line");line.append(e("strong","",`${c.rank}. ${c.title}`),modeBadge(c.source_mode));li.append(line,e("p","",c.evidence));appendSource(li,c);ol.append(li)});
   target.append(ol);
@@ -38,7 +48,7 @@ function renderRibbon(data){
   data.days.forEach(day=>{
     const provenance=day.source_mode==="native_daily"?"原生日报":day.source_mode==="reconstructed_daily"?"历史补档":"市场重建";
     const code=day.regime_code||"unclassified";
-    const b=e("button",`${code} ${day.source_mode==="native_daily"?"native":""}`.trim(),day.date.slice(5).replace("-","/"));
+    const b=e("button",`${code} ${day.source_mode==="native_daily"?"native":""} ${day.price_proxy?"proxy":""}`.trim(),day.date.slice(5).replace("-","/"));
     b.type="button";
     b.title=`${day.date} · ${day.regime_label} · ${provenance}${code==="unclassified"?" · 未归类，不代表中性或无风险":""}`;
     b.setAttribute("aria-label",b.title);
@@ -54,10 +64,11 @@ function renderSignals(data){
   rows.forEach(([key,label])=>{
     root.append(e("div","signal-matrix__rowlabel",label));
     data.days.forEach(d=>{
-      const value=d.signals?.[key],direction=["↑","↓","→"].includes(value)?value:"?";
-      const cls=direction==="↑"?"signal-cell--up":direction==="↓"?"signal-cell--down":direction==="→"?"signal-cell--flat":"signal-cell--unknown";
+      const value=d.signals?.[key],direction=["↑","↓","→","↕","↔"].includes(value)?value:"?";
+      const cls=direction==="↑"?"signal-cell--up":direction==="↓"?"signal-cell--down":(direction==="→"||direction==="↔")?"signal-cell--flat":direction==="↕"?"signal-cell--mixed":"signal-cell--unknown";
       const cell=e("div",cls,direction);
-      cell.title=`${d.date} · ${label}：${direction==="?"?"方向未判定；不是中性":direction}`;
+      cell.title=`${d.date} · ${label}：${direction==="?"?"方向未判定；不是中性":direction}${d.price_proxy?" · 市场价格代理，非原编辑判断 · "+(d.price_proxy.details[key]?.formula||""):""}`;
+      if(d.price_proxy)cell.classList.add("signal-cell--proxy");
       cell.setAttribute("aria-label",cell.title);
       root.append(cell);
     });
@@ -85,7 +96,7 @@ function renderCatalystMap(data){
 function renderMobileCatalysts(data){const root=q("#mobile-catalyst-weeks"),groups=[];for(let i=0;i<data.days.length;i+=5)groups.push(data.days.slice(i,i+5));groups.forEach((g,idx)=>{const w=e("section","mobile-week");w.append(e("h3","",`Week ${String(idx+1).padStart(2,'0')} · ${g[0].date.slice(5)} → ${g.at(-1).date.slice(5)}`));g.forEach(day=>day.catalysts.forEach(c=>{const card=e("button","mobile-catalyst");card.type="button";card.append(e("strong","",`${day.date.slice(5)} · #${c.rank} ${c.title}`),e("span","",`${themeLabel(data,c.theme_id)} · ${c.evidence}`));card.onclick=()=>renderCatalystDetail(data,c,day);w.append(card)}));root.append(w)})}
 function renderThemes(data){const t=q("#theme-table"),head=e("thead"),hr=e("tr");['Theme','State','Days in Top 3','Best Rank','First Seen','Last Seen','Source'].forEach(x=>hr.append(e("th","",x)));head.append(hr);const body=e("tbody"),labels={native_daily:'Native',verified_event:'Verified Event',objective_market_reconstruction:'Market Reconstruction',reconstructed_daily:'Historical Backfill'};(data.persistent_themes||[]).forEach(x=>{const r=e("tr"),modes=(x.source_modes||[]).map(m=>labels[m]||m).join(' + '),cells=[x.theme_label,x.state,x.days_in_top3,`#${x.best_rank}`,x.first_seen,x.last_seen,modes];cells.forEach((v,i)=>r.append(e("td",i===1?'theme-state':'',v)));body.append(r)});t.replaceChildren(head,body)}
 function sparkPath(points,w,h,pad=6){const vals=points.map(p=>p.value),min=Math.min(...vals),max=Math.max(...vals),range=max-min||1;return points.map((p,i)=>`${i?'L':'M'} ${pad+(w-pad*2)*(i/(points.length-1||1))} ${pad+(h-pad*2)*(1-(p.value-min)/range)}`).join(' ')}
-function renderSparks(data){const root=q("#spark-grid");Object.values(data.series||{}).forEach(s=>{if(!s.points?.length)return;const card=e("article","spark-card"),head=e("div","spark-card__head");head.append(e("h3","",s.label),e("strong","",`${s.points.at(-1).value.toLocaleString(undefined,{maximumFractionDigits:2})}${s.unit==='%'?'%':''}`));card.append(head);const S=svg('svg',{viewBox:'0 0 500 90','aria-label':`${s.label} 30-day trend`});S.append(svg('line',{x1:6,y1:82,x2:494,y2:82,stroke:'#d4cec3','stroke-width':1}));S.append(svg('path',{d:sparkPath(s.points,500,90),fill:'none',stroke:'#171614','stroke-width':2,'vector-effect':'non-scaling-stroke'}));card.append(S);const meta=e("div","spark-card__meta");meta.append(e("span","",s.points[0].date),e("span","",s.source),e("span","",s.points.at(-1).date));card.append(meta);root.append(card)})}
+function renderSparks(data){const root=q("#spark-grid");Object.values(data.series||{}).forEach(s=>{if(!s.points?.length)return;const card=e("article","spark-card"),head=e("div","spark-card__head");head.append(e("h3","",s.label),e("strong","",`${s.points.at(-1).value.toLocaleString(undefined,{maximumFractionDigits:2})}${s.unit==='%'?'%':''}`));card.append(head,e('p','lens-observation-date',`观测截至 ${s.points.at(-1).date} · 不前向填充；与日报日期分开`));const S=svg('svg',{viewBox:'0 0 500 90','aria-label':`${s.label} 30-day trend`});S.append(svg('line',{x1:6,y1:82,x2:494,y2:82,stroke:'#d4cec3','stroke-width':1}));S.append(svg('path',{d:sparkPath(s.points,500,90),fill:'none',stroke:'#171614','stroke-width':2,'vector-effect':'non-scaling-stroke'}));card.append(S);const meta=e("div","spark-card__meta");meta.append(e("span","",s.points[0].date),e("span","",s.source),e("span","",s.points.at(-1).date));card.append(meta);root.append(card)})}
 async function init(){try{const r=await fetch(DATA_URL,{cache:'no-store'});if(!r.ok)throw new Error(`${r.status}`);const data=await r.json();renderHero(data);renderRibbon(data);renderSignals(data);renderCatalystMap(data);renderThemes(data);renderSparks(data)}catch(err){console.error(err);q('#lens-app').append(e('div','status-panel status-panel--error',`30D Lens data unavailable: ${err.message}`))}}
 document.addEventListener('DOMContentLoaded',init);
 

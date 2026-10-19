@@ -54,3 +54,11 @@
   background:repeating-linear-gradient(135deg,#eee5d9 0,#eee5d9 6px,#ac9e8c 6px,#ac9e8c 7px);
   border:1px solid #ac9e8c;
 }
+
+/* Historical price proxies retain nonnative provenance and visible source basis. */
+.lens-full-ribbon button.proxy,.regime-ribbon__cell--proxy{background-image:repeating-linear-gradient(135deg,transparent 0,transparent 7px,rgba(255,255,255,.5) 7px,rgba(255,255,255,.5) 9px)}
+.signal-cell--proxy{box-shadow:inset 0 -2px 0 #9c845e}
+.signal-cell--mixed{background:linear-gradient(135deg,#e6eee9 0,#e6eee9 50%,#f0e1df 50%,#f0e1df 100%);font-weight:700}
+.lens-proxy-note{font-size:.8rem;line-height:1.65;color:var(--charcoal);padding:12px 0}
+.lens-proxy-details{padding-left:20px;font-size:.75rem;overflow-wrap:anywhere}
+.lens-observation-date{font-size:.7rem;color:var(--muted);margin:8px 0}

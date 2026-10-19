@@ -4,13 +4,13 @@
   "window_start": "2026-09-19",
   "window_end": "2026-10-18",
   "coverage": {
-    "market_sessions": 29,
-    "native_daily_days": 11,
-    "reconstructed_daily_days": 14,
-    "reconstructed_days": 4,
-    "partial_days": 4,
+    "market_sessions": 30,
+    "native_daily_days": 13,
+    "reconstructed_daily_days": 17,
+    "reconstructed_days": 0,
+    "partial_days": 0,
     "verified_event_days": 0,
-    "historical_series_start": "2025-08-25"
+    "historical_series_start": "2025-08-01"
   },
   "methodology": {
     "reconstructed_daily": "Source-backed historical editorial reconstruction produced later; not a contemporaneously published assessment.",
@@ -835,16 +835,16 @@
     {
       "date": "2026-10-01",
       "source_mode": "reconstructed_daily",
-      "regime_code": "unclassified",
-      "regime_label": "历史重建 / 融资约束与需求韧性并存",
+      "regime_code": "risk_off",
+      "regime_label": "市场价格代理（非原编辑判断） · risk_off",
       "dominant_theme_id": "market_structure",
       "signals": {
-        "growth": "?",
-        "inflation": "?",
-        "rates": "?",
-        "earnings": "?",
-        "liquidity": "?",
-        "geopolitics": "?"
+        "growth": "↓",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "↑",
+        "liquidity": "↓",
+        "geopolitics": "↑"
       },
       "catalysts": [
         {
@@ -892,21 +892,154 @@
           "invalidation": "Weaker domestic or external activity changes the balance of risks and the case for tightening.",
           "source_mode": "reconstructed_daily"
         }
-      ]
+      ],
+      "price_proxy": {
+        "basis": "historical_price_proxy",
+        "regime_code": "risk_off",
+        "signals": {
+          "growth": "↓",
+          "inflation": "↑",
+          "rates": "↑",
+          "earnings": "↑",
+          "liquidity": "↓",
+          "geopolitics": "↑"
+        },
+        "details": {
+          "growth": {
+            "direction": "↓",
+            "value": -0.2516,
+            "formula": "S&P 500 1D direction; equity-demand proxy, NOT GDP",
+            "observations": [
+              {
+                "asset": "S&P 500",
+                "session_date": "2026-09-30",
+                "change_1d": -0.2516,
+                "change_unit": "%",
+                "sources": [
+                  "S90",
+                  "S500"
+                ],
+                "as_of": "2026-09-30 daily historical reference"
+              }
+            ]
+          },
+          "inflation": {
+            "direction": "↑",
+            "value": 1.9,
+            "formula": "Brent same-basis 1D direction; energy-price proxy, NOT CPI",
+            "observations": [
+              {
+                "asset": "Brent",
+                "session_date": "2026-09-30",
+                "change_1d": 1.9,
+                "change_unit": "+1.9% reported for December contract",
+                "sources": [
+                  "S905"
+                ],
+                "as_of": "2026-09-30 settlement; December Brent more-active contract; expiring November settled103.50, must not mix; WTI front-month expiry not verified"
+              }
+            ]
+          },
+          "rates": {
+            "direction": "↑",
+            "value": 3.0,
+            "formula": "UST 10Y 1D yield-change direction",
+            "observations": [
+              {
+                "asset": "UST 10Y",
+                "session_date": "2026-09-30",
+                "change_1d": 3.0,
+                "change_unit": "bp",
+                "sources": [
+                  "S91"
+                ],
+                "as_of": "2026-09-30 daily historical reference"
+              }
+            ]
+          },
+          "earnings": {
+            "direction": "↑",
+            "value": 0.4886,
+            "formula": "Nasdaq 1D minus S&P 500 1D; growth-style relative return, NOT EPS revisions",
+            "observations": [
+              {
+                "asset": "Nasdaq Composite",
+                "session_date": "2026-09-30",
+                "change_1d": 0.237,
+                "change_unit": "%",
+                "sources": [
+                  "S90",
+                  "S500"
+                ],
+                "as_of": "2026-09-30 daily historical reference"
+              },
+              {
+                "asset": "S&P 500",
+                "session_date": "2026-09-30",
+                "change_1d": -0.2516,
+                "change_unit": "%",
+                "sources": [
+                  "S90",
+                  "S500"
+                ],
+                "as_of": "2026-09-30 daily historical reference"
+              }
+            ]
+          },
+          "liquidity": {
+            "direction": "↓",
+            "value": -0.0789,
+            "formula": "Negative dollar-index 1D direction; financial-conditions proxy, NOT fund flow",
+            "observations": [
+              {
+                "asset": "DXY",
+                "session_date": "2026-09-30",
+                "change_1d": 0.0789,
+                "change_unit": "%",
+                "sources": [
+                  "S93"
+                ],
+                "as_of": "2026-09-30 daily historical reference"
+              }
+            ]
+          },
+          "geopolitics": {
+            "direction": "↑",
+            "value": 1.8703,
+            "formula": "VIX 1D direction; market risk-premium proxy, NOT proof of geopolitical events",
+            "observations": [
+              {
+                "asset": "VIX",
+                "session_date": "2026-09-30",
+                "change_1d": 1.8703,
+                "change_unit": "%",
+                "sources": [
+                  "S92"
+                ],
+                "as_of": "2026-09-30 daily historical reference"
+              }
+            ]
+          }
+        },
+        "regime_formula": "SPX up + VIX down → risk_on; SPX down + VIX up → risk_off; both unchanged → neutral; conflicting observed directions → event_risk. Missing required data stays unclassified.",
+        "note": "市场价格代理，不是恢复出的当日编辑判断：增长/盈利/流动性/地缘行分别使用权益、相对收益、美元和VIX代理，不冒充GDP、EPS修正、资金流或真实事件。只使用原补档中有来源的截点前行情。"
+      },
+      "editorial_regime_label": "历史重建 / 融资约束与需求韧性并存",
+      "regime_basis": "historical_price_proxy"
     },
     {
       "date": "2026-10-02",
       "source_mode": "reconstructed_daily",
-      "regime_code": "unclassified",
-      "regime_label": "多重约束 / reconstructed conditional assessment",
+      "regime_code": "event_risk",
+      "regime_label": "市场价格代理（非原编辑判断） · event_risk",
       "dominant_theme_id": "market_structure",
       "signals": {
-        "growth": "?",
-        "inflation": "?",
-        "rates": "?",
-        "earnings": "?",
-        "liquidity": "?",
-        "geopolitics": "?"
+        "growth": "↑",
+        "inflation": "↑",
+        "rates": "↓",
+        "earnings": "↓",
+        "liquidity": "↓",
+        "geopolitics": "↑"
       },
       "catalysts": [
         {
@@ -954,21 +1087,151 @@
           "invalidation": "A weak headline is explained by supply or revisions while wages remain firm, invalidating a simple demand-slowdown interpretation.",
           "source_mode": "reconstructed_daily"
         }
-      ]
+      ],
+      "price_proxy": {
+        "basis": "historical_price_proxy",
+        "regime_code": "event_risk",
+        "signals": {
+          "growth": "↑",
+          "inflation": "↑",
+          "rates": "↓",
+          "earnings": "↓",
+          "liquidity": "↓",
+          "geopolitics": "↑"
+        },
+        "details": {
+          "growth": {
+            "direction": "↑",
+            "value": 0.1949,
+            "formula": "S&P 500 1D direction; equity-demand proxy, NOT GDP",
+            "observations": [
+              {
+                "asset": "S&P 500",
+                "session_date": "2026-10-01",
+                "change_1d": 0.1949,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-01 daily historical reference"
+              }
+            ]
+          },
+          "inflation": {
+            "direction": "↑",
+            "value": 4.37,
+            "formula": "Brent same-basis 1D direction; energy-price proxy, NOT CPI",
+            "observations": [
+              {
+                "asset": "Brent",
+                "session_date": "2026-10-01",
+                "change_1d": 4.37,
+                "change_unit": "+4.37%",
+                "sources": [
+                  "S203"
+                ],
+                "as_of": "2026-10-01 US settlement"
+              }
+            ]
+          },
+          "rates": {
+            "direction": "↓",
+            "value": -5.0,
+            "formula": "UST 10Y 1D yield-change direction",
+            "observations": [
+              {
+                "asset": "UST 10Y",
+                "session_date": "2026-10-01",
+                "change_1d": -5.0,
+                "change_unit": "bp",
+                "sources": [
+                  "S501"
+                ],
+                "as_of": "2026-10-01 daily historical reference"
+              }
+            ]
+          },
+          "earnings": {
+            "direction": "↓",
+            "value": -0.1557,
+            "formula": "Nasdaq 1D minus S&P 500 1D; growth-style relative return, NOT EPS revisions",
+            "observations": [
+              {
+                "asset": "Nasdaq Composite",
+                "session_date": "2026-10-01",
+                "change_1d": 0.0392,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-01 daily historical reference"
+              },
+              {
+                "asset": "S&P 500",
+                "session_date": "2026-10-01",
+                "change_1d": 0.1949,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-01 daily historical reference"
+              }
+            ]
+          },
+          "liquidity": {
+            "direction": "↓",
+            "value": -0.6407,
+            "formula": "Negative dollar-index 1D direction; financial-conditions proxy, NOT fund flow",
+            "observations": [
+              {
+                "asset": "DXY",
+                "session_date": "2026-10-01",
+                "change_1d": 0.6407,
+                "change_unit": "%",
+                "sources": [
+                  "S503"
+                ],
+                "as_of": "2026-10-01 daily historical reference"
+              }
+            ]
+          },
+          "geopolitics": {
+            "direction": "↑",
+            "value": 0.306,
+            "formula": "VIX 1D direction; market risk-premium proxy, NOT proof of geopolitical events",
+            "observations": [
+              {
+                "asset": "VIX",
+                "session_date": "2026-10-01",
+                "change_1d": 0.306,
+                "change_unit": "%",
+                "sources": [
+                  "S502"
+                ],
+                "as_of": "2026-10-01 daily historical reference"
+              }
+            ]
+          }
+        },
+        "regime_formula": "SPX up + VIX down → risk_on; SPX down + VIX up → risk_off; both unchanged → neutral; conflicting observed directions → event_risk. Missing required data stays unclassified.",
+        "note": "市场价格代理，不是恢复出的当日编辑判断：增长/盈利/流动性/地缘行分别使用权益、相对收益、美元和VIX代理，不冒充GDP、EPS修正、资金流或真实事件。只使用原补档中有来源的截点前行情。"
+      },
+      "editorial_regime_label": "多重约束 / reconstructed conditional assessment",
+      "regime_basis": "historical_price_proxy"
     },
     {
       "date": "2026-10-03",
       "source_mode": "reconstructed_daily",
-      "regime_code": "unclassified",
-      "regime_label": "多重约束 / reconstructed conditional assessment",
+      "regime_code": "risk_on",
+      "regime_label": "市场价格代理（非原编辑判断） · risk_on",
       "dominant_theme_id": "market_structure",
       "signals": {
-        "growth": "?",
-        "inflation": "?",
-        "rates": "?",
-        "earnings": "?",
-        "liquidity": "?",
-        "geopolitics": "?"
+        "growth": "↑",
+        "inflation": "↓",
+        "rates": "↑",
+        "earnings": "↑",
+        "liquidity": "↑",
+        "geopolitics": "↓"
       },
       "catalysts": [
         {
@@ -1016,21 +1279,151 @@
           "invalidation": "Input prices retreat and firms maintain margins without price increases, weakening the cost-pressure channel.",
           "source_mode": "reconstructed_daily"
         }
-      ]
+      ],
+      "price_proxy": {
+        "basis": "historical_price_proxy",
+        "regime_code": "risk_on",
+        "signals": {
+          "growth": "↑",
+          "inflation": "↓",
+          "rates": "↑",
+          "earnings": "↑",
+          "liquidity": "↑",
+          "geopolitics": "↓"
+        },
+        "details": {
+          "growth": {
+            "direction": "↑",
+            "value": 0.734,
+            "formula": "S&P 500 1D direction; equity-demand proxy, NOT GDP",
+            "observations": [
+              {
+                "asset": "S&P 500",
+                "session_date": "2026-10-02",
+                "change_1d": 0.734,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              }
+            ]
+          },
+          "inflation": {
+            "direction": "↓",
+            "value": -0.06,
+            "formula": "Brent same-basis 1D direction; energy-price proxy, NOT CPI",
+            "observations": [
+              {
+                "asset": "Brent",
+                "session_date": "2026-10-02",
+                "change_1d": -0.06,
+                "change_unit": "-0.06%",
+                "sources": [
+                  "S206"
+                ],
+                "as_of": "2026-10-02 US settlement"
+              }
+            ]
+          },
+          "rates": {
+            "direction": "↑",
+            "value": 4.0,
+            "formula": "UST 10Y 1D yield-change direction",
+            "observations": [
+              {
+                "asset": "UST 10Y",
+                "session_date": "2026-10-02",
+                "change_1d": 4.0,
+                "change_unit": "bp",
+                "sources": [
+                  "S501"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              }
+            ]
+          },
+          "earnings": {
+            "direction": "↑",
+            "value": 0.45409999999999995,
+            "formula": "Nasdaq 1D minus S&P 500 1D; growth-style relative return, NOT EPS revisions",
+            "observations": [
+              {
+                "asset": "Nasdaq Composite",
+                "session_date": "2026-10-02",
+                "change_1d": 1.1881,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              },
+              {
+                "asset": "S&P 500",
+                "session_date": "2026-10-02",
+                "change_1d": 0.734,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              }
+            ]
+          },
+          "liquidity": {
+            "direction": "↑",
+            "value": 0.1665,
+            "formula": "Negative dollar-index 1D direction; financial-conditions proxy, NOT fund flow",
+            "observations": [
+              {
+                "asset": "DXY",
+                "session_date": "2026-10-02",
+                "change_1d": -0.1665,
+                "change_unit": "%",
+                "sources": [
+                  "S503"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              }
+            ]
+          },
+          "geopolitics": {
+            "direction": "↓",
+            "value": -6.5894,
+            "formula": "VIX 1D direction; market risk-premium proxy, NOT proof of geopolitical events",
+            "observations": [
+              {
+                "asset": "VIX",
+                "session_date": "2026-10-02",
+                "change_1d": -6.5894,
+                "change_unit": "%",
+                "sources": [
+                  "S502"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              }
+            ]
+          }
+        },
+        "regime_formula": "SPX up + VIX down → risk_on; SPX down + VIX up → risk_off; both unchanged → neutral; conflicting observed directions → event_risk. Missing required data stays unclassified.",
+        "note": "市场价格代理，不是恢复出的当日编辑判断：增长/盈利/流动性/地缘行分别使用权益、相对收益、美元和VIX代理，不冒充GDP、EPS修正、资金流或真实事件。只使用原补档中有来源的截点前行情。"
+      },
+      "editorial_regime_label": "多重约束 / reconstructed conditional assessment",
+      "regime_basis": "historical_price_proxy"
     },
     {
       "date": "2026-10-04",
       "source_mode": "reconstructed_daily",
-      "regime_code": "unclassified",
-      "regime_label": "多重约束 / reconstructed conditional assessment",
+      "regime_code": "risk_on",
+      "regime_label": "市场价格代理（非原编辑判断） · risk_on",
       "dominant_theme_id": "market_structure",
       "signals": {
-        "growth": "?",
-        "inflation": "?",
-        "rates": "?",
-        "earnings": "?",
-        "liquidity": "?",
-        "geopolitics": "?"
+        "growth": "↑",
+        "inflation": "↓",
+        "rates": "↑",
+        "earnings": "↑",
+        "liquidity": "↑",
+        "geopolitics": "↓"
       },
       "catalysts": [
         {
@@ -1078,21 +1471,151 @@
           "invalidation": "Divergent component readings undermine a one-directional policy conclusion from the headline PMI.",
           "source_mode": "reconstructed_daily"
         }
-      ]
+      ],
+      "price_proxy": {
+        "basis": "historical_price_proxy",
+        "regime_code": "risk_on",
+        "signals": {
+          "growth": "↑",
+          "inflation": "↓",
+          "rates": "↑",
+          "earnings": "↑",
+          "liquidity": "↑",
+          "geopolitics": "↓"
+        },
+        "details": {
+          "growth": {
+            "direction": "↑",
+            "value": 0.734,
+            "formula": "S&P 500 1D direction; equity-demand proxy, NOT GDP",
+            "observations": [
+              {
+                "asset": "S&P 500",
+                "session_date": "2026-10-02",
+                "change_1d": 0.734,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              }
+            ]
+          },
+          "inflation": {
+            "direction": "↓",
+            "value": -0.06,
+            "formula": "Brent same-basis 1D direction; energy-price proxy, NOT CPI",
+            "observations": [
+              {
+                "asset": "Brent",
+                "session_date": "2026-10-02",
+                "change_1d": -0.06,
+                "change_unit": "-0.06%",
+                "sources": [
+                  "S206"
+                ],
+                "as_of": "2026-10-02 US settlement"
+              }
+            ]
+          },
+          "rates": {
+            "direction": "↑",
+            "value": 4.0,
+            "formula": "UST 10Y 1D yield-change direction",
+            "observations": [
+              {
+                "asset": "UST 10Y",
+                "session_date": "2026-10-02",
+                "change_1d": 4.0,
+                "change_unit": "bp",
+                "sources": [
+                  "S501"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              }
+            ]
+          },
+          "earnings": {
+            "direction": "↑",
+            "value": 0.45409999999999995,
+            "formula": "Nasdaq 1D minus S&P 500 1D; growth-style relative return, NOT EPS revisions",
+            "observations": [
+              {
+                "asset": "Nasdaq Composite",
+                "session_date": "2026-10-02",
+                "change_1d": 1.1881,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              },
+              {
+                "asset": "S&P 500",
+                "session_date": "2026-10-02",
+                "change_1d": 0.734,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              }
+            ]
+          },
+          "liquidity": {
+            "direction": "↑",
+            "value": 0.1665,
+            "formula": "Negative dollar-index 1D direction; financial-conditions proxy, NOT fund flow",
+            "observations": [
+              {
+                "asset": "DXY",
+                "session_date": "2026-10-02",
+                "change_1d": -0.1665,
+                "change_unit": "%",
+                "sources": [
+                  "S503"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              }
+            ]
+          },
+          "geopolitics": {
+            "direction": "↓",
+            "value": -6.5894,
+            "formula": "VIX 1D direction; market risk-premium proxy, NOT proof of geopolitical events",
+            "observations": [
+              {
+                "asset": "VIX",
+                "session_date": "2026-10-02",
+                "change_1d": -6.5894,
+                "change_unit": "%",
+                "sources": [
+                  "S502"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              }
+            ]
+          }
+        },
+        "regime_formula": "SPX up + VIX down → risk_on; SPX down + VIX up → risk_off; both unchanged → neutral; conflicting observed directions → event_risk. Missing required data stays unclassified.",
+        "note": "市场价格代理，不是恢复出的当日编辑判断：增长/盈利/流动性/地缘行分别使用权益、相对收益、美元和VIX代理，不冒充GDP、EPS修正、资金流或真实事件。只使用原补档中有来源的截点前行情。"
+      },
+      "editorial_regime_label": "多重约束 / reconstructed conditional assessment",
+      "regime_basis": "historical_price_proxy"
     },
     {
       "date": "2026-10-05",
       "source_mode": "reconstructed_daily",
-      "regime_code": "unclassified",
-      "regime_label": "多重约束 / reconstructed conditional assessment",
+      "regime_code": "risk_on",
+      "regime_label": "市场价格代理（非原编辑判断） · risk_on",
       "dominant_theme_id": "market_structure",
       "signals": {
-        "growth": "?",
-        "inflation": "?",
-        "rates": "?",
-        "earnings": "?",
-        "liquidity": "?",
-        "geopolitics": "?"
+        "growth": "↑",
+        "inflation": "↓",
+        "rates": "↑",
+        "earnings": "↑",
+        "liquidity": "↑",
+        "geopolitics": "↓"
       },
       "catalysts": [
         {
@@ -1140,21 +1663,151 @@
           "invalidation": "Divergent component readings undermine a one-directional policy conclusion from the headline PMI.",
           "source_mode": "reconstructed_daily"
         }
-      ]
+      ],
+      "price_proxy": {
+        "basis": "historical_price_proxy",
+        "regime_code": "risk_on",
+        "signals": {
+          "growth": "↑",
+          "inflation": "↓",
+          "rates": "↑",
+          "earnings": "↑",
+          "liquidity": "↑",
+          "geopolitics": "↓"
+        },
+        "details": {
+          "growth": {
+            "direction": "↑",
+            "value": 0.734,
+            "formula": "S&P 500 1D direction; equity-demand proxy, NOT GDP",
+            "observations": [
+              {
+                "asset": "S&P 500",
+                "session_date": "2026-10-02",
+                "change_1d": 0.734,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              }
+            ]
+          },
+          "inflation": {
+            "direction": "↓",
+            "value": -0.06,
+            "formula": "Brent same-basis 1D direction; energy-price proxy, NOT CPI",
+            "observations": [
+              {
+                "asset": "Brent",
+                "session_date": "2026-10-02",
+                "change_1d": -0.06,
+                "change_unit": "-0.06%",
+                "sources": [
+                  "S206"
+                ],
+                "as_of": "2026-10-02 US settlement"
+              }
+            ]
+          },
+          "rates": {
+            "direction": "↑",
+            "value": 4.0,
+            "formula": "UST 10Y 1D yield-change direction",
+            "observations": [
+              {
+                "asset": "UST 10Y",
+                "session_date": "2026-10-02",
+                "change_1d": 4.0,
+                "change_unit": "bp",
+                "sources": [
+                  "S501"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              }
+            ]
+          },
+          "earnings": {
+            "direction": "↑",
+            "value": 0.45409999999999995,
+            "formula": "Nasdaq 1D minus S&P 500 1D; growth-style relative return, NOT EPS revisions",
+            "observations": [
+              {
+                "asset": "Nasdaq Composite",
+                "session_date": "2026-10-02",
+                "change_1d": 1.1881,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              },
+              {
+                "asset": "S&P 500",
+                "session_date": "2026-10-02",
+                "change_1d": 0.734,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              }
+            ]
+          },
+          "liquidity": {
+            "direction": "↑",
+            "value": 0.1665,
+            "formula": "Negative dollar-index 1D direction; financial-conditions proxy, NOT fund flow",
+            "observations": [
+              {
+                "asset": "DXY",
+                "session_date": "2026-10-02",
+                "change_1d": -0.1665,
+                "change_unit": "%",
+                "sources": [
+                  "S503"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              }
+            ]
+          },
+          "geopolitics": {
+            "direction": "↓",
+            "value": -6.5894,
+            "formula": "VIX 1D direction; market risk-premium proxy, NOT proof of geopolitical events",
+            "observations": [
+              {
+                "asset": "VIX",
+                "session_date": "2026-10-02",
+                "change_1d": -6.5894,
+                "change_unit": "%",
+                "sources": [
+                  "S502"
+                ],
+                "as_of": "2026-10-02 daily historical reference"
+              }
+            ]
+          }
+        },
+        "regime_formula": "SPX up + VIX down → risk_on; SPX down + VIX up → risk_off; both unchanged → neutral; conflicting observed directions → event_risk. Missing required data stays unclassified.",
+        "note": "市场价格代理，不是恢复出的当日编辑判断：增长/盈利/流动性/地缘行分别使用权益、相对收益、美元和VIX代理，不冒充GDP、EPS修正、资金流或真实事件。只使用原补档中有来源的截点前行情。"
+      },
+      "editorial_regime_label": "多重约束 / reconstructed conditional assessment",
+      "regime_basis": "historical_price_proxy"
     },
     {
       "date": "2026-10-06",
       "source_mode": "reconstructed_daily",
-      "regime_code": "unclassified",
-      "regime_label": "多重约束 / reconstructed conditional assessment",
+      "regime_code": "event_risk",
+      "regime_label": "市场价格代理（非原编辑判断） · event_risk",
       "dominant_theme_id": "market_structure",
       "signals": {
-        "growth": "?",
-        "inflation": "?",
-        "rates": "?",
-        "earnings": "?",
-        "liquidity": "?",
-        "geopolitics": "?"
+        "growth": "↑",
+        "inflation": "↓",
+        "rates": "↑",
+        "earnings": "↑",
+        "liquidity": "↓",
+        "geopolitics": "↑"
       },
       "catalysts": [
         {
@@ -1202,21 +1855,151 @@
           "invalidation": "One-offs, channel inventory or low-margin construction services account for most of the apparent improvement.",
           "source_mode": "reconstructed_daily"
         }
-      ]
+      ],
+      "price_proxy": {
+        "basis": "historical_price_proxy",
+        "regime_code": "event_risk",
+        "signals": {
+          "growth": "↑",
+          "inflation": "↓",
+          "rates": "↑",
+          "earnings": "↑",
+          "liquidity": "↓",
+          "geopolitics": "↑"
+        },
+        "details": {
+          "growth": {
+            "direction": "↑",
+            "value": 0.6634,
+            "formula": "S&P 500 1D direction; equity-demand proxy, NOT GDP",
+            "observations": [
+              {
+                "asset": "S&P 500",
+                "session_date": "2026-10-05",
+                "change_1d": 0.6634,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-05 daily historical reference"
+              }
+            ]
+          },
+          "inflation": {
+            "direction": "↓",
+            "value": -1.89,
+            "formula": "Brent same-basis 1D direction; energy-price proxy, NOT CPI",
+            "observations": [
+              {
+                "asset": "Brent",
+                "session_date": "2026-10-05",
+                "change_1d": -1.89,
+                "change_unit": "-1.89%",
+                "sources": [
+                  "S211"
+                ],
+                "as_of": "2026-10-05 US settlement"
+              }
+            ]
+          },
+          "rates": {
+            "direction": "↑",
+            "value": 3.0,
+            "formula": "UST 10Y 1D yield-change direction",
+            "observations": [
+              {
+                "asset": "UST 10Y",
+                "session_date": "2026-10-05",
+                "change_1d": 3.0,
+                "change_unit": "bp",
+                "sources": [
+                  "S501"
+                ],
+                "as_of": "2026-10-05 daily historical reference"
+              }
+            ]
+          },
+          "earnings": {
+            "direction": "↑",
+            "value": 0.3901000000000001,
+            "formula": "Nasdaq 1D minus S&P 500 1D; growth-style relative return, NOT EPS revisions",
+            "observations": [
+              {
+                "asset": "Nasdaq Composite",
+                "session_date": "2026-10-05",
+                "change_1d": 1.0535,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-05 daily historical reference"
+              },
+              {
+                "asset": "S&P 500",
+                "session_date": "2026-10-05",
+                "change_1d": 0.6634,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-05 daily historical reference"
+              }
+            ]
+          },
+          "liquidity": {
+            "direction": "↓",
+            "value": -0.2355,
+            "formula": "Negative dollar-index 1D direction; financial-conditions proxy, NOT fund flow",
+            "observations": [
+              {
+                "asset": "DXY",
+                "session_date": "2026-10-05",
+                "change_1d": 0.2355,
+                "change_unit": "%",
+                "sources": [
+                  "S503"
+                ],
+                "as_of": "2026-10-05 daily historical reference"
+              }
+            ]
+          },
+          "geopolitics": {
+            "direction": "↑",
+            "value": 1.3717,
+            "formula": "VIX 1D direction; market risk-premium proxy, NOT proof of geopolitical events",
+            "observations": [
+              {
+                "asset": "VIX",
+                "session_date": "2026-10-05",
+                "change_1d": 1.3717,
+                "change_unit": "%",
+                "sources": [
+                  "S502"
+                ],
+                "as_of": "2026-10-05 daily historical reference"
+              }
+            ]
+          }
+        },
+        "regime_formula": "SPX up + VIX down → risk_on; SPX down + VIX up → risk_off; both unchanged → neutral; conflicting observed directions → event_risk. Missing required data stays unclassified.",
+        "note": "市场价格代理，不是恢复出的当日编辑判断：增长/盈利/流动性/地缘行分别使用权益、相对收益、美元和VIX代理，不冒充GDP、EPS修正、资金流或真实事件。只使用原补档中有来源的截点前行情。"
+      },
+      "editorial_regime_label": "多重约束 / reconstructed conditional assessment",
+      "regime_basis": "historical_price_proxy"
     },
     {
       "date": "2026-10-07",
       "source_mode": "reconstructed_daily",
-      "regime_code": "unclassified",
-      "regime_label": "多重约束 / reconstructed conditional assessment",
+      "regime_code": "risk_on",
+      "regime_label": "市场价格代理（非原编辑判断） · risk_on",
       "dominant_theme_id": "us_china_trade_controls",
       "signals": {
-        "growth": "?",
-        "inflation": "?",
-        "rates": "?",
-        "earnings": "?",
-        "liquidity": "?",
-        "geopolitics": "?"
+        "growth": "↑",
+        "inflation": "↑",
+        "rates": "↓",
+        "earnings": "↓",
+        "liquidity": "↑",
+        "geopolitics": "↓"
       },
       "catalysts": [
         {
@@ -1264,21 +2047,151 @@
           "invalidation": "October information supersedes the meeting assessment, invalidating a literal forecast of the next decision from old minutes.",
           "source_mode": "reconstructed_daily"
         }
-      ]
+      ],
+      "price_proxy": {
+        "basis": "historical_price_proxy",
+        "regime_code": "risk_on",
+        "signals": {
+          "growth": "↑",
+          "inflation": "↑",
+          "rates": "↓",
+          "earnings": "↓",
+          "liquidity": "↑",
+          "geopolitics": "↓"
+        },
+        "details": {
+          "growth": {
+            "direction": "↑",
+            "value": 0.5786,
+            "formula": "S&P 500 1D direction; equity-demand proxy, NOT GDP",
+            "observations": [
+              {
+                "asset": "S&P 500",
+                "session_date": "2026-10-06",
+                "change_1d": 0.5786,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-06 daily historical reference"
+              }
+            ]
+          },
+          "inflation": {
+            "direction": "↑",
+            "value": 0.26,
+            "formula": "Brent same-basis 1D direction; energy-price proxy, NOT CPI",
+            "observations": [
+              {
+                "asset": "Brent",
+                "session_date": "2026-10-06",
+                "change_1d": 0.26,
+                "change_unit": "+0.26% derived from 100.32",
+                "sources": [
+                  "S212"
+                ],
+                "as_of": "2026-10-06 US settlement"
+              }
+            ]
+          },
+          "rates": {
+            "direction": "↓",
+            "value": -4.0,
+            "formula": "UST 10Y 1D yield-change direction",
+            "observations": [
+              {
+                "asset": "UST 10Y",
+                "session_date": "2026-10-06",
+                "change_1d": -4.0,
+                "change_unit": "bp",
+                "sources": [
+                  "S501"
+                ],
+                "as_of": "2026-10-06 daily historical reference"
+              }
+            ]
+          },
+          "earnings": {
+            "direction": "↓",
+            "value": -0.13290000000000002,
+            "formula": "Nasdaq 1D minus S&P 500 1D; growth-style relative return, NOT EPS revisions",
+            "observations": [
+              {
+                "asset": "Nasdaq Composite",
+                "session_date": "2026-10-06",
+                "change_1d": 0.4457,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-06 daily historical reference"
+              },
+              {
+                "asset": "S&P 500",
+                "session_date": "2026-10-06",
+                "change_1d": 0.5786,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-06 daily historical reference"
+              }
+            ]
+          },
+          "liquidity": {
+            "direction": "↑",
+            "value": 0.3328,
+            "formula": "Negative dollar-index 1D direction; financial-conditions proxy, NOT fund flow",
+            "observations": [
+              {
+                "asset": "DXY",
+                "session_date": "2026-10-06",
+                "change_1d": -0.3328,
+                "change_unit": "%",
+                "sources": [
+                  "S503"
+                ],
+                "as_of": "2026-10-06 daily historical reference"
+              }
+            ]
+          },
+          "geopolitics": {
+            "direction": "↓",
+            "value": -3.2861,
+            "formula": "VIX 1D direction; market risk-premium proxy, NOT proof of geopolitical events",
+            "observations": [
+              {
+                "asset": "VIX",
+                "session_date": "2026-10-06",
+                "change_1d": -3.2861,
+                "change_unit": "%",
+                "sources": [
+                  "S502"
+                ],
+                "as_of": "2026-10-06 daily historical reference"
+              }
+            ]
+          }
+        },
+        "regime_formula": "SPX up + VIX down → risk_on; SPX down + VIX up → risk_off; both unchanged → neutral; conflicting observed directions → event_risk. Missing required data stays unclassified.",
+        "note": "市场价格代理，不是恢复出的当日编辑判断：增长/盈利/流动性/地缘行分别使用权益、相对收益、美元和VIX代理，不冒充GDP、EPS修正、资金流或真实事件。只使用原补档中有来源的截点前行情。"
+      },
+      "editorial_regime_label": "多重约束 / reconstructed conditional assessment",
+      "regime_basis": "historical_price_proxy"
     },
     {
       "date": "2026-10-08",
       "source_mode": "reconstructed_daily",
-      "regime_code": "unclassified",
-      "regime_label": "多重约束 / reconstructed conditional assessment",
+      "regime_code": "risk_off",
+      "regime_label": "市场价格代理（非原编辑判断） · risk_off",
       "dominant_theme_id": "global_duration",
       "signals": {
-        "growth": "?",
-        "inflation": "?",
-        "rates": "?",
-        "earnings": "?",
-        "liquidity": "?",
-        "geopolitics": "?"
+        "growth": "↓",
+        "inflation": "↓",
+        "rates": "↑",
+        "earnings": "↓",
+        "liquidity": "↓",
+        "geopolitics": "↑"
       },
       "catalysts": [
         {
@@ -1326,7 +2239,137 @@
           "invalidation": "Construction revenue or consolidation adjustments mask continued cash losses or funding dependence.",
           "source_mode": "reconstructed_daily"
         }
-      ]
+      ],
+      "price_proxy": {
+        "basis": "historical_price_proxy",
+        "regime_code": "risk_off",
+        "signals": {
+          "growth": "↓",
+          "inflation": "↓",
+          "rates": "↑",
+          "earnings": "↓",
+          "liquidity": "↓",
+          "geopolitics": "↑"
+        },
+        "details": {
+          "growth": {
+            "direction": "↓",
+            "value": -0.2195,
+            "formula": "S&P 500 1D direction; equity-demand proxy, NOT GDP",
+            "observations": [
+              {
+                "asset": "S&P 500",
+                "session_date": "2026-10-07",
+                "change_1d": -0.2195,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-07 daily historical reference"
+              }
+            ]
+          },
+          "inflation": {
+            "direction": "↓",
+            "value": -0.38,
+            "formula": "Brent same-basis 1D direction; energy-price proxy, NOT CPI",
+            "observations": [
+              {
+                "asset": "Brent",
+                "session_date": "2026-10-07",
+                "change_1d": -0.38,
+                "change_unit": "-0.38%",
+                "sources": [
+                  "S213"
+                ],
+                "as_of": "2026-10-07 US settlement"
+              }
+            ]
+          },
+          "rates": {
+            "direction": "↑",
+            "value": 1.0,
+            "formula": "UST 10Y 1D yield-change direction",
+            "observations": [
+              {
+                "asset": "UST 10Y",
+                "session_date": "2026-10-07",
+                "change_1d": 1.0,
+                "change_unit": "bp",
+                "sources": [
+                  "S501"
+                ],
+                "as_of": "2026-10-07 daily historical reference"
+              }
+            ]
+          },
+          "earnings": {
+            "direction": "↓",
+            "value": -0.0019000000000000128,
+            "formula": "Nasdaq 1D minus S&P 500 1D; growth-style relative return, NOT EPS revisions",
+            "observations": [
+              {
+                "asset": "Nasdaq Composite",
+                "session_date": "2026-10-07",
+                "change_1d": -0.2214,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-07 daily historical reference"
+              },
+              {
+                "asset": "S&P 500",
+                "session_date": "2026-10-07",
+                "change_1d": -0.2195,
+                "change_unit": "%",
+                "sources": [
+                  "S500"
+                ],
+                "as_of": "2026-10-07 daily historical reference"
+              }
+            ]
+          },
+          "liquidity": {
+            "direction": "↓",
+            "value": -0.4026,
+            "formula": "Negative dollar-index 1D direction; financial-conditions proxy, NOT fund flow",
+            "observations": [
+              {
+                "asset": "DXY",
+                "session_date": "2026-10-07",
+                "change_1d": 0.4026,
+                "change_unit": "%",
+                "sources": [
+                  "S503"
+                ],
+                "as_of": "2026-10-07 daily historical reference"
+              }
+            ]
+          },
+          "geopolitics": {
+            "direction": "↑",
+            "value": 0.4664,
+            "formula": "VIX 1D direction; market risk-premium proxy, NOT proof of geopolitical events",
+            "observations": [
+              {
+                "asset": "VIX",
+                "session_date": "2026-10-07",
+                "change_1d": 0.4664,
+                "change_unit": "%",
+                "sources": [
+                  "S502"
+                ],
+                "as_of": "2026-10-07 daily historical reference"
+              }
+            ]
+          }
+        },
+        "regime_formula": "SPX up + VIX down → risk_on; SPX down + VIX up → risk_off; both unchanged → neutral; conflicting observed directions → event_risk. Missing required data stays unclassified.",
+        "note": "市场价格代理，不是恢复出的当日编辑判断：增长/盈利/流动性/地缘行分别使用权益、相对收益、美元和VIX代理，不冒充GDP、EPS修正、资金流或真实事件。只使用原补档中有来源的截点前行情。"
+      },
+      "editorial_regime_label": "多重约束 / reconstructed conditional assessment",
+      "regime_basis": "historical_price_proxy"
     },
     {
       "date": "2026-10-09",
@@ -1578,255 +2621,313 @@
     },
     {
       "date": "2026-10-13",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "unavailable",
-      "regime_label": "Insufficient data",
-      "dominant_theme_id": "global_duration",
-      "signals": {
-        "growth": "→",
-        "inflation": "↓",
-        "rates": "↓",
-        "earnings": "→",
-        "liquidity": "?",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "US 10Y moves -3.0bp",
-          "evidence": "DGS10 -3.0bp",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "10Y ↓ → discount rate eases",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
-          "theme_id": "energy_inflation",
-          "theme_label": "Energy Inflation",
-          "category": "geopolitics_energy",
-          "title": "Brent daily move -3.21%",
-          "evidence": "DCOILBRENTEU -3.21%",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Oil ↓ → inflation impulse eases",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "credit_conditions",
-          "theme_label": "Credit Conditions",
-          "category": "liquidity_credit",
-          "title": "HY OAS moves +5.0bp",
-          "evidence": "BAMLH0A0HYM2 +5.0bp",
-          "market_bias": "risk_off",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Credit spreads wider → funding conditions tighten",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ],
-      "data_quality": {
-        "status": "partial",
-        "available_driver_count": 3,
-        "available_series": [
-          "NASDAQCOM",
-          "SP500",
-          "VIXCLS",
-          "DGS2",
-          "DGS10",
-          "DCOILBRENTEU",
-          "BAMLH0A0HYM2"
-        ],
-        "missing_series": [
-          "DTWEXBGS"
-        ],
-        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
-      }
-    },
-    {
-      "date": "2026-10-14",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "unavailable",
-      "regime_label": "Insufficient data",
-      "dominant_theme_id": "equity_risk_appetite",
+      "source_mode": "native_daily",
+      "regime_code": "risk_off",
+      "regime_label": "Risk-Off Asia / Energy-Inflation–AI Duration Constraint",
+      "dominant_theme_id": "market_structure",
       "signals": {
         "growth": "↓",
-        "inflation": "→",
+        "inflation": "↑",
         "rates": "→",
-        "earnings": "↓",
-        "liquidity": "?",
+        "earnings": "→",
+        "liquidity": "↓",
         "geopolitics": "↑"
       },
       "catalysts": [
         {
-          "theme_id": "equity_risk_appetite",
-          "theme_label": "Equity Risk Appetite",
-          "category": "growth_macro",
-          "title": "Nasdaq daily move -1.88%",
-          "evidence": "NASDAQCOM -1.88% vs prior close",
-          "market_bias": "risk_off",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Equity move → risk appetite / duration repricing",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
-          "theme_id": "volatility_event_risk",
-          "theme_label": "Volatility / Event Risk",
+          "rank": 1,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
           "category": "market_structure",
-          "title": "VIX daily move +10.48%",
-          "evidence": "VIXCLS +10.48%",
-          "market_bias": "risk_off",
+          "title": "October 13 Asia risk-off reprices Korean and Japanese technology exposure after the October 12 U.S. chip decline",
+          "evidence": "Reuters' early October 13 Asian wrap reports MSCI Asia Pacific ex-Japan around -2%, KOSPI around -6% and Nikkei around -2.6%, while the October 12 U.S. Nasdaq fell 0.44%. These are intraday Asian readings, not an Asia cash close.",
+          "market_bias": "mixed",
           "importance_level": 5,
           "importance": "★★★★★",
-          "transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
+          "transmission": "October 12 U.S. chip drawdown → Asia technology risk repricing and cross-border deleveraging → Korean/Japanese equities fall → DXY/JPY and cash Treasury yield confirm or reject.",
+          "confirmation": "Check Tuesday full-session KOSPI/Nikkei closes, semiconductor breadth and USD/JPY versus matched UST yields; continued broad declines confirm transmission.",
+          "invalidation": "Reversal in Asian cash indices with narrower technology underperformance and stable rate/FX funding channels weakens systemic contagion.",
+          "source_mode": "native_daily"
         },
         {
-          "theme_id": "growth_duration_rotation",
-          "theme_label": "Growth / Duration Rotation",
-          "category": "earnings_ai_semis",
-          "title": "Nasdaq relative to S&P 500 -0.77pp",
-          "evidence": "NASDAQCOM -1.88% vs SP500 -1.11%",
-          "market_bias": "risk_off",
+          "rank": 2,
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
+          "title": "October 12 Brent closes at $106.65 as OPEC trims 2026 demand forecast and Saudi pipeline capacity remains a future plan",
+          "evidence": "AP and WSJ recorded October 12 Brent settlement near $106.65 per barrel, up 1.8%, while Reuters reported OPEC's 2026 oil demand-growth forecast cut to 400,000 bpd and Saudi Arabia's potential pipeline conversion taking weeks to years, not immediate operational output.",
+          "market_bias": "mixed",
           "importance_level": 5,
           "importance": "★★★★★",
-          "transmission": "Long-duration growth underperforms",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
+          "transmission": "Transit disruption/insurance ↑ → spot fuel and Brent risk premium ↑ → Asian import-price pass-through ↑ → inflation expectations and bond yields ↑ → duration and transport earnings ↓.",
+          "confirmation": "Use matched Brent/WTI settlements, certified tanker volumes and confirmed pipeline commissioning dates; lower premiums alongside real cargo-flow recovery would confirm easing.",
+          "invalidation": "Documented new shipping incidents, stable high prices despite forecast cuts, or project delays negate the near-term offset hypothesis.",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "October 13 JPMorgan and Citi earnings precede October 14 U.S. September CPI, testing whether banks can absorb energy and duration pressure",
+          "evidence": "Issuer calendars place JPMorgan and Citi's September-quarter earnings on October 13 U.S. premarket, while BLS places September CPI on October 14 at 08:30 EDT. At today's 10:30 SGT cut, bank results and the CPI actual are both pending.",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Bank cost-of-credit + Treasury reopening → credit/funding repricing → US cyclicals and AI capex financing; CPI then validates or overturns duration pricing.",
+          "confirmation": "Read issuer actual NII/provisions/guidance with Tuesday 2Y/10Y same-session cash yields, then reconcile with BLS Wednesday actual headline/core CPI.",
+          "invalidation": "Better credit/funding metrics and cooler verified inflation with easing cash yields invalidate persistent bearish financial-condition transmission.",
+          "source_mode": "native_daily"
         }
-      ],
-      "data_quality": {
-        "status": "partial",
-        "available_driver_count": 3,
-        "available_series": [
-          "NASDAQCOM",
-          "SP500",
-          "VIXCLS",
-          "DGS2",
-          "DGS10",
-          "DCOILBRENTEU",
-          "BAMLH0A0HYM2"
-        ],
-        "missing_series": [
-          "DTWEXBGS"
-        ],
-        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
-      }
+      ]
     },
     {
-      "date": "2026-10-15",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "unavailable",
-      "regime_label": "Insufficient data",
-      "dominant_theme_id": "global_duration",
+      "date": "2026-10-14",
+      "source_mode": "native_daily",
+      "regime_code": "event_risk",
+      "regime_label": "Event Risk / CPI-Day Duration, Bank Earnings and AI Valuation Breadth",
+      "dominant_theme_id": "market_structure",
       "signals": {
-        "growth": "→",
-        "inflation": "?",
+        "growth": "↓",
+        "inflation": "↑",
         "rates": "↓",
-        "earnings": "↓",
-        "liquidity": "?",
-        "geopolitics": "?"
+        "earnings": "→",
+        "liquidity": "→",
+        "geopolitics": "→"
       },
       "catalysts": [
         {
+          "rank": 1,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "10月14日美国9月CPI于08:30 EDT公布：核心通胀决定久期重估",
+          "evidence": "BLS正式2026年日程安排9月消费者价格指数于10月14日08:30 EDT发布；在本次2026年10月14日09时后研究截止时，该数据尚未正式发布，不可填入任何实际值。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "BLS总体/核心CPI→UST 2Y和10Y→DXY、Nasdaq与Russell→信用融资成本。",
+          "confirmation": "BLS官方数字及分项和同窗口现金国债、美元走势一致时才确认通胀传导。",
+          "invalidation": "若真实核心数据或股票/利率反应方向与单一叙事不一致，则不能把所有盘面变化归因于CPI。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "10月13日美国大银行Q3利润改善但市场价格确认分化",
+          "evidence": "高盛10月13日已报告2026Q3 EPS 17.01美元、营收186.8亿美元；Reuters报道JPM EPS 5.57美元低于调查预期约5.85美元，花旗EPS2.85美元高于一致预测2.66美元。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "银行EPS与信用准备→贷款价格/信贷需求→小盘股估值与企业融资成本。",
+          "confirmation": "检查净利息收入、坏账和费用指引，叠加金融股10月13日真实收盘反应确认质量。",
+          "invalidation": "如果利润增长来自不可持续的交易或一次性项目、贷款信用恶化，将否定全面银行复苏的叙事。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "10月13日全球半导体与AI资本开支回报担忧持续冲击市场宽度",
+          "evidence": "Reuters10月13日记录芯片行业受到AI资本开支实际回报、潜在中国存储竞争和企业估值的共同检验，科技龙头集中度风险持续。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "中国芯片竞争/算力回报→半导体利润率→Nasdaq权重→科技融资与数据中心建设。",
+          "confirmation": "以企业后续真实订单、资本支出现金回报和同口径SOX与Nasdaq-100股价验证持续性。",
+          "invalidation": "若芯片订单与现金回报证明强于预期且市场广度恢复，则AI估值风险可能下降。",
+          "source_mode": "native_daily"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-15",
+      "source_mode": "reconstructed_daily",
+      "regime_code": "risk_off",
+      "regime_label": "Risk-Off / energy inflation and growth-duration de-rating",
+      "dominant_theme_id": "energy_inflation",
+      "signals": {
+        "growth": "↓",
+        "inflation": "↑",
+        "rates": "↕",
+        "earnings": "↕",
+        "liquidity": "↓",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
+          "title": "9月CPI能源贡献突出，核心价格仍需独立跟踪",
+          "evidence": "9月CPI环比上升0.6%、同比3.7%；汽油环比9.1%、能源5.2%、居住0.4%。核心环比0.3%，不能把能源冲击与核心持续性混为一谈。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "能源拉高家庭成本，影响真实购买力；核心价格粘性和需求约束须通过后续数据分别确认。",
+          "confirmation": "只有相关资产价格、来源中的执行节点与后续经营数据一致，才加强这条传导判断；不预设数值门槛。",
+          "invalidation": "如果成本、执行或融资渠道没有按上述路径变化，应撤回单一因果解释，并保留其他驱动因素的可能。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "银行财报的利润质量与业务结构出现分化",
+          "evidence": "美国银行第三季收入299.58亿美元、净利润69.33亿美元、稀释EPS 0.91美元；摩根士丹利收入约203亿美元。不同业务及一次性费用影响，意味着不能把总收入增长直接当作全行业盈利改善。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "从银行收入、费用与信用成本分拆观察资金需求，避免单一EPS数字掩盖经常性回报和资本消耗。",
+          "confirmation": "只有相关资产价格、来源中的执行节点与后续经营数据一致，才加强这条传导判断；不预设数值门槛。",
+          "invalidation": "如果成本、执行或融资渠道没有按上述路径变化，应撤回单一因果解释，并保留其他驱动因素的可能。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 3,
           "theme_id": "global_duration",
           "theme_label": "Global Duration / Term Premium",
           "category": "inflation_rates",
-          "title": "US 10Y moves -9.0bp",
-          "evidence": "DGS10 -9.0bp",
-          "market_bias": "risk_on",
+          "title": "美国科技股回落与收益率曲线变化未形成同向冲击",
+          "evidence": "10月14日S&P 500收于7,718.94、Nasdaq为26,692.87，后者回撤更大；同日2年国债CMT升至4.82%，10年为5.19%。股价回落不能机械解释为所有期限收益率同时上升。",
+          "market_bias": "mixed",
           "importance_level": 4,
           "importance": "★★★★",
-          "transmission": "10Y ↓ → discount rate eases",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
-          "theme_id": "fed_policy_path",
-          "theme_label": "Fed Policy Path",
-          "category": "central_banks_fiscal",
-          "title": "US 2Y moves -5.0bp",
-          "evidence": "DGS2 -5.0bp",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "2Y ↓ → policy path reprices easier",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "credit_conditions",
-          "theme_label": "Credit Conditions",
-          "category": "liquidity_credit",
-          "title": "HY OAS moves -2.0bp",
-          "evidence": "BAMLH0A0HYM2 -2.0bp",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Credit spreads tighter → funding conditions ease",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
+          "transmission": "长久期股估值还受盈利预期和风险溢价约束；需将股指相对表现与各期限融资成本逐一对照。",
+          "confirmation": "只有相关资产价格、来源中的执行节点与后续经营数据一致，才加强这条传导判断；不预设数值门槛。",
+          "invalidation": "如果成本、执行或融资渠道没有按上述路径变化，应撤回单一因果解释，并保留其他驱动因素的可能。",
+          "source_mode": "reconstructed_daily"
         }
-      ],
-      "data_quality": {
-        "status": "partial",
-        "available_driver_count": 3,
-        "available_series": [
-          "NASDAQCOM",
-          "SP500",
-          "VIXCLS",
-          "DGS2",
-          "DGS10",
-          "BAMLH0A0HYM2"
-        ],
-        "missing_series": [
-          "DCOILBRENTEU",
-          "DTWEXBGS"
-        ],
-        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
-      }
+      ]
     },
     {
       "date": "2026-10-16",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "unavailable",
-      "regime_label": "Insufficient data",
+      "source_mode": "reconstructed_daily",
+      "regime_code": "event_risk",
+      "regime_label": "Event Risk / producer-cost shock versus duration relief",
       "dominant_theme_id": "market_structure",
       "signals": {
-        "growth": "?",
-        "inflation": "?",
-        "rates": "?",
-        "earnings": "?",
-        "liquidity": "?",
-        "geopolitics": "?"
+        "growth": "↕",
+        "inflation": "↑",
+        "rates": "↓",
+        "earnings": "↑",
+        "liquidity": "↕",
+        "geopolitics": "↑"
       },
-      "catalysts": [],
-      "data_quality": {
-        "status": "partial",
-        "available_driver_count": 0,
-        "available_series": [
-          "SP500"
-        ],
-        "missing_series": [
-          "NASDAQCOM",
-          "VIXCLS",
-          "DGS2",
-          "DGS10",
-          "DCOILBRENTEU",
-          "DTWEXBGS",
-          "BAMLH0A0HYM2"
-        ],
-        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
-      }
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "9月PPI环比1.3%令企业成本传导成为约束",
+          "evidence": "BLS公布9月最终需求PPI环比上涨1.3%、同比6.3%；商品和服务价格均有压力。PPI衡量生产者收到的价格，不应直接替代CPI或对企业净利润作一比一推算。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "产品提价能力与销量变化决定成本是否被吸收；应核验毛利、终端需求和信用利差而非机械外推。",
+          "confirmation": "只有相关资产价格、来源中的执行节点与后续经营数据一致，才加强这条传导判断；不预设数值门槛。",
+          "invalidation": "如果成本、执行或融资渠道没有按上述路径变化，应撤回单一因果解释，并保留其他驱动因素的可能。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "台积电Q3实绩与Q4指引强化先进制程需求证据",
+          "evidence": "台积电第三季度美元收入467.2亿美元、净利润7,630.6亿新台币、稀释EPS29.43新台币；毛利率66.4%。Q4收入指引为523亿至543亿美元，是管理层展望，不等于客户资本开支已经实现最终现金回报。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "代工实绩支持上游需求，但下游融资与利用率仍决定AI资本开支的回收；两端不能画等号。",
+          "confirmation": "只有相关资产价格、来源中的执行节点与后续经营数据一致，才加强这条传导判断；不预设数值门槛。",
+          "invalidation": "如果成本、执行或融资渠道没有按上述路径变化，应撤回单一因果解释，并保留其他驱动因素的可能。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "美债长端下行与美股反弹提供有限风险缓冲",
+          "evidence": "10月15日S&P 500收于7,744.06、Dow为52,177.69，Nasdaq仅温和回升至26,713.03；10年CMT较前次下行9bp至5.10%。利率缓冲存在，但成长股并未因此全面重获领先。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "风险偏好修复必须同时得到股票广度与融资条件确认；只有国债收益率下行不足以证明风险出清。",
+          "confirmation": "只有相关资产价格、来源中的执行节点与后续经营数据一致，才加强这条传导判断；不预设数值门槛。",
+          "invalidation": "如果成本、执行或融资渠道没有按上述路径变化，应撤回单一因果解释，并保留其他驱动因素的可能。",
+          "source_mode": "reconstructed_daily"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-17",
+      "source_mode": "reconstructed_daily",
+      "regime_code": "risk_off",
+      "regime_label": "Risk-Off / technology repricing and policy implementation risk",
+      "dominant_theme_id": "market_structure",
+      "signals": {
+        "growth": "↕",
+        "inflation": "↑",
+        "rates": "↓",
+        "earnings": "↕",
+        "liquidity": "↓",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "中国40项技术出口目录草案与临时登记需要分开识别",
+          "evidence": "商务部材料及Reuters报道涉及40项拟增技术：23项人工智能、5项生物技术、12项太阳能。征求意见中的目录调整并非全部已经生效的禁令；过渡期登记安排则可能先影响交易流程。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "出口执行时间、许可适用范围与合同交付是可验证路径；不能仅凭草案推算出口数量或收入损失。",
+          "confirmation": "只有相关资产价格、来源中的执行节点与后续经营数据一致，才加强这条传导判断；不预设数值门槛。",
+          "invalidation": "如果成本、执行或融资渠道没有按上述路径变化，应撤回单一因果解释，并保留其他驱动因素的可能。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "Nasdaq下跌约2.1%并伴随VIX升至19.99",
+          "evidence": "10月16日Nasdaq收于26,140.03、S&P 500为7,659.44，Russell 2000为2,721.37；VIX收19.99。股票与隐含波动率显示压力，但VIX本身不是做市商gamma或未来下跌概率。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "风险溢价与融资敏感资产首先承压，后续需要股票广度、信用价差及企业盈利共同确认，而非单看VIX。",
+          "confirmation": "只有相关资产价格、来源中的执行节点与后续经营数据一致，才加强这条传导判断；不预设数值门槛。",
+          "invalidation": "如果成本、执行或融资渠道没有按上述路径变化，应撤回单一因果解释，并保留其他驱动因素的可能。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "美国工业生产0.7%增幅由部门结构而非普遍扩张驱动",
+          "evidence": "根据DPA对美联储公布数据的报道，9月工业生产环比0.7%，其中制造业0.3%、采矿0.2%、公用事业3.5%；产能利用率76.9%。总工业增幅不能替代制造业增幅或GDP判断。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "需求验证应看制造业和企业订单，而非将天气敏感公用事业跳升外推为全经济加速；增长与成本须分别定价。",
+          "confirmation": "只有相关资产价格、来源中的执行节点与后续经营数据一致，才加强这条传导判断；不预设数值门槛。",
+          "invalidation": "如果成本、执行或融资渠道没有按上述路径变化，应撤回单一因果解释，并保留其他驱动因素的可能。",
+          "source_mode": "reconstructed_daily"
+        }
+      ]
     },
     {
       "date": "2026-10-18",
@@ -1837,7 +2938,7 @@
       "signals": {
         "growth": "↓",
         "inflation": "↑",
-        "rates": "?",
+        "rates": "↔",
         "earnings": "↓",
         "liquidity": "→",
         "geopolitics": "↑"
@@ -1911,20 +3012,80 @@
       "dominant_theme_id": "global_duration"
     },
     {
+      "date": "2026-10-01",
+      "from": "历史重建 / 融资约束与需求韧性并存",
+      "to": "市场价格代理（非原编辑判断） · risk_off",
+      "dominant_theme_id": "market_structure"
+    },
+    {
+      "date": "2026-10-02",
+      "from": "市场价格代理（非原编辑判断） · risk_off",
+      "to": "市场价格代理（非原编辑判断） · event_risk",
+      "dominant_theme_id": "market_structure"
+    },
+    {
+      "date": "2026-10-03",
+      "from": "市场价格代理（非原编辑判断） · event_risk",
+      "to": "市场价格代理（非原编辑判断） · risk_on",
+      "dominant_theme_id": "market_structure"
+    },
+    {
+      "date": "2026-10-06",
+      "from": "市场价格代理（非原编辑判断） · risk_on",
+      "to": "市场价格代理（非原编辑判断） · event_risk",
+      "dominant_theme_id": "market_structure"
+    },
+    {
+      "date": "2026-10-07",
+      "from": "市场价格代理（非原编辑判断） · event_risk",
+      "to": "市场价格代理（非原编辑判断） · risk_on",
+      "dominant_theme_id": "us_china_trade_controls"
+    },
+    {
+      "date": "2026-10-08",
+      "from": "市场价格代理（非原编辑判断） · risk_on",
+      "to": "市场价格代理（非原编辑判断） · risk_off",
+      "dominant_theme_id": "global_duration"
+    },
+    {
       "date": "2026-10-09",
-      "from": "多重约束 / reconstructed conditional assessment",
+      "from": "市场价格代理（非原编辑判断） · risk_off",
       "to": "Event Risk / Oil–Duration and AI Funding",
       "dominant_theme_id": "geopolitics_energy"
     },
     {
       "date": "2026-10-13",
       "from": "Event Risk / Middle-East Transit, CPI and Bank Earnings",
-      "to": "Insufficient data",
-      "dominant_theme_id": "global_duration"
+      "to": "Risk-Off Asia / Energy-Inflation–AI Duration Constraint",
+      "dominant_theme_id": "market_structure"
+    },
+    {
+      "date": "2026-10-14",
+      "from": "Risk-Off Asia / Energy-Inflation–AI Duration Constraint",
+      "to": "Event Risk / CPI-Day Duration, Bank Earnings and AI Valuation Breadth",
+      "dominant_theme_id": "market_structure"
+    },
+    {
+      "date": "2026-10-15",
+      "from": "Event Risk / CPI-Day Duration, Bank Earnings and AI Valuation Breadth",
+      "to": "Risk-Off / energy inflation and growth-duration de-rating",
+      "dominant_theme_id": "energy_inflation"
+    },
+    {
+      "date": "2026-10-16",
+      "from": "Risk-Off / energy inflation and growth-duration de-rating",
+      "to": "Event Risk / producer-cost shock versus duration relief",
+      "dominant_theme_id": "market_structure"
+    },
+    {
+      "date": "2026-10-17",
+      "from": "Event Risk / producer-cost shock versus duration relief",
+      "to": "Risk-Off / technology repricing and policy implementation risk",
+      "dominant_theme_id": "market_structure"
     },
     {
       "date": "2026-10-18",
-      "from": "Insufficient data",
+      "from": "Risk-Off / technology repricing and policy implementation risk",
       "to": "Weekend Event Risk / Oil–AI Credit–Duration Divergence",
       "dominant_theme_id": "ai_earnings"
     }
@@ -1934,13 +3095,13 @@
       "theme_id": "market_structure",
       "theme_label": "Market Structure",
       "category": "market_structure",
-      "days_in_top3": 16,
+      "days_in_top3": 20,
       "best_rank": 1,
       "first_seen": "2026-09-19",
-      "last_seen": "2026-10-12",
+      "last_seen": "2026-10-17",
       "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Bank credit/funding margins and CPI surprise → policy/UST rate path → bank credit supply and equity multiples → S&P500/Russell sector breadth.",
+      "state": "Persistent",
+      "latest_transmission": "出口执行时间、许可适用范围与合同交付是可验证路径；不能仅凭草案推算出口数量或收入损失。",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -1950,16 +3111,15 @@
       "theme_id": "global_duration",
       "theme_label": "Global Duration / Term Premium",
       "category": "inflation_rates",
-      "days_in_top3": 12,
+      "days_in_top3": 11,
       "best_rank": 1,
       "first_seen": "2026-09-19",
       "last_seen": "2026-10-15",
       "latest_rank": null,
       "state": "Persistent",
-      "latest_transmission": "10Y ↓ → discount rate eases",
+      "latest_transmission": "长久期股估值还受盈利预期和风险溢价约束；需将股指相对表现与各期限融资成本逐一对照。",
       "source_modes": [
         "native_daily",
-        "objective_market_reconstruction",
         "reconstructed_daily"
       ]
     },
@@ -1967,7 +3127,7 @@
       "theme_id": "energy_inflation",
       "theme_label": "Energy Inflation",
       "category": "geopolitics_energy",
-      "days_in_top3": 10,
+      "days_in_top3": 11,
       "best_rank": 1,
       "first_seen": "2026-09-20",
       "last_seen": "2026-10-18",
@@ -1976,7 +3136,22 @@
       "latest_transmission": "能源物流成本↑→消费者通胀粘性↑；高融资成本→投资折现率↑；政策预期与信用利差重新定价。",
       "source_modes": [
         "native_daily",
-        "objective_market_reconstruction",
+        "reconstructed_daily"
+      ]
+    },
+    {
+      "theme_id": "ai_earnings",
+      "theme_label": "AI / Earnings",
+      "category": "earnings_ai_semis",
+      "days_in_top3": 11,
+      "best_rank": 1,
+      "first_seen": "2026-09-23",
+      "last_seen": "2026-10-18",
+      "latest_rank": 1,
+      "state": "Persistent",
+      "latest_transmission": "油价↑→预期通胀/资金成本↑；AI信贷溢价↑→科技估值↓→小盘股与宽基风险偏好受拖累。",
+      "source_modes": [
+        "native_daily",
         "reconstructed_daily"
       ]
     },
@@ -1991,22 +3166,6 @@
       "latest_rank": 3,
       "state": "Persistent",
       "latest_transmission": "制裁执行延期→潜在供给预期↑；沙特设施风险→保险/运输成本↑；两者共同决定油价与输入型通胀。",
-      "source_modes": [
-        "native_daily",
-        "reconstructed_daily"
-      ]
-    },
-    {
-      "theme_id": "ai_earnings",
-      "theme_label": "AI / Earnings",
-      "category": "earnings_ai_semis",
-      "days_in_top3": 9,
-      "best_rank": 1,
-      "first_seen": "2026-09-23",
-      "last_seen": "2026-10-18",
-      "latest_rank": 1,
-      "state": "Persistent",
-      "latest_transmission": "油价↑→预期通胀/资金成本↑；AI信贷溢价↑→科技估值↓→小盘股与宽基风险偏好受拖累。",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -2032,15 +3191,14 @@
       "theme_id": "fed_policy_path",
       "theme_label": "Fed Policy Path",
       "category": "central_banks_fiscal",
-      "days_in_top3": 4,
+      "days_in_top3": 3,
       "best_rank": 1,
       "first_seen": "2026-09-29",
-      "last_seen": "2026-10-15",
+      "last_seen": "2026-10-07",
       "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "2Y ↓ → policy path reprices easier",
+      "state": "Resolved",
+      "latest_transmission": "政策讨论→加息路径理解；会议纪要信息本身早于10月就业数据。 UST2Y is the first observable transmission channel, not a guaranteed price direction.",
       "source_modes": [
-        "objective_market_reconstruction",
         "reconstructed_daily"
       ]
     },
@@ -2058,74 +3216,13 @@
       "source_modes": [
         "native_daily"
       ]
-    },
-    {
-      "theme_id": "credit_conditions",
-      "theme_label": "Credit Conditions",
-      "category": "liquidity_credit",
-      "days_in_top3": 2,
-      "best_rank": 3,
-      "first_seen": "2026-10-13",
-      "last_seen": "2026-10-15",
-      "latest_rank": null,
-      "state": "Escalating",
-      "latest_transmission": "Credit spreads tighter → funding conditions ease",
-      "source_modes": [
-        "objective_market_reconstruction"
-      ]
-    },
-    {
-      "theme_id": "equity_risk_appetite",
-      "theme_label": "Equity Risk Appetite",
-      "category": "growth_macro",
-      "days_in_top3": 1,
-      "best_rank": 1,
-      "first_seen": "2026-10-14",
-      "last_seen": "2026-10-14",
-      "latest_rank": null,
-      "state": "New",
-      "latest_transmission": "Equity move → risk appetite / duration repricing",
-      "source_modes": [
-        "objective_market_reconstruction"
-      ]
-    },
-    {
-      "theme_id": "volatility_event_risk",
-      "theme_label": "Volatility / Event Risk",
-      "category": "market_structure",
-      "days_in_top3": 1,
-      "best_rank": 2,
-      "first_seen": "2026-10-14",
-      "last_seen": "2026-10-14",
-      "latest_rank": null,
-      "state": "New",
-      "latest_transmission": "Volatility ↑ → hedging demand ↑ → equity risk appetite ↓",
-      "source_modes": [
-        "objective_market_reconstruction"
-      ]
-    },
-    {
-      "theme_id": "growth_duration_rotation",
-      "theme_label": "Growth / Duration Rotation",
-      "category": "earnings_ai_semis",
-      "days_in_top3": 1,
-      "best_rank": 3,
-      "first_seen": "2026-10-14",
-      "last_seen": "2026-10-14",
-      "latest_rank": null,
-      "state": "New",
-      "latest_transmission": "Long-duration growth underperforms",
-      "source_modes": [
-        "objective_market_reconstruction"
-      ]
     }
   ],
   "cross_asset_confirmation": {
     "theme_id": "ai_earnings",
     "theme_label": "AI / Earnings",
     "as_of": "2026-10-18",
-    "confirming": [],
-    "diverging": [
+    "confirming": [
       {
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
@@ -2139,15 +3236,19 @@
         "as_of": "2026-10-16 16:00 EDT",
         "source_mode": "native_daily",
         "change": "-1.09%"
-      }
-    ],
-    "unavailable": [
+      },
       {
         "series_id": "VIXCLS",
-        "label": "VIX"
+        "label": "VIX",
+        "as_of": "2026-10-16 US cash close; Yahoo-derived history",
+        "source_mode": "native_daily",
+        "change": "+3.53 pts"
       }
     ],
-    "interpretation_note": "0 项资产确认当前主线，2 项出现背离。",
+    "diverging": [],
+    "unavailable": [],
+    "expectation_basis": "Explicit leading catalyst: ↓ Long-duration AI / ↑ Energy risk",
+    "interpretation_note": "3 项资产方向与当前主线一致，0 项出现背离；不是因果证明。",
     "what_would_flip_it": "若信用风险缩窄、半导体广度反弹同时油价风险溢价下降，则本轮估值压力可能减弱。"
   },
   "series": {
@@ -2159,79 +3260,103 @@
       "points": [
         {
           "date": "2026-09-21",
-          "value": 27122.09
+          "value": 27122.09,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-09-22",
-          "value": 27244.28
+          "value": 27244.28,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-09-23",
-          "value": 26936.04
+          "value": 26936.04,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-09-24",
-          "value": 26939.37
+          "value": 26939.37,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-09-25",
-          "value": 27068.72
+          "value": 27068.72,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-09-28",
-          "value": 26820.38
+          "value": 26820.38,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-09-29",
-          "value": 26797.54
+          "value": 26797.54,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-09-30",
-          "value": 26861.06
+          "value": 26861.06,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-10-01",
-          "value": 26871.6
+          "value": 26871.6,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-10-02",
-          "value": 27190.86
+          "value": 27190.86,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-10-05",
-          "value": 27477.31
+          "value": 27477.31,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-10-06",
-          "value": 27599.89
+          "value": 27599.89,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-10-07",
-          "value": 27538.69
+          "value": 27538.69,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-10-08",
-          "value": 27193.34
+          "value": 27193.34,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-10-09",
-          "value": 27366.17
+          "value": 27366.17,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-10-12",
-          "value": 27245.9
+          "value": 27245.9,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-10-13",
-          "value": 27204.38
+          "value": 27204.38,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-10-14",
-          "value": 26692.87
+          "value": 26692.87,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2026-10-15",
-          "value": 26713.03
+          "value": 26713.03,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
+        },
+        {
+          "date": "2026-10-16",
+          "value": 26140.03,
+          "source_url": "https://apnews.com/article/c27809783ae3230b44c26e5ee4bea056"
         }
       ]
     },
@@ -2243,83 +3368,103 @@
       "points": [
         {
           "date": "2026-09-21",
-          "value": 7764.7
+          "value": 7764.7,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-09-22",
-          "value": 7764.64
+          "value": 7764.64,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-09-23",
-          "value": 7706.03
+          "value": 7706.03,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-09-24",
-          "value": 7704.13
+          "value": 7704.13,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-09-25",
-          "value": 7743.41
+          "value": 7743.41,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-09-28",
-          "value": 7683.69
+          "value": 7683.69,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-09-29",
-          "value": 7670.84
+          "value": 7670.84,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-09-30",
-          "value": 7651.54
+          "value": 7651.54,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-10-01",
-          "value": 7666.45
+          "value": 7666.45,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-10-02",
-          "value": 7722.72
+          "value": 7722.72,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-10-05",
-          "value": 7773.95
+          "value": 7773.95,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-10-06",
-          "value": 7818.93
+          "value": 7818.93,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-10-07",
-          "value": 7801.77
+          "value": 7801.77,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-10-08",
-          "value": 7765.36
+          "value": 7765.36,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-10-09",
-          "value": 7811.54
+          "value": 7811.54,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-10-12",
-          "value": 7807.24
+          "value": 7807.24,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-10-13",
-          "value": 7805.45
+          "value": 7805.45,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-10-14",
-          "value": 7718.94
+          "value": 7718.94,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-10-15",
-          "value": 7744.06
+          "value": 7744.06,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2026-10-16",
-          "value": 7659.44
+          "value": 7659.44,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         }
       ]
     },
@@ -2331,79 +3476,103 @@
       "points": [
         {
           "date": "2026-09-21",
-          "value": 14.87
+          "value": 14.87,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-09-22",
-          "value": 14.21
+          "value": 14.21,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-09-23",
-          "value": 15.18
+          "value": 15.18,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-09-24",
-          "value": 15.67
+          "value": 15.67,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-09-25",
-          "value": 14.87
+          "value": 14.87,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-09-28",
-          "value": 16.07
+          "value": 16.07,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-09-29",
-          "value": 16.04
+          "value": 16.04,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-09-30",
-          "value": 16.34
+          "value": 16.34,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-10-01",
-          "value": 16.39
+          "value": 16.39,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-10-02",
-          "value": 15.31
+          "value": 15.31,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-10-05",
-          "value": 15.52
+          "value": 15.52,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-10-06",
-          "value": 15.01
+          "value": 15.01,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-10-07",
-          "value": 15.08
+          "value": 15.08,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-10-08",
-          "value": 15.41
+          "value": 15.41,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-10-09",
-          "value": 14.84
+          "value": 14.84,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-10-12",
-          "value": 15.21
+          "value": 15.21,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-10-13",
-          "value": 15.27
+          "value": 15.27,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-10-14",
-          "value": 16.87
+          "value": 16.87,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2026-10-15",
-          "value": 16.46
+          "value": 16.46,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
+        },
+        {
+          "date": "2026-10-16",
+          "value": 19.99,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         }
       ]
     },
@@ -2415,75 +3584,98 @@
       "points": [
         {
           "date": "2026-09-21",
-          "value": 4.76
+          "value": 4.76,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-09-22",
-          "value": 4.71
+          "value": 4.71,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-09-23",
-          "value": 4.85
+          "value": 4.85,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-09-24",
-          "value": 4.87
+          "value": 4.87,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-09-25",
-          "value": 4.81
+          "value": 4.81,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-09-28",
-          "value": 4.92
+          "value": 4.92,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-09-29",
-          "value": 4.89
+          "value": 4.89,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-09-30",
-          "value": 4.88
+          "value": 4.88,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-10-01",
-          "value": 4.78
+          "value": 4.78,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-10-02",
-          "value": 4.83
+          "value": 4.83,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-10-05",
-          "value": 4.84
+          "value": 4.84,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-10-06",
-          "value": 4.79
+          "value": 4.79,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-10-07",
-          "value": 4.77
+          "value": 4.77,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-10-08",
-          "value": 4.75
+          "value": 4.75,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-10-09",
-          "value": 4.8
+          "value": 4.8,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-10-13",
-          "value": 4.79
+          "value": 4.79,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-10-14",
-          "value": 4.82
+          "value": 4.82,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2026-10-15",
-          "value": 4.77
+          "value": 4.77,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
+        },
+        {
+          "date": "2026-10-16",
+          "value": 4.74,
+          "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve"
         }
       ]
     },
@@ -2495,75 +3687,98 @@
       "points": [
         {
           "date": "2026-09-21",
-          "value": 4.96
+          "value": 4.96,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-09-22",
-          "value": 4.96
+          "value": 4.96,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-09-23",
-          "value": 5.11
+          "value": 5.11,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-09-24",
-          "value": 5.18
+          "value": 5.18,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-09-25",
-          "value": 5.17
+          "value": 5.17,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-09-28",
-          "value": 5.24
+          "value": 5.24,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-09-29",
-          "value": 5.26
+          "value": 5.26,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-09-30",
-          "value": 5.29
+          "value": 5.29,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-10-01",
-          "value": 5.24
+          "value": 5.24,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-10-02",
-          "value": 5.28
+          "value": 5.28,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-10-05",
-          "value": 5.31
+          "value": 5.31,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-10-06",
-          "value": 5.27
+          "value": 5.27,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-10-07",
-          "value": 5.28
+          "value": 5.28,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-10-08",
-          "value": 5.22
+          "value": 5.22,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-10-09",
-          "value": 5.24
+          "value": 5.24,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-10-13",
-          "value": 5.21
+          "value": 5.21,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-10-14",
-          "value": 5.19
+          "value": 5.19,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2026-10-15",
-          "value": 5.1
+          "value": 5.1,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
+        },
+        {
+          "date": "2026-10-16",
+          "value": 5.09,
+          "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve"
         }
       ]
     },
@@ -2575,75 +3790,93 @@
       "points": [
         {
           "date": "2026-09-21",
-          "value": 116.15
+          "value": 116.15,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-09-22",
-          "value": 114.89
+          "value": 114.89,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-09-23",
-          "value": 117.45
+          "value": 117.45,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-09-24",
-          "value": 120.92
+          "value": 120.92,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-09-25",
-          "value": 116.01
+          "value": 116.01,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-09-28",
-          "value": 119.97
+          "value": 119.97,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-09-29",
-          "value": 113.96
+          "value": 113.96,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-09-30",
-          "value": 115.91
+          "value": 115.91,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-10-01",
-          "value": 114.82
+          "value": 114.82,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-10-02",
-          "value": 135.51
+          "value": 135.51,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-10-05",
-          "value": 125.51
+          "value": 125.51,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-10-06",
-          "value": 125.44
+          "value": 125.44,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-10-07",
-          "value": 126.0
+          "value": 126.0,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-10-08",
-          "value": 130.18
+          "value": 130.18,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-10-09",
-          "value": 130.03
+          "value": 130.03,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-10-12",
-          "value": 129.95
+          "value": 129.95,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-10-13",
-          "value": 125.78
+          "value": 125.78,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2026-10-14",
-          "value": 126.55
+          "value": 126.55,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         }
       ]
     },
@@ -2655,63 +3888,78 @@
       "points": [
         {
           "date": "2026-09-21",
-          "value": 119.4014
+          "value": 119.4014,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2026-09-22",
-          "value": 119.5933
+          "value": 119.5933,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2026-09-23",
-          "value": 120.1169
+          "value": 120.1169,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2026-09-24",
-          "value": 120.5521
+          "value": 120.5521,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2026-09-25",
-          "value": 120.33
+          "value": 120.33,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2026-09-28",
-          "value": 120.6958
+          "value": 120.6958,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2026-09-29",
-          "value": 121.0296
+          "value": 121.0296,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2026-09-30",
-          "value": 120.9693
+          "value": 120.9693,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2026-10-01",
-          "value": 121.7882
+          "value": 121.7882,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2026-10-02",
-          "value": 121.3848
+          "value": 121.3848,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2026-10-05",
-          "value": 121.2708
+          "value": 121.2708,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2026-10-06",
-          "value": 120.8976
+          "value": 120.8976,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2026-10-07",
-          "value": 121.2558
+          "value": 121.2558,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2026-10-08",
-          "value": 121.4469
+          "value": 121.4469,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2026-10-09",
-          "value": 121.6023
+          "value": 121.6023,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         }
       ]
     },
@@ -2723,81 +3971,162 @@
       "points": [
         {
           "date": "2026-09-21",
-          "value": 2.66
+          "value": 2.66,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-09-22",
-          "value": 2.68
+          "value": 2.68,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-09-23",
-          "value": 2.73
+          "value": 2.73,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-09-24",
-          "value": 2.8
+          "value": 2.8,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-09-25",
-          "value": 2.93
+          "value": 2.93,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-09-28",
-          "value": 3.02
+          "value": 3.02,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-09-29",
-          "value": 3.08
+          "value": 3.08,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-09-30",
-          "value": 3.12
+          "value": 3.12,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-10-01",
-          "value": 3.24
+          "value": 3.24,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-10-02",
-          "value": 3.1
+          "value": 3.1,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-10-05",
-          "value": 3.12
+          "value": 3.12,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-10-06",
-          "value": 3.03
+          "value": 3.03,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-10-07",
-          "value": 3.09
+          "value": 3.09,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-10-08",
-          "value": 3.15
+          "value": 3.15,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-10-09",
-          "value": 3.11
+          "value": 3.11,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-10-12",
-          "value": 3.11
+          "value": 3.11,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-10-13",
-          "value": 3.16
+          "value": 3.16,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-10-14",
-          "value": 3.25
+          "value": 3.25,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2026-10-15",
-          "value": 3.23
+          "value": 3.23,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         }
       ]
+    }
+  },
+  "monthly_coverage": {
+    "month": "2026-10",
+    "through": "2026-10-18",
+    "expected_days": 18,
+    "present_days": 18,
+    "missing_dates": [],
+    "unclassified_dates": [],
+    "unknown_signal_cells": 0,
+    "price_proxy_dates": [
+      "2026-10-01",
+      "2026-10-02",
+      "2026-10-03",
+      "2026-10-04",
+      "2026-10-05",
+      "2026-10-06",
+      "2026-10-07",
+      "2026-10-08"
+    ],
+    "note": "Calendar coverage, editorial provenance and underlying-provider freshness are separate; price proxies do not restore missing original judgments."
+  },
+  "series_freshness": {
+    "NASDAQCOM": {
+      "last_observation": "2026-10-16",
+      "source": "Nasdaq, Inc. via FRED",
+      "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
+    },
+    "SP500": {
+      "last_observation": "2026-10-16",
+      "source": "S&P Dow Jones Indices via FRED",
+      "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
+    },
+    "VIXCLS": {
+      "last_observation": "2026-10-16",
+      "source": "CBOE via FRED",
+      "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
+    },
+    "DGS2": {
+      "last_observation": "2026-10-16",
+      "source": "Federal Reserve H.15 via FRED",
+      "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
+    },
+    "DGS10": {
+      "last_observation": "2026-10-16",
+      "source": "Federal Reserve H.15 via FRED",
+      "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
+    },
+    "DCOILBRENTEU": {
+      "last_observation": "2026-10-14",
+      "source": "U.S. EIA via FRED",
+      "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
+    },
+    "DTWEXBGS": {
+      "last_observation": "2026-10-09",
+      "source": "Federal Reserve via FRED",
+      "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
+    },
+    "BAMLH0A0HYM2": {
+      "last_observation": "2026-10-15",
+      "source": "ICE BofA via FRED",
+      "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     }
   }
 }

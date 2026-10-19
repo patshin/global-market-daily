@@ -85,3 +85,26 @@ with tempfile.TemporaryDirectory() as tmp:
     confirmation=json.loads((builder.OUT_DIR/'rolling-30d.json').read_text())['cross_asset_confirmation']
     assert not confirmation['confirming'] and not confirmation['diverging']
 print('MARKET LENS REGRESSION PASSED — native accumulation, provisional exclusion, historical provenance, delayed releases')
+
+# Explicit proxy evidence, native exclusion, future-session rejection and cache isolation.
+from lens_history_support import editorial_direction, merge_history, historical_proxy
+assert editorial_direction('↔ range')=='↔'
+assert editorial_direction('↕ mixed')=='↕'
+assert editorial_direction('unknown')=='?'
+with tempfile.TemporaryDirectory() as tmp:
+    base=Path(tmp);target=base/'docs/data/trends';target.mkdir(parents=True)
+    (target/'historical-series-supplement.json').write_text(json.dumps({'series':{'SP500':{'points':[{'date':'2026-10-01','value':100,'source_url':'https://example.test/source'},{'date':'2026-10-02','value':101,'source_url':'https://example.test/source'}]}}}))
+    result=merge_history(base,'SP500',[{'date':'2026-10-01','value':99}])
+    assert [x['value'] for x in result]==[99,101],result
+    (target/'historical-proxy-policy.json').write_text(json.dumps({'dates':['2026-10-02']}))
+    r={'date':'2026-10-02','reconstruction':{'is_reconstructed':True},'market_tape':[]}
+    for name,delta in [('S&P 500',1),('Nasdaq Composite',2),('VIX',-1),('DXY',-0.5),('UST 10Y',-3),('Brent',-2)]:
+        r['market_tape'].append({'asset':name,'as_of':'2026-10-01 close','change_1d':f'{delta:+}%', 'sources':['S01']})
+    proxy=historical_proxy(base,r)
+    assert proxy['regime_code']=='risk_on' and all(v!='?' for v in proxy['signals'].values()),proxy
+    assert proxy['signals']['earnings']=='↑' and proxy['signals']['liquidity']=='↑'
+    r['market_tape'][0]['as_of']='2026-10-02 close'
+    proxy=historical_proxy(base,r);assert proxy['regime_code']=='unclassified' and proxy['signals']['growth']=='?'
+    r['reconstruction']['is_reconstructed']=False
+    assert historical_proxy(base,r) is None
+print('HISTORICAL PROXY REGRESSION PASSED — explicit sources, native exclusion, no future close, no overwrite or unknown-as-neutral')
