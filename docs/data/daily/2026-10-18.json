@@ -1,0 +1,921 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-10-18",
+  "edition": "Morning Official",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-10-18 10:44 SGT",
+  "data_cutoff_et": "2026-10-17 22:44 EDT",
+  "last_updated": "2026-10-18T10:44:50.226+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-10-18T09:00:00+08:00",
+    "started_at_sgt": "2026-10-18T10:30:27+08:00",
+    "recovery_started_at_sgt": "2026-10-18T10:30:27+08:00",
+    "research_cutoff_sgt": "2026-10-18T10:44:50.226+08:00",
+    "mode": "morning",
+    "recovery_note": "Independent contemporaneous Sunday recovery research, completed after the scheduled 09:00 edition; prices reflect last verified Friday 2026-10-16 US/Europe market sessions, not a Sunday close. No separate edition."
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": true
+  },
+  "publication_policy": "morning_official_2026-10-08",
+  "source_mode": "native_daily",
+  "sources_path": "data/sources/2026-10-18.json",
+  "comparison_basis": {
+    "previous_official_date": "2026-10-12",
+    "note": "Last formal main edition was Oct12, not yesterday; missing Oct13–17 editions must not be assumed or backfilled. All Oct16 Friday closes are dated. Oct17 macro/security reporting is new weekend evidence."
+  },
+  "thesis": "截至2026-10-18 10:44 SGT（2026-10-17 22:44 EDT），周日美股和债市均未交易，最新有效收盘为10月16日。市场的核心约束已转为高油价冲击、AI/半导体盈利质量与融资成本之间的负反馈：美股纳指周跌约4.5%，Brent周五12月合约结算于109.86美元；10月17日IMF、欧洲央行与加拿大央行的表态强化了通胀和借贷成本的交叉压力。周一须以真实现货/期货开盘核验传导，不能把周末新闻当作周日价格。",
+  "dominant_narrative": "相较main中最后一份10月12日正式日报，10月16日美国收盘已出现更明确的AI风险资产与能源背离：S&P500报7,659.44，Nasdaq报26,140.03，SOX一周跌约11.4%，而Brent12月合约报109.86美元，WTI11月合约报101.41美元。高能源成本抬升通胀压力但现金美债10Y上周收益率由约5.244%降至约5.098%，表明避险买债与再通胀风险并存，不能简单假定收益率同向上涨。10月17日IMFC要求应对战争冲击与AI相关财政金融风险；ECB、加拿大央行强调能源和融资条件的影响。美国暂停对俄罗斯新制裁的部分执行已被AP和Reuters独立报道，但不等于战争或供油物流风险消失；沙特基础设施面临的安全威胁同样不能等同于已确认减产。中国就40项技术出口目录修订公开征求意见，仍是提案而非生效禁令。周一首要核验油价同合约、债券现金收益率、AI信用风险和市场广度的同时间戳联动，避免以未观察的周末收盘或未公布财报拼接论证。",
+  "market_regime": {
+    "growth": "↓ 科技和小盘股周跌显著；IMFC仍认为世界经济有韧性但分配性与能源风险升温。",
+    "inflation": "↑ 油价与物流保险高位增加燃料、运输和终端成本压力；不等于所有商品即时涨价。",
+    "rates": "↔ 10Y美债10月16日报约5.10%，周度反而下行，凸显避险买债与再通胀的两股力量。",
+    "earnings": "↓ AI建设现金流与债务融资受到重新估值；Halliburton 10月20日业绩电话会尚未公布实际。",
+    "liquidity": "→ 周末无美国现金交易；周一需看股票与信用利差及实际国债报价同步确认。",
+    "geopolitics": "↑ 沙特设施袭击、俄乌能源基础设施威胁及俄罗斯制裁执行延期共同抬高政策路径不确定性。",
+    "overall": "Weekend Event Risk / Oil–AI Credit–Duration Divergence"
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,659.44",
+      "change_1d": "-1.09%",
+      "change_5d": "-1.95%",
+      "signal": "↓ US broad equities",
+      "driver": "AI / duration repricing despite defensive support",
+      "status": "Last verified Friday 2026-10-16 observation; NOT an Oct18 Sunday close",
+      "as_of": "2026-10-16 16:00 EDT",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "26,140.03",
+      "change_1d": "-2.15%",
+      "change_5d": "-4.48%",
+      "signal": "↓ Tech earnings/capex repricing",
+      "driver": "AI and high-duration funding concerns",
+      "status": "Last verified Friday 2026-10-16 observation; NOT an Oct18 Sunday close",
+      "as_of": "2026-10-16 16:00 EDT",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "Dow Jones Industrial Average",
+      "level": "52,002.41",
+      "change_1d": "-0.34%",
+      "change_5d": "+0.67%",
+      "signal": "→ Defensive relative strength",
+      "driver": "Weekly leadership rotation away from high-duration tech",
+      "status": "Last verified Friday 2026-10-16 observation; NOT an Oct18 Sunday close",
+      "as_of": "2026-10-16 16:00 EDT",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,721.37",
+      "change_1d": "-1.66%",
+      "change_5d": "-3.05%",
+      "signal": "↓ Financing-sensitive small caps",
+      "driver": "Higher refinancing cost and weak domestic breadth",
+      "status": "Last verified Friday 2026-10-16 observation; NOT an Oct18 Sunday close",
+      "as_of": "2026-10-16 16:00 EDT",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "PHLX Semiconductor SOX",
+      "level": "11,137.29",
+      "change_1d": "-3.83%",
+      "change_5d": "-11.41%",
+      "signal": "↓ Semiconductors",
+      "driver": "8-session losing run; sourced secondary market history",
+      "status": "Last verified Friday 2026-10-16 observation; NOT an Oct18 Sunday close",
+      "as_of": "2026-10-16 US cash close; secondary vendor",
+      "sources": [
+        "S16"
+      ]
+    },
+    {
+      "asset": "CBOE VIX",
+      "level": "19.99",
+      "change_1d": "+3.53 pts",
+      "change_5d": "+5.15 pts",
+      "signal": "↑ Equity volatility",
+      "driver": "Oct16 Yahoo-derived official-close series; differs from intraday media VIX",
+      "status": "Last verified Friday 2026-10-16 observation; NOT an Oct18 Sunday close",
+      "as_of": "2026-10-16 US cash close; Yahoo-derived history",
+      "sources": [
+        "S16"
+      ]
+    },
+    {
+      "asset": "UST 10Y",
+      "level": "5.098%",
+      "change_1d": "+0.009 pp",
+      "change_5d": "-0.146 pp",
+      "signal": "→ Duration refuge vs inflation",
+      "driver": "10Y cash Friday close; rate changes shown in percentage points",
+      "status": "Last verified Friday 2026-10-16 observation; NOT an Oct18 Sunday close",
+      "as_of": "2026-10-16 US cash close; Yahoo-derived history",
+      "sources": [
+        "S16"
+      ]
+    },
+    {
+      "asset": "DXY",
+      "level": "101.87",
+      "change_1d": "-0.17%",
+      "change_5d": "-0.35%",
+      "signal": "↓ Dollar softening",
+      "driver": "Reuters Friday observed snapshot not an official DXY closing settlement",
+      "status": "Last verified Friday 2026-10-16 observation; NOT an Oct18 Sunday close",
+      "as_of": "2026-10-16 Reuters Friday snapshot; exact minute unavailable",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "asset": "Brent Dec 2026",
+      "level": "$109.86/bbl",
+      "change_1d": "+3.7%",
+      "change_5d": "+4.91%",
+      "signal": "↑ Energy shock",
+      "driver": "Dec contract settlement, distinct from prior Brent prompt/spot",
+      "status": "Last verified Friday 2026-10-16 observation; NOT an Oct18 Sunday close",
+      "as_of": "2026-10-16 NYMEX/ICE Friday dated Dec-futures settlement",
+      "sources": [
+        "S04"
+      ]
+    },
+    {
+      "asset": "WTI Nov 2026",
+      "level": "$101.41/bbl",
+      "change_1d": "+3.5%",
+      "change_5d": "+10.41%",
+      "signal": "↑ Diesel and supply risk",
+      "driver": "Nov WTI front month, not Dec WTI; contract basis explicit",
+      "status": "Last verified Friday 2026-10-16 observation; NOT an Oct18 Sunday close",
+      "as_of": "2026-10-16 NYMEX Friday dated Nov-futures settlement",
+      "sources": [
+        "S04"
+      ]
+    },
+    {
+      "asset": "STOXX Europe 600",
+      "level": "644.74",
+      "change_1d": "+0.7%",
+      "change_5d": "逾+2%（近似，非精确）",
+      "signal": "↑ Europe relative resilience",
+      "driver": "European earnings supported Friday close; Reuters week-over-week qualitative",
+      "status": "Last verified Friday 2026-10-16 observation; NOT an Oct18 Sunday close",
+      "as_of": "2026-10-16 European cash close",
+      "sources": [
+        "S14"
+      ]
+    },
+    {
+      "asset": "COMEX Gold front month",
+      "level": "$4,159.50/oz",
+      "change_1d": "+0.3%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "→ Precious metal support",
+      "driver": "Friday dated futures settlement; matched-contract 5D missing",
+      "status": "Last verified Friday 2026-10-16 observation; NOT an Oct18 Sunday close",
+      "as_of": "2026-10-16 New York futures settlement",
+      "sources": [
+        "S17"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "FRIDAY_SETTLEMENTS_AND_LABELED_SNAPSHOTS_WITH_EXPLICIT_GAPS",
+    "asset_count": 12,
+    "level_coverage": {
+      "count": 12,
+      "total": 12,
+      "pct": 100,
+      "target_pct": 90
+    },
+    "change_1d_coverage": {
+      "count": 12,
+      "total": 12,
+      "pct": 100,
+      "target_pct": 90
+    },
+    "change_5d_coverage": {
+      "count": 11,
+      "total": 12,
+      "pct": 91.7,
+      "target_pct": 80
+    },
+    "explicit_gaps": [
+      "COMEX Gold Friday same-contract 5D not independently verified; no estimate supplied.",
+      "DXY Reuters Friday snapshot is not represented as official end-of-session index fix.",
+      "SOX/VIX/UST secondary historical series explicitly distinguished from Reuters/AP verified prints."
+    ],
+    "policy": "2026-10-18 Sunday has no US cash market close; all values are last verified dated Oct16 Friday marks, with fixed futures tenors and disclosed vendor differences."
+  },
+  "what_changed": [
+    {
+      "yesterday": "最后一份已正式发布的2026-10-12日报：高油价与银行业财报待验证，市场尚未发生本周AI周度抛售。",
+      "today": "2026-10-16正式收盘Nasdaq周跌4.48%、SOX周跌11.41%，而Brent12月合约周涨约4.91%。",
+      "why_it_matters": "跨资产风险已由单一战争通胀演变为AI信用融资压力与油价推升投入成本的同时冲击。",
+      "sources": [
+        "S01",
+        "S04",
+        "S16"
+      ]
+    },
+    {
+      "yesterday": "旧日报尚在等待美国9月CPI公布，不能外推周末定价。",
+      "today": "2026-10-17 IMF/IMFC与ECB、加拿大央行重新强调能源冲击、财政缓冲和信贷成本。",
+      "why_it_matters": "政策端更重视能源向长期通胀和资本成本传递，但实际下次利率决定尚未发生。",
+      "sources": [
+        "S05",
+        "S06",
+        "S07"
+      ]
+    },
+    {
+      "yesterday": "10月12日俄罗斯能源安排仍存在未确认的政治表态。",
+      "today": "2026-10-17 AP与Reuters报道美国延迟落实新俄罗斯制裁若干措施，欧洲/乌克兰立场仍分歧。",
+      "why_it_matters": "制裁延期可改变预期边际供油与航运路径，不等于俄乌冲突停止或稳定新增供给已实现。",
+      "sources": [
+        "S10",
+        "S11",
+        "S28"
+      ]
+    },
+    {
+      "yesterday": "10月12日旧日报没有本周的新一版中国技术管制方案。",
+      "today": "2026-10-16中国技术出口目录修订公开征求意见，涉及40项技术，尚未形成已实施政策。",
+      "why_it_matters": "跨境AI模型、供应链许可和技术资产的估值折现受影响，但必须追踪最终条文和生效日。",
+      "sources": [
+        "S09"
+      ]
+    },
+    {
+      "yesterday": "最后正式主刊缺少本周五欧洲与美国科技股分化的实证。",
+      "today": "Reuters 2026-10-16 STOXX600收644.74，周涨逾2%，与同期纳指周跌4.48%形成对照。",
+      "why_it_matters": "行业与区域轮动证据比泛化的全球Risk-Off更充分，后续应核对对冲和汇率因素。",
+      "sources": [
+        "S14",
+        "S01"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "Oct 16 Friday AI/semiconductor selloff amid an energy price rebound",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-16 US 16:00 EDT cash close",
+      "event_time_sgt": "2026-10-17 04:00 SGT US cash close",
+      "what_happened": "AP正式收盘显示Nasdaq当日-2.15%、周度-4.48%；历史序列显示SOX周跌11.41%，同期Brent12月合约结算109.86美元。",
+      "what_changed": "从10月12日最后正式主刊的事件风险，演化为AI/半导体融资估值承压与能源通胀抬升并存的可观测跨资产背离。",
+      "why_it_matters": "债务融资的AI基础设施和高估值芯片股对现金流折现更敏感，高油价增加电力、运输及经济成本。",
+      "transmission": "油价↑→预期通胀/资金成本↑；AI信贷溢价↑→科技估值↓→小盘股与宽基风险偏好受拖累。",
+      "affected_assets": [
+        "Nasdaq Composite",
+        "PHLX SOX",
+        "Brent Dec 2026",
+        "AI credit"
+      ],
+      "direction": "↓ Long-duration AI / ↑ Energy risk",
+      "importance": "★★★★★",
+      "confirmation": "下周一比较同期限油价、AI信用利差与成交量、科技广度和美债现金收益率的同时段变化。",
+      "invalidation": "若信用风险缩窄、半导体广度反弹同时油价风险溢价下降，则本轮估值压力可能减弱。",
+      "sources": [
+        "S01",
+        "S02",
+        "S04",
+        "S15",
+        "S16"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "Oct 17 IMFC and central bankers spotlight oil inflation plus debt financing risk",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-17 EDT (exact intraday announcement minute not independently resolved)",
+      "event_time_sgt": "2026-10-17 to 2026-10-18 SGT reporting; event minute unverified",
+      "what_happened": "10月17日Reuters分别报道IMFC下行风险警告、Lagarde对欧洲融资条件的分析及加拿大央行通胀预测上修倾向；均为官员观点而非当日新利率决议。",
+      "what_changed": "国际机构共同强调能源供应冲击与AI债务融资对金融稳定的双向作用，比单独讨论即期油价更接近政策反应函数。",
+      "why_it_matters": "若通胀与私人融资成本同步偏高，央行空间与企业再融资能力可能受限；现金美债收益率近期却因避险资金下行。",
+      "transmission": "能源物流成本↑→消费者通胀粘性↑；高融资成本→投资折现率↑；政策预期与信用利差重新定价。",
+      "affected_assets": [
+        "UST 10Y",
+        "DXY",
+        "STOXX 600",
+        "CAD"
+      ],
+      "direction": "↑ Inflation policy risk",
+      "importance": "★★★★",
+      "confirmation": "等待官员后续正式会议声明与周一国债、外汇、企业债利差方向的同源验证。",
+      "invalidation": "若能源价格持续回落且通胀预期下降、信用利差稳定，则政策紧缩风险降低。",
+      "sources": [
+        "S05",
+        "S06",
+        "S07",
+        "S08"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "Oct 17 Russia sanctions waiver and Saudi infrastructure risks reshape Monday energy opening",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-17 EDT media reporting; exact executive timestamp not independently established",
+      "event_time_sgt": "2026-10-17 to 2026-10-18 SGT reporting; no Sunday market settlement",
+      "what_happened": "AP和Reuters均报道美国延后新俄罗斯制裁部分落实；AP又核实沙特多轮胡塞袭击，仍无确凿证据允许推断周日沙特原油当日减产。",
+      "what_changed": "供给端出现政策性缓冲可能性，同时实物运输与安全风险未解除；周末消息不能被误写为已出现周日油价反应。",
+      "why_it_matters": "俄罗斯原油/柴油可及性与沙特物流保险同时变化，使能源风险溢价方向不确定，需要同合约开盘数据。",
+      "transmission": "制裁执行延期→潜在供给预期↑；沙特设施风险→保险/运输成本↑；两者共同决定油价与输入型通胀。",
+      "affected_assets": [
+        "Brent Dec 2026",
+        "WTI Nov 2026",
+        "Global airlines",
+        "USD"
+      ],
+      "direction": "↔ Conflicting physical supply and policy signals",
+      "importance": "★★★★",
+      "confirmation": "周一核对实际制裁执行范围、油轮流向、沙特设施状态与Brent同期限交易结算。",
+      "invalidation": "若并无政策落地交易、油轮运量未变，或又有可验证供给中断，延期制裁的缓冲解释失效。",
+      "sources": [
+        "S10",
+        "S11",
+        "S12",
+        "S13",
+        "S28"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top 3 Market Catalysts",
+      "status": "周五AI/能源背离；周末IMFC及俄罗斯制裁政策变化",
+      "summary": "三个催化剂按已发生收盘、已发表政策言论、已报告地缘动态排序，不把周一尚未开盘的价格变化视为已发生。",
+      "paragraphs": [
+        "周五美国收盘与周末政策文本时间已分开。观察油价—债券—半导体—AI信贷的同步走势，只有多资产确认才能判断冲击已进入盈利或折现率。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S04",
+        "S05",
+        "S10"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings",
+      "status": "Halliburton 10月20日9:00 EDT已确认电话会；Tesla/Meta 10月21日仍不属于本次72小时核心窗口",
+      "summary": "银行、AI基础设施和能源企业盈利的资本成本敏感性是本周重点。除经发行人确认日期者外，不能编造财报时刻、EPS一致预期或已实现盈利。",
+      "paragraphs": [
+        "Halliburton电话会将区分中东设备服务需求、订单能见度与石油公司实际资本开支；周末尚无其Q3实际业绩。Tesla/Meta下一周中属稍后关注，不能提前写成已经发布的结果。"
+      ],
+      "tables": [],
+      "sources": [
+        "S20",
+        "S18",
+        "S19",
+        "S02"
+      ],
+      "reported": [],
+      "upcoming_72h": [
+        {
+          "id": "E20261020HAL",
+          "company": "Halliburton",
+          "ticker": "HAL",
+          "period": "Q3 2026",
+          "status": "Confirmed Upcoming",
+          "date": "2026-10-20",
+          "et": "2026-10-20 09:00 EDT",
+          "sgt": "2026-10-20 21:00 SGT",
+          "market_session": "Tuesday Oct20 US before/during cash market; investor conference call 09:00 EDT",
+          "consensus": {
+            "revenue": "尚无法可靠确认；无可靠同口径一致预期",
+            "eps": "尚无法可靠确认；无可靠同口径一致预期"
+          },
+          "previous_guidance": "尚无法可靠确认；待发行人Q3正式财报检验",
+          "actual": "待公布",
+          "what_matters": [
+            "区分实际油服接单、可确认订单积压与中东油气资本开支预期。",
+            "评估经营现金流、地区收入分布和汇兑/能源成本，不将油价上涨直接等同利润上涨。"
+          ],
+          "read_through_targets": [
+            "HAL",
+            "Energy services",
+            "Brent Dec 2026"
+          ],
+          "sources": [
+            "S20"
+          ]
+        }
+      ]
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "U.S. Economic Data",
+      "status": "美国上周已公布通胀数据；周日无新增官方统计发布",
+      "summary": "美国9月通胀已由周内消息进入市场估值，周末无新的同类美国官方数据可验证。报道中的高油价影响仍需下次统计读数检验，不可把消费燃油涨幅误当成CPI全部同比。",
+      "paragraphs": [
+        "美国股指与10Y收益率上周背离说明风险资产下跌不一定需要收益率当日上升；更重要的是企业信用定价、消费量与能源成本的后续数据。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S15",
+        "S24"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Global Central Banks",
+      "status": "Lagarde和BoC声明重估能源通胀；周末无新FOMC利率决定",
+      "summary": "Reuters 10月17日记录ECB总裁Lagarde对融资紧缩的判断、加拿大央行对油价上升导致通胀预测上修的警示，以及中国央行支持强化IMF跨境溢出风险监测。",
+      "paragraphs": [
+        "这些均为官员言论或前瞻评估，不是今日已执行的加息公告；观察债券曲线、通胀预期与欧洲/加拿大本币变动。"
+      ],
+      "tables": [],
+      "sources": [
+        "S06",
+        "S07",
+        "S08"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Major International Events",
+      "status": "沙特设施安全风险与美国延期俄罗斯制裁形成对冲方向",
+      "summary": "AP报道最近沙特关键基础设施多次遇袭，但不应直接推断已确认新增原油损失；美国部分对俄制裁延期已获AP与Reuters互证。",
+      "paragraphs": [
+        "航运保险、实际船舶流向及生产恢复先于单一外交声明决定能源价格；在周一开盘前这仍是尚未由现价验证的风险路径。"
+      ],
+      "tables": [],
+      "sources": [
+        "S10",
+        "S11",
+        "S12",
+        "S13"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "China, Japan, Europe and Canada Policy",
+      "status": "中国技术出口目录修订仍属征求意见；加拿大/欧洲能源政策风险升温",
+      "summary": "Reuters 10月16日报道中国就含AI、生物技术、光伏等40项技术的出口目录修订公开征求意见。加拿大央行及ECB也就通胀传导作出警示。",
+      "paragraphs": [
+        "提案可能改变技术许可合规与中外科技估值，但不等于出口已被全面禁止；必须等最终文本、生效日与许可口径。"
+      ],
+      "tables": [],
+      "sources": [
+        "S09",
+        "S07",
+        "S06",
+        "S08"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "MSCI / FTSE / S&P / Nasdaq Index Changes",
+      "status": "暂无新一份可信的MSCI/FTSE/S&P/Nasdaq生效重编事件公告",
+      "summary": "截至本次周末研究截止，没有经交叉核验的当日指数纳入/剔除生效公告及相应被动买卖名义金额，因此不构造指数资金流故事。",
+      "paragraphs": [
+        "下次有效窗口先查指数公司正式公告及基金申赎，不以SOX下跌倒推出指数基金被动卖盘。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "Pension / Month-End / Quarter-End Flows",
+      "status": "无可信周末养老金/ETF流量官方披露；风险分化由已观察回报而非资金流推断",
+      "summary": "周五纳指周跌与欧洲股市周涨说明回报差异，但资金净流入、机构赎回规模尚无法可靠确认，不能由股指跌幅反推投资者流量。",
+      "paragraphs": [
+        "周一等待交易所、基金披露及可信流量周报；针对高杠杆AI信用的监测应基于成交/利差而非传闻。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S14",
+        "S15"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF Rebalance / Index Reconstruction",
+      "status": "未核实新的周末ETF一级市场大额申赎或确定性指数调整",
+      "summary": "暂无可靠同日数据能够定量证明ETF资金推动了SOX的周跌11.4%，故只记录市场价格，不对创设篮子和资金流作虚构归因。",
+      "paragraphs": [
+        "下周按ETF基金发起人公布的申购赎回和指数调整文本验证风险传染，尤其对高估值科技权重股。"
+      ],
+      "tables": [],
+      "sources": [
+        "S16",
+        "S02"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "Options Expiry",
+      "status": "周五VIX约19.99来自带日期收盘历史；不猜Gamma和0DTE头寸",
+      "summary": "VIX波动率上升是市场对股价风险调整的可观察指标，但不能从VIX单独计算做市商净Gamma、翻转点或期权到期钉价。",
+      "paragraphs": [
+        "周一现金开盘后核实实际合约未平仓量和市场报价，不用周末新闻补造周日0DTE成交。"
+      ],
+      "tables": [],
+      "sources": [
+        "S16",
+        "S02"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "U.S. Treasury Auctions",
+      "status": "10Y收益率周度下行约14.6基点，和油价上升并存",
+      "summary": "10月16日基准10年美国国债的可追溯历史系列约5.098%，10月9日约5.244%；这一周收益率下降与能源上涨共存，不能套用简单油价涨债券收益率必涨公式。",
+      "paragraphs": [
+        "未来美国国债招标若无财政部正式公告和当日结果，不填写未获核实的发行规模、尾差、投标倍数或中标分布；观察10月19日现金收益率。"
+      ],
+      "tables": [],
+      "sources": [
+        "S15",
+        "S16",
+        "S21"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Oil / OPEC / Commodities",
+      "status": "Brent12月109.86美元、WTI11月101.41美元，明确期限和周五结算",
+      "summary": "WSJ记录10月16日Brent12月结算109.86美元、WTI11月报101.41美元；Reuters报道海运费率虽自峰值回落仍高企，智利铜矿劳资初步协议仍待批准。",
+      "paragraphs": [
+        "能源实际供给与物流保险→燃料和商品成本→通胀预期→收益率/风险资产；初步劳资协定不等于矿产长约供货已完全恢复。"
+      ],
+      "tables": [],
+      "sources": [
+        "S04",
+        "S13",
+        "S22",
+        "S12"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "IPO / Financing / Capital Cycle",
+      "status": "AI基础设施信用压力上升；委内瑞拉760亿美元仅是五年预期投资",
+      "summary": "Reuters指出CoreWeave等AI相关交易和债券融资承压；委内瑞拉相关官员提出未来五年近760亿美元油气投资预期，尚非已部署、已融资或保证实现的资本。",
+      "paragraphs": [
+        "将宣布的目标、签约承诺、可提款融资和已部署实物资本明确区分；高油价和融资利率会改变AI机房与能源项目资本预算。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S23",
+        "S05"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Past 24H Major Breaking News",
+      "status": "过去24小时主要为10月17日IMFC声明、政策讲话与俄制裁执行延期报道",
+      "summary": "按报道日期最近24小时内，IMFC会议和央行官员讨论能源、债务与AI风险；AP与Reuters报道美国俄罗斯制裁执行延期，事件的具体签署小时尚无法可靠独立校准。",
+      "paragraphs": [
+        "不把10月16日美股收盘硬写进10月17–18日的Breaking News；这仍是周日，必须按发稿和实际交易日做时间分离。"
+      ],
+      "tables": [],
+      "sources": [
+        "S05",
+        "S06",
+        "S07",
+        "S10",
+        "S11",
+        "S27"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "Integrated Market Impact",
+      "status": "宏观主线是油价高位、AI融资质量和10Y利率背离的后续确认",
+      "summary": "Base为周一开市后油价风险溢价与AI估值压力持续拉锯；Bull需要风险溢价下降且信用稳定；Bear是供给冲击加上AI融资再定价，出现油价和信用价差双升。",
+      "paragraphs": [
+        "周一先核实同期限Brent/WTI、现金美债10Y、纳指与SOX、AI信用利差的方向，再评估货币政策和科技估值；不同时间戳不得合成收益率。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S04",
+        "S15",
+        "S16",
+        "S05"
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "Growth Impulse",
+      "current": "↓ 科技小盘承压",
+      "yesterday": "→ 旧日报亚洲分化",
+      "change_reason": "周五Nasdaq、Russell同时下跌，AI云基础设施估值压缩，IMFC认为全球经济虽有韧性仍面临战争冲击。",
+      "evidence": "Oct16 Nasdaq -2.15% / Russell -1.66%; IMF/IMFC Oct17警示下行风险。",
+      "sources": [
+        "S01",
+        "S05"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "Inflation Impulse",
+      "current": "↑ 油价物流风险",
+      "yesterday": "↑ 中东航空风险",
+      "change_reason": "Brent与WTI周五上涨且AP指终端燃油成本传导，能源输入型通胀尚未结束。",
+      "evidence": "Brent Dec $109.86；WTI Nov $101.41，均为Oct16结算，不是周日现价。",
+      "sources": [
+        "S04",
+        "S24"
+      ]
+    },
+    "rates_pressure": {
+      "label": "Rates Pressure",
+      "current": "↔ 10Y避险买盘",
+      "yesterday": "→ 旧周收益率约5.24%",
+      "change_reason": "10Y收益率一周下降约14.6bp与油价上行并存，说明增长担忧和通胀压力互相拉扯。",
+      "evidence": "Oct9 ~5.244% → Oct16 ~5.098%；百分比点差异按可追溯历史序列。",
+      "sources": [
+        "S15",
+        "S16"
+      ]
+    },
+    "earnings_revision": {
+      "label": "Earnings Revisions",
+      "current": "↓ AI估值警惕",
+      "yesterday": "→ 旧日报待银行季报",
+      "change_reason": "半导体和云算力交易回撤，对盈利兑现和融资偿付能力的验证要求变高。",
+      "evidence": "SOX周跌11.41%；Halliburton Oct20电话会的业绩actual仍待公布。",
+      "sources": [
+        "S16",
+        "S02",
+        "S20"
+      ]
+    },
+    "liquidity": {
+      "label": "Liquidity",
+      "current": "→ 周末无现金盘",
+      "yesterday": "→ 上个正式日报假期错位",
+      "change_reason": "周末没有新的美股/美债正式收盘；信用市场须等待周一现货开盘确认消息影响。",
+      "evidence": "NYSE官方核心时段09:30–16:00 ET；10月18日为周日。",
+      "sources": [
+        "S21"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "Geopolitical Risk",
+      "current": "↑ 制裁与沙特风险",
+      "yesterday": "↑ 上周运输袭击风险",
+      "change_reason": "美国对俄制裁执行延期可带来供给缓冲，沙特设施遭袭则继续压迫物流和保险。",
+      "evidence": "AP及Reuters Oct17互证制裁延期；AP记录近期沙特设施风险，尚无新减产可靠量化。",
+      "sources": [
+        "S10",
+        "S11",
+        "S12"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base: oil/AI valuation tug-of-war",
+      "probability": "Conditional central path; not a statistical probability",
+      "trigger": "Monday Oct19 cash trading confirms still-high energy settlement references while AI credit repricing remains unsettled.",
+      "expected_market_reaction": "Mixed equities and sector rotation with Nasdaq/semis vulnerable but defensive and energy sectors more resilient; 10Y cash yields may diverge.",
+      "assets_most_sensitive": [
+        "Nasdaq",
+        "SOX",
+        "Brent Dec",
+        "UST 10Y"
+      ],
+      "what_confirms_it": "Contemporaneous Brent, US 10Y, AI credit spreads and Monday cash equity breadth show conflicting rather than aligned moves.",
+      "what_invalidates_it": "Broad-based semiconductor rebound with shrinking credit spreads and reduced oil logistics risk means constraint easing."
+    },
+    "bull_case": {
+      "label": "Bull: physical energy logistics improve",
+      "probability": "Conditional alternative favorable path; no invented weights",
+      "trigger": "Verified regional transport improvement and sanctions implementation clarity compress same-contract oil risk premium.",
+      "expected_market_reaction": "Airlines, high-duration growth and semiconductors stabilize while inflation-sensitive bond yield measures ease on matched timestamps.",
+      "assets_most_sensitive": [
+        "Airlines",
+        "Nasdaq",
+        "SOX",
+        "UST 10Y"
+      ],
+      "what_confirms_it": "Sustained same-contract oil decline accompanies improving AI credit liquidity and broad Nasdaq participation.",
+      "what_invalidates_it": "Another confirmed regional facility disruption or renewed high oil and funding costs."
+    },
+    "bear_case": {
+      "label": "Bear: energy shock meets AI credit squeeze",
+      "probability": "Conditional downside path; no invented weights",
+      "trigger": "Renewed verified disruptions push fuel logistics higher as cloud compute financing costs deteriorate.",
+      "expected_market_reaction": "AI and financing-sensitive small caps underperform, inflation-sensitive assets reprice and dollar/UST direction depends on safe-haven versus inflation effect.",
+      "assets_most_sensitive": [
+        "SOX",
+        "Russell 2000",
+        "Brent",
+        "AI credit"
+      ],
+      "what_confirms_it": "Matched oil and shipping indicators rise along with wider AI bond spreads and poor semiconductor breadth.",
+      "what_invalidates_it": "Verified energy supply normalization and stable funding costs make self-reinforcing stress less plausible."
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-10-19 21:30 SGT",
+      "et": "2026-10-19 09:30 EDT",
+      "event": "U.S. NYSE/Nasdaq regular cash-market opening after weekend",
+      "consensus": "Not an economic-statistics consensus event",
+      "previous": "Friday Oct16 S&P 7,659.44, Nasdaq 26,140.03 with dated basis",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S21",
+        "S01"
+      ]
+    },
+    {
+      "sgt": "2026-10-20 21:00 SGT",
+      "et": "2026-10-20 09:00 EDT",
+      "event": "Halliburton third-quarter 2026 results conference call",
+      "consensus": "Revenue/EPS consensus 尚无法可靠确认",
+      "previous": "Last verified prior Q2 metrics not established in this report",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S20"
+      ]
+    },
+    {
+      "sgt": "2026-10-21 04:00 SGT",
+      "et": "2026-10-20 16:00 EDT",
+      "event": "Tuesday US equity cash close and cross-asset confirmation window",
+      "consensus": "Not a statistical data release",
+      "previous": "Latest verified Friday Oct16 cross-asset settlement retained",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S21"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "Energy transport/fuel shock persists despite Russia sanctions enforcement delay",
+      "why_not_fully_priced": "Temporary sanctions waiver could ease expected fuel availability but the physical delivery, refining and shipping constraints remain uncertain.",
+      "trigger": "Fresh verified Saudi/Red Sea facility attacks or failed follow-through in cargo/insurance channels.",
+      "transmission": "Facility and tanker risk → freight/diesel ↑ → household inflation and margins deteriorate → policy flexibility decreases.",
+      "first_asset": "Brent Dec, tanker freight, global airlines",
+      "theme_id": "geopolitics_energy",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-18",
+      "last_seen": "2026-10-18",
+      "sources": [
+        "S10",
+        "S11",
+        "S12",
+        "S13"
+      ]
+    },
+    {
+      "risk": "AI hyperscaler credit financing stress outpaces earnings evidence",
+      "why_not_fully_priced": "The Oct16 SOX and neocloud drawdowns suggest investors question funding quality; cash-flow delivery and debt spreads are not fully observed in Sunday prices.",
+      "trigger": "Further verified AI borrower credit spread widening, financing rollback or issuer guidance showing slower cash conversion.",
+      "transmission": "Higher capital intensity / refinancing spreads → AI company cost of capital ↑ → Nasdaq/SOX valuation and small-cap appetite ↓.",
+      "first_asset": "SOX, Nasdaq Composite, AI corporate bonds",
+      "theme_id": "ai_earnings",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-18",
+      "last_seen": "2026-10-18",
+      "sources": [
+        "S02",
+        "S15",
+        "S16"
+      ]
+    },
+    {
+      "risk": "Central-bank inflation-risk assessment changes while bond duration is bought as a haven",
+      "why_not_fully_priced": "ECB/Canada warning on energy and IMFC debt vulnerability coexist with UST10Y yield decline; sector impact can reverse when Monday cash reprices.",
+      "trigger": "Renewed energy inflation persistence with simultaneous change in US/European bond expectations or financial-stability risks.",
+      "transmission": "Oil and inflation expectations ↑ versus safe-haven duration demand → yield-curve volatility → FX and financial conditions tightening.",
+      "first_asset": "UST 10Y, DXY, European banks",
+      "theme_id": "global_duration",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-18",
+      "last_seen": "2026-10-18",
+      "sources": [
+        "S05",
+        "S06",
+        "S07",
+        "S16"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "October 19 US cash equity open: verify oil, AI credit and US Treasury reaction after the weekend",
+    "status": "Confirmed Upcoming",
+    "date": "2026-10-19",
+    "et": "2026-10-19 09:30 EDT",
+    "sgt": "2026-10-19 21:30 SGT",
+    "consensus": "Not a scheduled numeric macro release; no legitimate forecast consensus",
+    "previous": "Oct16 S&P 500 7,659.44 / Nasdaq 26,140.03 / Brent Dec $109.86; historical values with respective market timestamps",
+    "actual": "待公布",
+    "why_it_matters": "First US cash market opening after Oct17 IMFC and sanctions reports allows price verification of whether energy logistics, AI financing fears and duration move together.",
+    "first_market": "Brent Dec and WTI Nov market contracts, UST cash 10Y, Nasdaq/SOX cash equities and observable AI corporate credit",
+    "bull_interpretation": "Energy logistics premium retreats and improving semiconductor breadth coincides with stable/reduced credit spreads.",
+    "bear_interpretation": "Oil supply risk stays elevated while semiconductor declines broaden and AI financing spreads widen.",
+    "watch_first": [
+      "先比对周一Brent同一12月合约与WTI同一11月合约的可验证报价和油轮运力/保险变化；若实物风险未改善却油价下跌，检验需求疲弱因素。",
+      "核验10月19日开市后的美国10Y现券收益率与Nasdaq、SOX同一时段涨跌方向；若利率回落而科技持续弱势，风险偏好/信用可能主导。",
+      "追踪AI相关企业债报价或可信融资公告及Nasdaq市场广度；信用利差缩窄并广泛反弹才支持缓冲情景。"
+    ],
+    "sources": [
+      "S21",
+      "S01",
+      "S04",
+      "S02",
+      "S16"
+    ]
+  },
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S25",
+    "S26",
+    "S27",
+    "S28"
+  ],
+  "asia_snapshot": {
+    "as_of": "2026-10-18 Sunday 2026-10-18 10:44 SGT; US and Europe regular cash markets closed",
+    "brent": "$109.86 Dec-2026 contract last verified 2026-10-16 settlement, NOT Oct18 live quote",
+    "wti": "$101.41 Nov-2026 contract last verified 2026-10-16 settlement, NOT Oct18 live quote",
+    "dxy": "101.87 Friday Reuters observed snapshot (not Friday official fix, not Sunday quote)",
+    "s_and_p_futures": "尚无法可靠确认；no Sunday value fabricated",
+    "nasdaq_futures": "尚无法可靠确认；no Sunday value fabricated",
+    "korea_equities": "尚无法可靠确认；Sunday local cash market closed",
+    "sources": [
+      "S03",
+      "S04",
+      "S21"
+    ]
+  }
+}
