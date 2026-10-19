@@ -1,13 +1,10 @@
 name: October Backfill Audit Snapshot
-
 on:
   push:
     branches: [fix/gmd-october-backfill-lens]
     paths: [.github/workflows/october-backfill-prepare.yml]
-
 permissions:
   contents: read
-
 jobs:
   snapshot:
     runs-on: ubuntu-latest
@@ -20,47 +17,36 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      - name: Export tracked repository and original candidate publications
+      - name: Retrieve public historical sources without production writes
         shell: bash
         run: |
           set -euo pipefail
-          out=/tmp/gmd-october-audit
-          mkdir -p "$out/repository" "$out/candidates"
-          git archive HEAD | tar -x -C "$out/repository"
           python - <<'PY'
-          import json, pathlib, subprocess
-          from datetime import datetime, timezone
-          out=pathlib.Path('/tmp/gmd-october-audit')
-          candidates={'2026-10-13':'b522c2a732a0cefc20a4199c216e4239c8cadc53','2026-10-14':'f4240ca83fa8dc4bd1bf49d598de32a9b7f95837'}
-          for day,sha in candidates.items():
-              for path in (f'docs/data/daily/{day}.json',f'docs/data/sources/{day}.json',f'docs/reports/2026/10/{day}.md'):
-                  content=subprocess.check_output(['git','show',f'{sha}:{path}'])
-                  target=out/'candidates'/day/path
-                  target.parent.mkdir(parents=True,exist_ok=True)
-                  target.write_bytes(content)
-          manifest={'exported_at':datetime.now(timezone.utc).isoformat(),'baseline':subprocess.check_output(['git','rev-parse','HEAD'],text=True).strip(),'original_candidates':candidates,'scope':'Tracked files only; no .git, credentials or repository secrets. No production mutation.'}
-          (out/'snapshot-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
-          print(json.dumps(manifest))
+          import json,pathlib,concurrent.futures
+          from datetime import datetime,timezone
+          from urllib.request import Request,urlopen
+          out=pathlib.Path('/tmp/gmd-october-supplements');out.mkdir()
+          urls={sid+'.csv':f'https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}&cosd=2026-09-01&coed=2026-10-16' for sid in ['DGS5','DGS30','DGS2','DGS10','VIXCLS','NASDAQCOM','SP500','DCOILBRENTEU','DTWEXBGS','BAMLH0A0HYM2']}
+          urls.update({'cboe-vix.csv':'https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv','treasury-2026.xml':'https://home.treasury.gov/resource-center-data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026'})
+          def fetch(item):
+              name,url=item;record={'file':name,'source_url':url,'retrieved_at':datetime.now(timezone.utc).isoformat()}
+              try:
+                  request=Request(url,headers={'User-Agent':'GlobalMarketDaily/OctoberHistoricalRepair'})
+                  with urlopen(request,timeout=45) as response:
+                      content=response.read();record.update(status=response.status,bytes=len(content),content_type=response.headers.get('Content-Type'))
+                  if len(content)>10000000:raise ValueError('unexpected source size')
+                  (out/name).write_bytes(content)
+              except Exception as error:record['error']=str(error)
+              return record
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:records=list(pool.map(fetch,urls.items()))
+          (out/'manifest.json').write_text(json.dumps(records,indent=2)+'\n')
+          print(json.dumps(records,indent=2))
           PY
-      - name: Refresh public market history inside isolated audit copy
-        run: |
-          cd /tmp/gmd-october-audit/repository
-          python - <<'PY'
-          import json,sys
-          from pathlib import Path
-          sys.path.insert(0,str(Path('scripts').resolve()))
-          import build_market_lens as builder
-          builder.ensure_history()
-          coverage={sid:{'observations':len(rows),'last':rows[-1]['date'] if rows else None} for sid in builder.SERIES for rows in [builder.read_csv(builder.HISTORY_DIR/f'{sid}.csv',sid)]}
-          Path('../history-refresh-coverage.json').write_text(json.dumps(coverage,indent=2)+'\n')
-          print(json.dumps(coverage))
-          PY
-      - name: Save inspectable audit copy
+      - name: Save inspectable sources and retrieval outcomes
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: october-backfill-audit
-          path: /tmp/gmd-october-audit
-          include-hidden-files: true
+          name: october-public-source-supplements
+          path: /tmp/gmd-october-supplements
           retention-days: 2
           if-no-files-found: error
