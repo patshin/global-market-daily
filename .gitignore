@@ -1,0 +1,3 @@
+# Python validation/build artifacts are never publication content.
+__pycache__/
+*.py[cod]
