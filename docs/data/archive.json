@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated_at": "2026-10-18T10:44:50.226+08:00",
+  "updated_at": "2026-10-19T11:49:45+08:00",
   "entries": [
     {
       "date": "2026-10-18",
@@ -15,6 +15,76 @@
       "publication_cycle": "morning",
       "source_mode": "native_daily",
       "last_updated": "2026-10-18T10:44:50.226+08:00"
+    },
+    {
+      "date": "2026-10-17",
+      "thesis": "科技股与波动率的10月16日价格反应显示风险溢价上升，中国技术出口目录调整的征求意见与临时登记机制又增加交易执行不确定性。美国工业生产总量改善并不等于制造业普遍加速，周末评估应保留政策阶段、部门差异和休市边界。 本期为历史补档，未恢复原始发表快照。",
+      "dominant_narrative": "本期在10月19日重建10月17日09:00 SGT的信息集，没有周六美国收盘。10月16日Nasdaq收于26,140.03，S&P 500为7,659.44；Cboe VIX收于19.99。商务部已公布涉及40项技术的出口目录修订征求意见，23项AI、5项生物、12项太阳能；目录草案与过渡期登记要求不是同一法律状态，不能概括为40项技术已全面禁止出口。美国9月工业生产环比0.7%，制造业仅0.3%，公用事业3.5%贡献较大。央行与市场风险定价须结合这些结构，而不是把工业总量或单家代工财报当作统一增长信号。",
+      "overall_regime": "Risk-Off / technology repricing and policy implementation risk",
+      "report_path": "reports/2026/10/2026-10-17.md",
+      "daily_json_path": "data/daily/2026-10-17.json",
+      "sources_path": "data/sources/2026-10-17.json",
+      "edition": "Morning Official — Historical Reconstruction / 历史补档",
+      "edition_status": "official",
+      "publication_cycle": "morning",
+      "source_mode": "reconstructed_daily",
+      "publication_note": "事后重建；非原生日报"
+    },
+    {
+      "date": "2026-10-16",
+      "thesis": "9月PPI大幅上行扩大企业成本压力，台积电第三季度强劲结果提供先进制程需求证据；但10月15日美债长端回落与美股温和反弹说明市场同时交易增长和融资风险。供应商盈利、客户现金回报与估值折现必须分开验证。 本期为历史补档，未恢复原始发表快照。",
+      "dominant_narrative": "本期历史截点为10月16日09:00 SGT。已公布的9月PPI环比1.3%、同比6.3%，说明企业成本渠道仍紧；台积电第三季美元收入467.2亿美元，Q4美元收入指引523亿至543亿美元属于预测而非订单现金已回收。10月15日S&P 500收于7,744.06、Nasdaq为26,713.03，10年CMT降至5.10%、30年降至5.43%，呈现成本风险与利率缓冲并存。当天稍后美国工业生产尚待发布；10月16日下午才发布的中国技术出口目录信息也不属于本早间截点。",
+      "overall_regime": "Event Risk / producer-cost shock versus duration relief",
+      "report_path": "reports/2026/10/2026-10-16.md",
+      "daily_json_path": "data/daily/2026-10-16.json",
+      "sources_path": "data/sources/2026-10-16.json",
+      "edition": "Morning Official — Historical Reconstruction / 历史补档",
+      "edition_status": "official",
+      "publication_cycle": "morning",
+      "source_mode": "reconstructed_daily",
+      "publication_note": "事后重建；非原生日报"
+    },
+    {
+      "date": "2026-10-15",
+      "thesis": "9月美国CPI的能源推升与10月14日科技股回撤共同收紧估值容错空间，但长端国债并未同步上行。应分开核验通胀构成、银行利润的一次性影响及尚未公布的台积电财报，而不是将全部资产归因为同一个加息交易。 本期为历史补档，未恢复原始发表快照。",
+      "dominant_narrative": "本期在10月19日补写，只使用10月15日09:00 SGT以前可获得的事实。BLS于10月14日公布9月CPI环比0.6%、同比3.7%，汽油上涨9.1%贡献过半月度增量；核心环比0.3%。美国10月14日S&P 500收于7,718.94、Nasdaq收于26,692.87，而国债2年期CMT为4.82%、10年期为5.19%，提示前端政策与长端增长风险的方向并不一致。银行利润要区分报告口径、监管费用与经常性业务；台积电10月15日财报及当晚PPI在本截点仍属待公布，不能倒灌后来结果。",
+      "overall_regime": "Risk-Off / energy inflation and growth-duration de-rating",
+      "report_path": "reports/2026/10/2026-10-15.md",
+      "daily_json_path": "data/daily/2026-10-15.json",
+      "sources_path": "data/sources/2026-10-15.json",
+      "edition": "Morning Official — Historical Reconstruction / 历史补档",
+      "edition_status": "official",
+      "publication_cycle": "morning",
+      "source_mode": "reconstructed_daily",
+      "publication_note": "事后重建；非原生日报"
+    },
+    {
+      "date": "2026-10-14",
+      "thesis": "截至2026-10-14 10:40 SGT（等值2026-10-13 22:40 EDT），美国9月CPI公布前的首要约束仍是银行利润改善但股票回报不一致、AI高资本开支与海湾能源高风险溢价共同压制久期；10月14日新增的中国9月PPI同比+5.0%、CPI同比仅+0.9%揭示供应端成本向居民需求传递不足，新加坡MAS意外维持汇率政策不变。美国10月13日标普500真实收7,805.45点，Brent结算约105.69美元，10年期二级基准美债收益率约5.22%（不同于财政部CMT）；今晚20:30 SGT美国CPI尚未发布，亚洲股市反弹均仅为盘中快照。",
+      "dominant_narrative": "与10月12日主站最近的正式晨报不同，本次已有2026年10月13日美国股债市场收盘和银行Q3真实业绩可验证。AP记录10月13日标普500收7805.45点（−0.02%）、道指51670.10点（−0.35%）、纳指27204.38点（−0.15%）、Russell 2000收2783.37点（−0.40%），大盘轻微下跌掩盖小盘和金融疲弱。Reuters记录10年基准美债收益率下降2.72bp至约5.22%，不是财政部恒定期限收益率；JPM股价约跌0.86%，WFC约跌3.1%，说明报告利润增长并不自动转化为信用质量和股票估值确认。发行人公告高盛EPS17.01美元、收入186.8亿美元；Reuters报道JPM EPS5.57美元低于调查预期，花旗EPS2.85美元高于Reuters一致预测2.66美元。油市Brent约105.69美元下跌0.9%，WTI约94.14美元上涨0.4%，海湾交通与俄罗斯柴油协议不等于原油实物产能变化已获证实。Reuters记录AI资本开支回报及中国存储技术竞争担忧，但此前技术进展不能伪称10月13日新出口管制。10月14日美国08:30 EDT即20:30 SGT正式9月CPI数据尚未公布；随后应以核心与标题CPI不同贡献、UST2Y/10Y同一基准收益率、美元、科技与小盘广度的联合确认来判断风险制度。10月6日和13日同序列股指历史收盘可算5交易日回报，未取得相同合约与日期的外汇、大宗商品5日值必须显式留空。\n【10月14日10:30恢复研究后的重要新增】中国国家统计局于10月14日09:30 SGT公布9月CPI同比+0.9%（8月+0.8%）、核心CPI+1.0%；9月PPI同比+5.0%（8月+3.8%），PPI环比+1.2%。Reuters独立确认PPI超出其调查的+4.5%预期，CPI低于+1.0%调查预期。能源/原材料成本快速抬升而终端需求传导有限，不能把生产成本上涨误当消费全面复苏。 新加坡MAS于10月14日09:12 SGT前发布10月政策决定：S$NEER政策区间斜率、宽度和中点均维持不变；Reuters所询10位分析师此前均预测收紧。MAS不是采用短端政策利率的央行，须观察新元名义有效汇率路径而非伪造政策加息。 Reuters约10月14日09:53 SGT亚洲开市快照显示MSCI亚太除日股约+0.5%、韩国KOSPI约+1.8%、日经约+0.2%，仅为盘中观察，不是今日收盘；14日20:30 SGT的美国9月CPI仍未发布。 这些都是原09:18:35 SGT候选研究之后独立核实的事实，不应倒填到09:00计划时刻；原先10月13日美国正式收盘行情未被今日亚洲盘中快照覆盖。",
+      "overall_regime": "Event Risk / CPI-Day Duration, Bank Earnings and AI Valuation Breadth",
+      "report_path": "reports/2026/10/2026-10-14.md",
+      "daily_json_path": "data/daily/2026-10-14.json",
+      "sources_path": "data/sources/2026-10-14.json",
+      "edition": "Morning Official",
+      "edition_status": "official",
+      "publication_cycle": "morning",
+      "source_mode": "native_daily",
+      "publication_note": "原同期候选延迟补发"
+    },
+    {
+      "date": "2026-10-13",
+      "thesis": "截至2026-10-13 10:39 SGT，全球风险资产的首要约束已由昨日“等待美国周一开市”转为“美国科技股回撤向亚洲半导体传染，同时106.65美元的Brent结算与日本进口价格压力压缩久期容忍度”。美股10月12日收盘标普500 -0.06%、纳指 -0.44%而道指 +0.38%；Reuters 10月13日亚洲盘初记录韩国KOSPI约 -6%、日经约 -2.6%，与美国债券现金市场在周一休市、周二恢复交易的时序错位。今明两个硬裁决依次为美国银行财报/当日现金收益率与10月14日20:30 SGT的9月CPI；截至本次真实截止，这些结果均未公布。",
+      "dominant_narrative": "本期新增的可验证价格发现首先发生在10月12日美国现金股票市场：AP记录标普500收于7,807.24（-0.06%）、Dow 51,850.55（+0.38%）、Nasdaq 27,245.90（-0.44%）、Russell 2,794.48（-0.45%）；周一债券现货休市，故不能把美股横盘归因为10年收益率当日确认下降。其次Reuters于10月13日09:41 SGT前后的亚洲报道记录MSCI亚洲（除日本）约跌2%、韩国约跌6%、日经约跌2.6%，属于盘中快照，非亚洲收盘。能源方面10月12日Brent真正结算106.65美元、WTI 93.74美元，10月13日早些时候Brent 106.04美元与WTI 93.27美元又是新时点快照，不能拼成同一结算回报。OPEC将2026年全球石油需求增速预测调低至40万桶/日，沙特拟扩建或转换旁路输油能力需数周至数年，并非今天恢复的有效运力；日韩能源进口与日本9月PPI同比6.8%的数据使输入型成本冲击更具可证性。IMF把2026年世界增长预估上调至3.1%，强调AI投资托底，但高油价、战争与债务仍限制收益质量。腾讯开始营销多币种债券不代表交易已定价完成或融资已部署。传导验证应依次观察今日亚洲收盘/FX、美国10月13日银行实际财报及现金美债2Y/10Y，再等10月14日08:30 EDT的官方CPI数据。任何停火声明、运输恢复、银行共识和期权Gamma都不能在缺少独立证据时改写为事实。",
+      "overall_regime": "Risk-Off Asia / Energy-Inflation–AI Duration Constraint",
+      "report_path": "reports/2026/10/2026-10-13.md",
+      "daily_json_path": "data/daily/2026-10-13.json",
+      "sources_path": "data/sources/2026-10-13.json",
+      "edition": "Morning Official",
+      "edition_status": "official",
+      "publication_cycle": "morning",
+      "source_mode": "native_daily",
+      "publication_note": "原同期候选延迟补发"
     },
     {
       "date": "2026-10-12",

@@ -1,0 +1,1144 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-10-17",
+  "edition": "Morning Official — Historical Reconstruction / 历史补档",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-10-17 09:00 SGT",
+  "data_cutoff_et": "2026-10-16 21:00 EDT",
+  "last_updated": "2026-10-19T11:49:45+08:00",
+  "source_mode": "reconstructed_daily",
+  "sources_path": "data/sources/2026-10-17.json",
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": false
+  },
+  "reconstruction": {
+    "is_reconstructed": true,
+    "reconstructed_at": "2026-10-19T11:49:45+08:00",
+    "historical_cutoff_sgt": "2026-10-17 09:00 SGT",
+    "limitations": [
+      "2026年10月19日事后重建，不是找到原09:00稿件，分析/排序/情景是重建判断；不计原生日报。",
+      "历史信息截止为该日09:00 SGT；不使用该日之后公布的财报、宏观结果或美国现金收盘。",
+      "行情来自修复时获取的历史日度序列，并非原始盘中快照；数据版本修订及提供方发布滞后不可完全还原。",
+      "Europe Brent spot、固定月份期货、Broad USD和DXY不能拼接；落后于参考交易日的观测单独标记，未前向填充。",
+      "全量指数变更、ETF篮子、机构净流、dealer gamma、拍卖WI/尾差以及历史财报一致预期和完整会计调整桥未恢复；资料缺失不代表无事件。",
+      "原始网页部分无法直接抓取，采用可验证官方索引摘录与独立报道交叉检查；来源引用可解析不代表原网页全部归档。"
+    ],
+    "market_session": "2026-10-16"
+  },
+  "run_timing": {
+    "scheduled_for_sgt": "2026-10-17T09:00:00+08:00",
+    "reconstructed_at_sgt": "2026-10-19T11:49:45+08:00",
+    "historical_cutoff_sgt": "2026-10-17 09:00 SGT",
+    "mode": "historical_backfill"
+  },
+  "thesis": "科技股与波动率的10月16日价格反应显示风险溢价上升，中国技术出口目录调整的征求意见与临时登记机制又增加交易执行不确定性。美国工业生产总量改善并不等于制造业普遍加速，周末评估应保留政策阶段、部门差异和休市边界。 本期为历史补档，未恢复原始发表快照。",
+  "dominant_narrative": "本期在10月19日重建10月17日09:00 SGT的信息集，没有周六美国收盘。10月16日Nasdaq收于26,140.03，S&P 500为7,659.44；Cboe VIX收于19.99。商务部已公布涉及40项技术的出口目录修订征求意见，23项AI、5项生物、12项太阳能；目录草案与过渡期登记要求不是同一法律状态，不能概括为40项技术已全面禁止出口。美国9月工业生产环比0.7%，制造业仅0.3%，公用事业3.5%贡献较大。央行与市场风险定价须结合这些结构，而不是把工业总量或单家代工财报当作统一增长信号。",
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,659.44",
+      "change_1d": "-1.09%",
+      "change_5d": "-1.95%",
+      "signal": "历史观测；不等于截点实时报价",
+      "driver": "资金成本、风险偏好与现金流的交叉验证；不同标的和数据发布时滞分别披露。",
+      "status": "历史前一交易日观测",
+      "as_of": "2026-10-16 previous-session historical observation; retrieved 2026-10-19T11:49:45+08:00",
+      "sources": [
+        "S03",
+        "S22"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-10-16",
+        "original_snapshot_recovered": false,
+        "level": 7659.44,
+        "change_1d": -1.09270848,
+        "change_5d": -1.94711926,
+        "change_unit": "%",
+        "series_id": "SP500",
+        "vintage_note": "Current retrieved historical vintage, not an original contemporaneous database snapshot; same-instrument observation-to-observation returns; 5D means five observed sessions, not five calendar days."
+      },
+      "coverage_note": "Prior completed session; no report-date future U.S. close."
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "26,140.03",
+      "change_1d": "-2.15%",
+      "change_5d": "-4.48%",
+      "signal": "历史观测；不等于截点实时报价",
+      "driver": "资金成本、风险偏好与现金流的交叉验证；不同标的和数据发布时滞分别披露。",
+      "status": "历史前一交易日观测",
+      "as_of": "2026-10-16 previous-session historical observation; retrieved 2026-10-19T11:49:45+08:00",
+      "sources": [
+        "S04",
+        "S22"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-10-16",
+        "original_snapshot_recovered": false,
+        "level": 26140.03,
+        "change_1d": -2.14502061,
+        "change_5d": -4.48049544,
+        "change_unit": "%",
+        "series_id": "NASDAQCOM",
+        "vintage_note": "Current retrieved historical vintage, not an original contemporaneous database snapshot; same-instrument observation-to-observation returns; 5D means five observed sessions, not five calendar days."
+      },
+      "coverage_note": "Prior completed session; no report-date future U.S. close."
+    },
+    {
+      "asset": "Dow Jones Industrial Average",
+      "level": "52,002.41",
+      "change_1d": "-0.34%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "历史观测；不等于截点实时报价",
+      "driver": "资金成本、风险偏好与现金流的交叉验证；不同标的和数据发布时滞分别披露。",
+      "status": "历史前一交易日观测",
+      "as_of": "2026-10-16 previous-session historical observation; retrieved 2026-10-19T11:49:45+08:00",
+      "sources": [
+        "S22"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-10-16",
+        "original_snapshot_recovered": false,
+        "level": 52002.41,
+        "change_1d": -0.33592901,
+        "change_5d": null,
+        "change_unit": "%",
+        "series_id": "DOW",
+        "vintage_note": "Current retrieved historical vintage, not an original contemporaneous database snapshot; same-instrument observation-to-observation returns; 5D means five observed sessions, not five calendar days."
+      },
+      "coverage_note": "Prior completed session; no report-date future U.S. close."
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,721.37",
+      "change_1d": "-1.66%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "历史观测；不等于截点实时报价",
+      "driver": "资金成本、风险偏好与现金流的交叉验证；不同标的和数据发布时滞分别披露。",
+      "status": "历史前一交易日观测",
+      "as_of": "2026-10-16 previous-session historical observation; retrieved 2026-10-19T11:49:45+08:00",
+      "sources": [
+        "S22"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-10-16",
+        "original_snapshot_recovered": false,
+        "level": 2721.37,
+        "change_1d": -1.65867443,
+        "change_5d": null,
+        "change_unit": "%",
+        "series_id": "RUT",
+        "vintage_note": "Current retrieved historical vintage, not an original contemporaneous database snapshot; same-instrument observation-to-observation returns; 5D means five observed sessions, not five calendar days."
+      },
+      "coverage_note": "Prior completed session; no report-date future U.S. close."
+    },
+    {
+      "asset": "VIX",
+      "level": "19.99",
+      "change_1d": "+21.45%",
+      "change_5d": "+34.70%",
+      "signal": "历史观测；不等于截点实时报价",
+      "driver": "资金成本、风险偏好与现金流的交叉验证；不同标的和数据发布时滞分别披露。",
+      "status": "历史前一交易日观测",
+      "as_of": "2026-10-16 previous-session historical observation; retrieved 2026-10-19T11:49:45+08:00",
+      "sources": [
+        "S02"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-10-16",
+        "original_snapshot_recovered": false,
+        "level": 19.99,
+        "change_1d": 21.44592953,
+        "change_5d": 34.70350404,
+        "change_unit": "%",
+        "series_id": "VIXCLS",
+        "vintage_note": "Current retrieved historical vintage, not an original contemporaneous database snapshot; same-instrument observation-to-observation returns; 5D means five observed sessions, not five calendar days."
+      },
+      "coverage_note": "Prior completed session; no report-date future U.S. close."
+    },
+    {
+      "asset": "UST 2Y",
+      "level": "4.74%",
+      "change_1d": "-3.00bp",
+      "change_5d": "-1.00bp",
+      "signal": "历史观测；不等于截点实时报价",
+      "driver": "资金成本、风险偏好与现金流的交叉验证；不同标的和数据发布时滞分别披露。",
+      "status": "历史前一交易日观测",
+      "as_of": "2026-10-16 previous-session historical observation; retrieved 2026-10-19T11:49:45+08:00",
+      "sources": [
+        "S01"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-10-16",
+        "original_snapshot_recovered": false,
+        "level": 4.74,
+        "change_1d": -3.0,
+        "change_5d": -1.0,
+        "change_unit": "bp",
+        "series_id": "UST2",
+        "vintage_note": "Current retrieved historical vintage, not an original contemporaneous database snapshot; same-instrument observation-to-observation returns; 5D means five observed sessions, not five calendar days."
+      },
+      "coverage_note": "Prior completed session; no report-date future U.S. close."
+    },
+    {
+      "asset": "UST 5Y",
+      "level": "4.89%",
+      "change_1d": "-2.00bp",
+      "change_5d": "-10.00bp",
+      "signal": "历史观测；不等于截点实时报价",
+      "driver": "资金成本、风险偏好与现金流的交叉验证；不同标的和数据发布时滞分别披露。",
+      "status": "历史前一交易日观测",
+      "as_of": "2026-10-16 previous-session historical observation; retrieved 2026-10-19T11:49:45+08:00",
+      "sources": [
+        "S01"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-10-16",
+        "original_snapshot_recovered": false,
+        "level": 4.89,
+        "change_1d": -2.0,
+        "change_5d": -10.0,
+        "change_unit": "bp",
+        "series_id": "UST5",
+        "vintage_note": "Current retrieved historical vintage, not an original contemporaneous database snapshot; same-instrument observation-to-observation returns; 5D means five observed sessions, not five calendar days."
+      },
+      "coverage_note": "Prior completed session; no report-date future U.S. close."
+    },
+    {
+      "asset": "UST 10Y",
+      "level": "5.09%",
+      "change_1d": "-1.00bp",
+      "change_5d": "-13.00bp",
+      "signal": "历史观测；不等于截点实时报价",
+      "driver": "资金成本、风险偏好与现金流的交叉验证；不同标的和数据发布时滞分别披露。",
+      "status": "历史前一交易日观测",
+      "as_of": "2026-10-16 previous-session historical observation; retrieved 2026-10-19T11:49:45+08:00",
+      "sources": [
+        "S01"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-10-16",
+        "original_snapshot_recovered": false,
+        "level": 5.09,
+        "change_1d": -1.0,
+        "change_5d": -13.0,
+        "change_unit": "bp",
+        "series_id": "UST10",
+        "vintage_note": "Current retrieved historical vintage, not an original contemporaneous database snapshot; same-instrument observation-to-observation returns; 5D means five observed sessions, not five calendar days."
+      },
+      "coverage_note": "Prior completed session; no report-date future U.S. close."
+    },
+    {
+      "asset": "UST 30Y",
+      "level": "5.43%",
+      "change_1d": "+0.00bp",
+      "change_5d": "-17.00bp",
+      "signal": "历史观测；不等于截点实时报价",
+      "driver": "资金成本、风险偏好与现金流的交叉验证；不同标的和数据发布时滞分别披露。",
+      "status": "历史前一交易日观测",
+      "as_of": "2026-10-16 previous-session historical observation; retrieved 2026-10-19T11:49:45+08:00",
+      "sources": [
+        "S01"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-10-16",
+        "original_snapshot_recovered": false,
+        "level": 5.43,
+        "change_1d": 0.0,
+        "change_5d": -17.0,
+        "change_unit": "bp",
+        "series_id": "UST30",
+        "vintage_note": "Current retrieved historical vintage, not an original contemporaneous database snapshot; same-instrument observation-to-observation returns; 5D means five observed sessions, not five calendar days."
+      },
+      "coverage_note": "Prior completed session; no report-date future U.S. close."
+    },
+    {
+      "asset": "UST 2s10s",
+      "level": "35.00bp",
+      "change_1d": "+2.00bp",
+      "change_5d": "-12.00bp",
+      "signal": "历史观测；不等于截点实时报价",
+      "driver": "资金成本、风险偏好与现金流的交叉验证；不同标的和数据发布时滞分别披露。",
+      "status": "历史前一交易日观测",
+      "as_of": "2026-10-16 previous-session historical observation; retrieved 2026-10-19T11:49:45+08:00",
+      "sources": [
+        "S01"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-10-16",
+        "original_snapshot_recovered": false,
+        "level": 35.0,
+        "change_1d": 2.0,
+        "change_5d": -12.0,
+        "change_unit": "bp",
+        "series_id": "2s10s",
+        "vintage_note": "Current retrieved historical vintage, not an original contemporaneous database snapshot; same-instrument observation-to-observation returns; 5D means five observed sessions, not five calendar days."
+      },
+      "coverage_note": "Prior completed session; no report-date future U.S. close."
+    },
+    {
+      "asset": "UST 10s30s",
+      "level": "34.00bp",
+      "change_1d": "+1.00bp",
+      "change_5d": "-4.00bp",
+      "signal": "历史观测；不等于截点实时报价",
+      "driver": "资金成本、风险偏好与现金流的交叉验证；不同标的和数据发布时滞分别披露。",
+      "status": "历史前一交易日观测",
+      "as_of": "2026-10-16 previous-session historical observation; retrieved 2026-10-19T11:49:45+08:00",
+      "sources": [
+        "S01"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-10-16",
+        "original_snapshot_recovered": false,
+        "level": 34.0,
+        "change_1d": 1.0,
+        "change_5d": -4.0,
+        "change_unit": "bp",
+        "series_id": "10s30s",
+        "vintage_note": "Current retrieved historical vintage, not an original contemporaneous database snapshot; same-instrument observation-to-observation returns; 5D means five observed sessions, not five calendar days."
+      },
+      "coverage_note": "Prior completed session; no report-date future U.S. close."
+    },
+    {
+      "asset": "Europe Brent Spot",
+      "level": "126.55",
+      "change_1d": "+0.61%",
+      "change_5d": "+0.44%",
+      "signal": "历史观测；不等于截点实时报价",
+      "driver": "资金成本、风险偏好与现金流的交叉验证；不同标的和数据发布时滞分别披露。",
+      "status": "历史序列/滞后观测",
+      "as_of": "2026-10-14 previous-session historical observation; retrieved 2026-10-19T11:49:45+08:00",
+      "sources": [
+        "S05"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-10-14",
+        "original_snapshot_recovered": false,
+        "level": 126.55,
+        "change_1d": 0.61218,
+        "change_5d": 0.43650794,
+        "change_unit": "%",
+        "series_id": "DCOILBRENTEU",
+        "vintage_note": "Current retrieved historical vintage, not an original contemporaneous database snapshot; same-instrument observation-to-observation returns; 5D means five observed sessions, not five calendar days."
+      },
+      "coverage_note": "Provider observation is older than report reference session; not counted as fresh-session coverage."
+    },
+    {
+      "asset": "Broad Trade-Weighted USD",
+      "level": "121.60",
+      "change_1d": "+0.13%",
+      "change_5d": "+0.18%",
+      "signal": "历史观测；不等于截点实时报价",
+      "driver": "资金成本、风险偏好与现金流的交叉验证；不同标的和数据发布时滞分别披露。",
+      "status": "历史序列/滞后观测",
+      "as_of": "2026-10-09 previous-session historical observation; retrieved 2026-10-19T11:49:45+08:00",
+      "sources": [
+        "S06"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-10-09",
+        "original_snapshot_recovered": false,
+        "level": 121.6023,
+        "change_1d": 0.12795716,
+        "change_5d": 0.17918224,
+        "change_unit": "%",
+        "series_id": "DTWEXBGS",
+        "vintage_note": "Current retrieved historical vintage, not an original contemporaneous database snapshot; same-instrument observation-to-observation returns; 5D means five observed sessions, not five calendar days."
+      },
+      "coverage_note": "Provider observation is older than report reference session; not counted as fresh-session coverage."
+    },
+    {
+      "asset": "US High Yield OAS",
+      "level": "3.23%",
+      "change_1d": "-2.00bp",
+      "change_5d": "+8.00bp",
+      "signal": "历史观测；不等于截点实时报价",
+      "driver": "资金成本、风险偏好与现金流的交叉验证；不同标的和数据发布时滞分别披露。",
+      "status": "历史序列/滞后观测",
+      "as_of": "2026-10-15 previous-session historical observation; retrieved 2026-10-19T11:49:45+08:00",
+      "sources": [
+        "S07"
+      ],
+      "recovery_observation": {
+        "session_date": "2026-10-15",
+        "original_snapshot_recovered": false,
+        "level": 3.23,
+        "change_1d": -2.0,
+        "change_5d": 8.0,
+        "change_unit": "bp",
+        "series_id": "BAMLH0A0HYM2",
+        "vintage_note": "Current retrieved historical vintage, not an original contemporaneous database snapshot; same-instrument observation-to-observation returns; 5D means five observed sessions, not five calendar days."
+      },
+      "coverage_note": "Provider observation is older than report reference session; not counted as fresh-session coverage."
+    }
+  ],
+  "market_tape_data_quality": {
+    "asset_count": 14,
+    "publish_status": "HISTORICAL_RECONSTRUCTION_WITH_VINTAGE_AND_LAG_DISCLOSURE",
+    "explicit_gaps": [
+      "Dow Jones Industrial Average: 5D 尚无法可靠确认",
+      "Russell 2000: 5D 尚无法可靠确认"
+    ],
+    "level_coverage": {
+      "count": 14,
+      "total": 14,
+      "pct": 100.0,
+      "target_pct": 90
+    },
+    "change_1d_coverage": {
+      "count": 14,
+      "total": 14,
+      "pct": 100.0,
+      "target_pct": 90
+    },
+    "change_5d_coverage": {
+      "count": 12,
+      "total": 14,
+      "pct": 85.7,
+      "target_pct": 80
+    },
+    "fresh_session_coverage": {
+      "count": 11,
+      "total": 14,
+      "reference_session": "2026-10-16",
+      "note": "Verified historical values and same-session freshness are distinct. Lagged Brent/HY/broad USD remain dated, never filled forward."
+    },
+    "policy": "CMT yields are not Yahoo TNX; Europe Brent spot is not ICE futures; broad trade-weighted USD is not DXY. Missing original vintage, tape-wide synchronized snapshot and some 5D observations remain disclosed."
+  },
+  "comparison_basis": {
+    "kind": "historical_point_in_time",
+    "note": "比较前一可核实交易日和已在本截点公布的结果；不是今日交易建议。"
+  },
+  "what_changed": [
+    "中国40项技术出口目录草案与临时登记需要分开识别：出口执行时间、许可适用范围与合同交付是可验证路径；不能仅凭草案推算出口数量或收入损失。",
+    "Nasdaq下跌约2.1%并伴随VIX升至19.99：风险溢价与融资敏感资产首先承压，后续需要股票广度、信用价差及企业盈利共同确认，而非单看VIX。",
+    "美国工业生产0.7%增幅由部门结构而非普遍扩张驱动：需求验证应看制造业和企业订单，而非将天气敏感公用事业跳升外推为全经济加速；增长与成本须分别定价。"
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "中国40项技术出口目录草案与临时登记需要分开识别",
+      "importance": "★★★★★",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-16 04:00 EDT",
+      "event_time_sgt": "2026-10-16 16:00 SGT",
+      "what_happened": "商务部材料及Reuters报道涉及40项拟增技术：23项人工智能、5项生物技术、12项太阳能。征求意见中的目录调整并非全部已经生效的禁令；过渡期登记安排则可能先影响交易流程。",
+      "what_changed": "出口执行时间、许可适用范围与合同交付是可验证路径；不能仅凭草案推算出口数量或收入损失。 应与前一已知状态比较，不填入截点后的结果。",
+      "why_it_matters": "出口执行时间、许可适用范围与合同交付是可验证路径；不能仅凭草案推算出口数量或收入损失。 对盈利质量、贴现率和风险溢价分别验证。",
+      "transmission": "出口执行时间、许可适用范围与合同交付是可验证路径；不能仅凭草案推算出口数量或收入损失。",
+      "direction": "Two-sided / conditional market impact",
+      "affected_assets": [
+        "U.S. equities",
+        "Treasury curve",
+        "Sector and credit instruments"
+      ],
+      "confirmation": "只有相关资产价格、来源中的执行节点与后续经营数据一致，才加强这条传导判断；不预设数值门槛。",
+      "invalidation": "如果成本、执行或融资渠道没有按上述路径变化，应撤回单一因果解释，并保留其他驱动因素的可能。",
+      "theme_id": "us_china_trade_controls",
+      "state": "active",
+      "lifecycle_status": "active",
+      "sources": [
+        "S16",
+        "S17"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "Nasdaq下跌约2.1%并伴随VIX升至19.99",
+      "importance": "★★★★★",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-16 16:00 EDT",
+      "event_time_sgt": "2026-10-17 04:00 SGT",
+      "what_happened": "10月16日Nasdaq收于26,140.03、S&P 500为7,659.44，Russell 2000为2,721.37；VIX收19.99。股票与隐含波动率显示压力，但VIX本身不是做市商gamma或未来下跌概率。",
+      "what_changed": "风险溢价与融资敏感资产首先承压，后续需要股票广度、信用价差及企业盈利共同确认，而非单看VIX。 应与前一已知状态比较，不填入截点后的结果。",
+      "why_it_matters": "风险溢价与融资敏感资产首先承压，后续需要股票广度、信用价差及企业盈利共同确认，而非单看VIX。 对盈利质量、贴现率和风险溢价分别验证。",
+      "transmission": "风险溢价与融资敏感资产首先承压，后续需要股票广度、信用价差及企业盈利共同确认，而非单看VIX。",
+      "direction": "Two-sided / conditional market impact",
+      "affected_assets": [
+        "U.S. equities",
+        "Treasury curve",
+        "Sector and credit instruments"
+      ],
+      "confirmation": "只有相关资产价格、来源中的执行节点与后续经营数据一致，才加强这条传导判断；不预设数值门槛。",
+      "invalidation": "如果成本、执行或融资渠道没有按上述路径变化，应撤回单一因果解释，并保留其他驱动因素的可能。",
+      "theme_id": "volatility_event_risk",
+      "state": "active",
+      "lifecycle_status": "active",
+      "sources": [
+        "S22",
+        "S02"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "美国工业生产0.7%增幅由部门结构而非普遍扩张驱动",
+      "importance": "★★★★",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-16 09:15 EDT release; 10:18 EDT report",
+      "event_time_sgt": "2026-10-16 21:15 SGT release",
+      "what_happened": "根据DPA对美联储公布数据的报道，9月工业生产环比0.7%，其中制造业0.3%、采矿0.2%、公用事业3.5%；产能利用率76.9%。总工业增幅不能替代制造业增幅或GDP判断。",
+      "what_changed": "需求验证应看制造业和企业订单，而非将天气敏感公用事业跳升外推为全经济加速；增长与成本须分别定价。 应与前一已知状态比较，不填入截点后的结果。",
+      "why_it_matters": "需求验证应看制造业和企业订单，而非将天气敏感公用事业跳升外推为全经济加速；增长与成本须分别定价。 对盈利质量、贴现率和风险溢价分别验证。",
+      "transmission": "需求验证应看制造业和企业订单，而非将天气敏感公用事业跳升外推为全经济加速；增长与成本须分别定价。",
+      "direction": "Two-sided / conditional market impact",
+      "affected_assets": [
+        "U.S. equities",
+        "Treasury curve",
+        "Sector and credit instruments"
+      ],
+      "confirmation": "只有相关资产价格、来源中的执行节点与后续经营数据一致，才加强这条传导判断；不预设数值门槛。",
+      "invalidation": "如果成本、执行或融资渠道没有按上述路径变化，应撤回单一因果解释，并保留其他驱动因素的可能。",
+      "theme_id": "equity_risk_appetite",
+      "state": "active",
+      "lifecycle_status": "active",
+      "sources": [
+        "S18"
+      ]
+    }
+  ],
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "Growth / demand",
+      "current": "↕ 工业总量与制造业增幅分化",
+      "yesterday": "前日可核实状态与本截点不同；不虚构历史评分",
+      "change_reason": "工业与权益只能提供不同需求观察，不把代理指标当作总体经济增长。",
+      "evidence": "根据DPA对美联储公布数据的报道，9月工业生产环比0.7%，其中制造业0.3%、采矿0.2%、公用事业3.5%；产能利用率76.9%。总工业增幅不能替代制造业增幅或GDP判断。",
+      "sources": [
+        "S18"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "Inflation / costs",
+      "current": "↑ 生产成本约束仍在",
+      "yesterday": "前日可核实状态与本截点不同；不虚构历史评分",
+      "change_reason": "成本变化需经提价能力和终端需求影响利润，不能等同于立即的政策决定。",
+      "evidence": "BLS于10月15日公布9月PPI环比1.3%、同比6.3%；企业成本压力尚不能直接等同于消费者价格。",
+      "sources": [
+        "S14",
+        "S24"
+      ]
+    },
+    "rates_pressure": {
+      "label": "Rates / duration",
+      "current": "↓ CMT长端较此前下行",
+      "yesterday": "前日可核实状态与本截点不同；不虚构历史评分",
+      "change_reason": "不同期限收益率体现政策、增长与期限溢价；曲线变化不能简化为所有利率同向。",
+      "evidence": "UST 2Y 4.74% (-3.00bp); UST 10Y 5.09% (-1.00bp); UST 30Y 5.43% (+0.00bp)",
+      "sources": [
+        "S01"
+      ]
+    },
+    "earnings_revision": {
+      "label": "Earnings quality",
+      "current": "↕ 代工需求与科技估值分化",
+      "yesterday": "前日可核实状态与本截点不同；不虚构历史评分",
+      "change_reason": "报告收入、会计利润与现金回收不同，指引也不能当已实现收益。",
+      "evidence": "TSMC Q3美元收入467.2亿美元的已公布实绩，与10月16日Nasdaq收于26,140.03的科技估值回撤并存。",
+      "sources": [
+        "S15",
+        "S23",
+        "S22"
+      ]
+    },
+    "liquidity": {
+      "label": "Financial conditions",
+      "current": "↓ 风险溢价和融资压力",
+      "yesterday": "前日可核实状态与本截点不同；不虚构历史评分",
+      "change_reason": "信用价差与波动率用于金融条件观察，不等于已恢复基金申赎或银行准备金。",
+      "evidence": "VIX 19.99 as of 2026-10-16; US High Yield OAS 3.23% as of 2026-10-15",
+      "sources": [
+        "S07",
+        "S02"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "Policy / geopolitical risk",
+      "current": "↑ 政策与交付尾部风险",
+      "yesterday": "前日可核实状态与本截点不同；不虚构历史评分",
+      "change_reason": "政策及供给不确定性通过许可、交付和风险溢价传导，不预判未公布执行结果。",
+      "evidence": "商务部材料及Reuters报道涉及40项拟增技术：23项人工智能、5项生物技术、12项太阳能。征求意见中的目录调整并非全部已经生效的禁令；过渡期登记安排则可能先影响交易流程。",
+      "sources": [
+        "S16",
+        "S17"
+      ]
+    }
+  },
+  "market_regime": {
+    "growth": {
+      "state": "↕ 工业总量与制造业增幅分化",
+      "evidence": "根据DPA对美联储公布数据的报道，9月工业生产环比0.7%，其中制造业0.3%、采矿0.2%、公用事业3.5%；产能利用率76.9%。总工业增幅不能替代制造业增幅或GDP判断。",
+      "sources": [
+        "S18"
+      ]
+    },
+    "inflation": {
+      "state": "↑ 生产成本约束仍在",
+      "evidence": "BLS于10月15日公布9月PPI环比1.3%、同比6.3%；企业成本压力尚不能直接等同于消费者价格。",
+      "sources": [
+        "S14",
+        "S24"
+      ]
+    },
+    "rates": {
+      "state": "↓ CMT长端较此前下行",
+      "evidence": "UST 2Y 4.74% (-3.00bp); UST 10Y 5.09% (-1.00bp); UST 30Y 5.43% (+0.00bp)",
+      "sources": [
+        "S01"
+      ]
+    },
+    "earnings": {
+      "state": "↕ 代工需求与科技估值分化",
+      "evidence": "TSMC Q3美元收入467.2亿美元的已公布实绩，与10月16日Nasdaq收于26,140.03的科技估值回撤并存。",
+      "sources": [
+        "S15",
+        "S23",
+        "S22"
+      ]
+    },
+    "liquidity": {
+      "state": "↓ 风险溢价和融资压力",
+      "evidence": "VIX 19.99 as of 2026-10-16; US High Yield OAS 3.23% as of 2026-10-15",
+      "sources": [
+        "S07",
+        "S02"
+      ]
+    },
+    "geopolitics": {
+      "state": "↑ 政策与交付尾部风险",
+      "evidence": "商务部材料及Reuters报道涉及40项拟增技术：23项人工智能、5项生物技术、12项太阳能。征求意见中的目录调整并非全部已经生效的禁令；过渡期登记安排则可能先影响交易流程。",
+      "sources": [
+        "S16",
+        "S17"
+      ]
+    },
+    "overall": {
+      "state": "Risk-Off / technology repricing and policy implementation risk",
+      "evidence": "科技股与波动率的10月16日价格反应显示风险溢价上升，中国技术出口目录调整的征求意见与临时登记机制又增加交易执行不确定性。美国工业生产总量改善并不等于制造业普遍加速，周末评估应保留政策阶段、部门差异和休市边界。",
+      "sources": [
+        "S02",
+        "S16",
+        "S17",
+        "S18",
+        "S22"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base / 条件基准",
+      "probability": "条件情景，非统计概率",
+      "trigger": "已公布的成本与盈利分化继续存在，但执行或融资未出现新冲击。",
+      "expected_market_reaction": "股债可能继续分化，风险偏好修复依赖信用与盈利验证，不假设趋势直线外推。",
+      "assets_most_sensitive": [
+        "U.S. growth equities",
+        "Treasuries",
+        "Credit spreads"
+      ],
+      "what_confirms_it": "曲线、信用价差与股指相对表现仍符合当前分化模式。",
+      "what_invalidates_it": "出现已确认的政策执行、成本或融资状态重大改变。"
+    },
+    "bull_case": {
+      "label": "Bull / 条件改善",
+      "probability": "条件情景，非统计概率",
+      "trigger": "成本压力缓和且已公布企业实绩能转化为现金回收。",
+      "expected_market_reaction": "长久期与周期资产可能获得支撑；需观察上涨广度，不只跟随单一龙头。",
+      "assets_most_sensitive": [
+        "U.S. growth equities",
+        "Treasuries",
+        "Credit spreads"
+      ],
+      "what_confirms_it": "股票上涨同时有风险溢价收窄及融资条件稳定配合。",
+      "what_invalidates_it": "风险溢价扩大或新增现金流约束抵消折现率改善。"
+    },
+    "bear_case": {
+      "label": "Bear / 条件恶化",
+      "probability": "条件情景，非统计概率",
+      "trigger": "成本无法转嫁、政策交付受阻或融资压力进一步上升。",
+      "expected_market_reaction": "高资本开支与高估值资产更敏感；国债反应仍取决于通胀与增长主导渠道。",
+      "assets_most_sensitive": [
+        "U.S. growth equities",
+        "Treasuries",
+        "Credit spreads"
+      ],
+      "what_confirms_it": "权益广度走弱同时信用风险补偿上升，且有基本面执行证据。",
+      "what_invalidates_it": "订单、经营现金流和融资安排的可靠改善否定了压力扩散。"
+    }
+  },
+  "next_catalyst": {
+    "event": "US cash equity market Monday reopening",
+    "status": "Confirmed Upcoming",
+    "date": "2026-10-19",
+    "et": "09:30 EDT",
+    "sgt": "21:30 SGT",
+    "consensus": "尚无法可靠确认",
+    "previous": "参照本截点已经公布的数据，不将未来实际值代填",
+    "actual": "待公布",
+    "why_it_matters": "下一可观察窗口用于验证当前成本、盈利或市场风险假设；事件本身并不保证单边价格变化。",
+    "first_market": "相关现货/期货与国债曲线",
+    "bull_interpretation": "实绩或市场价格同时显示经营与融资压力缓和。",
+    "bear_interpretation": "新增结果进一步压缩现金流或抬升风险补偿。",
+    "watch_first": [
+      "先核对官方发布时间与实际值，再比较市场预期；无法恢复共识时不宣称超预期。",
+      "再看权益广度、相关行业和国债曲线是否同向确认，不用单一资产价格代替完整判断。"
+    ],
+    "sources": [
+      "S19"
+    ]
+  },
+  "upcoming_market_watch": [
+    {
+      "event": "US cash equity market Monday reopening",
+      "status": "Confirmed Upcoming",
+      "date": "2026-10-19",
+      "et": "09:30 EDT",
+      "sgt": "21:30 SGT",
+      "consensus": "尚无法可靠确认",
+      "previous": "参照本截点已经公布的数据，不将未来实际值代填",
+      "actual": "待公布",
+      "why_it_matters": "下一可观察窗口用于验证当前成本、盈利或市场风险假设；事件本身并不保证单边价格变化。",
+      "sources": [
+        "S19"
+      ],
+      "importance": "★★★★"
+    }
+  ],
+  "top_risks": [
+    {
+      "rank": 1,
+      "risk": "成本压力与实际需求之间的利润挤压",
+      "why_not_fully_priced": "价格反应只能显示当时风险补偿，不能证明所有执行条件已兑现；部分底层资料未恢复，不能据此断言已经充分定价。",
+      "trigger": "官方数据、执行安排或经营现金流出现可验证的增量变化。",
+      "transmission": "事实变化→企业现金流或融资成本→风险补偿→相关资产价格；每个环节都需要独立证据。",
+      "first_asset": "相关行业权益、国债曲线及信用工具",
+      "theme_id": "energy_inflation",
+      "state": "active",
+      "lifecycle_status": "active",
+      "sources": [
+        "S18",
+        "S14"
+      ]
+    },
+    {
+      "rank": 2,
+      "risk": "利率缓冲不能覆盖信用和现金回收风险",
+      "why_not_fully_priced": "价格反应只能显示当时风险补偿，不能证明所有执行条件已兑现；部分底层资料未恢复，不能据此断言已经充分定价。",
+      "trigger": "官方数据、执行安排或经营现金流出现可验证的增量变化。",
+      "transmission": "事实变化→企业现金流或融资成本→风险补偿→相关资产价格；每个环节都需要独立证据。",
+      "first_asset": "相关行业权益、国债曲线及信用工具",
+      "theme_id": "global_duration",
+      "state": "active",
+      "lifecycle_status": "active",
+      "sources": [
+        "S01",
+        "S07"
+      ]
+    },
+    {
+      "rank": 3,
+      "risk": "事件执行与交易时段错位造成错误确认",
+      "why_not_fully_priced": "价格反应只能显示当时风险补偿，不能证明所有执行条件已兑现；部分底层资料未恢复，不能据此断言已经充分定价。",
+      "trigger": "官方数据、执行安排或经营现金流出现可验证的增量变化。",
+      "transmission": "事实变化→企业现金流或融资成本→风险补偿→相关资产价格；每个环节都需要独立证据。",
+      "first_asset": "相关行业权益、国债曲线及信用工具",
+      "theme_id": "market_structure",
+      "state": "active",
+      "lifecycle_status": "active",
+      "sources": [
+        "S16",
+        "S17"
+      ]
+    }
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "核心催化剂",
+      "status": "历史时点重建 / evidence-limited",
+      "summary": "商务部材料及Reuters报道涉及40项拟增技术：23项人工智能、5项生物技术、12项太阳能。征求意见中的目录调整并非全部已经生效的禁令；过渡期登记安排则可能先影响交易流程。 出口执行时间、许可适用范围与合同交付是可验证路径；不能仅凭草案推算出口数量或收入损失。",
+      "paragraphs": [
+        "商务部材料及Reuters报道涉及40项拟增技术：23项人工智能、5项生物技术、12项太阳能。征求意见中的目录调整并非全部已经生效的禁令；过渡期登记安排则可能先影响交易流程。 出口执行时间、许可适用范围与合同交付是可验证路径；不能仅凭草案推算出口数量或收入损失。",
+        "10月16日Nasdaq收于26,140.03、S&P 500为7,659.44，Russell 2000为2,721.37；VIX收19.99。股票与隐含波动率显示压力，但VIX本身不是做市商gamma或未来下跌概率。 风险溢价与融资敏感资产首先承压，后续需要股票广度、信用价差及企业盈利共同确认，而非单看VIX。",
+        "根据DPA对美联储公布数据的报道，9月工业生产环比0.7%，其中制造业0.3%、采矿0.2%、公用事业3.5%；产能利用率76.9%。总工业增幅不能替代制造业增幅或GDP判断。 需求验证应看制造业和企业订单，而非将天气敏感公用事业跳升外推为全经济加速；增长与成本须分别定价。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S16",
+        "S17",
+        "S18",
+        "S22"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "重要财报与盈利质量",
+      "status": "历史时点重建 / evidence-limited",
+      "summary": "台积电10月15日已公布结果仍是半导体需求观察，但不是10月16日新财报；未恢复全面当日财报与历史一致预期，不能用单一公司外推整个产业盈利。",
+      "paragraphs": [
+        "台积电10月15日已公布结果仍是半导体需求观察，但不是10月16日新财报；未恢复全面当日财报与历史一致预期，不能用单一公司外推整个产业盈利。"
+      ],
+      "tables": [],
+      "sources": [
+        "S15",
+        "S23"
+      ],
+      "reported": [
+        {
+          "id": "TSM-2026Q3",
+          "company": "Taiwan Semiconductor Manufacturing",
+          "ticker": "TSM",
+          "period": "2026 Q3",
+          "status": "Released/Occurred",
+          "release_date": "2026-10-15",
+          "release_time_et": "2026-10-15 02:00 EDT conference",
+          "release_time_sgt": "2026-10-15 14:00 SGT conference",
+          "market_session": "Taiwan earnings-release day / U.S. premarket",
+          "key_takeaway": "先进制程需求已在当季收入中实现；未来指引仍需交付，且不能代替下游客户的融资质量或最终投资回报。",
+          "metrics": [
+            {
+              "metric": "Revenue",
+              "actual": "US$46.72bn",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "尚无法可靠确认",
+              "surprise": "未恢复历史一致预期，不计算虚构surprise",
+              "notes": "Issuer-reported period and currency preserved; no estimated adjustment bridge."
+            },
+            {
+              "metric": "Net income",
+              "actual": "NT$763.06bn",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "尚无法可靠确认",
+              "surprise": "未恢复历史一致预期，不计算虚构surprise",
+              "notes": "Issuer-reported period and currency preserved; no estimated adjustment bridge."
+            },
+            {
+              "metric": "Diluted EPS",
+              "actual": "NT$29.43 / US$4.60 per ADR",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "尚无法可靠确认",
+              "surprise": "未恢复历史一致预期，不计算虚构surprise",
+              "notes": "Issuer-reported period and currency preserved; no estimated adjustment bridge."
+            },
+            {
+              "metric": "Gross margin",
+              "actual": "66.4%",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "尚无法可靠确认",
+              "surprise": "未恢复历史一致预期，不计算虚构surprise",
+              "notes": "Issuer-reported period and currency preserved; no estimated adjustment bridge."
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "Q4 2026 revenue in USD",
+              "current": "US$52.3–54.3bn",
+              "previous_or_consensus": "尚无法可靠确认",
+              "change": "Forward management range; not realized revenue",
+              "interpretation": "管理层展望，不冒充历史共识或已到账现金。"
+            }
+          ],
+          "market_reaction": {
+            "session": "发布日；同一报告/交易时段区分",
+            "move": "尚无法可靠确认",
+            "as_of": "2026-10-15; individual stock reaction not restored"
+          },
+          "one_offs": [
+            "完整会计调整桥与所有一次性项目未恢复，不从缺失推断不存在。"
+          ],
+          "read_through": [
+            {
+              "asset": "Semiconductor supply chain",
+              "implication": "先进制程需求已在当季收入中实现；未来指引仍需交付，且不能代替下游客户的融资质量或最终投资回报。"
+            }
+          ],
+          "sources": [
+            "S15",
+            "S23"
+          ]
+        }
+      ],
+      "upcoming_72h": []
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "美国宏观数据",
+      "status": "历史时点重建 / evidence-limited",
+      "summary": "根据DPA对美联储公布数据的报道，9月工业生产环比0.7%，其中制造业0.3%、采矿0.2%、公用事业3.5%；产能利用率76.9%。总工业增幅不能替代制造业增幅或GDP判断。",
+      "paragraphs": [
+        "根据DPA对美联储公布数据的报道，9月工业生产环比0.7%，其中制造业0.3%、采矿0.2%、公用事业3.5%；产能利用率76.9%。总工业增幅不能替代制造业增幅或GDP判断。"
+      ],
+      "tables": [],
+      "sources": [
+        "S18",
+        "S14"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "央行与利率路径",
+      "status": "历史时点重建 / evidence-limited",
+      "summary": "市场利率变化不是央行承诺。根据可核实CMT曲线拆分前端政策与长端增长/期限溢价，截点后会议、讲话和隐含概率不补写；本次未恢复完整跨央行讲话档案。",
+      "paragraphs": [
+        "市场利率变化不是央行承诺。根据可核实CMT曲线拆分前端政策与长端增长/期限溢价，截点后会议、讲话和隐含概率不补写；本次未恢复完整跨央行讲话档案。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "地缘与供应风险",
+      "status": "历史时点重建 / evidence-limited",
+      "summary": "能源价格是风险传导观测，不是武装事件或实际减产的直接证据。未能恢复全部港口、运输和供应设施的原始时点材料，因此不将价格上涨归因于未经确认的物理供给损失。",
+      "paragraphs": [
+        "能源价格是风险传导观测，不是武装事件或实际减产的直接证据。未能恢复全部港口、运输和供应设施的原始时点材料，因此不将价格上涨归因于未经确认的物理供给损失。"
+      ],
+      "tables": [],
+      "sources": [
+        "S05",
+        "S02"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "区域及产业政策",
+      "status": "历史时点重建 / evidence-limited",
+      "summary": "商务部材料及Reuters报道涉及40项拟增技术：23项人工智能、5项生物技术、12项太阳能。征求意见中的目录调整并非全部已经生效的禁令；过渡期登记安排则可能先影响交易流程。",
+      "paragraphs": [
+        "商务部材料及Reuters报道涉及40项拟增技术：23项人工智能、5项生物技术、12项太阳能。征求意见中的目录调整并非全部已经生效的禁令；过渡期登记安排则可能先影响交易流程。"
+      ],
+      "tables": [],
+      "sources": [
+        "S16",
+        "S17"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "指数与成分调整",
+      "status": "证据缺口 / bounded reconstruction",
+      "summary": "未恢复完整交易所及指数供应商的本时点成分变更档案。指数涨跌不证明出现被动调仓，亦不能据此编造纳入/剔除名单、生效时间或资金规模；相关字段保持证据缺口。",
+      "paragraphs": [
+        "未恢复完整交易所及指数供应商的本时点成分变更档案。指数涨跌不证明出现被动调仓，亦不能据此编造纳入/剔除名单、生效时间或资金规模；相关字段保持证据缺口。"
+      ],
+      "tables": [],
+      "sources": []
+    },
+    "flows": {
+      "number": 8,
+      "title": "资金流与融资条件",
+      "status": "证据缺口 / bounded reconstruction",
+      "summary": "HY OAS、国债收益率与VIX显示金融条件，但不是基金净申购赎回或机构仓位。没有恢复可比的当日基金流数据，不能把价格回落写成某类投资者净卖出。",
+      "paragraphs": [
+        "HY OAS、国债收益率与VIX显示金融条件，但不是基金净申购赎回或机构仓位。没有恢复可比的当日基金流数据，不能把价格回落写成某类投资者净卖出。"
+      ],
+      "tables": [],
+      "sources": [
+        "S07",
+        "S02",
+        "S01"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF与资产配置",
+      "status": "证据缺口 / bounded reconstruction",
+      "summary": "ETF价格、净值及资金流含义不同。未恢复本时点全量篮子、权重调整和一级市场申赎资料；只用底层市场观察讨论风险，不推算不存在证据的ETF流量或再平衡。",
+      "paragraphs": [
+        "ETF价格、净值及资金流含义不同。未恢复本时点全量篮子、权重调整和一级市场申赎资料；只用底层市场观察讨论风险，不推算不存在证据的ETF流量或再平衡。"
+      ],
+      "tables": [],
+      "sources": [
+        "S03",
+        "S04"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "期权与波动率",
+      "status": "历史时点重建 / evidence-limited",
+      "summary": "VIX取Cboe官方历史收盘并注明日期，可观察隐含波动风险。它不提供dealer gamma、0DTE仓位、max pain或期权到期钉住点，缺失这些数据时不填造阈值。",
+      "paragraphs": [
+        "VIX取Cboe官方历史收盘并注明日期，可观察隐含波动风险。它不提供dealer gamma、0DTE仓位、max pain或期权到期钉住点，缺失这些数据时不填造阈值。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "美国国债与收益率曲线",
+      "status": "历史时点重建 / evidence-limited",
+      "summary": "本期使用美国财政部同一CMT日度曲线计算1日/5观测变化和期限利差；现金债与期货报价不得混用。10月12日无CMT观测按实际交易日跳过。本次不把曲线数字冒充拍卖高收益率、WI或尾差。",
+      "paragraphs": [
+        "本期使用美国财政部同一CMT日度曲线计算1日/5观测变化和期限利差；现金债与期货报价不得混用。10月12日无CMT观测按实际交易日跳过。本次不把曲线数字冒充拍卖高收益率、WI或尾差。"
+      ],
+      "tables": [
+        {
+          "title": "同一财政部CMT口径的期限比较",
+          "headers": [
+            "期限/利差",
+            "水平",
+            "1日",
+            "5观测",
+            "观测日"
+          ],
+          "rows": [
+            [
+              "UST 2Y",
+              "4.74%",
+              "-3.00bp",
+              "-1.00bp",
+              "2026-10-16"
+            ],
+            [
+              "UST 5Y",
+              "4.89%",
+              "-2.00bp",
+              "-10.00bp",
+              "2026-10-16"
+            ],
+            [
+              "UST 10Y",
+              "5.09%",
+              "-1.00bp",
+              "-13.00bp",
+              "2026-10-16"
+            ],
+            [
+              "UST 30Y",
+              "5.43%",
+              "+0.00bp",
+              "-17.00bp",
+              "2026-10-16"
+            ],
+            [
+              "UST 2s10s",
+              "35.00bp",
+              "+2.00bp",
+              "-12.00bp",
+              "2026-10-16"
+            ],
+            [
+              "UST 10s30s",
+              "34.00bp",
+              "+1.00bp",
+              "-4.00bp",
+              "2026-10-16"
+            ]
+          ]
+        }
+      ],
+      "sources": [
+        "S01"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "商品与成本传导",
+      "status": "历史时点重建 / evidence-limited",
+      "summary": "Europe Brent Spot使用EIA/FRED现货口径，不与ICE某月期货拼接。能源→企业及家庭成本→需求/通胀预期→利率及权益是条件链条；提供方落后交易日已标注，没有前向填充。",
+      "paragraphs": [
+        "Europe Brent Spot使用EIA/FRED现货口径，不与ICE某月期货拼接。能源→企业及家庭成本→需求/通胀预期→利率及权益是条件链条；提供方落后交易日已标注，没有前向填充。"
+      ],
+      "tables": [],
+      "sources": [
+        "S05"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "融资与资本开支",
+      "status": "历史时点重建 / evidence-limited",
+      "summary": "AI供应商收入或资本开支指引与客户承诺融资、实际提款、部署现金不是同一个量。未恢复完整融资合同、抵押或偿付条款，不把宣布规模等同已到账资金或经营回报。",
+      "paragraphs": [
+        "AI供应商收入或资本开支指引与客户承诺融资、实际提款、部署现金不是同一个量。未恢复完整融资合同、抵押或偿付条款，不把宣布规模等同已到账资金或经营回报。"
+      ],
+      "tables": [],
+      "sources": [
+        "S15",
+        "S23"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "截点内新增信息",
+      "status": "历史时点重建 / evidence-limited",
+      "summary": "2026-10-16 04:00 EDT / 2026-10-16 16:00 SGT：商务部材料及Reuters报道涉及40项拟增技术：23项人工智能、5项生物技术、12项太阳能。征求意见中的目录调整并非全部已经生效的禁令；过渡期登记安排则可能先影响交易流程。",
+      "paragraphs": [
+        "2026-10-16 04:00 EDT / 2026-10-16 16:00 SGT：商务部材料及Reuters报道涉及40项拟增技术：23项人工智能、5项生物技术、12项太阳能。征求意见中的目录调整并非全部已经生效的禁令；过渡期登记安排则可能先影响交易流程。",
+        "2026-10-16 16:00 EDT / 2026-10-17 04:00 SGT：10月16日Nasdaq收于26,140.03、S&P 500为7,659.44，Russell 2000为2,721.37；VIX收19.99。股票与隐含波动率显示压力，但VIX本身不是做市商gamma或未来下跌概率。",
+        "2026-10-16 09:15 EDT release; 10:18 EDT report / 2026-10-16 21:15 SGT release：根据DPA对美联储公布数据的报道，9月工业生产环比0.7%，其中制造业0.3%、采矿0.2%、公用事业3.5%；产能利用率76.9%。总工业增幅不能替代制造业增幅或GDP判断。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S16",
+        "S17",
+        "S18",
+        "S22"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "跨资产影响与验证",
+      "status": "历史时点重建 / evidence-limited",
+      "summary": "科技股与波动率的10月16日价格反应显示风险溢价上升，中国技术出口目录调整的征求意见与临时登记机制又增加交易执行不确定性。美国工业生产总量改善并不等于制造业普遍加速，周末评估应保留政策阶段、部门差异和休市边界。",
+      "paragraphs": [
+        "科技股与波动率的10月16日价格反应显示风险溢价上升，中国技术出口目录调整的征求意见与临时登记机制又增加交易执行不确定性。美国工业生产总量改善并不等于制造业普遍加速，周末评估应保留政策阶段、部门差异和休市边界。",
+        "将主要因果解释视为可检验的条件判断：先核事实，再看权益广度与曲线/信用，最后检验经营现金流；保留资产背离，不编造单一总风险分数。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S16",
+        "S17",
+        "S18",
+        "S22"
+      ]
+    }
+  },
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S22",
+    "S23",
+    "S24"
+  ]
+}

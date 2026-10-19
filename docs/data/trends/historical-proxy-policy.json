@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "dates": [
+    "2026-10-01",
+    "2026-10-02",
+    "2026-10-03",
+    "2026-10-04",
+    "2026-10-05",
+    "2026-10-06",
+    "2026-10-07",
+    "2026-10-08"
+  ],
+  "basis": "opt-in prior-session canonical tape only",
+  "note": "User-authorized October gap repair. Preserve existing source_mode, report text, original unknown editorial fields and historical timestamps."
+}
