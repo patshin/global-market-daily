@@ -8,45 +8,37 @@ permissions:
 jobs:
   snapshot:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 5
     steps:
       - uses: actions/checkout@v7
         with:
-          fetch-depth: 0
           persist-credentials: false
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      - name: Retrieve public historical sources without production writes
-        shell: bash
+      - name: Retrieve Treasury public historical yield table
         run: |
-          set -euo pipefail
           python - <<'PY'
-          import json,pathlib,concurrent.futures
-          from datetime import datetime,timezone
+          import pathlib,json,concurrent.futures
           from urllib.request import Request,urlopen
-          out=pathlib.Path('/tmp/gmd-october-supplements');out.mkdir()
-          urls={sid+'.csv':f'https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}&cosd=2026-09-01&coed=2026-10-16' for sid in ['DGS5','DGS30','DGS2','DGS10','VIXCLS','NASDAQCOM','SP500','DCOILBRENTEU','DTWEXBGS','BAMLH0A0HYM2']}
-          urls.update({'cboe-vix.csv':'https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv','treasury-2026.xml':'https://home.treasury.gov/resource-center-data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026'})
-          def fetch(item):
-              name,url=item;record={'file':name,'source_url':url,'retrieved_at':datetime.now(timezone.utc).isoformat()}
+          from datetime import datetime,timezone
+          out=pathlib.Path('/tmp/gmd-treasury-source');out.mkdir()
+          urls={'treasury.html':'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve','treasury.xml':'https://home.treasury.gov/resource-center/data-chart-center/interest-rates/pages/xml?data=daily_treasury_yield_curve&field_tdr_date_value=2026','DGS5.csv':'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS5','DGS30.csv':'https://fred.stlouisfed.org/graph/fredgraph.csv?id=DGS30'}
+          def get(item):
+              name,url=item;r={'file':name,'source_url':url,'retrieved_at':datetime.now(timezone.utc).isoformat()}
               try:
-                  request=Request(url,headers={'User-Agent':'GlobalMarketDaily/OctoberHistoricalRepair'})
-                  with urlopen(request,timeout=45) as response:
-                      content=response.read();record.update(status=response.status,bytes=len(content),content_type=response.headers.get('Content-Type'))
-                  if len(content)>10000000:raise ValueError('unexpected source size')
-                  (out/name).write_bytes(content)
-              except Exception as error:record['error']=str(error)
-              return record
-          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:records=list(pool.map(fetch,urls.items()))
-          (out/'manifest.json').write_text(json.dumps(records,indent=2)+'\n')
-          print(json.dumps(records,indent=2))
+                  with urlopen(Request(url,headers={'User-Agent':'Mozilla/5.0 GlobalMarketDailyHistoricalAudit'}),timeout=25) as response:payload=response.read();r.update(status=response.status,bytes=len(payload))
+                  if len(payload)>5000000:raise ValueError('Unexpected payload size')
+                  (out/name).write_bytes(payload)
+              except Exception as exc:r['error']=str(exc)
+              return r
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:manifest=list(pool.map(get,urls.items()))
+          (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n');print(json.dumps(manifest,indent=2))
           PY
-      - name: Save inspectable sources and retrieval outcomes
+      - uses: actions/upload-artifact@v4
         if: always()
-        uses: actions/upload-artifact@v4
         with:
-          name: october-public-source-supplements
-          path: /tmp/gmd-october-supplements
+          name: october-treasury-primary
+          path: /tmp/gmd-treasury-source
           retention-days: 2
           if-no-files-found: error
