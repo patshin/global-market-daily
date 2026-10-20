@@ -64,9 +64,14 @@ def index_entry(report: dict[str, Any]) -> dict[str, Any]:
     elif cycle.get('market_lens_native_eligible') is not True or report.get('source_mode') != 'native_daily':
         raise ValueError('contemporaneous provenance must be explicit; do not infer it')
     paths = paths_for(day)
+    regime = report['market_regime']['overall']
+    if isinstance(regime, dict):
+        regime = regime.get('state')
+    if not isinstance(regime, str) or not regime.strip():
+        raise ValueError('market_regime.overall must provide a non-empty state label')
     entry = {
         'schema_version': report.get('schema_version', '1.1.0'), 'date': day,
-        'thesis': report['thesis'], 'overall_regime': report['market_regime']['overall'],
+        'thesis': report['thesis'], 'overall_regime': regime,
         'dominant_narrative': report['dominant_narrative'],
         'report_path': paths[1].removeprefix('docs/'),
         'daily_json_path': paths[0].removeprefix('docs/'),
