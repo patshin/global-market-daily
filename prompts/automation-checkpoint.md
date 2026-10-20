@@ -27,3 +27,34 @@ A blocked or unknown result cannot become `SUBMITTED_FOR_VALIDATION`. That statu
 ## Fault-injection acceptance
 
 `python scripts/test_publication_checkpoint.py` tests exact bytes, original cutoff preservation, idempotency, partial recovery, corrupt JSON/ZIP handling, path allowlisting, and terminal safety-block classification. Successful local tests establish these properties only, not removal of a platform safety block or success of a future unattended run.
+
+## Offline five-file assembly and fail-closed diagnostics
+
+Obtain complete archive.json and latest.json at one pinned, freshly read main SHA.
+Record both blob SHAs from that same GitHub read. Do not rebuild baseline history
+from a truncated text response. Save those bytes in BASELINE_ROOT, then assemble:
+
+```
+python scripts/prepare_publication.py --daily DAILY_JSON --sources SOURCES_JSON --markdown CANONICAL_MARKDOWN --baseline-root BASELINE_ROOT --base-main-sha VERIFIED_MAIN_SHA --archive-blob-sha VERIFIED_ARCHIVE_BLOB_SHA --latest-blob-sha VERIFIED_LATEST_BLOB_SHA --out-root NEW_CANDIDATE_ROOT
+```
+
+The offline assembler verifies baseline hashes, preserves every historical record,
+derives archive/latest from daily JSON, refuses replacement of an existing official
+edition, and preserves a newer latest pointer during an authorized historical backfill.
+It preserves original daily/source/Markdown bytes and research timestamps. Omitting
+--markdown uses a deterministic full-field renderer, not a separately authored draft.
+It has no publishing capability and does not make a denied candidate eligible to retry.
+
+Run full current Quality against the resulting complete candidate worktree before
+handoff. The assembler and checkpoint checks are not a substitute. Run pack and
+persist its actual ZIP privately as above. Invalid/partial pack returns exit code 2
+AFTER saving the diagnostic ZIP; save that ZIP but do not publish it. Null/list JSON
+roots, unresolved source IDs, duplicate or unordered archives and invalid UTF-8
+must be treated as explicit failures, not empty successful objects.
+
+Use `publication_checkpoint.py classify --stage chromium` (or quality/preflight)
+for a test-stage timeout; it is not a transient GitHub connection failure. Browser
+validation uses an isolated temporary profile per route/viewport and retains stderr,
+DOM and a result record even on failure. Do not retry bad DOM assertions as network
+errors or declare Chromium passed based on static unit tests. Safety refusal remains
+terminal and the original daily schedules and permissions remain unchanged.

@@ -38,7 +38,10 @@ jobs:
       - name: Run 30D market lens gate
         run: python scripts/validate_market_lens.py
       - name: Test private publication checkpoint integrity
-        run: python scripts/test_publication_checkpoint.py
+        run: |
+          python scripts/test_publication_checkpoint.py
+          python scripts/test_publication_preparation.py
+          python scripts/test_candidate_browser_contract.py
       - name: Test market lens accumulation and partial releases
         run: python scripts/test_market_lens_native_accumulation.py
       - name: Test stale and duplicate publication protection
