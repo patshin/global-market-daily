@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "retrieved_for": "Global Market Daily 30D Lens",
-  "as_of": "2026-10-18",
+  "as_of": "2026-10-19",
   "series": {
     "NASDAQCOM": {
       "label": "Nasdaq Composite",
@@ -11,7 +11,8 @@
       "points": [
         {
           "date": "2025-08-25",
-          "value": 21449.29
+          "value": 21449.29,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2025-08-26",
@@ -1176,7 +1177,8 @@
       "points": [
         {
           "date": "2025-08-25",
-          "value": 6439.32
+          "value": 6439.32,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2025-08-26",
@@ -2329,6 +2331,10 @@
         {
           "date": "2026-10-16",
           "value": 7659.44
+        },
+        {
+          "date": "2026-10-19",
+          "value": 7690.73
         }
       ]
     },
@@ -2420,7 +2426,8 @@
         },
         {
           "date": "2025-08-25",
-          "value": 14.79
+          "value": 14.79,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2025-08-26",
@@ -3604,8 +3611,7 @@
         },
         {
           "date": "2026-10-16",
-          "value": 19.99,
-          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
+          "value": 19.99
         }
       ]
     },
@@ -3617,7 +3623,8 @@
       "points": [
         {
           "date": "2025-08-25",
-          "value": 3.73
+          "value": 3.73,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2025-08-26",
@@ -4761,8 +4768,7 @@
         },
         {
           "date": "2026-10-16",
-          "value": 4.74,
-          "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve"
+          "value": 4.74
         }
       ]
     },
@@ -4774,7 +4780,8 @@
       "points": [
         {
           "date": "2025-08-25",
-          "value": 4.28
+          "value": 4.28,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2025-08-26",
@@ -5918,8 +5925,7 @@
         },
         {
           "date": "2026-10-16",
-          "value": 5.09,
-          "source_url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?field_tdr_date_value=2026&type=daily_treasury_yield_curve"
+          "value": 5.09
         }
       ]
     },
@@ -7095,7 +7101,8 @@
       "points": [
         {
           "date": "2025-08-25",
-          "value": 120.4214
+          "value": 120.4214,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2025-08-26",
@@ -8224,6 +8231,22 @@
         {
           "date": "2026-10-09",
           "value": 121.6023
+        },
+        {
+          "date": "2026-10-13",
+          "value": 121.4433
+        },
+        {
+          "date": "2026-10-14",
+          "value": 122.0037
+        },
+        {
+          "date": "2026-10-15",
+          "value": 121.5693
+        },
+        {
+          "date": "2026-10-16",
+          "value": 121.4048
         }
       ]
     },
@@ -8235,7 +8258,8 @@
       "points": [
         {
           "date": "2025-08-25",
-          "value": 2.8
+          "value": 2.8,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2025-08-26",
@@ -9440,6 +9464,10 @@
         {
           "date": "2026-10-15",
           "value": 3.23
+        },
+        {
+          "date": "2026-10-16",
+          "value": 3.31
         }
       ]
     }
