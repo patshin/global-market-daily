@@ -19,6 +19,7 @@ class CheckpointTests(unittest.TestCase):
         order = [str(i) for i in range(15)]
         self.report = {'date': DAY, 'data_cutoff_sgt': '2026-10-18 10:44 SGT',
                        'data_cutoff_et': '2026-10-17 22:44 EDT',
+                       'sources_path': f'data/sources/{DAY}.json', 'sources': ['S01'],
                        'thesis': 'fixture thesis', 'dominant_narrative': 'fixture narrative',
                        'section_order': order, 'sections': {k: {'title': f'Title {k}.'} for k in order},
                        'top_catalysts': [{'event': f'Catalyst {i}.'} for i in range(3)],
@@ -27,7 +28,7 @@ class CheckpointTests(unittest.TestCase):
         literal = [self.report[k] for k in ('data_cutoff_sgt','data_cutoff_et','thesis','dominant_narrative')]
         literal += [self.report['sections'][k]['title'] for k in order]
         literal += [x['event'] for x in self.report['top_catalysts']] + [x['risk'] for x in self.report['top_risks']]
-        payloads = [json.dumps(self.report), '\n'.join(literal), json.dumps({'date': DAY, 'sources': []}),
+        payloads = [json.dumps(self.report), '\n'.join(literal), json.dumps({'date': DAY, 'sources': [{'id':'S01','source_url':'https://example.org/source'}]}),
                     json.dumps({'entries': [{'date': DAY}]}), json.dumps({'date': DAY,
                       **dict(zip(('daily_json_path','report_path','sources_path'),[p.removeprefix('docs/') for p in paths[:3]]))})]
         for name, content in zip(paths, payloads):
@@ -37,6 +38,7 @@ class CheckpointTests(unittest.TestCase):
         result = pack(self.root, DAY, SHA, self.out)
         meta = verify_checkpoint(result)
         self.assertTrue(meta['content_complete'])
+        self.assertEqual(meta['diagnostics']['errors'], [])
         self.assertEqual(meta['diagnostics']['canonical_parity']['passed'], 25)
         with zipfile.ZipFile(result) as z:
             for p in paths_for(DAY): self.assertEqual(z.read(p), (self.root/p).read_bytes())
