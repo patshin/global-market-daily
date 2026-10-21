@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-10-19",
-  "window_start": "2026-09-20",
-  "window_end": "2026-10-19",
+  "as_of": "2026-10-20",
+  "window_start": "2026-09-21",
+  "window_end": "2026-10-20",
   "coverage": {
     "market_sessions": 30,
-    "native_daily_days": 12,
+    "native_daily_days": 11,
     "reconstructed_daily_days": 17,
-    "reconstructed_days": 1,
-    "partial_days": 1,
+    "reconstructed_days": 2,
+    "partial_days": 2,
     "verified_event_days": 0,
     "historical_series_start": "2025-08-01"
   },
@@ -88,68 +88,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-09-20",
-      "source_mode": "native_daily",
-      "regime_code": "event_risk",
-      "regime_label": "Weekend Event Risk / policy relief versus 5% yields",
-      "dominant_theme_id": "us_china_trade_controls",
-      "signals": {
-        "growth": "→",
-        "inflation": "→",
-        "rates": "↑",
-        "earnings": "→",
-        "liquidity": "↓",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
-          "title": "Bessent-He Sunday meeting puts AI security, trade, rare earths and the tariff truce directly in front of Monday market price discovery",
-          "evidence": "U.S. Treasury Secretary Scott Bessent and Chinese Vice Premier He Lifeng are scheduled to meet Sunday at JPMorgan's New York headquarters. Reuters reports the agenda includes artificial-intelligence security, trade and broader economic issues; separate reporting says rare earths and the tariff truce are also expected to feature.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "U.S.-China policy signal → AI/rare-earth supply expectations → CNH and semiconductor risk premium → global equity breadth and corporate capex.",
-          "confirmation": "A jointly described constructive agenda, no new restriction threat and firmer China-sensitive assets at Monday reopen would confirm a reduction in policy tail risk.",
-          "invalidation": "New tariff, export-control or rare-earth retaliation language that weakens CNH and semiconductor futures would invalidate the relief interpretation.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "china_industrial_policy",
-          "theme_label": "China Industrial Policy",
-          "category": "china_trade_policy",
-          "title": "China's policy debate shifts toward consumption and balance-sheet repair while September LPR is still expected to remain unchanged",
-          "evidence": "PBOC monetary policy committee member Huang Yiping said AI could deepen China's strong-supply/weak-demand imbalance and argued for consumption support, higher household income and balance-sheet repair for local governments and enterprises. Separately, all 21 respondents in a Reuters poll expected the one-year and five-year LPRs to remain at 3.00% and 3.50%.",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Consumption/balance-sheet support → domestic demand expectations → China equities and imports → industrial commodities and Asian growth assets.",
-          "confirmation": "Concrete fiscal or balance-sheet measures alongside stable credit conditions would confirm that support is moving toward demand repair rather than only lower policy rates.",
-          "invalidation": "No follow-through on demand support combined with continued weak household and corporate borrowing would leave the strong-supply/weak-demand imbalance unresolved.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "energy_inflation",
-          "theme_label": "Energy Inflation",
-          "category": "geopolitics_energy",
-          "title": "Saudi weekend attacks threaten to reverse Friday's oil relief before Gulf physical throughput is demonstrably restored",
-          "evidence": "Saudi Arabia's coalition said a ballistic missile launched toward Riyadh was intercepted and destroyed and that attempted attacks toward Yanbu, Taif, Baysh and Farasan were thwarted. Reuters and AP independently reported the escalation; the Houthis separately claimed attacks on sensitive Riyadh sites and an Aramco facility in Yanbu.",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Saudi security risk → export-route/freight premium → crude and diesel → inflation expectations → Treasury yields and equity discount rates.",
-          "confirmation": "Higher crude at reopening, new verified infrastructure damage or further attacks on Yanbu-related capacity would confirm that physical-risk premium is rebuilding.",
-          "invalidation": "No new damage, continued successful interceptions and further normalization of pipeline/Hormuz throughput alongside softer crude would weaken the escalation channel.",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
     {
       "date": "2026-09-21",
       "source_mode": "native_daily",
@@ -2934,6 +2872,79 @@
       "source_mode": "objective_market_reconstruction",
       "regime_code": "unavailable",
       "regime_label": "Insufficient data",
+      "dominant_theme_id": "growth_duration_rotation",
+      "signals": {
+        "growth": "↑",
+        "inflation": "?",
+        "rates": "↑",
+        "earnings": "↑",
+        "liquidity": "?",
+        "geopolitics": "?"
+      },
+      "catalysts": [
+        {
+          "theme_id": "growth_duration_rotation",
+          "theme_label": "Growth / Duration Rotation",
+          "category": "earnings_ai_semis",
+          "title": "Nasdaq relative to S&P 500 +0.70pp",
+          "evidence": "NASDAQCOM +1.11% vs SP500 +0.41%",
+          "market_bias": "risk_on",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "Growth leadership strengthens",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 1
+        },
+        {
+          "theme_id": "volatility_event_risk",
+          "theme_label": "Volatility / Event Risk",
+          "category": "market_structure",
+          "title": "VIX daily move -7.75%",
+          "evidence": "VIXCLS -7.75%",
+          "market_bias": "risk_on",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Volatility ↓ → event premium eases",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 2
+        },
+        {
+          "theme_id": "equity_risk_appetite",
+          "theme_label": "Equity Risk Appetite",
+          "category": "growth_macro",
+          "title": "Nasdaq daily move +1.11%",
+          "evidence": "NASDAQCOM +1.11% vs prior close",
+          "market_bias": "risk_on",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Equity move → risk appetite / duration repricing",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 3
+        }
+      ],
+      "data_quality": {
+        "status": "partial",
+        "available_driver_count": 3,
+        "available_series": [
+          "NASDAQCOM",
+          "SP500",
+          "VIXCLS",
+          "DGS2",
+          "DGS10",
+          "BAMLH0A0HYM2"
+        ],
+        "missing_series": [
+          "DCOILBRENTEU",
+          "DTWEXBGS"
+        ],
+        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
+      }
+    },
+    {
+      "date": "2026-10-20",
+      "source_mode": "objective_market_reconstruction",
+      "regime_code": "unavailable",
+      "regime_label": "Insufficient data",
       "dominant_theme_id": "market_structure",
       "signals": {
         "growth": "?",
@@ -2964,12 +2975,6 @@
     }
   ],
   "regime_transitions": [
-    {
-      "date": "2026-09-21",
-      "from": "Weekend Event Risk / policy relief versus 5% yields",
-      "to": "Selective risk-on / rates remain restrictive",
-      "dominant_theme_id": "global_duration"
-    },
     {
       "date": "2026-09-24",
       "from": "Selective risk-on / energy relief versus funding-cost constraint",
@@ -3064,7 +3069,7 @@
       "date": "2026-10-19",
       "from": "Weekend Event Risk / Oil–AI Credit–Duration Divergence",
       "to": "Insufficient data",
-      "dominant_theme_id": "market_structure"
+      "dominant_theme_id": "growth_duration_rotation"
     }
   ],
   "persistent_themes": [
@@ -3085,22 +3090,6 @@
       ]
     },
     {
-      "theme_id": "energy_inflation",
-      "theme_label": "Energy Inflation",
-      "category": "geopolitics_energy",
-      "days_in_top3": 11,
-      "best_rank": 1,
-      "first_seen": "2026-09-20",
-      "last_seen": "2026-10-18",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "能源物流成本↑→消费者通胀粘性↑；高融资成本→投资折现率↑；政策预期与信用利差重新定价。",
-      "source_modes": [
-        "native_daily",
-        "reconstructed_daily"
-      ]
-    },
-    {
       "theme_id": "ai_earnings",
       "theme_label": "AI / Earnings",
       "category": "earnings_ai_semis",
@@ -3109,7 +3098,7 @@
       "first_seen": "2026-09-23",
       "last_seen": "2026-10-18",
       "latest_rank": null,
-      "state": "Escalating",
+      "state": "Persistent",
       "latest_transmission": "油价↑→预期通胀/资金成本↑；AI信贷溢价↑→科技估值↓→小盘股与宽基风险偏好受拖累。",
       "source_modes": [
         "native_daily",
@@ -3133,12 +3122,28 @@
       ]
     },
     {
+      "theme_id": "energy_inflation",
+      "theme_label": "Energy Inflation",
+      "category": "geopolitics_energy",
+      "days_in_top3": 10,
+      "best_rank": 1,
+      "first_seen": "2026-09-28",
+      "last_seen": "2026-10-18",
+      "latest_rank": null,
+      "state": "Persistent",
+      "latest_transmission": "能源物流成本↑→消费者通胀粘性↑；高融资成本→投资折现率↑；政策预期与信用利差重新定价。",
+      "source_modes": [
+        "native_daily",
+        "reconstructed_daily"
+      ]
+    },
+    {
       "theme_id": "us_china_trade_controls",
       "theme_label": "U.S.–China Trade Controls",
       "category": "china_trade_policy",
-      "days_in_top3": 9,
+      "days_in_top3": 8,
       "best_rank": 1,
-      "first_seen": "2026-09-20",
+      "first_seen": "2026-09-22",
       "last_seen": "2026-10-18",
       "latest_rank": null,
       "state": "Persistent",
@@ -3183,9 +3188,9 @@
       "theme_id": "china_industrial_policy",
       "theme_label": "China Industrial Policy",
       "category": "china_trade_policy",
-      "days_in_top3": 3,
-      "best_rank": 2,
-      "first_seen": "2026-09-20",
+      "days_in_top3": 2,
+      "best_rank": 3,
+      "first_seen": "2026-09-21",
       "last_seen": "2026-09-24",
       "latest_rank": null,
       "state": "Resolved",
@@ -3193,19 +3198,64 @@
       "source_modes": [
         "native_daily"
       ]
+    },
+    {
+      "theme_id": "growth_duration_rotation",
+      "theme_label": "Growth / Duration Rotation",
+      "category": "earnings_ai_semis",
+      "days_in_top3": 1,
+      "best_rank": 1,
+      "first_seen": "2026-10-19",
+      "last_seen": "2026-10-19",
+      "latest_rank": null,
+      "state": "New",
+      "latest_transmission": "Growth leadership strengthens",
+      "source_modes": [
+        "objective_market_reconstruction"
+      ]
+    },
+    {
+      "theme_id": "volatility_event_risk",
+      "theme_label": "Volatility / Event Risk",
+      "category": "market_structure",
+      "days_in_top3": 1,
+      "best_rank": 2,
+      "first_seen": "2026-10-19",
+      "last_seen": "2026-10-19",
+      "latest_rank": null,
+      "state": "New",
+      "latest_transmission": "Volatility ↓ → event premium eases",
+      "source_modes": [
+        "objective_market_reconstruction"
+      ]
+    },
+    {
+      "theme_id": "equity_risk_appetite",
+      "theme_label": "Equity Risk Appetite",
+      "category": "growth_macro",
+      "days_in_top3": 1,
+      "best_rank": 3,
+      "first_seen": "2026-10-19",
+      "last_seen": "2026-10-19",
+      "latest_rank": null,
+      "state": "New",
+      "latest_transmission": "Equity move → risk appetite / duration repricing",
+      "source_modes": [
+        "objective_market_reconstruction"
+      ]
     }
   ],
   "cross_asset_confirmation": {
     "theme_id": "market_structure",
     "theme_label": "Market Structure",
-    "as_of": "2026-10-19",
+    "as_of": "2026-10-20",
     "confirming": [
       {
         "series_id": "SP500",
         "label": "S&P 500",
-        "as_of": "2026-10-19",
+        "as_of": "2026-10-20",
         "source_mode": "objective_market_reconstruction",
-        "change": "+0.41%"
+        "change": "+0.28%"
       }
     ],
     "diverging": [],
@@ -3308,8 +3358,11 @@
         },
         {
           "date": "2026-10-16",
-          "value": 26140.03,
-          "source_url": "https://apnews.com/article/c27809783ae3230b44c26e5ee4bea056"
+          "value": 26140.03
+        },
+        {
+          "date": "2026-10-19",
+          "value": 26430.89
         }
       ]
     },
@@ -3402,6 +3455,10 @@
         {
           "date": "2026-10-19",
           "value": 7690.73
+        },
+        {
+          "date": "2026-10-20",
+          "value": 7712.57
         }
       ]
     },
@@ -3490,6 +3547,10 @@
         {
           "date": "2026-10-16",
           "value": 19.99
+        },
+        {
+          "date": "2026-10-19",
+          "value": 18.44
         }
       ]
     },
@@ -3574,6 +3635,10 @@
         {
           "date": "2026-10-16",
           "value": 4.74
+        },
+        {
+          "date": "2026-10-19",
+          "value": 4.77
         }
       ]
     },
@@ -3658,6 +3723,10 @@
         {
           "date": "2026-10-16",
           "value": 5.09
+        },
+        {
+          "date": "2026-10-19",
+          "value": 5.15
         }
       ]
     },
@@ -3910,20 +3979,25 @@
         {
           "date": "2026-10-16",
           "value": 3.31
+        },
+        {
+          "date": "2026-10-19",
+          "value": 3.29
         }
       ]
     }
   },
   "monthly_coverage": {
     "month": "2026-10",
-    "through": "2026-10-19",
-    "expected_days": 19,
-    "present_days": 19,
+    "through": "2026-10-20",
+    "expected_days": 20,
+    "present_days": 20,
     "missing_dates": [],
     "unclassified_dates": [
-      "2026-10-19"
+      "2026-10-19",
+      "2026-10-20"
     ],
-    "unknown_signal_cells": 6,
+    "unknown_signal_cells": 9,
     "price_proxy_dates": [
       "2026-10-01",
       "2026-10-02",
@@ -3938,27 +4012,27 @@
   },
   "series_freshness": {
     "NASDAQCOM": {
-      "last_observation": "2026-10-16",
+      "last_observation": "2026-10-19",
       "source": "Nasdaq, Inc. via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "SP500": {
-      "last_observation": "2026-10-19",
+      "last_observation": "2026-10-20",
       "source": "S&P Dow Jones Indices via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "VIXCLS": {
-      "last_observation": "2026-10-16",
+      "last_observation": "2026-10-19",
       "source": "CBOE via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS2": {
-      "last_observation": "2026-10-16",
+      "last_observation": "2026-10-19",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS10": {
-      "last_observation": "2026-10-16",
+      "last_observation": "2026-10-19",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
@@ -3973,7 +4047,7 @@
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "BAMLH0A0HYM2": {
-      "last_observation": "2026-10-16",
+      "last_observation": "2026-10-19",
       "source": "ICE BofA via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     }
