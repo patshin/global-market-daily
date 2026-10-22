@@ -4,8 +4,8 @@
   "window_start": "2026-09-23",
   "window_end": "2026-10-22",
   "coverage": {
-    "market_sessions": 29,
-    "native_daily_days": 11,
+    "market_sessions": 30,
+    "native_daily_days": 12,
     "reconstructed_daily_days": 18,
     "reconstructed_days": 0,
     "partial_days": 0,
@@ -2868,6 +2868,68 @@
       ]
     },
     {
+      "date": "2026-10-21",
+      "source_mode": "native_daily",
+      "regime_code": "unclassified",
+      "regime_label": "Selective Rotation / Housing-Duration Stress + Energy Tail Risk",
+      "dominant_theme_id": "market_structure",
+      "signals": {
+        "growth": "↓",
+        "inflation": "→",
+        "rates": "↓",
+        "earnings": "→",
+        "liquidity": "→",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "2026-10-20美国股市道指+1.02%、Russell2000 +1.65%而Nasdaq -0.02%的风格分化",
+          "evidence": "10月20日道指52,495.88收涨1.02%，Russell2000收2,773.42涨1.65%；同期标普涨0.28%，纳指微跌0.02%。3M等工业盈利与医药防御支持非科技轮动。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "工业企业现金流指引改善→价值股买盘↑；AI高资本开支仍存→科技权重风险溢价偏高。",
+          "confirmation": "10月21日验证同类行业相对强度、上涨家数与企业财报现金流指引是否一致，而非仅看指数涨跌。",
+          "invalidation": "若小盘及工业领涨很快消退且AI信用利差扩大，今日轮动更可能只是临时仓位调节。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "2026-10-20美国9月待售签约量环比-7.3%、新屋开工降至122.1万套SAAR",
+          "evidence": "NAR报告9月待售房屋销售签约环比-7.3%、同比-11.3%；Census同期新屋开工122.1万套年化，环比-5.2%，且抽样误差可能使单月方向不具统计显著性。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "抵押贷款利率高→购买力和签约下降→建筑订单/家具家电需求减少→信贷和企业盈利增长下行。",
+          "confirmation": "后续持续观察NAR成屋成交量、按揭申请及新屋库存是否同向恶化，并核对统计置信区间。",
+          "invalidation": "若新增签约与按揭申请快速回升、建商订单改善，则9月数据的领先指示可能被修正。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "2026-10-20美股盘后Netflix Q3收入128.7亿美元、Q4 EPS指引0.67美元引发股价下行",
+          "evidence": "Netflix第三季度收入128.7亿美元同比增长11.8%、净利润36.6亿美元、每股收益0.87美元；四季度EPS指引0.67美元与广告收入增长路径下调引发盘后约4%–5%股价回落（非正式收盘）。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "广告商业化预期下修→未来利润与增长能见度下降→估值贴现上调→高估值媒体/互联网板块承压。",
+          "confirmation": "10月21日Netflix开盘后正式成交、同行广告变现率和Meta财报收入/CapEx指引共同验证。",
+          "invalidation": "若正常交易时段价格修复且广告库存及全年收入信号改善，盘后冲击可能并未转化为持续预期下修。",
+          "source_mode": "native_daily"
+        }
+      ]
+    },
+    {
       "date": "2026-10-22",
       "source_mode": "native_daily",
       "regime_code": "unclassified",
@@ -3033,7 +3095,7 @@
       "theme_id": "market_structure",
       "theme_label": "Market Structure",
       "category": "market_structure",
-      "days_in_top3": 22,
+      "days_in_top3": 23,
       "best_rank": 1,
       "first_seen": "2026-09-26",
       "last_seen": "2026-10-22",
@@ -3793,13 +3855,12 @@
     "month": "2026-10",
     "through": "2026-10-22",
     "expected_days": 22,
-    "present_days": 21,
-    "missing_dates": [
-      "2026-10-21"
-    ],
+    "present_days": 22,
+    "missing_dates": [],
     "unclassified_dates": [
       "2026-10-19",
       "2026-10-20",
+      "2026-10-21",
       "2026-10-22"
     ],
     "unknown_signal_cells": 0,
