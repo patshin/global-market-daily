@@ -4,9 +4,9 @@
   "window_start": "2026-09-23",
   "window_end": "2026-10-22",
   "coverage": {
-    "market_sessions": 27,
+    "market_sessions": 28,
     "native_daily_days": 10,
-    "reconstructed_daily_days": 17,
+    "reconstructed_daily_days": 18,
     "reconstructed_days": 0,
     "partial_days": 0,
     "verified_event_days": 0,
@@ -2744,6 +2744,68 @@
       ]
     },
     {
+      "date": "2026-10-19",
+      "source_mode": "reconstructed_daily",
+      "regime_code": "unclassified",
+      "regime_label": "Growth–Earnings Verification / Energy Constraint",
+      "dominant_theme_id": "market_structure",
+      "signals": {
+        "growth": "→",
+        "inflation": "↑",
+        "rates": "→",
+        "earnings": "→",
+        "liquidity": "→",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "中国三季度与9月经济数据即将公布",
+          "evidence": "截至2026-10-19 09:00 SGT，国家统计局三季度GDP及9月主要活动数据属于预定发布日程，原始历史截止时实际结果仍待公布。本历史补档只保留截点内可知的事件日程，不填写之后公布的GDP和经济活动实际值。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "中国内需结构与预期差→离岸人民币及铜价→周期性股票和跨国企业盈利预期",
+          "confirmation": "CNH、铜和需求敏感股票同时确认数据改善才支持广泛复苏。",
+          "invalidation": "总量改善但消费投资疲弱或跨市场背离，将否定全面复苏判断。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "先进制程盈利增长与科技估值压力并存",
+          "evidence": "截至2026-10-19 09:00 SGT，已发布的台积电三季度业绩显示美元收入约467.2亿美元、毛利率约66.4%，证明部分先进制程供应链仍有经营需求；这些数字不能直接代表AI下游项目现金回报，尚未公布的后续业绩不作实际值处理。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "芯片收入与毛利率→经营现金流与资本开支→融资覆盖能力和权益估值",
+          "confirmation": "供应链收入与利润率稳定、经营现金流能覆盖资本开支，且科技股市场广度同步恢复，才更支持持续性改善。",
+          "invalidation": "若AI项目支出持续快于客户现金回收、融资成本升高或订单兑现放缓，将削弱由芯片盈利推导整体科技板块回报的判断。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "能源与关键贸易航道风险仍待价格验证",
+          "evidence": "截至本历史截点可核实的最近交易日仍为10月16日（周五）：Brent 2026年12月合约结算价109.86美元，WTI 2026年11月合约101.41美元；尚无本次截点内的周一现货/期货新成交快照，任何风险声明都不能直接当作新增减产事实。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "能源/运费→投入成本→利润率与通胀→政策约束",
+          "confirmation": "同合约报价与真实通行、运价同步缓和才确认风险溢价下降。",
+          "invalidation": "若随后出现经过独立确认的船舶通行中断、实际供应约束或同合约油价再度明显走高，就不能继续使用快速缓和能源风险溢价的情景。",
+          "source_mode": "reconstructed_daily"
+        }
+      ]
+    },
+    {
       "date": "2026-10-22",
       "source_mode": "native_daily",
       "regime_code": "unclassified",
@@ -2898,9 +2960,9 @@
       "dominant_theme_id": "ai_earnings"
     },
     {
-      "date": "2026-10-22",
+      "date": "2026-10-19",
       "from": "Weekend Event Risk / Oil–AI Credit–Duration Divergence",
-      "to": "AI Earnings Rebound / Cash-Conversion Test + Oil/Duration Overhang",
+      "to": "Growth–Earnings Verification / Energy Constraint",
       "dominant_theme_id": "market_structure"
     }
   ],
@@ -2909,7 +2971,7 @@
       "theme_id": "market_structure",
       "theme_label": "Market Structure",
       "category": "market_structure",
-      "days_in_top3": 20,
+      "days_in_top3": 21,
       "best_rank": 1,
       "first_seen": "2026-09-26",
       "last_seen": "2026-10-22",
@@ -2925,13 +2987,13 @@
       "theme_id": "ai_earnings",
       "theme_label": "AI / Earnings",
       "category": "earnings_ai_semis",
-      "days_in_top3": 11,
+      "days_in_top3": 12,
       "best_rank": 1,
       "first_seen": "2026-09-23",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-19",
       "latest_rank": null,
       "state": "Persistent",
-      "latest_transmission": "油价↑→预期通胀/资金成本↑；AI信贷溢价↑→科技估值↓→小盘股与宽基风险偏好受拖累。",
+      "latest_transmission": "芯片收入与毛利率→经营现金流与资本开支→融资覆盖能力和权益估值",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -2973,13 +3035,13 @@
       "theme_id": "us_china_trade_controls",
       "theme_label": "U.S.–China Trade Controls",
       "category": "china_trade_policy",
-      "days_in_top3": 7,
+      "days_in_top3": 8,
       "best_rank": 1,
       "first_seen": "2026-09-24",
-      "last_seen": "2026-10-18",
+      "last_seen": "2026-10-19",
       "latest_rank": null,
       "state": "Persistent",
-      "latest_transmission": "制裁执行延期→潜在供给预期↑；沙特设施风险→保险/运输成本↑；两者共同决定油价与输入型通胀。",
+      "latest_transmission": "能源/运费→投入成本→利润率与通胀→政策约束",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -3669,13 +3731,13 @@
     "month": "2026-10",
     "through": "2026-10-22",
     "expected_days": 22,
-    "present_days": 19,
+    "present_days": 20,
     "missing_dates": [
-      "2026-10-19",
       "2026-10-20",
       "2026-10-21"
     ],
     "unclassified_dates": [
+      "2026-10-19",
       "2026-10-22"
     ],
     "unknown_signal_cells": 0,
