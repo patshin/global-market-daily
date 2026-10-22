@@ -4,8 +4,8 @@
   "window_start": "2026-09-23",
   "window_end": "2026-10-22",
   "coverage": {
-    "market_sessions": 28,
-    "native_daily_days": 10,
+    "market_sessions": 29,
+    "native_daily_days": 11,
     "reconstructed_daily_days": 18,
     "reconstructed_days": 0,
     "partial_days": 0,
@@ -2806,6 +2806,68 @@
       ]
     },
     {
+      "date": "2026-10-20",
+      "source_mode": "native_daily",
+      "regime_code": "unclassified",
+      "regime_label": "Selective AI Relief / Energy–Credit Constraint",
+      "dominant_theme_id": "market_structure",
+      "signals": {
+        "growth": "→",
+        "inflation": "↑",
+        "rates": "→",
+        "earnings": "↑",
+        "liquidity": "→",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "2026-10-19 Nasdaq +1.11% and SOX +1.61% selective technology rebound",
+          "evidence": "10月19日Nasdaq Composite +1.11%至26,430.89，SOX +1.61%，标普+0.41%，道指-0.07%；Reuters记录15.27十亿股成交低于20日均17.26十亿股，且广度偏弱。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "芯片股买盘↑→纳指弹升；融资信用利差若未缩窄→估值反弹持续性受限。",
+          "confirmation": "周二检验半导体广度、AI相关信用利差与科技公司资本开支指引是否同时改善。",
+          "invalidation": "若科技反弹时信用利差持续扩张、成交量不足且道指/小盘弱，则仅属短线补仓。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "2026-10-19 China Q3 GDP +4.5% versus 4.3% in Q2, retail sales +1.1%",
+          "evidence": "中国国家统计口径Q3 GDP同比增长4.5%（二季度4.3%），9月工业增加值+5.5%，社会消费品零售总额仅+1.1%；Reuters及中国政府信息交叉印证。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "出口/工业生产回升→全球制造链订单预期改善；消费弱→国内服务与地产链利润修复受限。",
+          "confirmation": "比较未来亚洲贸易订单、铜价与人民币对已公布数据的同交易日反应，避免用GDP增速替代内需。",
+          "invalidation": "若9月零售低位持续、地产投资恶化且外需新单转弱，则4.5%增长并不意味着复苏扩散。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "2026-10-19 Brent Dec -0.3% while WTI Nov +2.2% on Russia waiver and expiry basis",
+          "evidence": "10月19日Brent 12月期货收109.55美元（-0.3%）；WTI11月收103.66美元（+2.2%）而WTI12月收98.54美元（-0.5%）。俄制裁豁免改变供给预期，但航运风险仍在。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "俄制裁执行放松→远月供给预期↑、风险溢价↓；近月交割紧张→WTI11月价差↑；通胀传导仍高。",
+          "confirmation": "检验WTI11月到期前后的近远月价差、Brent12月及实际航运量是否同向收敛。",
+          "invalidation": "若已核验新物流中断或航运保费再升，使Brent远月持续创新高，则制裁缓和难独立压低成本。",
+          "source_mode": "native_daily"
+        }
+      ]
+    },
+    {
       "date": "2026-10-22",
       "source_mode": "native_daily",
       "regime_code": "unclassified",
@@ -2971,7 +3033,7 @@
       "theme_id": "market_structure",
       "theme_label": "Market Structure",
       "category": "market_structure",
-      "days_in_top3": 21,
+      "days_in_top3": 22,
       "best_rank": 1,
       "first_seen": "2026-09-26",
       "last_seen": "2026-10-22",
@@ -3035,13 +3097,13 @@
       "theme_id": "us_china_trade_controls",
       "theme_label": "U.S.–China Trade Controls",
       "category": "china_trade_policy",
-      "days_in_top3": 8,
+      "days_in_top3": 9,
       "best_rank": 1,
       "first_seen": "2026-09-24",
-      "last_seen": "2026-10-19",
+      "last_seen": "2026-10-20",
       "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "能源/运费→投入成本→利润率与通胀→政策约束",
+      "state": "Escalating",
+      "latest_transmission": "俄制裁执行放松→远月供给预期↑、风险溢价↓；近月交割紧张→WTI11月价差↑；通胀传导仍高。",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -3731,13 +3793,13 @@
     "month": "2026-10",
     "through": "2026-10-22",
     "expected_days": 22,
-    "present_days": 20,
+    "present_days": 21,
     "missing_dates": [
-      "2026-10-20",
       "2026-10-21"
     ],
     "unclassified_dates": [
       "2026-10-19",
+      "2026-10-20",
       "2026-10-22"
     ],
     "unknown_signal_cells": 0,
