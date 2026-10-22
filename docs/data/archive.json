@@ -18,6 +18,20 @@
       "last_updated": "2026-10-22T09:20:06+08:00"
     },
     {
+      "date": "2026-10-20",
+      "thesis": "截至2026-10-20 09:41 SGT（2026-10-19 21:41 EDT），美国10月19日盘面出现科技主导的修复而非全面风险偏好回升：Nasdaq涨1.11%，S&P 500涨0.41%，Dow跌0.07%；半导体反弹1.61%，但能源运输风险及AI算力融资成本仍是制约估值修复的共同约束。10月20日Halliburton业绩与10月21日科技财报将检验油服订单、资本开支和AI收益兑现。",
+      "overall_regime": "Selective AI Relief / Energy–Credit Constraint",
+      "dominant_narrative": "10月19日标普收7,690.73、纳指收26,430.89，较10月16日分别上涨0.41%和1.11%；然而Reuters显示纽约证交所下跌家数仍占优，美股成交量15.27十亿股低于20日均值17.26十亿股，表明反弹集中在大型科技。SOX结束此前连跌，仍显著低于10月12日水平。油价方面Brent12月跌至109.55美元，而临近到期的WTI11月涨至103.66美元、12月跌至98.54美元；这种期限价差必须归因于不同合约，而不能拼成油价单边上涨。中国三季度GDP同比4.5%高于前季4.3%，但9月零售同比仅1.1%，对全球制造业订单的利好与内需不足须同时评估。下一个关口是Halliburton10月20日9:00 EDT财报电话会及10月21日Meta/Tesla财报：核验油服现金流、AI资本支出及信用利差。俄制裁豁免与海上安全风险方向相抵，当前没有可信依据宣称沙特已确认新增减产。",
+      "report_path": "reports/2026/10/2026-10-20.md",
+      "daily_json_path": "data/daily/2026-10-20.json",
+      "sources_path": "data/sources/2026-10-20.json",
+      "edition": "Morning Official",
+      "edition_status": "official",
+      "publication_cycle": "morning",
+      "source_mode": "native_daily",
+      "last_updated": "2026-10-20T09:41:18+08:00"
+    },
+    {
       "date": "2026-10-19",
       "thesis": "市场的约束是能源成本与资本成本偏高，同时AI相关资产需要更强的盈利和现金流证据来支撑估值。周一最先改变全球增长判断的可核验事件，是北京时间09:30中国房价数据和10:00三季度国民经济数据；在09:00截面它们均为“待公布”，不能提前据此下结论。国家统计局日程",
       "overall_regime": "Growth–Earnings Verification / Energy Constraint",
