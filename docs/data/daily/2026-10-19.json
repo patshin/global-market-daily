@@ -1,0 +1,959 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-10-19",
+  "edition": "Morning Official · 历史补档",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-10-19 09:00 SGT",
+  "data_cutoff_et": "2026-10-18 21:00 EDT",
+  "last_updated": "2026-10-20T12:02:53+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-10-19T09:00:00+08:00",
+    "started_at_sgt": "2026-10-20T11:12:08+08:00",
+    "research_cutoff_sgt": "2026-10-20T12:02:53+08:00",
+    "mode": "historical_reconstruction",
+    "note": "started_at为本轮修复实际开始，research_cutoff为本轮回补核验结束；事实截面由historical_cutoff_sgt限制。没有恢复原始10月19日09:00草稿。"
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": false
+  },
+  "publication_policy": "morning_official_2026-10-08",
+  "source_mode": "reconstructed_daily",
+  "sources_path": "data/sources/2026-10-19.json",
+  "reconstruction": {
+    "is_reconstructed": true,
+    "reconstructed_at": "2026-10-20T12:02:53+08:00",
+    "historical_cutoff_sgt": "2026-10-19 09:00 SGT",
+    "original_snapshot_recovered": false,
+    "limitations": [
+      "没有保存可验证的10月19日原始候选，当前为20日重建，绝非原生当日日报。",
+      "周一09:00现货/期货快照无法恢复，价格严格标为10月16日历史观察。",
+      "部分原始页面当前抓取失败或缓存旧期；已用保存研究稿与独立来源交叉核验，但没有制造原始网页存档。",
+      "国债严格五个有效观测区间的10月8日基值未再次可靠取得；原油同合约5D也未验证，全部明确留缺。",
+      "现货汇率、黄金/铜、ETF/机构流量、期权仓位、完整拍卖结果和财报一致预期未达到可靠验证标准。",
+      "未纳入10月19日09:00之后的中国GDP实际值、美国周一收盘或后续财报结果。"
+    ]
+  },
+  "comparison_basis": {
+    "previous_official_date": "2026-10-18",
+    "note": "原版缺失时的历史补档；部分内容为核验纠正，不冒称18日至19日新增。"
+  },
+  "thesis": "市场的约束是能源成本与资本成本偏高，同时AI相关资产需要更强的盈利和现金流证据来支撑估值。周一最先改变全球增长判断的可核验事件，是北京时间09:30中国房价数据和10:00三季度国民经济数据；在09:00截面它们均为“待公布”，不能提前据此下结论。国家统计局日程",
+  "dominant_narrative": "核心矛盾是“经营增长能否覆盖更高的资本成本和风险溢价”。先进制程订单的增长不能自动证明所有AI投资项目都能产生充足现金流；能源价格上升也不能自动证明所有期限国债收益率都会上涨。对10月19日的有效观察顺序，应从中国内需数据开始，再核对美国现金开盘后的科技广度、实际收益率与信用条件。中国新增临时登记则是另一条独立传导链：跨境技术交易增加合规步骤，可能影响交付节奏、许可收入和交易完成时间，但本身不等于40项技术均已被全面禁运。上述传导为分析判断，价格与公告事实分别见跨资产表、财报和政策章节。",
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20"
+  ],
+  "market_regime": {
+    "growth": {
+      "state": "→ 需求结构待验证",
+      "evidence": "美国9月工业总产出+0.7%，制造业+0.3%；中国19日10:00数据在历史截止时尚未公布。"
+    },
+    "inflation": {
+      "state": "↑ 能源成本压力",
+      "evidence": "Brent12月10月16日结算109.86美元，不能将价格上涨直接当成新一期CPI。"
+    },
+    "rates": {
+      "state": "→ 避险与通胀拉扯",
+      "evidence": "同源CMT利率基准与原油成本可能方向相反，需等现金债市实际报价确认。"
+    },
+    "earnings": {
+      "state": "→ 盈利与估值分化",
+      "evidence": "台积电Q3营收和利润率已公布；不能因股票下跌断言整个AI行业盈利下修。"
+    },
+    "liquidity": {
+      "state": "→ 现金盘待确认",
+      "evidence": "没有可靠的19日09:00美股现金价格或实时基金净流量，保留历史收盘与数据缺口。"
+    },
+    "geopolitics": {
+      "state": "↑ 航道与合规风险",
+      "evidence": "IMFC航道风险提示与中国技术出口临时登记是不同事件，不等同于确认新增减产。"
+    },
+    "overall": {
+      "state": "Growth–Earnings Verification / Energy Constraint",
+      "evidence": "先核对中国内需结构，再核验现金流、利率与能源同时间窗口的传导。"
+    }
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,659.44",
+      "change_1d": "约-1.1%",
+      "change_5d": "约-1.9%",
+      "signal": "历史观察，不代表周一现价",
+      "driver": "宽基风险承受能力下降；后续市场反应须以同时间戳数据验证。",
+      "status": "Historical reconstruction / prior session",
+      "as_of": "2026-10-16 EDT，现金收盘/日度CMT/各合约结算，非同一瞬时同步报价",
+      "sources": [
+        "S05",
+        "S17"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "26,140.03",
+      "change_1d": "约-2.1%",
+      "change_5d": "约-4.5%",
+      "signal": "历史观察，不代表周一现价",
+      "driver": "科技表现弱于宽基；后续市场反应须以同时间戳数据验证。",
+      "status": "Historical reconstruction / prior session",
+      "as_of": "2026-10-16 EDT，现金收盘/日度CMT/各合约结算，非同一瞬时同步报价",
+      "sources": [
+        "S05",
+        "S17"
+      ]
+    },
+    {
+      "asset": "Dow",
+      "level": "52,002.41",
+      "change_1d": "约-0.3%",
+      "change_5d": "约+0.7%",
+      "signal": "历史观察，不代表周一现价",
+      "driver": "传统行业相对抗跌；后续市场反应须以同时间戳数据验证。",
+      "status": "Historical reconstruction / prior session",
+      "as_of": "2026-10-16 EDT，现金收盘/日度CMT/各合约结算，非同一瞬时同步报价",
+      "sources": [
+        "S05",
+        "S17"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,721.37",
+      "change_1d": "约-1.7%",
+      "change_5d": "约-3.0%",
+      "signal": "历史观察，不代表周一现价",
+      "driver": "小盘融资敏感性较高；后续市场反应须以同时间戳数据验证。",
+      "status": "Historical reconstruction / prior session",
+      "as_of": "2026-10-16 EDT，现金收盘/日度CMT/各合约结算，非同一瞬时同步报价",
+      "sources": [
+        "S05",
+        "S17"
+      ]
+    },
+    {
+      "asset": "UST 2Y CMT",
+      "level": "4.74%",
+      "change_1d": "-3bp",
+      "change_5d": "尚无法可靠确认",
+      "signal": "历史观察，不代表周一现价",
+      "driver": "前端政策和融资成本基准；后续市场反应须以同时间戳数据验证。",
+      "status": "Historical reconstruction / prior session",
+      "as_of": "2026-10-16 EDT，现金收盘/日度CMT/各合约结算，非同一瞬时同步报价",
+      "sources": [
+        "S06"
+      ]
+    },
+    {
+      "asset": "UST 5Y CMT",
+      "level": "4.89%",
+      "change_1d": "-2bp",
+      "change_5d": "尚无法可靠确认",
+      "signal": "历史观察，不代表周一现价",
+      "driver": "中期增长和通胀预期基准；后续市场反应须以同时间戳数据验证。",
+      "status": "Historical reconstruction / prior session",
+      "as_of": "2026-10-16 EDT，现金收盘/日度CMT/各合约结算，非同一瞬时同步报价",
+      "sources": [
+        "S06"
+      ]
+    },
+    {
+      "asset": "UST 10Y CMT",
+      "level": "5.09%",
+      "change_1d": "-1bp",
+      "change_5d": "尚无法可靠确认",
+      "signal": "历史观察，不代表周一现价",
+      "driver": "长久期资产折现率基准；后续市场反应须以同时间戳数据验证。",
+      "status": "Historical reconstruction / prior session",
+      "as_of": "2026-10-16 EDT，现金收盘/日度CMT/各合约结算，非同一瞬时同步报价",
+      "sources": [
+        "S06"
+      ]
+    },
+    {
+      "asset": "UST 30Y CMT",
+      "level": "5.43%",
+      "change_1d": "0bp",
+      "change_5d": "尚无法可靠确认",
+      "signal": "历史观察，不代表周一现价",
+      "driver": "超长端期限风险基准；后续市场反应须以同时间戳数据验证。",
+      "status": "Historical reconstruction / prior session",
+      "as_of": "2026-10-16 EDT，现金收盘/日度CMT/各合约结算，非同一瞬时同步报价",
+      "sources": [
+        "S06"
+      ]
+    },
+    {
+      "asset": "2s10s CMT",
+      "level": "+35bp",
+      "change_1d": "+2bp",
+      "change_5d": "尚无法可靠确认",
+      "signal": "历史观察，不代表周一现价",
+      "driver": "同源10Y减2Y，不与交易商利率拼接；后续市场反应须以同时间戳数据验证。",
+      "status": "Historical reconstruction / prior session",
+      "as_of": "2026-10-16 EDT，现金收盘/日度CMT/各合约结算，非同一瞬时同步报价",
+      "sources": [
+        "S06"
+      ]
+    },
+    {
+      "asset": "10s30s CMT",
+      "level": "+34bp",
+      "change_1d": "+1bp",
+      "change_5d": "尚无法可靠确认",
+      "signal": "历史观察，不代表周一现价",
+      "driver": "同源30Y减10Y，反映长端曲线斜率；后续市场反应须以同时间戳数据验证。",
+      "status": "Historical reconstruction / prior session",
+      "as_of": "2026-10-16 EDT，现金收盘/日度CMT/各合约结算，非同一瞬时同步报价",
+      "sources": [
+        "S06"
+      ]
+    },
+    {
+      "asset": "Brent Dec 2026",
+      "level": "$109.86/bbl",
+      "change_1d": "+$3.94（约+3.7%）",
+      "change_5d": "尚无法可靠确认",
+      "signal": "历史观察，不代表周一现价",
+      "driver": "能源成本和运输风险传导；后续市场反应须以同时间戳数据验证。",
+      "status": "Historical reconstruction / prior session",
+      "as_of": "2026-10-16 EDT，现金收盘/日度CMT/各合约结算，非同一瞬时同步报价",
+      "sources": [
+        "S07",
+        "S08",
+        "S20"
+      ]
+    },
+    {
+      "asset": "WTI Nov 2026",
+      "level": "$101.41/bbl",
+      "change_1d": "+$3.44（约+3.5%）",
+      "change_5d": "尚无法可靠确认",
+      "signal": "历史观察，不代表周一现价",
+      "driver": "美国原油风险与合约月份需一致；后续市场反应须以同时间戳数据验证。",
+      "status": "Historical reconstruction / prior session",
+      "as_of": "2026-10-16 EDT，现金收盘/日度CMT/各合约结算，非同一瞬时同步报价",
+      "sources": [
+        "S07",
+        "S08",
+        "S20"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "HISTORICAL_RECONSTRUCTION_WITH_EXPLICIT_GAPS",
+    "asset_count": 12,
+    "level_coverage": {
+      "count": 12,
+      "total": 12,
+      "pct": 100.0,
+      "target_pct": 90
+    },
+    "change_1d_coverage": {
+      "count": 12,
+      "total": 12,
+      "pct": 100.0,
+      "target_pct": 90
+    },
+    "change_5d_coverage": {
+      "count": 4,
+      "total": 12,
+      "pct": 33.3,
+      "target_pct": 80
+    },
+    "explicit_gaps": [
+      "UST 2Y CMT: 五日同口径基期尚无法可靠确认",
+      "UST 5Y CMT: 五日同口径基期尚无法可靠确认",
+      "UST 10Y CMT: 五日同口径基期尚无法可靠确认",
+      "UST 30Y CMT: 五日同口径基期尚无法可靠确认",
+      "2s10s CMT: 五日同口径基期尚无法可靠确认",
+      "10s30s CMT: 五日同口径基期尚无法可靠确认",
+      "Brent Dec 2026: 五日同口径基期尚无法可靠确认",
+      "WTI Nov 2026: 五日同口径基期尚无法可靠确认"
+    ],
+    "policy": "股票5D为10/9至10/16；国债10/12休市，不能把自然周变化当五个有效观测区间；原油报道周涨幅不是经过核验的严格5D。本版覆盖不达目标，未用未经核验数值补足。"
+  },
+  "what_changed": [
+    {
+      "yesterday": "10月18日正式版仍以周末风险为主要背景。",
+      "today": "中国数据进入19日10:00发布窗口，但09:00截面仍为待公布。",
+      "why_it_matters": "需求结构将先作用于人民币和周期资产，不可使用稍后发布的实际结果解释早报。",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "yesterday": "前版对技术目录主要强调征求意见。",
+      "today": "目录征求意见之外，10月16日已实施临时登记，须分别披露。",
+      "why_it_matters": "跨境授权和产权交易可能已有现实合规步骤，并非一律全面禁止。",
+      "sources": [
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "yesterday": "AI价格调整容易被误读为全行业盈利恶化。",
+      "today": "单列台积电已发布盈利与后续现金流验证，不把股价直接当订单数据。",
+      "why_it_matters": "经营兑现与融资成本是两条不同的估值驱动，证据不可替代。",
+      "sources": [
+        "S02"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "中国三季度与9月经济数据即将公布",
+      "status": "Confirmed Upcoming",
+      "event_time_et": "2026-10-18 22:00 EDT",
+      "event_time_sgt": "2026-10-19 10:00 SGT",
+      "what_happened": "截至2026-10-19 09:00 SGT，国家统计局三季度GDP及9月主要活动数据属于预定发布日程，原始历史截止时实际结果仍待公布。本历史补档只保留截点内可知的事件日程，不填写之后公布的GDP和经济活动实际值。",
+      "what_changed": "观察焦点从周末能源与利率风险转向中国GDP、零售、工业和投资数据的发布窗口；截至早上09:00 SGT，此处所称变化是事件临近，并不意味着统计数据已经显示复苏。",
+      "why_it_matters": "GDP总量需要和零售、固定资产投资、工业、地产等结构指标联合解释，才能评估内需对人民币、铜和全球周期性企业盈利的影响；不可以使用原始信息截点之后发布的实际数据。",
+      "transmission": "中国内需结构与预期差→离岸人民币及铜价→周期性股票和跨国企业盈利预期",
+      "affected_assets": [
+        "CNH",
+        "Copper",
+        "China equities"
+      ],
+      "direction": "Conditional / mixed",
+      "importance": "★★★★★",
+      "confirmation": "CNH、铜和需求敏感股票同时确认数据改善才支持广泛复苏。",
+      "invalidation": "总量改善但消费投资疲弱或跨市场背离，将否定全面复苏判断。",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "先进制程盈利增长与科技估值压力并存",
+      "status": "Ongoing",
+      "event_time_et": "2026-10-15，发布时间见发行人披露",
+      "event_time_sgt": "2026-10-15，发布时间见发行人披露",
+      "what_happened": "截至2026-10-19 09:00 SGT，已发布的台积电三季度业绩显示美元收入约467.2亿美元、毛利率约66.4%，证明部分先进制程供应链仍有经营需求；这些数字不能直接代表AI下游项目现金回报，尚未公布的后续业绩不作实际值处理。",
+      "what_changed": "历史信息集中已有可验证的芯片供应端收入和利润率数据，因此可以把盈利兑现与股价波动分开检视，而不再直接把科技股下跌等同于产业客户订单或利润同步恶化。",
+      "why_it_matters": "芯片供应商营收增长与终端企业AI资本开支的净现值并非同一指标；要判断信贷与估值的可持续性，还需要看客户现金流、实际现金回收周期及融资成本。",
+      "transmission": "芯片收入与毛利率→经营现金流与资本开支→融资覆盖能力和权益估值",
+      "affected_assets": [
+        "TSMC",
+        "SOX",
+        "AI credit"
+      ],
+      "direction": "Conditional / mixed",
+      "importance": "★★★★",
+      "confirmation": "供应链收入与利润率稳定、经营现金流能覆盖资本开支，且科技股市场广度同步恢复，才更支持持续性改善。",
+      "invalidation": "若AI项目支出持续快于客户现金回收、融资成本升高或订单兑现放缓，将削弱由芯片盈利推导整体科技板块回报的判断。",
+      "sources": [
+        "S02"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "能源与关键贸易航道风险仍待价格验证",
+      "status": "Ongoing",
+      "event_time_et": "2026-10-16收盘及10月17日风险提示",
+      "event_time_sgt": "2026-10-17收盘换算及周末风险提示",
+      "what_happened": "截至本历史截点可核实的最近交易日仍为10月16日（周五）：Brent 2026年12月合约结算价109.86美元，WTI 2026年11月合约101.41美元；尚无本次截点内的周一现货/期货新成交快照，任何风险声明都不能直接当作新增减产事实。",
+      "what_changed": "周末流传的运输与能源风险报道应和已核实的周五同合约结算价区分；10月19日09:00 SGT之前没有取得可复核的周一报价或新运输中断实证，因此不能写成已出现新的价格反应。",
+      "why_it_matters": "能源和运价上涨可能经投入成本与通胀侵蚀企业利润及消费者购买力，但影响大小取决于运输扰动的持续时间、合同定价周期与货币政策反应，不能用单日价格推定全部成本传导。",
+      "transmission": "能源/运费→投入成本→利润率与通胀→政策约束",
+      "affected_assets": [
+        "Brent Dec",
+        "WTI Nov",
+        "Airlines"
+      ],
+      "direction": "Conditional / mixed",
+      "importance": "★★★★★",
+      "confirmation": "同合约报价与真实通行、运价同步缓和才确认风险溢价下降。",
+      "invalidation": "若随后出现经过独立确认的船舶通行中断、实际供应约束或同合约油价再度明显走高，就不能继续使用快速缓和能源风险溢价的情景。",
+      "sources": [
+        "S07",
+        "S08",
+        "S12",
+        "S20"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top 3 Market Catalysts｜三大催化剂",
+      "status": "Historical reconstruction / evidence limitations disclosed",
+      "summary": "中国需求数据、AI盈利与估值的验证、能源与航道风险，是本次优先级最高的三条线。前者尚未发布，后两者有已公布背景但仍待周一价格确认。三者共同影响订单、利润率和折现率，必须分开事件时间与报价时间。详见上方三大催化剂，不增列第四项充数。",
+      "paragraphs": [
+        "中国需求数据、AI盈利与估值的验证、能源与航道风险，是本次优先级最高的三条线。前者尚未发布，后两者有已公布背景但仍待周一价格确认。三者共同影响订单、利润率和折现率，必须分开事件时间与报价时间。详见上方三大催化剂，不增列第四项充数。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S07"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings｜重要财报",
+      "status": "Historical reconstruction / evidence limitations disclosed",
+      "summary": "台积电于10月15日公布2026Q3：美元营收46.72bn、台币营收1,494.24bn、净利润763.06bn、EPS29.43元、毛利率66.4%、营业利润率58.7%。Q4公司收入指引52.3–54.3bn美元，毛利率65%–67%。未经本轮同口径复核的市场一致预期、一次性项目和精确财报窗口股价变动留缺。",
+      "paragraphs": [
+        "台积电于10月15日公布2026Q3：美元营收46.72bn、台币营收1,494.24bn、净利润763.06bn、EPS29.43元、毛利率66.4%、营业利润率58.7%。Q4公司收入指引52.3–54.3bn美元，毛利率65%–67%。未经本轮同口径复核的市场一致预期、一次性项目和精确财报窗口股价变动留缺。",
+        "未来72小时：Halliburton、Meta、Tesla。 三家实际业绩均待公布；未填未经核验的EPS一致预期。Halliburton看活动量而不只看油价；Meta看AI投资与广告现金回收；Tesla的交付量不能替代净利润与现金流。日期、时区和公告/电话会区分见事件表。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S14",
+        "S15",
+        "S16"
+      ],
+      "reported": [
+        {
+          "id": "TSMC-2026Q3",
+          "company": "Taiwan Semiconductor Manufacturing Company",
+          "ticker": "TSM",
+          "period": "2026Q3",
+          "status": "Released/Occurred",
+          "release_date": "2026-10-15",
+          "release_time_et": "尚无法可靠确认精确公告小时",
+          "release_time_sgt": "尚无法可靠确认精确公告小时",
+          "market_session": "Issuer release; exact timestamp not reconstructed",
+          "key_takeaway": "先进制程增长与科技股估值压力可以同时存在，需区分供应商营收与客户现金回报。",
+          "metrics": [
+            {
+              "metric": "Revenue USD",
+              "actual": "$46.72bn",
+              "consensus": "尚无法可靠确认本历史截面的可比一致预期",
+              "previous_or_yoy": "未在本候选中填入未经同口径确认的比较值",
+              "surprise": "不推算未经核验的超预期幅度",
+              "notes": "10月15日公司已披露；历史来源见S02。"
+            },
+            {
+              "metric": "Revenue TWD",
+              "actual": "NT$1,494.24bn",
+              "consensus": "尚无法可靠确认本历史截面的可比一致预期",
+              "previous_or_yoy": "未在本候选中填入未经同口径确认的比较值",
+              "surprise": "不推算未经核验的超预期幅度",
+              "notes": "10月15日公司已披露；历史来源见S02。"
+            },
+            {
+              "metric": "Net income",
+              "actual": "NT$763.06bn",
+              "consensus": "尚无法可靠确认本历史截面的可比一致预期",
+              "previous_or_yoy": "未在本候选中填入未经同口径确认的比较值",
+              "surprise": "不推算未经核验的超预期幅度",
+              "notes": "10月15日公司已披露；历史来源见S02。"
+            },
+            {
+              "metric": "EPS TWD",
+              "actual": "NT$29.43",
+              "consensus": "尚无法可靠确认本历史截面的可比一致预期",
+              "previous_or_yoy": "未在本候选中填入未经同口径确认的比较值",
+              "surprise": "不推算未经核验的超预期幅度",
+              "notes": "10月15日公司已披露；历史来源见S02。"
+            },
+            {
+              "metric": "Gross margin",
+              "actual": "66.4%",
+              "consensus": "尚无法可靠确认本历史截面的可比一致预期",
+              "previous_or_yoy": "未在本候选中填入未经同口径确认的比较值",
+              "surprise": "不推算未经核验的超预期幅度",
+              "notes": "10月15日公司已披露；历史来源见S02。"
+            },
+            {
+              "metric": "Operating margin",
+              "actual": "58.7%",
+              "consensus": "尚无法可靠确认本历史截面的可比一致预期",
+              "previous_or_yoy": "未在本候选中填入未经同口径确认的比较值",
+              "surprise": "不推算未经核验的超预期幅度",
+              "notes": "10月15日公司已披露；历史来源见S02。"
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "Q4 revenue",
+              "current": "$52.3–54.3bn",
+              "previous_or_consensus": "尚无法可靠确认同口径市场预期",
+              "change": "公司指引，不是已实现结果",
+              "interpretation": "只用于条件分析，不把指引冒充Q4实际值。"
+            },
+            {
+              "metric": "Q4 gross margin",
+              "current": "65%–67%",
+              "previous_or_consensus": "尚无法可靠确认同口径市场预期",
+              "change": "公司指引，不是已实现结果",
+              "interpretation": "只用于条件分析，不把指引冒充Q4实际值。"
+            }
+          ],
+          "market_reaction": {
+            "session": "财报窗口",
+            "move": "尚无法可靠确认同窗口精确股价变动",
+            "as_of": "2026-10-15，未用之后收盘拼接"
+          },
+          "one_offs": [
+            "尚无法可靠确认一次性项目分解"
+          ],
+          "read_through": [
+            {
+              "asset": "Semiconductors / AI customers",
+              "implication": "供应商经营增长不能自动证明所有客户资本回报足以覆盖融资成本。"
+            }
+          ],
+          "sources": [
+            "S02"
+          ]
+        }
+      ],
+      "upcoming_72h": []
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "U.S. Economic Data｜美国经济数据",
+      "status": "Historical reconstruction / evidence limitations disclosed",
+      "summary": "美联储10月16日公布9月工业产出环比+0.7%，8月修订为+0.1%；制造业+0.3%、采矿+0.2%、公用事业+3.5%，第三季度工业产出年率+2.8%。公用事业明显贡献总量，不能把+0.7%全部解释为周期需求加速；对工业、能源和资本品盈利的含义应分行业检验。该数据在历史截止前已发布。G.17原始发布",
+      "paragraphs": [
+        "美联储10月16日公布9月工业产出环比+0.7%，8月修订为+0.1%；制造业+0.3%、采矿+0.2%、公用事业+3.5%，第三季度工业产出年率+2.8%。公用事业明显贡献总量，不能把+0.7%全部解释为周期需求加速；对工业、能源和资本品盈利的含义应分行业检验。该数据在历史截止前已发布。G.17原始发布",
+        "本轮原始固定链接未抓取成功，当前G.17页面返回的是旧期缓存；9月数值另由10月16日DPA报道交叉确认，不冒称旧缓存是9月原文。"
+      ],
+      "tables": [],
+      "sources": [
+        "S09",
+        "S10"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Global Central Banks｜全球央行",
+      "status": "Historical reconstruction / evidence limitations disclosed",
+      "summary": "美联储最近一次已核实政策决定为9月16日加息25bp至3.75%–4.00%，9月17日起执行；此处是政策基线，非周末新增决定。声明 · 执行说明",
+      "paragraphs": [
+        "美联储最近一次已核实政策决定为9月16日加息25bp至3.75%–4.00%，9月17日起执行；此处是政策基线，非周末新增决定。声明 · 执行说明",
+        "加拿大央行官方确认Macklem于10月17日在IMF会议期间举行媒体圆桌，报道禁发时点为09:00 ET。该公告本身不含完整讲话文本，因此本文不把媒体转述的预测调整写成已发布的新一期货币政策报告。加拿大央行",
+        "欧洲央行官方决议目录最近可核实条目为9月10日；日本央行下一次政策会议为10月29–30日，均不能写成10月19日09:00已经作出新决定。利率风险需经曲线和新决议确认。ECB目录 · BOJ会议日程",
+        "政策日程和历史基准不构成新的当日决议；动态网页不证明原始09:00快照已经恢复。"
+      ],
+      "tables": [],
+      "sources": [
+        "S11",
+        "S18",
+        "S19"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Major International Events｜重大国际事件",
+      "status": "Historical reconstruction / evidence limitations disclosed",
+      "summary": "IMFC于10月16–17日年度会议期间的官方资料与10月17日简报，讨论贸易航道、能源食品安全及AI相关风险。仅保留已记录的风险背景，不根据声明推算新制裁范围或当日减产量。",
+      "paragraphs": [
+        "IMFC于10月16–17日年度会议期间的官方资料与10月17日简报，讨论贸易航道、能源食品安全及AI相关风险。仅保留已记录的风险背景，不根据声明推算新制裁范围或当日减产量。",
+        "此前报道涉及俄罗斯制裁执行与沙特设施风险，本次未取得足以逐条重建生效范围、签署小时及实际产量损失的文件，故不沿用具体断言；保留能源物流风险作为待核验背景。"
+      ],
+      "tables": [],
+      "sources": [
+        "S12"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "China, Japan, Europe and Canada Policy｜区域政策",
+      "status": "Historical reconstruction / evidence limitations disclosed",
+      "summary": "中国：最终目录征求意见与临时管理已生效必须同时写明。 商务部、科技部10月16日第48号公告拟增列AI、生物医药、光伏40项技术，征求意见至11月15日。临时登记自公告发布即适用，包括已开始但尚未完成的相关出口，直至正式修订目录实施。公告列举境外技术所有权转让、对外授权及境外主体取得所有权/实际控制等情形；已进入公共领域的技术有相应排除规定。逐项范围以官方附件与解释为准，不把“登记”自动等同“禁止”。这可能改变跨境交易时点与合规成本。公告 · 官方解答 · AP独立报道",
+      "paragraphs": [
+        "中国：最终目录征求意见与临时管理已生效必须同时写明。 商务部、科技部10月16日第48号公告拟增列AI、生物医药、光伏40项技术，征求意见至11月15日。临时登记自公告发布即适用，包括已开始但尚未完成的相关出口，直至正式修订目录实施。公告列举境外技术所有权转让、对外授权及境外主体取得所有权/实际控制等情形；已进入公共领域的技术有相应排除规定。逐项范围以官方附件与解释为准，不把“登记”自动等同“禁止”。这可能改变跨境交易时点与合规成本。公告 · 官方解答 · AP独立报道",
+        "日本、欧洲、加拿大： 本次没有核实历史截止前24小时内可列为重大新增的财政、房地产、AI或税收实施决定。央行日程和已有能源风险是背景，不包装成新政策；具体见央行栏目。中国即将公布的数据仍保持待公布状态。"
+      ],
+      "tables": [],
+      "sources": [
+        "S03",
+        "S04"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "MSCI / FTSE / S&P / Nasdaq Index Changes｜指数调整",
+      "status": "无重大新增事件获得可靠核实。",
+      "summary": "无重大新增事件获得可靠核实。未取得历史截止前的新纳入/剔除名单、权重及生效日期，不能依据板块跌幅反推被动调仓规模。该栏为证据缺口说明，不代表保证全球没有任何指数公告。",
+      "paragraphs": [
+        "无重大新增事件获得可靠核实。未取得历史截止前的新纳入/剔除名单、权重及生效日期，不能依据板块跌幅反推被动调仓规模。该栏为证据缺口说明，不代表保证全球没有任何指数公告。"
+      ],
+      "tables": [],
+      "sources": [
+        "S13"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "Pension / Month-End / Quarter-End Flows｜机构与期末资金流",
+      "status": "无重大新增事件获得可靠核实。",
+      "summary": "无重大新增事件获得可靠核实。没有可验证的当日养老金再平衡或机构净流量数值，保留空缺；价格表现只支持回报比较，不能证明谁在买卖。若后续取得基金、托管或交易所流量资料，才可判断是否存在额外技术性压力。",
+      "paragraphs": [
+        "无重大新增事件获得可靠核实。没有可验证的当日养老金再平衡或机构净流量数值，保留空缺；价格表现只支持回报比较，不能证明谁在买卖。若后续取得基金、托管或交易所流量资料，才可判断是否存在额外技术性压力。"
+      ],
+      "tables": [],
+      "sources": [
+        "S05"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF Rebalance / Index Reconstruction｜ETF与重构",
+      "status": "无重大新增事件获得可靠核实。",
+      "summary": "无重大新增事件获得可靠核实。未确认ETF一级市场申赎、篮子变动或可量化再平衡金额。科技板块承压并不自动等于ETF赎回；需用发行人份额变化及指数正式公告验证。",
+      "paragraphs": [
+        "无重大新增事件获得可靠核实。未确认ETF一级市场申赎、篮子变动或可量化再平衡金额。科技板块承压并不自动等于ETF赎回；需用发行人份额变化及指数正式公告验证。"
+      ],
+      "tables": [],
+      "sources": [
+        "S05"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "Options Expiry｜期权与波动率",
+      "status": "Historical reconstruction / evidence limitations disclosed",
+      "summary": "期权仓位与完整波动率历史数据仍未达到本次重新核验标准，不能推导Gamma翻转、最大痛点、钉价或0DTE持仓。股票回撤只证明价格表现，不证明交易商仓位；需要合约级未平仓、成交和到期结构才能确认相关风险。",
+      "paragraphs": [
+        "期权仓位与完整波动率历史数据仍未达到本次重新核验标准，不能推导Gamma翻转、最大痛点、钉价或0DTE持仓。股票回撤只证明价格表现，不证明交易商仓位；需要合约级未平仓、成交和到期结构才能确认相关风险。"
+      ],
+      "tables": [],
+      "sources": [
+        "S05"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "U.S. Treasury Auctions｜美国国债与拍卖",
+      "status": "Historical reconstruction / evidence limitations disclosed",
+      "summary": "财政部CMT是日度平价曲线，不是单只现券成交利率或拍卖中标利率。本次保留保存稿10月16日历史水平和1D，严格5D基期未再次核实而留缺；不混用5.098%等其他供应商报价。即便油价上行，久期买盘仍可能压低长端收益率，不能从单一资产推演全市场。财政部曲线",
+      "paragraphs": [
+        "财政部CMT是日度平价曲线，不是单只现券成交利率或拍卖中标利率。本次保留保存稿10月16日历史水平和1D，严格5D基期未再次核实而留缺；不混用5.098%等其他供应商报价。即便油价上行，久期买盘仍可能压低长端收益率，不能从单一资产推演全市场。财政部曲线",
+        "历史截止附近拍卖的发行规模、高收益率、WI、尾差、投标倍数和投标人分配未得到完整官方结果核验，全部标记“尚无法可靠确认”，不拼凑拍卖结论。未来结果为“待公布”。"
+      ],
+      "tables": [],
+      "sources": [
+        "S06"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Oil / OPEC / Commodities｜石油与大宗",
+      "status": "Historical reconstruction / evidence limitations disclosed",
+      "summary": "Brent12月与WTI11月周五结算已经核验，须保持合约月份；不要把另一连续合约、盘中价或不同到期月替换进日涨跌。能源成本传导是“原油及运输→炼化/燃料→商品与服务投入成本→利润率、通胀和政策空间”，各环节有时滞。",
+      "paragraphs": [
+        "Brent12月与WTI11月周五结算已经核验，须保持合约月份；不要把另一连续合约、盘中价或不同到期月替换进日涨跌。能源成本传导是“原油及运输→炼化/燃料→商品与服务投入成本→利润率、通胀和政策空间”，各环节有时滞。",
+        "黄金、铜和现货外汇缺乏本轮可靠的完整同口径历史快照，明确留缺。新增OPEC生产执行量未经原始文件核验，不构造供应变化。"
+      ],
+      "tables": [],
+      "sources": [
+        "S07",
+        "S08",
+        "S20"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "IPO / Financing / Capital Cycle｜融资与资本周期",
+      "status": "Historical reconstruction / evidence limitations disclosed",
+      "summary": "本次没有核实可计入截止前24小时新增融资的完整发行条款。已宣布投资目标、承诺额度、完成融资与实际投入不是同一件事，全部保留区别。AI风险判断应跟踪企业自由现金流与资本开支覆盖，而不把股价下跌改写成融资失败。未来Meta/Tesla披露为检验点，尚无其本季实际结果。",
+      "paragraphs": [
+        "本次没有核实可计入截止前24小时新增融资的完整发行条款。已宣布投资目标、承诺额度、完成融资与实际投入不是同一件事，全部保留区别。AI风险判断应跟踪企业自由现金流与资本开支覆盖，而不把股价下跌改写成融资失败。未来Meta/Tesla披露为检验点，尚无其本季实际结果。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S15",
+        "S16"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Past 24H Major Breaking News｜过去24小时重大突发",
+      "status": "无重大新增事件获得可靠核实。",
+      "summary": "严格窗口为北京时间10月18日09:00至19日09:00。本次未核实该窗口内具有明确实际发生时点、足以进入本栏的重大新增事件；因此不把10月15日财报、16日收盘或17日IMFC会议挪入“过去24小时”。这些背景仍在相关栏目保留。无重大新增事件获可靠确认，不等于保证没有任何新闻发生。",
+      "paragraphs": [
+        "严格窗口为北京时间10月18日09:00至19日09:00。本次未核实该窗口内具有明确实际发生时点、足以进入本栏的重大新增事件；因此不把10月15日财报、16日收盘或17日IMFC会议挪入“过去24小时”。这些背景仍在相关栏目保留。无重大新增事件获可靠确认，不等于保证没有任何新闻发生。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "Integrated Market Impact｜综合市场影响",
+      "status": "Historical reconstruction / evidence limitations disclosed",
+      "summary": "按先后顺序看：先用中国数据检验增长，再以美国现金交易和即将公布的企业业绩检验盈利兑现，最后用油价、利率与信用条件确认折现率约束是否缓和。只有多条传导链同向，才能提升对市场方向的把握；若需求与成本反向，应更重视行业差异。临时技术出口登记是独立政策约束，需结合具体企业披露，不能把整个中国科技行业一概归类。",
+      "paragraphs": [
+        "按先后顺序看：先用中国数据检验增长，再以美国现金交易和即将公布的企业业绩检验盈利兑现，最后用油价、利率与信用条件确认折现率约束是否缓和。只有多条传导链同向，才能提升对市场方向的把握；若需求与成本反向，应更重视行业差异。临时技术出口登记是独立政策约束，需结合具体企业披露，不能把整个中国科技行业一概归类。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S03",
+        "S07"
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "Growth Impulse",
+      "current": "→ 需求结构待验证",
+      "yesterday": "↓ 价格承压",
+      "change_reason": "加入实体产出证据，不用股票跌幅独自代理经济增长。",
+      "evidence": "工业总量+0.7%、制造业+0.3%；中国数据在09:00尚未公布。",
+      "sources": [
+        "S01",
+        "S09",
+        "S10"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "Inflation Impulse",
+      "current": "↑ 能源成本压力",
+      "yesterday": "↑ 油价物流风险",
+      "change_reason": "保留已知成本冲击，等待周一同合约报价而非创造新快照。",
+      "evidence": "10月16日Brent12月109.86美元、WTI11月101.41美元。",
+      "sources": [
+        "S07",
+        "S08"
+      ]
+    },
+    "rates_pressure": {
+      "label": "Rates Pressure",
+      "current": "→ 增长通胀拉扯",
+      "yesterday": "→ 避险买盘",
+      "change_reason": "利率统一为CMT口径，历史五日基期不可靠时保留缺口。",
+      "evidence": "10月16日CMT10Y为5.09%，不是其他供应商的交易报价。",
+      "sources": [
+        "S06"
+      ]
+    },
+    "earnings_revision": {
+      "label": "Earnings Revision",
+      "current": "→ 产业链分化",
+      "yesterday": "↓ 科技估值警惕",
+      "change_reason": "经营收入和利润证据与板块股价各自解释，避免混为一谈。",
+      "evidence": "台积电已披露Q3美元营收46.72bn与66.4%毛利率。",
+      "sources": [
+        "S02"
+      ]
+    },
+    "liquidity": {
+      "label": "Liquidity",
+      "current": "→ 现金盘待确认",
+      "yesterday": "→ 周末现金闭市",
+      "change_reason": "没有基金净流量和信用快照，不把价格变化归因于某类机构。",
+      "evidence": "美国周一常规现金开市为09:30EDT，晚于历史SGT09:00截面。",
+      "sources": [
+        "S13"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "Geopolitical Risk",
+      "current": "↑ 航道与技术合规",
+      "yesterday": "↑ 能源风险",
+      "change_reason": "区分供应链风险与技术登记，均不得扩大为未经确认的数量冲击。",
+      "evidence": "10月16日临时登记已经实施，最终目录仍在征求意见。",
+      "sources": [
+        "S03",
+        "S04",
+        "S12"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base — 结构分化",
+      "probability": "未量化：没有经校准的数值概率",
+      "trigger": "中国需求结构分化、能源风险不显著缓和、经营兑现仍待企业公告验证。",
+      "expected_market_reaction": "科技、周期与能源表现分化；不能把局部反弹概括为全面风险偏好改善。",
+      "assets_most_sensitive": [
+        "CNH",
+        "SOX",
+        "Brent Dec",
+        "UST10Y"
+      ],
+      "what_confirms_it": "油价和信用未共同改善，科技反弹广度不足。",
+      "what_invalidates_it": "需求、现金流与融资条件同时改善或同时恶化。"
+    },
+    "bull_case": {
+      "label": "Bull — 需求与现金流共振",
+      "probability": "未量化：没有经校准的数值概率",
+      "trigger": "中国内需改善有广度、能源风险溢价下降、企业现金回收与投入匹配。",
+      "expected_market_reaction": "周期与长久期科技可能同时受益，但须有实际报价和经营证据。",
+      "assets_most_sensitive": [
+        "CNH",
+        "SOX",
+        "Brent Dec",
+        "UST10Y"
+      ],
+      "what_confirms_it": "CNH、铜、科技广度及信用的同时间反应共同改善。",
+      "what_invalidates_it": "油价重新上行或资本开支增加却没有现金流支撑。"
+    },
+    "bear_case": {
+      "label": "Bear — 成本与需求双压",
+      "probability": "未量化：没有经校准的数值概率",
+      "trigger": "需求偏弱同时能源与融资成本上行，企业利润指引和现金回收恶化。",
+      "expected_market_reaction": "能源进口行业、小盘及高估值科技承压；国债方向取决于增长和通胀的主导。",
+      "assets_most_sensitive": [
+        "CNH",
+        "SOX",
+        "Brent Dec",
+        "UST10Y"
+      ],
+      "what_confirms_it": "成本上升与订单走弱共同出现，且真实信用指标确认。",
+      "what_invalidates_it": "运输恢复、需求转强并伴随现金流改善。"
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-10-19 10:00 SGT",
+      "et": "2026-10-18 22:00 EDT",
+      "event": "中国三季度与9月国民经济活动数据",
+      "consensus": "尚无法可靠确认历史截面一致预期",
+      "previous": "保持公告/历史基期口径，未补造前值",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "sgt": "2026-10-19 21:30 SGT",
+      "et": "2026-10-19 09:30 EDT",
+      "event": "美国周一现金市场开盘",
+      "consensus": "尚无法可靠确认历史截面一致预期",
+      "previous": "保持公告/历史基期口径，未补造前值",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S13"
+      ]
+    },
+    {
+      "sgt": "2026-10-20 21:00 SGT",
+      "et": "2026-10-20 09:00 EDT",
+      "event": "Halliburton Q3电话会；业绩公告与电话会分开",
+      "consensus": "尚无法可靠确认历史截面一致预期",
+      "previous": "保持公告/历史基期口径，未补造前值",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S14"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "能源成本持续高企而需求转弱",
+      "why_not_fully_priced": "冲击持续时间与成本转嫁能力尚未确认，不能只看某日涨幅。",
+      "trigger": "真实运输中断与需求数据转弱共同出现。",
+      "transmission": "能源成本→利润率与购买力→政策约束",
+      "first_asset": "Brent Dec / energy importers",
+      "theme_id": "energy_inflation",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-19",
+      "last_seen": "2026-10-19",
+      "lifecycle_note": "first_seen仅指本补档样本的观察标签，非声称全球风险在当天首次出现。",
+      "sources": [
+        "S07",
+        "S08",
+        "S12"
+      ]
+    },
+    {
+      "risk": "AI经营现金流不足以覆盖资本成本",
+      "why_not_fully_priced": "供应商增长不等于每家客户都有足够资本回报。",
+      "trigger": "未来财报现金流落后支出，或有独立融资缩量/信用恶化证据。",
+      "transmission": "回报预期下修→融资成本→科技估值",
+      "first_asset": "AI credit / SOX",
+      "theme_id": "ai_financing_quality",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-19",
+      "last_seen": "2026-10-19",
+      "lifecycle_note": "first_seen仅指本补档样本的观察标签，非声称全球风险在当天首次出现。",
+      "sources": [
+        "S02",
+        "S15",
+        "S16"
+      ]
+    },
+    {
+      "risk": "技术出口登记改变跨境交易与交付时点",
+      "why_not_fully_priced": "最终目录仍征求意见，不代表目前没有临时登记义务。",
+      "trigger": "监管解释、登记实施或最终目录进一步明确。",
+      "transmission": "交易合规步骤→交付与收入确认→企业现金流",
+      "first_asset": "China technology issuers",
+      "theme_id": "china_trade_policy",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-19",
+      "last_seen": "2026-10-19",
+      "lifecycle_note": "first_seen仅指本补档样本的观察标签，非声称全球风险在当天首次出现。",
+      "sources": [
+        "S03",
+        "S04"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "中国三季度国民经济与9月活动数据",
+    "status": "Confirmed Upcoming",
+    "date": "2026-10-19",
+    "et": "2026-10-18 22:00 EDT",
+    "sgt": "2026-10-19 10:00 SGT",
+    "consensus": "尚无法可靠确认历史截面的可比一致预期",
+    "previous": "尚无法可靠确认同口径前值",
+    "actual": "待公布",
+    "why_it_matters": "内需结构将改变周期企业盈利和能源需求判断，但不能使用09:00之后实际值重写早报。",
+    "first_market": "CNH, China equities, copper",
+    "bull_interpretation": "消费投资改善有广度且跨资产反应共同确认。",
+    "bear_interpretation": "总量改善依赖单一项目，内需疲弱且成本压力未缓和。",
+    "watch_first": [
+      "对照GDP、零售与投资地产结构；若总量改善而内需未跟进，不概括为全面复苏。",
+      "比较CNH、铜和相关股票同时间价格；出现背离时保留不确定性，不用异步价格拼接结论。",
+      "晚间观察美股现金广度与美债同窗口报价；若亚洲反应无法延续，重新检验融资成本约束。"
+    ],
+    "sources": [
+      "S01"
+    ]
+  }
+}
