@@ -1,11 +1,11 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-10-18",
-  "window_start": "2026-09-19",
-  "window_end": "2026-10-18",
+  "as_of": "2026-10-22",
+  "window_start": "2026-09-23",
+  "window_end": "2026-10-22",
   "coverage": {
-    "market_sessions": 30,
-    "native_daily_days": 13,
+    "market_sessions": 27,
+    "native_daily_days": 10,
     "reconstructed_daily_days": 17,
     "reconstructed_days": 0,
     "partial_days": 0,
@@ -88,254 +88,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-09-19",
-      "source_mode": "native_daily",
-      "regime_code": "event_risk",
-      "regime_label": "Weekend Event Risk / 5% yields versus oil relief",
-      "dominant_theme_id": "market_structure",
-      "signals": {
-        "growth": "→",
-        "inflation": "↓",
-        "rates": "↑",
-        "earnings": "→",
-        "liquidity": "↓",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "BOJ hikes to 1.25% by 7-2, but yen weakness shifts the next risk from policy surprise to intervention and carry volatility",
-          "evidence": "The Bank of Japan raised its policy rate from 1.00% to 1.25%, the highest in 31 years, with two board members dissenting. Instead of strengthening, the yen weakened and the dollar traded as high as 158.05 yen, while Japanese officials signaled readiness to respond to disorderly currency moves.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "BOJ hike + dovish dissent → yen weakness / intervention risk → carry funding volatility → JGB and global duration → equities and leveraged growth assets.",
-          "confirmation": "Further yen weakness with Japanese rate-check or intervention signals and firm global long yields would confirm that the policy move did not close the carry channel.",
-          "invalidation": "A sustained yen recovery accompanied by stable JGBs and lower global long yields would show that policy normalization is tightening funding conditions without destabilizing risk assets.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "U.S. 10Y closes at 5.01% while S&P and Nasdaq rise narrowly, creating a direct test of technology leadership versus the discount-rate ceiling",
-          "evidence": "Official Treasury data show the U.S. 10-year par yield at 5.01%, up 7bp from Thursday and 5bp from September 11. The S&P 500 still gained 0.17% and Nasdaq 0.40%, but the Dow and Russell 2000 fell and both NYSE and Nasdaq breadth were negative.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "10Y near 5% → WACC and bond alternative rise → small-cap/cyclical breadth weakens → credit sensitivity increases → technology leadership becomes more fragile.",
-          "confirmation": "Monday reopening with the 10Y near 5%, weak breadth and continued Russell/Dow underperformance would confirm that Friday's index resilience is narrow rather than broad.",
-          "invalidation": "A sustained decline in the 10Y alongside improving breadth and small-cap participation would weaken the discount-rate ceiling thesis.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "geopolitics_energy",
-          "theme_label": "Geopolitics / Energy",
-          "category": "geopolitics_energy",
-          "title": "China-Iran diplomatic intervention pushes oil lower, but Brent $104.87 and impaired Gulf routes keep the physical-risk premium alive",
-          "evidence": "Brent settled down 0.93% at $104.87 and WTI down 1.58% at $100.30 after China, acting on a Saudi request, asked Iran to limit Houthi attacks on Saudi oil infrastructure. Hormuz traffic remained far below normal and the Saudi East-West pipeline repair path remained uncertain.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Diplomatic relief / repair progress → crude and fuel prices → inflation expectations → central-bank path and term premium → equity and credit valuations.",
-          "confirmation": "More Hormuz vessel traffic, verified Saudi pipeline capacity restoration and continued crude declines would confirm a durable easing in the physical premium.",
-          "invalidation": "Fresh attacks, delayed repair or renewed cargo cancellations accompanied by crude moving higher would show the diplomatic relief is temporary.",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-20",
-      "source_mode": "native_daily",
-      "regime_code": "event_risk",
-      "regime_label": "Weekend Event Risk / policy relief versus 5% yields",
-      "dominant_theme_id": "us_china_trade_controls",
-      "signals": {
-        "growth": "→",
-        "inflation": "→",
-        "rates": "↑",
-        "earnings": "→",
-        "liquidity": "↓",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
-          "title": "Bessent-He Sunday meeting puts AI security, trade, rare earths and the tariff truce directly in front of Monday market price discovery",
-          "evidence": "U.S. Treasury Secretary Scott Bessent and Chinese Vice Premier He Lifeng are scheduled to meet Sunday at JPMorgan's New York headquarters. Reuters reports the agenda includes artificial-intelligence security, trade and broader economic issues; separate reporting says rare earths and the tariff truce are also expected to feature.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "U.S.-China policy signal → AI/rare-earth supply expectations → CNH and semiconductor risk premium → global equity breadth and corporate capex.",
-          "confirmation": "A jointly described constructive agenda, no new restriction threat and firmer China-sensitive assets at Monday reopen would confirm a reduction in policy tail risk.",
-          "invalidation": "New tariff, export-control or rare-earth retaliation language that weakens CNH and semiconductor futures would invalidate the relief interpretation.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "china_industrial_policy",
-          "theme_label": "China Industrial Policy",
-          "category": "china_trade_policy",
-          "title": "China's policy debate shifts toward consumption and balance-sheet repair while September LPR is still expected to remain unchanged",
-          "evidence": "PBOC monetary policy committee member Huang Yiping said AI could deepen China's strong-supply/weak-demand imbalance and argued for consumption support, higher household income and balance-sheet repair for local governments and enterprises. Separately, all 21 respondents in a Reuters poll expected the one-year and five-year LPRs to remain at 3.00% and 3.50%.",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Consumption/balance-sheet support → domestic demand expectations → China equities and imports → industrial commodities and Asian growth assets.",
-          "confirmation": "Concrete fiscal or balance-sheet measures alongside stable credit conditions would confirm that support is moving toward demand repair rather than only lower policy rates.",
-          "invalidation": "No follow-through on demand support combined with continued weak household and corporate borrowing would leave the strong-supply/weak-demand imbalance unresolved.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "energy_inflation",
-          "theme_label": "Energy Inflation",
-          "category": "geopolitics_energy",
-          "title": "Saudi weekend attacks threaten to reverse Friday's oil relief before Gulf physical throughput is demonstrably restored",
-          "evidence": "Saudi Arabia's coalition said a ballistic missile launched toward Riyadh was intercepted and destroyed and that attempted attacks toward Yanbu, Taif, Baysh and Farasan were thwarted. Reuters and AP independently reported the escalation; the Houthis separately claimed attacks on sensitive Riyadh sites and an Aramco facility in Yanbu.",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Saudi security risk → export-route/freight premium → crude and diesel → inflation expectations → Treasury yields and equity discount rates.",
-          "confirmation": "Higher crude at reopening, new verified infrastructure damage or further attacks on Yanbu-related capacity would confirm that physical-risk premium is rebuilding.",
-          "invalidation": "No new damage, continued successful interceptions and further normalization of pipeline/Hormuz throughput alongside softer crude would weaken the escalation channel.",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-21",
-      "source_mode": "native_daily",
-      "regime_code": "risk_on",
-      "regime_label": "Selective risk-on / rates remain restrictive",
-      "dominant_theme_id": "global_duration",
-      "signals": {
-        "growth": "↑",
-        "inflation": "↓",
-        "rates": "↑",
-        "earnings": "→",
-        "liquidity": "↓",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "Monday Asia opens risk-on in technology while U.S. front-end yields remain near cycle highs",
-          "evidence": "South Korea's tech-heavy index rose about 1.1%, MSCI Asia-Pacific ex-Japan gained 0.3%, S&P 500 futures rose 0.3% and Nasdaq futures 0.4%; Japan was closed for Silver Week while the U.S. 2-year yield remained around 4.7604%.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "AI demand optimism → chip/tech equities ↑; high 2Y/10Y yields → financing hurdle remains → breadth and small caps lag.",
-          "confirmation": "Broader Asian breadth, firmer European futures and declining U.S. 2Y/10Y yields would confirm the risk-on move is widening beyond technology.",
-          "invalidation": "A reversal in chip shares or U.S. futures while yields remain high would show the opening rally was a thin-liquidity sector move.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "geopolitics_energy",
-          "theme_label": "Geopolitics / Energy",
-          "category": "geopolitics_energy",
-          "title": "Saudi export recovery keeps oil under pressure even as Houthi attacks and pipeline damage remain unresolved",
-          "evidence": "Latest Reuters Monday-Asia pricing showed Brent around $103.68 and WTI around $100.02 after earlier declines. Separate Reuters flow data showed Saudi exports recovering above 4 million bpd in September, with recent Hormuz shipments averaging about 2.9 million bpd versus roughly 0.7 million bpd in August.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Saudi export recovery → crude/freight premium ↓ → inflation expectations ↓ → rate pressure eases → risk-asset discount rates improve.",
-          "confirmation": "Brent remaining near current levels alongside stable Saudi export volumes and no new infrastructure outages would confirm the physical-flow relief.",
-          "invalidation": "Fresh damage to Yanbu, Hormuz or the East-West route that cuts measurable shipments would restore the supply premium quickly.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "china_industrial_policy",
-          "theme_label": "China Industrial Policy",
-          "category": "china_trade_policy",
-          "title": "China holds LPRs at 3.00% and 3.50% as Bessent-He talks shift policy focus toward trade, AI and critical minerals",
-          "evidence": "China left the 1-year LPR at 3.00% and 5-year LPR at 3.50%, while U.S. Treasury Secretary Scott Bessent and Chinese Vice Premier He Lifeng opened New York talks on the trade truce, AI guardrails, tariffs and critical-mineral flows ahead of a planned U.S.-China leaders' meeting later this week.",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "LPR hold + U.S.-China talks → CNH/China credit expectations and AI supply-chain risk → Asian cyclicals, semiconductors and commodities.",
-          "confirmation": "Concrete language on critical-mineral flows, tariff-truce continuity or AI guardrails plus stable CNH would confirm reduced external tail risk.",
-          "invalidation": "No deliverables or renewed tariff/technology escalation ahead of the summit would leave policy risk largely unchanged.",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
-    {
-      "date": "2026-09-22",
-      "source_mode": "native_daily",
-      "regime_code": "risk_on",
-      "regime_label": "Selective risk-on / valuation relief with carry still tight",
-      "dominant_theme_id": "global_duration",
-      "signals": {
-        "growth": "↑",
-        "inflation": "↓",
-        "rates": "↓",
-        "earnings": "↑",
-        "liquidity": "→",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "Nasdaq closes at a record as SOX +4.3% and AMD crosses $1 trillion while the U.S. 10Y falls below 5%",
-          "evidence": "The Nasdaq rose 2.26% to 27,122.09, the S&P 500 gained 1.49%, SOX jumped 4.3%, and AMD rose about 10% as its market capitalization crossed $1 trillion; the official U.S. 10Y yield closed at 4.96%.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "10Y yield ↓ + AI demand confidence ↑ → discount rate relief + semiconductor multiples ↑ → Nasdaq/SOX leadership → potential broader equity rotation.",
-          "confirmation": "Russell 2000 and cyclical breadth joining the rally while the 10Y remains below 5% would confirm broader financial-condition relief.",
-          "invalidation": "A renewed 10Y break above 5% with semiconductor underperformance or a sharp reversal in AMD/SOX would weaken the duration-relief thesis.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "geopolitics_energy",
-          "theme_label": "Geopolitics / Energy",
-          "category": "geopolitics_energy",
-          "title": "Oil stabilizes near $100 Brent after Monday's selloff as Saudi export rerouting meets a possible U.S.-Iran diplomatic window",
-          "evidence": "Brent fell sharply on Monday and traded at $100.57 early Tuesday, while WTI October was $95.80. Saudi Aramco loaded roughly 14 million barrels on seven VLCCs near Ras Tanura on Sunday as Gulf exports recovered, while markets awaited any U.S.-Iran contact around the UN General Assembly.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Saudi Gulf loadings ↑ + diplomacy probability ↑ → crude/freight premium ↓ → inflation impulse ↓ → long yields ↓ → equity valuation support.",
-          "confirmation": "Brent holding near or below $100 alongside continued Saudi Gulf loadings and no new major supply outage would confirm a lower physical premium.",
-          "invalidation": "A failed diplomacy window plus renewed Houthi/Saudi infrastructure disruption that pushes Brent materially higher would restore the inflation-risk chain.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
-          "title": "U.S. and China formalize an AI-safety dialogue and incident line ahead of the September 23–25 leaders' summit",
-          "evidence": "U.S. Treasury Secretary Scott Bessent said the two sides agreed to a formal AI-safety dialogue, including an incident communication line, and plan to meet again in about two months in Shenzhen; the current tariff truce expires November 10 and no extension was agreed in the latest talks.",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Policy communication ↑ → AI/trade tail risk ↓ → semiconductor/supply-chain risk premium ↓; unresolved tariffs → CNH/exporters remain headline-sensitive.",
-          "confirmation": "Concrete summit language on AI protocols, trade stability or a tariff-truce extension would confirm lower policy tail risk.",
-          "invalidation": "New export controls, tariff escalation or failure to preserve the November truce would reverse the policy-relief channel.",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
     {
       "date": "2026-09-23",
       "source_mode": "native_daily",
@@ -2990,15 +2742,71 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-10-22",
+      "source_mode": "native_daily",
+      "regime_code": "unclassified",
+      "regime_label": "AI Earnings Rebound / Cash-Conversion Test + Oil/Duration Overhang",
+      "dominant_theme_id": "market_structure",
+      "signals": {
+        "growth": "→",
+        "inflation": "↑",
+        "rates": "→",
+        "earnings": "↑",
+        "liquidity": "→",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "2026-10-21盘后Meta Q3收入646.01亿美元、CapEx349.1亿美元及FCF负21.2亿美元",
+          "evidence": "Meta Q3营收646.01亿美元，同比增长26%；披露98.9亿美元法律费用，年度CapEx预期1,350–1,450亿美元，Q3自由现金流为负。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "广告营收增长→经营现金流增加，但AI设施资本开支增长更快→自由现金流转负→长期资本成本敏感。",
+          "confirmation": "下一交易日持续确认广告量价、2027经营现金回报和真实自由现金流，不依赖盘后单一涨幅。",
+          "invalidation": "若AI基础设施投入进一步侵蚀可分配现金且信用利差扩大，短期股价上涨不能维持。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
+          "title": "2026-10-21 EIA美国原油库存降约306万桶、Brent与WTI收盘分化",
+          "evidence": "EIA截至16日当周商业原油库存约4.125亿桶、周减约306万桶；汽油库存下降、馏分油库存增加。Brent12月结算108.82美元，WTI12月收97.15美元。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "现货周转下降→上游库存压力→油价风险溢价；产品库存分化→裂解价差→通胀预期及利率。",
+          "confirmation": "连续两期库存与Cushing分项和实物航运改善一致、期货同合约价差收敛。",
+          "invalidation": "如美伊事态再度破坏航运即便总库存回补，也无法说明供应风险已消除。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
+          "title": "2026-10-21英国9月CPI 3.5%与法国10Y国债触及5%附近、美国20Y拍卖高收益5.469%",
+          "evidence": "ONS披露英国9月CPI同比3.5%高于上期3.1%；法国10Y收益率约5%并见风险利差扩大，美国20Y拍卖5.469%、较WI约尾差0.9bp。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "英国价格上涨→BoE政策弹性下降；法国财政溢价→欧债融资压力；美国债券尾差→全球期限溢价。",
+          "confirmation": "法国-德国利差及拍卖后美债收益率是否持续扩大，而不是仅看一天的新闻高点。",
+          "invalidation": "如能源成本回落且通胀预期与信用利差同时改善，此压力可减弱。",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
-    {
-      "date": "2026-09-21",
-      "from": "Weekend Event Risk / policy relief versus 5% yields",
-      "to": "Selective risk-on / rates remain restrictive",
-      "dominant_theme_id": "global_duration"
-    },
     {
       "date": "2026-09-24",
       "from": "Selective risk-on / energy relief versus funding-cost constraint",
@@ -3088,6 +2896,12 @@
       "from": "Risk-Off / technology repricing and policy implementation risk",
       "to": "Weekend Event Risk / Oil–AI Credit–Duration Divergence",
       "dominant_theme_id": "ai_earnings"
+    },
+    {
+      "date": "2026-10-22",
+      "from": "Weekend Event Risk / Oil–AI Credit–Duration Divergence",
+      "to": "AI Earnings Rebound / Cash-Conversion Test + Oil/Duration Overhang",
+      "dominant_theme_id": "market_structure"
     }
   ],
   "persistent_themes": [
@@ -3097,43 +2911,11 @@
       "category": "market_structure",
       "days_in_top3": 20,
       "best_rank": 1,
-      "first_seen": "2026-09-19",
-      "last_seen": "2026-10-17",
-      "latest_rank": null,
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-10-22",
+      "latest_rank": 1,
       "state": "Persistent",
-      "latest_transmission": "出口执行时间、许可适用范围与合同交付是可验证路径；不能仅凭草案推算出口数量或收入损失。",
-      "source_modes": [
-        "native_daily",
-        "reconstructed_daily"
-      ]
-    },
-    {
-      "theme_id": "global_duration",
-      "theme_label": "Global Duration / Term Premium",
-      "category": "inflation_rates",
-      "days_in_top3": 11,
-      "best_rank": 1,
-      "first_seen": "2026-09-19",
-      "last_seen": "2026-10-15",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "长久期股估值还受盈利预期和风险溢价约束；需将股指相对表现与各期限融资成本逐一对照。",
-      "source_modes": [
-        "native_daily",
-        "reconstructed_daily"
-      ]
-    },
-    {
-      "theme_id": "energy_inflation",
-      "theme_label": "Energy Inflation",
-      "category": "geopolitics_energy",
-      "days_in_top3": 11,
-      "best_rank": 1,
-      "first_seen": "2026-09-20",
-      "last_seen": "2026-10-18",
-      "latest_rank": 2,
-      "state": "Persistent",
-      "latest_transmission": "能源物流成本↑→消费者通胀粘性↑；高融资成本→投资折现率↑；政策预期与信用利差重新定价。",
+      "latest_transmission": "广告营收增长→经营现金流增加，但AI设施资本开支增长更快→自由现金流转负→长期资本成本敏感。",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -3147,9 +2929,41 @@
       "best_rank": 1,
       "first_seen": "2026-09-23",
       "last_seen": "2026-10-18",
-      "latest_rank": 1,
+      "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "油价↑→预期通胀/资金成本↑；AI信贷溢价↑→科技估值↓→小盘股与宽基风险偏好受拖累。",
+      "source_modes": [
+        "native_daily",
+        "reconstructed_daily"
+      ]
+    },
+    {
+      "theme_id": "energy_inflation",
+      "theme_label": "Energy Inflation",
+      "category": "geopolitics_energy",
+      "days_in_top3": 11,
+      "best_rank": 1,
+      "first_seen": "2026-09-28",
+      "last_seen": "2026-10-22",
+      "latest_rank": 2,
+      "state": "Persistent",
+      "latest_transmission": "现货周转下降→上游库存压力→油价风险溢价；产品库存分化→裂解价差→通胀预期及利率。",
+      "source_modes": [
+        "native_daily",
+        "reconstructed_daily"
+      ]
+    },
+    {
+      "theme_id": "global_duration",
+      "theme_label": "Global Duration / Term Premium",
+      "category": "inflation_rates",
+      "days_in_top3": 9,
+      "best_rank": 1,
+      "first_seen": "2026-09-23",
+      "last_seen": "2026-10-22",
+      "latest_rank": 3,
+      "state": "Persistent",
+      "latest_transmission": "英国价格上涨→BoE政策弹性下降；法国财政溢价→欧债融资压力；美国债券尾差→全球期限溢价。",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -3159,11 +2973,11 @@
       "theme_id": "us_china_trade_controls",
       "theme_label": "U.S.–China Trade Controls",
       "category": "china_trade_policy",
-      "days_in_top3": 9,
+      "days_in_top3": 7,
       "best_rank": 1,
-      "first_seen": "2026-09-20",
+      "first_seen": "2026-09-24",
       "last_seen": "2026-10-18",
-      "latest_rank": 3,
+      "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "制裁执行延期→潜在供给预期↑；沙特设施风险→保险/运输成本↑；两者共同决定油价与输入型通胀。",
       "source_modes": [
@@ -3175,9 +2989,9 @@
       "theme_id": "geopolitics_energy",
       "theme_label": "Geopolitics / Energy",
       "category": "geopolitics_energy",
-      "days_in_top3": 7,
+      "days_in_top3": 4,
       "best_rank": 1,
-      "first_seen": "2026-09-19",
+      "first_seen": "2026-09-23",
       "last_seen": "2026-10-10",
       "latest_rank": null,
       "state": "Resolved",
@@ -3206,9 +3020,9 @@
       "theme_id": "china_industrial_policy",
       "theme_label": "China Industrial Policy",
       "category": "china_trade_policy",
-      "days_in_top3": 3,
-      "best_rank": 2,
-      "first_seen": "2026-09-20",
+      "days_in_top3": 1,
+      "best_rank": 3,
+      "first_seen": "2026-09-24",
       "last_seen": "2026-09-24",
       "latest_rank": null,
       "state": "Resolved",
@@ -3219,37 +3033,35 @@
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "ai_earnings",
-    "theme_label": "AI / Earnings",
-    "as_of": "2026-10-18",
+    "theme_id": "market_structure",
+    "theme_label": "Market Structure",
+    "as_of": "2026-10-22",
     "confirming": [
       {
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
-        "as_of": "2026-10-16 16:00 EDT",
+        "as_of": "2026-10-21 16:00 EDT",
         "source_mode": "native_daily",
-        "change": "-2.15%"
+        "change": "+1.05%"
       },
       {
         "series_id": "SP500",
         "label": "S&P 500",
-        "as_of": "2026-10-16 16:00 EDT",
+        "as_of": "2026-10-21 16:00 EDT",
         "source_mode": "native_daily",
-        "change": "-1.09%"
-      },
-      {
-        "series_id": "VIXCLS",
-        "label": "VIX",
-        "as_of": "2026-10-16 US cash close; Yahoo-derived history",
-        "source_mode": "native_daily",
-        "change": "+3.53 pts"
+        "change": "+0.58%"
       }
     ],
     "diverging": [],
-    "unavailable": [],
-    "expectation_basis": "Explicit leading catalyst: ↓ Long-duration AI / ↑ Energy risk",
-    "interpretation_note": "3 项资产方向与当前主线一致，0 项出现背离；不是因果证明。",
-    "what_would_flip_it": "若信用风险缩窄、半导体广度反弹同时油价风险溢价下降，则本轮估值压力可能减弱。"
+    "unavailable": [
+      {
+        "series_id": "VIXCLS",
+        "label": "VIX"
+      }
+    ],
+    "expectation_basis": "Explicit leading catalyst: Mixed / event-dependent",
+    "interpretation_note": "2 项资产方向与当前主线一致，0 项出现背离；不是因果证明。",
+    "what_would_flip_it": "若AI基础设施投入进一步侵蚀可分配现金且信用利差扩大，短期股价上涨不能维持。"
   },
   "series": {
     "NASDAQCOM": {
@@ -3258,14 +3070,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-09-21",
-          "value": 27122.09
-        },
-        {
-          "date": "2026-09-22",
-          "value": 27244.28
-        },
         {
           "date": "2026-09-23",
           "value": 26936.04
@@ -3347,14 +3151,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-09-21",
-          "value": 7764.7
-        },
-        {
-          "date": "2026-09-22",
-          "value": 7764.64
-        },
-        {
           "date": "2026-09-23",
           "value": 7706.03
         },
@@ -3434,14 +3230,6 @@
       "source": "CBOE via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-09-21",
-          "value": 14.87
-        },
-        {
-          "date": "2026-09-22",
-          "value": 14.21
-        },
         {
           "date": "2026-09-23",
           "value": 15.18
@@ -3523,14 +3311,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-09-21",
-          "value": 4.76
-        },
-        {
-          "date": "2026-09-22",
-          "value": 4.71
-        },
-        {
           "date": "2026-09-23",
           "value": 4.85
         },
@@ -3606,14 +3386,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-09-21",
-          "value": 4.96
-        },
-        {
-          "date": "2026-09-22",
-          "value": 4.96
-        },
         {
           "date": "2026-09-23",
           "value": 5.11
@@ -3691,14 +3463,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-09-21",
-          "value": 116.15
-        },
-        {
-          "date": "2026-09-22",
-          "value": 114.89
-        },
-        {
           "date": "2026-09-23",
           "value": 117.45
         },
@@ -3771,14 +3535,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-09-21",
-          "value": 119.4014
-        },
-        {
-          "date": "2026-09-22",
-          "value": 119.5933
-        },
-        {
           "date": "2026-09-23",
           "value": 120.1169
         },
@@ -3838,14 +3594,6 @@
       "source": "ICE BofA via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-09-21",
-          "value": 2.66
-        },
-        {
-          "date": "2026-09-22",
-          "value": 2.68
-        },
         {
           "date": "2026-09-23",
           "value": 2.73
@@ -3919,11 +3667,17 @@
   },
   "monthly_coverage": {
     "month": "2026-10",
-    "through": "2026-10-18",
-    "expected_days": 18,
-    "present_days": 18,
-    "missing_dates": [],
-    "unclassified_dates": [],
+    "through": "2026-10-22",
+    "expected_days": 22,
+    "present_days": 19,
+    "missing_dates": [
+      "2026-10-19",
+      "2026-10-20",
+      "2026-10-21"
+    ],
+    "unclassified_dates": [
+      "2026-10-22"
+    ],
     "unknown_signal_cells": 0,
     "price_proxy_dates": [
       "2026-10-01",
