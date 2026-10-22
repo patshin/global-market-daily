@@ -1,0 +1,1132 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-10-22",
+  "edition": "Morning Official",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-10-22 09:20 SGT",
+  "data_cutoff_et": "2026-10-21 21:20 EDT",
+  "last_updated": "2026-10-22T09:20:06+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-10-22T09:00:00+08:00",
+    "started_at_sgt": "2026-10-22T08:58:29+08:00",
+    "research_cutoff_sgt": "2026-10-22T09:20:06+08:00",
+    "mode": "morning"
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": true
+  },
+  "publication_policy": {
+    "effective_date": "2026-10-08",
+    "no_evening_edition": true,
+    "is_canonical_daily": true
+  },
+  "source_mode": "native_daily",
+  "sources_path": "data/sources/2026-10-22.json",
+  "comparison_basis": "与main正式最新2026-10-18版本相比；不将未正式发布的2026-10-21候选当成已发布事实。交易市场最新完整现货收盘为2026-10-21 16:00 EDT，美东盘后业绩单列。",
+  "thesis": "截至2026-10-22 09:20 SGT（2026-10-21 21:20 EDT），美国10月21日现金股市从前日风格分化切回AI主导的普涨：标普500收7,757.17（+0.58%），纳指26,702.86（约+1.05%），SOX约+2.15%。但Meta Q3收入646.01亿美元、全年资本开支指引1,350–1,450亿美元，季度自由现金流为负；加之EIA原油库存周降约306万桶、Brent 12月收108.82美元，市场核心约束仍是「盈利增长能否覆盖AI资本开支与能源/期限融资成本」，不能把指数反弹等同于信用风险消失。",
+  "dominant_narrative": "最新交易日提供了四条相互制约的现金流与风险定价证据。第一，10月21日S&P500、Nasdaq和SOX回升，成长股风险偏好改善；但这反映股票市场对前瞻盈利的重新定价，不是已验证的AI项目现金回报。第二，Meta在美东10月21日盘后报告Q3收入646.01亿美元、同比+26%，同时Q3资本开支349.1亿美元、自由现金流负21.2亿美元；约98.9亿美元法律费用改变GAAP与调整后利润的可比性，因此不得直接用单一EPS判断经营现金创造。第三，Tesla Q3收入约280亿美元、调整EPS约0.48美元及自由现金流15亿美元，但利润同比下降且能源业务疲软；同为科技/AI主题，现金流和部署回报不应混作一类。第四，EIA截至10月16日一周商业原油库存约下降306万桶至4.125亿桶，汽油库存也降；然而Brent和WTI在10月21日分别报108.82和97.15美元，反应分化，提示实物流、成品油与外交新闻存在不同的传导期限。英国9月CPI同比3.5%、法国10Y国债收益率触及5%附近则提示全球再通胀与财政压力不会被一日美股上涨冲销。未来24–72小时需先核对美国初请、2027年前AI支出回报与海湾物流状况：以同一交易日的利率/信用利差和现金流证据区分可持续盈利修复与仓位性反弹。",
+  "market_regime": {
+    "growth": {
+      "state": "→ 美股盈利支撑增长、房市约束犹存",
+      "evidence": "10月21日四大美指普遍走高，前日美国住房开工和签约疲软仍是实体传导的独立负面证据。"
+    },
+    "inflation": {
+      "state": "↑ 英国价格压力及原油库存去化",
+      "evidence": "英国9月CPI同比3.5%（前值3.1%）；EIA截至10月16日原油周降约3.06百万桶。"
+    },
+    "rates": {
+      "state": "→ 美债久期负担仍在高位",
+      "evidence": "10月21日20Y新券拍卖高收益5.469%、较WI约高0.9bp；France 10Y附近5%，定价并非全面通缩。"
+    },
+    "earnings": {
+      "state": "↑ 销售增长强但自由现金流两极化",
+      "evidence": "Meta收入646.01亿美元同比+26%，FCF -21.2亿美元；Tesla Q3 FCF +15亿美元，但GAAP利润下降。"
+    },
+    "liquidity": {
+      "state": "→ 股票风险偏好回暖不等于项目融资放松",
+      "evidence": "SOX +2.15%与Nasdaq +1.05%反弹，但此研究未获取一致可靠的AI项目融资利差收窄数据。"
+    },
+    "geopolitics": {
+      "state": "↑ 霍尔木兹安全威胁与供油恢复并存",
+      "evidence": "Reuters 10月21日报道Brent 108.82美元且相关航运冲击持续，不能将会谈消息视为已落实停火。"
+    },
+    "overall": {
+      "state": "AI Earnings Rebound / Cash-Conversion Test + Oil/Duration Overhang",
+      "evidence": "股市涨、Meta资本开支与负FCF、原油库存下降及法国长期债压力同时存在，跨资产确认尚不充分。"
+    }
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,757.17",
+      "change_1d": "+0.58%",
+      "change_5d": "+0.50%",
+      "signal": "↑ AI相关权重带动大盘回升",
+      "driver": "AP和Reuters证实10月21日收盘增长，5D使用10月14日同指数收盘，非本周涨跌混算。",
+      "status": "Regular-session cash close / sourced close",
+      "as_of": "2026-10-21 16:00 EDT",
+      "sources": [
+        "S01",
+        "S02",
+        "S20"
+      ]
+    },
+    {
+      "asset": "Dow Jones Industrial Average",
+      "level": "52,856.09",
+      "change_1d": "+0.69%",
+      "change_5d": "+2.39%",
+      "signal": "↑ 工业与价值成分稳定",
+      "driver": "道指涨幅落后纳指，显示风格向科技回转但价值板块未显著失速。",
+      "status": "Regular-session cash close / sourced close",
+      "as_of": "2026-10-21 16:00 EDT",
+      "sources": [
+        "S01",
+        "S02",
+        "S20"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "26,702.86",
+      "change_1d": "+1.05%",
+      "change_5d": "+0.04%",
+      "signal": "↑ AI盈利信心重新提振",
+      "driver": "10月21日纳指正收益主要对应盘中盈利情绪，Meta/Tesla财报是收盘之后公布。",
+      "status": "Regular-session cash close / sourced close",
+      "as_of": "2026-10-21 16:00 EDT",
+      "sources": [
+        "S01",
+        "S02",
+        "S20"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,781.02",
+      "change_1d": "+0.27%",
+      "change_5d": "+1.89%",
+      "signal": "→ 小盘继续修复但弱于纳指",
+      "driver": "Russell只小涨约0.3%，弱于科技集中指数，市场广度还需验证。",
+      "status": "Regular-session cash close / sourced close",
+      "as_of": "2026-10-21 16:00 EDT",
+      "sources": [
+        "S01",
+        "S20"
+      ]
+    },
+    {
+      "asset": "PHLX Semiconductor Index (SOX)",
+      "level": "11,526.5",
+      "change_1d": "+2.15%",
+      "change_5d": "-1.35%",
+      "signal": "↑ 芯片股强反弹但5日仍为负",
+      "driver": "使用Investing 10月21日/14日同指数历史收盘；数据可能按供应商定盘微调，不等同盘中quote。",
+      "status": "Regular-session cash close / sourced close",
+      "as_of": "2026-10-21 16:00 EDT",
+      "sources": [
+        "S03",
+        "S21"
+      ]
+    },
+    {
+      "asset": "Nasdaq-100 (NDX)",
+      "level": "29,822.52",
+      "change_1d": "+1.13%",
+      "change_5d": "-0.43%",
+      "signal": "↑ 大盘科技恢复",
+      "driver": "采用Yahoo收盘版本中明确标记17:15 EDT的历史行；其他抓取缓存存在不一致，需以交易所终值复核。",
+      "status": "Yahoo historical EOD; different crawler snapshots disagree; confirm index provider if downstream",
+      "as_of": "2026-10-21 EOD EDT (vendor quote)",
+      "sources": [
+        "S04"
+      ]
+    },
+    {
+      "asset": "Cboe VIX",
+      "level": "16.55",
+      "change_1d": "-0.76 pt",
+      "change_5d": "-0.32 pt",
+      "signal": "↓ 股市隐含波动回落",
+      "driver": "Yahoo历史记录显示10月21日VIX约16.55，其他抓取时间不同，请勿将该数推成期权Gamma敞口。",
+      "status": "Vendor EOD snapshot; alternative cached snapshots not identical",
+      "as_of": "2026-10-21 EOD EDT (vendor quote)",
+      "sources": [
+        "S05"
+      ]
+    },
+    {
+      "asset": "U.S. Treasury 10Y yield",
+      "level": "5.108%",
+      "change_1d": "-0.9bp",
+      "change_5d": "-8.2bp",
+      "signal": "↓ 收益率温和缓和但处高位",
+      "driver": "同一Investing 10Y二级收益率历史序列10月21日5.108%、10月20日5.117%、10月14日5.190%；不是官方CMT。",
+      "status": "Investing secondary-market quote; not Treasury CMT",
+      "as_of": "2026-10-21 16:00 EDT",
+      "sources": [
+        "S06"
+      ]
+    },
+    {
+      "asset": "Brent crude — Dec 2026",
+      "level": "$108.82",
+      "change_1d": "+$0.03",
+      "change_5d": "尚无法可靠确认",
+      "signal": "→ 供油增加与航运风险拉锯",
+      "driver": "Brent当日微涨；不能把原油外运总量改善推论为成品油运输或保险成本已正常化。",
+      "status": "Reuters/WSJ Dec futures settlement",
+      "as_of": "2026-10-21 16:00 EDT",
+      "sources": [
+        "S07",
+        "S08"
+      ]
+    },
+    {
+      "asset": "WTI crude — Dec 2026",
+      "level": "$97.15",
+      "change_1d": "-$0.67",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 美国原油基准收低",
+      "driver": "采用12月合约WTI，排除11月合约到期及滚动跳差误判，库存下降和价格下跌并存。",
+      "status": "Reuters/WSJ Dec futures settlement",
+      "as_of": "2026-10-21 16:00 EDT",
+      "sources": [
+        "S07",
+        "S08"
+      ]
+    },
+    {
+      "asset": "Spot Gold (Reuters reported)",
+      "level": "$4,137.94",
+      "change_1d": "+0.3%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ 利率回落下避险黄金温和反弹",
+      "driver": "Reuters报道金价约4,137.94美元/盎司，盘中快照不冒充统一结算价；5D因时点不齐缺失。",
+      "status": "Reuters spot quote, not exchange settlement",
+      "as_of": "2026-10-21 Reuters article quote (intraday EDT)",
+      "sources": [
+        "S09"
+      ]
+    },
+    {
+      "asset": "USD/JPY spot historical",
+      "level": "158.3300",
+      "change_1d": "+0.10%",
+      "change_5d": "+0.00%",
+      "signal": "→ 日元小幅回落",
+      "driver": "同一历史汇率供应商10月20日158.168、21日158.330，比较14日158.327；属于日度close代理。",
+      "status": "PoundSterlingLive historical close proxy",
+      "as_of": "2026-10-21 provider daily close",
+      "sources": [
+        "S10"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "dated-verified-snapshots-with-explicit-gaps",
+    "asset_count": 12,
+    "level_coverage": {
+      "available": 12,
+      "total": 12,
+      "ratio": 1.0
+    },
+    "change_1d_coverage": {
+      "available": 12,
+      "total": 12,
+      "ratio": 1.0
+    },
+    "change_5d_coverage": {
+      "available": 9,
+      "total": 12,
+      "ratio": 0.75
+    },
+    "explicit_gaps": [
+      "Brent crude — Dec 2026",
+      "WTI crude — Dec 2026",
+      "Spot Gold (Reuters reported)"
+    ],
+    "policy": "截至本期真实研究截点，Level/1D 12/12；5D同指数/同合约可比9/12，其余明确缺失。NDX/VIX供应商抓取存在不同快照，使用具EOD标记的历史行但注明复核；金为现货日内报价非结算；收益率为二级代理非官方CMT。"
+  },
+  "what_changed": [
+    {
+      "yesterday": "主站最新正式版10月18日基于10月16日美股风险资产回撤，重点为能源/科技负反馈。",
+      "today": "10月21日标普收7,757.17（+0.58%）、纳指26,702.86（约+1.05%）、SOX约+2.15%，风险偏好出现恢复。",
+      "why_it_matters": "利润预期可以推升权益风险偏好，但没有证据显示AI融资利差或建设周期现金投入已同步改善。",
+      "sources": [
+        "S01",
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "yesterday": "此前Meta/Tesla仍为10月21日美东盘后待发布，不能提前填写actual。",
+      "today": "截至10月22日SGT早间，两家公司财报已发布：Meta收入646.01亿美元和负21.2亿美元FCF，Tesla Q3约280亿美元收入、正15亿美元FCF。",
+      "why_it_matters": "对大型科技必须分开比较销售成长、自由现金流与CapEx强度，不能以股价统一评价资本回收。",
+      "sources": [
+        "S11",
+        "S12",
+        "S13",
+        "S14"
+      ]
+    },
+    {
+      "yesterday": "10月18日正式版仍围绕Brent高位物理供应风险；EIA上周库存读数当时尚未公布。",
+      "today": "10月21日EIA发布截至16日一周商业原油库存下降约306万桶，Brent 108.82美元略涨、WTI 97.15美元下降。",
+      "why_it_matters": "同一市场中库存收紧与WTI下跌并存，表明炼厂/出口、资金仓位与政治消息不能用单因果替代。",
+      "sources": [
+        "S07",
+        "S08",
+        "S15"
+      ]
+    },
+    {
+      "yesterday": "上期欧洲长端债压力与政策风险尚未呈现10月21日新的英国CPI/法国收益率证据。",
+      "today": "英国9月CPI同比3.5%，法国10Y国债收益率10月21日触及5%附近，美国20Y拍卖5.469%。",
+      "why_it_matters": "全球财政风险、能源再通胀使久期资金成本更复杂；美国股票上涨不能消除跨境贴现率压力。",
+      "sources": [
+        "S16",
+        "S17",
+        "S18"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "2026-10-21盘后Meta Q3收入646.01亿美元、CapEx349.1亿美元及FCF负21.2亿美元",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-21 16:01 EDT",
+      "event_time_sgt": "2026-10-22 04:01 SGT",
+      "what_happened": "Meta Q3营收646.01亿美元，同比增长26%；披露98.9亿美元法律费用，年度CapEx预期1,350–1,450亿美元，Q3自由现金流为负。",
+      "what_changed": "美股科技指数常规时段反弹之后，新财报揭示盈利成长与资本消耗同时增加，股权回报必须区别收入增长、项目投入与真实自由现金流。",
+      "why_it_matters": "分析师须将法律一次性损益、广告现金创造和资本开支融资拆开，不可将调整EPS与GAAP直接比较。",
+      "transmission": "广告营收增长→经营现金流增加，但AI设施资本开支增长更快→自由现金流转负→长期资本成本敏感。",
+      "affected_assets": [
+        "META",
+        "Nasdaq100",
+        "AI credit",
+        "USD rates"
+      ],
+      "direction": "Mixed / event-dependent",
+      "importance": "★★★★★",
+      "confirmation": "下一交易日持续确认广告量价、2027经营现金回报和真实自由现金流，不依赖盘后单一涨幅。",
+      "invalidation": "若AI基础设施投入进一步侵蚀可分配现金且信用利差扩大，短期股价上涨不能维持。",
+      "sources": [
+        "S11",
+        "S12"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "2026-10-21 EIA美国原油库存降约306万桶、Brent与WTI收盘分化",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-21 10:30 EDT",
+      "event_time_sgt": "2026-10-21 22:30 SGT",
+      "what_happened": "EIA截至16日当周商业原油库存约4.125亿桶、周减约306万桶；汽油库存下降、馏分油库存增加。Brent12月结算108.82美元，WTI12月收97.15美元。",
+      "what_changed": "此前只知海湾风险与库存发布排期，现在有库存分项实数，可区分原油与产品端。",
+      "why_it_matters": "原油库存下降不等于能源价格必涨；炼厂开工、Cushing和出口情况改变期限价差，必须同口径追踪。",
+      "transmission": "现货周转下降→上游库存压力→油价风险溢价；产品库存分化→裂解价差→通胀预期及利率。",
+      "affected_assets": [
+        "Brent Dec",
+        "WTI Dec",
+        "diesel cracks",
+        "inflation swaps"
+      ],
+      "direction": "Mixed / event-dependent",
+      "importance": "★★★★★",
+      "confirmation": "连续两期库存与Cushing分项和实物航运改善一致、期货同合约价差收敛。",
+      "invalidation": "如美伊事态再度破坏航运即便总库存回补，也无法说明供应风险已消除。",
+      "sources": [
+        "S07",
+        "S08",
+        "S15"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "2026-10-21英国9月CPI 3.5%与法国10Y国债触及5%附近、美国20Y拍卖高收益5.469%",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-21 13:00 EDT — US auction; UK CPI earlier",
+      "event_time_sgt": "2026-10-22 01:00 SGT — US auction; UK CPI 2026-10-21 SGT",
+      "what_happened": "ONS披露英国9月CPI同比3.5%高于上期3.1%；法国10Y收益率约5%并见风险利差扩大，美国20Y拍卖5.469%、较WI约尾差0.9bp。",
+      "what_changed": "从能源冲击的猜测转换为英国已披露通胀及欧美实质融资成本证据，表明政策利率、主权信用利差与股票贴现率并非单一方向。",
+      "why_it_matters": "欧债财政溢价与美国久期供给会改变全球融资成本，AI/高负债行业需在不同币种的贴现率下评估。",
+      "transmission": "英国价格上涨→BoE政策弹性下降；法国财政溢价→欧债融资压力；美国债券尾差→全球期限溢价。",
+      "affected_assets": [
+        "French OAT",
+        "UK Gilt",
+        "UST 20Y",
+        "EURUSD"
+      ],
+      "direction": "Mixed / event-dependent",
+      "importance": "★★★★",
+      "confirmation": "法国-德国利差及拍卖后美债收益率是否持续扩大，而不是仅看一天的新闻高点。",
+      "invalidation": "如能源成本回落且通胀预期与信用利差同时改善，此压力可减弱。",
+      "sources": [
+        "S16",
+        "S17",
+        "S18",
+        "S28"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top Market Catalysts",
+      "status": "Meta现金流、EIA库存与欧债再通胀为本期三条主催化",
+      "summary": "股市当日上涨与盘后企业负自由现金流并不矛盾，盘后信息必须与同日现金市场分开。",
+      "paragraphs": [
+        "以Meta营收+26%但负FCF作为AI商业化的关键检验，以EIA库存下降和英国CPI抬升作为能源/久期的独立约束。",
+        "未来初请公布前，任何交易建议都只能是带观察条件的情景判断；未有跨资产同步确认。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S11",
+        "S15",
+        "S16"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings",
+      "status": "Meta与Tesla已在10月21日美东盘后发布，财报结构化分列",
+      "summary": "Meta强劲广告营收但季度资本开支大、FCF转负；Tesla季度自由现金流为正而GAAP利润下滑，股票反应不同。",
+      "paragraphs": [
+        "Meta收入$64.601B同比+26%、CapEx $34.91B，因约$9.89B法律费用，GAAP EPS $3.83与调整后口径不可直接比较。",
+        "Tesla GAAP净利约$0.787B，调整EPS约$0.48、FCF约$1.5B；盘后价格与10月21日美股常规时段市场数据严格分离。"
+      ],
+      "tables": [],
+      "sources": [
+        "S11",
+        "S12",
+        "S13",
+        "S14"
+      ],
+      "reported": [
+        {
+          "id": "META-Q3-2026",
+          "company": "Meta Platforms",
+          "ticker": "META",
+          "period": "Q3 2026",
+          "status": "Released/Occurred",
+          "release_date": "2026-10-21",
+          "release_time_et": "2026-10-21 16:01 EDT",
+          "release_time_sgt": "2026-10-22 04:01 SGT",
+          "market_session": "After-hours EDT; excluded from Oct21 16:00 cash close",
+          "key_takeaway": "收入同比26%增长，资本开支高，且法律诉讼费用扭曲GAAP利润；FCF为负。",
+          "metrics": [
+            {
+              "metric": "Revenue",
+              "actual": "$64.601B",
+              "consensus": "$63.3B (Visible Alpha reported by Fortune)",
+              "previous_or_yoy": "$51.242B Q3 2025",
+              "surprise": "高于可比营收预期",
+              "notes": "Meta公司Q3 2026 16:01 EDT声明"
+            },
+            {
+              "metric": "Diluted GAAP EPS",
+              "actual": "$3.83",
+              "consensus": "尚无法确认同口径GAAP市场预期",
+              "previous_or_yoy": "$1.05 Q3 2025",
+              "surprise": "不与剔除费用调整EPS混比",
+              "notes": "含约$9.89B法律费用"
+            },
+            {
+              "metric": "Capital expenditures",
+              "actual": "$34.91B",
+              "consensus": "尚无法可靠确认同口径一致预期",
+              "previous_or_yoy": "$19.4B Q3 2025",
+              "surprise": "不作不可比计算",
+              "notes": "当季现金投入，不同于全年计划"
+            },
+            {
+              "metric": "Free cash flow",
+              "actual": "-$2.12B",
+              "consensus": "尚无法可靠确认同口径一致预期",
+              "previous_or_yoy": "$10.6B Q3 2025",
+              "surprise": "不作不可比计算",
+              "notes": "公司披露经营现金流不能替代自由现金流"
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "Q4 2026 revenue",
+              "current": "$73B–$76B",
+              "previous_or_consensus": "尚无法可靠确认同源可比预期",
+              "change": "未来指引非已赚取收入",
+              "interpretation": "先核验广告量价及支出转化。"
+            },
+            {
+              "metric": "FY26 CapEx",
+              "current": "$135B–$145B",
+              "previous_or_consensus": "$130B–$145B",
+              "change": "收窄区间并提高低端$5B",
+              "interpretation": "年度高投入延续，需监测对未来FCF冲击。"
+            }
+          ],
+          "market_reaction": {
+            "session": "After-hours on 2026-10-21 EDT",
+            "move": "多家报道盘后走高约3%–5%，不同抓取时点不视为最终收盘涨幅",
+            "as_of": "2026-10-21 evening EDT / 2026-10-22 morning SGT"
+          },
+          "one_offs": [
+            "约$9.89B青少年安全相关和解费用，不能视为经常性营业成本",
+            "公司同时发布拟增设无投票权C类股方案；发行计划不是已完成融资。"
+          ],
+          "read_through": [
+            {
+              "asset": "META equity",
+              "implication": "广告收入增长与经营效率改善能支撑股权估值，但需扣除法律非常规因素。"
+            },
+            {
+              "asset": "AI credit / capex",
+              "implication": "FCF转负提升对外部融资与资本开支回报的敏感度。"
+            }
+          ],
+          "sources": [
+            "S11",
+            "S12"
+          ]
+        },
+        {
+          "id": "TSLA-Q3-2026",
+          "company": "Tesla",
+          "ticker": "TSLA",
+          "period": "Q3 2026",
+          "status": "Released/Occurred",
+          "release_date": "2026-10-21",
+          "release_time_et": "2026-10-21 after cash close EDT; minute unverified",
+          "release_time_sgt": "2026-10-22 SGT early morning; minute unverified",
+          "market_session": "After-hours EDT; excluded from Oct21 16:00 cash close",
+          "key_takeaway": "经营现金创造为正但利润同比下滑，储能收入弱于预期，不能直接类比Meta的资本开支压力。",
+          "metrics": [
+            {
+              "metric": "Revenue",
+              "actual": "about $28.05B",
+              "consensus": "约$28.06B calendar preliminary estimate",
+              "previous_or_yoy": "$28B level; prior-year exact amount not rechecked",
+              "surprise": "约等于预期",
+              "notes": "AP报道及Tesla公司投资者关系披露"
+            },
+            {
+              "metric": "Adjusted EPS",
+              "actual": "$0.48",
+              "consensus": "$0.45",
+              "previous_or_yoy": "$0.48 comparable previous not verified",
+              "surprise": "约高$0.03",
+              "notes": "非GAAP调整口径"
+            },
+            {
+              "metric": "Net Income GAAP",
+              "actual": "$0.787B",
+              "consensus": "尚无法可靠确认同口径一致预期",
+              "previous_or_yoy": "year-on-year down approximately 44%",
+              "surprise": "不作不可比计算",
+              "notes": "归母净利与调整EPS不能混用"
+            },
+            {
+              "metric": "Free cash flow",
+              "actual": "$1.5B",
+              "consensus": "尚无法可靠确认同口径一致预期",
+              "previous_or_yoy": "尚无法可靠确认",
+              "surprise": "不作不可比计算",
+              "notes": "现金数据与汽车利润出现分化"
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "FY26 company CapEx plan",
+              "current": "approx $20B, per AP earnings report",
+              "previous_or_consensus": "previous approximate $25B estimate",
+              "change": "management lowered projected spend",
+              "interpretation": "需核对正式Tesla文件；计划下修不等于已节省现金。"
+            }
+          ],
+          "market_reaction": {
+            "session": "After-hours on 2026-10-21 EDT",
+            "move": "AP报道盘后曾下跌约3.2%，不是10月21日常规收盘价",
+            "as_of": "2026-10-21 after-hours EDT"
+          },
+          "one_offs": [
+            "可能的SpaceX合并仅有探索性委员会报道，不是最终协议",
+            "季度能源业务收入弱于预期，订单兑现及毛利需另行核对"
+          ],
+          "read_through": [
+            {
+              "asset": "TSLA equity",
+              "implication": "盈利下滑与非GAAP超预期并存，估值取决于新产品现金回报。"
+            },
+            {
+              "asset": "energy storage",
+              "implication": "毛利与收入分离，需排除一次性关税退款和补偿。"
+            }
+          ],
+          "sources": [
+            "S13",
+            "S14"
+          ]
+        }
+      ],
+      "upcoming_72h": [
+        {
+          "id": "PG-Q3-2026",
+          "company": "Procter & Gamble",
+          "ticker": "PG",
+          "period": "Q3 2026 (calendar earnings week; company fiscal period to verify)",
+          "status": "Confirmed Upcoming",
+          "date": "2026-10-22",
+          "et": "2026-10-22 before US cash open EDT; precise time unverified",
+          "sgt": "2026-10-22 evening SGT; exact time unverified",
+          "market_session": "Before regular session",
+          "consensus": {
+            "revenue": "尚无法可靠确认同源最新预期",
+            "eps": "$1.88 (Kiplinger calendar estimate; forecast subject to revision)"
+          },
+          "previous_guidance": "以公司上一份正式材料为准；本截点未独立核验",
+          "actual": "待公布",
+          "what_matters": [
+            "定价力与原材料成本转嫁，能否抵消能源输入通胀",
+            "汇率冲击与真实经营现金流质量"
+          ],
+          "read_through_targets": [
+            "Consumer staples",
+            "US inflation breadth"
+          ],
+          "sources": [
+            "S25"
+          ]
+        }
+      ]
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "US Macro Data & Forecasts",
+      "status": "美国10月22日初请将核验劳动市场，9月住宅弱势未解除",
+      "summary": "最新可验证的初请上期约199,000，10月22日08:30 EDT将发布截至10月17日一周新值。",
+      "paragraphs": [
+        "若初请维持低位但住房继续走弱，增长更可能是行业分化，而非经济整体立即失速。",
+        "初请尚未公布；不能用技术评论区间冒充市场一致预期，且要区别初请公布日期和涵盖周次。"
+      ],
+      "tables": [],
+      "sources": [
+        "S22",
+        "S23"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Central Banks & Rates",
+      "status": "10月27–28日FOMC临近，英国价格压力加大",
+      "summary": "ONS公布英国9月CPI同比3.5%，上升自8月3.1%；BoE与Fed政策期限需各自判断。",
+      "paragraphs": [
+        "英国能源与运输价格可能约束央行缓和幅度，不能将美债短期走稳机械迁移到英镑曲线。",
+        "Fed会议预期未核实数字时不填写升息概率；盘面预期必须同事实政策公告分开。"
+      ],
+      "tables": [],
+      "sources": [
+        "S16",
+        "S24"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Geopolitics & Commodity Security",
+      "status": "海湾航运与实物流量改善构成双向风险",
+      "summary": "Reuters报道波斯湾原油外运改善、航运攻击仍频繁；威胁和实际产量损失不是同一回事。",
+      "paragraphs": [
+        "即使外运总量接近战前，航运保险和成品油出口受限仍可能推高裂解价差，传递给实体通胀。",
+        "美伊谈判及俄罗斯乌克兰谈判报道均不得误记为已经签署全面停火或法律状态已改变。"
+      ],
+      "tables": [],
+      "sources": [
+        "S07",
+        "S08"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "Regional & China Policy",
+      "status": "英国通胀、法国预算压力与中国技术出口征求意见",
+      "summary": "英国9月CPI上升、法国10Y国债接近5%；中国40项技术出口修订仍是征求意见而非一律生效禁令。",
+      "paragraphs": [
+        "中国涉及AI/生物/光伏的出口目录修订，在正式生效前应独立标记草案与临时登记政策的适用状态，不能混为一谈。",
+        "Reuters报道韩国存储芯片企业拟升级在华产能，但美方许可限制使计划、投资及最终获批需分离，相关供应链外溢仍待验证。"
+      ],
+      "tables": [],
+      "sources": [
+        "S16",
+        "S17",
+        "S19",
+        "S21",
+        "S26"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "Index Rebalances & Corporate Actions",
+      "status": "无重大新增经交易所确认的指数编制调整",
+      "summary": "10月21日股市反弹不等于指数调仓公告；未核实到足以改变本期投资结论的正式纳入/剔除名单。",
+      "paragraphs": [
+        "将SOX成分行业走强与真实指数编制操作严格区分，不凭行业涨跌推断权重调整。",
+        "若下一份交易所公告出现，应记录生效交易日、收盘竞价与被动交易冲击，而不是凭媒体预告先计入持仓。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S03"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "Positioning & Cross-Asset Flows",
+      "status": "缺少同源及时的权益资金流与AI融资利差数据",
+      "summary": "指数上涨不能量化机构净买入；未获得可核验的2026-10-21收盘资金流统计。",
+      "paragraphs": [
+        "对机构现金流与ETF一级申赎保持信息缺口标注，不用成交量或涨幅倒推出基金净流入。",
+        "区分股票回购授权、财报中现金投资支出和真实机构资产配置流量，它们的会计含义不同。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S11",
+        "S13"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF News, Flows & Cross-Asset Implementation",
+      "status": "行业股价回升但基金份额变化未被证明",
+      "summary": "SOX上涨反映半导体股表现，不能直接等同SOXX等ETF净申购。",
+      "paragraphs": [
+        "缺少基金披露的同一日份额变化与申赎篮子数据，不作千亿美元流入一类不可验证推演。",
+        "需要再查ETF发行商申购、折溢价及成份权重变化后才能确定被动资金的真实支撑程度。"
+      ],
+      "tables": [],
+      "sources": [
+        "S03",
+        "S27"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "Options Expiry",
+      "status": "VIX回落不代表Gamma或0DTE净头寸已得到验证",
+      "summary": "10月21日VIX供应商历史记录在16.55附近，股市波动预期边际下降。",
+      "paragraphs": [
+        "Meta/Tesla个股财报盘后发布，个股IV跳跃与标普整体VIX的统计对象不同。",
+        "没有经过交易所数据核对的期权链和OI时，不填Max Pain、Gamma Flip或某个固定Pin水平。"
+      ],
+      "tables": [],
+      "sources": [
+        "S05",
+        "S11",
+        "S13"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "US Treasury & Global Sovereign Rates",
+      "status": "美国20Y再开标5.469%、需求指标分化",
+      "summary": "10月21日20Y美国国债拍卖金额$13B，最高收益率5.469%，较WI 5.460%高约0.9bp，投标倍数约2.73。",
+      "paragraphs": [
+        "分配包括Indirect约58.2%、Direct约31.6%、Dealers约10.3%；高bid-to-cover与正尾差并存，不能只选一个指标称需求好。",
+        "本期拍卖价差为相对于发行前WI的时点比较；10Y二级市场收益率与官方曲线不应混同。"
+      ],
+      "tables": [
+        {
+          "title": "2026-10-21美国20年期国债拍卖（来源标示非TreasuryDirect原档复核）",
+          "headers": [
+            "金额",
+            "高收益率",
+            "WI",
+            "尾差",
+            "Bid/Cover",
+            "Indirect",
+            "Direct",
+            "Dealer"
+          ],
+          "rows": [
+            [
+              "$13B",
+              "5.469%",
+              "5.460%",
+              "+0.9bp",
+              "2.73x",
+              "58.2%",
+              "31.6%",
+              "10.3%"
+            ]
+          ]
+        }
+      ],
+      "sources": [
+        "S17",
+        "S18",
+        "S28"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Energy & Metals",
+      "status": "库存下降、Brent小涨、WTI回落形成不同期限信号",
+      "summary": "EIA商业原油库存周降约3.06m桶，汽油库存下降、馏分油库存增加；Brent 12月108.82、WTI 12月97.15。",
+      "paragraphs": [
+        "海湾外运若真实改善压低原油远月溢价，但柴油供给瓶颈会使通胀传导滞后且非线性。",
+        "务必区分WTI11月到期合约与12月期货；不同合约错配会制造虚假的日涨跌与基差变化。"
+      ],
+      "tables": [],
+      "sources": [
+        "S07",
+        "S08",
+        "S15"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "Financing & AI Infrastructure",
+      "status": "Meta高AI资本开支计划与Tesla现金回收形成公司层面的融资差异",
+      "summary": "Meta预计FY26 CapEx约$135–145B，Q3 FCF为负；Tesla Q3 FCF为正约$1.5B。",
+      "paragraphs": [
+        "Meta增设C类无投票权股票是资本结构方案，不可等同股票融资款已到账；可用现金与未来义务要分开。",
+        "Tesla潜在SpaceX合并被报道为探索阶段，不是已经完成的并购或既定偿债现金流。"
+      ],
+      "tables": [],
+      "sources": [
+        "S11",
+        "S12",
+        "S13",
+        "S14"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Breaking News & 24H Event Window",
+      "status": "10月21日美东盘后Meta/Tesla财报为最重要新事实",
+      "summary": "盘中现金股指的16:00 EDT收盘、Meta 16:01 EDT财报与Tesla盘后业绩应按事件真实顺序拆分。",
+      "paragraphs": [
+        "Meta和Tesla核心经营数字已经披露，之前的预测必须更新为已发布事实，而P&G和初请仍为待公布。",
+        "中东实物损害事件仅引用已核验来源，企业合并探索、政策提案不作已生效或已成交事实处理。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S11",
+        "S13",
+        "S07"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "24–72H Market Impact & Positioning",
+      "status": "AI股回升但融资成本与商品供需未同步改善",
+      "summary": "股市从10月20日价值领涨转为10月21日科技回升，盘后Meta资本开支和负FCF加入了新的估值约束。",
+      "paragraphs": [
+        "Base为企业收入韧性但资金回收待验证；Bull需跨资产确认真实现金流和信用利差同步改善；Bear则受能源供给冲击及主权久期溢价共同驱动。",
+        "未来首先追踪10月22日美国初请，随后核对Meta/ Tesla次日现金市场、法国主权利差、布伦特12月和炼厂裂解价差，防止单指标误判。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S11",
+        "S13",
+        "S15",
+        "S16",
+        "S17"
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "Growth Impulse",
+      "current": "→ 盈利强、实体分化",
+      "yesterday": "住房数据疲弱但工业盈利强",
+      "change_reason": "Meta广告和市场上涨显示企业销售韧性，住房数据提示高利率影响仍在。",
+      "evidence": "Meta Q3营收646.01亿美元同比26%，美国房市最近一次报告签约环比-7.3%。",
+      "sources": [
+        "S11",
+        "S02"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "Inflation Impulse",
+      "current": "↑ 欧洲与油品压力",
+      "yesterday": "Brent高位但日内回落",
+      "change_reason": "英国9月CPI上升和美国油品库存去化是额外验证，欧洲长债对能源通胀敏感。",
+      "evidence": "英国9月CPI同比3.5%，EIA原油-306万桶、汽油约-300万桶。",
+      "sources": [
+        "S15",
+        "S16"
+      ]
+    },
+    "rates_pressure": {
+      "label": "Rates Pressure",
+      "current": "→ 美国长债仍高",
+      "yesterday": "美债收益率边际回落",
+      "change_reason": "20Y拍卖尾差与法国主权利差说明融资约束仍未解除，不能用10Y一个代理价格概括。",
+      "evidence": "美国20Y新券高收益5.469%、WI约5.460%；法国10Y接近5%。",
+      "sources": [
+        "S17",
+        "S18"
+      ]
+    },
+    "earnings_revision": {
+      "label": "Earnings Revision",
+      "current": "↑ 收入强、现金分化",
+      "yesterday": "Netflix指引承压、Meta和Tesla待报",
+      "change_reason": "Meta强劲广告增长但负FCF，Tesla正FCF而利润压力上升，市场开始重新识别投入回报质量。",
+      "evidence": "Meta收入+26%而FCF -21.2亿美元；Tesla自由现金流+15亿美元。",
+      "sources": [
+        "S11",
+        "S12",
+        "S13"
+      ]
+    },
+    "liquidity": {
+      "label": "Liquidity",
+      "current": "→ 股票反弹待信用确认",
+      "yesterday": "工业小盘轮动、科技横盘",
+      "change_reason": "纳指和芯片上涨不意味着AI项目发行融资成本同时下降，缺少可核验信用利差数据。",
+      "evidence": "纳指约+1.05%，SOX约+2.15%，本期不填未核实的AI融资利差。",
+      "sources": [
+        "S01",
+        "S03"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "Geopolitical Risk",
+      "current": "↑ 海湾通航尾部风险",
+      "yesterday": "外交磋商延缓与油价回落并存",
+      "change_reason": "航道安全问题与原油外运恢复是不同维度，海湾实体供应溢价仍被交易。",
+      "evidence": "Reuters报道10月21日Brent报108.82美元，海湾航运风险持续。",
+      "sources": [
+        "S07",
+        "S08"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base — earnings-led recovery, duration expensive",
+      "probability": "50%",
+      "trigger": "Meta销售增长兑现但后续资本开支指引未再抬高，美国初请保持平稳，海湾无额外独立确认的重大中断。",
+      "expected_market_reaction": "纳指短线有支撑但对CapEx/利率敏感，欧洲久期信用承压、能源保持高波动，价值和成长行业轮动。",
+      "assets_most_sensitive": [
+        "Nasdaq100",
+        "UST10Y",
+        "Brent Dec",
+        "France OAT"
+      ],
+      "what_confirms_it": "10月22日初请数据与科技公司经营现金流披露、信用利差及股票广度同向支持。",
+      "what_invalidates_it": "油轮再次大规模中断，或AI项目现金转化低于管理层指引并引发信用融资利差扩张。"
+    },
+    "bull_case": {
+      "label": "Bull — operating FCF catches up with capex",
+      "probability": "25%",
+      "trigger": "Meta/Tesla或其他科技投资者补充披露的现金回收改善，原油及炼厂供给出现可核验持续改善。",
+      "expected_market_reaction": "成长科技与小盘共同受益，油价风险溢价下降，VIX和信用利差同时回落，债券期限溢价趋稳。",
+      "assets_most_sensitive": [
+        "SOX",
+        "Nasdaq100",
+        "VIX",
+        "WTI Dec"
+      ],
+      "what_confirms_it": "下一交易日成交广度扩大、长期利率稳定并出现真实自由现金流改善，而非只靠调整盈利。",
+      "what_invalidates_it": "CapEx现金外流加速、海湾船运保险报价抬升且美元久期收益率上行。"
+    },
+    "bear_case": {
+      "label": "Bear — high-energy/high-rate funding squeeze",
+      "probability": "25%",
+      "trigger": "海湾运输出现独立确认中断叠加欧债风险扩散；科技资本开支超过可持续内生现金与外部融资能力。",
+      "expected_market_reaction": "Brent/产品裂解价差走高、法德收益率差扩大、科技股估值和高杠杆信用债承压。",
+      "assets_most_sensitive": [
+        "Brent Dec",
+        "French OAT",
+        "AI credit",
+        "Nasdaq100"
+      ],
+      "what_confirms_it": "原油与成品油同步上涨且信用利差扩大、实际融资成本上行。",
+      "what_invalidates_it": "实物供应稳定、库存回补且核心企业现金收入/资本支出比改善。"
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-10-22 20:30 SGT",
+      "et": "2026-10-22 08:30 EDT",
+      "event": "US Initial Jobless Claims — week ended 2026-10-17",
+      "consensus": "尚无法可靠确认同源最新调查中位数",
+      "previous": "199,000 （截至10月10日一周，依DOL旧数据）",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S22",
+        "S23"
+      ]
+    },
+    {
+      "sgt": "2026-10-23 07:30 SGT",
+      "et": "2026-10-22 19:30 EDT",
+      "event": "Japan September 2026 CPI scheduled for October 23 JST",
+      "consensus": "尚无法可靠确认同口径最新预期",
+      "previous": "请以总务省届时上期同口径公布为准；本截点未核实",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S29"
+      ]
+    },
+    {
+      "sgt": "2026-10-27 to 2026-10-29 SGT",
+      "et": "2026-10-27 to 2026-10-28 EDT",
+      "event": "Federal Reserve FOMC scheduled October 27–28 ET",
+      "consensus": "不填未核实利率概率；静候官方声明",
+      "previous": "联储上次会议政策区间参照美联储官方声明，本期未独立核验",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S24"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "Meta及同业AI设施投入持续超过经营现金流而推高再融资敏感度",
+      "why_not_fully_priced": "Meta营收高增长掩盖Q3现金流为负，法律费用又使账面利润跨期不可直接比较，股市短线反弹未证明资金回收已实现。",
+      "trigger": "下一阶段CapEx上修或经营现金增长滞后，并伴随公司债/项目融资利差扩大。",
+      "transmission": "数据中心资本开支↑→自由现金流↓→融资缺口与久期风险↑→科技估值及信用市场对资本成本更敏感。",
+      "first_asset": "AI infrastructure credit / Nasdaq100",
+      "theme_id": "ai_financing_quality",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-16",
+      "last_seen": "2026-10-22",
+      "sources": [
+        "S11",
+        "S12"
+      ]
+    },
+    {
+      "risk": "霍尔木兹与海湾航运事故使能源供应风险溢价二次跳升",
+      "why_not_fully_priced": "出口量恢复不等于保险运费、炼厂与成品油物流正常化，10月21日Brent持稳并未消除尾部损失。",
+      "trigger": "独立确认的新油轮/油港物理袭击、航线中断，或炼厂出口受到持续影响。",
+      "transmission": "有效出口下降→油品裂解价差和能源成本抬升→通胀预期上升→风险资产折现率与消费承压。",
+      "first_asset": "Brent Dec 2026 / diesel cracks",
+      "theme_id": "geopolitics_energy",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-18",
+      "last_seen": "2026-10-22",
+      "sources": [
+        "S07",
+        "S08",
+        "S15"
+      ]
+    },
+    {
+      "risk": "英法财政与通胀久期溢价向全球长债和高负债资产外溢",
+      "why_not_fully_priced": "欧洲主权信用溢价、英国通胀与美国国债供给分属不同驱动，股票一天上涨可能掩盖跨币种融资压力。",
+      "trigger": "法国10Y相对德国利差持续扩大、英国通胀再上行或美债拍卖持续尾差。",
+      "transmission": "主权融资成本↑→银行资产负债表与企业债折现率↑→长期现金流资产估值受压。",
+      "first_asset": "French OAT / UK Gilt / UST duration",
+      "theme_id": "sovereign_duration",
+      "lifecycle_state": "new",
+      "first_seen": "2026-10-22",
+      "last_seen": "2026-10-22",
+      "sources": [
+        "S16",
+        "S17",
+        "S18"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "U.S. Weekly Initial Jobless Claims — October 22, 2026 08:30 EDT / 20:30 SGT",
+    "status": "Confirmed Upcoming",
+    "date": "2026-10-22",
+    "et": "2026-10-22 08:30 EDT",
+    "sgt": "2026-10-22 20:30 SGT",
+    "consensus": "尚无法可靠确认最新调查中位数；不可使用评论性阈值代替预期",
+    "previous": "199,000 （截至2026-10-10一周，美国劳工部先前发布）",
+    "actual": "待公布",
+    "why_it_matters": "Meta和Tesla财报后权益市场重新衡量AI盈利质量，但美国高利率环境下劳动力仍是消费与住房信用风险的领先确认路径；初请需与连续申领、工资和利率同看。",
+    "first_market": "UST 2Y / USDJPY / Nasdaq futures / US credit spreads",
+    "bull_interpretation": "初请温和且连续申领没有恶化，支持需求软着陆，若美债和股票同向稳定可缓和融资压力。",
+    "bear_interpretation": "若初请和续请同时持续走高，增长衰退与盈利下修风险可能超过债券收益率下降的估值正面效应。",
+    "watch_first": [
+      "先对照DOL当期初请及过去4周均值、续请是否同向变化，单周噪声不能作为劳动力转折。",
+      "观察美国2Y和10Y收益率同时间戳反应；下行若伴信用利差扩张，不能称风险资产利好。",
+      "复核美元/日元、Nasdaq期货及VIX方向与交易时段，区分成长股折现率交易和经济衰退对利润的重估。"
+    ],
+    "sources": [
+      "S22",
+      "S23"
+    ]
+  },
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S25",
+    "S26",
+    "S27",
+    "S28",
+    "S29"
+  ],
+  "asia_snapshot": {
+    "as_of": "2026-10-22 09:20 SGT; prior US cash closes 2026-10-21; after-hours results separate; Asian 2026-10-22 intraday quotes unverified",
+    "brent": "$108.82 Dec 2026, Oct21 US settlement; not Oct22 live quote",
+    "wti": "$97.15 Dec 2026, Oct21 US settlement; exclude expiring Nov contracts",
+    "dxy": "尚无法可靠确认ICE DXY 10月21日同口径终值；WSJ美元指数不是ICE DXY",
+    "s_and_p_futures": "尚无法可靠确认当前研究截点可复核实时报价",
+    "nasdaq_futures": "尚无法可靠确认当前研究截点可复核实时报价",
+    "korea_equities": "尚无法可靠确认当前研究截点可复核实时指数",
+    "sources": [
+      "S01",
+      "S07",
+      "S08"
+    ]
+  }
+}
