@@ -3327,6 +3327,18 @@
         {
           "date": "2026-10-16",
           "value": 26140.03
+        },
+        {
+          "date": "2026-10-19",
+          "value": 26430.89
+        },
+        {
+          "date": "2026-10-20",
+          "value": 26424.82
+        },
+        {
+          "date": "2026-10-21",
+          "value": 26702.86
         }
       ]
     },
@@ -3407,6 +3419,18 @@
         {
           "date": "2026-10-16",
           "value": 7659.44
+        },
+        {
+          "date": "2026-10-19",
+          "value": 7690.73
+        },
+        {
+          "date": "2026-10-20",
+          "value": 7712.57
+        },
+        {
+          "date": "2026-10-21",
+          "value": 7757.17
         }
       ]
     },
@@ -3487,6 +3511,18 @@
         {
           "date": "2026-10-16",
           "value": 19.99
+        },
+        {
+          "date": "2026-10-19",
+          "value": 18.44
+        },
+        {
+          "date": "2026-10-20",
+          "value": 17.31
+        },
+        {
+          "date": "2026-10-21",
+          "value": 16.68
         }
       ]
     },
@@ -3563,6 +3599,18 @@
         {
           "date": "2026-10-16",
           "value": 4.74
+        },
+        {
+          "date": "2026-10-19",
+          "value": 4.77
+        },
+        {
+          "date": "2026-10-20",
+          "value": 4.79
+        },
+        {
+          "date": "2026-10-21",
+          "value": 4.81
         }
       ]
     },
@@ -3639,6 +3687,18 @@
         {
           "date": "2026-10-16",
           "value": 5.09
+        },
+        {
+          "date": "2026-10-19",
+          "value": 5.15
+        },
+        {
+          "date": "2026-10-20",
+          "value": 5.12
+        },
+        {
+          "date": "2026-10-21",
+          "value": 5.13
         }
       ]
     },
@@ -3711,6 +3771,22 @@
         {
           "date": "2026-10-14",
           "value": 126.55
+        },
+        {
+          "date": "2026-10-15",
+          "value": 126.35
+        },
+        {
+          "date": "2026-10-16",
+          "value": 119.33
+        },
+        {
+          "date": "2026-10-19",
+          "value": 118.82
+        },
+        {
+          "date": "2026-10-20",
+          "value": 115.22
         }
       ]
     },
@@ -3771,6 +3847,22 @@
         {
           "date": "2026-10-09",
           "value": 121.6023
+        },
+        {
+          "date": "2026-10-13",
+          "value": 121.4433
+        },
+        {
+          "date": "2026-10-14",
+          "value": 122.0037
+        },
+        {
+          "date": "2026-10-15",
+          "value": 121.5693
+        },
+        {
+          "date": "2026-10-16",
+          "value": 121.4048
         }
       ]
     },
@@ -3847,6 +3939,22 @@
         {
           "date": "2026-10-15",
           "value": 3.23
+        },
+        {
+          "date": "2026-10-16",
+          "value": 3.31
+        },
+        {
+          "date": "2026-10-19",
+          "value": 3.29
+        },
+        {
+          "date": "2026-10-20",
+          "value": 3.33
+        },
+        {
+          "date": "2026-10-21",
+          "value": 3.27
         }
       ]
     }
@@ -3878,42 +3986,42 @@
   },
   "series_freshness": {
     "NASDAQCOM": {
-      "last_observation": "2026-10-16",
+      "last_observation": "2026-10-21",
       "source": "Nasdaq, Inc. via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "SP500": {
-      "last_observation": "2026-10-16",
+      "last_observation": "2026-10-21",
       "source": "S&P Dow Jones Indices via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "VIXCLS": {
-      "last_observation": "2026-10-16",
+      "last_observation": "2026-10-21",
       "source": "CBOE via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS2": {
-      "last_observation": "2026-10-16",
+      "last_observation": "2026-10-21",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS10": {
-      "last_observation": "2026-10-16",
+      "last_observation": "2026-10-21",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DCOILBRENTEU": {
-      "last_observation": "2026-10-14",
+      "last_observation": "2026-10-20",
       "source": "U.S. EIA via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DTWEXBGS": {
-      "last_observation": "2026-10-09",
+      "last_observation": "2026-10-16",
       "source": "Federal Reserve via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "BAMLH0A0HYM2": {
-      "last_observation": "2026-10-15",
+      "last_observation": "2026-10-21",
       "source": "ICE BofA via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     }
