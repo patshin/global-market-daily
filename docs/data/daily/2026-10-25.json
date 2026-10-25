@@ -1,0 +1,1048 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-10-25",
+  "edition": "Morning Official",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-10-25 09:06 SGT",
+  "data_cutoff_et": "2026-10-24 21:06 EDT",
+  "last_updated": "2026-10-25T09:06:50+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-10-25T09:00:00+08:00",
+    "started_at_sgt": "2026-10-25T08:56:26+08:00",
+    "research_cutoff_sgt": "2026-10-25T09:06:50+08:00",
+    "mode": "morning"
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": true
+  },
+  "publication_policy": {
+    "effective_date": "2026-10-08",
+    "no_evening_edition": true,
+    "is_canonical_daily": true
+  },
+  "source_mode": "native_daily",
+  "sources_path": "data/sources/2026-10-25.json",
+  "comparison_basis": "与2026-10-24最新正式晨报比较：美国、欧股及美债周日常规现货休市，保留10月23日最后可靠交易日的独立行情；周末新信息是安全、外交、法国评级及AI融资的事件风险，尚无周日证券现金收盘。",
+  "thesis": "截至2026-10-25 09:06 SGT（2026-10-24 21:06 EDT），周日无美股和美债常规现货交易；最新可比美国收盘仍是10月23日，标普500为7,623.68（当日-0.52%）、纳指25,955.34（-0.21%），Brent当日结算116.72美元。10月24日新增美国缩减四国使馆人员、伊朗驻巴大使提出以解除封锁换霍尔木兹重新开放的有条件主张，而非达成协议；法国主权Aa3评级维持但负面展望未除。下周最关键的是周一对航运、油价、信用利差的真实开盘核实，再看10月27–28日FOMC及大型云厂财报，不将周末新闻充作交易价格。",
+  "dominant_narrative": "周末边际变化体现三条未完成闭环的跨资产链条。第一，AP和Reuters对10月24日前后美国缩减约旦、黎巴嫩、卡塔尔、阿联酋四处外交机构人员的报道相互印证，表明安全防护升级；但这不是四处使馆已关闭，更不能据此推断新的军事打击必然发生。第二，伊朗驻巴基斯坦大使在周六称愿在美方撤销海上封锁条件下重开霍尔木兹，AP记录的是一方的公开主张，并非美国接受或海峡实际恢复通航；因此Brent在10月23日的116.72美元结算仍是上一个有交易的可验证价格，周末没有新的期货结算。第三，Moody’s在10月23日维持法国Aa3主权评级及负面展望，法国财政部声明与Reuters报道一致；它并未消除2027年预算和法德国债利差压力。第四，Reuters Breakingviews在10月24日讨论数据中心建设所面临的融资、电网与需求兑现瓶颈，属于分析观点，不是新增被确认的债务违约。10月23日美国10年期国债二级收益率约4.99%，美股科技内部强弱分化，需在周一现货/期货重新定价后，才判断油价、长端利率、AI信用风险是否发生同向强化。下周FOMC和加拿大央行决议均尚未发布，不将调查预测写成实际政策。",
+  "market_regime": {
+    "growth": {
+      "state": "→ 消费分层、战争成本仍牵制实际增长",
+      "evidence": "最近实际美国交易日仍是10月23日；AXP先前披露的高端消费增长不代表全体家庭，周末没有新的GDP或零售官方公布。"
+    },
+    "inflation": {
+      "state": "↑ 上一交易日能源高位，周末航运风险未消",
+      "evidence": "Brent最近结算116.72美元（10月23日），周末外交条件主张不等于实物运输已恢复。"
+    },
+    "rates": {
+      "state": "↑ 美国与法国主权期限风险独立存在",
+      "evidence": "美国10Y最后交易日二级市场约4.99%；法国Moody’s维持Aa3负面展望，法国10Y前期约5.04%。"
+    },
+    "earnings": {
+      "state": "→ AI现金回报等待正式财报验证",
+      "evidence": "Reuters 10月24日融资评论提出电网与资本支出可持续性疑问；Microsoft投资者关系页面确认10月28日财报安排，尚未发布。"
+    },
+    "liquidity": {
+      "state": "→ 周末无新增机构实际成交证据",
+      "evidence": "美股、主要债券周日现金市场关闭；缺少可复核周末ETF申赎和美国公司债成交利差，不填虚构流量。"
+    },
+    "geopolitics": {
+      "state": "↑ 人员撤离与谈判说法并存但没有停火",
+      "evidence": "美方使馆裁员安全措施经Reuters/AP报道；伊朗大使所述条件性提议仍未经双方协议确认。"
+    },
+    "overall": {
+      "state": "Weekend Security/Diplomatic Standoff · Oil Inflation · Sovereign/AI Funding Constraint",
+      "evidence": "周末冲突升级风险与有条件外交表态并存，价格发现仍停留在10月23日交易日。"
+    }
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,623.68",
+      "change_1d": "-0.52%",
+      "change_5d": "-0.5%",
+      "signal": "↓ 能源成本压低综合利润折现",
+      "driver": "美股现金收盘，5D为10/16至10/23同指数周变动。",
+      "status": "Verified last regular market session 2026-10-23; Sunday 2026-10-25 closed, NOT a live Sunday quote",
+      "as_of": "2026-10-23 16:00 EDT",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "asset": "Dow Jones Industrial Average",
+      "level": "52,215.16",
+      "change_1d": "-1.23%",
+      "change_5d": "+0.4%",
+      "signal": "↓ 防御与成本压力压过部分工业个股",
+      "driver": "5D为同一周收盘至收盘，周内负涨幅与单日跌幅不矛盾。",
+      "status": "Verified last regular market session 2026-10-23; Sunday 2026-10-25 closed, NOT a live Sunday quote",
+      "as_of": "2026-10-23 16:00 EDT",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "25,955.34",
+      "change_1d": "-0.21%",
+      "change_5d": "-0.7%",
+      "signal": "→ 科技内部结构分化",
+      "driver": "SOX约涨0.4%与综合纳指小跌并存；不把不同指数混算。",
+      "status": "Verified last regular market session 2026-10-23; Sunday 2026-10-25 closed, NOT a live Sunday quote",
+      "as_of": "2026-10-23 16:00 EDT",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,775.90",
+      "change_1d": "-0.29%",
+      "change_5d": "+2.0%",
+      "signal": "→ 小盘周度强于大盘",
+      "driver": "AP周涨约2%，但周五收跌；对融资利率保持敏感。",
+      "status": "Verified last regular market session 2026-10-23; Sunday 2026-10-25 closed, NOT a live Sunday quote",
+      "as_of": "2026-10-23 16:00 EDT",
+      "sources": [
+        "S02"
+      ]
+    },
+    {
+      "asset": "Brent front-month futures",
+      "level": "US$116.72/bbl",
+      "change_1d": "+3.14%",
+      "change_5d": "+6.0%",
+      "signal": "↑ 海湾供应风险溢价",
+      "driver": "Reuters 10月23日结算与周度同合约变化；不混期货盘中最高价。",
+      "status": "Verified last regular market session 2026-10-23; Sunday 2026-10-25 closed, NOT a live Sunday quote",
+      "as_of": "2026-10-23 US futures settlement",
+      "sources": [
+        "S01",
+        "S03"
+      ]
+    },
+    {
+      "asset": "WTI front-month futures",
+      "level": "US$103.27/bbl",
+      "change_1d": "+3.80%",
+      "change_5d": "+2.3%",
+      "signal": "↑ 美国原油同步上涨",
+      "driver": "Reuters当日结算、同一周周涨统计；合约滚动可能影响严格5个交易日比较。",
+      "status": "Verified last regular market session 2026-10-23; Sunday 2026-10-25 closed, NOT a live Sunday quote",
+      "as_of": "2026-10-23 US futures settlement",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "asset": "US Treasury 10Y secondary yield",
+      "level": "4.99%",
+      "change_1d": "+约3.7bp",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ 油价对折现率形成再通胀压力",
+      "driver": "二级市场报价非财政部CMT；5D相同基准收盘未可靠取得。",
+      "status": "Verified last regular market session 2026-10-23; Sunday 2026-10-25 closed, NOT a live Sunday quote",
+      "as_of": "2026-10-23 late US session",
+      "sources": [
+        "S01",
+        "S18"
+      ]
+    },
+    {
+      "asset": "EUR/USD",
+      "level": "1.1191",
+      "change_1d": "-0.21%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 欧洲财政风险与美元支撑",
+      "driver": "Reuters日内外汇观察；不当作纽约17:00官方汇率定盘。",
+      "status": "Verified last regular market session 2026-10-23; Sunday 2026-10-25 closed, NOT a live Sunday quote",
+      "as_of": "2026-10-23 Reuters cited intraday",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "STOXX Europe 600",
+      "level": "635.77",
+      "change_1d": "-0.31%",
+      "change_5d": "-1.4%",
+      "signal": "↓ 欧洲预算和高能源成本压力",
+      "driver": "Reuters欧洲10/23现金收盘，周跌约1.4%。",
+      "status": "Verified last regular market session 2026-10-23; Sunday 2026-10-25 closed, NOT a live Sunday quote",
+      "as_of": "2026-10-23 European cash close",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "France 10Y OAT yield",
+      "level": "5.04%",
+      "change_1d": "-约5bp",
+      "change_5d": "+约27bp",
+      "signal": "↑ 周度债券信用风险仍高",
+      "driver": "收益率当日略回落但周上升约27bp；不是欧元区统一政策利率。",
+      "status": "Verified last regular market session 2026-10-23; Sunday 2026-10-25 closed, NOT a live Sunday quote",
+      "as_of": "2026-10-23 European bond session",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "FTSE 100",
+      "level": "10,690.36",
+      "change_1d": "-0.3%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 能源成本抵消板块利好",
+      "driver": "Reuters英国10/23收盘，能源板块上涨不等于指数上涨。",
+      "status": "Verified last regular market session 2026-10-23; Sunday 2026-10-25 closed, NOT a live Sunday quote",
+      "as_of": "2026-10-23 16:30 BST",
+      "sources": [
+        "S14"
+      ]
+    },
+    {
+      "asset": "MSCI World index",
+      "level": "1,118.97",
+      "change_1d": "-0.35%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 发达市场广泛承压",
+      "driver": "Reuters全球股票指数10/23截点，与期货及美股现货时间不完全相同。",
+      "status": "Verified last regular market session 2026-10-23; Sunday 2026-10-25 closed, NOT a live Sunday quote",
+      "as_of": "2026-10-23 Reuters global-market snapshot",
+      "sources": [
+        "S01"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "weekend-last-verified-session-only; no invented Sunday cash/futures settlements",
+    "asset_count": 12,
+    "level_coverage": {
+      "available": 12,
+      "total": 12,
+      "ratio": 1.0
+    },
+    "change_1d_coverage": {
+      "available": 12,
+      "total": 12,
+      "ratio": 1.0
+    },
+    "change_5d_coverage": {
+      "available": 8,
+      "total": 12,
+      "ratio": 0.6666666666666666
+    },
+    "explicit_gaps": [
+      "UST10Y matched five-session yield",
+      "EUR/USD matched five-session spot basis",
+      "FTSE100 matched five-session close",
+      "MSCI World matched five-session close"
+    ],
+    "policy": "12/12 Level与1D为10月23日已公开且本次独立复核的最近交易日观察，并非10月25日周日新报价；5D 8/12（66.7%）未达到80%目标，逐资产标记缺口，不填估计。股票、政府二级收益率、期货结算和外汇时点不同，不强行同刻比较。"
+  },
+  "what_changed": [
+    {
+      "yesterday": "10月24日晨报依据10月23日美国收盘和海湾风险报道，尚无四国使馆人员缩减的完整双源核对。",
+      "today": "AP与Reuters均报道美国对约旦、黎巴嫩、卡塔尔和阿联酋驻外使馆缩减人员规模；使馆仍开放，不是宣布军事打击。",
+      "why_it_matters": "驻外安全升级加大油运/航空保险风险警惕，但必须等待独立的运输与能源供给事实来判断价格冲击。",
+      "sources": [
+        "S19",
+        "S20"
+      ]
+    },
+    {
+      "yesterday": "此前油价偏强的研究重在冲突升级风险，未获得确认的新外交协议。",
+      "today": "伊朗驻巴大使10月24日提出“美方解除封锁则重开霍尔木兹”的主张；美方接受与实际开放均尚未得到确认。",
+      "why_it_matters": "潜在外交缓和与实物航运恢复不可等同；下一次可靠交易报价需要等市场重开，而非发言发布即更新油价。",
+      "sources": [
+        "S21",
+        "S03"
+      ]
+    },
+    {
+      "yesterday": "法国10年国债收益率近期高企，市场忧虑2027预算与评级下调。",
+      "today": "法国财政部与Reuters确认Moody’s于10月23日维持法国Aa3及负面展望，未立即降级但下调风险未解除。",
+      "why_it_matters": "避免把评级维持误读为信用压力完全修复，观察法德利差及国债发行成本实际走势。",
+      "sources": [
+        "S22",
+        "S23"
+      ]
+    },
+    {
+      "yesterday": "截至周五市场已反映部分AI盈利及现金回报担忧。",
+      "today": "10月24日Reuters Breakingviews分析数据中心融资、电网约束及回报周期；属于分析观点而非新增公司违约事实。",
+      "why_it_matters": "下周以Microsoft等正式财报、自由现金流和现金资本支出分项验证，不以评论中的假设额外推断损失。",
+      "sources": [
+        "S24",
+        "S27"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "2026-10-24美国缩减四个中东使馆人员并报告伊朗威胁风险",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-23/24 EDT, precise hour not established",
+      "event_time_sgt": "2026-10-24 SGT, release timing may straddle zones",
+      "what_happened": "美国宣布驻约旦、黎巴嫩、卡塔尔和阿联酋使馆缩减人手；AP与Reuters均报道威胁升级，使馆继续开放。这是外交机构人员和安全安排的调整，并非使馆全面关闭，也不能据此认定发生新的原油实物断供。",
+      "what_changed": "周末安全风险与周五原油强势之间出现更多明确消息，但不构成新的已确认供给中断或军事行动。",
+      "why_it_matters": "交易者需区分人员保护行动、对冲需求和实际供给损失，周一将由可验证航运与市场交易重新定价。",
+      "transmission": "外交安全措施升级→油轮保险及路线担忧→原油风险溢价/航空成本可能上升→输入通胀与长债折现风险",
+      "affected_assets": [
+        "Brent",
+        "WTI",
+        "US inflation breakevens",
+        "US credit"
+      ],
+      "direction": "Oil risk premium ↑ (conditional)",
+      "importance": "★★★★★",
+      "confirmation": "官方安全指引及主要油轮航运商确认新的商业航运中断、周一可比Brent合约报价。",
+      "invalidation": "如四国使馆恢复常规运作且实物航运不受影响，风险溢价可能缓和。",
+      "sources": [
+        "S19",
+        "S20"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "2026-10-24伊朗驻巴大使提出解除美方封锁条件下重开霍尔木兹海峡",
+      "status": "Market Reporting",
+      "event_time_et": "2026-10-24 EDT/statement local time uncertain",
+      "event_time_sgt": "2026-10-24/25 SGT, exact release time uncertain",
+      "what_happened": "AP报道称伊朗驻巴大使宣称有条件愿重新开放海峡；未证实美方接受、签署协议或实际通航恢复。其提出的路径仍取决于美方海上封锁等前提条件，因此它是待核验的外交表态，而不是已经发生的航运恢复。",
+      "what_changed": "外交表态给能源市场增添潜在缓和路径，但与驻外人员缩减并存，不能把主张写成已实现协议。",
+      "why_it_matters": "若后续美伊和斡旋方共同正式确认实施细节，可能影响海运保费与期货风险溢价；目前仍不可量化。",
+      "transmission": "条件性外交主张→协议概率可能变化→待航道保险与船舶跟踪实证→油价才可能兑现缓和预期",
+      "affected_assets": [
+        "Brent",
+        "WTI",
+        "US airlines",
+        "USD"
+      ],
+      "direction": "Potential oil pressure ↓ IF verified",
+      "importance": "★★★★",
+      "confirmation": "美伊双方政府一致公开确认条件与生效时点，并有真实船舶通行、保险条款变化。",
+      "invalidation": "如美方否认达成进展或相关港口仍受封锁，报价不得据此提前视为通航恢复。",
+      "sources": [
+        "S21",
+        "S20"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "2026-10-23 Moody’s确认法国Aa3主权评级维持且展望仍为负面",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-23 EDT (agency decision time not established)",
+      "event_time_sgt": "2026-10-23/24 SGT (local date conversion uncertain)",
+      "what_happened": "法国财政部正式声明与Reuters确认评级仍为Aa3、负面展望，2027预算和财政赤字目标仍面临政治执行风险。这一结论不等于评级前景已经转正，也不能证明预算已经通过或相关债券风险溢价已经消退。",
+      "what_changed": "评级未降级避免立即再触发某些投资限制，但法德债利差和预算分歧未因此消失。",
+      "why_it_matters": "欧洲主权风险在高能源输入成本下可能影响欧元、银行融资和全球久期资产，需分开看法国与美国利率驱动。",
+      "transmission": "法国预算信用压力→OAT-Bund spread→欧洲金融机构融资成本→欧元和跨国债券久期风险",
+      "affected_assets": [
+        "France OAT 10Y",
+        "Bund-OAT spread",
+        "EURUSD",
+        "European bank credit"
+      ],
+      "direction": "Credit tail risk remains despite no downgrade",
+      "importance": "★★★★",
+      "confirmation": "法国预算立法进度、评级机构后续公告与法国国债实际招标及价差共同验证。",
+      "invalidation": "若预算最终可信削赤且国债利差持续收敛，风险可缓解。",
+      "sources": [
+        "S22",
+        "S23"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top Market Catalysts",
+      "status": "使馆安全升级、有条件海峡提议、法国评级三条独立风险线",
+      "summary": "安全人员调整经AP和Reuters报道，伊朗驻巴大使表态只是单方有条件建议。；法国Aa3负面展望代表未降级但仍有预算信用风险，周一需用实际成交检验传导。",
+      "paragraphs": [
+        "安全人员调整经AP和Reuters报道，伊朗驻巴大使表态只是单方有条件建议。",
+        "法国Aa3负面展望代表未降级但仍有预算信用风险，周一需用实际成交检验传导。"
+      ],
+      "tables": [],
+      "sources": [
+        "S19",
+        "S20",
+        "S21",
+        "S22",
+        "S23"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings",
+      "status": "周末无可验证新增美股科技业绩；下周看Microsoft正式现金流",
+      "summary": "AXP10月23日发布财报属上一个交易日事实，不冒充10月25日新财报。；Microsoft投资者关系已确认10月28日财报日程，本截点未公布业绩、实际现金流或完整共识。",
+      "paragraphs": [
+        "AXP10月23日发布财报属上一个交易日事实，不冒充10月25日新财报。",
+        "Microsoft投资者关系已确认10月28日财报日程，本截点未公布业绩、实际现金流或完整共识。"
+      ],
+      "tables": [],
+      "sources": [
+        "S07",
+        "S08",
+        "S27",
+        "S24"
+      ],
+      "reported": [
+        {
+          "id": "AXP-Q3-2026",
+          "company": "American Express",
+          "ticker": "AXP",
+          "period": "Q3 2026",
+          "status": "Released/Occurred",
+          "release_date": "2026-10-23",
+          "release_time_et": "2026-10-23 US release (clock not established)",
+          "release_time_sgt": "2026-10-23/24 SGT (clock not established)",
+          "market_session": "Friday US earnings release; regular-session reaction must be timed separately",
+          "key_takeaway": "历史已披露财报（2026-10-23），不属于10月25日新增业绩。收入201亿美元同比增长9%，调整EPS4.68美元，同时公司拟裁员约3500人，现金营运质量不能只看调整EPS。",
+          "metrics": [
+            {
+              "metric": "Total revenue net of interest expense",
+              "actual": "$20.1B",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "+9% year over year",
+              "surprise": "未可靠确定同口径共识",
+              "notes": "American Express Q3 2026 official results"
+            },
+            {
+              "metric": "Adjusted diluted EPS",
+              "actual": "$4.68",
+              "consensus": "$4.48 Reuters cited analyst comparison",
+              "previous_or_yoy": "+13% year over year (Reuters)",
+              "surprise": "+$0.20 versus cited consensus",
+              "notes": "Adjusted non-GAAP not equal GAAP EPS"
+            },
+            {
+              "metric": "Cardmember spending",
+              "actual": "$454B",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "+8% year over year",
+              "surprise": "尚无法可靠确认",
+              "notes": "Reuters Q3 2026 earnings analysis"
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "FY2026 Adjusted EPS",
+              "current": "$17.60–$17.90",
+              "previous_or_consensus": "2026 prior midpoint not reliably reverified",
+              "change": "Full-year bottom end raised, Reuters characterization",
+              "interpretation": "盈利提升仍需对照一次性调整与费用执行。"
+            }
+          ],
+          "market_reaction": {
+            "session": "2026-10-23 regular session US",
+            "move": "Reuters盘中跌约2.5%，WSJ随后报道约-3.7%；不同截点，不作为唯一正式日收盘价",
+            "as_of": "2026-10-23 ET, intraday and late reported snapshots"
+          },
+          "one_offs": [
+            "约3500个拟裁岗位是宣布的重组计划而非已全部实现的节约。",
+            "GAAP EPS $5.42与调整EPS $4.68不能被当作同一个盈利口径。"
+          ],
+          "read_through": [
+            {
+              "asset": "Consumer finance / AXP",
+              "implication": "高端消费韧性尚存但贷款信用质量、费用率与准备金必须继续验证。"
+            },
+            {
+              "asset": "US household consumption",
+              "implication": "AXP偏向高收入样本，不能替代全面零售消费数据。"
+            }
+          ],
+          "sources": [
+            "S07",
+            "S08"
+          ]
+        }
+      ],
+      "upcoming_72h": []
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "US Macro Data & Forecasts",
+      "status": "宏观风险偏向能源输入通胀和消费者支付能力",
+      "summary": "美国周末没有新的已核实核心经济数据，前期高端信用卡消费增长不等于所有家庭需求不受油价影响。；10月23日Brent结算高位，下一步应等通胀数据和真实政策发布，而非把市场预期当实际值。",
+      "paragraphs": [
+        "美国周末没有新的已核实核心经济数据，前期高端信用卡消费增长不等于所有家庭需求不受油价影响。",
+        "10月23日Brent结算高位，下一步应等通胀数据和真实政策发布，而非把市场预期当实际值。"
+      ],
+      "tables": [],
+      "sources": [
+        "S28",
+        "S03",
+        "S29"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Central Banks & Rates",
+      "status": "FOMC10月27–28日和BoC10月28日均为已排期未决策",
+      "summary": "芝加哥联储官方日历确认10月27–28日FOMC会议，经济学家按兵不动预期只是调查。；加拿大央行官方公告确认10月28日09:45 EDT发布政策利率与货币政策报告，不能提前填写实际结果。",
+      "paragraphs": [
+        "芝加哥联储官方日历确认10月27–28日FOMC会议，经济学家按兵不动预期只是调查。",
+        "加拿大央行官方公告确认10月28日09:45 EDT发布政策利率与货币政策报告，不能提前填写实际结果。"
+      ],
+      "tables": [],
+      "sources": [
+        "S25",
+        "S26",
+        "S29"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Geopolitics & Commodity Security",
+      "status": "四国使馆人员缩减与海峡条件性外交主张并存",
+      "summary": "美国缩减四国使馆人员是已报道的安全安排，使馆未被宣布关闭，也未据此确认新的军事行动。；伊朗驻巴大使称条件性愿重新开放海峡尚不是签约或实物通航恢复，必须与AP独立查证后再判定市场影响。",
+      "paragraphs": [
+        "美国缩减四国使馆人员是已报道的安全安排，使馆未被宣布关闭，也未据此确认新的军事行动。",
+        "伊朗驻巴大使称条件性愿重新开放海峡尚不是签约或实物通航恢复，必须与AP独立查证后再判定市场影响。"
+      ],
+      "tables": [],
+      "sources": [
+        "S19",
+        "S20",
+        "S21"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "Regional & China Policy",
+      "status": "法国主权评级维持但负面展望仍在；中国新规没有已证实变动",
+      "summary": "法国财政部声明明确Moody’s维持Aa3但评级展望为负面，2027预算削赤能否落实仍需观察。；本截点没有核实新增中国正式生效的出口禁令；加拿大和美联储的未来议息也不能提前写成实施结果。",
+      "paragraphs": [
+        "法国财政部声明明确Moody’s维持Aa3但评级展望为负面，2027预算削赤能否落实仍需观察。",
+        "本截点没有核实新增中国正式生效的出口禁令；加拿大和美联储的未来议息也不能提前写成实施结果。"
+      ],
+      "tables": [
+        {
+          "title": "Policy status: actual versus future",
+          "headers": [
+            "Region",
+            "Dated verified event",
+            "Still pending"
+          ],
+          "rows": [
+            [
+              "United States",
+              "FOMC Oct27–28 scheduled",
+              "Decision not released"
+            ],
+            [
+              "France",
+              "Moody’s Aa3 maintained, negative outlook Oct23",
+              "2027 budget adoption"
+            ],
+            [
+              "Canada",
+              "BoC Oct28 09:45 EDT release scheduled",
+              "Decision not released"
+            ],
+            [
+              "Iran / US",
+              "Envoy outlined conditional maritime proposal Oct24",
+              "Mutually accepted deal and physically reopened Hormuz"
+            ],
+            [
+              "China",
+              "No new effective change verified in this cutoff",
+              "Do not relabel consultation as final ban"
+            ]
+          ]
+        }
+      ],
+      "sources": [
+        "S22",
+        "S23",
+        "S26",
+        "S25"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "Index Rebalances & Corporate Actions",
+      "status": "最近股票收盘全部保留10月23日可核实观察",
+      "summary": "最近标普500收7,623.68、道指52,215.16、纳指25,955.34；不把周末外交评论视为指数波动。；周五纳指相较道指跌幅更小，但不能据此推断资金由哪些具体ETF流入；指数重新定价待周一开盘。",
+      "paragraphs": [
+        "最近标普500收7,623.68、道指52,215.16、纳指25,955.34；不把周末外交评论视为指数波动。",
+        "周五纳指相较道指跌幅更小，但不能据此推断资金由哪些具体ETF流入；指数重新定价待周一开盘。"
+      ],
+      "tables": [],
+      "sources": [
+        "S28",
+        "S01"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "Positioning & Cross-Asset Flows",
+      "status": "无周日美国现金证券成交，无法核实新增机构仓位",
+      "summary": "周末没有经核实的机构基金净申购、主经纪杠杆、经销商头寸或美债成交快照。；需等待实际ETF发行人披露、10月26日信用利差和大宗成交后判断资金流，不把新闻浏览量当成资金流。",
+      "paragraphs": [
+        "周末没有经核实的机构基金净申购、主经纪杠杆、经销商头寸或美债成交快照。",
+        "需等待实际ETF发行人披露、10月26日信用利差和大宗成交后判断资金流，不把新闻浏览量当成资金流。"
+      ],
+      "tables": [],
+      "sources": [
+        "S28",
+        "S19",
+        "S24"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF News, Flows & Cross-Asset Implementation",
+      "status": "ETF申赎和现货成交流仍待周一独立验证",
+      "summary": "周日尚无法取得足以核实的主要能源、半导体、国债ETF一级市场净申赎，既不填拟合值也不假设流入。；周一关注ETF净份额变化、折溢价和二级成交与指数波动的对应关系，避免将价格变动当资金净流。",
+      "paragraphs": [
+        "周日尚无法取得足以核实的主要能源、半导体、国债ETF一级市场净申赎，既不填拟合值也不假设流入。",
+        "周一关注ETF净份额变化、折溢价和二级成交与指数波动的对应关系，避免将价格变动当资金净流。"
+      ],
+      "tables": [],
+      "sources": [
+        "S28",
+        "S24"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "Options Expiry",
+      "status": "无新的可靠Dealer Gamma与0DTE结构证据",
+      "summary": "周日美国场内主要证券期权不进行常规交易；本截点无法核实新的Gamma墙、隐含波动曲线或最大痛点。；关注能源高位、外交进展和FOMC临近是否使周一真实期权隐波、成交量与现金指数变动同步。",
+      "paragraphs": [
+        "周日美国场内主要证券期权不进行常规交易；本截点无法核实新的Gamma墙、隐含波动曲线或最大痛点。",
+        "关注能源高位、外交进展和FOMC临近是否使周一真实期权隐波、成交量与现金指数变动同步。"
+      ],
+      "tables": [],
+      "sources": [
+        "S28",
+        "S25",
+        "S19"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "US Treasury & Global Sovereign Rates",
+      "status": "美国10Y二级收益率约4.99%；法国Aa3负面展望",
+      "summary": "美国10Y约4.99%为10月23日二级市场观察，并非10月25日官方新收益率；不同来源CMT可能略有差异。；法国Moody’s维持Aa3及负面展望，后续应核实法德国债价差、预算表决与实际拍卖结果。",
+      "paragraphs": [
+        "美国10Y约4.99%为10月23日二级市场观察，并非10月25日官方新收益率；不同来源CMT可能略有差异。",
+        "法国Moody’s维持Aa3及负面展望，后续应核实法德国债价差、预算表决与实际拍卖结果。"
+      ],
+      "tables": [
+        {
+          "title": "Weekend rate basis and event risk",
+          "headers": [
+            "Risk",
+            "Last reliable observation",
+            "What was confirmed over weekend",
+            "Not confirmed"
+          ],
+          "rows": [
+            [
+              "US Treasury 10Y secondary",
+              "10/23 approximately 4.99%",
+              "FOMC Oct27–28 remains on calendar",
+              "No Sunday Treasury cash close"
+            ],
+            [
+              "France OAT 10Y",
+              "10/23 approximately 5.04%",
+              "Moody’s affirmed Aa3 with negative outlook",
+              "No evidence budget risks eliminated"
+            ]
+          ]
+        }
+      ],
+      "sources": [
+        "S01",
+        "S22",
+        "S23"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Energy & Metals",
+      "status": "周末无新油价结算，供给风险与外交口头意愿必须拆分",
+      "summary": "最近Brent与WTI结算分别为10月23日116.72与103.27美元，不据周末安全事件估算缺席的现货价。；真实运输恢复及美国DOE定向最多40万桶SPR交换的执行量，才会验证实物冲击缓解而非仅政策授权。",
+      "paragraphs": [
+        "最近Brent与WTI结算分别为10月23日116.72与103.27美元，不据周末安全事件估算缺席的现货价。",
+        "真实运输恢复及美国DOE定向最多40万桶SPR交换的执行量，才会验证实物冲击缓解而非仅政策授权。"
+      ],
+      "tables": [],
+      "sources": [
+        "S03",
+        "S21",
+        "S19",
+        "S30"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "Financing & AI Infrastructure",
+      "status": "AI数据中心融资瓶颈是研究风险而非周末已发生违约",
+      "summary": "Reuters Breakingviews分析电网延迟、债务资本成本和AI代理算力经济性，这些是情景讨论，不是新增实际企业亏损记录。；下周按正式财报拆解云厂CAPEX、自由现金流、债券偿付时间与订单回报，不能将行业估算当成单家公司已到期负债。",
+      "paragraphs": [
+        "Reuters Breakingviews分析电网延迟、债务资本成本和AI代理算力经济性，这些是情景讨论，不是新增实际企业亏损记录。",
+        "下周按正式财报拆解云厂CAPEX、自由现金流、债券偿付时间与订单回报，不能将行业估算当成单家公司已到期负债。"
+      ],
+      "tables": [],
+      "sources": [
+        "S24",
+        "S27",
+        "S17"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Breaking News & 24H Event Window",
+      "status": "10月24日使馆缩员、外交提议和评级公告构成真正周末增量",
+      "summary": "AP与Reuters披露美国中东多个外交点人员缩减；伊朗驻巴大使提出有条件重开海峡仍待对方确认。；Moody’s维持法国Aa3负面展望是真实评级事件；本截点没有可靠来源支持“战争结束”或“海峡已正式开放”。",
+      "paragraphs": [
+        "AP与Reuters披露美国中东多个外交点人员缩减；伊朗驻巴大使提出有条件重开海峡仍待对方确认。",
+        "Moody’s维持法国Aa3负面展望是真实评级事件；本截点没有可靠来源支持“战争结束”或“海峡已正式开放”。"
+      ],
+      "tables": [],
+      "sources": [
+        "S19",
+        "S20",
+        "S21",
+        "S22",
+        "S23"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "24–72H Market Impact & Positioning",
+      "status": "未来24–72小时以已发生/未发生事实和跨资产共振分情景",
+      "summary": "周一首先监控同合约原油/航运与信用利差实际交易，再观察美国国债利率及法国主权债压力。；10月27–28日FOMC与BoC政策决定仍未发布；只在真实公告和企业财报后才更新下一轮市场冲击路径。",
+      "paragraphs": [
+        "周一首先监控同合约原油/航运与信用利差实际交易，再观察美国国债利率及法国主权债压力。",
+        "10月27–28日FOMC与BoC政策决定仍未发布；只在真实公告和企业财报后才更新下一轮市场冲击路径。"
+      ],
+      "tables": [],
+      "sources": [
+        "S19",
+        "S21",
+        "S22",
+        "S24",
+        "S25",
+        "S26"
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "Growth Impulse",
+      "current": "→ 高端消费韧性、能源侵蚀风险",
+      "yesterday": "AXP财报支持消费分层但不能泛化",
+      "change_reason": "周末没有新增美国官方消费数据，而能源成本与外部安全风险可能拖累实际购买力。",
+      "evidence": "10月23日AXP等已公开财报与Brent结算116.72美元构成最近可靠观察。",
+      "sources": [
+        "S28",
+        "S03",
+        "S19"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "Inflation Impulse",
+      "current": "↑ 油价高位，周末信息待交易验证",
+      "yesterday": "周五Brent结算116.72美元",
+      "change_reason": "外交谈判主张与使馆人员缩减分别影响风险方向，但周末无可用新期货结算。",
+      "evidence": "最近Brent结算为10月23日116.72美元；10月24日外交与安全报道非价格。",
+      "sources": [
+        "S03",
+        "S19",
+        "S21"
+      ]
+    },
+    "rates_pressure": {
+      "label": "Rates Pressure",
+      "current": "↑ 美国久期/法国信用双重约束",
+      "yesterday": "美国10Y约4.99%、法国长债高位",
+      "change_reason": "Moody’s维持法国Aa3但保留负面展望，美债则受能源通胀与周一风险定价影响。",
+      "evidence": "10月23日美债10Y二级收益率约4.99%，法国Aa3负面展望获得官方声明。",
+      "sources": [
+        "S01",
+        "S22",
+        "S23"
+      ]
+    },
+    "earnings_revision": {
+      "label": "Earnings Revision",
+      "current": "→ AI融资质量须等财报兑现",
+      "yesterday": "科技股上个交易日分化",
+      "change_reason": "Breakingviews提出融资成本及电网瓶颈的风险框架，尚没有经证实的新企业财报损失。",
+      "evidence": "Microsoft IR公布10月28日业绩日程；10月24日报道是分析不是交易违约。",
+      "sources": [
+        "S24",
+        "S27"
+      ]
+    },
+    "liquidity": {
+      "label": "Liquidity",
+      "current": "→ 周末无新现货与ETF资金证据",
+      "yesterday": "美股和欧债交易分化",
+      "change_reason": "美国周日现金市场关闭，没有同期有效ETF申赎、信用利差与交易广度结论。",
+      "evidence": "最新S&P500与Nasdaq观察截止10月23日常规交易日，后续数据标为待验证。",
+      "sources": [
+        "S28",
+        "S01"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "Geopolitical Risk",
+      "current": "↑ 威胁与缓和表态并存",
+      "yesterday": "仅能确认能源与安全风险高企",
+      "change_reason": "人员缩减有双重媒体确认，有条件重开海峡仍是一方主张，市场影响未形成实物闭环。",
+      "evidence": "AP/Reuters使馆人事消息及AP引述伊朗大使的说法，均不等于战争结局。",
+      "sources": [
+        "S19",
+        "S20",
+        "S21"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base — weekend standoff and Monday factual repricing",
+      "probability": "50% (analyst subjective scenario, not market-implied)",
+      "trigger": "截至周日市场重开前既未公布经双方确认协议，也未确认新的主要油气基础设施损失。",
+      "expected_market_reaction": "周一原油或保持风险溢价，股票板块继续分化；法国主权债风险和美国利率需分开监测。",
+      "assets_most_sensitive": [
+        "Brent",
+        "UST10Y",
+        "France OAT",
+        "Nasdaq"
+      ],
+      "what_confirms_it": "周一同合约油价、10Y收益率和信用利差显示风险仍在，但没有新增确定性实物供给冲击。",
+      "what_invalidates_it": "出现正式停火或实物通航恢复，或者确认的新供应损失远超当前定价。"
+    },
+    "bull_case": {
+      "label": "Bull — confirmed diplomatic de-escalation and funding stability",
+      "probability": "25% (analyst subjective scenario, not market-implied)",
+      "trigger": "美伊及巴基斯坦斡旋方共同正式确认海峡重新开放时间且船舶实际恢复通行。",
+      "expected_market_reaction": "原油风险溢价或下降，能源敏感消费与高久期股票改善；若信用利差收窄则更可信。",
+      "assets_most_sensitive": [
+        "Brent",
+        "Airlines",
+        "Nasdaq",
+        "UST10Y"
+      ],
+      "what_confirms_it": "航运数据、官方通航信息、保险费率、油价与市场广度同向确认。",
+      "what_invalidates_it": "单方说法未落地，或者美方继续封锁且能源价格再走高。"
+    },
+    "bear_case": {
+      "label": "Bear — security escalation, sovereign/AI financing repricing",
+      "probability": "25% (analyst subjective scenario, not market-implied)",
+      "trigger": "更多核实的航运设施中断、法国预算失序或AI融资财报现金流进一步恶化。",
+      "expected_market_reaction": "油价、信用成本和主权利差或上行，久期成长股与进口能源企业同时受压；国债避险可能分化。",
+      "assets_most_sensitive": [
+        "Brent",
+        "France OAT",
+        "US credit",
+        "Nasdaq"
+      ],
+      "what_confirms_it": "确认的供应中断与实际期货价差放大，信用/主权利差在成交中同步扩大。",
+      "what_invalidates_it": "实物航运恢复、法债利差持续收窄、企业自由现金流恢复并获正式验证。"
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-10-26 21:30 SGT",
+      "et": "2026-10-26 09:30 EDT",
+      "event": "美国周一证券现金市场常规开盘及10月24–25日地缘周末风险定价",
+      "consensus": "非统计发布，无一致预测数字",
+      "previous": "10月23日S&P500 7,623.68；Brent结算116.72美元",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S28",
+        "S21",
+        "S19"
+      ]
+    },
+    {
+      "sgt": "2026-10-29 02:00 SGT",
+      "et": "2026-10-28 14:00 EDT",
+      "event": "FOMC 10月27–28日货币政策决议（时间为通常发布时刻；以Fed最终安排为准）",
+      "consensus": "Reuters经济学家调查多数预期按兵不动，属于预测",
+      "previous": "目标利率3.75%–4.00%（以官方最终会前公布为准）",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S25",
+        "S29"
+      ]
+    },
+    {
+      "sgt": "2026-10-28 21:45 SGT",
+      "et": "2026-10-28 09:45 EDT",
+      "event": "加拿大央行政策利率决定及货币政策报告",
+      "consensus": "本截点未核实同口径市场共识",
+      "previous": "本截点未可靠核实最新政策利率，不填猜测",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S26"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "海湾外交说法未形成协议，而四国使馆缩减人员可能预示运输与保险风险仍处高位",
+      "why_not_fully_priced": "周末股票及债券常规交易缺席，一方主张的重开海峡条件尚未经另一方或船舶实物流证实。",
+      "trigger": "海峡航道或油气供应设施出现经独立可靠来源核实的中断，或美国正式拒绝重开方案。",
+      "transmission": "物流中断→运保费与油价风险溢价↑→输入通胀和企业利润率↓→信用利差/期限贴现上行。",
+      "first_asset": "Brent/WTI prompt spreads / tanker insurance",
+      "theme_id": "energy_geopolitical_supply",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-16",
+      "last_seen": "2026-10-25",
+      "sources": [
+        "S19",
+        "S20",
+        "S21",
+        "S03"
+      ]
+    },
+    {
+      "risk": "法国Aa3负面展望背后的预算与主权债利差压力并未随评级维持而消失",
+      "why_not_fully_priced": "评级维持是短期降级风险未兑现，而2027预算立法、债务利息和政治不稳定尚未解决。",
+      "trigger": "预算谈判失败、法国发债成本再攀高或OAT-Bund利差显著扩大。",
+      "transmission": "法国财政风险→国债利差扩大→欧元银行资金成本上升→欧洲企业与跨资产债券估值承压。",
+      "first_asset": "France OAT 10Y / OAT-Bund spread",
+      "theme_id": "european_duration_fiscal",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-21",
+      "last_seen": "2026-10-25",
+      "sources": [
+        "S22",
+        "S23"
+      ]
+    },
+    {
+      "risk": "AI数据中心资本开支现金流转化慢于融资和电网建设，放大高利率下再融资风险",
+      "why_not_fully_priced": "10月24日融资压力分析提出潜在约束但没有正式新违约事件；科技股反弹不足以证明项目现金回流。",
+      "trigger": "10月28日及后续云厂财报披露更高投入、更慢现金转化或债务承诺收紧。",
+      "transmission": "算力建设成本和电网延迟↑→项目自由现金流延后→信用与股权融资成本↑→长久期估值调整。",
+      "first_asset": "AI infrastructure credit / Nasdaq 100",
+      "theme_id": "ai_financing_quality",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-16",
+      "last_seen": "2026-10-25",
+      "sources": [
+        "S24",
+        "S27",
+        "S17"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "2026-10-26星期一美国常规现货开盘与海湾信息真实交易重定价",
+    "status": "Confirmed Upcoming",
+    "date": "2026-10-26",
+    "et": "2026-10-26 09:30 EDT",
+    "sgt": "2026-10-26 21:30 SGT",
+    "consensus": "非经济数据发布，无可比分析师预测数值",
+    "previous": "10月23日S&P500收7,623.68；Brent结算116.72美元",
+    "actual": "待公布",
+    "why_it_matters": "周末安全与外交新闻未在美国常规现金市场完整交易；周一能检验实际油轮航运、能源期货价格、信用利差及股市广度是否相互印证。",
+    "first_market": "Brent/WTI same-tenor futures, oil freight/insurance, UST 10Y, US credit, cash equity breadth",
+    "bull_interpretation": "经正式确认通航改善、油价风险溢价回落，信用利差和科技股广度同步好转。",
+    "bear_interpretation": "更多安全升级且油价/通胀补偿走高，股票反弹集中、信用利差反而扩大。",
+    "watch_first": [
+      "比较同一合约周一Brent/WTI价格和实物航运数据；区分伊朗大使单方说法、正式协议和真实通航。",
+      "同时观察美国10Y、法国OAT-Bund利差和企业信用利差变化，防止将单一避险债券涨跌误读为整体风险缓解。",
+      "复核周一股市市场广度、AI资本开支财报预期及ETF真实申赎，不将周末无成交的价格当成现货收盘。"
+    ],
+    "sources": [
+      "S19",
+      "S20",
+      "S21",
+      "S22",
+      "S25",
+      "S28"
+    ]
+  },
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S25",
+    "S26",
+    "S27",
+    "S28",
+    "S29",
+    "S30"
+  ],
+  "asia_snapshot": {
+    "as_of": "2026-10-25 09:06 SGT: Sunday; US/EU cash equity and bond sessions closed, last observed regular cash session 2026-10-23",
+    "brent": "US$116.72/bbl Friday 2026-10-23 settlement ONLY; no Sunday settlement verified",
+    "wti": "US$103.27/bbl Friday 2026-10-23 settlement ONLY; no Sunday settlement verified",
+    "dxy": "尚无法可靠确认本截点可比较的ICE DXY定盘与周末交易",
+    "s_and_p_futures": "周日此截点没有经可靠交易所核实的新结算；最近现货2026-10-23收7,623.68",
+    "nasdaq_futures": "周日此截点没有经可靠交易所核实的新结算；最近Nasdaq Composite现货2026-10-23收25,955.34",
+    "korea_equities": "周日现金市场休市；韩国上个工作日指数精确收盘本截点未独立核实",
+    "sources": [
+      "S03",
+      "S28",
+      "S19",
+      "S21"
+    ]
+  }
+}
