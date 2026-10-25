@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-10-24",
-  "window_start": "2026-09-25",
-  "window_end": "2026-10-24",
+  "as_of": "2026-10-25",
+  "window_start": "2026-09-26",
+  "window_end": "2026-10-25",
   "coverage": {
-    "market_sessions": 29,
-    "native_daily_days": 11,
-    "reconstructed_daily_days": 18,
-    "reconstructed_days": 0,
-    "partial_days": 0,
+    "market_sessions": 30,
+    "native_daily_days": 12,
+    "reconstructed_daily_days": 17,
+    "reconstructed_days": 1,
+    "partial_days": 1,
     "verified_event_days": 0,
     "historical_series_start": "2025-08-01"
   },
@@ -88,68 +88,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-09-25",
-      "source_mode": "reconstructed_daily",
-      "regime_code": "unclassified",
-      "regime_label": "历史重建 / 融资约束与需求韧性并存",
-      "dominant_theme_id": "global_duration",
-      "signals": {
-        "growth": "?",
-        "inflation": "?",
-        "rates": "?",
-        "earnings": "?",
-        "liquidity": "?",
-        "geopolitics": "?"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "油价冲击把折现率约束推向长端",
-          "evidence": "Oil rose about 3% on September 24 while long Treasury yields climbed; the seven-year auction stopped at a 5.085% high yield.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Energy costs can lift inflation compensation and required returns, pressuring financing-sensitive equity valuations.",
-          "confirmation": "Oil and longer Treasury yields continue rising together across subsequent sessions.",
-          "invalidation": "Energy prices retreat while sustained demand returns to longer-maturity government debt.",
-          "source_mode": "reconstructed_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
-          "title": "Costco财报提供消费韧性与利润质量检验",
-          "evidence": "Costco disclosed quarterly net sales of $93.9 billion, up 11.2%, and diluted EPS of $6.75 including a $0.15 net tariff-refund benefit.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Retail sales growth supports revenue but one-off tariff refunds must be separated from recurring profit and demand.",
-          "confirmation": "Adjusted comparable sales and subsequent customer renewal evidence remain resilient.",
-          "invalidation": "Transaction growth or renewals weaken, or temporary benefits obscure deteriorating operating margins.",
-          "source_mode": "reconstructed_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
-          "title": "Akamai新合同把AI需求扩展至CPU基础设施",
-          "evidence": "Akamai disclosed a seven-year $11.6 billion Anthropic commitment and estimated approximately $5.5 billion of associated capital expenditure.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Contracted demand benefits infrastructure suppliers, but cash timing, customer concentration and warrant dilution affect shareholder returns.",
-          "confirmation": "Delivery milestones and customer payments support the disclosed infrastructure investment plan.",
-          "invalidation": "Construction delays, higher funding costs or slower revenue conversion undermine expected cash generation.",
-          "source_mode": "reconstructed_daily"
-        }
-      ]
-    },
     {
       "date": "2026-09-26",
       "source_mode": "reconstructed_daily",
@@ -2868,6 +2806,53 @@
       ]
     },
     {
+      "date": "2026-10-23",
+      "source_mode": "objective_market_reconstruction",
+      "regime_code": "unavailable",
+      "regime_label": "Insufficient data",
+      "dominant_theme_id": "equity_risk_appetite",
+      "signals": {
+        "growth": "?",
+        "inflation": "?",
+        "rates": "?",
+        "earnings": "?",
+        "liquidity": "?",
+        "geopolitics": "?"
+      },
+      "catalysts": [
+        {
+          "theme_id": "equity_risk_appetite",
+          "theme_label": "Equity Risk Appetite",
+          "category": "growth_macro",
+          "title": "Nasdaq daily move -0.21%",
+          "evidence": "NASDAQCOM -0.21% vs prior close",
+          "market_bias": "risk_off",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "Equity move → risk appetite / duration repricing",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 1
+        }
+      ],
+      "data_quality": {
+        "status": "partial",
+        "available_driver_count": 1,
+        "available_series": [
+          "NASDAQCOM"
+        ],
+        "missing_series": [
+          "SP500",
+          "VIXCLS",
+          "DGS2",
+          "DGS10",
+          "DCOILBRENTEU",
+          "DTWEXBGS",
+          "BAMLH0A0HYM2"
+        ],
+        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
+      }
+    },
+    {
       "date": "2026-10-24",
       "source_mode": "native_daily",
       "regime_code": "unclassified",
@@ -2925,6 +2910,68 @@
           "transmission": "高端消费支出↑→信用卡收入↑，但营销/服务成本与人员调整→成本率变化→信用金融股估值分化。",
           "confirmation": "后续不良率、拨备、真实会员支出及公司费用执行情况。",
           "invalidation": "如消费增速放缓伴坏账准备上升，当前收入韧性不可持续。",
+          "source_mode": "native_daily"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-25",
+      "source_mode": "native_daily",
+      "regime_code": "unclassified",
+      "regime_label": "Weekend Security/Diplomatic Standoff · Oil Inflation · Sovereign/AI Funding Constraint",
+      "dominant_theme_id": "geopolitics_energy",
+      "signals": {
+        "growth": "→",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "→",
+        "liquidity": "→",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
+          "title": "2026-10-24美国缩减四个中东使馆人员并报告伊朗威胁风险",
+          "evidence": "美国宣布驻约旦、黎巴嫩、卡塔尔和阿联酋使馆缩减人手；AP与Reuters均报道威胁升级，使馆继续开放。这是外交机构人员和安全安排的调整，并非使馆全面关闭，也不能据此认定发生新的原油实物断供。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "外交安全措施升级→油轮保险及路线担忧→原油风险溢价/航空成本可能上升→输入通胀与长债折现风险",
+          "confirmation": "官方安全指引及主要油轮航运商确认新的商业航运中断、周一可比Brent合约报价。",
+          "invalidation": "如四国使馆恢复常规运作且实物航运不受影响，风险溢价可能缓和。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
+          "title": "2026-10-24伊朗驻巴大使提出解除美方封锁条件下重开霍尔木兹海峡",
+          "evidence": "AP报道称伊朗驻巴大使宣称有条件愿重新开放海峡；未证实美方接受、签署协议或实际通航恢复。其提出的路径仍取决于美方海上封锁等前提条件，因此它是待核验的外交表态，而不是已经发生的航运恢复。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "条件性外交主张→协议概率可能变化→待航道保险与船舶跟踪实证→油价才可能兑现缓和预期",
+          "confirmation": "美伊双方政府一致公开确认条件与生效时点，并有真实船舶通行、保险条款变化。",
+          "invalidation": "如美方否认达成进展或相关港口仍受封锁，报价不得据此提前视为通航恢复。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "2026-10-23 Moody’s确认法国Aa3主权评级维持且展望仍为负面",
+          "evidence": "法国财政部正式声明与Reuters确认评级仍为Aa3、负面展望，2027预算和财政赤字目标仍面临政治执行风险。这一结论不等于评级前景已经转正，也不能证明预算已经通过或相关债券风险溢价已经消退。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "法国预算信用压力→OAT-Bund spread→欧洲金融机构融资成本→欧元和跨国债券久期风险",
+          "confirmation": "法国预算立法进度、评级机构后续公告与法国国债实际招标及价差共同验证。",
+          "invalidation": "若预算最终可信削赤且国债利差持续收敛，风险可缓解。",
           "source_mode": "native_daily"
         }
       ]
@@ -3014,6 +3061,18 @@
       "from": "Weekend Event Risk / Oil–AI Credit–Duration Divergence",
       "to": "Growth–Earnings Verification / Energy Constraint",
       "dominant_theme_id": "market_structure"
+    },
+    {
+      "date": "2026-10-23",
+      "from": "AI Earnings Rebound / Cash-Conversion Test + Oil/Duration Overhang",
+      "to": "Insufficient data",
+      "dominant_theme_id": "equity_risk_appetite"
+    },
+    {
+      "date": "2026-10-24",
+      "from": "Insufficient data",
+      "to": "Oil-Led Inflation Risk / AI Cash-Return Divergence / Duration Constraint",
+      "dominant_theme_id": "energy_inflation"
     }
   ],
   "persistent_themes": [
@@ -3021,13 +3080,13 @@
       "theme_id": "market_structure",
       "theme_label": "Market Structure",
       "category": "market_structure",
-      "days_in_top3": 24,
+      "days_in_top3": 25,
       "best_rank": 1,
       "first_seen": "2026-09-26",
-      "last_seen": "2026-10-24",
+      "last_seen": "2026-10-25",
       "latest_rank": 3,
       "state": "Persistent",
-      "latest_transmission": "高端消费支出↑→信用卡收入↑，但营销/服务成本与人员调整→成本率变化→信用金融股估值分化。",
+      "latest_transmission": "法国预算信用压力→OAT-Bund spread→欧洲金融机构融资成本→欧元和跨国债券久期风险",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -3041,7 +3100,7 @@
       "best_rank": 1,
       "first_seen": "2026-09-28",
       "last_seen": "2026-10-24",
-      "latest_rank": 1,
+      "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "海湾风险溢价↑→原油结算↑→运输/燃料成本与通胀补偿↑→长债收益率及高久期估值压力↑。",
       "source_modes": [
@@ -3053,12 +3112,12 @@
       "theme_id": "ai_earnings",
       "theme_label": "AI / Earnings",
       "category": "earnings_ai_semis",
-      "days_in_top3": 11,
+      "days_in_top3": 10,
       "best_rank": 1,
-      "first_seen": "2026-09-25",
+      "first_seen": "2026-09-26",
       "last_seen": "2026-10-19",
       "latest_rank": null,
-      "state": "Persistent",
+      "state": "Resolved",
       "latest_transmission": "芯片收入与毛利率→经营现金流与资本开支→融资覆盖能力和权益估值",
       "source_modes": [
         "native_daily",
@@ -3069,9 +3128,9 @@
       "theme_id": "us_china_trade_controls",
       "theme_label": "U.S.–China Trade Controls",
       "category": "china_trade_policy",
-      "days_in_top3": 8,
+      "days_in_top3": 7,
       "best_rank": 1,
-      "first_seen": "2026-09-25",
+      "first_seen": "2026-10-02",
       "last_seen": "2026-10-20",
       "latest_rank": null,
       "state": "Persistent",
@@ -3085,9 +3144,9 @@
       "theme_id": "global_duration",
       "theme_label": "Global Duration / Term Premium",
       "category": "inflation_rates",
-      "days_in_top3": 7,
+      "days_in_top3": 6,
       "best_rank": 1,
-      "first_seen": "2026-09-25",
+      "first_seen": "2026-09-26",
       "last_seen": "2026-10-22",
       "latest_rank": null,
       "state": "Persistent",
@@ -3101,13 +3160,13 @@
       "theme_id": "geopolitics_energy",
       "theme_label": "Geopolitics / Energy",
       "category": "geopolitics_energy",
-      "days_in_top3": 3,
+      "days_in_top3": 4,
       "best_rank": 1,
       "first_seen": "2026-09-27",
-      "last_seen": "2026-10-10",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Physical Gulf outage and shipping → oil/refined fuel premiums → household inflation expectations → bond yields → risk equity multiples.",
+      "last_seen": "2026-10-25",
+      "latest_rank": 1,
+      "state": "Persistent",
+      "latest_transmission": "外交安全措施升级→油轮保险及路线担忧→原油风险溢价/航空成本可能上升→输入通胀与长债折现风险",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -3127,12 +3186,27 @@
       "source_modes": [
         "reconstructed_daily"
       ]
+    },
+    {
+      "theme_id": "equity_risk_appetite",
+      "theme_label": "Equity Risk Appetite",
+      "category": "growth_macro",
+      "days_in_top3": 1,
+      "best_rank": 1,
+      "first_seen": "2026-10-23",
+      "last_seen": "2026-10-23",
+      "latest_rank": null,
+      "state": "New",
+      "latest_transmission": "Equity move → risk appetite / duration repricing",
+      "source_modes": [
+        "objective_market_reconstruction"
+      ]
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "energy_inflation",
-    "theme_label": "Energy Inflation",
-    "as_of": "2026-10-24",
+    "theme_id": "geopolitics_energy",
+    "theme_label": "Geopolitics / Energy",
+    "as_of": "2026-10-25",
     "confirming": [
       {
         "series_id": "NASDAQCOM",
@@ -3149,6 +3223,10 @@
         "label": "Brent"
       },
       {
+        "series_id": "VIXCLS",
+        "label": "VIX"
+      },
+      {
         "series_id": "DGS10",
         "label": "US 10Y Treasury Yield"
       },
@@ -3157,9 +3235,9 @@
         "label": "Broad Trade-Weighted USD"
       }
     ],
-    "expectation_basis": "Explicit leading catalyst: Oil ↑; duration stress ↑",
+    "expectation_basis": "Explicit leading catalyst: Oil risk premium ↑ (conditional)",
     "interpretation_note": "1 项资产方向与当前主线一致，0 项出现背离；不是因果证明。",
-    "what_would_flip_it": "若安全风险实质缓和且油价连续回落，能源输入通胀路径弱化。"
+    "what_would_flip_it": "如四国使馆恢复常规运作且实物航运不受影响，风险溢价可能缓和。"
   },
   "series": {
     "NASDAQCOM": {
@@ -3168,10 +3246,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-09-25",
-          "value": 27068.72
-        },
         {
           "date": "2026-09-28",
           "value": 26820.38
@@ -3247,6 +3321,10 @@
         {
           "date": "2026-10-22",
           "value": 26008.86
+        },
+        {
+          "date": "2026-10-23",
+          "value": 25955.34
         }
       ]
     },
@@ -3256,10 +3334,6 @@
       "source": "S&P Dow Jones Indices via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-09-25",
-          "value": 7743.41
-        },
         {
           "date": "2026-09-28",
           "value": 7683.69
@@ -3340,10 +3414,6 @@
       "source": "CBOE via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-09-25",
-          "value": 14.87
-        },
         {
           "date": "2026-09-28",
           "value": 16.07
@@ -3429,10 +3499,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-09-25",
-          "value": 4.81
-        },
-        {
           "date": "2026-09-28",
           "value": 4.92
         },
@@ -3512,10 +3578,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-09-25",
-          "value": 5.17
-        },
         {
           "date": "2026-09-28",
           "value": 5.24
@@ -3597,10 +3659,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-09-25",
-          "value": 116.01
-        },
-        {
           "date": "2026-09-28",
           "value": 119.97
         },
@@ -3677,10 +3735,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-09-25",
-          "value": 120.33
-        },
-        {
           "date": "2026-09-28",
           "value": 120.6958
         },
@@ -3744,10 +3798,6 @@
       "source": "ICE BofA via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-09-25",
-          "value": 2.93
-        },
         {
           "date": "2026-09-28",
           "value": 3.02
@@ -3829,20 +3879,20 @@
   },
   "monthly_coverage": {
     "month": "2026-10",
-    "through": "2026-10-24",
-    "expected_days": 24,
-    "present_days": 23,
-    "missing_dates": [
-      "2026-10-23"
-    ],
+    "through": "2026-10-25",
+    "expected_days": 25,
+    "present_days": 25,
+    "missing_dates": [],
     "unclassified_dates": [
       "2026-10-19",
       "2026-10-20",
       "2026-10-21",
       "2026-10-22",
-      "2026-10-24"
+      "2026-10-23",
+      "2026-10-24",
+      "2026-10-25"
     ],
-    "unknown_signal_cells": 0,
+    "unknown_signal_cells": 6,
     "price_proxy_dates": [
       "2026-10-01",
       "2026-10-02",
@@ -3857,7 +3907,7 @@
   },
   "series_freshness": {
     "NASDAQCOM": {
-      "last_observation": "2026-10-22",
+      "last_observation": "2026-10-23",
       "source": "Nasdaq, Inc. via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
