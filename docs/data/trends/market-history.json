@@ -8402,7 +8402,8 @@
         },
         {
           "date": "2025-08-31",
-          "value": 2.84
+          "value": 2.84,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2025-09-01",
