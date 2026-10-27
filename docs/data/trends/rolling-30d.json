@@ -2810,44 +2810,70 @@
       "source_mode": "objective_market_reconstruction",
       "regime_code": "unavailable",
       "regime_label": "Insufficient data",
-      "dominant_theme_id": "equity_risk_appetite",
+      "dominant_theme_id": "growth_duration_rotation",
       "signals": {
-        "growth": "?",
+        "growth": "→",
         "inflation": "?",
-        "rates": "?",
-        "earnings": "?",
-        "liquidity": "?",
+        "rates": "↑",
+        "earnings": "↑",
+        "liquidity": "↑",
         "geopolitics": "?"
       },
       "catalysts": [
         {
-          "theme_id": "equity_risk_appetite",
-          "theme_label": "Equity Risk Appetite",
-          "category": "growth_macro",
-          "title": "Nasdaq daily move -0.21%",
-          "evidence": "NASDAQCOM -0.21% vs prior close",
+          "theme_id": "growth_duration_rotation",
+          "theme_label": "Growth / Duration Rotation",
+          "category": "earnings_ai_semis",
+          "title": "Nasdaq relative to S&P 500 +0.31pp",
+          "evidence": "NASDAQCOM -0.21% vs SP500 -0.52%",
+          "market_bias": "risk_on",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "Growth leadership strengthens",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 1
+        },
+        {
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
+          "title": "US 2Y moves +4.0bp",
+          "evidence": "DGS2 +4.0bp",
           "market_bias": "risk_off",
           "importance_level": 3,
           "importance": "★★★",
-          "transmission": "Equity move → risk appetite / duration repricing",
+          "transmission": "2Y ↑ → policy path reprices tighter",
           "source_mode": "objective_market_reconstruction",
-          "rank": 1
+          "rank": 2
+        },
+        {
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
+          "title": "US 10Y moves +4.0bp",
+          "evidence": "DGS10 +4.0bp",
+          "market_bias": "risk_off",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "10Y ↑ → discount rate ↑ → long-duration equity valuation ↓",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 3
         }
       ],
       "data_quality": {
         "status": "partial",
-        "available_driver_count": 1,
+        "available_driver_count": 3,
         "available_series": [
-          "NASDAQCOM"
-        ],
-        "missing_series": [
+          "NASDAQCOM",
           "SP500",
           "VIXCLS",
           "DGS2",
           "DGS10",
-          "DCOILBRENTEU",
           "DTWEXBGS",
           "BAMLH0A0HYM2"
+        ],
+        "missing_series": [
+          "DCOILBRENTEU"
         ],
         "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
       }
@@ -3066,7 +3092,7 @@
       "date": "2026-10-23",
       "from": "AI Earnings Rebound / Cash-Conversion Test + Oil/Duration Overhang",
       "to": "Insufficient data",
-      "dominant_theme_id": "equity_risk_appetite"
+      "dominant_theme_id": "growth_duration_rotation"
     },
     {
       "date": "2026-10-24",
@@ -3125,6 +3151,23 @@
       ]
     },
     {
+      "theme_id": "global_duration",
+      "theme_label": "Global Duration / Term Premium",
+      "category": "inflation_rates",
+      "days_in_top3": 7,
+      "best_rank": 1,
+      "first_seen": "2026-09-26",
+      "last_seen": "2026-10-23",
+      "latest_rank": null,
+      "state": "Escalating",
+      "latest_transmission": "10Y ↑ → discount rate ↑ → long-duration equity valuation ↓",
+      "source_modes": [
+        "native_daily",
+        "objective_market_reconstruction",
+        "reconstructed_daily"
+      ]
+    },
+    {
       "theme_id": "us_china_trade_controls",
       "theme_label": "U.S.–China Trade Controls",
       "category": "china_trade_policy",
@@ -3135,22 +3178,6 @@
       "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "俄制裁执行放松→远月供给预期↑、风险溢价↓；近月交割紧张→WTI11月价差↑；通胀传导仍高。",
-      "source_modes": [
-        "native_daily",
-        "reconstructed_daily"
-      ]
-    },
-    {
-      "theme_id": "global_duration",
-      "theme_label": "Global Duration / Term Premium",
-      "category": "inflation_rates",
-      "days_in_top3": 6,
-      "best_rank": 1,
-      "first_seen": "2026-09-26",
-      "last_seen": "2026-10-22",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "英国价格上涨→BoE政策弹性下降；法国财政溢价→欧债融资压力；美国债券尾差→全球期限溢价。",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -3176,28 +3203,29 @@
       "theme_id": "fed_policy_path",
       "theme_label": "Fed Policy Path",
       "category": "central_banks_fiscal",
-      "days_in_top3": 3,
+      "days_in_top3": 4,
       "best_rank": 1,
       "first_seen": "2026-09-29",
-      "last_seen": "2026-10-07",
+      "last_seen": "2026-10-23",
       "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "政策讨论→加息路径理解；会议纪要信息本身早于10月就业数据。 UST2Y is the first observable transmission channel, not a guaranteed price direction.",
+      "state": "Persistent",
+      "latest_transmission": "2Y ↑ → policy path reprices tighter",
       "source_modes": [
+        "objective_market_reconstruction",
         "reconstructed_daily"
       ]
     },
     {
-      "theme_id": "equity_risk_appetite",
-      "theme_label": "Equity Risk Appetite",
-      "category": "growth_macro",
+      "theme_id": "growth_duration_rotation",
+      "theme_label": "Growth / Duration Rotation",
+      "category": "earnings_ai_semis",
       "days_in_top3": 1,
       "best_rank": 1,
       "first_seen": "2026-10-23",
       "last_seen": "2026-10-23",
       "latest_rank": null,
       "state": "New",
-      "latest_transmission": "Equity move → risk appetite / duration repricing",
+      "latest_transmission": "Growth leadership strengthens",
       "source_modes": [
         "objective_market_reconstruction"
       ]
@@ -3405,6 +3433,14 @@
         {
           "date": "2026-10-21",
           "value": 7757.17
+        },
+        {
+          "date": "2026-10-22",
+          "value": 7663.43
+        },
+        {
+          "date": "2026-10-23",
+          "value": 7623.68
         }
       ]
     },
@@ -3489,6 +3525,10 @@
         {
           "date": "2026-10-22",
           "value": 19.03
+        },
+        {
+          "date": "2026-10-23",
+          "value": 19.45
         }
       ]
     },
@@ -3569,6 +3609,10 @@
         {
           "date": "2026-10-22",
           "value": 4.65
+        },
+        {
+          "date": "2026-10-23",
+          "value": 4.69
         }
       ]
     },
@@ -3649,6 +3693,10 @@
         {
           "date": "2026-10-22",
           "value": 4.96
+        },
+        {
+          "date": "2026-10-23",
+          "value": 5.0
         }
       ]
     },
@@ -3789,6 +3837,26 @@
         {
           "date": "2026-10-16",
           "value": 121.4048
+        },
+        {
+          "date": "2026-10-19",
+          "value": 121.3248
+        },
+        {
+          "date": "2026-10-20",
+          "value": 121.116
+        },
+        {
+          "date": "2026-10-21",
+          "value": 121.3422
+        },
+        {
+          "date": "2026-10-22",
+          "value": 121.3531
+        },
+        {
+          "date": "2026-10-23",
+          "value": 121.3202
         }
       ]
     },
@@ -3873,6 +3941,10 @@
         {
           "date": "2026-10-22",
           "value": 3.4
+        },
+        {
+          "date": "2026-10-23",
+          "value": 3.38
         }
       ]
     }
@@ -3892,7 +3964,7 @@
       "2026-10-24",
       "2026-10-25"
     ],
-    "unknown_signal_cells": 6,
+    "unknown_signal_cells": 2,
     "price_proxy_dates": [
       "2026-10-01",
       "2026-10-02",
@@ -3912,22 +3984,22 @@
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "SP500": {
-      "last_observation": "2026-10-21",
+      "last_observation": "2026-10-23",
       "source": "S&P Dow Jones Indices via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "VIXCLS": {
-      "last_observation": "2026-10-22",
+      "last_observation": "2026-10-23",
       "source": "CBOE via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS2": {
-      "last_observation": "2026-10-22",
+      "last_observation": "2026-10-23",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS10": {
-      "last_observation": "2026-10-22",
+      "last_observation": "2026-10-23",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
@@ -3937,12 +4009,12 @@
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DTWEXBGS": {
-      "last_observation": "2026-10-16",
+      "last_observation": "2026-10-23",
       "source": "Federal Reserve via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "BAMLH0A0HYM2": {
-      "last_observation": "2026-10-22",
+      "last_observation": "2026-10-23",
       "source": "ICE BofA via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     }
