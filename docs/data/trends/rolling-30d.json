@@ -2966,30 +2966,70 @@
       "source_mode": "objective_market_reconstruction",
       "regime_code": "unavailable",
       "regime_label": "Insufficient data",
-      "dominant_theme_id": "market_structure",
+      "dominant_theme_id": "global_duration",
       "signals": {
-        "growth": "?",
+        "growth": "→",
         "inflation": "?",
-        "rates": "?",
-        "earnings": "?",
+        "rates": "↑",
+        "earnings": "→",
         "liquidity": "?",
         "geopolitics": "?"
       },
-      "catalysts": [],
+      "catalysts": [
+        {
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
+          "title": "US 10Y moves +6.0bp",
+          "evidence": "DGS10 +6.0bp",
+          "market_bias": "risk_off",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "10Y ↑ → discount rate ↑ → long-duration equity valuation ↓",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 1
+        },
+        {
+          "theme_id": "credit_conditions",
+          "theme_label": "Credit Conditions",
+          "category": "liquidity_credit",
+          "title": "HY OAS moves -4.0bp",
+          "evidence": "BAMLH0A0HYM2 -4.0bp",
+          "market_bias": "risk_on",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "Credit spreads tighter → funding conditions ease",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 2
+        },
+        {
+          "theme_id": "volatility_event_risk",
+          "theme_label": "Volatility / Event Risk",
+          "category": "market_structure",
+          "title": "VIX daily move -3.48%",
+          "evidence": "VIXCLS -3.48%",
+          "market_bias": "risk_on",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "Volatility ↓ → event premium eases",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 3
+        }
+      ],
       "data_quality": {
         "status": "partial",
-        "available_driver_count": 0,
+        "available_driver_count": 3,
         "available_series": [
-          "SP500"
-        ],
-        "missing_series": [
           "NASDAQCOM",
+          "SP500",
           "VIXCLS",
           "DGS2",
           "DGS10",
-          "DCOILBRENTEU",
-          "DTWEXBGS",
           "BAMLH0A0HYM2"
+        ],
+        "missing_series": [
+          "DCOILBRENTEU",
+          "DTWEXBGS"
         ],
         "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
       }
@@ -3149,6 +3189,23 @@
       ]
     },
     {
+      "theme_id": "global_duration",
+      "theme_label": "Global Duration / Term Premium",
+      "category": "inflation_rates",
+      "days_in_top3": 7,
+      "best_rank": 1,
+      "first_seen": "2026-09-29",
+      "last_seen": "2026-10-28",
+      "latest_rank": 1,
+      "state": "Escalating",
+      "latest_transmission": "10Y ↑ → discount rate ↑ → long-duration equity valuation ↓",
+      "source_modes": [
+        "native_daily",
+        "objective_market_reconstruction",
+        "reconstructed_daily"
+      ]
+    },
+    {
       "theme_id": "us_china_trade_controls",
       "theme_label": "U.S.–China Trade Controls",
       "category": "china_trade_policy",
@@ -3161,23 +3218,6 @@
       "latest_transmission": "俄制裁执行放松→远月供给预期↑、风险溢价↓；近月交割紧张→WTI11月价差↑；通胀传导仍高。",
       "source_modes": [
         "native_daily",
-        "reconstructed_daily"
-      ]
-    },
-    {
-      "theme_id": "global_duration",
-      "theme_label": "Global Duration / Term Premium",
-      "category": "inflation_rates",
-      "days_in_top3": 6,
-      "best_rank": 1,
-      "first_seen": "2026-09-29",
-      "last_seen": "2026-10-23",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "10Y ↑ → discount rate ↑ → long-duration equity valuation ↓",
-      "source_modes": [
-        "native_daily",
-        "objective_market_reconstruction",
         "reconstructed_daily"
       ]
     },
@@ -3213,6 +3253,21 @@
       ]
     },
     {
+      "theme_id": "credit_conditions",
+      "theme_label": "Credit Conditions",
+      "category": "liquidity_credit",
+      "days_in_top3": 3,
+      "best_rank": 1,
+      "first_seen": "2026-10-26",
+      "last_seen": "2026-10-28",
+      "latest_rank": 2,
+      "state": "New",
+      "latest_transmission": "Credit spreads tighter → funding conditions ease",
+      "source_modes": [
+        "objective_market_reconstruction"
+      ]
+    },
+    {
       "theme_id": "growth_duration_rotation",
       "theme_label": "Growth / Duration Rotation",
       "category": "earnings_ai_semis",
@@ -3228,16 +3283,16 @@
       ]
     },
     {
-      "theme_id": "credit_conditions",
-      "theme_label": "Credit Conditions",
-      "category": "liquidity_credit",
+      "theme_id": "volatility_event_risk",
+      "theme_label": "Volatility / Event Risk",
+      "category": "market_structure",
       "days_in_top3": 2,
-      "best_rank": 1,
+      "best_rank": 2,
       "first_seen": "2026-10-26",
-      "last_seen": "2026-10-27",
-      "latest_rank": null,
+      "last_seen": "2026-10-28",
+      "latest_rank": 3,
       "state": "New",
-      "latest_transmission": "Credit spreads tighter → funding conditions ease",
+      "latest_transmission": "Volatility ↓ → event premium eases",
       "source_modes": [
         "objective_market_reconstruction"
       ]
@@ -3256,50 +3311,48 @@
       "source_modes": [
         "objective_market_reconstruction"
       ]
-    },
-    {
-      "theme_id": "volatility_event_risk",
-      "theme_label": "Volatility / Event Risk",
-      "category": "market_structure",
-      "days_in_top3": 1,
-      "best_rank": 2,
-      "first_seen": "2026-10-26",
-      "last_seen": "2026-10-26",
-      "latest_rank": null,
-      "state": "New",
-      "latest_transmission": "Volatility ↓ → event premium eases",
-      "source_modes": [
-        "objective_market_reconstruction"
-      ]
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "market_structure",
-    "theme_label": "Market Structure",
+    "theme_id": "global_duration",
+    "theme_label": "Global Duration / Term Premium",
     "as_of": "2026-10-28",
     "confirming": [
       {
-        "series_id": "SP500",
-        "label": "S&P 500",
+        "series_id": "DGS10",
+        "label": "US 10Y Treasury Yield",
         "as_of": "2026-10-28",
         "source_mode": "objective_market_reconstruction",
-        "change": "+0.28%"
+        "change": "+6.0bp"
       }
     ],
-    "diverging": [],
-    "unavailable": [
+    "diverging": [
+      {
+        "series_id": "DGS2",
+        "label": "US 2Y Treasury Yield",
+        "as_of": "2026-10-28",
+        "source_mode": "objective_market_reconstruction",
+        "change": "-3.0bp"
+      },
       {
         "series_id": "NASDAQCOM",
-        "label": "Nasdaq Composite"
+        "label": "Nasdaq Composite",
+        "as_of": "2026-10-28",
+        "source_mode": "objective_market_reconstruction",
+        "change": "+0.27%"
       },
       {
         "series_id": "VIXCLS",
-        "label": "VIX"
+        "label": "VIX",
+        "as_of": "2026-10-28",
+        "source_mode": "objective_market_reconstruction",
+        "change": "-3.48%"
       }
     ],
+    "unavailable": [],
     "expectation_basis": "Thematic conditional comparison; not a verified causal attribution.",
-    "interpretation_note": "1 项资产方向与当前主线一致，0 项出现背离；不是因果证明。",
-    "what_would_flip_it": ""
+    "interpretation_note": "1 项资产方向与当前主线一致，3 项出现背离；不是因果证明。",
+    "what_would_flip_it": "A material reversal in the key confirming assets."
   },
   "series": {
     "NASDAQCOM": {
@@ -3391,6 +3444,10 @@
         {
           "date": "2026-10-27",
           "value": 26477.81
+        },
+        {
+          "date": "2026-10-28",
+          "value": 26549.85
         }
       ]
     },
@@ -3579,6 +3636,10 @@
         {
           "date": "2026-10-27",
           "value": 17.52
+        },
+        {
+          "date": "2026-10-28",
+          "value": 16.91
         }
       ]
     },
@@ -3667,6 +3728,10 @@
         {
           "date": "2026-10-27",
           "value": 4.7
+        },
+        {
+          "date": "2026-10-28",
+          "value": 4.67
         }
       ]
     },
@@ -3755,6 +3820,10 @@
         {
           "date": "2026-10-27",
           "value": 4.99
+        },
+        {
+          "date": "2026-10-28",
+          "value": 5.05
         }
       ]
     },
@@ -4019,6 +4088,10 @@
         {
           "date": "2026-10-27",
           "value": 3.18
+        },
+        {
+          "date": "2026-10-28",
+          "value": 3.14
         }
       ]
     }
@@ -4040,7 +4113,7 @@
       "2026-10-27",
       "2026-10-28"
     ],
-    "unknown_signal_cells": 8,
+    "unknown_signal_cells": 5,
     "price_proxy_dates": [
       "2026-10-01",
       "2026-10-02",
@@ -4055,7 +4128,7 @@
   },
   "series_freshness": {
     "NASDAQCOM": {
-      "last_observation": "2026-10-27",
+      "last_observation": "2026-10-28",
       "source": "Nasdaq, Inc. via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
@@ -4065,17 +4138,17 @@
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "VIXCLS": {
-      "last_observation": "2026-10-27",
+      "last_observation": "2026-10-28",
       "source": "CBOE via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS2": {
-      "last_observation": "2026-10-27",
+      "last_observation": "2026-10-28",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS10": {
-      "last_observation": "2026-10-27",
+      "last_observation": "2026-10-28",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
@@ -4090,7 +4163,7 @@
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "BAMLH0A0HYM2": {
-      "last_observation": "2026-10-27",
+      "last_observation": "2026-10-28",
       "source": "ICE BofA via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     }
