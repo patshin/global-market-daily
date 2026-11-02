@@ -483,7 +483,8 @@
           "sources": [
             "S05",
             "S06"
-          ]
+          ],
+          "key_takeaway": "AWS强劲需求与现金回收之间需要分别验证。"
         },
         {
           "id": "INTC-Q3-2026",
@@ -543,7 +544,8 @@
           "sources": [
             "S07",
             "S08"
-          ]
+          ],
+          "key_takeaway": "谨防把Intel自身PC/制造短板外推到全部AI GPU。"
         }
       ],
       "upcoming_72h": []

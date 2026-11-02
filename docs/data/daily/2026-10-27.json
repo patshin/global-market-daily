@@ -56,7 +56,11 @@
       "state": "油价和美债/成长股暂时分化",
       "evidence": "Brent小跌，美股上涨，10Y仍在5%附近"
     },
-    "overall": "Cross-asset divergent rebound / Oil-AI financing dual constraint"
+    "overall": "Cross-asset divergent rebound / Oil-AI financing dual constraint",
+    "geopolitics": {
+      "state": "高油价下海湾地缘安全和海运风险尚未解除",
+      "evidence": "期货单日小幅下跌并不能证实海上风险解除；不同合约和报价时点存在较大混淆空间。"
+    }
   },
   "market_tape": [
     {
@@ -646,7 +650,7 @@
         "S12"
       ]
     },
-    "policy_impulse": {
+    "rates_pressure": {
       "label": "Policy Impulse",
       "current": "→ Fed会议结果待公布",
       "yesterday": "此前仅有FOMC前瞻",
@@ -657,7 +661,7 @@
         "S10"
       ]
     },
-    "earnings_impulse": {
+    "earnings_revision": {
       "label": "Earnings Impulse",
       "current": "→ AI财报验证尚未来临",
       "yesterday": "AI资本回报疑虑延续",
@@ -669,7 +673,7 @@
         "S18"
       ]
     },
-    "liquidity_impulse": {
+    "liquidity": {
       "label": "Liquidity Impulse",
       "current": "→ 资金结构分化",
       "yesterday": "上周趋势基金报告盈利承压",
@@ -680,16 +684,16 @@
         "S03"
       ]
     },
-    "risk_appetite": {
-      "label": "Risk Appetite",
-      "current": "↑ 周一反弹未脱离约束",
-      "yesterday": "上周AI主导下跌与能源风险",
-      "change_reason": "10月26日标普纳指反弹而长期收益率仍接近5%",
-      "evidence": "价格反弹与信用风险、资本回报和地缘事件条件并存",
+    "geopolitical_risk": {
+      "label": "Geopolitical Risk",
+      "current": "→ 海湾供应和航运风险未解",
+      "yesterday": "前次报告中海湾通行不确定性持续",
+      "change_reason": "Brent小幅回落，但海上供应恢复及通航暂无足够证据",
+      "evidence": "期货单日小幅下跌并不能证实海上风险解除；不同合约和报价时点存在较大混淆空间。",
       "sources": [
-        "S01",
         "S03",
-        "S05"
+        "S11",
+        "S12"
       ]
     }
   },

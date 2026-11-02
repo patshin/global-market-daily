@@ -381,13 +381,15 @@
         {
           "company": "Alphabet",
           "ticker": "GOOGL",
-          "status": "Confirmed Upcoming",
+          "status": "历史原稿待核实（具体发布日期/时间未独立取得）",
           "consensus": {
             "revenue": "尚无法可靠确认",
             "eps": "尚无法可靠确认"
           },
           "previous_guidance": "应核对公司上季度IR披露",
-          "what_matters": "Google Cloud收入/利润、资本支出、AI基础设施利用率与自由现金流",
+          "what_matters": [
+            "Google Cloud收入/利润、资本支出、AI基础设施利用率与自由现金流"
+          ],
           "read_through_targets": [
             "Nasdaq",
             "SOX",
@@ -397,18 +399,27 @@
           "sources": [
             "S13"
           ],
-          "consensus_note": "尚无法可靠确认"
+          "consensus_note": "尚无法可靠确认",
+          "id": "GOOGL-HISTORICAL-WATCH-2026-10-28",
+          "period": "尚无法可靠确认",
+          "date": "尚无法可靠确认",
+          "et": "尚无法可靠确认",
+          "sgt": "尚无法可靠确认",
+          "market_session": "尚无法可靠确认",
+          "event_time_note": "原始研究截点前仅列为待观察财报，不制造发行日程和交易时段。"
         },
         {
           "company": "Microsoft",
           "ticker": "MSFT",
-          "status": "Confirmed Upcoming",
+          "status": "历史原稿待核实（具体发布日期/时间未独立取得）",
           "consensus": {
             "revenue": "尚无法可靠确认",
             "eps": "尚无法可靠确认"
           },
           "previous_guidance": "应核对公司上季度IR披露",
-          "what_matters": "Azure收入增长、投资节奏与自由现金流，AI收入是否足以覆盖新增数据中心成本",
+          "what_matters": [
+            "Azure收入增长、投资节奏与自由现金流，AI收入是否足以覆盖新增数据中心成本"
+          ],
           "read_through_targets": [
             "Nasdaq",
             "SOX",
@@ -418,18 +429,27 @@
           "sources": [
             "S13"
           ],
-          "consensus_note": "尚无法可靠确认"
+          "consensus_note": "尚无法可靠确认",
+          "id": "MSFT-HISTORICAL-WATCH-2026-10-28",
+          "period": "尚无法可靠确认",
+          "date": "尚无法可靠确认",
+          "et": "尚无法可靠确认",
+          "sgt": "尚无法可靠确认",
+          "market_session": "尚无法可靠确认",
+          "event_time_note": "原始研究截点前仅列为待观察财报，不制造发行日程和交易时段。"
         },
         {
           "company": "Amazon",
           "ticker": "AMZN",
-          "status": "Confirmed Upcoming",
+          "status": "历史原稿待核实（具体发布日期/时间未独立取得）",
           "consensus": {
             "revenue": "尚无法可靠确认",
             "eps": "尚无法可靠确认"
           },
           "previous_guidance": "应核对公司上季度IR披露",
-          "what_matters": "AWS增长及利润率，资本投入和自由现金流预期是否支持云基础设施扩张",
+          "what_matters": [
+            "AWS增长及利润率，资本投入和自由现金流预期是否支持云基础设施扩张"
+          ],
           "read_through_targets": [
             "Cloud peers",
             "Nasdaq",
@@ -439,7 +459,14 @@
           "sources": [
             "S13"
           ],
-          "consensus_note": "尚无法可靠确认"
+          "consensus_note": "尚无法可靠确认",
+          "id": "AMZN-HISTORICAL-WATCH-2026-10-28",
+          "period": "尚无法可靠确认",
+          "date": "尚无法可靠确认",
+          "et": "尚无法可靠确认",
+          "sgt": "尚无法可靠确认",
+          "market_session": "尚无法可靠确认",
+          "event_time_note": "原始研究截点前仅列为待观察财报，不制造发行日程和交易时段。"
         }
       ]
     },

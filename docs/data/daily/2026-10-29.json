@@ -486,7 +486,8 @@
           "sources": [
             "S05",
             "S06"
-          ]
+          ],
+          "key_takeaway": "强劲云增长与正现金流有利于维持融资能力，但资本开支仍高。"
         },
         {
           "id": "GOOGL-Q3-2026",
@@ -547,20 +548,23 @@
           ],
           "sources": [
             "S07"
-          ]
+          ],
+          "key_takeaway": "高增速云收入不必然对应当期现金回报，资本开支和外部融资约束增强。"
         }
       ],
       "upcoming_72h": [
         {
           "company": "Amazon",
           "ticker": "AMZN",
-          "status": "Market Reporting / tentative schedule",
+          "status": "历史原稿待核实（具体发布日期/时间未独立取得）",
           "consensus": {
             "revenue": "尚无法可靠确认",
             "eps": "尚无法可靠确认"
           },
           "previous_guidance": "尚无法可靠确认",
-          "what_matters": "AWS增长、资本开支、自由现金流与AI电力供给扩建的资金需求。",
+          "what_matters": [
+            "AWS增长、资本开支、自由现金流与AI电力供给扩建的资金需求。"
+          ],
           "read_through_targets": [
             "AWS peers",
             "SOX",
@@ -570,7 +574,14 @@
           "sources": [
             "S20"
           ],
-          "consensus_note": "尚无法可靠确认"
+          "consensus_note": "尚无法可靠确认",
+          "id": "AMZN-HISTORICAL-WATCH-2026-10-29",
+          "period": "尚无法可靠确认",
+          "date": "尚无法可靠确认",
+          "et": "尚无法可靠确认",
+          "sgt": "尚无法可靠确认",
+          "market_session": "尚无法可靠确认",
+          "event_time_note": "原始研究截点前仅列为待观察财报，不制造发行日程和交易时段。"
         }
       ]
     },
