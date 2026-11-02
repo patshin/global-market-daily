@@ -1,0 +1,1001 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-10-26",
+  "edition": "Morning Official",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-10-26 09:17 SGT",
+  "data_cutoff_et": "2026-10-25 21:17 EDT",
+  "last_updated": "2026-10-26T09:17:42+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-10-26T09:00:00+08:00",
+    "started_at_sgt": "2026-10-26T08:55:49+08:00",
+    "research_cutoff_sgt": "2026-10-26T09:17:42+08:00",
+    "mode": "morning"
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": true
+  },
+  "publication_policy": {
+    "effective_date": "2026-10-08",
+    "no_evening_edition": true,
+    "is_canonical_daily": true
+  },
+  "source_mode": "native_daily",
+  "sources_path": "data/sources/2026-10-26.json",
+  "comparison_basis": "与2026-10-25正式晨报比较：10月25日与10月26日09点之前的美国证券现货交易均未开盘；现金指数保持10月23日有据可核的收盘值；本期新增的是周一亚洲早盘能源期货实际报价、海上人员救援、北美关税谈判表态与巴西选举结果。不得把10月26日早盘原油盘中价当作10月23日结算或美国现金新收盘。",
+  "thesis": "截至2026-10-26 09:17 SGT（2026-10-25 21:17 EDT），周一亚洲早盘Brent据Reuters约115.48美元、WTI约102.08美元，较上周五结算高点回落，但霍尔木兹实际恢复通航仍无可靠确认；美国现金股票与国债最近可比收盘仍为10月23日。新一轮定价的约束是高能源风险溢价、美国高利率以及本周FOMC和云计算巨头财报对AI资本投入现金回报的联合作用，不能把早盘的油价回落视为已经达成停火协议。",
+  "dominant_narrative": "周一亚洲开盘开始为周末海湾新闻提供成交证据，但尚不足以完成风险出清：Reuters在10月26日08:46 SGT报道Brent约115.48美元、美国原油约102.08美元，两者均较此前水平回落；这是早盘可变报价，与10月23日Brent结算116.72美元属于不同交易时点，不能混写为新的结算。第二，Reuters和AP证实斯里兰卡救助/遣返40名伊朗船员的人道行动，事件不等于美国海上封锁解除或霍尔木兹商业航运全面恢复，航运保险、油轮实际通过与官方协议仍须逐项核实。第三，美国总统10月25日表示加美关税协议可能很快达成，但没有公布双边签署条款、税率及生效日期；这是谈判预期而非既成政策。第四，巴西大选计票显示卢拉赢得新一届任期，政策与财政预期可能影响巴西汇率、利率及拉美风险资产，但须由当地市场成交验证方向。本周10月27–28日FOMC及大型云计算厂商财报仍是确定性的后续事件，政策决议和实际财报截至本截点均未发生；观察同期限原油、美国国债、信用利差和AI项目现金流是否相互证伪。",
+  "market_regime": {
+    "growth": {
+      "state": "结构韧性与能源输入成本拉锯；巴西政治财政政策的增长含义待真实市场验证",
+      "evidence": "当前策略状态由10月26日亚洲早盘Reuters所核实的市场报价、已确认新闻与未来FOMC和科技财报窗口推导。"
+    },
+    "inflation": {
+      "state": "高位能源价格仍是输入通胀的主要风险，周一亚洲Brent早盘边际回落不等于实物供应恢复",
+      "evidence": "当前策略状态由10月26日亚洲早盘Reuters所核实的市场报价、已确认新闻与未来FOMC和科技财报窗口推导。"
+    },
+    "rates": {
+      "state": "美国长端折现率靠近5%并等待FOMC；欧债财政信用风险具独立传导",
+      "evidence": "当前策略状态由10月26日亚洲早盘Reuters所核实的市场报价、已确认新闻与未来FOMC和科技财报窗口推导。"
+    },
+    "earnings": {
+      "state": "云计算大型企业本周财报前，AI订单与自由现金流兑现需要分开核查",
+      "evidence": "当前策略状态由10月26日亚洲早盘Reuters所核实的市场报价、已确认新闻与未来FOMC和科技财报窗口推导。"
+    },
+    "liquidity": {
+      "state": "美国现金股债在本研究截止时尚未开盘，亚洲成交不能替代美股信用广度",
+      "evidence": "当前策略状态由10月26日亚洲早盘Reuters所核实的市场报价、已确认新闻与未来FOMC和科技财报窗口推导。"
+    },
+    "geopolitics": {
+      "state": "海湾人道救援、未完成外交主张和油轮封锁同时存在；加拿大关税表态未正式生效",
+      "evidence": "当前策略状态由10月26日亚洲早盘Reuters所核实的市场报价、已确认新闻与未来FOMC和科技财报窗口推导。"
+    },
+    "overall": {
+      "state": "Early-Asia Oil Pullback / Unresolved Hormuz Shipping / Fed–AI Cash Flow Event Risk",
+      "evidence": "亚洲早盘油价回落是尚未确认的外交缓和信号；美国现金股债截至研究截止未开盘，10月27–28日美联储决议仍待公布。"
+    }
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,623.68",
+      "change_1d": "-0.52%",
+      "change_5d": "-0.5%",
+      "signal": "↓ 能源成本压低综合利润折现",
+      "driver": "美股现金收盘，5D为10/16至10/23同指数周变动。",
+      "status": "Last independently verified 2026-10-23 matched market/reference session; NOT 2026-10-26 cash close or Monday futures settlement",
+      "as_of": "2026-10-23 16:00 EDT",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "asset": "Dow Jones Industrial Average",
+      "level": "52,215.16",
+      "change_1d": "-1.23%",
+      "change_5d": "+0.4%",
+      "signal": "↓ 防御与成本压力压过部分工业个股",
+      "driver": "5D为同一周收盘至收盘，周内负涨幅与单日跌幅不矛盾。",
+      "status": "Last independently verified 2026-10-23 matched market/reference session; NOT 2026-10-26 cash close or Monday futures settlement",
+      "as_of": "2026-10-23 16:00 EDT",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "25,955.34",
+      "change_1d": "-0.21%",
+      "change_5d": "-0.7%",
+      "signal": "→ 科技内部结构分化",
+      "driver": "SOX约涨0.4%与综合纳指小跌并存；不把不同指数混算。",
+      "status": "Last independently verified 2026-10-23 matched market/reference session; NOT 2026-10-26 cash close or Monday futures settlement",
+      "as_of": "2026-10-23 16:00 EDT",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,775.90",
+      "change_1d": "-0.29%",
+      "change_5d": "+2.0%",
+      "signal": "→ 小盘周度强于大盘",
+      "driver": "AP周涨约2%，但周五收跌；对融资利率保持敏感。",
+      "status": "Last independently verified 2026-10-23 matched market/reference session; NOT 2026-10-26 cash close or Monday futures settlement",
+      "as_of": "2026-10-23 16:00 EDT",
+      "sources": [
+        "S02"
+      ]
+    },
+    {
+      "asset": "Brent front-month futures",
+      "level": "US$116.72/bbl",
+      "change_1d": "+3.14%",
+      "change_5d": "+6.0%",
+      "signal": "↑ 海湾供应风险溢价",
+      "driver": "Reuters 10月23日结算与周度同合约变化；不混期货盘中最高价。",
+      "status": "Last independently verified 2026-10-23 matched market/reference session; NOT 2026-10-26 cash close or Monday futures settlement",
+      "as_of": "2026-10-23 US futures settlement",
+      "sources": [
+        "S01",
+        "S03"
+      ]
+    },
+    {
+      "asset": "WTI front-month futures",
+      "level": "US$103.27/bbl",
+      "change_1d": "+3.80%",
+      "change_5d": "+2.3%",
+      "signal": "↑ 美国原油同步上涨",
+      "driver": "Reuters当日结算、同一周周涨统计；合约滚动可能影响严格5个交易日比较。",
+      "status": "Last independently verified 2026-10-23 matched market/reference session; NOT 2026-10-26 cash close or Monday futures settlement",
+      "as_of": "2026-10-23 US futures settlement",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "asset": "US Treasury 10Y secondary yield",
+      "level": "4.99%",
+      "change_1d": "+约3.7bp",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ 油价对折现率形成再通胀压力",
+      "driver": "二级市场报价非财政部CMT；5D相同基准收盘未可靠取得。",
+      "status": "Last independently verified 2026-10-23 matched market/reference session; NOT 2026-10-26 cash close or Monday futures settlement",
+      "as_of": "2026-10-23 late US session",
+      "sources": [
+        "S01",
+        "S18"
+      ]
+    },
+    {
+      "asset": "EUR/USD",
+      "level": "1.1191",
+      "change_1d": "-0.21%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 欧洲财政风险与美元支撑",
+      "driver": "Reuters日内外汇观察；不当作纽约17:00官方汇率定盘。",
+      "status": "Last independently verified 2026-10-23 matched market/reference session; NOT 2026-10-26 cash close or Monday futures settlement",
+      "as_of": "2026-10-23 Reuters cited intraday",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "STOXX Europe 600",
+      "level": "635.77",
+      "change_1d": "-0.31%",
+      "change_5d": "-1.4%",
+      "signal": "↓ 欧洲预算和高能源成本压力",
+      "driver": "Reuters欧洲10/23现金收盘，周跌约1.4%。",
+      "status": "Last independently verified 2026-10-23 matched market/reference session; NOT 2026-10-26 cash close or Monday futures settlement",
+      "as_of": "2026-10-23 European cash close",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "France 10Y OAT yield",
+      "level": "5.04%",
+      "change_1d": "-约5bp",
+      "change_5d": "+约27bp",
+      "signal": "↑ 周度债券信用风险仍高",
+      "driver": "收益率当日略回落但周上升约27bp；不是欧元区统一政策利率。",
+      "status": "Last independently verified 2026-10-23 matched market/reference session; NOT 2026-10-26 cash close or Monday futures settlement",
+      "as_of": "2026-10-23 European bond session",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "FTSE 100",
+      "level": "10,690.36",
+      "change_1d": "-0.3%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 能源成本抵消板块利好",
+      "driver": "Reuters英国10/23收盘，能源板块上涨不等于指数上涨。",
+      "status": "Last independently verified 2026-10-23 matched market/reference session; NOT 2026-10-26 cash close or Monday futures settlement",
+      "as_of": "2026-10-23 16:30 BST",
+      "sources": [
+        "S14"
+      ]
+    },
+    {
+      "asset": "MSCI World index",
+      "level": "1,118.97",
+      "change_1d": "-0.35%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 发达市场广泛承压",
+      "driver": "Reuters全球股票指数10/23截点，与期货及美股现货时间不完全相同。",
+      "status": "Last independently verified 2026-10-23 matched market/reference session; NOT 2026-10-26 cash close or Monday futures settlement",
+      "as_of": "2026-10-23 Reuters global-market snapshot",
+      "sources": [
+        "S01"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "Monday 2026-10-26 pre-US-open: last matched close data 2026-10-23; separate Asian oil snapshots disclosed in asia_snapshot, never cross-mixed into matched daily tape",
+    "asset_count": 12,
+    "level_coverage": {
+      "available": 12,
+      "total": 12,
+      "ratio": 1.0
+    },
+    "change_1d_coverage": {
+      "available": 12,
+      "total": 12,
+      "ratio": 1.0
+    },
+    "change_5d_coverage": {
+      "available": 8,
+      "total": 12,
+      "ratio": 0.6666666666666666
+    },
+    "explicit_gaps": [
+      "UST10Y strictly comparable five-session yield",
+      "EUR/USD comparable five-session FX close",
+      "FTSE100 comparable weekly close",
+      "MSCI World comparable weekly close"
+    ],
+    "policy": "12/12 Level、1D维持10月23日可核对交易日的历史收盘/参考时点，不冒充10月26日美国现货；5D已验证8/12（66.7%），其余为明确缺口，不制造数字。另据10月26日08:46 SGT Reuters亚洲早盘观察Brent约115.48美元、WTI约102.08美元，不是周五结算，也不是实时连续推送。"
+  },
+  "what_changed": [
+    {
+      "yesterday": "10月25日美股休市，只能引用10月23日原油结算价116.72美元，海湾航运恢复无确认。",
+      "today": "10月26日Reuters亚洲早盘报价Brent约115.48美元、WTI约102.08美元，价格回落但不是新的结算。",
+      "why_it_matters": "油价早盘下行暂缓成本冲击，需同合约趋势及实物通航与保险信息双重确认后再改变风险判断。",
+      "sources": [
+        "S31",
+        "S32",
+        "S40"
+      ]
+    },
+    {
+      "yesterday": "伊朗使馆人员缩减和条件性海峡开放表态并存，无双方确认协议。",
+      "today": "Reuters与AP对斯里兰卡营救伊朗船员提供独立报道，该事件不代表油轮航道恢复。",
+      "why_it_matters": "防止将人道救援误读为商船恢复通行而低估原油供给与航运尾部风险。",
+      "sources": [
+        "S33",
+        "S34",
+        "S21"
+      ]
+    },
+    {
+      "yesterday": "10月25日正式晨报北美关税领域未有双方确认的新生效协议。",
+      "today": "美国总统称加拿大关税协议很快可能达成，但未提供正式条款及税率生效信息。",
+      "why_it_matters": "将政治表态与落地政策分开，关注CAD和北美企业供应链资本开支，避免提前计算确定性关税减免。",
+      "sources": [
+        "S35"
+      ]
+    },
+    {
+      "yesterday": "拉美选举风险主要是预期，非已确认终局计票。",
+      "today": "Reuters和AP报道巴西总统选举卢拉获新任期，具体财政路径仍待其官方政策行动。",
+      "why_it_matters": "结果信息与政策定价不同，关注巴西雷亚尔、当地国债收益率与资本流动的真实开盘。",
+      "sources": [
+        "S36",
+        "S37"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "event": "2026-10-26亚洲早盘Brent和WTI由上周高位回落，但霍尔木兹通航没有获得正式确认",
+      "status": "Market Reporting",
+      "event_time_et": "2026-10-25 20:46 EDT (Reuters article publication)",
+      "event_time_sgt": "2026-10-26 08:46 SGT (article time; quote may be earlier)",
+      "what_happened": "Reuters报道亚洲早盘Brent约115.48美元、WTI约102.08美元；不同于10月23日收盘116.72与103.27美元。",
+      "what_changed": "市场首次给出周末消息后的亚洲时段交易观察，但同合约和时点必须谨慎，未出现确认的海峡恢复通航。",
+      "why_it_matters": "高油价回落缓和边际能源通胀压力，仍应由油轮通过、保险费率和官方沟通验证能否持续。",
+      "transmission": "海湾外交及运输消息→早盘油价风险溢价→进口能源企业成本与通胀预期→长端收益率和风险资产贴现",
+      "affected_assets": [
+        "Brent",
+        "WTI",
+        "Oil tanker freight",
+        "US inflation swaps"
+      ],
+      "direction": "Oil early quoted risk premium ↓, physical reopening NOT confirmed",
+      "importance": "★★★★★",
+      "confirmation": "主要油轮实际通过海峡并获得保险、物流、双方官方确认，同时同合约油价持续走弱。",
+      "invalidation": "实际航线中断进一步扩大，或同合约油价重新持续上涨。",
+      "sources": [
+        "S31",
+        "S32",
+        "S33",
+        "S34"
+      ],
+      "rank": 1
+    },
+    {
+      "event": "2026-10-25特朗普称加美关税协议或很快达成，尚无签署条款或生效税率",
+      "status": "Market Reporting",
+      "event_time_et": "2026-10-25 EDT (exact remark clock not verified)",
+      "event_time_sgt": "2026-10-25/26 SGT; exact clock not established",
+      "what_happened": "Reuters在10月25日报道美国总统于密歇根边境集会表示与加拿大可能很快达成关税协议，但本截点没有双方已签署协议的正式法律文本，也没有可靠公开的税率或实施日期。",
+      "what_changed": "在此前仍存贸易限制与加美关税谈判分歧的背景下增加了公开缓和预期，但目前不构成双方签署或正式生效的新协定。",
+      "why_it_matters": "加拿大汇率、贸易敞口企业和北美制造供应链受关税预期变化影响，不能以政治表态替代实际税则。",
+      "transmission": "外交表态→北美贸易政策不确定性→CAD与工业企业定价→北美供应链投资及信用风险",
+      "affected_assets": [
+        "USD/CAD",
+        "Canada 2Y",
+        "North American industrial equities"
+      ],
+      "direction": "Policy sentiment potentially easing, implementation unknown",
+      "importance": "★★★★",
+      "confirmation": "加美双方发布一致正式协议、原文、税率、法定生效日，且市场成交与之相符。",
+      "invalidation": "未来没有落实正式签署文本，或加拿大和美国任一方对协议所涉税率、生效日期作出明确否认。",
+      "sources": [
+        "S35"
+      ],
+      "rank": 2
+    },
+    {
+      "event": "2026-10-27至28日FOMC会议和科技巨头财报尚未公布，AI现金流与利率路径待核验",
+      "status": "Confirmed Upcoming",
+      "event_time_et": "2026-10-27 to 2026-10-28 EDT, policy decision pending",
+      "event_time_sgt": "2026-10-27 to 2026-10-29 SGT; release time confirm issuer",
+      "what_happened": "Reuters本周前瞻确认市场聚焦美联储会议以及Microsoft、Alphabet和Amazon等科技业绩；本截点决议与实际财报均尚未披露。",
+      "what_changed": "周末后进入高密度确定性事件窗口，不能提前将调查共识当作央行已决议或企业实际盈利。",
+      "why_it_matters": "AI资本支出转化为现金流的速度与长端利率相互放大，是科技估值及信用利差的共同因子。",
+      "transmission": "FOMC正式政策与高管财报→利率及投资支出预测→现金自由流及借款成本→AI成长股、信用利差",
+      "affected_assets": [
+        "UST2Y",
+        "UST10Y",
+        "Nasdaq 100",
+        "AI infrastructure credit"
+      ],
+      "direction": "Event risk two-sided pending verified releases",
+      "importance": "★★★★★",
+      "confirmation": "央行正式声明与企业IR数字公开后，同步检验实际资本支出、自由现金流和市场利率反应。",
+      "invalidation": "被预期的发布没有如期披露或公司正式指引与早前共识明显不符。",
+      "sources": [
+        "S31",
+        "S39",
+        "S27"
+      ],
+      "rank": 3
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top Market Catalysts",
+      "status": "亚洲原油实时报价、加美谈判表态与本周政策/科技财报为最值得跟踪的三条独立确认路径",
+      "summary": "Reuters早盘Brent约115.48美元并非新的结算，海峡实际重新通航仍缺双向确认。；加美关税协议仍是政治预告，本周FOMC与云厂财报结果截至截点均待公布。",
+      "paragraphs": [
+        "Reuters早盘Brent约115.48美元并非新的结算，海峡实际重新通航仍缺双向确认。",
+        "加美关税协议仍是政治预告，本周FOMC与云厂财报结果截至截点均待公布。"
+      ],
+      "tables": [],
+      "sources": [
+        "S31",
+        "S32",
+        "S35",
+        "S39"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings",
+      "status": "大型云厂财报密集窗口前；一致预期必须与正式报告分开",
+      "summary": "Reuters预计本周科技巨头集中发布业绩，但实际EPS、资本开支现金流尚未有正式值。；上一个已证实财报仍是10月23日AXP，不能将历史数据再贴上周一发布的时间。",
+      "paragraphs": [
+        "Reuters预计本周科技巨头集中发布业绩，但实际EPS、资本开支现金流尚未有正式值。",
+        "上一个已证实财报仍是10月23日AXP，不能将历史数据再贴上周一发布的时间。"
+      ],
+      "tables": [],
+      "sources": [
+        "S31",
+        "S39",
+        "S07",
+        "S08"
+      ],
+      "reported": [
+        {
+          "id": "AXP-Q3-2026",
+          "company": "American Express",
+          "ticker": "AXP",
+          "period": "Q3 2026",
+          "status": "Released/Occurred",
+          "release_date": "2026-10-23",
+          "release_time_et": "2026-10-23 US release (clock not established)",
+          "release_time_sgt": "2026-10-23/24 SGT (clock not established)",
+          "market_session": "Friday US earnings release; regular-session reaction must be timed separately",
+          "key_takeaway": "此前已披露的历史业绩（2026-10-23），并非10月26日新财报；其利润、费用与一次性项目仍需按正式报告区分。历史已披露财报（2026-10-23），不属于10月25日新增业绩。收入201亿美元同比增长9%，调整EPS4.68美元，同时公司拟裁员约3500人，现金营运质量不能只看调整EPS。",
+          "metrics": [
+            {
+              "metric": "Total revenue net of interest expense",
+              "actual": "$20.1B",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "+9% year over year",
+              "surprise": "未可靠确定同口径共识",
+              "notes": "American Express Q3 2026 official results"
+            },
+            {
+              "metric": "Adjusted diluted EPS",
+              "actual": "$4.68",
+              "consensus": "$4.48 Reuters cited analyst comparison",
+              "previous_or_yoy": "+13% year over year (Reuters)",
+              "surprise": "+$0.20 versus cited consensus",
+              "notes": "Adjusted non-GAAP not equal GAAP EPS"
+            },
+            {
+              "metric": "Cardmember spending",
+              "actual": "$454B",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "+8% year over year",
+              "surprise": "尚无法可靠确认",
+              "notes": "Reuters Q3 2026 earnings analysis"
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "FY2026 Adjusted EPS",
+              "current": "$17.60–$17.90",
+              "previous_or_consensus": "2026 prior midpoint not reliably reverified",
+              "change": "Full-year bottom end raised, Reuters characterization",
+              "interpretation": "盈利提升仍需对照一次性调整与费用执行。"
+            }
+          ],
+          "market_reaction": {
+            "session": "2026-10-23 regular session US",
+            "move": "Reuters盘中跌约2.5%，WSJ随后报道约-3.7%；不同截点，不作为唯一正式日收盘价",
+            "as_of": "2026-10-23 ET, intraday and late reported snapshots"
+          },
+          "one_offs": [
+            "约3500个拟裁岗位是宣布的重组计划而非已全部实现的节约。",
+            "GAAP EPS $5.42与调整EPS $4.68不能被当作同一个盈利口径。"
+          ],
+          "read_through": [
+            {
+              "asset": "Consumer finance / AXP",
+              "implication": "高端消费韧性尚存但贷款信用质量、费用率与准备金必须继续验证。"
+            },
+            {
+              "asset": "US household consumption",
+              "implication": "AXP偏向高收入样本，不能替代全面零售消费数据。"
+            }
+          ],
+          "sources": [
+            "S07",
+            "S08"
+          ]
+        }
+      ],
+      "upcoming_72h": []
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "US Macro",
+      "status": "高能源风险溢价与长端利率对美国利润和消费的传导持续",
+      "summary": "10月26日美股现金市场在本次研究截止尚未开盘，不存在周一美国常规现货收盘。；美国长期利率近期约5%，周一亚洲早盘Reuters约5.0%是二级盘中观察，FOMC决议尚未公布。",
+      "paragraphs": [
+        "10月26日美股现金市场在本次研究截止尚未开盘，不存在周一美国常规现货收盘。",
+        "美国长期利率近期约5%，周一亚洲早盘Reuters约5.0%是二级盘中观察，FOMC决议尚未公布。"
+      ],
+      "tables": [],
+      "sources": [
+        "S31",
+        "S39",
+        "S01"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Central Banks",
+      "status": "FOMC会议本周举行，当前不能写作已决定利率",
+      "summary": "10月27–28日FOMC是已知会议日程；货币政策声明、点阵图和会后讲话的实际结果均待发布。；能源通胀与就业增长路径可能出现相反约束，应在正式政策公布后按数据区分政策与市场预期。",
+      "paragraphs": [
+        "10月27–28日FOMC是已知会议日程；货币政策声明、点阵图和会后讲话的实际结果均待发布。",
+        "能源通胀与就业增长路径可能出现相反约束，应在正式政策公布后按数据区分政策与市场预期。"
+      ],
+      "tables": [],
+      "sources": [
+        "S31",
+        "S39",
+        "S25"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Geopolitics",
+      "status": "斯里兰卡海上人员救援获得双源确认，但不能认定海峡恢复商船通行",
+      "summary": "Reuters和AP报道10月25日斯里兰卡救助40名伊朗船员，事件属人道主义援助，非美国解除封锁的确认。；四国美国使馆此前缩减人员和伊朗驻巴大使提出的有条件开放主张仍属于背景信息，没有验证签署协议。",
+      "paragraphs": [
+        "Reuters和AP报道10月25日斯里兰卡救助40名伊朗船员，事件属人道主义援助，非美国解除封锁的确认。",
+        "四国美国使馆此前缩减人员和伊朗驻巴大使提出的有条件开放主张仍属于背景信息，没有验证签署协议。"
+      ],
+      "tables": [],
+      "sources": [
+        "S33",
+        "S34",
+        "S19",
+        "S21"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "Regional Policy",
+      "status": "北美关税只见表态，巴西选举已见结果，中国高科技资本规则仍是提案",
+      "summary": "10月25日美国总统称可能很快与加拿大达成关税协议，但尚无双方正式共同签署或生效关税条款。；巴西总统选举卢拉获连任，其财政和汇率政策需要等正式施政、当地债券及BRL报价验证；中国商务部就美国拟扩大境外投资限制表达反对，该限制仍是美国提案而非新增已生效禁令。",
+      "paragraphs": [
+        "10月25日美国总统称可能很快与加拿大达成关税协议，但尚无双方正式共同签署或生效关税条款。",
+        "巴西总统选举卢拉获连任，其财政和汇率政策需要等正式施政、当地债券及BRL报价验证；中国商务部就美国拟扩大境外投资限制表达反对，该限制仍是美国提案而非新增已生效禁令。"
+      ],
+      "tables": [],
+      "sources": [
+        "S35",
+        "S36",
+        "S37",
+        "S38"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "Index Changes",
+      "status": "美国股票市场最近常规收盘在10月23日，没有可靠新指数调整生效事件",
+      "summary": "10月23日S&P500收7,623.68，Nasdaq Composite收25,955.34；周一亚洲S&P期指约+0.2%不能当作现金指数上涨的完整证据。；本截点未找到官方生效的新主要指数成分调整公告；任何跨地域指数估值应使用匹配的现金交易日。",
+      "paragraphs": [
+        "10月23日S&P500收7,623.68，Nasdaq Composite收25,955.34；周一亚洲S&P期指约+0.2%不能当作现金指数上涨的完整证据。",
+        "本截点未找到官方生效的新主要指数成分调整公告；任何跨地域指数估值应使用匹配的现金交易日。"
+      ],
+      "tables": [],
+      "sources": [
+        "S31",
+        "S01",
+        "S02"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "Flows",
+      "status": "周一亚洲早盘资产价格不能推导北美ETF实际净流入",
+      "summary": "Reuters报道日本与韩国股票谨慎开局，但美股现金尚未开盘，不能由期指+0.2%猜测ETF申赎或机构资金。；下一个可验事实是周一美国收盘后按交易所或基金公司公布的净申赎，才判断广义流动性。",
+      "paragraphs": [
+        "Reuters报道日本与韩国股票谨慎开局，但美股现金尚未开盘，不能由期指+0.2%猜测ETF申赎或机构资金。",
+        "下一个可验事实是周一美国收盘后按交易所或基金公司公布的净申赎，才判断广义流动性。"
+      ],
+      "tables": [],
+      "sources": [
+        "S31",
+        "S01"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF",
+      "status": "缺乏经核实的2026-10-26同口径ETF资金流，严禁推算",
+      "summary": "本截点没有直接来自基金发行商、交易所或清算记录的周一ETF净申购数据。；期货方向并不能填充ETF日流出金额；先等待正式日终份额变化再比照风险情绪。",
+      "paragraphs": [
+        "本截点没有直接来自基金发行商、交易所或清算记录的周一ETF净申购数据。",
+        "期货方向并不能填充ETF日流出金额；先等待正式日终份额变化再比照风险情绪。"
+      ],
+      "tables": [],
+      "sources": [
+        "S31",
+        "S01"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "Options",
+      "status": "不猜0DTE和做市商Gamma，警惕本周宏观科技事件集中",
+      "summary": "FOMC与科技财报容易影响隐含波动，但本截点没有可核实的10月26日全市场期权成交/Dealer Gamma数据。；监测实际VIX报价、相关合约到期结构与跨资产波动率；避免借一周前价格推导今天的期权pin位。",
+      "paragraphs": [
+        "FOMC与科技财报容易影响隐含波动，但本截点没有可核实的10月26日全市场期权成交/Dealer Gamma数据。",
+        "监测实际VIX报价、相关合约到期结构与跨资产波动率；避免借一周前价格推导今天的期权pin位。"
+      ],
+      "tables": [],
+      "sources": [
+        "S39",
+        "S31"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "Treasury",
+      "status": "长期美债约5%与法国主权信用须分开解释",
+      "summary": "Reuters亚洲早盘称美国10年期约5.0%，该报价是市场参考而非财政部CMT新正式发布值。；本截点未核实今日全部拍卖的发行规模/高收益/尾差/买方配售，因此不得填入任何未公布结果。",
+      "paragraphs": [
+        "Reuters亚洲早盘称美国10年期约5.0%，该报价是市场参考而非财政部CMT新正式发布值。",
+        "本截点未核实今日全部拍卖的发行规模/高收益/尾差/买方配售，因此不得填入任何未公布结果。"
+      ],
+      "tables": [],
+      "sources": [
+        "S31",
+        "S01",
+        "S22"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Commodities",
+      "status": "Brent早盘回落与高基数并存，能源传导需实物验证",
+      "summary": "上周五Brent结算116.72美元、WTI结算103.27美元；周一早盘Reuters报告约115.48和102.08美元，是不同交易时点。；海上人道救援不等于商船已恢复运输；真正的商品→通胀→利率→股票风险溢价传导要用运量与同合约交易验证。",
+      "paragraphs": [
+        "上周五Brent结算116.72美元、WTI结算103.27美元；周一早盘Reuters报告约115.48和102.08美元，是不同交易时点。",
+        "海上人道救援不等于商船已恢复运输；真正的商品→通胀→利率→股票风险溢价传导要用运量与同合约交易验证。"
+      ],
+      "tables": [],
+      "sources": [
+        "S31",
+        "S32",
+        "S40",
+        "S33"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "Financing",
+      "status": "大型云厂AI建设融资、电网约束和现金回报仍是投资核心",
+      "summary": "本周企业财报将首次提供新季度资本支出和自由现金流，但事前Reuters分析与营收预期不等于已实现业绩。；将宣布投资、已承诺融资、项目实际建成与现金回流分开，特别关注高利率环境下数据中心能源与并网期限。",
+      "paragraphs": [
+        "本周企业财报将首次提供新季度资本支出和自由现金流，但事前Reuters分析与营收预期不等于已实现业绩。",
+        "将宣布投资、已承诺融资、项目实际建成与现金回流分开，特别关注高利率环境下数据中心能源与并网期限。"
+      ],
+      "tables": [],
+      "sources": [
+        "S31",
+        "S39",
+        "S24",
+        "S27"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Breaking News",
+      "status": "过去24小时新增亚洲报价、航运人道事件、加美言论和巴西计票",
+      "summary": "10月26日08:46 SGT的Reuters新早盘价格、10月25日Reuters/AP船员救援以及加拿大关税谈判表态均已核对事件状态。；巴西选举结果独立报道而政策尚待实施，避免把媒体预测写作已落地监管文本。",
+      "paragraphs": [
+        "10月26日08:46 SGT的Reuters新早盘价格、10月25日Reuters/AP船员救援以及加拿大关税谈判表态均已核对事件状态。",
+        "巴西选举结果独立报道而政策尚待实施，避免把媒体预测写作已落地监管文本。"
+      ],
+      "tables": [],
+      "sources": [
+        "S31",
+        "S33",
+        "S34",
+        "S35",
+        "S36",
+        "S37"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "Market Impact",
+      "status": "当前看先验约束能否被油价/利率/信用同时间戳确认",
+      "summary": "亚洲早盘油价下行若无真实航运恢复支持，仍不足以判断全球风险资产进入稳定的Risk-On。；周一美股开盘后优先按同一时间段核对Brent、UST10Y、信用利差和科技行业广度；周中正式FOMC及AI财报是情景拐点。",
+      "paragraphs": [
+        "亚洲早盘油价下行若无真实航运恢复支持，仍不足以判断全球风险资产进入稳定的Risk-On。",
+        "周一美股开盘后优先按同一时间段核对Brent、UST10Y、信用利差和科技行业广度；周中正式FOMC及AI财报是情景拐点。"
+      ],
+      "tables": [],
+      "sources": [
+        "S31",
+        "S35",
+        "S39",
+        "S33"
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "Growth Impulse",
+      "current": "→ 亚洲承压，政策待验证",
+      "yesterday": "周末美国现金市场未交易",
+      "change_reason": "周一亚洲股市谨慎，巴西选举与加美贸易消息提供不确定的区域分化，不能外推美国现货收盘。",
+      "evidence": "Reuters亚洲开盘Nikkei约-0.8%、KOSPI约-0.4%；北美协议尚未生效。",
+      "sources": [
+        "S31",
+        "S35",
+        "S36"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "Inflation Impulse",
+      "current": "↓ 油价早盘回落但仍高位",
+      "yesterday": "10月23日Brent结算116.72美元",
+      "change_reason": "Reuters亚洲早盘观察Brent约115.48美元，边际回落，但物流约束尚未可靠解除。",
+      "evidence": "Brent上周五结算116.72美元；周一08:46 SGT报道约115.48美元，交易时点不同。",
+      "sources": [
+        "S31",
+        "S40"
+      ]
+    },
+    "rates_pressure": {
+      "label": "Rates Pressure",
+      "current": "→ 美债近5%，待FOMC",
+      "yesterday": "美国10年约4.99%",
+      "change_reason": "宏观折现率由高能源价格和政策会议共同驱动，早盘10Y约5.0%仍需待美国交易验证。",
+      "evidence": "Reuters周一全球市场报道10Y约5.0%；会议将于10月27–28日举行，决议尚未公布。",
+      "sources": [
+        "S31",
+        "S39",
+        "S01"
+      ]
+    },
+    "earnings_revision": {
+      "label": "Earnings Revision",
+      "current": "→ 云厂现金流待正式披露",
+      "yesterday": "AI高资本支出收益率不明",
+      "change_reason": "科技业绩集中披露前，研究估值不得将媒体营收一致预期写成实际利润。",
+      "evidence": "Reuters本周前瞻包括Microsoft、Alphabet、Amazon；尚无本周正式结果。",
+      "sources": [
+        "S31",
+        "S39"
+      ]
+    },
+    "liquidity": {
+      "label": "Liquidity",
+      "current": "→ 美国现货未开盘",
+      "yesterday": "周末无法验证股票与ETF资金",
+      "change_reason": "早盘S&P与Nasdaq期货约+0.2%属于期货报价，不能说明常规现金市场广度。",
+      "evidence": "10月23日S&P500现金收盘7,623.68，周一美国常规开盘尚未来临。",
+      "sources": [
+        "S31",
+        "S01",
+        "S02"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "Geopolitical Risk",
+      "current": "→ 救援不等于通航",
+      "yesterday": "使馆安全升级、外交表态未形成协议",
+      "change_reason": "40名伊朗船员救援是独立人道事件；油运、封锁和正式通航条件未被解决。",
+      "evidence": "Reuters与AP10月25日报道海上救援；本截点仍缺双方官方全面通航协议。",
+      "sources": [
+        "S33",
+        "S34",
+        "S21"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base — Asian oil pullback but shipping remains unresolved",
+      "probability": "50% subjective analyst scenario; not market-implied",
+      "trigger": "周一至美股开盘未核实实际海峡全面恢复或新的大型设施受损，亚洲油价仅阶段性波动。",
+      "expected_market_reaction": "能源风险溢价虽短暂缓和，股票成长/价值分化仍在；美债反应由真实通胀补偿和避险需求共同决定。",
+      "assets_most_sensitive": [
+        "Brent",
+        "UST10Y",
+        "USD/CAD",
+        "Nasdaq"
+      ],
+      "what_confirms_it": "同合约期货走势趋稳，商业油轮通行量无突变，信用利差和现金股票广度未显著恶化。",
+      "what_invalidates_it": "官方落实新海峡协议且实物流改善，或确认新增供应损失。"
+    },
+    "bull_case": {
+      "label": "Bull — shipping improvement and policy de-escalation",
+      "probability": "25% subjective analyst scenario; not market-implied",
+      "trigger": "双方正式确认通航恢复细则，商业航运和保险价格证实执行；贸易协议公布明确正式条款。",
+      "expected_market_reaction": "Brent和通胀补偿可能回落，进口能源与科技成长估值得到缓冲，CAD受本国贸易政策改善影响。",
+      "assets_most_sensitive": [
+        "Brent",
+        "Canada FX",
+        "UST10Y",
+        "Equity breadth"
+      ],
+      "what_confirms_it": "官方共同签署/生效文本、实物航运、保险费率和市场实际成交方向一致。",
+      "what_invalidates_it": "外交表态停留在单方或物流仍受限制。"
+    },
+    "bear_case": {
+      "label": "Bear — renewed oil disruption and funding repricing",
+      "probability": "25% subjective analyst scenario; not market-implied",
+      "trigger": "重大航运阻断获独立确认，或本周FOMC与科技财报正式披露利率/现金流超预期压力。",
+      "expected_market_reaction": "能源成本、信用利差和长期资本成本可能同时升高，AI长久期企业和进口能源行业承压。",
+      "assets_most_sensitive": [
+        "WTI",
+        "Brent",
+        "UST10Y",
+        "Nasdaq",
+        "US credit"
+      ],
+      "what_confirms_it": "真实供应中断与货运费率、美国开盘油价和信用利差同向强化。",
+      "what_invalidates_it": "通航恢复正式执行及企业盈利/现金流显著强于市场预期。"
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-10-26 21:30 SGT",
+      "et": "2026-10-26 09:30 EDT",
+      "event": "美国周一现金股票市场开盘并检验周末海湾与关税报道真实影响",
+      "consensus": "市场开盘无正式一致预测",
+      "previous": "S&P500 7,623.68（10/23 收盘）",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S31",
+        "S35",
+        "S01"
+      ]
+    },
+    {
+      "sgt": "2026-10-29 02:00 SGT (usual scheduled Fed decision time, verify release)",
+      "et": "2026-10-28 14:00 EDT (usual scheduled decision time)",
+      "event": "FOMC 10月27–28日货币政策决议",
+      "consensus": "Reuters市场前瞻预期需要以正式决议为准，未将其作为已实现结果",
+      "previous": "会前政策利率依正式Fed网站为准，不使用未经核实基准",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S39",
+        "S31"
+      ]
+    },
+    {
+      "sgt": "2026-10-28–30 SGT, specific company IR windows vary",
+      "et": "2026-10-27–29 EDT, specific company IR windows vary",
+      "event": "Microsoft、Alphabet与Amazon本周正式季度财报及AI资本开支现金流讨论",
+      "consensus": "Reuters报道MSFT营收预期约906亿美元、AMZN约2020亿美元、GOOGL约1280亿美元；截至截点未核实分析师完整分布，仅报道作参考",
+      "previous": "既有指引以公司官网正式披露为准",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S31",
+        "S39",
+        "S27"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "早盘原油价格回落被误当作霍尔木兹通航恢复，掩盖实物运输和保险风险",
+      "why_not_fully_priced": "10月26日初步价格报道并非结算，40名船员救援也不等于正式商船通航；物理通道尚无独立双向确认。",
+      "trigger": "航道再次被确认封锁或主要油轮运输保险费率上涨，或者政府否认达成实质方案。",
+      "transmission": "实物航道限制→运费与能源供应约束→输入通胀→美元融资/长期利率与股权风险溢价",
+      "first_asset": "Brent front-month, VLCC freight / insurance",
+      "theme_id": "energy_geopolitical_supply",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-16",
+      "last_seen": "2026-10-26",
+      "sources": [
+        "S31",
+        "S33",
+        "S34",
+        "S40"
+      ]
+    },
+    {
+      "risk": "加美关税协议尚是单方预告而非正式生效条款，北美工业及加元提前定价可能逆转",
+      "why_not_fully_priced": "本截点没有双方签署、关税清单、税率与法律生效日，报道是政治预期而非监管实施事实。",
+      "trigger": "双方在税率或时间表出现分歧，或者发布正式文本后发现关键行业被排除。",
+      "transmission": "关税政策不确定→CAD及北美制造融资成本→采购与资本开支推迟→银行信用敏感度上升",
+      "first_asset": "USD/CAD and Canadian 2Y",
+      "theme_id": "north_america_trade_policy",
+      "lifecycle_state": "new",
+      "first_seen": "2026-10-26",
+      "last_seen": "2026-10-26",
+      "sources": [
+        "S35"
+      ]
+    },
+    {
+      "risk": "FOMC利率路径与云厂AI资本开支现金流兑现可能发生负向共振",
+      "why_not_fully_priced": "本周央行政策和云公司真实财报尚未公布；分析师一致预期和媒体观点都不能替代实际决议及自由现金流。",
+      "trigger": "利率预期偏鹰或公司披露更高投入及更慢现金转化，项目融资紧张。",
+      "transmission": "高政策利率/资本开支→企业债与项目融资成本↑→AI净现金流回收延后→长久期估值承压",
+      "first_asset": "UST 2Y / UST 10Y, AI credit",
+      "theme_id": "ai_financing_quality",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-16",
+      "last_seen": "2026-10-26",
+      "sources": [
+        "S31",
+        "S39",
+        "S27"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "2026-10-26美国常规交易开盘验证亚洲油价回落与现金市场风险传导",
+    "status": "Confirmed Upcoming",
+    "date": "2026-10-26",
+    "et": "2026-10-26 09:30 EDT",
+    "sgt": "2026-10-26 21:30 SGT",
+    "consensus": "常规开盘不是统计发布，无同口径一致预测数值",
+    "previous": "10月23日S&P500收7,623.68、Nasdaq Composite收25,955.34；Brent结算116.72美元",
+    "actual": "待公布",
+    "why_it_matters": "周一亚洲已经有可变原油报价，而美国现金股债和信用风险尚未完整开盘重新定价；需以同一交易时段数据核对风险传导。",
+    "first_market": "Brent/WTI matched-contract early prints, US 2Y/10Y, IG/HY spreads, S&P cash breadth",
+    "bull_interpretation": "实际船舶通行恢复且同合约油价和信用利差同步回落，说明物理缓和已进入风险资产定价。",
+    "bear_interpretation": "海运风险未减且长端通胀压力或信用利差扩大，说明早盘油价回落不足以缓解实际融资条件。",
+    "watch_first": [
+      "核对10月26日周一Brent/WTI同期限合约真实成交和油轮保险、商船实际通航；不得将40名海员救援视为商业航运恢复。",
+      "美国10年与2年国债、信用利差在股票现金开盘后同时间戳比较，验证油价回落是否带来融资成本缓和。",
+      "把S&P现货广度与Nasdaq行业收益分布和本周正式AI业绩数据分开，谨防期货盘中上涨被误当成现金市场收盘。"
+    ],
+    "sources": [
+      "S31",
+      "S32",
+      "S33",
+      "S34",
+      "S39",
+      "S01"
+    ]
+  },
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S25",
+    "S26",
+    "S27",
+    "S28",
+    "S29",
+    "S30",
+    "S31",
+    "S32",
+    "S33",
+    "S34",
+    "S35",
+    "S36",
+    "S37",
+    "S38",
+    "S39",
+    "S40"
+  ],
+  "asia_snapshot": {
+    "as_of": "2026-10-26 09:17 SGT research cutoff; Reuters price snapshot published 2026-10-26 08:46 SGT, NOT real-time synchronized execution quote",
+    "brent": "US$115.48/bbl Reuters Asian early-trading snapshot; 2026-10-23 verified settlement US$116.72/bbl",
+    "wti": "US$102.08/bbl Reuters Asian early-trading snapshot; 2026-10-23 verified settlement US$103.27/bbl",
+    "dxy": "本截点无经过独立核实且同源同刻的ICE DXY报价，不填估计",
+    "s_and_p_futures": "Reuters称美国S&P期指亚洲早盘约+0.2%，期货盘中方向非现金股票收盘",
+    "nasdaq_futures": "Reuters称Nasdaq期指亚洲早盘约+0.2%，非现金纳指10月26日收盘",
+    "korea_equities": "Reuters亚洲早盘韩国Kospi约-0.4%，具体时点以原文为准",
+    "sources": [
+      "S31",
+      "S32",
+      "S01",
+      "S03"
+    ]
+  }
+}
