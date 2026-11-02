@@ -1,0 +1,74 @@
+name: GMD Production Shadow — Read Only
+
+on:
+  # Monitoring only: no schedule here can ever create or publish an edition.
+  schedule:
+    - cron: "17 3 * * *"  # 11:17 Asia/Shanghai; off the top of the hour
+  push:
+    branches: [main]
+    paths:
+      - "scripts/gmd_shadow_preflight.py"
+      - "scripts/test_gmd_shadow_preflight.py"
+      - ".github/workflows/gmd-shadow-readiness.yml"
+  workflow_dispatch:
+    inputs:
+      expected_sgt_date:
+        description: Optional expected Asia/Shanghai date (YYYY-MM-DD); blank uses current date
+        required: false
+        type: string
+      check_public:
+        description: Compare real public Pages latest to main
+        required: false
+        default: true
+        type: boolean
+
+# Shadow is NOT a second publisher or a substitute for the 09:00 task.
+# No model credentials, private candidate bytes, Git writes or deployment rights.
+permissions:
+  contents: read
+  actions: read
+  pull-requests: read
+
+concurrency:
+  group: gmd-production-shadow
+  cancel-in-progress: false
+
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout complete current main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Test shadow diagnostics
+        run: python scripts/test_gmd_shadow_preflight.py
+      - name: Run unmodified Quality commands and real Chromium
+        shell: bash
+        env:
+          EXPECTED_SGT_DATE: ${{ inputs.expected_sgt_date }}
+          CHECK_PUBLIC: ${{ inputs.check_public }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          args=(--root . --out "$RUNNER_TEMP/gmd-shadow-readiness" --run-quality)
+          if [ -n "${EXPECTED_SGT_DATE:-}" ]; then args+=(--expected-date "$EXPECTED_SGT_DATE"); fi
+          if [ "${GITHUB_EVENT_NAME}" != "workflow_dispatch" ] || [ "$CHECK_PUBLIC" = "true" ]; then args+=(--check-public); fi
+          args+=(--inspect-pr)
+          # On schedule we expect an actual native daily, not merely a historical
+          # backfill or a fresh-but-reconstructed latest pointer.
+          if [ "${GITHUB_EVENT_NAME}" = "schedule" ]; then args+=(--fail-on-non-native); fi
+          python scripts/gmd_shadow_preflight.py "${args[@]}"
+      - name: Preserve non-sensitive readiness and Quality evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: gmd-shadow-readiness-${{ github.run_id }}
+          path: ${{ runner.temp }}/gmd-shadow-readiness
+          if-no-files-found: warn
+          retention-days: 14
