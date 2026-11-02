@@ -235,7 +235,9 @@ def inspect_github_pr(expected_date: str) -> dict:
     if not token:
         return {"status": "PR_INSPECTION_UNAVAILABLE_NO_TOKEN"}
     def gh_get(path: str) -> dict | list:
-        request = Request(f"https://api.github.com/repos/{repo}/{path}",
+        url = (f"https://api.github.com/{path}" if path.startswith("search/")
+               else f"https://api.github.com/repos/{repo}/{path}")
+        request = Request(url,
                           headers={"Accept": "application/vnd.github+json",
                                    "Authorization": "Bearer " + token,
                                    "X-GitHub-Api-Version": "2022-11-28",
@@ -246,15 +248,24 @@ def inspect_github_pr(expected_date: str) -> dict:
                 raise ValueError("GitHub response exceeds size limit")
             return json.loads(raw.decode("utf-8"))
     try:
-        pulls = gh_get("pulls?state=all&per_page=100&sort=created&direction=desc")
-        if not isinstance(pulls, list):
-            raise ValueError("GitHub pulls endpoint returned non-list")
-        matching = [p for p in pulls if p.get("title") == f"GMD Publish {expected_date} Morning"]
-        if not matching or len(matching) != 1 or matching[0].get("state") != "open":
+        title = f"GMD Publish {expected_date} Morning"
+        # The complete pull-list payload exceeded the prior 1 MiB response cap.
+        # Search title first (all PR states), then fetch only matching PR objects.
+        query = urlencode({"q": f'repo:{repo} is:pr in:title "{title}"', "per_page": 50})
+        results = gh_get("search/issues?" + query)
+        if not isinstance(results, dict) or not isinstance(results.get("items"), list):
+            raise ValueError("GitHub PR search returned malformed data")
+        if results.get("total_count", 0) > 50:
+            return {"status": "PR_SEARCH_INCOMPLETE_TOO_MANY_MATCHES"}
+        numbers = [p.get("number") for p in results["items"] if p.get("title") == title]
+        pulls = [gh_get(f"pulls/{number}") for number in numbers if isinstance(number, int)]
+        if not pulls or len(pulls) != 1 or pulls[0].get("state") != "open":
             return classify_pr_status(pulls, [], expected_date)
-        sha = (matching[0].get("head") or {}).get("sha")
+        sha = (pulls[0].get("head") or {}).get("sha")
         actions = gh_get(f"actions/runs?head_sha={sha}&event=pull_request&per_page=30")
-        return classify_pr_status(pulls, actions.get("workflow_runs", []), expected_date)
+        if not isinstance(actions, dict) or not isinstance(actions.get("workflow_runs"), list):
+            raise ValueError("GitHub Actions runs endpoint returned malformed data")
+        return classify_pr_status(pulls, actions["workflow_runs"], expected_date)
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         return {"status": "PR_INSPECTION_ERROR", "error": f"{type(exc).__name__}: {exc}"}
 
