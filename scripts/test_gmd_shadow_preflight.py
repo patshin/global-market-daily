@@ -5,8 +5,10 @@ from __future__ import annotations
 import json
 import tempfile
 import unittest
+from unittest.mock import patch
+import os
 from pathlib import Path
-from gmd_shadow_preflight import QualityStep, classify_core, classify_public, classify_pr_status, parse_quality_commands
+from gmd_shadow_preflight import QualityStep, classify_core, classify_public, classify_pr_status, inspect_github_pr, parse_quality_commands
 
 
 class ShadowTests(unittest.TestCase):
@@ -87,6 +89,26 @@ class ShadowTests(unittest.TestCase):
         success = dict(fail, conclusion='success')
         self.assertEqual(classify_pr_status([pr], [success], self.day)['status'], 'PR_GREEN_AWAITING_PROMOTION')
         self.assertEqual(classify_pr_status([pr, pr], [], self.day)['status'], 'DUPLICATE_SAME_DATE_PRS')
+
+    def test_github_pr_search_is_bounded_and_exact(self):
+        class Response:
+            def __init__(self, payload):
+                self.payload = json.dumps(payload).encode('utf-8')
+            def __enter__(self): return self
+            def __exit__(self, *args): return None
+            def read(self, n): return self.payload
+        urls = []
+        def fake_open(request, timeout):
+            urls.append(request.full_url)
+            return Response({'total_count': 0, 'items': []})
+        with patch.dict(os.environ, {'GH_TOKEN': 'unit-test-only',
+                                     'GITHUB_REPOSITORY': 'patshin/global-market-daily'}):
+            with patch('gmd_shadow_preflight.urlopen', side_effect=fake_open):
+                state = inspect_github_pr(self.day)
+        self.assertEqual(state['status'], 'NO_SAME_DATE_PUBLISH_PR')
+        self.assertEqual(len(urls), 1)
+        self.assertIn('/search/issues?', urls[0])
+        self.assertIn('GMD+Publish+', urls[0])
 
     def test_quality_parser_mandatory_gate_enforced(self):
         with self.assertRaisesRegex(ValueError, 'missing mandatory'):
