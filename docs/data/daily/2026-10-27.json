@@ -1,0 +1,903 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-10-27",
+  "edition": "Morning Official · 历史补档",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-10-27 09:39 SGT",
+  "data_cutoff_et": "2026-10-26 21:39 EDT",
+  "last_updated": "2026-11-02T10:21:21+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-10-27T09:00:00+08:00",
+    "started_at_sgt": "2026-10-27T09:29:13+08:00",
+    "research_cutoff_sgt": "2026-10-27T09:39:04+08:00",
+    "mode": "historical_reconstruction_from_saved_research",
+    "note": "原始scheduled/start/research_cutoff字段保留历史执行记录；补档动作时间另见reconstruction.reconstructed_at，不冒充原始研究完成时间。"
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": false
+  },
+  "publication_policy": {
+    "effective_date": "2026-10-08",
+    "no_evening_edition": true,
+    "is_canonical_daily": true
+  },
+  "source_mode": "reconstructed_daily",
+  "sources_path": "data/sources/2026-10-27.json",
+  "comparison_basis": "与生产最新2026-10-25官方晨报比较；市场经过10月26日美国常规交易，禁止沿用10月23日收盘作为最新有效日。",
+  "thesis": "截至2026-10-27 09:39 SGT（2026-10-26 21:39 EDT），美国10月26日现金收盘出现震荡后反弹：标普500 7,676.77（+0.70%）、纳指26,169.38（+0.82%），但能源危机与AI资本开支融资压力尚未解除。Brent 12月合约结算115.81美元（-0.78%）；Meta宣布启动约350亿美元股权发行的消息使AI现金回报与融资约束更受关注。10月27–28日FOMC及周三科技公司财报均尚未公布，必须分开检验价格反弹与盈利兑现。",
+  "dominant_narrative": "10月26日市场不宜简单概括为风险解除。第一，美股标普、纳指和道指分别+0.70%、+0.82%、+0.28%，属于反弹而非AI融资隐忧消失；半导体有一定修复，但能否恢复上周跌幅仍待技术股盈利验证。第二，Brent前月结算约115.81美元，较上周五116.72美元小幅回落，油价依旧处高位，外交信号不等于霍尔木兹物流全面恢复。第三，Meta公布约350亿美元证券发行并讨论后续融资，不能把已启动的发行与未来计划认作现金到账，资本支出规模与经营现金流是独立风险因素。第四，长端美债收益率在5%附近，与高油价并存，表明避险久期需求及通胀风险同时存在。第五，10月28日美联储决议与周三Alphabet、Microsoft及周四Amazon财报截至截点均属于未来事件，任何利率预测和AI资本收益预测都不能写成已发布结果。",
+  "market_regime": {
+    "growth": {
+      "state": "短线价格反弹，但增长动能尚待GDP核实",
+      "evidence": "10月26日股指反弹，10月29日GDP待发布"
+    },
+    "inflation": {
+      "state": "油价仍处高位，单日回落仅部分缓冲",
+      "evidence": "Brent周一结算115.81美元"
+    },
+    "rates": {
+      "state": "10Y附近5%，Fed决定未公布",
+      "evidence": "Reuters报道长端收益率靠近4.99%，官方日历确认会议"
+    },
+    "earnings": {
+      "state": "Meta融资与云厂AI现金回报可持续性",
+      "evidence": "Meta融资公告；大科技周三/周四财报待公布"
+    },
+    "liquidity": {
+      "state": "趋势策略承压但没有净流量统一验证",
+      "evidence": "Reuters援引Goldman此前一周表现"
+    },
+    "cross_asset": {
+      "state": "油价和美债/成长股暂时分化",
+      "evidence": "Brent小跌，美股上涨，10Y仍在5%附近"
+    },
+    "overall": "Cross-asset divergent rebound / Oil-AI financing dual constraint"
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,676.77",
+      "change_1d": "+0.70%",
+      "change_5d": "-0.18% (computed Oct 19→Oct 26; secondary historical comparison)",
+      "signal": "↑ rebound",
+      "driver": "2026-10-26 US cash close; 5D computed from matched 2026-10-19 closing level, historical comparator requires primary confirmation",
+      "status": "CASH CLOSE CONFIRMED",
+      "as_of": "2026-10-26 16:00 EDT",
+      "sources": [
+        "S01",
+        "S02",
+        "S13"
+      ]
+    },
+    {
+      "asset": "Dow Jones Industrial Average",
+      "level": "52,361.58",
+      "change_1d": "+0.28%",
+      "change_5d": "+0.76% (computed Oct 19→Oct 26; secondary historical comparison)",
+      "signal": "↑ mixed rebound",
+      "driver": "2026-10-26 US cash close; 5D computed from matched 2026-10-19 closing level, historical comparator requires primary confirmation",
+      "status": "CASH CLOSE CONFIRMED",
+      "as_of": "2026-10-26 16:00 EDT",
+      "sources": [
+        "S01",
+        "S02",
+        "S13"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "26,169.38",
+      "change_1d": "+0.82%",
+      "change_5d": "-0.99% (computed Oct 19→Oct 26; secondary historical comparison)",
+      "signal": "↑ rebound",
+      "driver": "2026-10-26 US cash close; 5D computed from matched 2026-10-19 closing level, historical comparator requires primary confirmation",
+      "status": "CASH CLOSE CONFIRMED",
+      "as_of": "2026-10-26 16:00 EDT",
+      "sources": [
+        "S01",
+        "S02",
+        "S13"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,786.42",
+      "change_1d": "+0.38%",
+      "change_5d": "+2.13% (computed Oct 19→Oct 26; secondary historical comparison)",
+      "signal": "↑ rebound",
+      "driver": "2026-10-26 US cash close; 5D computed from matched 2026-10-19 closing level, historical comparator requires primary confirmation",
+      "status": "CASH CLOSE CONFIRMED",
+      "as_of": "2026-10-26 16:00 EDT",
+      "sources": [
+        "S02",
+        "S13"
+      ]
+    },
+    {
+      "asset": "VIX",
+      "level": "18.39",
+      "change_1d": "-5.45%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ volatility snapshot",
+      "driver": "Single secondary quote; not independently confirmed — MUST VERIFY",
+      "status": "PROVISIONAL / DO NOT PUBLISH PRICE",
+      "as_of": "2026-10-26 16:00 EDT approx",
+      "sources": [
+        "S15"
+      ]
+    },
+    {
+      "asset": "SOX",
+      "level": "尚无法可靠确认",
+      "change_1d": "+2.8%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ semiconductors",
+      "driver": "Reported daily index percentage only; missing confirmed closing level and five-session change",
+      "status": "PARTIAL DATA",
+      "as_of": "2026-10-26 US close",
+      "sources": [
+        "S14"
+      ]
+    },
+    {
+      "asset": "US Treasury 10Y",
+      "level": "≈4.99%–5.00%",
+      "change_1d": "尚无法可靠确认",
+      "change_5d": "尚无法可靠确认",
+      "signal": "→ duration diverges from oil",
+      "driver": "Reuters approximately 4.99%; exact close/date-basis change not verified, not mark as 1D",
+      "status": "APPROXIMATE / MISSING 1D",
+      "as_of": "2026-10-26 US session",
+      "sources": [
+        "S03",
+        "S05",
+        "S16"
+      ]
+    },
+    {
+      "asset": "DXY",
+      "level": "102.00",
+      "change_1d": "+0.19%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ dollar modestly stronger",
+      "driver": "Secondary value; verify ICE DXY comparable session",
+      "status": "PROVISIONAL / DO NOT PUBLISH PRICE",
+      "as_of": "2026-10-26 US session",
+      "sources": [
+        "S16"
+      ]
+    },
+    {
+      "asset": "S&P/TSX Composite",
+      "level": "35,944.16",
+      "change_1d": "+0.4%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ Canada resources",
+      "driver": "Reuters Canadian index close +155.98 points",
+      "status": "CASH CLOSE CONFIRMED",
+      "as_of": "2026-10-26 Canada cash close",
+      "sources": [
+        "S08"
+      ]
+    },
+    {
+      "asset": "Brent December futures",
+      "level": "US$115.81/bbl",
+      "change_1d": "-0.78%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ diplomacy vs physical risk",
+      "driver": "December contract Monday settlement from Reuters+WSJ/MarketWatch; not interchange with other contract/spot",
+      "status": "CONTRACT-SPECIFIC SETTLEMENT",
+      "as_of": "2026-10-26 futures settlement",
+      "sources": [
+        "S03",
+        "S11",
+        "S12"
+      ]
+    },
+    {
+      "asset": "WTI front-month futures",
+      "level": "US$101.76/bbl",
+      "change_1d": "-1.46%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ relief pullback",
+      "driver": "Reuters/WSJ Monday settlement; distinguish intraday and different contract months",
+      "status": "FUTURES SETTLEMENT",
+      "as_of": "2026-10-26 futures settlement",
+      "sources": [
+        "S03",
+        "S11"
+      ]
+    },
+    {
+      "asset": "Spot Gold",
+      "level": "US$4,020.60/oz",
+      "change_1d": "+0.6%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ defensive bid",
+      "driver": "Reuters spot observation, not COMEX December futures settlement",
+      "status": "SPOT SNAPSHOT / VERIFY EXACT QUOTE TIME",
+      "as_of": "2026-10-26 Reuters market report",
+      "sources": [
+        "S06"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "HISTORICAL_RECONSTRUCTION_WITH_DISCLOSED_DATA_GAPS",
+    "asset_count": 12,
+    "level_coverage": {
+      "available": 11,
+      "total": 12,
+      "ratio": 0.9166666666666666
+    },
+    "change_1d_coverage": {
+      "available": 11,
+      "total": 12,
+      "ratio": 0.9166666666666666
+    },
+    "change_5d_coverage": {
+      "available": 4,
+      "total": 12,
+      "ratio": 0.3333333333333333
+    },
+    "explicit_gaps": [
+      "SOX exact close",
+      "UST10Y exact matched daily return",
+      "VIX and DXY primary corroboration",
+      "Seven plus assets without reliable matched-session five-day changes"
+    ],
+    "original_draft_publish_status": "NOT READY — incomplete verified 5D and original tests, base archive exact-blob mismatch; partial research only"
+  },
+  "what_changed": [
+    {
+      "yesterday": "最新正式10月25日晨报只能引用10月23日美股收盘。",
+      "today": "10月26日美股已完成一轮完整交易，标普500和纳指分别+0.70%、+0.82%。",
+      "why_it_matters": "新的美国现货收盘与周末报道属于不同时间点，需更新市场制度与归因。",
+      "sources": [
+        "S01",
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "yesterday": "10月25日Brent最近结算116.72美元。",
+      "today": "10月26日12月合约结算115.81美元，约-0.78%。",
+      "why_it_matters": "边际缓和不应归因为全面通航恢复。",
+      "sources": [
+        "S03",
+        "S11",
+        "S12"
+      ]
+    },
+    {
+      "yesterday": "此前AI资本开支回报为市场分析焦点。",
+      "today": "10月26日Reuters确认Meta宣布启动约350亿美元证券融资。",
+      "why_it_matters": "将资本开支融资渠道与自由现金流压力单独进入风险矩阵。",
+      "sources": [
+        "S04",
+        "S05",
+        "S18"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "2026-10-26美国现金股指反弹，但未修复上周AI融资压力",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-26 close EDT",
+      "event_time_sgt": "2026-10-27 early morning SGT; reference US session",
+      "what_happened": "标普500 +0.70%、纳指+0.82%；需分行业核验反弹广度而不是简单推断泡沫风险消除；标普500 +0.70%、纳指+0.82%；需分行业核验反弹广度而不是简单推断泡沫风险消除。",
+      "what_changed": "标普500 +0.70%、纳指+0.82%；需分行业核验反弹广度而不是简单推断泡沫风险消除。",
+      "why_it_matters": "资金从避险向风险资产回流能否持续由信用利差和财报验证；Earnings/financing/energy→rate and growth discount→equity and credit repricing",
+      "transmission": "Earnings/financing/energy→rate and growth discount→equity and credit repricing",
+      "affected_assets": [
+        "Nasdaq Composite",
+        "UST10Y",
+        "Brent"
+      ],
+      "direction": "Requires independent price and fundamental confirmation",
+      "importance": "★★★★",
+      "confirmation": "Official release, exact contract close and subsequent session breadth",
+      "invalidation": "Reversal or contradictory official source",
+      "sources": [
+        "S01",
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "Meta宣布启动约350亿美元股权融资，AI资本开支回报面临审计",
+      "status": "Released/Occurred",
+      "event_time_et": "2026-10-26 close EDT",
+      "event_time_sgt": "2026-10-27 early morning SGT; reference US session",
+      "what_happened": "Reuters称Meta启动多种证券的约350亿美元公开发行；更远期融资安排并非已募资到账；Reuters称Meta启动多种证券的约350亿美元公开发行；更远期融资安排并非已募资到账。",
+      "what_changed": "Reuters称Meta启动多种证券的约350亿美元公开发行；更远期融资安排并非已募资到账。",
+      "why_it_matters": "潜在稀释与融资结构使AI资本投入回报成为成长股估值的显性约束；Earnings/financing/energy→rate and growth discount→equity and credit repricing",
+      "transmission": "Earnings/financing/energy→rate and growth discount→equity and credit repricing",
+      "affected_assets": [
+        "Nasdaq Composite",
+        "UST10Y",
+        "Brent"
+      ],
+      "direction": "Requires independent price and fundamental confirmation",
+      "importance": "★★★★",
+      "confirmation": "Official release, exact contract close and subsequent session breadth",
+      "invalidation": "Reversal or contradictory official source",
+      "sources": [
+        "S04",
+        "S18"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "10月27–28日FOMC与主要科技公司财报构成下一价格裁决",
+      "status": "Confirmed Upcoming",
+      "event_time_et": "2026-10-28 14:00 EDT (Fed decision scheduled)",
+      "event_time_sgt": "2026-10-29 02:00 SGT (scheduled)",
+      "what_happened": "Fed官方日历明确10月28日14:00 EDT公布政策；科技公司周三/周四报告尚未公布；Fed官方日历明确10月28日14:00 EDT公布政策；科技公司周三/周四报告尚未公布。",
+      "what_changed": "Fed官方日历明确10月28日14:00 EDT公布政策；科技公司周三/周四报告尚未公布。",
+      "why_it_matters": "市场需要把政策利率预期、已实现盈利与资本开支指引分开验证；Earnings/financing/energy→rate and growth discount→equity and credit repricing",
+      "transmission": "Earnings/financing/energy→rate and growth discount→equity and credit repricing",
+      "affected_assets": [
+        "Nasdaq Composite",
+        "UST10Y",
+        "Brent"
+      ],
+      "direction": "Requires independent price and fundamental confirmation",
+      "importance": "★★★★★",
+      "confirmation": "Official release, exact contract close and subsequent session breadth",
+      "invalidation": "Reversal or contradictory official source",
+      "sources": [
+        "S09",
+        "S17",
+        "S18"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top Market Catalysts",
+      "status": "昨日现金股反弹、Meta融资安排及FOMC/科技财报窗口成为三条可核验主线",
+      "summary": "不要把美股反弹误写为AI资本回报已经兑现；Meta已宣布的发行与未来计划融资必须拆开。",
+      "paragraphs": [
+        "昨日现金股反弹、Meta融资安排及FOMC/科技财报窗口成为三条可核验主线。",
+        "不要把美股反弹误写为AI资本回报已经兑现；Meta已宣布的发行与未来计划融资必须拆开。。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S03",
+        "S04",
+        "S09"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings",
+      "status": "证据缺口：当期缺少可独立核验的结构化公司级财报与一致预期信息",
+      "summary": "原始研究只保留宏观或企业融资线索，未存足够可核验的公司级财报及统一市场预期；故本历史补档不制造单个公司的报表数据或虚构公司财报事件。",
+      "paragraphs": [
+        "Alphabet与Microsoft预计周三美股收盘后、Amazon周四披露；当前没有相应Q3正式结果。",
+        "观察云业务增速、数据中心CapEx指引、自由现金流与部署利用率，不制造市场一致预期。。"
+      ],
+      "tables": [],
+      "sources": [
+        "S17",
+        "S18"
+      ],
+      "reported": [],
+      "upcoming_72h": []
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "US Macro",
+      "status": "10月26日权益股反弹但10Y收益率仍在5%附近，滞胀讨论属于分析而非定论",
+      "summary": "增长与能源通胀同时存在，后续GDP、PCE正式统计结果优先于评论和隐含预测。",
+      "paragraphs": [
+        "10月26日权益股反弹但10Y收益率仍在5%附近，滞胀讨论属于分析而非定论。",
+        "增长与能源通胀同时存在，后续GDP、PCE正式统计结果优先于评论和隐含预测。。"
+      ],
+      "tables": [],
+      "sources": [
+        "S03",
+        "S05",
+        "S10"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Central Banks",
+      "status": "Fed正式会议为10月27–28日，决议10月28日14时EDT尚未公布",
+      "summary": "区分会前预期和会后正式决议；当前利率政策的方向不得提前宣告。",
+      "paragraphs": [
+        "Fed正式会议为10月27–28日，决议10月28日14时EDT尚未公布。",
+        "区分会前预期和会后正式决议；当前利率政策的方向不得提前宣告。。"
+      ],
+      "tables": [],
+      "sources": [
+        "S09",
+        "S18"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Geopolitics & Security",
+      "status": "海湾外交努力与沙特设施受袭风险并存，油价小幅回落并不等于海峡完全开放",
+      "summary": "地缘情景通过油价风险溢价、航运费用和通胀预期传递，避免推断未经证实的实物供应恢复。",
+      "paragraphs": [
+        "海湾外交努力与沙特设施受袭风险并存，油价小幅回落并不等于海峡完全开放。",
+        "地缘情景通过油价风险溢价、航运费用和通胀预期传递，避免推断未经证实的实物供应恢复。。"
+      ],
+      "tables": [],
+      "sources": [
+        "S03",
+        "S11",
+        "S12"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "Regional Policy",
+      "status": "加拿大股指上涨约0.4%，但巴西市场受选举结果冲击属于不同地区驱动",
+      "summary": "北美和拉美资产需单独核实当地政策与汇率，不能机械合并成全球单向风险偏好。",
+      "paragraphs": [
+        "加拿大股指上涨约0.4%，但巴西市场受选举结果冲击属于不同地区驱动。",
+        "北美和拉美资产需单独核实当地政策与汇率，不能机械合并成全球单向风险偏好。。"
+      ],
+      "tables": [],
+      "sources": [
+        "S08",
+        "S03"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "Index Changes",
+      "status": "10月26日标普、道指、纳指和罗素2000均上涨，但未确认新增指数编制调整",
+      "summary": "现有来源支持价格方向，不支持未经公告的指数换样或被动资金再平衡。",
+      "paragraphs": [
+        "10月26日标普、道指、纳指和罗素2000均上涨，但未确认新增指数编制调整。",
+        "现有来源支持价格方向，不支持未经公告的指数换样或被动资金再平衡。。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S13"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "Fund Flows & Positioning",
+      "status": "Reuters援引Goldman指出上周趋势型基金损失加剧，不能外推10月26日所有基金实时净流量",
+      "summary": "对CTA敞口和流动性变化仅按具名机构报告归因，后续交易所或基金披露再补可比时间序列。",
+      "paragraphs": [
+        "Reuters援引Goldman指出上周趋势型基金损失加剧，不能外推10月26日所有基金实时净流量。",
+        "对CTA敞口和流动性变化仅按具名机构报告归因，后续交易所或基金披露再补可比时间序列。。"
+      ],
+      "tables": [],
+      "sources": [
+        "S07",
+        "S03"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF & Portfolio",
+      "status": "没有核实到完整同截止口径的ETF申赎金额及资金净流量",
+      "summary": "大盘和SOX反弹不等于ETF净流入已发生，避免用价格涨跌代替现金流。",
+      "paragraphs": [
+        "没有核实到完整同截止口径的ETF申赎金额及资金净流量。",
+        "大盘和SOX反弹不等于ETF净流入已发生，避免用价格涨跌代替现金流。。"
+      ],
+      "tables": [],
+      "sources": [
+        "S07",
+        "S14"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "Options & Volatility",
+      "status": "VIX单一二级来源报18.39，尚未取得Cboe收盘独立核验",
+      "summary": "将其保留为低置信候选，不把期权交易量、gamma或dealer仓位编造成确定数据。",
+      "paragraphs": [
+        "VIX单一二级来源报18.39，尚未取得Cboe收盘独立核验。",
+        "将其保留为低置信候选，不把期权交易量、gamma或dealer仓位编造成确定数据。。"
+      ],
+      "tables": [],
+      "sources": [
+        "S15",
+        "S07"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "Treasury & Rates",
+      "status": "美国10年国债收益率大致在4.99%至5.00%，但本轮没有完整同口径曲线与发行数据",
+      "summary": "无法核验2Y/5Y/30Y和拍卖结果时明确保留缺口，不凭市场叙事生成曲线数据。",
+      "paragraphs": [
+        "美国10年国债收益率大致在4.99%至5.00%，但本轮没有完整同口径曲线与发行数据。",
+        "无法核验2Y/5Y/30Y和拍卖结果时明确保留缺口，不凭市场叙事生成曲线数据。。"
+      ],
+      "tables": [],
+      "sources": [
+        "S03",
+        "S05",
+        "S16"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Commodities & FX",
+      "status": "Brent 12月结算约115.81美元、WTI约101.76美元；Reuters现货黄金约4,020.60美元",
+      "summary": "原油同合约结算与黄金现货观察不可混用，缺少全面可靠5D时必须披露。",
+      "paragraphs": [
+        "Brent 12月结算约115.81美元、WTI约101.76美元；Reuters现货黄金约4,020.60美元。",
+        "原油同合约结算与黄金现货观察不可混用，缺少全面可靠5D时必须披露。。"
+      ],
+      "tables": [],
+      "sources": [
+        "S03",
+        "S06",
+        "S11",
+        "S12"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "Financing, Credit & CapEx",
+      "status": "Meta本周公布约350亿美元股权融资启动，潜在后续融资与已收款项并非一回事",
+      "summary": "未来AI算力租赁和数据中心的投融资成本与利用率是长期估值压力；不推断已发生违约。",
+      "paragraphs": [
+        "Meta本周公布约350亿美元股权融资启动，潜在后续融资与已收款项并非一回事。",
+        "未来AI算力租赁和数据中心的投融资成本与利用率是长期估值压力；不推断已发生违约。。"
+      ],
+      "tables": [],
+      "sources": [
+        "S04",
+        "S05",
+        "S18"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Breaking News",
+      "status": "Anthropic上市相关报道属于媒体消息，Meta融资安排为公司宣布；不能混同已完成上市交易",
+      "summary": "截至本轮新闻核实没有将传闻、文件提交或计划事项写成已生效发行、募资到账或政策落地。",
+      "paragraphs": [
+        "Anthropic上市相关报道属于媒体消息，Meta融资安排为公司宣布；不能混同已完成上市交易。",
+        "截至本轮新闻核实没有将传闻、文件提交或计划事项写成已生效发行、募资到账或政策落地。。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S04",
+        "S03"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "Market Impact & Watchlist",
+      "status": "当期跨资产路径为AI股价反弹、油价边际回落、10Y接近5%及政策事件前观望",
+      "summary": "下一优先同时验证美股广度、科技信用、Brent合约、10Y期限溢价及FOMC结果，避免单一信号形成伪归因。",
+      "paragraphs": [
+        "当期跨资产路径为AI股价反弹、油价边际回落、10Y接近5%及政策事件前观望。",
+        "下一优先同时验证美股广度、科技信用、Brent合约、10Y期限溢价及FOMC结果，避免单一信号形成伪归因。。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S03",
+        "S05",
+        "S09",
+        "S10"
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "Growth Impulse",
+      "current": "→ 经济韧性待GDP验证",
+      "yesterday": "前一正式周末现金股闭市",
+      "change_reason": "股指反弹不等于全局经济加速",
+      "evidence": "10月26日S&P上涨0.70%，但10月29日GDP尚待公布",
+      "sources": [
+        "S01",
+        "S02",
+        "S10"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "Inflation Impulse",
+      "current": "↓ 油价回落但仍高",
+      "yesterday": "10月23日Brent 116.72美元",
+      "change_reason": "10月26日Brent 115.81美元，降低边际压力但非供应全面恢复",
+      "evidence": "同合约Brent由116.72回落至115.81，不等同持续通胀下降",
+      "sources": [
+        "S03",
+        "S11",
+        "S12"
+      ]
+    },
+    "policy_impulse": {
+      "label": "Policy Impulse",
+      "current": "→ Fed会议结果待公布",
+      "yesterday": "此前仅有FOMC前瞻",
+      "change_reason": "10月28日14:00 EDT才发布政策决定",
+      "evidence": "Fed官方日历确认10月27–28日会议，不能用预测冒充结果",
+      "sources": [
+        "S09",
+        "S10"
+      ]
+    },
+    "earnings_impulse": {
+      "label": "Earnings Impulse",
+      "current": "→ AI财报验证尚未来临",
+      "yesterday": "AI资本回报疑虑延续",
+      "change_reason": "本周美股反弹与Meta股权融资预告并存",
+      "evidence": "大型科技财报本周三与周四披露；没有形成已发布的业绩事实",
+      "sources": [
+        "S04",
+        "S17",
+        "S18"
+      ]
+    },
+    "liquidity_impulse": {
+      "label": "Liquidity Impulse",
+      "current": "→ 资金结构分化",
+      "yesterday": "上周趋势基金报告盈利承压",
+      "change_reason": "本轮未取得资金净流量统一验证",
+      "evidence": "Reuters引述Goldman的趋势基金结果，不能由其替代全部ETF申赎",
+      "sources": [
+        "S07",
+        "S03"
+      ]
+    },
+    "risk_appetite": {
+      "label": "Risk Appetite",
+      "current": "↑ 周一反弹未脱离约束",
+      "yesterday": "上周AI主导下跌与能源风险",
+      "change_reason": "10月26日标普纳指反弹而长期收益率仍接近5%",
+      "evidence": "价格反弹与信用风险、资本回报和地缘事件条件并存",
+      "sources": [
+        "S01",
+        "S03",
+        "S05"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base — Fed待决，AI反弹但现金回报未证实",
+      "probability": "情景分析；未提供统计或市场隐含概率",
+      "trigger": "FOMC政策与措辞不显著偏离预期，云厂保留资本开支但利润指引无明显负面冲击",
+      "expected_market_reaction": "权益分化延续；大盘反弹须由科技现金流和信用利差确认",
+      "assets_most_sensitive": [
+        "Nasdaq",
+        "UST10Y",
+        "SOX",
+        "Brent"
+      ],
+      "what_confirms_it": "云厂财报与10Y/信用利差同向印证",
+      "what_invalidates_it": "大幅鹰派意外或AI自由现金流恶化"
+    },
+    "bull_case": {
+      "label": "Bull — 实物流缓和与云厂盈利兑现",
+      "probability": "情景分析；未提供统计或市场隐含概率",
+      "trigger": "确认通航改善且油价同合约连续回落，同时AI盈利现金回报稳健",
+      "expected_market_reaction": "长久期股和信用利差改善、美元融资压力边际缓和",
+      "assets_most_sensitive": [
+        "SOX",
+        "Nasdaq",
+        "Brent",
+        "Gold"
+      ],
+      "what_confirms_it": "正式物流数据与财报现金流指引",
+      "what_invalidates_it": "油价反弹或AI资本开支持续超利润"
+    },
+    "bear_case": {
+      "label": "Bear — 能源再冲击叠加融资折价",
+      "probability": "情景分析；未提供统计或市场隐含概率",
+      "trigger": "中东运输受阻确认、联储偏鹰、AI资本支出现金回报受挤压",
+      "expected_market_reaction": "信用利差与成长股波动扩大，美债避险与通胀压力可能背离",
+      "assets_most_sensitive": [
+        "Brent",
+        "UST10Y",
+        "VIX",
+        "AI credit"
+      ],
+      "what_confirms_it": "供给事故或政策财报负面惊喜",
+      "what_invalidates_it": "供应链和融资成本同步缓解"
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-10-29 02:00 SGT",
+      "et": "2026-10-28 14:00 EDT",
+      "event": "FOMC 10月会议货币政策决定",
+      "consensus": "会前市场预期保持不变，但并非正式结果",
+      "previous": "10月26日报告时尚未公布",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S09",
+        "S18"
+      ]
+    },
+    {
+      "sgt": "2026-10-29 04:00 SGT 之后（具体IR时间待核实）",
+      "et": "2026-10-28 16:00 EDT 之后（具体时间待核实）",
+      "event": "Alphabet及Microsoft第三季度财报",
+      "consensus": "尚无法可靠确认",
+      "previous": "尚无法可靠确认",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S17",
+        "S18"
+      ]
+    },
+    {
+      "sgt": "2026-10-29 20:30 SGT",
+      "et": "2026-10-29 08:30 EDT",
+      "event": "BEA发布Q3 GDP初值与9月个人收入和PCE",
+      "consensus": "尚无法可靠确认",
+      "previous": "尚无法可靠确认",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S10"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "AI股权融资与资本支出回报错配导致估值下修与信用利差扩张",
+      "why_not_fully_priced": "10月26日大盘反弹并不验证新增资本开支的自由现金流回报；Meta融资方案存在阶段性执行差异。",
+      "trigger": "后续云厂指引显示资本开支继续抬升而自由现金流或利润贡献未同步改善。",
+      "transmission": "融资股权/债权→稀释和风险利差→大型科技与半导体估值",
+      "first_asset": "Nasdaq/SOX and HY technology credit",
+      "sources": [
+        "S04",
+        "S07",
+        "S18"
+      ],
+      "theme_id": "ai_financing_fcf",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-22",
+      "last_seen": "2026-10-27"
+    },
+    {
+      "risk": "高油价下地缘安全波动冲击物流和输入通胀",
+      "why_not_fully_priced": "期货单日小幅下跌并不能证实海上风险解除；不同合约和报价时点存在较大混淆空间。",
+      "trigger": "确认新航运中断、设施受损、运费和保险价格快速上行。",
+      "transmission": "航运/原油供给→能源与物流→通胀预期→政策利率和信用成本",
+      "first_asset": "ICE Brent front month, freight, inflation breakevens",
+      "sources": [
+        "S03",
+        "S11",
+        "S12"
+      ],
+      "theme_id": "energy_geopolitical_supply",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-16",
+      "last_seen": "2026-10-27"
+    },
+    {
+      "risk": "FOMC及本周增长通胀数据形成双向意外风险",
+      "why_not_fully_priced": "截至截点10月28日政策决定和29日GDP/PCE尚未发布；不能当作实际利率变动或已发布结果。",
+      "trigger": "决议或PCE相对市场分布显著偏离、长期实际利率重新定价。",
+      "transmission": "宏观政策→利率路径→美元/美债→成长股折现和信贷利差",
+      "first_asset": "UST2Y, UST10Y, DXY, Nasdaq",
+      "sources": [
+        "S09",
+        "S10",
+        "S03"
+      ],
+      "theme_id": "monetary_event_risk",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-27",
+      "last_seen": "2026-10-27"
+    }
+  ],
+  "next_catalyst": {
+    "event": "FOMC 10月27–28日会议正式决议与云厂Q3业绩检验",
+    "status": "Confirmed Upcoming",
+    "date": "2026-10-28",
+    "et": "2026-10-28 14:00 EDT",
+    "sgt": "2026-10-29 02:00 SGT",
+    "consensus": "市场预期不等于实际公布结果；未引入未经确认概率",
+    "previous": "会前政策立场按美联储最新正式声明核对",
+    "actual": "待公布",
+    "why_it_matters": "政策利率和AI自由现金流是高油价环境下跨资产定价的双重约束。",
+    "first_market": "UST2Y, UST10Y, Nasdaq, SOX, Brent",
+    "bull_interpretation": "政策沟通不加剧融资成本且云厂盈利增量强于CapEx",
+    "bear_interpretation": "政策通胀忧虑加深，资本开支超过预期而自由现金流转弱",
+    "watch_first": [
+      "10月28日14:00 EDT原始FOMC声明、利率投票及新闻发布会原文",
+      "同时间戳美债2Y/10Y、DXY、Nasdaq与期权波动的初始传导",
+      "Alphabet/Microsoft正式财报中云业务经营利润、资本开支与自由现金流口径"
+    ],
+    "sources": [
+      "S09",
+      "S17",
+      "S18"
+    ],
+    "importance": "★★★★★",
+    "confirmation": "从官方FOMC和公司IR网站核验实际文本、数字、时间戳",
+    "invalidation": "计划延期或官方发布与预期不一致"
+  },
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18"
+  ],
+  "asia_snapshot": {
+    "as_of": "2026-10-27T09:39:04+08:00 research cutoff; US last CASH close 2026-10-26 16:00 EDT",
+    "brent": "US$115.81 2026-10-26 Dec futures SETTLEMENT, not real-time Asia quote",
+    "wti": "US$101.76 2026-10-26 WTI SETTLEMENT",
+    "dxy": "Provisional US$102.00 from secondary source; requires primary confirmation",
+    "s_and_p_futures": "尚无法可靠确认",
+    "nasdaq_futures": "尚无法可靠确认",
+    "gold": "Spot gold around US$4,020.60 on 10/26 Reuters report, not same-time synchronized quote",
+    "vix": "Secondary reported 18.39; must verify exact Cboe close",
+    "notes": "Never use an inferred 2026-10-27 cash closing price at 09:00 SGT."
+  },
+  "reconstruction": {
+    "is_reconstructed": true,
+    "reconstructed_at": "2026-11-02T10:21:21+08:00",
+    "historical_cutoff_sgt": "2026-10-27 09:39 SGT",
+    "original_snapshot_recovered": true,
+    "original_candidate_status": "research_draft",
+    "original_candidate_checkpoint": "GMD-2026-10-27-d448dacf96dbbf3565c3c9817101798c63a41f990d0537db84512b0830f04ed1.zip",
+    "limitations": [
+      "原始研究截止为 2026-10-27 09:39 SGT，原稿在当天并未通过完整Quality/Chromium，也未通过正常发布链路。",
+      "本稿在 2026-11-02T10:21:21+08:00 根据私有保存的原始研究材料经事后审计重建；不是当日按时上线的原生Morning Official。",
+      "原始研究稿中的行情、消息和来源引用保留历史as_of，当前动态网页不构成原始页面留存；部分源无法重新取得可证实的同刻快照。",
+      "5D与部分跨供应商行情未有完全独立的可比结算/交易日证据，缺口按原始数据说明保留，不能解释为100%覆盖。",
+      "截面之后公布的宏观、政策、财报、交易收盘和事件进展不得回填到此历史正文。"
+    ]
+  }
+}

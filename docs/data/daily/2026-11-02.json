@@ -1,0 +1,1001 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-11-02",
+  "edition": "Morning Official · 历史补档",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-11-02 09:07 SGT",
+  "data_cutoff_et": "2026-11-01 20:07 EST",
+  "last_updated": "2026-11-02T10:21:21+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-11-02T09:00:00+08:00",
+    "started_at_sgt": "2026-11-02T08:58:13+08:00",
+    "research_cutoff_sgt": "2026-11-02T09:07:43+08:00",
+    "mode": "historical_reconstruction_from_saved_research",
+    "note": "原始scheduled/start/research_cutoff字段保留历史执行记录；补档动作时间另见reconstruction.reconstructed_at，不冒充原始研究完成时间。"
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": false
+  },
+  "publication_policy": {
+    "effective_date": "2026-10-08",
+    "no_evening_edition": true,
+    "is_canonical_daily": true
+  },
+  "source_mode": "reconstructed_daily",
+  "sources_path": "data/sources/2026-11-02.json",
+  "comparison_basis": "生产当前main最近正式版为2026-10-25 Morning Official，10月26日至11月1日未核实有新官方版；本次独立核实2026-11-02 00:37–00:41 UTC报道与OPEC 11月1日正式公报，10月30日美国现金收盘仍为最近完整交易日。",
+  "thesis": "截至2026-11-02 09:07 SGT，交易主约束是AI资本开支的现金回报可持续性与海湾能源风险溢价共同压缩风险资产定价空间。10月30日S&P 500跌1.82%、Nasdaq跌2.86%、Intel跌28.6%；11月1日OPEC+正式维持12月七国产量目标，并不代表战争下实际可出口油量恢复。11月2日早间韩国制造业PMI降至51.3、日本降至53.3，均仍处扩张区间却显示需求动能放慢；即将公布的美国ISM、就业及苹果等财报才是下一轮可交易验证。",
+  "dominant_narrative": "今日信息不是单纯延续周五科技抛售。第一，10月30日美国纳指跌2.86%、半导体指数跌7.2%，同时10年美债收益率降至4.931%，表明投资者将AI资本回报问题与短期避险分开定价；在11月2日08:41 SGT路透市场快照中，美10Y约4.952%、日本股市跌约0.5%，纳指期货反弹约0.6%，说明亚洲早盘反弹不等于周五现金收盘损失已收复。第二，OPEC于11月1日正式宣布七个参与国将12月所需生产量维持在9月水平，取代10月31日匿名“原则上同意”的旧消息；这是配额决定，不是海湾实际油流量恢复的证据。11月2日00:11 GMT Reuters记录Brent约111.84美元、WTI约102.56美元的盘中价格，不能与10月30日另一合约/结算口径直接拼接为日涨跌。第三，韩国10月出口同比93.7%、半导体出口259.4%支持设备出货旺盛，却有假期工作日基数效应；11月2日新公布的韩国制造业PMI从53.9降至51.3、日本从54.1降至53.3，提示订单改善与月度动能放慢可以同时发生。美国ISM制造业于11月2日10:00 EST（23:00 SGT）计划公布，11月3日JOLTS与11月6日非农尚待公布；该周可能呈现增长放缓、能源成本高位、政策利率约束仍在的交叉风险。下一步不应使用没有时间同步的ETF资金流、期权Gamma或五日涨跌来证成任何单一结论。",
+  "market_regime": {
+    "growth": {
+      "state": "↗ 韩国贸易强劲但美科技利润率分化",
+      "evidence": "韩国10月出口+93.7%同比、半导体出口+259.4%；同比受工作日错位放大；美国企业AI资本投入与自由现金流匹配度仍需逐家核对。"
+    },
+    "inflation": {
+      "state": "↑ 海湾油价风险溢价高位",
+      "evidence": "10月30日Brent结算约117.63美元；10月31日OPEC+仅原则上维持目标且实际产量受战事限制，周日没有新交易日结算。"
+    },
+    "rates": {
+      "state": "↔ 美债避险与政策抗通胀并存",
+      "evidence": "Reuters称周五美国10Y收益率4.931%、日跌5.8bp；Fed10月28日维持3.75–4.00%，BoC加息至2.50%。"
+    },
+    "earnings": {
+      "state": "↓ AI投入现金回报严审",
+      "evidence": "Intel 10月30日下跌28.6%，纳指跌2.86%；韩国出口强劲只验证设备与芯片需求，非美国互联网企业现金ROI。"
+    },
+    "liquidity": {
+      "state": "↘ 周五风险资产卖压；周末无新流量",
+      "evidence": "股市周五显著承压，周末不能把旧ETF申赎或盘中报价包装成最新实盘资金流。"
+    },
+    "geopolitics": {
+      "state": "↔ 多哈谈判与军事尾部风险同在",
+      "evidence": "10月31日路透报道经卡塔尔协调的会谈仍在进行，美方未宣布决定对伊朗重新打击；无签署和平协议。"
+    },
+    "overall": {
+      "state": "AI Cash-Return Repricing / Gulf Oil Risk / Diplomacy without Deal",
+      "evidence": "股市风险重新定价、债券短线避险与油价供给溢价并存；周末消息必须以正式决议与周一实盘检验。"
+    }
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,580.07",
+      "change_1d": "-1.82%",
+      "change_5d": "-0.57%",
+      "signal": "↓ AI盈利质量与估值重估",
+      "driver": "10月23日7,623.68与10月30日同指数收盘比较",
+      "status": "LAST VERIFIED MARKET SESSION 2026-10-30; 2026-11-02 Monday new US cash close NOT YET OCCURRED; mixed vendor 5D values unverified",
+      "as_of": "2026-10-30 16:00 EDT",
+      "sources": [
+        "S01",
+        "S02",
+        "S03",
+        "S17",
+        "S33"
+      ]
+    },
+    {
+      "asset": "Dow Jones Industrial Average",
+      "level": "51,770.31",
+      "change_1d": "-1.09%",
+      "change_5d": "-0.85%",
+      "signal": "↓ 大盘风险偏好转弱",
+      "driver": "10月23日52,215.16至10月30日，同指数可比",
+      "status": "LAST VERIFIED MARKET SESSION 2026-10-30; 2026-11-02 Monday new US cash close NOT YET OCCURRED; mixed vendor 5D values unverified",
+      "as_of": "2026-10-30 16:00 EDT",
+      "sources": [
+        "S01",
+        "S02",
+        "S03",
+        "S17",
+        "S33"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "25,437.00",
+      "change_1d": "-2.86%",
+      "change_5d": "-2.00%",
+      "signal": "↓ 科技现金流与资本开支回报",
+      "driver": "10月23日25,955.34至10月30日；与AP周变动一致",
+      "status": "LAST VERIFIED MARKET SESSION 2026-10-30; 2026-11-02 Monday new US cash close NOT YET OCCURRED; mixed vendor 5D values unverified",
+      "as_of": "2026-10-30 16:00 EDT",
+      "sources": [
+        "S01",
+        "S02",
+        "S03",
+        "S17",
+        "S33"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,811.84",
+      "change_1d": "-1.66%",
+      "change_5d": "+1.3%",
+      "signal": "↔ 周线仍偏强，单日承压",
+      "driver": "AP报告周变动为+1.3%，不能混为当日涨幅",
+      "status": "LAST VERIFIED MARKET SESSION 2026-10-30; 2026-11-02 Monday new US cash close NOT YET OCCURRED; mixed vendor 5D values unverified",
+      "as_of": "2026-10-30 16:00 EDT",
+      "sources": [
+        "S03",
+        "S33"
+      ]
+    },
+    {
+      "asset": "STOXX Europe 600",
+      "level": "646.75",
+      "change_1d": "-0.36%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↔ 区域/技术股分化",
+      "driver": "与10月23日旧Reuters历史635.77比较的计算值，历史来源直读未成功，5D仅供参考",
+      "status": "LAST VERIFIED MARKET SESSION 2026-10-30; 2026-11-02 Monday new US cash close NOT YET OCCURRED; mixed vendor 5D values unverified",
+      "as_of": "2026-10-30 欧洲现金收盘",
+      "sources": [
+        "S11",
+        "S17",
+        "S33"
+      ]
+    },
+    {
+      "asset": "MSCI global equities gauge",
+      "level": "1,115.47",
+      "change_1d": "-1.51%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 全球科技风险传导",
+      "driver": "与10月23日Reuters先前1,118.97历史截点比较，非统一官方收盘",
+      "status": "LAST VERIFIED MARKET SESSION 2026-10-30; 2026-11-02 Monday new US cash close NOT YET OCCURRED; mixed vendor 5D values unverified; snapshot quote only, not official exchange settle",
+      "as_of": "2026-10-30 Reuters report snapshot",
+      "sources": [
+        "S01",
+        "S17",
+        "S33"
+      ]
+    },
+    {
+      "asset": "Brent front-month Dec contract",
+      "level": "US$117.63/bbl",
+      "change_1d": "+2.4%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ 海湾航运风险溢价",
+      "driver": "与AP引用的113.43美元不同到期合约不应串接；10月23日旧价合约精确归属待复核",
+      "status": "LAST VERIFIED MARKET SESSION 2026-10-30; 2026-11-02 Monday new US cash close NOT YET OCCURRED; mixed vendor 5D values unverified",
+      "as_of": "2026-10-30 Reuters settlement",
+      "sources": [
+        "S01",
+        "S02",
+        "S14",
+        "S33"
+      ]
+    },
+    {
+      "asset": "WTI crude futures",
+      "level": "US$104.12/bbl",
+      "change_1d": "+2.08%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ 原油供给安全风险",
+      "driver": "用10月23日103.27美元旧版front-month估算，不作为已严格验证5D",
+      "status": "LAST VERIFIED MARKET SESSION 2026-10-30; 2026-11-02 Monday new US cash close NOT YET OCCURRED; mixed vendor 5D values unverified",
+      "as_of": "2026-10-30 Reuters settlement",
+      "sources": [
+        "S01",
+        "S17",
+        "S18",
+        "S33"
+      ]
+    },
+    {
+      "asset": "U.S. Treasury 10Y secondary yield",
+      "level": "4.931%",
+      "change_1d": "-5.8bp",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 股市抛售推动久期买盘",
+      "driver": "与美国财政部CMT不是同一序列；10月23日报价4.99%是近似值，不能称可靠5D",
+      "status": "LAST VERIFIED MARKET SESSION 2026-10-30; 2026-11-02 Monday new US cash close NOT YET OCCURRED; mixed vendor 5D values unverified; snapshot quote only, not official exchange settle",
+      "as_of": "2026-10-30 Reuters secondary quote",
+      "sources": [
+        "S01",
+        "S33"
+      ]
+    },
+    {
+      "asset": "EUR/USD",
+      "level": "1.1163",
+      "change_1d": "-0.13%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↔ 美元利差与能源风险并存",
+      "driver": "10月23日历史快照1.1191非同刻汇率基准，5D计算可参考但非同步正式结算",
+      "status": "LAST VERIFIED MARKET SESSION 2026-10-30; 2026-11-02 Monday new US cash close NOT YET OCCURRED; mixed vendor 5D values unverified",
+      "as_of": "2026-10-30 Reuters FX quote",
+      "sources": [
+        "S01",
+        "S17",
+        "S33"
+      ]
+    },
+    {
+      "asset": "Spot gold",
+      "level": "US$3,874.58/oz",
+      "change_1d": "-3.63%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 高利率与风险仓位清算共振",
+      "driver": "报道快照，不等于统一交易所正式收盘；五日基准未取得",
+      "status": "LAST VERIFIED MARKET SESSION 2026-10-30; 2026-11-02 Monday new US cash close NOT YET OCCURRED; mixed vendor 5D values unverified",
+      "as_of": "2026-10-30 Reuters snapshot",
+      "sources": [
+        "S01",
+        "S33"
+      ]
+    },
+    {
+      "asset": "Spot silver",
+      "level": "US$49.06/oz",
+      "change_1d": "-6.36%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 高波动金属遭获利回吐",
+      "driver": "报道快照，不将不同交易时点拼接为精确5D",
+      "status": "LAST VERIFIED MARKET SESSION 2026-10-30; 2026-11-02 Monday new US cash close NOT YET OCCURRED; mixed vendor 5D values unverified",
+      "as_of": "2026-10-30 Reuters snapshot",
+      "sources": [
+        "S01",
+        "S33"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "HISTORICAL_RECONSTRUCTION_WITH_DISCLOSED_DATA_GAPS",
+    "asset_count": 12,
+    "level_coverage": {
+      "available": 12,
+      "total": 12,
+      "ratio": 1.0
+    },
+    "change_1d_coverage": {
+      "available": 12,
+      "total": 12,
+      "ratio": 1.0
+    },
+    "change_5d_coverage": {
+      "available": 4,
+      "total": 12,
+      "ratio": 0.3333333333333333
+    },
+    "explicit_gaps": [
+      "STOXX Europe 600",
+      "MSCI global equities gauge",
+      "Brent front-month Dec contract",
+      "WTI crude futures",
+      "U.S. Treasury 10Y secondary yield",
+      "EUR/USD",
+      "Spot gold",
+      "Spot silver"
+    ],
+    "policy": "价格和1D系10月30日旧交易日标记，不是11月2日美国收盘；其中次级行情快照应再次核实。5D中仅4项依据同指数两端报价初算，市场数据商标准化及原仓库验证尚未完成。未满足原约80%目标。",
+    "original_draft_publish_status": "NOT FOR PUBLICATION: current main Quality/Chromium and exact 5D corroboration unavailable"
+  },
+  "what_changed": [
+    {
+      "yesterday": "main生产最新2026-10-25仍是OPEC决议前的旧市场环境。",
+      "today": "OPEC于11月1日正式确认七国12月所需产量维持9月要求水平，不再是会前匿名原则消息。",
+      "why_it_matters": "目标产量并不能验证实际可出口供给，交易判断需要油轮、运保费与同期限原油报价。",
+      "sources": [
+        "S19",
+        "S28"
+      ]
+    },
+    {
+      "yesterday": "10月30日美国现金股市出现科技驱动的单日下跌。",
+      "today": "11月2日08:41 SGT路透早盘报道Nasdaq期货约反弹0.6%、亚洲股市承压，风险偏好未全面恢复。",
+      "why_it_matters": "期货反弹与上周五现金收盘是不同市场时点，先看周一正式开盘广度。",
+      "sources": [
+        "S20",
+        "S29"
+      ]
+    },
+    {
+      "yesterday": "11月1日韩国出口同比+93.7%、芯片+259.4%，假日工作日效应较大。",
+      "today": "11月2日韩国10月制造业PMI 51.3（前53.9），日本53.3（前54.1），两国仍扩张但增速下降。",
+      "why_it_matters": "亚洲出口金额强劲与订单调查放缓并不矛盾；需区分芯片订单、工作日效应及企业利润率。",
+      "sources": [
+        "S21",
+        "S22",
+        "S31"
+      ]
+    },
+    {
+      "yesterday": "10月25日正式日报未包含10月29日美国Q3 GDP初值。",
+      "today": "BEA于10月29日公布美国Q3实际GDP折年增长3.4%，Q2为2.2%。",
+      "why_it_matters": "总量增长未见衰退，但即将到来的ISM与就业更能验证四季度边际趋势。",
+      "sources": [
+        "S24",
+        "S30"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "11月1日OPEC官方确认维持12月七国产量目标，实物流量与配额仍脱钩",
+      "status": "Released/Occurred — 2026-11-01 OPEC primary",
+      "event_time_et": "2026-11-01–2026-11-02; time where independently confirmed in sources",
+      "event_time_sgt": "2026-11-01–2026-11-02 SGT; source-specific event times differ",
+      "what_happened": "OPEC正式公报显示沙特、俄罗斯等七国在11月1日线上会议同意12月所需产量维持9月水平，下一次会议为11月29日；前一版仅有匿名会前原则消息；如今决议已正式公布，但其性质是生产目标、非战争期间的港口与油轮实际发运。",
+      "what_changed": "前一版仅有匿名会前原则消息；如今决议已正式公布，但其性质是生产目标、非战争期间的港口与油轮实际发运。",
+      "why_it_matters": "目标不增产会维持供应侧预期约束，实际油运若改善则可令部分风险溢价回吐；要先看同合约油价和船舶数据。",
+      "transmission": "正式配额维持→名义供应不增；海运受阻→可交割原油有限→能源通胀与利率压力。",
+      "affected_assets": [
+        "Brent same tenor",
+        "WTI",
+        "Inflation breakevens",
+        "UST10Y"
+      ],
+      "direction": "Two-sided cross-asset sensitivity",
+      "importance": "★★★★★",
+      "confirmation": "实际出口和运保费仍紧且同期限原油风险溢价存在；目标不增产会维持供应侧预期约束，实际油运若改善则可令部分风险溢价回吐；要先看同合约油价和船舶数据。",
+      "invalidation": "油运第三方数据持续正常化并且同期限油价回落；正式配额维持→名义供应不增；海运受阻→可交割原油有限→能源通胀与利率压力。",
+      "sources": [
+        "S19",
+        "S28"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "11月2日韩国与日本制造业PMI双双降速，AI订单强势不能掩盖总体动能放缓",
+      "status": "Released/Occurred — 2026-11-02 00:37–00:41 UTC",
+      "event_time_et": "2026-11-01–2026-11-02; time where independently confirmed in sources",
+      "event_time_sgt": "2026-11-01–2026-11-02 SGT; source-specific event times differ",
+      "what_happened": "韩国10月制造业PMI 51.3、上月53.9；日本10月53.3、上月54.1。两国仍扩张，但订单和产出增速放慢；与韩国11月1日公布的出口同比93.7%并列观察；出口数据受假期工作日效应扭曲，PMI反映企业调查的月度速度。",
+      "what_changed": "与韩国11月1日公布的出口同比93.7%并列观察；出口数据受假期工作日效应扭曲，PMI反映企业调查的月度速度。",
+      "why_it_matters": "强芯片需求和更广泛制造业放缓并存，会让亚洲资产内部、行业和信用的利润率分化比总指数更重要。",
+      "transmission": "进口能源成本↑、订单扩张放缓→制造业利润率↓→亚洲股市与地区利率路径差异。",
+      "affected_assets": [
+        "KOSPI",
+        "Nikkei",
+        "JPY",
+        "KRW",
+        "Asian semiconductors"
+      ],
+      "direction": "Two-sided cross-asset sensitivity",
+      "importance": "★★★★★",
+      "confirmation": "后续新订单改善且工业价格压力缓和；强芯片需求和更广泛制造业放缓并存，会让亚洲资产内部、行业和信用的利润率分化比总指数更重要。",
+      "invalidation": "PMI继续回落并伴随出口数量/利润率疲软；进口能源成本↑、订单扩张放缓→制造业利润率↓→亚洲股市与地区利率路径差异。",
+      "sources": [
+        "S21",
+        "S22",
+        "S31"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "11月2日美国ISM、11月3日JOLTS与本周AI财报将检验科技估值和宏观折现率",
+      "status": "Confirmed Upcoming — first ISM 2026-11-02 10:00 EST",
+      "event_time_et": "2026-11-01–2026-11-02; time where independently confirmed in sources",
+      "event_time_sgt": "2026-11-01–2026-11-02 SGT; source-specific event times differ",
+      "what_happened": "10月30日纳指跌2.86%后，本周苹果、AMD、Palantir财报受关注；ISM当日尚未公布，JOLTS与11月6日就业报告排期可由BLS核对。",
+      "what_changed": "从交易预期转向正式数据和经营现金流，避免将华尔街对前瞻盈利的推测当作已经实现的结果。",
+      "why_it_matters": "制造业订单/价格与科技自由现金流共同影响对12月政策、信用溢价和纳指估值的再定价。",
+      "transmission": "ISM订单/价格→增长与通胀预期→美债期限利率；AI财报现金回款→股权估值与借款利差。",
+      "affected_assets": [
+        "US 2Y/10Y",
+        "Nasdaq/SOX",
+        "USD",
+        "AI corporate credit"
+      ],
+      "direction": "Two-sided cross-asset sensitivity",
+      "importance": "★★★★★",
+      "confirmation": "正式ISM和企业财报同时支持盈利韧性且实际现金流改善",
+      "invalidation": "价格指标再加速或财报自由现金流指引恶化；ISM订单/价格→增长与通胀预期→美债期限利率；AI财报现金回款→股权估值与借款利差。",
+      "sources": [
+        "S20",
+        "S23",
+        "S30",
+        "S32",
+        "S29"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top Market Catalysts",
+      "status": "OPEC正式决议、亚洲PMI与美国ISM形成三条确认链",
+      "summary": "OPEC于11月1日正式维持七国12月所需产量水平，已不再是会前匿名预测；实际油轮出口仍需独立观察。；韩国和日本10月制造业PMI仍高于50但增速放慢。接下来ISM及科技财报将验证需求、成本和现金回报是否同时承压。",
+      "paragraphs": [
+        "OPEC于11月1日正式维持七国12月所需产量水平，已不再是会前匿名预测；实际油轮出口仍需独立观察。",
+        "韩国和日本10月制造业PMI仍高于50但增速放慢。接下来ISM及科技财报将验证需求、成本和现金回报是否同时承压。"
+      ],
+      "tables": [],
+      "sources": [
+        "S19",
+        "S21",
+        "S22",
+        "S32"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings",
+      "status": "证据缺口：当期缺少可独立核验的结构化公司级财报与一致预期信息",
+      "summary": "原始研究只保留宏观或企业融资线索，未存足够可核验的公司级财报及统一市场预期；故本历史补档不制造单个公司的报表数据或虚构公司财报事件。",
+      "paragraphs": [
+        "路透10月30日收盘报道，Intel股价跌28.6%、SOX指数跌约7.2%；299家已报S&P500公司中约82%盈利好于一致预期，但这不能替代AI资本开支现金回收的逐家公司核查。",
+        "本周Apple、AMD与Palantir财报仍在未来，禁止预填业绩和盘后涨跌。应检查经营现金流、折旧、全年资本开支、云业务利润率及资产负债表融资成本。"
+      ],
+      "tables": [],
+      "sources": [
+        "S29",
+        "S25",
+        "S20"
+      ],
+      "reported": [],
+      "upcoming_72h": []
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "US Macro Data & Forecasts",
+      "status": "美国Q3增长3.4%，四季度动能需要ISM与就业再验证",
+      "summary": "美国BEA在10月29日公布Q3实际GDP折年增速3.4%，高于Q2的2.2%；这是已实现季度数据，不等于11月增长预期。；11月2日ISM制造业、11月3日JOLTS和11月6日非农尚未公布；就业数据08:30 EST对应北京时间21:30，不能以09:00研究截止填入实际值。",
+      "paragraphs": [
+        "美国BEA在10月29日公布Q3实际GDP折年增速3.4%，高于Q2的2.2%；这是已实现季度数据，不等于11月增长预期。",
+        "11月2日ISM制造业、11月3日JOLTS和11月6日非农尚未公布；就业数据08:30 EST对应北京时间21:30，不能以09:00研究截止填入实际值。"
+      ],
+      "tables": [],
+      "sources": [
+        "S24",
+        "S23",
+        "S30",
+        "S32"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Central Banks & Rates",
+      "status": "央行紧缩风险与债市避险需求同时存在",
+      "summary": "10月30日美10年国债二级收益率据路透约4.931%，11月2日早盘报道约4.952%；两者非官方日收盘可比序列，不能简单解释为政策路径转向。；本周澳储行11月3日14:30 AEDT、英国央行11月5日12:00 GMT都有正式公告；在结果发布前，只能写既定日程或明确标示的市场预期。",
+      "paragraphs": [
+        "10月30日美10年国债二级收益率据路透约4.931%，11月2日早盘报道约4.952%；两者非官方日收盘可比序列，不能简单解释为政策路径转向。",
+        "本周澳储行11月3日14:30 AEDT、英国央行11月5日12:00 GMT都有正式公告；在结果发布前，只能写既定日程或明确标示的市场预期。"
+      ],
+      "tables": [],
+      "sources": [
+        "S20",
+        "S26",
+        "S27",
+        "S33"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Geopolitics & Commodity Security",
+      "status": "OPEC配额正式落地，但谈判尚未转化为可验证航运恢复",
+      "summary": "11月1日OPEC官方宣布七国12月维持9月生产目标，下一轮线上会议计划11月29日；名义产量不能作为实际出口已恢复的证据。；Reuters 11月2日报道伊朗与卡塔尔官员连续第三天接触。外交进程仍需协议文本、执行时间和第三方船运/保险数据验证。",
+      "paragraphs": [
+        "11月1日OPEC官方宣布七国12月维持9月生产目标，下一轮线上会议计划11月29日；名义产量不能作为实际出口已恢复的证据。",
+        "Reuters 11月2日报道伊朗与卡塔尔官员连续第三天接触。外交进程仍需协议文本、执行时间和第三方船运/保险数据验证。"
+      ],
+      "tables": [],
+      "sources": [
+        "S19",
+        "S28"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "Regional & China Policy",
+      "status": "东亚芯片订单强而制造业景气增速趋缓，区域政策各异",
+      "summary": "韩国10月出口同比增加93.7%，半导体出口增加259.4%，但同比受2025年同月假期工作天数影响。11月2日韩国制造业PMI降至51.3，日本降至53.3，均仍位于扩张区间。；对中国和欧洲最新产业政策、本周是否存在新出台正式措施尚缺乏足够原始证据，暂记“无可独立核实的重大新增”；不从市场评论推断具体新政策已经落地。",
+      "paragraphs": [
+        "韩国10月出口同比增加93.7%，半导体出口增加259.4%，但同比受2025年同月假期工作天数影响。11月2日韩国制造业PMI降至51.3，日本降至53.3，均仍位于扩张区间。",
+        "对中国和欧洲最新产业政策、本周是否存在新出台正式措施尚缺乏足够原始证据，暂记“无可独立核实的重大新增”；不从市场评论推断具体新政策已经落地。"
+      ],
+      "tables": [],
+      "sources": [
+        "S31",
+        "S21",
+        "S22",
+        "S11"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "Index Rebalances & Corporate Actions",
+      "status": "科技卖盘的市场广度比未经核实的指数调整更重要",
+      "summary": "10月30日S&P500 -1.82%、Nasdaq -2.86%、SOX -7.2%；Reuters记录Nasdaq跌股数显著超过涨股数。；本研究截止前未获取指数提供商正式的当日调仓、权重或临时成分股变更公告；不能把板块市值损失表述为指数公司再平衡。",
+      "paragraphs": [
+        "10月30日S&P500 -1.82%、Nasdaq -2.86%、SOX -7.2%；Reuters记录Nasdaq跌股数显著超过涨股数。",
+        "本研究截止前未获取指数提供商正式的当日调仓、权重或临时成分股变更公告；不能把板块市值损失表述为指数公司再平衡。"
+      ],
+      "tables": [],
+      "sources": [
+        "S29",
+        "S25"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "Positioning & Cross-Asset Flows",
+      "status": "风险资产净流量尚无统一核验，债券收益率变化是价格不是申赎",
+      "summary": "上周科技抛售与长端美国国债避险买盘并存，11月2日早盘美10Y约4.952%；收益率与信用违约保险报价并不等于ETF一级市场资金流。；缺少同步、逐基金可核验的ETF申赎与机构期货持仓记录，本轮不编造单日资金净流入/流出或交易员持仓。",
+      "paragraphs": [
+        "上周科技抛售与长端美国国债避险买盘并存，11月2日早盘美10Y约4.952%；收益率与信用违约保险报价并不等于ETF一级市场资金流。",
+        "缺少同步、逐基金可核验的ETF申赎与机构期货持仓记录，本轮不编造单日资金净流入/流出或交易员持仓。"
+      ],
+      "tables": [],
+      "sources": [
+        "S20",
+        "S33"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF News, Flows & Cross-Asset Implementation",
+      "status": "ETF证据不足，保留资产表现和基金申赎的区分",
+      "summary": "科技和芯片股价格剧烈变化不直接证明ETF申赎规模，当前未获取权威、可复算、同一截点的新增申赎数据。；后续须分别从发行人披露与交易所成交记录核验净资产值、一级申赎及成交，而不是从一日ETF价格猜测真实资金进出。",
+      "paragraphs": [
+        "科技和芯片股价格剧烈变化不直接证明ETF申赎规模，当前未获取权威、可复算、同一截点的新增申赎数据。",
+        "后续须分别从发行人披露与交易所成交记录核验净资产值、一级申赎及成交，而不是从一日ETF价格猜测真实资金进出。"
+      ],
+      "tables": [],
+      "sources": [
+        "S29",
+        "S20"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "Options Expiry",
+      "status": "不凭科技股单日下跌倒推Gamma仓位或期权持仓结构",
+      "summary": "没有完整同时间点的交易所期权链、持仓量和隐含波动率，因此不输出gamma flip、max pain或具体0DTE方向性规模。；若周一现货市场广度和指数期权隐波同步变化，应先取得正式合约口径，再评估头寸敏感度而非补造阈值。",
+      "paragraphs": [
+        "没有完整同时间点的交易所期权链、持仓量和隐含波动率，因此不输出gamma flip、max pain或具体0DTE方向性规模。",
+        "若周一现货市场广度和指数期权隐波同步变化，应先取得正式合约口径，再评估头寸敏感度而非补造阈值。"
+      ],
+      "tables": [],
+      "sources": [
+        "S29",
+        "S20"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "US Treasury & Global Sovereign Rates",
+      "status": "美国长债避险受油价高位约束，本周债券供给细节待正式财政部公告",
+      "summary": "Reuters 10月30日记录美10Y收益率4.931%，11月2日亚洲早间约4.952%；两者为报道截点，不是同源的每日收盘序列。；本次未取得可核对的新国债拍卖结果及WI、tail、bid-to-cover与投标分配，因此不发布新拍卖成绩；财政融资日程需以官方公告为准。",
+      "paragraphs": [
+        "Reuters 10月30日记录美10Y收益率4.931%，11月2日亚洲早间约4.952%；两者为报道截点，不是同源的每日收盘序列。",
+        "本次未取得可核对的新国债拍卖结果及WI、tail、bid-to-cover与投标分配，因此不发布新拍卖成绩；财政融资日程需以官方公告为准。"
+      ],
+      "tables": [],
+      "sources": [
+        "S33",
+        "S20"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Energy & Metals",
+      "status": "原油早盘回落不等于物理供给风险解除",
+      "summary": "Reuters记录11月2日00:11 GMT Brent约111.84美元、WTI约102.56美元，均为盘中行情；不得与上周五不同合约基准结算价直接拼接计算1D。；OPEC于11月1日决定维持12月产量目标。若海运仍受损，原油→运输/能源成本→通胀预期→利率/风险资产的传导仍成立。",
+      "paragraphs": [
+        "Reuters记录11月2日00:11 GMT Brent约111.84美元、WTI约102.56美元，均为盘中行情；不得与上周五不同合约基准结算价直接拼接计算1D。",
+        "OPEC于11月1日决定维持12月产量目标。若海运仍受损，原油→运输/能源成本→通胀预期→利率/风险资产的传导仍成立。"
+      ],
+      "tables": [],
+      "sources": [
+        "S19",
+        "S28",
+        "S20",
+        "S33"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "Financing & AI Infrastructure",
+      "status": "AI融资成本与回报周期在财报季进入实证检验",
+      "summary": "路透10月30日报道超大规模云厂增加AI资本开支，股债市场担忧现金回款与融资依赖；不同机构预测是研究估计，不是已投入资本的事实。；Intel股价大跌与韩国芯片出口高增速并存，说明设备出货端与最终资本回报的证据层级不同；未确认任何新增违约或债务发行数字。",
+      "paragraphs": [
+        "路透10月30日报道超大规模云厂增加AI资本开支，股债市场担忧现金回款与融资依赖；不同机构预测是研究估计，不是已投入资本的事实。",
+        "Intel股价大跌与韩国芯片出口高增速并存，说明设备出货端与最终资本回报的证据层级不同；未确认任何新增违约或债务发行数字。"
+      ],
+      "tables": [],
+      "sources": [
+        "S25",
+        "S29",
+        "S31"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Breaking News & 24H Event Window",
+      "status": "最近24小时可核实新增主要来自OPEC正式公报与亚洲制造业调查",
+      "summary": "OPEC 11月1日正式发布七国12月维持目标的公告，更新了10月31日Reuters援引匿名人士的预期；公告具体小时未在本轮来源中独立核实。；Reuters分别于11月2日00:37、00:41 UTC发布日本与韩国10月制造业PMI，以及亚洲市场开盘快照；截至研究截止没有周一美股现金收盘。",
+      "paragraphs": [
+        "OPEC 11月1日正式发布七国12月维持目标的公告，更新了10月31日Reuters援引匿名人士的预期；公告具体小时未在本轮来源中独立核实。",
+        "Reuters分别于11月2日00:37、00:41 UTC发布日本与韩国10月制造业PMI，以及亚洲市场开盘快照；截至研究截止没有周一美股现金收盘。"
+      ],
+      "tables": [],
+      "sources": [
+        "S19",
+        "S21",
+        "S22",
+        "S20"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "24–72H Market Impact & Positioning",
+      "status": "未来72小时先看ISM/财报证据，再判油价回落的真实性",
+      "summary": "当前需同时评估科技现金流、美国长端收益率、同期限油价、亚洲制造业动能；单一指数反弹无法证实组合风险消失。；今晚先看美股广度和ISM订单/价格，随后看11月3日JOLTS及央行决议；海湾物流好转与能源期货报价时间差必须重新核验。",
+      "paragraphs": [
+        "当前需同时评估科技现金流、美国长端收益率、同期限油价、亚洲制造业动能；单一指数反弹无法证实组合风险消失。",
+        "今晚先看美股广度和ISM订单/价格，随后看11月3日JOLTS及央行决议；海湾物流好转与能源期货报价时间差必须重新核验。"
+      ],
+      "tables": [],
+      "sources": [
+        "S20",
+        "S19",
+        "S21",
+        "S22",
+        "S30",
+        "S32"
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "Growth Impulse",
+      "current": "→ 亚洲扩张降速",
+      "yesterday": "上轮韩国出口增长提供需求证据",
+      "change_reason": "韩国PMI由53.9降至51.3，日本由54.1降至53.3，虽均高于50但短期速度减弱。",
+      "evidence": "Reuters 11月2日00:37–00:41 UTC发布两个国家制造业调查结果。",
+      "sources": [
+        "S21",
+        "S22"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "Inflation Impulse",
+      "current": "↑ 海湾油运溢价仍高",
+      "yesterday": "周末只有会前供应目标消息",
+      "change_reason": "OPEC正式维持12月目标但未证明出口恢复；日本制造业投入价格通胀加快。",
+      "evidence": "OPEC 11月1日官方公报，Reuters 11月2日日本制造业报道。",
+      "sources": [
+        "S19",
+        "S22",
+        "S28"
+      ]
+    },
+    "rates_pressure": {
+      "label": "Rates Pressure",
+      "current": "→ 避险下行与高油价相持",
+      "yesterday": "美国10年期二级收益率上周末4.931%",
+      "change_reason": "Reuters 11月2日早盘快照10Y约4.952%，美元仍受数据和能源约束。",
+      "evidence": "这是早盘二级市场报价，不是财政部当日CMT结算。",
+      "sources": [
+        "S20",
+        "S33"
+      ]
+    },
+    "earnings_revision": {
+      "label": "Earnings Revision",
+      "current": "↓ AI回报遭严审",
+      "yesterday": "Intel周五暴跌、市场质疑建设资本回收",
+      "change_reason": "本周Apple、AMD等财报尚未公布，强订单不等于自由现金流回正。",
+      "evidence": "路透10月30日科技下跌及11月2日财报展望。",
+      "sources": [
+        "S20",
+        "S25",
+        "S29"
+      ]
+    },
+    "liquidity": {
+      "label": "Liquidity",
+      "current": "↓ 信用风险敏感",
+      "yesterday": "旧版未确认ETF一级申赎",
+      "change_reason": "Reuters提到上周企业违约保险成本抬升，不能据此编造实时ETF流量。",
+      "evidence": "缺乏今日统一CDS与ETF申赎账本，流动性判断以风险敏感方向呈现。",
+      "sources": [
+        "S20",
+        "S29"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "Geopolitical Risk",
+      "current": "→ 外交继续但无执行协议",
+      "yesterday": "美伊通过卡塔尔讨论缓和方案",
+      "change_reason": "OPEC 12月目标不变已获正式证实，卡塔尔斡旋未证实运输全面恢复。",
+      "evidence": "Reuters 11月2日确认谈判继续，OPEC 11月1日确认配额。",
+      "sources": [
+        "S19",
+        "S28"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base — AI capex ROI scrutiny and oil supply bottleneck coexist",
+      "probability": "50%（研究判断，非衍生品概率）",
+      "trigger": "OPEC维持配额、谈判持续但实体供应仍受约束，财报现金流质量参差。",
+      "expected_market_reaction": "美科技高波动与能源溢价并存；美国利率在增长降速和油价高位间摇摆。",
+      "assets_most_sensitive": [
+        "Nasdaq",
+        "SOX",
+        "Brent",
+        "UST10Y",
+        "AI credit"
+      ],
+      "what_confirms_it": "ISM不出现极端意外、企业经营现金流分化而非系统性破坏、航道风险不恶化。",
+      "what_invalidates_it": "外交协议使供应快速恢复或AI现金回报全面失速。"
+    },
+    "bull_case": {
+      "label": "Bull — verifiable shipping normalization plus AI cash-flow beat",
+      "probability": "25%（研究判断）",
+      "trigger": "有可验证的运保费下降和船舶恢复，且科技财报证明现金变现领先资本投入。",
+      "expected_market_reaction": "油价风险溢价收敛、科技股反弹广度扩大，信用融资压力下降。",
+      "assets_most_sensitive": [
+        "Nasdaq",
+        "SOX",
+        "Brent",
+        "USD"
+      ],
+      "what_confirms_it": "OPEC以外的实际航运数据与正式公司财报同时确认。",
+      "what_invalidates_it": "谈判没有可执行条款或公司现金流继续下修。"
+    },
+    "bear_case": {
+      "label": "Bear — physical oil disruption and AI financing shock compound",
+      "probability": "25%（研究判断）",
+      "trigger": "实际油运持续受损，ISM价格上行且AI企业现金流/资本结构恶化。",
+      "expected_market_reaction": "科技股及信用同时承压，油价再涨令久期避险难以持续。",
+      "assets_most_sensitive": [
+        "Brent",
+        "UST2Y",
+        "UST10Y",
+        "Nasdaq",
+        "Credit"
+      ],
+      "what_confirms_it": "实物能源供应证据、宏观价格调查和企业融资成本同向恶化。",
+      "what_invalidates_it": "航运和政策风险得到可核实缓解，企业实际现金流改善。"
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-11-02 22:30 SGT",
+      "et": "2026-11-02 09:30 EST",
+      "event": "美国现金股票市场开盘，验证亚洲早盘科技期货反弹",
+      "consensus": "不适用",
+      "previous": "10月30日Nasdaq 25,437.00 / S&P500 7,580.07",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S20",
+        "S29"
+      ]
+    },
+    {
+      "sgt": "2026-11-02 23:00 SGT",
+      "et": "2026-11-02 10:00 EST",
+      "event": "美国10月ISM制造业PMI正式数据",
+      "consensus": "公开机构日历54.7（TD Economics）；不作为官方共识",
+      "previous": "54.5（机构日历；官方发布时复核）",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S34",
+        "S32",
+        "S20"
+      ]
+    },
+    {
+      "sgt": "2026-11-03 11:30 SGT",
+      "et": "2026-11-02 22:30 EST",
+      "event": "澳储行11月3日14:30 AEDT利率决议",
+      "consensus": "未独立确认可靠定量一致预期",
+      "previous": "以前次澳储行决议为准，本轮未核实具体政策利率",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S26"
+      ]
+    },
+    {
+      "sgt": "2026-11-03 23:00 SGT",
+      "et": "2026-11-03 10:00 EST",
+      "event": "美国9月JOLTS职位空缺数据",
+      "consensus": "未核实统一预测",
+      "previous": "待正式发布核对",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S30"
+      ]
+    },
+    {
+      "sgt": "2026-11-05 20:00 SGT",
+      "et": "2026-11-05 07:00 EST",
+      "event": "英国央行货币政策决定（12:00 GMT）",
+      "consensus": "未核实统一预测",
+      "previous": "以BoE公告为准",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S27"
+      ]
+    },
+    {
+      "sgt": "2026-11-06 21:30 SGT",
+      "et": "2026-11-06 08:30 EST",
+      "event": "美国10月非农就业及失业率报告",
+      "consensus": "未核实统一预测",
+      "previous": "前值可能修订",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S23",
+        "S30"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "AI资本开支兑现慢于盈利预期，科技股与关联企业信用风险同步重定价",
+      "why_not_fully_priced": "10月30日纳指与半导体跌幅显著，但韩国芯片出口仍强；市场不能仅凭需求端数据证明所有云厂现金回报达到融资成本。",
+      "trigger": "本周财报证实自由现金流弱化或新一轮融资成本上行，且周五股市广度疲弱延续。",
+      "transmission": "资本开支现金流出增加→净融资需求与风险溢价上行→科技股估值/债务偿付缓冲收紧。",
+      "first_asset": "Nasdaq/SOX and AI credit",
+      "theme_id": "ai_financing_quality",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-16",
+      "last_seen": "2026-11-02",
+      "sources": [
+        "S20",
+        "S25",
+        "S29"
+      ]
+    },
+    {
+      "risk": "海湾能源出口恢复滞后于OPEC+名义配额，价格回落后再度形成通胀冲击",
+      "why_not_fully_priced": "11月1日正式决议只涉及目标产量；卡塔尔斡旋尚不等于霍尔木兹航道恢复，短期Brent反弹或回落都不能验证实物流量。",
+      "trigger": "船舶跟踪或保险机构证实持续中断，或会谈出现可信重大挫折。",
+      "transmission": "物理运输风险→原油和运保费↑→制造业进口成本与通胀预期↑→美债与股市压力。",
+      "first_asset": "Brent same-tenor futures / shipping insurance",
+      "theme_id": "energy_geopolitical_supply",
+      "lifecycle_state": "active",
+      "first_seen": "2026-09-01",
+      "last_seen": "2026-11-02",
+      "sources": [
+        "S19",
+        "S28",
+        "S20"
+      ]
+    },
+    {
+      "risk": "美国制造业和就业数据强化滞胀交易，使降息与科技高估值的缓冲同时失效",
+      "why_not_fully_priced": "截至研究截止，本周ISM、JOLTS、非农尚未发布；部分市场预期和盘中利率不能代替正式经济数据。",
+      "trigger": "新订单转弱同时价格或工资再次上行，或者就业显著弱于可靠一致预期。",
+      "transmission": "增长负面惊喜+能源成本高企→实际利润率与政策宽松空间同步恶化→收益率曲线及风险资产波动。",
+      "first_asset": "UST2Y/10Y, USD, S&P 500",
+      "theme_id": "us_macro_stagflation",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-29",
+      "last_seen": "2026-11-02",
+      "sources": [
+        "S24",
+        "S23",
+        "S30",
+        "S32"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "美国10月ISM制造业PMI：检验增长扩张与能源成本能否兼容",
+    "status": "Confirmed Upcoming — 2026-11-02 10:00 EST; outcome not yet released",
+    "date": "2026-11-02",
+    "et": "2026-11-02 10:00 EST",
+    "sgt": "2026-11-02 23:00 SGT",
+    "consensus": "TD Economics 10月30日公开日历：54.7（券商口径，不代表官方预测）",
+    "previous": "TD Economics公布上月制造业PMI 54.5；发布时需核对是否修订",
+    "actual": "待公布",
+    "why_it_matters": "制造业订单/价格是判断AI投入外溢是否抵得过高油价与高利率的早期数据。美东11月1日转为EST，10:00 EST为23:00 SGT。",
+    "first_market": "USD, UST2Y/10Y, US equity futures and regular-session Nasdaq breadth",
+    "bull_interpretation": "新订单有韧性且价格分项回落，同时科技股现金流指引改善，有助缓解折现率与利润率双重压力。",
+    "bear_interpretation": "增长分项放缓同时价格分项抬升，使盈利与通胀预期同步恶化。",
+    "watch_first": [
+      "先核对ISM制造业总指数、新订单与价格指数官方逐项发布，区分增长与成本冲击，禁止以当日预期填入实际。",
+      "随后观察美国2Y/10Y收益率、美元及Nasdaq市场广度是否与同一数据方向一致，并核对价格变化的时间窗口。",
+      "盘后复核能源同期限合约与AI企业现金流指引，确认初始股债反应是否被地缘消息或财报逆转。"
+    ],
+    "sources": [
+      "S34",
+      "S32",
+      "S20",
+      "S29"
+    ]
+  },
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S25",
+    "S26",
+    "S27",
+    "S28",
+    "S29",
+    "S30",
+    "S31",
+    "S32",
+    "S34",
+    "S33"
+  ],
+  "asia_snapshot": {
+    "as_of": "2026-11-02 00:11–00:41 UTC / 08:11–08:41 SGT; Reuters Asia report, non-synchronous market snapshots",
+    "brent": "Brent approximately USD111.72/bbl in Reuters 00:41 UTC report; early-session quote, contract basis must be separately verified",
+    "wti": "WTI approximately USD102.37/bbl in Reuters 00:41 UTC report; early-session quote, not Oct30 settlement",
+    "dxy": "尚无法可靠确认",
+    "s_and_p_futures": "S&P 500 futures approximately +0.4% in Reuters 00:41 UTC snapshot; no subsequent-session cash close",
+    "nasdaq_futures": "Nasdaq futures approximately +0.6% in Reuters 00:41 UTC snapshot",
+    "korea_equities": "KOSPI approximately -0.8% in Reuters 00:41 UTC snapshot; October Korea manufacturing PMI 51.3 (Sep 53.9)",
+    "sources": [
+      "S20",
+      "S21",
+      "S28"
+    ]
+  },
+  "reconstruction": {
+    "is_reconstructed": true,
+    "reconstructed_at": "2026-11-02T10:21:21+08:00",
+    "historical_cutoff_sgt": "2026-11-02 09:07 SGT",
+    "original_snapshot_recovered": true,
+    "original_candidate_status": "official",
+    "original_candidate_checkpoint": "GMD-2026-11-02-RESEARCH-ONLY-NOT-FOR-PUBLICATION.zip",
+    "limitations": [
+      "原始研究截止为 2026-11-02 09:07 SGT，原稿在当天并未通过完整Quality/Chromium，也未通过正常发布链路。",
+      "本稿在 2026-11-02T10:21:21+08:00 根据私有保存的原始研究材料经事后审计重建；不是当日按时上线的原生Morning Official。",
+      "原始研究稿中的行情、消息和来源引用保留历史as_of，当前动态网页不构成原始页面留存；部分源无法重新取得可证实的同刻快照。",
+      "5D与部分跨供应商行情未有完全独立的可比结算/交易日证据，缺口按原始数据说明保留，不能解释为100%覆盖。",
+      "截面之后公布的宏观、政策、财报、交易收盘和事件进展不得回填到此历史正文。"
+    ]
+  }
+}
