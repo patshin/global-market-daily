@@ -315,33 +315,43 @@
       list.dataset.itemCount = String(list.children.length);
     }
 
-    // Publish deterministic diagnostics into the rendered DOM so the public
-    // Pages health check can validate real layout at desktop and mobile widths.
-    requestAnimationFrame(() => requestAnimationFrame(() => {
-      const root = document.documentElement;
-      const signalCards = [...document.querySelectorAll("#signal-panel .signal-card--editorial")];
-      const watchItems = [...document.querySelectorAll("#next-catalyst .watch-list--editorial > li")];
-      const factsAreDistinct = signalCards.every((card) => {
-        const values = [...card.querySelectorAll(".signal-card__fact-value")]
-          .map((node) => node.textContent.trim())
-          .filter(Boolean);
-        return new Set(values).size === values.length;
-      });
-      const signalComplete = signalCards.length === 6 && signalCards.every((card) =>
-        card.querySelector(".signal-card__label")?.textContent.trim() &&
-        card.querySelector(".signal-card__state")?.textContent.trim() &&
-        card.querySelector(".signal-card__fact-value")?.textContent.trim()
-      );
-      const watchComplete = watchItems.length >= 2 && watchItems.length <= 3 &&
-        watchItems.every((item) => item.textContent.trim());
-      const overflow = root.scrollWidth > root.clientWidth + 2;
+  };
 
-      root.dataset.gmdEditorialReady = String(Boolean(signalComplete && factsAreDistinct && watchComplete));
-      root.dataset.gmdSignalCount = String(signalCards.length);
-      root.dataset.gmdWatchCount = String(watchItems.length);
-      root.dataset.gmdSignalFactsDistinct = String(factsAreDistinct);
-      root.dataset.gmdHorizontalOverflow = String(overflow);
-    }));
+  // The full report must be visible before we measure its editorial layout.
+  // Publishing the probe only inside nested animation frames races Chromium's
+  // --dump-dom snapshot, particularly on mobile. Publish synchronously after
+  // showReport() and remeasure on the next painted frames for late layout changes.
+  function publishEditorialDiagnostics() {
+    const root = document.documentElement;
+    const signalCards = [...document.querySelectorAll("#signal-panel .signal-card--editorial")];
+    const watchItems = [...document.querySelectorAll("#next-catalyst .watch-list--editorial > li")];
+    const factsAreDistinct = signalCards.every((card) => {
+      const values = [...card.querySelectorAll(".signal-card__fact-value")]
+        .map((node) => node.textContent.trim())
+        .filter(Boolean);
+      return new Set(values).size === values.length;
+    });
+    const signalComplete = signalCards.length === 6 && signalCards.every((card) =>
+      card.querySelector(".signal-card__label")?.textContent.trim() &&
+      card.querySelector(".signal-card__state")?.textContent.trim() &&
+      card.querySelector(".signal-card__fact-value")?.textContent.trim()
+    );
+    const watchComplete = watchItems.length >= 2 && watchItems.length <= 3 &&
+      watchItems.every((item) => item.textContent.trim());
+    const overflow = root.scrollWidth > root.clientWidth + 2;
+
+    root.dataset.gmdEditorialReady = String(Boolean(signalComplete && factsAreDistinct && watchComplete));
+    root.dataset.gmdSignalCount = String(signalCards.length);
+    root.dataset.gmdWatchCount = String(watchItems.length);
+    root.dataset.gmdSignalFactsDistinct = String(factsAreDistinct);
+    root.dataset.gmdHorizontalOverflow = String(overflow);
+  }
+
+  const originalShowReport = showReport;
+  showReport = function showReportWithEditorialDiagnostics(...args) {
+    const result = originalShowReport(...args);
+    publishEditorialDiagnostics();
+    requestAnimationFrame(() => requestAnimationFrame(publishEditorialDiagnostics));
+    return result;
   };
 })();
-
