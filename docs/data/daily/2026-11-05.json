@@ -1,0 +1,1039 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-11-05",
+  "edition": "Morning Official",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-11-05 09:16 SGT",
+  "data_cutoff_et": "2026-11-04 20:16 EST",
+  "last_updated": "2026-11-05T09:16:24+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-11-05T09:00:00+08:00",
+    "started_at_sgt": "2026-11-05T09:01:41+08:00",
+    "research_cutoff_sgt": "2026-11-05T09:16:24+08:00",
+    "mode": "contemporaneous_morning_research",
+    "note": "全部已公布事件限于真实研究截止；美国市场使用11月4日现金/结算或明确标记时刻的盘中快照；未来经济数据、政策会议、和平谈判结局均未预判。"
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": true
+  },
+  "publication_policy": {
+    "effective_date": "2026-10-08",
+    "no_evening_edition": true,
+    "is_canonical_daily": true
+  },
+  "source_mode": "native_daily",
+  "sources_path": "data/sources/2026-11-05.json",
+  "comparison_basis": "对比11月4日09:05 SGT原生Morning Official：当时11月3日美国现金收盘、AMD财报和9月JOLTS是新信息；本期新增11月4日美国股市正式收盘、两院选举结果、ADP/ISM服务业、高通盘后FYQ4业绩、油价与美债新定价。",
+  "thesis": "11月4日美股因美国中期选举结果明确与油价下跌而普遍反弹：标普500收涨约1.6%、道指上涨约3%，但费城半导体指数逆势跌约3.1%，数据中心融资链条继续承压。布伦特原油结算跌至94.62美元、美国10月ISM服务业仍扩张但价格分项高达73.0；本轮反弹能否持续，取决于能源风险溢价消退能否真正转化为现金流改善，而不是只改善估值折现率。",
+  "dominant_narrative": "截至11月5日北京时间早晨，需把两条变化分开定价：美国11月3日中期选举后两院控制权已确定，11月4日美股标普收于7,688.62、纳指25,736.51、道指53,356.12，广泛风险偏好回升；但Reuters指出半导体指数跌3.1%，算力基建及数据中心股票下挫，说明科技巨头的大规模投资承诺与资产轻重不同，股票表现分化。美国10月ADP私人就业增加8.6万人、ISM服务业54.5，需求仍扩张，但新订单从59.8回落至55.9而价格分项73.0，既不支持断言衰退已至，也无法宣告通胀彻底结束。Reuters记录布伦特结算94.62美元（-8.7%）和WTI 88.12美元（-8.3%）；市场交易的是伊朗局势缓和可能性，并非已签和平协议或霍尔木兹实际运力完全恢复。高通盘后披露FY2026第四季GAAP营收103.22亿美元，同比-8%，手机业务-26%而汽车+89%；其2027财年数据中心50亿美元为目标、不是已到账收入。美国10年期美债收益率约4.89%随风险溢价回落，但财政再融资规模与AI资产项目现金回报仍是传导约束。下一可验证时点是11月5日生产率与11月6日BLS非农，须盯收益率、半导体相对科技巨头表现和信用资产，而非把单日上涨等同于系统性风险解除。",
+  "market_regime": {
+    "growth": {
+      "state": "服务业继续扩张、需求略放慢",
+      "evidence": "10月ISM服务业54.5，较上月54.9低0.4；新订单55.9较59.8回落，ADP民间新增8.6万。"
+    },
+    "inflation": {
+      "state": "能源通缩压力增加但服务价格仍粘性",
+      "evidence": "11月4日Brent结算94.62美元、单日-8.7%；10月ISM服务业支付价格指数仍有73.0。"
+    },
+    "rates": {
+      "state": "长端美债收益率回落、融资存量压力仍在",
+      "evidence": "11月4日媒体可核对10年期收益率约4.891%（-6bp）、2年期约4.579%（-3.3bp）；不是同步多券种收盘定盘。"
+    },
+    "earnings": {
+      "state": "大型平台强、半导体与算力融资链条分化",
+      "evidence": "Reuters称SOX11月4日跌3.1%；高通FYQ4手机收入-26%、汽车收入+89%，数据中心50亿美元属2027财年目标。"
+    },
+    "liquidity": {
+      "state": "政治不确定性下降推动风险偏好、无资金流定量证据",
+      "evidence": "S&P500 +1.6%、Dow +3.0%；未取得ETF一级申赎、期权Gamma及融资台账同日独立来源。"
+    },
+    "geopolitics": {
+      "state": "美国两院选举结果明确、伊朗停火未达成",
+      "evidence": "Reuters确认民主党取得两院控制权；油价交易谈判预期，不等于霍尔木兹航道或油轮实际风险已经消除。"
+    },
+    "overall": {
+      "state": "Election Relief / Oil Risk Premium Compression / AI Balance-Sheet Split",
+      "evidence": "美股宽泛上涨、Brent单日跌8.7%、SOX却下跌约3.1%，与此同时服务业价格指数73.0；分化反映政治折现率改善但项目现金流仍待验证。"
+    }
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,688.62",
+      "change_1d": "+1.6%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ 大盘广度反弹",
+      "driver": "选举不确定性缓解、能源价格下跌",
+      "status": "2026-11-04 US CASH CLOSE",
+      "as_of": "2026-11-04 16:00 EST",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "25,736.51",
+      "change_1d": "+1.4%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ 大型科技领先",
+      "driver": "大型平台股票回升、半导体及算力基建分化",
+      "status": "2026-11-04 US CASH CLOSE",
+      "as_of": "2026-11-04 16:00 EST",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "asset": "Dow Jones Industrial Average",
+      "level": "53,356.12",
+      "change_1d": "+3.0%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ 传统大盘强势",
+      "driver": "能源价格下跌与选举结果明确改善顺周期风险偏好",
+      "status": "2026-11-04 US CASH CLOSE",
+      "as_of": "2026-11-04 16:00 EST",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,856.95",
+      "change_1d": "+1.6%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ 小盘股参与反弹",
+      "driver": "政治不确定性缓解、市场流动性预期边际回暖",
+      "status": "2026-11-04 US CASH CLOSE",
+      "as_of": "2026-11-04 16:00 EST",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "Brent crude near-term",
+      "level": "94.62 USD/bbl",
+      "change_1d": "-8.7%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 能源风险溢价压缩",
+      "driver": "市场交易伊朗外交缓和而非已完成和平协议",
+      "status": "2026-11-04 Reuters oil settlement",
+      "as_of": "2026-11-04 settlement time (Reuters)",
+      "sources": [
+        "S04"
+      ]
+    },
+    {
+      "asset": "WTI crude near-term",
+      "level": "88.12 USD/bbl",
+      "change_1d": "-8.3%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 美国基准油价下行",
+      "driver": "地缘溢价回落和需求前景重估",
+      "status": "2026-11-04 Reuters oil settlement",
+      "as_of": "2026-11-04 settlement time (Reuters)",
+      "sources": [
+        "S04"
+      ]
+    },
+    {
+      "asset": "US 2Y Treasury yield",
+      "level": "4.579%",
+      "change_1d": "-3.3 bp",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 短端收益率小幅回落",
+      "driver": "选举结果与后续增长数据预期变化",
+      "status": "2026-11-04 WSJ US afternoon indicative, not official fixed close",
+      "as_of": "2026-11-04 US afternoon EST",
+      "sources": [
+        "S13"
+      ]
+    },
+    {
+      "asset": "US 10Y Treasury yield",
+      "level": "4.891%",
+      "change_1d": "-6.0 bp",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 长端回落利好久期",
+      "driver": "油价降温及财政政策变数、但存量融资压力在",
+      "status": "2026-11-04 WSJ US afternoon indicative, not synchronized exact close",
+      "as_of": "2026-11-04 US afternoon EST",
+      "sources": [
+        "S13",
+        "S15"
+      ]
+    },
+    {
+      "asset": "DXY US Dollar Index",
+      "level": "101.27",
+      "change_1d": "-0.6%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 美元早盘回落",
+      "driver": "美国中期选举后风险偏好与利差预期调整",
+      "status": "2026-11-04 Reuters early US session snapshot, not close",
+      "as_of": "2026-11-04 01:13 EST",
+      "sources": [
+        "S14"
+      ]
+    },
+    {
+      "asset": "EUR/USD",
+      "level": "1.1258",
+      "change_1d": "+0.6%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ 欧元相对美元走强",
+      "driver": "美元广泛下跌的早间货币传导",
+      "status": "2026-11-04 Reuters early US session snapshot, not close",
+      "as_of": "2026-11-04 01:13 EST",
+      "sources": [
+        "S14"
+      ]
+    },
+    {
+      "asset": "USD/JPY",
+      "level": "157.92",
+      "change_1d": "-0.8%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↓ 美元兑日元回落",
+      "driver": "美元下跌、风险利差与日元避险对冲",
+      "status": "2026-11-04 Reuters early US session snapshot, not close",
+      "as_of": "2026-11-04 01:13 EST",
+      "sources": [
+        "S14"
+      ]
+    },
+    {
+      "asset": "Spot gold (XAU/USD)",
+      "level": "4,016.01 USD/oz",
+      "change_1d": "+2.2%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "↑ 黄金美元计价早间走强",
+      "driver": "美元走弱叠加政治不确定性风险对冲",
+      "status": "2026-11-04 Reuters early-day spot quote, NOT settlement",
+      "as_of": "2026-11-04 06:19 GMT",
+      "sources": [
+        "S16"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "CONTEMPORANEOUS_RESEARCH_WITH_EXPLICIT_5D_AND_TIMESTAMP_GAPS",
+    "asset_count": 12,
+    "level_coverage": {
+      "available": 12,
+      "total": 12,
+      "ratio": 1.0
+    },
+    "change_1d_coverage": {
+      "available": 12,
+      "total": 12,
+      "ratio": 1.0
+    },
+    "change_5d_coverage": {
+      "available": 0,
+      "total": 12,
+      "ratio": 0.0
+    },
+    "explicit_gaps": [
+      "5D 12/12缺乏足够同一标的/同一合约/同一供应商的可验证收盘对收盘或定盘对定盘记录，统一标注尚无法可靠确认，不从其他基差或日期推算。",
+      "DXY、EURUSD、USDJPY和黄金采用标记时间的11月4日早间报价，绝不可当作美股现金盘收盘价；美国国债收益率为媒体近似盘中参考，不是财政部官方终值。",
+      "原油价格采用Reuters 11月4日同日报价/结算口径，未将其他供应商不同合约报价混入日涨跌。",
+      "本期未获得可靠同步ETF净申赎、场外期权仓位、美国高收益债利差与亚洲实时盘面，相关板块仅提供受限定性分析。"
+    ],
+    "policy": "Level 12/12，1D 12/12（均明确标记对应来源与不同as_of），可靠同口径5D 0/12，不满足80%目标；依现行容缺条款明确保留证据缺口，绝不估算任何5D。"
+  },
+  "what_changed": [
+    {
+      "yesterday": "11月3日美股反弹有限，标普+0.36%、纳指+0.83%、道指-0.38%；美国两院中期选举尚未最终确认。",
+      "today": "Reuters确认11月3日中期选举后民主党取得两院控制权；11月4日道指+3.0%、标普+1.6%，市场政治折现率下降。",
+      "why_it_matters": "政策不确定性减少利好风险偏好，但税收/赤字/AI监管的新法案并未因此立即生效，估值不能假设全部长期政策红利已实现。",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "yesterday": "昨日能源结算Brent103.60美元、WTI96.09美元，谈判但尚无正式和平协议。",
+      "today": "11月4日Brent94.62美元（-8.7%）、WTI88.12美元（-8.3%）；能源风险溢价明显压缩。",
+      "why_it_matters": "减轻运输、企业成本及部分通胀预期，但供给与航道实际安全状态未证实恢复，不能把油价跌幅当成永久现金流改善。",
+      "sources": [
+        "S04",
+        "S19"
+      ]
+    },
+    {
+      "yesterday": "此前9月JOLTS显示职位空缺752.3万、就业韧性阻碍激进降息预期。",
+      "today": "10月ADP私人就业+8.6万，ISM服务业54.5、价格73.0、新订单55.9；劳动力未塌陷而服务价格压力仍高。",
+      "why_it_matters": "就业与价格背离令长端利率与股票久期敏感，11月6日非农结果才会更新正式劳动力市场判断。",
+      "sources": [
+        "S05",
+        "S06",
+        "S07",
+        "S10"
+      ]
+    },
+    {
+      "yesterday": "AMD财报强劲曾为芯片订单需求提供证据，Qualcomm FYQ4当时仍待公布。",
+      "today": "Qualcomm最新FYQ4营收103.22亿美元同比-8%、手机芯片-26%、汽车+89%；半导体指数当日却跌约3.1%。",
+      "why_it_matters": "AI基础设施订单复苏不能代表整个半导体行业及融资方现金流均好转，收益结构与资本强度决定股票弹性。",
+      "sources": [
+        "S08",
+        "S09",
+        "S02"
+      ]
+    },
+    {
+      "yesterday": "10年期美债近4.948%限制高久期估值，同时市场弱广度。",
+      "today": "WSJ 11月4日下午10年期约4.891%，较上一观察日约下降6bp，但11月4日新版财政再融资计划维持供应规模。",
+      "why_it_matters": "利率回落改善现值但债务供应、再融资成本与利润率弹性需要分开分析，不能用某一日股指收益反推长期信贷条件。",
+      "sources": [
+        "S13",
+        "S12",
+        "S15"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "美国中期选举确认民主党取得两院控制权后，11月4日美股广泛反弹但AI算力基建分化",
+      "status": "Released/Occurred — election result confirmed by Reuters; market repriced Nov4",
+      "event_time_et": "2026-11-04 US regular session",
+      "event_time_sgt": "2026-11-05 05:00 SGT US close",
+      "what_happened": "Reuters确认民主党在11月3日中期选举后取得众议院和参议院控制权；11月4日标普500收于7,688.62升约1.6%、道指涨约3%，但费城半导体指数跌约3.1%。",
+      "what_changed": "从11月4日晨间的仍在计票状态，转为可核验的两院控制权结果与美国现金市场完整再定价。",
+      "why_it_matters": "政治政策折现率下降利好大盘和部分平台公司，但AI监管、项目许可和数据中心债务现金流约束并不会随选举结果自动消失。",
+      "transmission": "选举结果清晰→不确定性贴水下降→大盘与长久期板块获支持；AI政策风险与资金成本→数据中心资本强度分化。",
+      "affected_assets": [
+        "S&P 500",
+        "Dow",
+        "SOX",
+        "AI infrastructure credit",
+        "US Treasuries"
+      ],
+      "direction": "Positive broad equities / negative selective AI capital-intensive assets",
+      "importance": "★★★★★",
+      "confirmation": "持续观察半导体指数相对Nasdaq的表现、数据中心债利差和大盘上涨家数，确认反弹是否扩散至融资依赖行业。",
+      "invalidation": "如议会政策实际走向推高新监管成本、长期利率快速反弹或AI算力融资恶化，宽泛反弹可能回吐。",
+      "sources": [
+        "S01",
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "11月4日Brent单日跌8.7%至94.62美元，油价交易伊朗外交缓和预期而非实际达成和平协议",
+      "status": "Market Reporting / Settled Price — underlying peace agreement not confirmed",
+      "event_time_et": "2026-11-04 US energy settlement",
+      "event_time_sgt": "2026-11-05 早间前的美国能源结算",
+      "what_happened": "Reuters记录11月4日布伦特结算94.62美元每桶、WTI结算88.12美元每桶，单日分别下降8.7%与8.3%；报道明确油市押注外交缓和，并未证实和平安排与海湾航运恢复。",
+      "what_changed": "昨日Brent仍在103.60美元附近；此次能源风险溢价压缩幅度足以影响通胀、通勤、航空、银行久期和能源股。",
+      "why_it_matters": "商品价格成本下降对进口国和企业毛利有利，但中东供应受阻及战时物流成本未有独立证据消除，不能简单 extrapolate。",
+      "transmission": "油价→能源输入型成本及通胀预期→名义收益率→高久期资产及航空消费利润率。",
+      "affected_assets": [
+        "Brent",
+        "WTI",
+        "USD/CAD",
+        "US 10Y",
+        "Airlines",
+        "Energy equities"
+      ],
+      "direction": "Disinflationary signal but conditional on real flows",
+      "importance": "★★★★★",
+      "confirmation": "核对后续实际出口量、航运保险/过境证据及油价连续结算与近远月价差，区分政策标题与实际供给恢复。",
+      "invalidation": "若霍尔木兹实际航线风险持续或冲突再升级，能源风险溢价可能在没有协议约束的情况下迅速回升。",
+      "sources": [
+        "S04",
+        "S19"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "美国10月ISM服务业54.5且支付价格73.0与高通FYQ4营收同比下降8%形成增长和行业盈利分化",
+      "status": "Released/Occurred — US services 2026-11-04 10:00 EST; Qualcomm aftermarket",
+      "event_time_et": "2026-11-04 10:00 EST ISM; 16:03 EST QCOM filing",
+      "event_time_sgt": "2026-11-04 23:00 SGT ISM; 2026-11-05 05:03 SGT QCOM",
+      "what_happened": "ISM原始发布服务业PMI54.5、新订单55.9、价格73.0；高通SEC披露FY2026第四季GAAP营收103.22亿美元同比下降8%、手机业务下降26%、汽车业务增长89%。",
+      "what_changed": "昨日只知道JOLTS与AMD高增速，本次增加服务业价格和手机半导体真实下滑证据，不能再把AI板块整体称作增长单边改善。",
+      "why_it_matters": "增长仍正但价格高，资本支出与终端手机需求反差扩大，短端政策利率可能受非农影响而行业估值面对独立盈利风险。",
+      "transmission": "服务价格→联储宽松路径→收益率；手机与汽车业务组合→芯片收入与毛利→AI数据中心订单目标兑现风险。",
+      "affected_assets": [
+        "US 2Y",
+        "QCOM",
+        "SOX",
+        "Nasdaq",
+        "USD"
+      ],
+      "direction": "Mixed growth / inflation / semiconductor profitability",
+      "importance": "★★★★",
+      "confirmation": "对照11月6日BLS非农与未来服务业价格报告，并核验高通下一季指引的实际达成及现金流表现。",
+      "invalidation": "若正式非农与后续价格数据出现同步快速放缓，或新订单/盈利预测显著上调，则当前“价格粘性+盈利分化”判断需修正。",
+      "sources": [
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S09"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "title": "Top Market Catalysts",
+      "status": "选举结果、能源风险溢价与服务业/半导体数据分化",
+      "summary": "11月4日美股全面反弹首先是选举结果减少政策不确定性，而不是所有行业盈利同步改善；同时费城半导体指数约跌3.1%，风险情绪与AI项目质量必须分开判断。；Brent结算94.62美元单日下跌8.7%，对能源成本与通胀预期的传导快于实际航运恢复；ISM价格分项73.0提醒服务通胀未消失。；高通FYQ4手机业务同比下降26%，汽车同比上升89%；财报说明半导体行业内部的现金流结构差异仍大。",
+      "paragraphs": [
+        "11月4日美股全面反弹首先是选举结果减少政策不确定性，而不是所有行业盈利同步改善；同时费城半导体指数约跌3.1%，风险情绪与AI项目质量必须分开判断。",
+        "Brent结算94.62美元单日下跌8.7%，对能源成本与通胀预期的传导快于实际航运恢复；ISM价格分项73.0提醒服务通胀未消失。",
+        "高通FYQ4手机业务同比下降26%，汽车同比上升89%；财报说明半导体行业内部的现金流结构差异仍大。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S04",
+        "S06",
+        "S08"
+      ],
+      "number": 1
+    },
+    "earnings": {
+      "title": "Important Earnings",
+      "status": "高通FYQ4已公布：手机疲弱、车载强劲；数据中心目标仍待兑现",
+      "summary": "Qualcomm公司与SEC披露FY2026第四季GAAP营收103.22亿美元同比-8%，Non-GAAP EPS2.17美元；QCT手机收入51.4亿美元同比下降26%，汽车19.9亿美元同比增长89%。；FY2027数据中心营收50亿美元为目标、非已实现季度业绩。财报时点是11月4日美国现金盘收盘后，盘后约-4.9%不得代替11月4日现金盘涨跌。；AMD前一日强劲收入指引与高通手机业务下滑并存；若把订单愿景直接作为融资稳定性证据，将忽略合同执行与实际现金回款的时间差。",
+      "paragraphs": [
+        "Qualcomm公司与SEC披露FY2026第四季GAAP营收103.22亿美元同比-8%，Non-GAAP EPS2.17美元；QCT手机收入51.4亿美元同比下降26%，汽车19.9亿美元同比增长89%。",
+        "FY2027数据中心营收50亿美元为目标、非已实现季度业绩。财报时点是11月4日美国现金盘收盘后，盘后约-4.9%不得代替11月4日现金盘涨跌。",
+        "AMD前一日强劲收入指引与高通手机业务下滑并存；若把订单愿景直接作为融资稳定性证据，将忽略合同执行与实际现金回款的时间差。"
+      ],
+      "tables": [],
+      "sources": [
+        "S08",
+        "S09",
+        "S18"
+      ],
+      "reported": [
+        {
+          "id": "QCOM-FY2026-Q4",
+          "company": "Qualcomm Incorporated",
+          "ticker": "QCOM",
+          "period": "FY2026 Q4",
+          "status": "Released/Occurred",
+          "release_date": "2026-11-04",
+          "release_time_et": "2026-11-04 16:03 EST SEC filing acceptance",
+          "release_time_sgt": "2026-11-05 05:03 SGT SEC filing acceptance",
+          "market_session": "US AFTER-HOURS",
+          "key_takeaway": "FY2026第四季GAAP营收103.22亿美元同比-8%，手机半导体收入同比-26%，汽车+89%；公司2027财年数据中心50亿美元目标不是已实现收入。",
+          "metrics": [
+            {
+              "metric": "FYQ4 GAAP revenue",
+              "actual": "$10.322bn",
+              "consensus": "WSJ: $10.12bn analyst expectation",
+              "previous_or_yoy": "-8% YoY",
+              "surprise": "above $10.12bn expectation on GAAP revenue basis (vendor comparison caveat)",
+              "notes": "公司SEC披露GAAP营收10.322bn美元；WSJ报道预期约10.12bn，未与Non-GAAP 10.442bn混淆。"
+            },
+            {
+              "metric": "FYQ4 non-GAAP diluted EPS",
+              "actual": "$2.17",
+              "consensus": "WSJ: beat expectations (not full distribution independently verified)",
+              "previous_or_yoy": "-28% YoY vs $3.00",
+              "surprise": "beat estimates per WSJ; no fabricated precise surprise",
+              "notes": "非GAAP口径，不能与GAAP每股收益直接对比。"
+            },
+            {
+              "metric": "QCT handset revenue",
+              "actual": "$5.14bn",
+              "consensus": "尚无法可靠独立核实",
+              "previous_or_yoy": "-26% YoY",
+              "surprise": "未独立核实同口径卖方预期",
+              "notes": "手机芯片需求疲弱，与汽车和新数据中心项目构成不同收入曲线。"
+            },
+            {
+              "metric": "QCT automotive revenue",
+              "actual": "$1.99bn",
+              "consensus": "尚无法可靠独立核实",
+              "previous_or_yoy": "+89% YoY",
+              "surprise": "未独立核实同口径卖方预期",
+              "notes": "汽车电子是实际收入，不等同FY27数据中心目标。"
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "Fiscal Q1 2027 revenue",
+              "current": "$10.4bn–$11.2bn",
+              "previous_or_consensus": "WSJ: broadly near analyst expectations",
+              "change": "management forecast for next quarter, not realized",
+              "interpretation": "数据中心营收目标需通过下季和后续的实际订单、交付与利润率验证。"
+            },
+            {
+              "metric": "Fiscal 2027 data center revenue target",
+              "current": "$5bn target",
+              "previous_or_consensus": "No comparable realized prior-year data center revenue verified",
+              "change": "announced management target, not booked revenue",
+              "interpretation": "不可以把管理层目标提前计入实际自由现金流或信贷偿债保障。"
+            }
+          ],
+          "market_reaction": {
+            "session": "2026-11-04 US after-hours",
+            "move": "QCOM -4.9% at reported after-hours snapshot (WSJ, not official cash close)",
+            "as_of": "2026-11-04 US aftermarket WSJ report"
+          },
+          "one_offs": [
+            "FY2026 GAAP net income incorporates a $5.7bn tax valuation allowance benefit; avoid treating it as operating profit run-rate."
+          ],
+          "read_through": [
+            {
+              "asset": "QCOM / US handset supply chain",
+              "implication": "手机出货压力和车载增长分化，未来AI边缘需求不能凭云端增长推导。"
+            },
+            {
+              "asset": "AI data center infrastructure credit",
+              "implication": "财年2027数据中心营收50亿美元是管理层目标，尚需验证实际回款和对应融资成本。"
+            }
+          ],
+          "sources": [
+            "S08",
+            "S09"
+          ]
+        }
+      ],
+      "upcoming_72h": [],
+      "number": 2
+    },
+    "us_macro": {
+      "title": "US Macro Data & Forecasts",
+      "status": "就业未崩塌、服务需求仍扩张但价格高",
+      "summary": "10月ADP私人就业增加8.6万人，高于Reuters调查中值6.9万人；ADP不等于BLS非农样本，也不应由两者差额臆造就业方向。；10月ISM服务业54.5、低于9月54.9；新订单55.9低于59.8，就业51.4高于50.1，价格73.0高位显示增长放慢与成本粘性可以同时存在。；11月6日美国官方非农仍未公布，真实可交易确认路径是观察就业增速、失业率、工资与前值修订是否共同改变长端利率预期。",
+      "paragraphs": [
+        "10月ADP私人就业增加8.6万人，高于Reuters调查中值6.9万人；ADP不等于BLS非农样本，也不应由两者差额臆造就业方向。",
+        "10月ISM服务业54.5、低于9月54.9；新订单55.9低于59.8，就业51.4高于50.1，价格73.0高位显示增长放慢与成本粘性可以同时存在。",
+        "11月6日美国官方非农仍未公布，真实可交易确认路径是观察就业增速、失业率、工资与前值修订是否共同改变长端利率预期。"
+      ],
+      "tables": [],
+      "sources": [
+        "S05",
+        "S06",
+        "S07",
+        "S10",
+        "S21"
+      ],
+      "number": 3
+    },
+    "central_banks": {
+      "title": "Central Banks & Rates",
+      "status": "美债长端回落；英国利率决定仍未公布",
+      "summary": "11月4日10年期美债媒体约4.891%，较前一时点下降约6bp，2年期约4.579%；该值是金融媒体盘中参考，不能当作各期限同步的官方终值。；低油价可能压低近端通胀预期，但服务价格指数73.0使联储政策前景无法由能源单独决定；11月6日BLS就业报告是关键。；英国央行11月5日利率决议处于未来时点，不能提前写为已经加息、降息或维持；欧洲金融资产对英国曲线与美元利差的反应需等待正式发布。",
+      "paragraphs": [
+        "11月4日10年期美债媒体约4.891%，较前一时点下降约6bp，2年期约4.579%；该值是金融媒体盘中参考，不能当作各期限同步的官方终值。",
+        "低油价可能压低近端通胀预期，但服务价格指数73.0使联储政策前景无法由能源单独决定；11月6日BLS就业报告是关键。",
+        "英国央行11月5日利率决议处于未来时点，不能提前写为已经加息、降息或维持；欧洲金融资产对英国曲线与美元利差的反应需等待正式发布。"
+      ],
+      "tables": [],
+      "sources": [
+        "S13",
+        "S15",
+        "S06",
+        "S22"
+      ],
+      "number": 4
+    },
+    "geopolitics": {
+      "title": "Geopolitics & War Risk",
+      "status": "中期选举结果明确；伊朗冲突降温只是市场预期",
+      "summary": "Reuters确认民主党取得美国众议院和参议院控制权，市场对立法不确定性下降反应强烈；选举结果并不自动使任何AI监管、财政或关税政策生效。；Brent/WTI骤跌反映谈判预期，不是伊朗战争已结束；能源实际出口和霍尔木兹过境安全仍缺乏同期的独立全面证据。；伊朗官方军方对油轮受损的说法属于冲突一方单方声称，Reuters仅为归因报道，本报告不把数量或受损程度列为独立证实事实。",
+      "paragraphs": [
+        "Reuters确认民主党取得美国众议院和参议院控制权，市场对立法不确定性下降反应强烈；选举结果并不自动使任何AI监管、财政或关税政策生效。",
+        "Brent/WTI骤跌反映谈判预期，不是伊朗战争已结束；能源实际出口和霍尔木兹过境安全仍缺乏同期的独立全面证据。",
+        "伊朗官方军方对油轮受损的说法属于冲突一方单方声称，Reuters仅为归因报道，本报告不把数量或受损程度列为独立证实事实。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S04",
+        "S19"
+      ],
+      "number": 5
+    },
+    "regional_policy": {
+      "title": "Regional Policy / China, Europe, Japan & Canada",
+      "status": "中国外汇存款准备金政策尚未实施；欧美与日本加拿大缺同步新增政策",
+      "summary": "中国此前宣布将外币存款准备金率由4%上调至6%，11月15日才正式生效；政策方向是缓冲人民币升值压力，不应被写作11月5日已执行。；欧洲11月4日STOXX600指数收涨1.82%至657.40，欧洲银行板块受益风险偏好和利率预期；该市场反应不等于欧央行宣布新决议。；日本、加拿大与中国其他财政/产业政策，截至本截点没有足以达到一级来源或独立交叉验证的新重大决定；仍保留旧政策与可能的国际融资传导，不填造新消息。",
+      "paragraphs": [
+        "中国此前宣布将外币存款准备金率由4%上调至6%，11月15日才正式生效；政策方向是缓冲人民币升值压力，不应被写作11月5日已执行。",
+        "欧洲11月4日STOXX600指数收涨1.82%至657.40，欧洲银行板块受益风险偏好和利率预期；该市场反应不等于欧央行宣布新决议。",
+        "日本、加拿大与中国其他财政/产业政策，截至本截点没有足以达到一级来源或独立交叉验证的新重大决定；仍保留旧政策与可能的国际融资传导，不填造新消息。"
+      ],
+      "tables": [],
+      "sources": [
+        "S17",
+        "S20",
+        "S22"
+      ],
+      "number": 6
+    },
+    "index_changes": {
+      "title": "Index Changes & Market Structure",
+      "status": "美国宽泛股指上涨但半导体权重反向表现",
+      "summary": "S&P500收涨约1.6%、Russell2000约1.6%，Dow上涨约3%，但SOX跌约3.1%；风险偏好普遍改善与AI基础设施资本强度风险分开交易。；大型平台业务自由现金流与数据中心设备经营杠杆不同；不应从Nasdaq上涨推断所有AI产业链都获得正向资金流。",
+      "paragraphs": [
+        "S&P500收涨约1.6%、Russell2000约1.6%，Dow上涨约3%，但SOX跌约3.1%；风险偏好普遍改善与AI基础设施资本强度风险分开交易。",
+        "大型平台业务自由现金流与数据中心设备经营杠杆不同；不应从Nasdaq上涨推断所有AI产业链都获得正向资金流。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S03"
+      ],
+      "number": 7
+    },
+    "flows": {
+      "title": "Institutional Flows & Positioning",
+      "status": "价格表现不是资金流量证据",
+      "summary": "未获得11月4日同口径一级市场ETF申赎、机构真实净流量、CTA仓位与主经纪商融资杠杆统计。；可核验的仅是现金股指涨跌及能源结算与曲线方向，策略上不从上涨家数或风险偏好变化倒推机构净买入金额。",
+      "paragraphs": [
+        "未获得11月4日同口径一级市场ETF申赎、机构真实净流量、CTA仓位与主经纪商融资杠杆统计。",
+        "可核验的仅是现金股指涨跌及能源结算与曲线方向，策略上不从上涨家数或风险偏好变化倒推机构净买入金额。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S13"
+      ],
+      "number": 8
+    },
+    "etf": {
+      "title": "ETF & Fund Transmission",
+      "status": "ETF篮子对科技巨头与芯片敞口的差异应区分",
+      "summary": "大型平台上涨而半导体指数下跌，意味着宽基科技ETF和半导体单行业ETF在相同交易日的因子表现可能明显不同；具体ETF净申购金额未独立验证。；风险观察应以持仓权重、行业暴露及真实日终价格归因，不把相同方向的指数变化误当作所有ETF收涨。",
+      "paragraphs": [
+        "大型平台上涨而半导体指数下跌，意味着宽基科技ETF和半导体单行业ETF在相同交易日的因子表现可能明显不同；具体ETF净申购金额未独立验证。",
+        "风险观察应以持仓权重、行业暴露及真实日终价格归因，不把相同方向的指数变化误当作所有ETF收涨。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02"
+      ],
+      "number": 9
+    },
+    "options": {
+      "title": "Options, Volatility & Derivatives",
+      "status": "无同步期权持仓证据不推导伽马或关键价格点",
+      "summary": "未取得11月4日同一时间点的VIX期限结构及dealer Gamma、0DTE净敞口、max pain数据，相关数值全部暂缺。；从美股回升推断做市商被动买盘是无法证明的因果解释；优先盯真实收盘与隔夜风险事件的价格变化。",
+      "paragraphs": [
+        "未取得11月4日同一时间点的VIX期限结构及dealer Gamma、0DTE净敞口、max pain数据，相关数值全部暂缺。",
+        "从美股回升推断做市商被动买盘是无法证明的因果解释；优先盯真实收盘与隔夜风险事件的价格变化。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02"
+      ],
+      "number": 10
+    },
+    "treasury": {
+      "title": "US Treasury, Auctions & Funding",
+      "status": "财政部宣布下周1,250亿美元3Y/10Y/30Y再融资计划",
+      "summary": "美国财政部11月4日公告计划11月9日拍卖3年期580亿美元、11月10日10年期420亿美元、11月12日30年期250亿美元，合计1250亿美元；均为未来拍卖而非已完成结果。；目前不能填报中标收益率、WI差、投标倍数或各类投标者分配；这些字段将在财政部未来正式公布后才成为事实。；长端收益率虽较上一日回落约6bp，但财政供给与私人部门资本开支融资需求对久期估值形成不同约束。",
+      "paragraphs": [
+        "美国财政部11月4日公告计划11月9日拍卖3年期580亿美元、11月10日10年期420亿美元、11月12日30年期250亿美元，合计1250亿美元；均为未来拍卖而非已完成结果。",
+        "目前不能填报中标收益率、WI差、投标倍数或各类投标者分配；这些字段将在财政部未来正式公布后才成为事实。",
+        "长端收益率虽较上一日回落约6bp，但财政供给与私人部门资本开支融资需求对久期估值形成不同约束。"
+      ],
+      "tables": [
+        {
+          "title": "美国财政部2026年11月再融资计划（未来时点，不是结果）",
+          "headers": [
+            "期限",
+            "计划拍卖日期",
+            "计划规模",
+            "结果状态"
+          ],
+          "rows": [
+            [
+              "3Y",
+              "2026-11-09",
+              "$58bn",
+              "待公布"
+            ],
+            [
+              "10Y",
+              "2026-11-10",
+              "$42bn",
+              "待公布"
+            ],
+            [
+              "30Y",
+              "2026-11-12",
+              "$25bn",
+              "待公布"
+            ]
+          ]
+        }
+      ],
+      "sources": [
+        "S12",
+        "S13",
+        "S15"
+      ],
+      "number": 11
+    },
+    "commodities": {
+      "title": "Commodities: Energy, Metals & Inflation",
+      "status": "能源溢价快速压缩，贵金属早盘上涨但不同时间截面",
+      "summary": "Reuters11月4日Brent94.62美元和WTI88.12美元的结算跌幅分别约8.7%和8.3%，此为同一能源市场日期，不与另一合约晚盘报价混算。；黄金早间Reuters快照约4016美元/盎司、涨约2.2%，与油价收盘并非同一观察时间点，不能直接归因到同一瞬时美元/利率走势。；传导逻辑为能源进口成本下降→部分通胀及利润率改善→收益率或风险贴水下降→久期资产利好；但ISM服务价格73.0提示非能源通胀仍可能限制利率空间。",
+      "paragraphs": [
+        "Reuters11月4日Brent94.62美元和WTI88.12美元的结算跌幅分别约8.7%和8.3%，此为同一能源市场日期，不与另一合约晚盘报价混算。",
+        "黄金早间Reuters快照约4016美元/盎司、涨约2.2%，与油价收盘并非同一观察时间点，不能直接归因到同一瞬时美元/利率走势。",
+        "传导逻辑为能源进口成本下降→部分通胀及利润率改善→收益率或风险贴水下降→久期资产利好；但ISM服务价格73.0提示非能源通胀仍可能限制利率空间。"
+      ],
+      "tables": [],
+      "sources": [
+        "S04",
+        "S16",
+        "S06",
+        "S07"
+      ],
+      "number": 12
+    },
+    "financing": {
+      "title": "Corporate Financing & AI Infrastructure",
+      "status": "算力订单与项目融资偿债能力必须单独验证",
+      "summary": "Reuters指出11月4日大型科技平台上涨而数据中心经营商下跌，原因之一是预期监管和终端负债风险重新定价；当前没有可核验的同步高收益债信用利差。；AMD与大客户协议相关权证产生约10.7亿美元季度非现金费用，不能将芯片销售、股权权证及现金收入混成同一种经济利益。；高通FY2027数据中心50亿美元收入为管理层目标，不是已签不可撤销订单，更不是可用于还债的现金到账；大型项目若回收期延长，借贷与租赁融资成本会成为放大器。",
+      "paragraphs": [
+        "Reuters指出11月4日大型科技平台上涨而数据中心经营商下跌，原因之一是预期监管和终端负债风险重新定价；当前没有可核验的同步高收益债信用利差。",
+        "AMD与大客户协议相关权证产生约10.7亿美元季度非现金费用，不能将芯片销售、股权权证及现金收入混成同一种经济利益。",
+        "高通FY2027数据中心50亿美元收入为管理层目标，不是已签不可撤销订单，更不是可用于还债的现金到账；大型项目若回收期延长，借贷与租赁融资成本会成为放大器。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S18",
+        "S08",
+        "S09"
+      ],
+      "number": 13
+    },
+    "breaking_news": {
+      "title": "Breaking News (Last 24 Hours)",
+      "status": "11月4日美国盘中至盘后已确认事件",
+      "summary": "美国10月ADP私人就业+8.6万人、ISM服务业54.5和价格73.0已在11月4日美东时间发布；截至研究截止均属正式已公布信息。；美国中期选举两院控制权结果被Reuters确认，11月4日美国现金股市随后收盘，布伦特和WTI结算明显下跌，消息时间与市场交易时间明确区分。；高通FY2026第四季财报11月4日美股盘后SEC正式披露；其盘后股价反应不应改写同日现金收盘。",
+      "paragraphs": [
+        "美国10月ADP私人就业+8.6万人、ISM服务业54.5和价格73.0已在11月4日美东时间发布；截至研究截止均属正式已公布信息。",
+        "美国中期选举两院控制权结果被Reuters确认，11月4日美国现金股市随后收盘，布伦特和WTI结算明显下跌，消息时间与市场交易时间明确区分。",
+        "高通FY2026第四季财报11月4日美股盘后SEC正式披露；其盘后股价反应不应改写同日现金收盘。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S04",
+        "S05",
+        "S06",
+        "S08",
+        "S09"
+      ],
+      "number": 14
+    },
+    "market_impact": {
+      "title": "Market Impact / Investment Thesis & Execution",
+      "status": "定价变数从选举不确定性转向实体成本与现金流",
+      "summary": "短线风险溢价降低使大盘和长久期资产获喘息，但价格高位的服务业和半导体疲软仍限制全面追涨的证据强度。；选择确认顺序：11月5日生产率结果、11月6日官方非农与工资、美国国债收益率、SOX相对Nasdaq表现，以及原油实物流量而非停火标题。；对组合而言可保留对盈利兑现现金流的偏好，同时压低对高杠杆数据中心供应链单一方向的押注；这是条件性风险框架，不是伪造未来可交易收益。",
+      "paragraphs": [
+        "短线风险溢价降低使大盘和长久期资产获喘息，但价格高位的服务业和半导体疲软仍限制全面追涨的证据强度。",
+        "选择确认顺序：11月5日生产率结果、11月6日官方非农与工资、美国国债收益率、SOX相对Nasdaq表现，以及原油实物流量而非停火标题。",
+        "对组合而言可保留对盈利兑现现金流的偏好，同时压低对高杠杆数据中心供应链单一方向的押注；这是条件性风险框架，不是伪造未来可交易收益。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S04",
+        "S06",
+        "S10",
+        "S11",
+        "S13"
+      ],
+      "number": 15
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "增长动能",
+      "current": "→ 服务扩张、增速略放缓",
+      "yesterday": "就业韧性/待ISM服务业发布",
+      "change_reason": "ISM服务业54.5低于54.9，新订单55.9低于59.8，延续扩张但需求边际减速。",
+      "evidence": "11月4日ISM服务业54.5，ADP新增8.6万；11月6日BLS非农待公布。",
+      "sources": [
+        "S05",
+        "S06",
+        "S07"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "通胀冲量",
+      "current": "↓ 能源压低通胀、服务仍黏",
+      "yesterday": "昨日原油下行，服务价格尚未公布",
+      "change_reason": "Brent单日跌8.7%降低能源成本预期，但服务业价格73.0仍有较强粘性。",
+      "evidence": "11月4日Brent94.62美元、ISM服务价格指数73.0。",
+      "sources": [
+        "S04",
+        "S06"
+      ]
+    },
+    "rates_pressure": {
+      "label": "利率压力",
+      "current": "↓ 国债利率回落",
+      "yesterday": "昨日10年期收益率近4.948%",
+      "change_reason": "油价和财政政策贴水下降促使长端收益率回落，但债券供给计划维持融资约束。",
+      "evidence": "WSJ同日参考10年期收益率约4.891%、较前一天约下降6bp。",
+      "sources": [
+        "S13",
+        "S12"
+      ]
+    },
+    "earnings_revision": {
+      "label": "盈利修正",
+      "current": "→ 平台上涨、芯片分化",
+      "yesterday": "AMD强劲指引支撑算力板块",
+      "change_reason": "政治结果利好大型平台但半导体指数反向下跌，高通手机业务走弱抵消车载增长。",
+      "evidence": "Reuters: SOX -3.1%；QCOM QCT handset -26% / automotive +89%。",
+      "sources": [
+        "S02",
+        "S08",
+        "S09"
+      ]
+    },
+    "liquidity": {
+      "label": "流动性/风险偏好",
+      "current": "↑ 广泛风险偏好回升",
+      "yesterday": "前日仅科技部分反弹、道指下跌",
+      "change_reason": "两院结果明确与能源下行减轻贴水，多个股指同步上涨；实物资金流未核实。",
+      "evidence": "Dow+3.0%、S&P500+1.6%、Russell+1.6%；未有ETF申赎净额。",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "地缘风险",
+      "current": "↓ 油市溢价下行、冲突未结束",
+      "yesterday": "昨日计票及伊朗谈判均未明",
+      "change_reason": "选举明确和油价下跌反映缓和预期，尚无和平协议与全面通航恢复的独立证据。",
+      "evidence": "Reuters确认两院结果；Brent结算-8.7%，霍尔木兹运输未获完整核验。",
+      "sources": [
+        "S02",
+        "S04",
+        "S19"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base｜选举贴水消退、结构性分化持续",
+      "probability": "55%（主观情景权重，非统计预测）",
+      "trigger": "油价保持显著低于前期高位且非农不显著推升收益率",
+      "expected_market_reaction": "大盘震荡偏强但半导体、融资依赖型AI运营商分化，长端收益率对数据敏感。",
+      "assets_most_sensitive": [
+        "S&P500",
+        "US10Y",
+        "SOX",
+        "Brent"
+      ],
+      "what_confirms_it": "非农实际、债券收益率和SOX相对Nasdaq均未出现明显逆向冲击。",
+      "what_invalidates_it": "油价风险溢价迅速反弹、就业或通胀意外导致收益率重新大幅走高。"
+    },
+    "bull_case": {
+      "label": "Bull｜能源成本兑现下降且盈利广度改善",
+      "probability": "25%（主观情景权重，非统计预测）",
+      "trigger": "物流和地缘实际证据改善、就业温和、服务价格后续数据降温",
+      "expected_market_reaction": "宽基股市强势延续，工业与部分消费盈利预期改善；利率与信用利差回落更同步。",
+      "assets_most_sensitive": [
+        "Russell2000",
+        "Dow",
+        "US10Y",
+        "Consumer discretionary"
+      ],
+      "what_confirms_it": "Reuters/官方油运物流与未来正式数据同步证实成本下降和需求健康。",
+      "what_invalidates_it": "仅油价标题下跌但运输中断持续或半导体信用市场风险扩大。"
+    },
+    "bear_case": {
+      "label": "Bear｜停火预期落空或高利率压制融资",
+      "probability": "20%（主观情景权重，非统计预测）",
+      "trigger": "地缘冲突升级、11月6日非农与工资共同超预期或AI信用风险事件",
+      "expected_market_reaction": "能源反弹、国债名义收益率压力回升，大盘回吐，杠杆数据中心资产跌幅更大。",
+      "assets_most_sensitive": [
+        "Brent",
+        "AI infrastructure credit",
+        "Nasdaq",
+        "US2Y"
+      ],
+      "what_confirms_it": "油运实际中断与能源曲线反弹，或正式就业报告改变联储预期。",
+      "what_invalidates_it": "正式数据温和、油运稳定且企业现金流改善得到原始报表验证。"
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-11-05 21:30 SGT",
+      "et": "2026-11-05 08:30 EST",
+      "event": "美国第三季度初步非农劳动生产率及单位劳动力成本",
+      "consensus": "尚无法可靠独立核实同口径预期",
+      "previous": "上期最终值本截点未取得可核验快照",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S11"
+      ]
+    },
+    {
+      "sgt": "2026-11-06 21:30 SGT",
+      "et": "2026-11-06 08:30 EST",
+      "event": "美国10月非农就业、失业率和平均时薪",
+      "consensus": "尚无法可靠独立核实完整同口径调查中值",
+      "previous": "上期BLS基准和修订需对照官方同期报告",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S10"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "美国选举行情掩盖AI数据中心企业的项目自由现金流与融资错配",
+      "why_not_fully_priced": "11月4日主要美股涨1%至3%，但SOX跌3.1%且多个数据中心企业下挫；宏观风险情绪与项目债现金流并不一致。",
+      "trigger": "云计算客户订单延迟、设备折旧或数据中心信贷融资成本上行。",
+      "transmission": "AI合同目标难兑现→借款覆盖率恶化→信用利差上行→融资依赖AI资产估值回撤。",
+      "first_asset": "Data-center credit / SOX",
+      "theme_id": "ai_capex_cashflow",
+      "lifecycle_state": "active",
+      "first_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
+      "sources": [
+        "S02",
+        "S03",
+        "S18"
+      ]
+    },
+    {
+      "risk": "布伦特急跌是交易地缘缓和预期，不是海湾航运和供应已完全恢复",
+      "why_not_fully_priced": "Brent单日-8.7%，市场可能在未签正式和平协议和缺乏航运独立证明时低估复燃风险。",
+      "trigger": "冲突方行动升级、重要航线持续受阻或外交协议未落实。",
+      "transmission": "实际海湾物流扰动→原油运费/保险上升→通胀预期抬高→长端利率和消费者成本受压。",
+      "first_asset": "Brent / USDJPY",
+      "theme_id": "geopolitics_energy",
+      "lifecycle_state": "active",
+      "first_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
+      "sources": [
+        "S04",
+        "S19"
+      ]
+    },
+    {
+      "risk": "美国服务业价格73.0与后续正式就业数据可能打断利率回落",
+      "why_not_fully_priced": "服务业仍扩张且价格分项高位，油价下跌可能令市场忽视非能源通胀与工资压力。",
+      "trigger": "11月6日BLS非农、失业率、工资或历史修订显著超出市场定价区间。",
+      "transmission": "就业/薪资超预期→联储降息路径重估→美债久期折现率上行→股票盈利倍数与融资承压。",
+      "first_asset": "US 2Y / Nasdaq",
+      "theme_id": "us_growth_inflation_rates",
+      "lifecycle_state": "active",
+      "first_seen": "2026-11-04",
+      "last_seen": "2026-11-05",
+      "sources": [
+        "S05",
+        "S06",
+        "S10"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "美国10月非农就业报告（BLS）：验证服务业扩张与工资价格黏性是否改变利率路径",
+    "status": "Confirmed Upcoming — official BLS schedule",
+    "date": "2026-11-06",
+    "et": "2026-11-06 08:30 EST",
+    "sgt": "2026-11-06 21:30 SGT",
+    "consensus": "未取得可靠完整同口径预期；不以ADP替代",
+    "previous": "上期BLS正式报告及其修订以公布时官方版本为准",
+    "actual": "待公布",
+    "why_it_matters": "10月ADP新增8.6万人而ISM服务价格73.0；非农/工资/失业率将决定收益率回落是否可持续，并影响AI融资及股票久期。",
+    "first_market": "US Treasury 2Y/10Y, USD, index futures, SOX",
+    "bull_interpretation": "就业增长与工资温和、修订未显著恶化，使能源成本下降更易转化为利率改善而非衰退担忧。",
+    "bear_interpretation": "工资与就业明显偏热令联储宽松押注后撤，或就业转弱而信用利差扩大，两种路径均可能压制AI融资股。",
+    "watch_first": [
+      "21:30 SGT公布后首先核对BLS headline新增非农、失业率、工资及前值修订，避免仅看单一就业人数。",
+      "观察美国2年期和10年期收益率与美元的初始反应是否同向且持续，区分通胀型和增长型利率冲击。",
+      "比较SOX与Nasdaq及数据中心信用风险定价是否在首轮波动后出现确认或反向，避免因短线价格跳动误判。"
+    ],
+    "sources": [
+      "S10",
+      "S05",
+      "S06"
+    ]
+  },
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22"
+  ],
+  "asia_snapshot": {
+    "as_of": "2026-11-05 09:16 SGT; latest US cash/oil settlement 2026-11-04, some intraday quotes clearly marked, NOT synchronized Asia open",
+    "brent": "94.62 USD/bbl (2026-11-04 Reuters settlement)",
+    "wti": "88.12 USD/bbl (2026-11-04 Reuters settlement)",
+    "dxy": "101.27 (2026-11-04 01:13 EST Reuters early US session, NOT latest close)",
+    "s_and_p_futures": "尚无法可靠确认2026-11-05亚洲早盘同步期货报价",
+    "nasdaq_futures": "尚无法可靠确认2026-11-05亚洲早盘同步期货报价",
+    "korea_equities": "尚无法可靠确认2026-11-05亚洲早盘同期韩国现金行情",
+    "sources": [
+      "S01",
+      "S04",
+      "S14"
+    ]
+  }
+}
