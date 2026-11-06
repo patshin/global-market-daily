@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "retrieved_for": "Global Market Daily 30D Lens",
-  "as_of": "2026-11-05",
+  "as_of": "2026-11-06",
   "series": {
     "NASDAQCOM": {
       "label": "Nasdaq Composite",
@@ -71,7 +71,8 @@
         },
         {
           "date": "2025-09-11",
-          "value": 22043.07
+          "value": 22043.07,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2025-09-12",
@@ -1224,6 +1225,10 @@
         {
           "date": "2026-11-03",
           "value": 25372.01
+        },
+        {
+          "date": "2026-11-04",
+          "value": 25736.51
         }
       ]
     },
@@ -1295,7 +1300,8 @@
         },
         {
           "date": "2025-09-11",
-          "value": 6587.47
+          "value": 6587.47,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2025-09-12",
@@ -2448,6 +2454,10 @@
         {
           "date": "2026-11-03",
           "value": 7568.92
+        },
+        {
+          "date": "2026-11-04",
+          "value": 7688.62
         }
       ]
     },
@@ -2604,7 +2614,8 @@
         },
         {
           "date": "2025-09-11",
-          "value": 14.71
+          "value": 14.71,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2025-09-12",
@@ -3785,6 +3796,10 @@
         {
           "date": "2026-11-03",
           "value": 20.83
+        },
+        {
+          "date": "2026-11-04",
+          "value": 16.61
         }
       ]
     },
@@ -3856,7 +3871,8 @@
         },
         {
           "date": "2025-09-11",
-          "value": 3.52
+          "value": 3.52,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2025-09-12",
@@ -5001,6 +5017,10 @@
         {
           "date": "2026-11-03",
           "value": 4.61
+        },
+        {
+          "date": "2026-11-04",
+          "value": 4.58
         }
       ]
     },
@@ -5072,7 +5092,8 @@
         },
         {
           "date": "2025-09-11",
-          "value": 4.01
+          "value": 4.01,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2025-09-12",
@@ -6217,6 +6238,10 @@
         {
           "date": "2026-11-03",
           "value": 4.95
+        },
+        {
+          "date": "2026-11-04",
+          "value": 4.9
         }
       ]
     },
@@ -6288,7 +6313,8 @@
         },
         {
           "date": "2025-09-11",
-          "value": 67.25
+          "value": 67.25,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2025-09-12",
@@ -7520,7 +7546,8 @@
         },
         {
           "date": "2025-09-11",
-          "value": 119.9534
+          "value": 119.9534,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2025-09-12",
@@ -8738,7 +8765,8 @@
         },
         {
           "date": "2025-09-11",
-          "value": 2.78
+          "value": 2.78,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2025-09-12",
@@ -9939,6 +9967,10 @@
         {
           "date": "2026-11-03",
           "value": 3.4
+        },
+        {
+          "date": "2026-11-04",
+          "value": 3.32
         }
       ]
     }
