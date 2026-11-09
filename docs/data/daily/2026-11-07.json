@@ -1,0 +1,1127 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-11-07",
+  "edition": "Morning Official",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-11-07 09:12 SGT",
+  "data_cutoff_et": "2026-11-06 20:12 EST",
+  "last_updated": "2026-11-07T09:12:44+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-11-07T09:00:00+08:00",
+    "started_at_sgt": "2026-11-07T08:59:26+08:00",
+    "research_cutoff_sgt": "2026-11-07T09:12:44+08:00",
+    "mode": "contemporaneous_morning_research",
+    "note": "2026年11月7日为星期六，美股/油价/黄金/加拿大就业截至11月6日各自收盘或明确的Reuters盘中快照。不能把非农或11月6日股价误当尚待发生；11月9日拍卖与财报为待公布事件。"
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": true
+  },
+  "publication_policy": {
+    "effective_date": "2026-10-08",
+    "no_evening_edition": true,
+    "is_canonical_daily": true
+  },
+  "source_mode": "native_daily",
+  "sources_path": "data/sources/2026-11-07.json",
+  "comparison_basis": "与11月6日晨稿相比：10月非农已正式公布；美国11月6日现金市场虽反弹但周度受损。昨日报告此前记录11月5日现金收盘，今天改用11月6日真实结算；亚太股市采用当地11月6日正式收盘。",
+  "thesis": "截至11月7日09时，市场主要约束是美国非农就业强于预期后利率上行与AI数据中心资本开支回报疑虑的双重挤压：周五纳指虽反弹1.09%，全周仍跌约3.4%；下周美国国债再融资拍卖与CPI将决定债券压力能否缓解。",
+  "dominant_narrative": "11月6日美国10月非农新增16.5万人、失业率4.1%，均好于市场原有预期，意味着“增长崩塌”叙事并不成立，但也削弱短期货币宽松的可见性。科技股在此前一天极端抛售后反弹，SOX约+4.2%，纳指+1.09%，却仍在周线上跌约3.4%，半导体资本支出与监管预期尚未修复；同期韩国Kospi单日-6.02%、周跌11.7%，说明亚洲供应链风险传导真实存在。原油Brent约98.32美元/桶、WTI约90.83美元/桶的11月6日结算与海湾航运不确定性并存，不等于战争风险解除。下一步应以11月9日美国3年期580亿美元拍卖、能源公司业绩和11月10日CPI正式公布验证“利率—现金流—油价”三重约束，不能凭单日反弹宣告见底。",
+  "market_regime": {
+    "growth": {
+      "state": "非农强、地区分化",
+      "evidence": "美国BLS 10月就业新增16.5万人、失业率4.1%；加拿大10月净就业-4,700、失业率6.7%，北美增长不能用单一数据概括。"
+    },
+    "inflation": {
+      "state": "就业韧性与能源风险共存",
+      "evidence": "更强美国就业可能维持服务业工资压力；Brent 11月6日结算约98.32美元，未来海湾航运事件仍会扰动通胀预期。"
+    },
+    "rates": {
+      "state": "美债中短端重定价、拍卖待验证",
+      "evidence": "美国财政部11月6日参考2Y约4.51%、10Y约4.86%；11月9日580亿美元3年期拍卖、11月10日420亿美元10年期拍卖构成供给测试。"
+    },
+    "earnings": {
+      "state": "盈利兑现与资本开支依赖分层",
+      "evidence": "Airbnb报告收入约48.7亿美元同比+19%且调高全年增长展望；Atlassian云增长约30.5%但股价仍跌约16%，市场更强调兑现与估值。"
+    },
+    "liquidity": {
+      "state": "半导体技术反弹不足以抵消周跌",
+      "evidence": "SOX周五反弹约4.2%、QQQ收656.10较10月30日690.49仍约-4.98%；无法独立确认期权Gamma或ETF实际净申赎。"
+    },
+    "geopolitics": {
+      "state": "海湾实际运输约束尚未解除",
+      "evidence": "11月6日油价回撤后趋稳，但谈判表态和实际安全通航不是同一事；只将可证实的结算价用作价格参考。"
+    },
+    "overall": {
+      "state": "AI Cash-Return vs Higher-for-Longer / Gulf Oil Risk / Treasury Supply",
+      "evidence": "纳指周涨跌约-3.4%，美国强劲就业提升利率约束，韩国芯片权重市场周跌11.7%；周五反弹还未恢复跨市场风险承受力。"
+    }
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,376.86",
+      "change_1d": "+0.31%",
+      "change_5d": "-2.68%",
+      "signal": "大盘微涨但周跌",
+      "driver": "非农强于预期，芯片反弹与其他行业分化",
+      "status": "US CASH CLOSED",
+      "as_of": "2026-11-06 16:00 EST",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "24,579.42",
+      "change_1d": "+1.09%",
+      "change_5d": "-3.37%",
+      "signal": "科技反弹，周趋势未修复",
+      "driver": "SOX+4.2%推动反弹，仍为连续第四周跌",
+      "status": "US CASH CLOSED",
+      "as_of": "2026-11-06 16:00 EST",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "asset": "Dow Jones",
+      "level": "51,285.73",
+      "change_1d": "-0.46%",
+      "change_5d": "-0.94%",
+      "signal": "价值/防御权重偏弱",
+      "driver": "收益率上升与成分股结构分化",
+      "status": "US CASH CLOSED",
+      "as_of": "2026-11-06 16:00 EST",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,754.11",
+      "change_1d": "+0.89%",
+      "change_5d": "-2.05%",
+      "signal": "小盘反弹弱于周损失",
+      "driver": "较高融资成本对小盘估值形成制约",
+      "status": "US CASH CLOSED",
+      "as_of": "2026-11-06 16:00 EST",
+      "sources": [
+        "S03",
+        "S20"
+      ]
+    },
+    {
+      "asset": "QQQ ETF",
+      "level": "656.10 USD",
+      "change_1d": "+1.40%",
+      "change_5d": "-4.98%",
+      "signal": "大型科技ETF修复有限",
+      "driver": "同一Yahoo Finance系列11月5日647.05、10月30日690.49",
+      "status": "US ETF CASH CLOSED",
+      "as_of": "2026-11-06 16:00 EST",
+      "sources": [
+        "S15"
+      ]
+    },
+    {
+      "asset": "SOXX ETF",
+      "level": "136.53 USD",
+      "change_1d": "+3.51%",
+      "change_5d": "-13.13%",
+      "signal": "半导体高波动技术反弹",
+      "driver": "同一股拆调整系列131.90/157.17；2026年11月5日发生拆股",
+      "status": "US ETF SPLIT-ADJUSTED CASH CLOSED",
+      "as_of": "2026-11-06 16:00 EST",
+      "sources": [
+        "S16"
+      ]
+    },
+    {
+      "asset": "Nvidia NVDA",
+      "level": "186.64 USD",
+      "change_1d": "+2.78%",
+      "change_5d": "-8.80%",
+      "signal": "龙头修复未补周损失",
+      "driver": "同一历史系列181.60/204.64",
+      "status": "US STOCK CASH CLOSED",
+      "as_of": "2026-11-06 16:00 EST",
+      "sources": [
+        "S17"
+      ]
+    },
+    {
+      "asset": "QNDX ETF",
+      "level": "22.24 USD",
+      "change_1d": "+1.32%",
+      "change_5d": "-4.88%",
+      "signal": "纳指百跟踪资产反弹",
+      "driver": "同一历史系列21.95/23.38",
+      "status": "US ETF CASH CLOSED",
+      "as_of": "2026-11-06 16:00 EST",
+      "sources": [
+        "S18"
+      ]
+    },
+    {
+      "asset": "TQQQ daily-reset 3x ETF",
+      "level": "52.25 USD",
+      "change_1d": "+3.54%",
+      "change_5d": "-15.74%",
+      "signal": "杠杆日复利路径损失更深",
+      "driver": "同一系列50.47/62.01；不能视作每周收益严格3倍",
+      "status": "US ETF CASH CLOSED",
+      "as_of": "2026-11-06 16:00 EST",
+      "sources": [
+        "S19"
+      ]
+    },
+    {
+      "asset": "KOSPI",
+      "level": "5,059.69",
+      "change_1d": "-6.02%",
+      "change_5d": "-11.7%（周变化，报道口径）",
+      "signal": "韩国科技链高压",
+      "driver": "盘中下跌达8.8%触发熔断，收盘跌6.02%",
+      "status": "KOREA CASH CLOSED",
+      "as_of": "2026-11-06 Korea close",
+      "sources": [
+        "S07"
+      ]
+    },
+    {
+      "asset": "Spot Gold",
+      "level": "4,074.36 USD/oz",
+      "change_1d": "约-0.3%",
+      "change_5d": "约+5.2%（同一报道周度口径）",
+      "signal": "避险与美元上升交错",
+      "driver": "Reuters 11月6日盘中同一时点，非纽约收盘结算",
+      "status": "REUTERS INTRADAY SNAPSHOT",
+      "as_of": "2026-11-06 Reuters snapshot",
+      "sources": [
+        "S09"
+      ]
+    },
+    {
+      "asset": "Brent crude",
+      "level": "98.32 USD/bbl",
+      "change_1d": "尚无法可靠确认精确日涨跌",
+      "change_5d": "尚无法可靠确认",
+      "signal": "油价低位震荡并存实物风险",
+      "driver": "11月6日WSJ结算参考；不同到期合约/资讯时点不可硬算",
+      "status": "US FUTURES SETTLEMENT REPORTED",
+      "as_of": "2026-11-06 settlement",
+      "sources": [
+        "S10",
+        "S11"
+      ]
+    },
+    {
+      "asset": "WTI crude",
+      "level": "90.83 USD/bbl",
+      "change_1d": "约+0.3%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "海湾风险溢价仍待核实",
+      "driver": "11月6日WSJ结算参考；尚无可比同合约5D",
+      "status": "US FUTURES SETTLEMENT REPORTED",
+      "as_of": "2026-11-06 settlement",
+      "sources": [
+        "S10",
+        "S11"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "CONTEMPORANEOUS_5D_MIXED_VERIFIED_WEEKLY_AND_EXPLICIT_OIL_GAPS",
+    "asset_count": 13,
+    "level_coverage": {
+      "available": 13,
+      "total": 13,
+      "ratio": 1.0
+    },
+    "change_1d_coverage": {
+      "available": 12,
+      "total": 13,
+      "ratio": 0.9231
+    },
+    "change_5d_coverage": {
+      "available": 11,
+      "total": 13,
+      "ratio": 0.8462
+    },
+    "explicit_gaps": [
+      "股票/ETF日涨跌和5交易日比较均以11月6日美国现金收盘与11月5日/10月30日同一历史序列为基准；SOXX采用拆股调整后系列。",
+      "KOSPI、现货黄金5D为Reuters所报截至周五一周变动，均明确注明周度口径，不把它们说成同交易时段现金收盘比较。",
+      "Brent、WTI缺少两端严格相同到期合约的5D结算资料，均不填猜测值；Brent精确1D变动亦未核实。",
+      "US Treasury 2Y/10Y有11月6日官方参考点位，但缺少与行情同精度配对的5D，不将其混入覆盖率分母；在利率章节单列。",
+      "周六09:00 SGT并非美国开盘时间，所有美国行情均为11月6日已知现金收盘，黄金为Reuters已知盘中快照。"
+    ],
+    "policy": "13项Level 13/13；1D 12/13；可核验同系列/周度5D 11/13（84.6%）；精确合约不可比处明确留空且没有用不同时点凑数。"
+  },
+  "what_changed": [
+    {
+      "yesterday": "11月6日晨稿所见的最近美国现金收盘为11月5日：纳指-5.52%、SOX-12.25%。",
+      "today": "11月6日纳指+1.09%、SOX约+4.2%，但纳指周跌约3.4%、半导体ETF SOXX周跌约13.1%。",
+      "why_it_matters": "这是历史损失后的反弹而非估值风险彻底出清；要用下一周资金成本和监管政策证据判断趋势是否改变。",
+      "sources": [
+        "S02",
+        "S03",
+        "S16"
+      ]
+    },
+    {
+      "yesterday": "截至11月6日早晨，10月非农仍是预计公布的重要数据；之前的市场共识为约+5.9万至+6.5万人。",
+      "today": "BLS已于美国11月6日08:30 EST报告新增16.5万人，失业率4.1%；旧的“待公布”预期必须替换为官方结果。",
+      "why_it_matters": "利率制约明显上升；不能把这组数据解读为短期就业衰退已得到确认。",
+      "sources": [
+        "S01",
+        "S06"
+      ]
+    },
+    {
+      "yesterday": "此前11月5日亚洲股市尚未反映美国当日全部现金抛售；韩国科技股已大幅走弱。",
+      "today": "韩国11月6日KOSPI触发盘中熔断，收盘5059.69跌6.02%，周跌约11.7%；日本日经当日跌约6%。",
+      "why_it_matters": "全球芯片供应链风险从单一美股定价扩散至韩国、日本；本周反弹的跨市场确认仍不足。",
+      "sources": [
+        "S07",
+        "S08"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "11月6日美国BLS非农16.5万人与失业率4.1%强化利率高位约束",
+      "status": "Released/Occurred — 2026-11-06 official BLS release",
+      "event_time_et": "2026-11-06 08:30 EST",
+      "event_time_sgt": "2026-11-06 21:30 SGT",
+      "what_happened": "美国劳工统计局正式公布10月非农就业人数增加165,000人，失业率4.1%；明显高于市场原先不足十万人的预测，不能再称其尚待公布。",
+      "what_changed": "相较11月6日早晨的原生研究，此前预期仅约59,000至65,000新增岗位，而官方结果明确显示劳动力市场韧性较预期更强。",
+      "why_it_matters": "就业韧性降低近期降息逻辑的确定性，使债券收益率与项目融资利息成为AI资本回报定价不可忽视的约束。",
+      "transmission": "新增就业超预期→政策利率预期上修→美债收益率及美元抬升→AI长久期估值与项目融资成本承压。",
+      "affected_assets": [
+        "US 2Y Treasury",
+        "US 10Y Treasury",
+        "Nasdaq",
+        "data-center credit"
+      ],
+      "direction": "Upward rate pressure / mixed equities",
+      "importance": "★★★★★",
+      "confirmation": "核实11月9日国债拍卖投标倍数与收益率尾差，结合11月10日官方CPI，而非使用未经核实的概率断言。",
+      "invalidation": "若官方通胀和后续招聘数据持续减速且长端利率下行，当前强就业对风险资产贴现率的压力可逐步减弱。",
+      "sources": [
+        "S01",
+        "S05",
+        "S06",
+        "S14"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "11月6日美股芯片反弹仍未填平全周AI资本开支重估损失",
+      "status": "Released/Occurred — 2026-11-06 US cash close",
+      "event_time_et": "2026-11-06 16:00 EST",
+      "event_time_sgt": "2026-11-07 05:00 SGT",
+      "what_happened": "Reuters记录半导体指数周五反弹约4.2%、AMD上涨约11%，Nasdaq涨1.09%至24,579.42；但纳指当周仍跌约3.4%，SOXX拆股调整后全周跌约13%。",
+      "what_changed": "前一日因AI项目审批与资本开支收益疑虑而急跌；周五部分股票技术反弹，却没有正式证据证明全部数据中心项目限制已撤销。",
+      "why_it_matters": "判断是否出现真正企稳，应验证实际审批范围、资本开支现金回款和半导体订单，而不是用一天的空头回补代替长期回报核算。",
+      "transmission": "许可与电力接入政策预期→数据中心建设交付时间表→芯片采购与融资现金流→SOX、云及项目债券估值。",
+      "affected_assets": [
+        "SOX",
+        "SOXX",
+        "NVDA",
+        "KOSPI",
+        "data-center debt"
+      ],
+      "direction": "Tactical rebound / medium-term risk unresolved",
+      "importance": "★★★★★",
+      "confirmation": "周度SOXX/NVDA连续相对修复、相关企业财报与新建项目批复文件彼此印证，方能提升趋势反转的可信度。",
+      "invalidation": "若韩国半导体继续承压、融资利差扩大或明确地方审批限制出台，则美国单日技术反弹不能视为风险已解除。",
+      "sources": [
+        "S02",
+        "S03",
+        "S07",
+        "S16",
+        "S17",
+        "S25"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "11月6日海湾油价低位盘整与11月9日至10日国债再融资窗口相遇",
+      "status": "Released/Occurred + Confirmed Upcoming — official Treasury schedule",
+      "event_time_et": "2026-11-06 16:00 EST (oil); 2026-11-09 13:00 EST (3Y auction)",
+      "event_time_sgt": "2026-11-07 05:00 SGT (oil); 2026-11-10 02:00 SGT (auction)",
+      "what_happened": "WSJ所报11月6日油价Brent约98.32美元、WTI约90.83美元；美国财政部已正式宣布下周580亿美元3年期、420亿美元10年期和250亿美元30年期再融资。",
+      "what_changed": "前日油价大幅波动和停火希望仍未转为实际通航正常化；与此同时，新增16.5万人的非农数据令新的国债供给测试更加重要。",
+      "why_it_matters": "如果能源风险再次抬升通胀预期而拍卖需求偏弱，美国利率对科技与高杠杆项目的压制可能同时增强。",
+      "transmission": "能源运输风险→通胀预期→国债拍卖收益率与期限溢价→高久期科技估值、企业融资成本。",
+      "affected_assets": [
+        "Brent",
+        "WTI",
+        "US 3Y Treasury",
+        "US 10Y Treasury"
+      ],
+      "direction": "Two-sided oil / possible duration stress",
+      "importance": "★★★★",
+      "confirmation": "核实11月9日3Y拍卖及11月10日10Y拍卖实际投标倍数、收益率尾差与海外官方购买者类别。",
+      "invalidation": "若拍卖需求稳健且真实能源通航限制缓解，利率与油价双压力情景的发生条件将减弱。",
+      "sources": [
+        "S04",
+        "S05",
+        "S10",
+        "S11"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top Market Catalysts",
+      "status": "已核实至2026-11-07 09:12 SGT",
+      "summary": "三条主要催化线：强就业重新定价利率、AI股短期反弹但周度损失未修复、油价与国债供给形成下周交叉约束。",
+      "paragraphs": [
+        "美国10月非农新增16.5万、失业率4.1%已于周五公布；对国债收益率与融资成本的影响应优先于过去市场调查预期。",
+        "周五SOX反弹约4.2%并不抵消前日大跌；韩国KOSPI周五-6.02%验证科技风险传播并未终结。",
+        "美国财政部的580亿美元3年券拍卖和随后10年券拍卖，是判断就业强势是否真正压迫长久期资产的下一关。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S04",
+        "S07"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings",
+      "status": "财报：ABNB/TEAM已公布；NRG/OXY待公布",
+      "summary": "Airbnb的收入兑现与Atlassian的股价反应反向分化；11月9日NRG、OXY财报尚未公布。",
+      "paragraphs": [
+        "Airbnb Q3收入约48.7亿美元、同比增长约19%，并上调全年增长展望，周五股价约涨12%；该业绩已发生，不是预测。",
+        "Atlassian季度收入约17.7亿美元、云业务增长约30.5%，但周五股价约跌16%；估值预期差与绝对增长同样重要。",
+        "NRG Energy于11月9日08:00 EST举行电话会，Occidental将于11月9日盘后披露业绩；两项均不得提前写成实际结果。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S21",
+        "S22",
+        "S23",
+        "S24"
+      ],
+      "reported": [
+        {
+          "id": "ABNB-2026-Q3",
+          "company": "Airbnb",
+          "ticker": "ABNB",
+          "period": "FY2026 Q3",
+          "status": "Released/Occurred",
+          "release_date": "2026-11-05",
+          "release_time_et": "2026-11-05 after US cash close (exact minute unverified)",
+          "release_time_sgt": "2026-11-06 05:00 SGT or later (exact minute unverified)",
+          "market_session": "US AFTER-HOURS earnings, 2026-11-06 US CASH reaction",
+          "key_takeaway": "Airbnb第三季度收入约48.7亿美元，同比增长约19%，每股收益约3.16美元；公司调高全年收入增速指引至高十几个百分点，11月6日股价约涨12%。",
+          "metrics": [
+            {
+              "metric": "Q3 2026 revenue",
+              "actual": "$4.87 billion",
+              "consensus": "尚无法可靠核实同口径市场一致预期",
+              "previous_or_yoy": "+19% YoY",
+              "surprise": "不声称未经验证的精确预期差",
+              "notes": "公司季报由Reuters转载报道确认。"
+            },
+            {
+              "metric": "Q3 EPS",
+              "actual": "$3.16",
+              "consensus": "尚无法可靠核实同口径市场一致预期",
+              "previous_or_yoy": "前值尚无法可靠核实",
+              "surprise": "未核实市场一致预期差",
+              "notes": "已实现每股收益与未来指引不同。"
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "FY2026 revenue growth",
+              "current": "high-teens percentage growth",
+              "previous_or_consensus": "此前公司口径至少mid-teens",
+              "change": "company raised guidance",
+              "interpretation": "关注未来真实预订与营业现金流是否跟随增长预期兑现。"
+            }
+          ],
+          "market_reaction": {
+            "session": "2026-11-06 US CASH",
+            "move": "ABNB约+12%（Reuters收盘报道）",
+            "as_of": "2026-11-06 16:00 EST"
+          },
+          "one_offs": [
+            "全年增长展望是管理层预测，不是2026全年已经实现结果。"
+          ],
+          "read_through": [
+            {
+              "asset": "ABNB / travel demand",
+              "implication": "需求仍有韧性，但不意味着所有消费服务企业收入一致增长。"
+            },
+            {
+              "asset": "Cash-generative internet services",
+              "implication": "已实现经营增长与AI重资产项目尚未产生现金流的估值逻辑形成对比。"
+            }
+          ],
+          "sources": [
+            "S02",
+            "S23"
+          ]
+        },
+        {
+          "id": "TEAM-FY27-Q1",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "period": "FY2027 Q1",
+          "status": "Released/Occurred",
+          "release_date": "2026-11-05",
+          "release_time_et": "2026-11-05 after US cash close (exact minute unverified)",
+          "release_time_sgt": "2026-11-06 after 05:00 SGT (exact minute unverified)",
+          "market_session": "US AFTER-HOURS earnings, Nov 6 reaction",
+          "key_takeaway": "Atlassian披露约17.7亿美元季度收入、同比约24%，调整后每股收益约1.65美元；云业务增速约30.5%却未阻止周五股价下跌约16%，凸显市场定价敏感。",
+          "metrics": [
+            {
+              "metric": "FY27 Q1 revenue",
+              "actual": "~$1.77 billion",
+              "consensus": "尚无法可靠核实同口径营收共识",
+              "previous_or_yoy": "+24% YoY",
+              "surprise": "不声称未经验证的精确预期差",
+              "notes": "已公布季度营收，非未来指引。"
+            },
+            {
+              "metric": "Adjusted EPS",
+              "actual": "~$1.65",
+              "consensus": "~$1.44（Barrons报道市场估算）",
+              "previous_or_yoy": "前值尚无法可靠核实",
+              "surprise": "高于Barrons报道估算，非官方定盘",
+              "notes": "必须区分调整后与GAAP口径。"
+            }
+          ],
+          "guidance": [],
+          "market_reaction": {
+            "session": "2026-11-06 US CASH",
+            "move": "TEAM约-16%（Reuters收盘报道）",
+            "as_of": "2026-11-06 16:00 EST"
+          },
+          "one_offs": [
+            "云增速从约30.8%到约30.5%为业务节奏变化，不能在未确认价格因素时单因果归咎。"
+          ],
+          "read_through": [
+            {
+              "asset": "TEAM / cloud software",
+              "implication": "高增长并不足以确保高估值维持，现金化预期与增长边际更重要。"
+            },
+            {
+              "asset": "Nasdaq software sector",
+              "implication": "盈利后市场反应需以估值预期差解释，而非只看同比收入增长。"
+            }
+          ],
+          "sources": [
+            "S02",
+            "S24"
+          ]
+        }
+      ],
+      "upcoming_72h": [
+        {
+          "id": "NRG-2026-Q3",
+          "company": "NRG Energy",
+          "ticker": "NRG",
+          "period": "FY2026 Q3",
+          "status": "Confirmed Upcoming — official company announcement",
+          "date": "2026-11-09",
+          "et": "2026-11-09 08:00 EST conference call; earnings release before call",
+          "sgt": "2026-11-09 21:00 SGT conference call; release prior",
+          "market_session": "US PREMARKET earnings; 08:00 EST call",
+          "consensus": {
+            "revenue": "尚无法可靠确认同口径一致预期",
+            "eps": "尚无法可靠确认同口径一致预期"
+          },
+          "previous_guidance": "尚无法可靠确认最新公开指引",
+          "actual": "待公布",
+          "what_matters": [
+            "数据中心电力需求与电价、容量投标及现金回收能力是AI基础设施扩张的关键约束。",
+            "审阅已实现季度现金流与未来项目储备，不把展望直接计入已完成收入。"
+          ],
+          "read_through_targets": [
+            "NRG",
+            "US electricity capacity markets",
+            "data-center power contracts"
+          ],
+          "sources": [
+            "S22"
+          ]
+        },
+        {
+          "id": "OXY-2026-Q3",
+          "company": "Occidental Petroleum",
+          "ticker": "OXY",
+          "period": "FY2026 Q3",
+          "status": "Confirmed Upcoming — Occidental official announcement",
+          "date": "2026-11-09",
+          "et": "2026-11-09 after 16:00 EST (company announced after-market release)",
+          "sgt": "2026-11-10 after 05:00 SGT (no exact minute verified)",
+          "market_session": "US AFTER-HOURS earnings",
+          "consensus": {
+            "revenue": "尚无法可靠确认同口径一致预期",
+            "eps": "尚无法可靠确认同口径一致预期"
+          },
+          "previous_guidance": "尚无法可靠确认最新公司指引",
+          "actual": "待公布",
+          "what_matters": [
+            "对照实际原油销售价格、产量和自由现金流，检验高波动油价对企业盈利的真实传导。",
+            "注意海湾通航及全球油价风险是市场背景，不等于OXY已公布本期财务数据。"
+          ],
+          "read_through_targets": [
+            "OXY",
+            "US E&P equities",
+            "energy credit"
+          ],
+          "sources": [
+            "S21"
+          ]
+        }
+      ]
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "US Macro Data & Forecasts",
+      "status": "已核实至2026-11-07 09:12 SGT",
+      "summary": "10月非农强于预期已落地，下一个宏观核心验证是11月10日官方CPI。",
+      "paragraphs": [
+        "BLS在11月6日08:30 EST公布美国10月非农新增165,000人、失业率4.1%，相对此前约59,000至65,000人的市场预期明显偏强。",
+        "就业不弱不等于消费或工薪增长没有风险；需把工资、修订与通胀路径分开分析，不把就业强自动解释为企业利润强。",
+        "BLS日历列明下一次10月CPI在11月10日08:30 EST发布，即11月10日21:30 SGT，目前仍是待公布事件。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S06",
+        "S14"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Central Banks & Rates",
+      "status": "已核实至2026-11-07 09:12 SGT",
+      "summary": "更强美国非农令货币政策放松预期受到挑战，美债供给可能放大资金成本反应。",
+      "paragraphs": [
+        "财政部11月6日每日票面收益率参考约为2Y 4.51%、10Y 4.86%、30Y 5.26%；此为官方日数据，不混入不同供应商盘中报价计算涨跌。",
+        "Reuters所述12月加息交易概率为特定时间市场隐含价格，而不是美联储正式决定；不能凭概率变化确认决策结果。",
+        "下周3Y、10Y、30Y三期拍卖计划已经宣布，实际结果尚无数据，先看流动性吸收能力。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S04",
+        "S05",
+        "S06"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Geopolitics & War Risk",
+      "status": "已核实至2026-11-07 09:12 SGT",
+      "summary": "海湾航运和石油物理供给仍是风险溢价来源，谈判意向不能替代安全通航证据。",
+      "paragraphs": [
+        "Brent 11月6日结算约98.32美元、WTI约90.83美元；这是具体合同与时间点的报告值，不可与11月5日其他快照直接拼日涨跌。",
+        "投资推论应分解为军事与航运事件、实际出口、保险运费以及炼厂库存四个环节；本次没有可靠同步全量监测。",
+        "如果油价重新上升，强非农背景下的利率和通胀双重约束会使能源风险传到科技与项目融资折现。"
+      ],
+      "tables": [],
+      "sources": [
+        "S09",
+        "S10",
+        "S11"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "Regional Policy / China, Europe, Japan & Canada",
+      "status": "已核实至2026-11-07 09:12 SGT",
+      "summary": "韩国股市急跌与加拿大就业转弱并存，地区风险不可由美国强非农统一解释。",
+      "paragraphs": [
+        "韩国11月6日KOSPI收5059.69、跌6.02%，盘中达到临时熔断阈值；Reuters报道周跌约11.7%。",
+        "加拿大统计局10月就业减少4,700人、失业率6.7%；Reuters报道加元盘中约每美元1.4128加元，但该报价不是11月7日同步实时价。",
+        "日本日经周五跌约6%，说明亚洲高科技权重市场短期风险并不因美国周五反弹而自动消失。"
+      ],
+      "tables": [],
+      "sources": [
+        "S07",
+        "S08",
+        "S12",
+        "S13"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "Index Changes & Market Structure",
+      "status": "已核实至2026-11-07 09:12 SGT",
+      "summary": "没有核实的当期指数编制或再平衡公告；不将SOXX拆股调整误记为SOX指数的实际市场涨跌。",
+      "paragraphs": [
+        "SOXX ETF在11月5日发生拆股调整，Yahoo Finance历史数据需使用同一拆股后调整系列，不能连接拆股前原价与拆股后收盘价。",
+        "同一系列的SOXX周五136.53美元、11月5日131.90美元、10月30日157.17美元，用于比对同类收益，不能当作SOX指数官方点数。",
+        "本期未证实主流指数新增或剔除成分股的正式生效事件，不用未经核实的流传名单补足栏目。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S16"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "Institutional Flows & Positioning",
+      "status": "已核实至2026-11-07 09:12 SGT",
+      "summary": "市场风险偏好确实转弱，但缺少可复核的机构净买入与衍生品持仓数据，不用价格回推资金流。",
+      "paragraphs": [
+        "纳指周五反弹1.09%、周跌约3.4%，韩国KOSPI周跌约11.7%，只能证明价格结果，不能精确分拆机构、散户或量化交易贡献。",
+        "Reuters报道韩国周五外资净卖出约2.8万亿韩元，须明确这是韩国交易日的统计而不是全球科技ETF净申赎。",
+        "美股ETF真实一级市场净申赎和券商期权Gamma未获取足够独立官方数据，本期严格保留证据缺口。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S07",
+        "S15"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF & Fund Transmission",
+      "status": "已核实至2026-11-07 09:12 SGT",
+      "summary": "QQQ、SOXX与TQQQ的同系列周表现突出显示科技暴露差异以及杠杆日复利风险。",
+      "paragraphs": [
+        "QQQ周五收656.10美元，相较10月30日690.49美元约跌4.98%；SOXX拆股调整后同段约跌13.13%，半导体风险暴露更集中。",
+        "TQQQ是每日重置三倍的杠杆ETF，周五收52.25美元，相比10月30日62.01美元约跌15.74%；周收益不应机械当作QQQ的三倍。",
+        "上述为二级市场收盘与同一历史序列走势，不是基金一级市场净流数据或投资者仓位证据。"
+      ],
+      "tables": [],
+      "sources": [
+        "S15",
+        "S16",
+        "S18",
+        "S19"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "Options, Volatility & Derivatives",
+      "status": "已核实至2026-11-07 09:12 SGT",
+      "summary": "暂无可核实的当日期权Gamma、交易商Delta对冲及隐含波动率跨日完整系列，不据此编造支撑位。",
+      "paragraphs": [
+        "周五科技股反弹与前一天暴跌形成高波动环境，但单日涨跌和ETF杠杆产品表现不能映射成期权做市商净Gamma数值。",
+        "若后续获得同交易时点的CBOE VIX及对应期权持仓数据，才可量化波动溢价；本期只提出待验证指标。",
+        "执行上优先观察现金收盘与美国国债收益率、韩国芯片链同步变化，拒绝使用未验证的“最大痛点”定价。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S15",
+        "S16"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "US Treasury, Auctions & Funding",
+      "status": "已核实至2026-11-07 09:12 SGT",
+      "summary": "11月9日3年券与11月10日10年券拍卖是下一项可量化资金成本检验。",
+      "paragraphs": [
+        "美国财政部11月4日公告季度再融资总规模1250亿美元：3年券580亿美元、10年券420亿美元、30年券250亿美元。",
+        "3年券定于11月9日13:00 EST拍卖，即11月10日02:00 SGT；10年券定于11月10日13:00 EST拍卖，即11月11日02:00 SGT。",
+        "在真实拍卖前不能预报中标收益率、尾差及投标覆盖倍数；只有正式结果发布后才能判断利率供给冲击。"
+      ],
+      "tables": [],
+      "sources": [
+        "S04",
+        "S05"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Commodities: Energy, Metals & Inflation",
+      "status": "已核实至2026-11-07 09:12 SGT",
+      "summary": "油价与黄金的交易时点不同，必须区分能源实物风险与美元利率的对冲方向。",
+      "paragraphs": [
+        "11月6日Brent结算约98.32美元/桶、WTI约90.83美元/桶，可靠同一到期合约5D结算缺失，不能拿不同供应商滚动合约拼接。",
+        "Reuters 11月6日黄金盘中约4,074.36美元/盎司、日跌约0.3%，同时报告本周涨约5.2%，说明单日美元利率压力与周度避险可以并存。",
+        "铜价与其他工业品缺少同刻可信多日序列，本期不引入未验证的铜价涨跌百分比。"
+      ],
+      "tables": [],
+      "sources": [
+        "S09",
+        "S10",
+        "S11"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "Corporate Financing & AI Infrastructure",
+      "status": "已核实至2026-11-07 09:12 SGT",
+      "summary": "算力建设融资估值与设备销售增长不能等同，核心应观察电力合同和项目现金流。",
+      "paragraphs": [
+        "地方数据中心新建许可限制仍处政策提案或地方审查阶段，已实施范围与暂停新批项目范围必须逐项核实，不能称美国全国统一禁建。",
+        "NRG下周财报将提供电力需求与容量市场的另一条验证路径；在公布前不能声称其合同收入已经兑现。",
+        "强非农推高未来融资利率约束，若国债拍卖与项目现金流同时恶化，最先敏感的是长期回报尚不确定的AI基础设施项目。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S04",
+        "S22",
+        "S25"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Breaking News (Last 24 Hours)",
+      "status": "已核实至2026-11-07 09:12 SGT",
+      "summary": "过去24小时最关键的新确认事实是美国10月非农、周五科技股技术反弹和韩国股市的现金收盘。",
+      "paragraphs": [
+        "11月6日美国官方非农就业+165,000，失业率4.1%，属于已发布实际数据；旧预测不再作为未来催化。",
+        "11月6日美股纳指+1.09%、SOX约+4.2%，但全周纳指仍约-3.4%；11月6日韩国KOSPI-6.02%，跨市场未同步企稳。",
+        "油价Brent/WTI分别约98.32/90.83美元，为周五结算报道；未获得新的海湾全面停火或保障通航的可靠证据。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S03",
+        "S07",
+        "S10"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "Market Impact / Investment Thesis & Execution",
+      "status": "已核实至2026-11-07 09:12 SGT",
+      "summary": "结论是强就业、偏高贴现率与AI资本开支兑现不确定性交织；不以周五反弹作为全面风险偏好修复信号。",
+      "paragraphs": [
+        "Base情景等待11月9日美国3年券拍卖吸收情况，Bull情景要求半导体跨地区连续修复且利率稳定，Bear情景关注利率/许可/油价同向恶化。",
+        "关注收益率与SOXX、KOSPI的跨市场条件确认，而不是在缺少真实Gamma和净申赎时做不可验证的资金归因。",
+        "下周先看11月9日能源电力财报与拍卖，随后11月10日CPI正式数据；若证据尚不充分，应维持中性而非虚构交易胜率。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S04",
+        "S07",
+        "S14",
+        "S22"
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "增长脉冲",
+      "current": "↑ 美国非农+16.5万",
+      "yesterday": "预期不足+10万",
+      "change_reason": "新增岗位强于市场调查预期。",
+      "evidence": "BLS 2026-11-06正式发布10月就业+165,000、失业率4.1%。",
+      "sources": [
+        "S01",
+        "S06"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "通胀脉冲",
+      "current": "↑ 油价Brent约98.32",
+      "yesterday": "周内油价显著波动",
+      "change_reason": "真实运输风险与油价结算并存，下周CPI尚未发布。",
+      "evidence": "WSJ 11月6日Brent结算约$98.32，BLS公布11月10日CPI安排。",
+      "sources": [
+        "S10",
+        "S14"
+      ]
+    },
+    "rates_pressure": {
+      "label": "利率压力",
+      "current": "↑ 美10Y参考约4.86%",
+      "yesterday": "11月5日约4.84%（异源）",
+      "change_reason": "强劲就业提高利率上行风险，下周Treasury拍卖是独立验证。",
+      "evidence": "美国财政部11月6日2Y约4.51%、10Y约4.86%，11月9日3Y拍卖$58bn。",
+      "sources": [
+        "S04",
+        "S05"
+      ]
+    },
+    "earnings_revision": {
+      "label": "盈利兑现",
+      "current": "→ ABNB+12%/TEAM-16%",
+      "yesterday": "企业定价相对分化",
+      "change_reason": "即使软件/平台公布增长，估值依旧受到预期差与资本回报约束。",
+      "evidence": "Reuters 11月6日个股收盘；ABNB上调全年展望，TEAM云增速约30.5%。",
+      "sources": [
+        "S02",
+        "S23",
+        "S24"
+      ]
+    },
+    "liquidity": {
+      "label": "金融条件及仓位",
+      "current": "↓ QQQ周跌约4.98%",
+      "yesterday": "11月5日科技急挫",
+      "change_reason": "周五技术反弹不足以抵消周度损失，真实申赎/Gamma未核实。",
+      "evidence": "QQQ同系列11月6日656.10、10月30日690.49；不声称净流数据。",
+      "sources": [
+        "S02",
+        "S15"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "地缘风险",
+      "current": "↑ 海湾实际通航待证",
+      "yesterday": "油价经历高波动",
+      "change_reason": "外交表态并不等于实物供应链已修复。",
+      "evidence": "11月6日WTI约90.83美元、Brent约98.32美元，具体运输事件须再验证。",
+      "sources": [
+        "S10",
+        "S11"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base｜区间震荡、等待国债拍卖",
+      "probability": "50%（主观权重，非统计预测）",
+      "trigger": "美国就业强但无新增全面AI许可禁令，海湾供应未出现明确新阻断",
+      "expected_market_reaction": "美股周五反弹后进入高波动横盘，半导体相对大盘承压；3Y拍卖决定前端利率压力持续性。",
+      "assets_most_sensitive": [
+        "US Treasury 2Y",
+        "US Treasury 3Y",
+        "Nasdaq",
+        "SOXX"
+      ],
+      "what_confirms_it": "11月9日拍卖需求正常、公布业绩支撑现金流，但半导体尚未持续领先。",
+      "what_invalidates_it": "实际政策收紧、拍卖明显偏弱或真实海湾运力冲击扩大。"
+    },
+    "bull_case": {
+      "label": "Bull｜利率稳定与芯片修复扩散",
+      "probability": "25%（主观权重，非统计预测）",
+      "trigger": "拍卖需求稳、美国通胀数据前无新增鹰派冲击，数据中心政策限制范围清晰",
+      "expected_market_reaction": "SOXX/NVDA及韩国芯片资产相对修复，长端收益率稳定，纳指逐步收复此前损失。",
+      "assets_most_sensitive": [
+        "SOXX",
+        "NVDA",
+        "KOSPI",
+        "US 10Y"
+      ],
+      "what_confirms_it": "亚洲芯片停止显著落后，资金成本改善与项目订单可验证相互支持。",
+      "what_invalidates_it": "国债利率走高叠加科技盈利或电力项目风险恶化。"
+    },
+    "bear_case": {
+      "label": "Bear｜就业强、利率高与审批冲击共振",
+      "probability": "25%（主观权重，非统计预测）",
+      "trigger": "10Y/3Y拍卖需求疲弱，更多地方审批限制落地，海湾运输风险回升",
+      "expected_market_reaction": "纳指与SOXX再承压，美元与融资成本上升，风险信用利差可能扩大。",
+      "assets_most_sensitive": [
+        "SOXX",
+        "Nasdaq",
+        "US 10Y",
+        "Brent",
+        "data-center debt"
+      ],
+      "what_confirms_it": "利率快速上行且韩国半导体保持弱势，已发行项目融资信用利差同步扩张。",
+      "what_invalidates_it": "拍卖稳健、政策澄清且企业现金流保持强劲，破坏“双压”的必要条件。"
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-11-09 21:00 SGT (NRG call)",
+      "et": "2026-11-09 08:00 EST",
+      "event": "NRG Energy公布Q3业绩及08:00 EST电话会（业绩在电话会前发布）",
+      "consensus": "尚无法可靠核实",
+      "previous": "以公司正式财务信息为准",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S22"
+      ]
+    },
+    {
+      "sgt": "2026-11-10 02:00 SGT",
+      "et": "2026-11-09 13:00 EST",
+      "event": "美国财政部3年期国债580亿美元拍卖",
+      "consensus": "拍卖投标倍数和尾差尚未公布，不能预填",
+      "previous": "11月4日官方公告为财政部规模而非拍卖结果",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S04"
+      ]
+    },
+    {
+      "sgt": "2026-11-10 05:00 SGT之后",
+      "et": "2026-11-09 after 16:00 EST",
+      "event": "Occidental Petroleum Q3盘后业绩",
+      "consensus": "尚无法可靠核实",
+      "previous": "官方已公布日期但未发布实际本期业绩",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S21"
+      ]
+    },
+    {
+      "sgt": "2026-11-10 21:30 SGT",
+      "et": "2026-11-10 08:30 EST",
+      "event": "美国BLS 10月CPI通胀报告（超出11月7日09时起72小时窗口，属于下周风险）",
+      "consensus": "尚无法可靠核实同口径预测",
+      "previous": "以BLS发布的正式历史序列为准",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S14"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "非农超预期后长端国债拍卖偏弱使资本密集型AI项目贴现率进一步上升",
+      "why_not_fully_priced": "周五SOX反弹4.2%与美国就业利率约束同时出现，若拍卖无法吸收供给，风险溢价仍有二次调整空间。",
+      "trigger": "11月9日3Y或11月10日10Y拍卖出现明显收益率尾差与投标需求不足。",
+      "transmission": "就业韧性→政策利率预期走高→国债期限溢价→重资产AI融资利息与估值承压。",
+      "first_asset": "US Treasury 3Y/10Y, SOXX, data-center debt",
+      "theme_id": "rates_ai_capex",
+      "lifecycle_state": "active",
+      "first_seen": "2026-11-05",
+      "last_seen": "2026-11-07",
+      "sources": [
+        "S01",
+        "S04",
+        "S05",
+        "S06"
+      ]
+    },
+    {
+      "risk": "AI数据中心许可与电力接入不确定性转化为现金流延期",
+      "why_not_fully_priced": "股价能在极端下跌后反弹，但提议中的地方新项目许可限制与已实际执行限制不同，不能用市场回升否定实物建设风险。",
+      "trigger": "地方新项目许可收紧、电网接入延误或客户推迟设备交付订单。",
+      "transmission": "项目审批延迟→建设付款与采购推迟→芯片设备收入风险→数据中心项目债务服务压力。",
+      "first_asset": "SOXX, NVDA, power infrastructure credit",
+      "theme_id": "ai_permitting_cashreturn",
+      "lifecycle_state": "active",
+      "first_seen": "2026-11-04",
+      "last_seen": "2026-11-07",
+      "sources": [
+        "S02",
+        "S07",
+        "S25"
+      ]
+    },
+    {
+      "risk": "海湾航运实物事件与能源价格反弹抬升二次通胀预期",
+      "why_not_fully_priced": "Brent约98.32美元不等于油运供应已永久恢复，外交谈判与实际安全航道需要独立证据确认。",
+      "trigger": "油轮通航中断、保险与运费跳涨或实际出口设施再次受损。",
+      "transmission": "实际货运受阻→原油风险溢价上升→能源通胀→联储利率和企业利润受压。",
+      "first_asset": "Brent / WTI / US 10Y breakevens",
+      "theme_id": "gulf_energy_realflow",
+      "lifecycle_state": "active",
+      "first_seen": "2026-10-30",
+      "last_seen": "2026-11-07",
+      "sources": [
+        "S10",
+        "S11"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "2026年11月9日美国3年期580亿美元国债拍卖：强劲非农后第一轮明确可观察的再融资需求测试",
+    "status": "Confirmed Upcoming — US Treasury November 4 official refunding calendar",
+    "date": "2026-11-09",
+    "et": "2026-11-09 13:00 EST",
+    "sgt": "2026-11-10 02:00 SGT",
+    "consensus": "实际投标倍数、尾差和中标利率尚未公布；没有可独立核实的精确投标预测。",
+    "previous": "美国财政部11月4日公告3Y发行额为580亿美元，该数值是计划供给而非中标金额。",
+    "actual": "待公布",
+    "why_it_matters": "美国10月新增非农16.5万强化利率压力，而AI资本开支现金回报仍被质疑；拍卖能否平稳吸收供给直接影响融资成本。",
+    "first_market": "US Treasury 3Y/2Y yields, US 10Y, USD and rate-sensitive technology",
+    "bull_interpretation": "真实竞标需求稳健、尾差受控，有利于削弱融资利率再度抬升风险；并不自动证明AI项目许可风险已消失。",
+    "bear_interpretation": "如果需求偏弱、收益率明显走高，市场或同时压低科技长久期估值并要求更高的数据中心债务回报。",
+    "watch_first": [
+      "11月10日02:00 SGT后查看美国财政部3年期正式中标收益率、投标倍数及间接投标比例，不能提前填写拍卖结果。",
+      "对照11月9日纽约交易日美国2Y、10Y收益率与美元变化，区分就业利率重估和国债供给尾差冲击。",
+      "随后交叉验证SOXX、纳指及半导体亚洲收盘是否保持相对修复；11月10日CPI仍待官方公布。"
+    ],
+    "sources": [
+      "S01",
+      "S04",
+      "S05",
+      "S14"
+    ]
+  },
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S25"
+  ],
+  "asia_snapshot": {
+    "as_of": "2026-11-07 09:12 SGT；美股/油价为2026-11-06现金收盘或结算，黄金为Reuters盘中快照；周六无新的美股常规现金交易。",
+    "brent": "98.32 USD/bbl（11月6日WSJ报道结算）",
+    "wti": "90.83 USD/bbl（11月6日WSJ报道结算）",
+    "dxy": "尚无法核实2026-11-07周六09:00 SGT同步美元指数报价",
+    "s_and_p_futures": "尚无法核实周六09:00 SGT有效可交易同期标普期货报价",
+    "nasdaq_futures": "尚无法核实周六09:00 SGT有效可交易同期纳指期货报价",
+    "korea_equities": "2026-11-06 KOSPI正式收于5059.69，单日-6.02%；周六韩国现金市场休市。",
+    "sources": [
+      "S02",
+      "S03",
+      "S07",
+      "S09",
+      "S10"
+    ]
+  }
+}
