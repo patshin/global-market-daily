@@ -1,7 +1,51 @@
 {
   "schema_version": "1.0.0",
-  "updated_at": "2026-11-06T09:10:37+08:00",
+  "updated_at": "2026-11-09T09:13:00+08:00",
   "entries": [
+    {
+      "schema_version": "1.1.0",
+      "date": "2026-11-09",
+      "thesis": "截至11月9日北京早间，全球风险资产的核心矛盾已从单纯AI估值回调转为“三重验证”：中国09:30即将公布的CPI/PPI检验能源成本能否传导至终端需求，海湾新一轮船舶事件与卡塔尔调停检验油运风险溢价，美国强非农后的3年期国债拍卖及次日CPI检验长久期科技融资成本。周五美股技术性反弹不能替代这些真实数据。",
+      "overall_regime": "China Price Transmission / Gulf Mediation & Shipping / Treasury-CPI Rate Test",
+      "dominant_narrative": "周一早晨最应警惕的是不同市场时钟造成的错觉。美国11月6日收盘纳指上涨1.09%、标普上涨0.31%，但纳指五交易日仍跌约3.37%，SOXX调整后周跌约13.13%，这不是趋势修复的充分证据。美国10月非农新增165,000、失业率4.1%，使联储进一步宽松的交易假设更难站稳；财政部11月9日13:00 EST将拍卖580亿美元3年期国债，11月10日08:30 EST发布美国10月CPI，实际投标及通胀数值均尚未可得。中国方面，国家统计局9月CPI同比0.9%、PPI同比5.0%已经表明上游成本上涨与终端需求偏弱并存，11月9日09:30公布10月数据才是对这一差距的直接验证，不能把市场预测当作实绩。地缘方面，美国中央司令部11月7日称击停阿曼湾货船，Reuters 11月8日报道海湾股市走低、卡塔尔称仍在斡旋美伊谈判；这些事实同时存在，不等于已签停火协议，也不能据未经独立核实的触雷报道换算出减产或缺口。11月7日伯克希尔第三季经营利润127.1亿美元同比下降约6%，回购96亿美元，是盈利与资本配置分化的案例。当前行动优先级应是中国价格数据、海运可交付量、3Y真实拍卖需求与美国CPI的顺序核验，而不是依据周末新闻拟合当下行情。",
+      "report_path": "reports/2026/11/2026-11-09.md",
+      "daily_json_path": "data/daily/2026-11-09.json",
+      "sources_path": "data/sources/2026-11-09.json",
+      "edition": "Morning Official",
+      "edition_status": "official",
+      "publication_cycle": "morning",
+      "source_mode": "native_daily",
+      "last_updated": "2026-11-09T09:13:00+08:00"
+    },
+    {
+      "schema_version": "1.1.0",
+      "date": "2026-11-08",
+      "thesis": "截至11月8日早间，风险资产面临的主约束由“AI资本开支能否兑现现金流”扩展为“高利率融资、海湾通航中断和盈利质量”三重压力：11月6日美国非农新增16.5万人强化利率约束，11月7日美国军方又宣布在阿曼湾击停一艘商业货船，下一轮核心验证是11月9日美债拍卖与11月10日美国CPI。",
+      "dominant_narrative": "本期新增事实并非新一轮周末美股收盘，而是地缘事件和盈利质量证据。11月7日美国中央司令部称其击停一艘试图突破对伊朗海上封锁的圣基茨籍货船，Reuters和AP独立报道了军方声明；同日报道的格什姆岛爆炸与伊方油轮触雷说法尚缺独立事故核验，不能把声称直接换算成油流损失。当天伯克希尔公布第三季经营利润127.1亿美元、同比-6%，同时回购96亿美元股份，体现强现金资产负债表与保险承保压力并存，不可把回购直接等同于企业经营改善。市场价格仍以11月6日现金收盘为准：纳指涨1.09%但周跌约3.37%，Brent约98.32美元/桶、WTI约90.83美元/桶为当日不同合约结算报道，周末不存在新的官方股市结算。美国10月非农+16.5万、失业率4.1%使贴现率端压力不能被忽略；11月9日美国580亿美元3年券拍卖与11月10日CPI将检验利率对AI投资的约束是否加深。",
+      "edition": "Morning Official",
+      "edition_status": "official",
+      "source_mode": "native_daily",
+      "last_updated": "2026-11-08T09:01:45+08:00",
+      "overall_regime": "Gulf Blockade / AI Cash-Return / Strong Jobs & Treasury Supply",
+      "report_path": "reports/2026/11/2026-11-08.md",
+      "daily_json_path": "data/daily/2026-11-08.json",
+      "sources_path": "data/sources/2026-11-08.json",
+      "publication_cycle": "morning"
+    },
+    {
+      "date": "2026-11-07",
+      "thesis": "截至11月7日09时，市场主要约束是美国非农就业强于预期后利率上行与AI数据中心资本开支回报疑虑的双重挤压：周五纳指虽反弹1.09%，全周仍跌约3.4%；下周美国国债再融资拍卖与CPI将决定债券压力能否缓解。",
+      "overall_regime": "AI Cash-Return vs Higher-for-Longer / Gulf Oil Risk / Treasury Supply",
+      "dominant_narrative": "11月6日美国10月非农新增16.5万人、失业率4.1%，均好于市场原有预期，意味着“增长崩塌”叙事并不成立，但也削弱短期货币宽松的可见性。科技股在此前一天极端抛售后反弹，SOX约+4.2%，纳指+1.09%，却仍在周线上跌约3.4%，半导体资本支出与监管预期尚未修复；同期韩国Kospi单日-6.02%、周跌11.7%，说明亚洲供应链风险传导真实存在。原油Brent约98.32美元/桶、WTI约90.83美元/桶的11月6日结算与海湾航运不确定性并存，不等于战争风险解除。下一步应以11月9日美国3年期580亿美元拍卖、能源公司业绩和11月10日CPI正式公布验证“利率—现金流—油价”三重约束，不能凭单日反弹宣告见底。",
+      "report_path": "reports/2026/11/2026-11-07.md",
+      "daily_json_path": "data/daily/2026-11-07.json",
+      "sources_path": "data/sources/2026-11-07.json",
+      "edition": "Morning Official",
+      "edition_status": "official",
+      "publication_cycle": "morning",
+      "source_mode": "native_daily",
+      "last_updated": "2026-11-07T09:12:44+08:00"
+    },
     {
       "schema_version": "1.1.0",
       "date": "2026-11-06",
