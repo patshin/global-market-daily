@@ -2399,6 +2399,14 @@
         {
           "date": "2026-11-04",
           "value": 25736.51
+        },
+        {
+          "date": "2026-11-05",
+          "value": 24315.0
+        },
+        {
+          "date": "2026-11-06",
+          "value": 24579.42
         }
       ]
     },
@@ -2487,6 +2495,10 @@
         {
           "date": "2026-11-04",
           "value": 7688.62
+        },
+        {
+          "date": "2026-11-05",
+          "value": 7353.73
         }
       ]
     },
@@ -2575,6 +2587,10 @@
         {
           "date": "2026-11-04",
           "value": 16.61
+        },
+        {
+          "date": "2026-11-05",
+          "value": 28.18
         }
       ]
     },
@@ -2659,6 +2675,10 @@
         {
           "date": "2026-11-04",
           "value": 4.58
+        },
+        {
+          "date": "2026-11-05",
+          "value": 4.46
         }
       ]
     },
@@ -2743,6 +2763,10 @@
         {
           "date": "2026-11-04",
           "value": 4.9
+        },
+        {
+          "date": "2026-11-05",
+          "value": 4.84
         }
       ]
     },
@@ -2987,6 +3011,10 @@
         {
           "date": "2026-11-04",
           "value": 3.32
+        },
+        {
+          "date": "2026-11-05",
+          "value": 3.48
         }
       ]
     }
@@ -3011,27 +3039,27 @@
   },
   "series_freshness": {
     "NASDAQCOM": {
-      "last_observation": "2026-11-04",
+      "last_observation": "2026-11-06",
       "source": "Nasdaq, Inc. via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "SP500": {
-      "last_observation": "2026-11-04",
+      "last_observation": "2026-11-05",
       "source": "S&P Dow Jones Indices via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "VIXCLS": {
-      "last_observation": "2026-11-04",
+      "last_observation": "2026-11-05",
       "source": "CBOE via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS2": {
-      "last_observation": "2026-11-04",
+      "last_observation": "2026-11-05",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS10": {
-      "last_observation": "2026-11-04",
+      "last_observation": "2026-11-05",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
@@ -3046,7 +3074,7 @@
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "BAMLH0A0HYM2": {
-      "last_observation": "2026-11-04",
+      "last_observation": "2026-11-05",
       "source": "ICE BofA via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     }
