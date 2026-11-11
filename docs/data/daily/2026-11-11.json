@@ -1,0 +1,1024 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-11-11",
+  "edition": "Morning Official",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-11-11 09:13 SGT",
+  "data_cutoff_et": "2026-11-10 20:13 EST",
+  "last_updated": "2026-11-11T09:13:00+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-11-11T09:00:00+08:00",
+    "started_at_sgt": "2026-11-11T08:58:04+08:00",
+    "research_cutoff_sgt": "2026-11-11T09:13:00+08:00",
+    "mode": "contemporaneous_morning_research",
+    "note": "独立核对11月10日美国BLS CPI、美国现金市场收盘、当日10Y Treasury实际拍卖、CoreWeave正式三季报与11月11日Veterans Day交易日安排；本报告用已完成美东11月10日行情，不冒充北京时间11月11日实时成交。"
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": true
+  },
+  "publication_policy": {
+    "effective_date": "2026-10-08",
+    "no_evening_edition": true,
+    "is_canonical_daily": true
+  },
+  "source_mode": "native_daily",
+  "sources_path": "data/sources/2026-11-11.json",
+  "comparison_basis": "对比最新已上main正式Morning Official 2026-11-09：当时中国10月CPI/PPI、美国10月CPI与本周3Y/10Y拍卖均未实际公布，最新美股收盘为11月6日。11月11日版仅用已确认的11月9日中国价格数据与11月10日美国CPI、交易、10Y拍卖和公司公告形成新增判断；未发表11月10日草稿不是正式比较基线。",
+  "thesis": "11月10日美国10月CPI月率0.4%、核心0.3%均高于可核实预期，推动美国2年期收益率盘中上升约18个基点、美股从前一日反弹转为回落；同日420亿美元10年期国债拍卖出现1基点尾差。当前主约束不是原油单日回落，而是粘性核心通胀与AI扩张融资成本的双重挤压：CoreWeave三季报收入达36.61亿美元、积压订单1325亿美元，同时季度利息支出8.46亿美元。",
+  "dominant_narrative": "美国11月10日08:30 EST正式公布的10月整体CPI环比+0.4%、剔除食品能源核心CPI+0.3%，分别高于Reuters调查的+0.3%和+0.2%；BLS因2025年10月数据缺失，对部分指数没有官方有效同比，不能把推算同比写成正式统计。到11月10日16:00 EST，标普500收7,520.93（-0.38%）、纳指25,065.87（-0.74%），此前周一+2.35%/+2.74%的缓和反弹遭遇实测通胀挑战；英伟达约-5.4%，半导体板块却相对抗跌。Reuters跟踪的2Y收益率4.731%、单日+18.44bp，10Y 4.988%、+12.55bp，与当天420亿美元10Y新债拍卖的5.020%中标收益率、2.46倍投标倍数、较WI高1bp形成“通胀→短端预期→期限融资成本”的证据链，但二级现券收益率与竞标高收益率不是同一标的即时价格。11月10日Brent收91.49美元/桶（-1.2%）、WTI收86.04（-0.9%），美国官员降低进一步对伊打击紧迫性的表态压低油价，不能据此认定已达成停火或海上风险消失。中国国家统计局11月9日公布10月CPI同比+0.7%、PPI+5.7%，上下游价差5个百分点，制造链成本传导仍受到内需约束。CoreWeave11月10日美股盘后正式披露第三季收入36.61亿美元、净亏损7.09亿美元、净利息支出8.46亿美元、积压订单1325亿美元并给出2026资本开支370–390亿美元指引：订单收入与已实现自由现金流是不同变量。今天11月11日是美国Veterans Day，SIFMA建议美元债券市场休市，美股正常交易；11月12日30年国债拍卖与11月13日08:30 EST美国10月PPI尚待公布，应该观察资金成本和盈利现金回报而非套用单一Risk-On标签。",
+  "market_regime": {
+    "growth": {
+      "state": "美国就业仍韧性但核心通胀限制增长估值；中国终端消费价格温和",
+      "evidence": "美国10月非农已报告新增16.5万、失业率4.1%；中国10月CPI同比0.7%，上游PPI同比5.7%，企业量价并不齐升。"
+    },
+    "inflation": {
+      "state": "美国核心CPI超预期，油价回落尚未抵消存量通胀",
+      "evidence": "11/10 BLS总CPI环比0.4%、核心0.3%，分别比可靠调查高0.1pp；能源月率+0.7%，食品+0.5%。"
+    },
+    "rates": {
+      "state": "短端重新计价加息风险，10Y拍卖边际偏软",
+      "evidence": "11/10 Reuters美国2Y约4.731%（+18.44bp）、10Y约4.988%（+12.55bp）；10Y拍卖中标5.020%、2.46倍。"
+    },
+    "earnings": {
+      "state": "AI云收入强、融资成本同样高，硬件和云盈利分化",
+      "evidence": "CoreWeave三季报收入$3.661bn、净亏损$709m、净利息支出$846m、backlog $132.5bn，不能把积压合同当作现金。"
+    },
+    "liquidity": {
+      "state": "隔日反弹被通胀和利率压制，Veterans Day现券休市",
+      "evidence": "11/10 S&P -0.38%、Nasdaq -0.74%；11/11 SIFMA建议美元固定收益休市，但美股开放，缺乏同日连续美债现券结算。"
+    },
+    "geopolitics": {
+      "state": "油价连续回落但霍尔木兹供应与美伊政治风险未被实证解除",
+      "evidence": "Reuters 11/10 Brent 91.49美元-1.2%、WTI 86.04美元-0.9%；降温表态不等于签署和平或恢复全部实际航运。"
+    },
+    "overall": {
+      "state": "Hot CPI / Weakening Treasury Auction Demand / AI Financing Cash-Flow Test",
+      "evidence": "美国核心0.3%超调查0.2%，2Y收益率约+18bp，10Y拍卖5.02%/2.46倍；CoreWeave季度净利息成本$846m。"
+    }
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,520.93",
+      "change_1d": "-0.38%",
+      "change_5d": "-0.63%",
+      "signal": "宽基通胀冲击",
+      "driver": "强CPI将未来现金流折现率上移，宽基从周一普涨转小跌",
+      "status": "US CASH CLOSED Nov10; Nov11 stock session not yet opened at research cutoff",
+      "as_of": "2026-11-10 16:00 EST",
+      "sources": [
+        "S22",
+        "S02"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "25,065.87",
+      "change_1d": "-0.74%",
+      "change_5d": "-1.21%",
+      "signal": "科技估值承压",
+      "driver": "CPI、短端利率和英伟达消息共同影响高久期成长资产",
+      "status": "US CASH CLOSED Nov10; Nov11 stock session not yet opened at research cutoff",
+      "as_of": "2026-11-10 16:00 EST",
+      "sources": [
+        "S22",
+        "S02"
+      ]
+    },
+    {
+      "asset": "Dow Jones Industrial Average",
+      "level": "52,231.89",
+      "change_1d": "-0.30%",
+      "change_5d": "+0.86%",
+      "signal": "传统蓝筹更抗跌",
+      "driver": "工业和价值股下跌较小，反映科技估值因素权重更高",
+      "status": "US CASH CLOSED Nov10; Nov11 stock session not yet opened at research cutoff",
+      "as_of": "2026-11-10 16:00 EST",
+      "sources": [
+        "S22",
+        "S02"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,821.38",
+      "change_1d": "-0.68%",
+      "change_5d": "+0.32%",
+      "signal": "小盘融资约束",
+      "driver": "美债短端上行不利高债务企业再融资，隔日反弹未确认持续",
+      "status": "US CASH CLOSED Nov10; Nov11 stock session not yet opened at research cutoff",
+      "as_of": "2026-11-10 16:00 EST",
+      "sources": [
+        "S22"
+      ]
+    },
+    {
+      "asset": "Nasdaq-100",
+      "level": "27,740.79",
+      "change_1d": "-0.60%",
+      "change_5d": "-1.56%",
+      "signal": "核心科技回撤",
+      "driver": "AI板块大盘反弹后因通胀风险失去贴现支持",
+      "status": "US CASH CLOSED Nov10; Nov11 stock session not yet opened at research cutoff",
+      "as_of": "2026-11-10 16:00 EST",
+      "sources": [
+        "S21"
+      ]
+    },
+    {
+      "asset": "Invesco QQQ ETF",
+      "level": "674.76",
+      "change_1d": "-0.68%",
+      "change_5d": "-1.54%",
+      "signal": "纳指100 ETF跌幅扩大",
+      "driver": "相同价格调整口径跨5个交易日比较，不把分时价当成收盘",
+      "status": "US CASH CLOSED Nov10; Nov11 stock session not yet opened at research cutoff",
+      "as_of": "2026-11-10 16:00 EST",
+      "sources": [
+        "S14"
+      ]
+    },
+    {
+      "asset": "iShares SOXX ETF (split-adjusted)",
+      "level": "146.59",
+      "change_1d": "-0.12%",
+      "change_5d": "-5.43%",
+      "signal": "半导体五日明显偏弱",
+      "driver": "11月5日3:1拆股已在Yahoo历史价调整，避免误判绝对价跌幅",
+      "status": "US CASH CLOSED Nov10; Nov11 stock session not yet opened at research cutoff",
+      "as_of": "2026-11-10 16:00 EST",
+      "sources": [
+        "S15"
+      ]
+    },
+    {
+      "asset": "iShares IWM ETF",
+      "level": "280.58",
+      "change_1d": "-0.68%",
+      "change_5d": "+0.28%",
+      "signal": "小盘ETF回撤",
+      "driver": "宽基利率压力传导至估值与债务再融资",
+      "status": "US CASH CLOSED Nov10; Nov11 stock session not yet opened at research cutoff",
+      "as_of": "2026-11-10 16:00 EST",
+      "sources": [
+        "S16"
+      ]
+    },
+    {
+      "asset": "Technology XLK ETF",
+      "level": "168.91",
+      "change_1d": "-1.15%",
+      "change_5d": "-4.31%",
+      "signal": "科技板块持续落后",
+      "driver": "科技板块相对必需消费更敏感于核心CPI与贴现率",
+      "status": "US CASH CLOSED Nov10; Nov11 stock session not yet opened at research cutoff",
+      "as_of": "2026-11-10 16:00 EST",
+      "sources": [
+        "S17"
+      ]
+    },
+    {
+      "asset": "Industrials XLI ETF",
+      "level": "168.73",
+      "change_1d": "-0.09%",
+      "change_5d": "-1.51%",
+      "signal": "工业板块边际稳定",
+      "driver": "成本下降可能帮助工业企业，但制造需求和利率仍待验证",
+      "status": "US CASH CLOSED Nov10; Nov11 stock session not yet opened at research cutoff",
+      "as_of": "2026-11-10 16:00 EST",
+      "sources": [
+        "S18"
+      ]
+    },
+    {
+      "asset": "Consumer Staples XLP ETF",
+      "level": "91.03",
+      "change_1d": "+0.15%",
+      "change_5d": "+2.34%",
+      "signal": "防御性消费逆势上涨",
+      "driver": "通胀加息担忧时现金流久期较短板块相对抗跌",
+      "status": "US CASH CLOSED Nov10; Nov11 stock session not yet opened at research cutoff",
+      "as_of": "2026-11-10 16:00 EST",
+      "sources": [
+        "S19"
+      ]
+    },
+    {
+      "asset": "Energy XLE ETF",
+      "level": "62.21",
+      "change_1d": "+0.44%",
+      "change_5d": "-6.70%",
+      "signal": "能源股仍受原油回落压制",
+      "driver": "油价回落减轻输入性通胀但也压低上游收入预期",
+      "status": "US CASH CLOSED Nov10; Nov11 stock session not yet opened at research cutoff",
+      "as_of": "2026-11-10 16:00 EST",
+      "sources": [
+        "S20"
+      ]
+    },
+    {
+      "asset": "US Treasury 2Y yield",
+      "level": "4.731%",
+      "change_1d": "+18.44bp",
+      "change_5d": "尚无法可靠确认",
+      "signal": "短端加息风险抬升",
+      "driver": "10月核心CPI超预期及联储官员偏鹰言论令12月加息预期上修",
+      "status": "REUTERS NOV10 INDICATIVE; NOV11 VETERANS DAY FIXED INCOME CLOSED",
+      "as_of": "2026-11-10 EST Reuters market report (intraday)",
+      "sources": [
+        "S03",
+        "S06"
+      ]
+    },
+    {
+      "asset": "US Treasury 10Y yield",
+      "level": "4.988%",
+      "change_1d": "+12.55bp",
+      "change_5d": "尚无法可靠确认",
+      "signal": "长端贴现率抬高",
+      "driver": "美国核心通胀韧性叠加10年债新供给需求偏弱，融资成本冲击",
+      "status": "REUTERS NOV10 INDICATIVE; separate from AUCTION 5.020%",
+      "as_of": "2026-11-10 EST Reuters market report (intraday)",
+      "sources": [
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "asset": "Brent crude ICE futures",
+      "level": "91.49 USD/bbl",
+      "change_1d": "-1.20%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "供应风险溢价缓解",
+      "driver": "美方降低新一轮对伊军事行动紧迫性，仍非经证实的全面停战",
+      "status": "NOV10 SETTLEMENT; delivery-specific 5D unavailable",
+      "as_of": "2026-11-10 ICE settlement (Reuters)",
+      "sources": [
+        "S11"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "2026-11-11 CONTEMPORANEOUS USING 2026-11-10 US CASH CLOSE; EXPLICIT 5D CONTRACT GAPS",
+    "asset_count": 15,
+    "level_coverage": {
+      "available": 15,
+      "total": 15,
+      "ratio": 1.0
+    },
+    "change_1d_coverage": {
+      "available": 15,
+      "total": 15,
+      "ratio": 1.0
+    },
+    "change_5d_coverage": {
+      "available": 12,
+      "total": 15,
+      "ratio": 0.8
+    },
+    "explicit_gaps": [
+      "12个指数或ETF均从2026-11-10收盘与2026-11-03（五个交易日之前）同一品种收盘数据计算5D；不是不同交易日或盘中与结算拼接。",
+      "SOXX为2026-11-05三拆一后调整价序列，11/03的155.00是同供应商已拆股调整后的可比值。",
+      "2Y/10Y Reuters当日指示性报价有真实1D变动，但未取得同供应商相同时间、相同品种的五交易日收益率变化，留缺口。",
+      "Brent报价为11/10 ICE结算，未验证同一交割月份五交易日前可比结算；不跨不同合约推算。",
+      "美东11/11 Veterans Day美国债券市场按SIFMA建议休市，美股仍开放；本稿SGT 09时之前美国11/11现金盘尚未开市。",
+      "仅12/15 5D是可靠可比较数据；美债、原油其余3项显式缺口，未以假数据追求100%。"
+    ],
+    "policy": "Level 15/15=100%; 1D 15/15=100%; comparable same-series 5D 12/15=80%. All observations carry their own as_of."
+  },
+  "what_changed": [
+    {
+      "yesterday": "11/09正式晨报时美国10月CPI仍待11/10公布，长端利率与宽基科技尚未经历这次通胀重定价。",
+      "today": "11/10 BLS CPI月率+0.4%、核心+0.3%，分别超可靠调查0.1个百分点；Reuters 2Y收益率+18.44bp、标普-0.38%、纳指-0.74%。",
+      "why_it_matters": "通胀超预期不只是媒体情绪：短端真实跳升压缩高久期科技估值，并使下一次PPI及联储表态的边际权重上升。",
+      "sources": [
+        "S01",
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "yesterday": "11/09正式晨报时580亿美元3Y国债与其后10Y竞标都尚未进行，不能写入最终中标结果。",
+      "today": "11/10 13:00 EST 420亿美元10Y拍卖完成，高收益率5.020%、WI约5.01%、尾差+1bp、倍数2.46、间接竞买占61.2%。",
+      "why_it_matters": "竞标尾差和偏低投标倍数使高利率融资压力有供给端实证，而11/11固定收益假日意味着要等11/12交易恢复核对持续性。",
+      "sources": [
+        "S04",
+        "S05",
+        "S06"
+      ]
+    },
+    {
+      "yesterday": "11/09正式晨报时CoreWeave第三季经营与资本开支的正式披露尚不可得。",
+      "today": "11/10盘后公司正式公布Q3收入$3.661bn、净亏损$709m、净利息支出$846m、backlog $132.5bn、FY资本开支$37–39bn。",
+      "why_it_matters": "云算力需求有实测收入支持，但合同积压和计划资本支出不能当即期现金；新融资与折现率上升令AI算力公司分化。",
+      "sources": [
+        "S07",
+        "S08"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "美国11月10日08:30 EST公布10月CPI超预期：核心通胀重新锚定12月加息和AI贴现率",
+      "status": "Released/Occurred — BLS October 2026 CPI",
+      "event_time_et": "2026-11-10 08:30 EST",
+      "event_time_sgt": "2026-11-10 21:30 SGT",
+      "what_happened": "BLS正式公布10月整体CPI环比0.4%、核心0.3%，Reuters调查分别为0.3%及0.2%；能源上涨0.7%，食品上涨0.5%，去年10月基准缺失导致官方部分同比不可发布。",
+      "what_changed": "前一版只能等待CPI，新版已经看到确切数值及对应市场交易：2Y收益率一度约+18bp、美元走强、纳指收低；“数据公布”与“股市反应”必须标明不同时间。",
+      "why_it_matters": "真实超预期说明近期能源回落尚未完全进入服务、住房等核心价格，迫使长久期资产重新审视融资贴现和12月联储决策。",
+      "transmission": "美国核心CPI→Fed加息预期/2Y收益率→10Y/美元与黄金→AI数据中心资本回报率→科技/半导体及信用利差。",
+      "affected_assets": [
+        "US Treasury 2Y",
+        "US Treasury 10Y",
+        "Nasdaq Composite",
+        "SOXX",
+        "DXY"
+      ],
+      "direction": "Rates up, growth duration risk down",
+      "importance": "★★★★★",
+      "confirmation": "以BLS原始分项、同日Reuters现券报价、正式收盘及11/13 PPI连续核验通胀是否广泛传导。",
+      "invalidation": "若后续PPI明显回落或核心通胀结构显示高度集中，且2Y回落、科技盈利仍强，通胀加息螺旋的持续性判断减弱。",
+      "sources": [
+        "S01",
+        "S02",
+        "S03",
+        "S12"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "美国11月10日13:00 EST 420亿美元10Y拍卖需求偏软：投标倍数2.46和+1bp尾差检验债市吸纳力",
+      "status": "Released/Occurred — US Treasury 10Y note auction",
+      "event_time_et": "2026-11-10 13:00 EST",
+      "event_time_sgt": "2026-11-11 02:00 SGT",
+      "what_happened": "公开拍卖结果为$42bn规模、5.020%中标收益率、WI约5.01%、尾差+1bp、bid-to-cover 2.46、间接认购61.2%、直接29.0%、一级交易商9.8%。",
+      "what_changed": "09正式版时拍卖未发生；当前披露的实际投标构成显示边际外部需求不强，但不能把一次尾差视作债市流动性崩溃。",
+      "why_it_matters": "当通胀让政策利率预期重估时，国债供给吸收不畅将进一步抬升期限溢价，对AI算力扩张企业的利息负担和高估值构成双向考验。",
+      "transmission": "CPI与Fed路径→国债WI及拍卖尾差→收益率/美元/信用融资成本→数据中心资本支出与股市估值。",
+      "affected_assets": [
+        "US 10Y",
+        "US 30Y",
+        "QQQ",
+        "Corporate Credit"
+      ],
+      "direction": "Higher yield, selective risk-off",
+      "importance": "★★★★",
+      "confirmation": "11/12 30Y正式竞标结果、11/12债券市场重开后的现券成交价、间接投标及dealer库存是否同步。",
+      "invalidation": "若后续30年券拍卖表现良好、长端现券回落并有连续买盘，一次10年券偏弱不足构成结构性资金枯竭。",
+      "sources": [
+        "S04",
+        "S05",
+        "S06",
+        "S24"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "CoreWeave 11月10日盘后Q3正式财报：36.61亿美元收入背后的8.46亿美元季度净利息成本",
+      "status": "Released/Occurred — Q3 2026 earnings",
+      "event_time_et": "2026-11-10 16:05 EST",
+      "event_time_sgt": "2026-11-11 05:05 SGT",
+      "what_happened": "公司11月10日盘后发布第三季收入$3.661bn、GAAP经营收益$207m、净亏损$709m、净利息支出$846m、backlog $132.5bn；2026收入指引$13.0–13.3bn、资本开支指引$37–39bn。",
+      "what_changed": "与前一正式版相比AI算力增长从市场预测切换为当期财报实绩，但贷款、资本开支与合同未交付部分的资金需求仍需独立衡量。",
+      "why_it_matters": "财务报表把AI订单强度与融资承受能力放到同一张表上：当收益率抬升，只有现金回款和可交付机房产能能抵消高资本成本。",
+      "transmission": "已确认收入/合同backlog→机房建设交付→贷款利息/现金流→云服务估值、芯片订单与电力需求。",
+      "affected_assets": [
+        "CRWV",
+        "SOXX",
+        "US Corporate Credit",
+        "Datacenter Power"
+      ],
+      "direction": "Operational growth but capital cost risk",
+      "importance": "★★★★",
+      "confirmation": "核验SEC与公司财报的每季利息、客户预付款是否实际到账、未来融资利率和投入产出时点；不可把指引视为已实现。",
+      "invalidation": "若可核实的预付客户款和低成本项目融资足以覆盖资本开支、现金流改善，则长期高债务风险会被部分削弱。",
+      "sources": [
+        "S07",
+        "S08",
+        "S02"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top Market Catalysts",
+      "status": "通胀、拍卖和AI云财报三个已发生冲击互相验证",
+      "summary": "11月10日三个已发布事件共同将焦点从周一油价回落后的股市反弹转到折现率与AI融资现金回报。",
+      "paragraphs": [
+        "美国10月CPI月率及核心通胀实际均超调查，股票从11月9日反弹转为回落；11月10日10年期拍卖1bp尾差与2.46倍投标支持资本成本仍高。",
+        "CoreWeave正式收入与利润结构给出了AI需求与融资费用并存的财务样本，不能把积压订单、预收款计划、已实现利润或股价混成同一种证据。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S04",
+        "S07"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings",
+      "status": "AI云收入强、财务费用显著增加",
+      "summary": "CoreWeave11月10日盘后财报显示Q3收入$3.661bn、GAAP净亏损$709m、净利息$846m，证明增长同时也提高资本需求。",
+      "paragraphs": [
+        "核心收入同比从$1.365bn增至$3.661bn，调整后经营利润$379m，但净利息费用$846m；毛收入、调整后利润与GAAP净亏损必须分开，季度利润质量仍由可持续项目现金流定义。",
+        "公司给出全年收入$13.0–13.3bn及资本开支$37–39bn指引、期望未来约三个月$9bn客户预付款和保证金，尚未全部实际收取，不能记作当期资产负债表现金。"
+      ],
+      "tables": [],
+      "sources": [
+        "S07",
+        "S08"
+      ],
+      "reported": [
+        {
+          "id": "CRWV-2026-Q3",
+          "company": "CoreWeave",
+          "ticker": "CRWV",
+          "period": "FY2026 Q3",
+          "status": "Released/Occurred",
+          "release_date": "2026-11-10",
+          "release_time_et": "2026-11-10 16:05 EST (AFTER HOURS)",
+          "release_time_sgt": "2026-11-11 05:05 SGT",
+          "market_session": "US after-hours; regular US close 16:00 EST happened BEFORE release",
+          "key_takeaway": "第三季营收$3.661bn但净亏损$709m及净利息$846m；backlog$132.5bn未来转化需要资本开支$37–39bn。",
+          "metrics": [
+            {
+              "metric": "Quarterly revenue",
+              "actual": "$3.661bn",
+              "consensus": "未获取同口径完整分析师调查数",
+              "previous_or_yoy": "Q3 2025 $1.365bn",
+              "surprise": "只按已核实公司公告列增速，不制造超预期幅度",
+              "notes": "公司IR 2026-11-10披露。"
+            },
+            {
+              "metric": "GAAP net loss / net interest expense",
+              "actual": "-$709m / $846m",
+              "consensus": "尚无法可靠确认",
+              "previous_or_yoy": "Q3 2025 net loss $110m",
+              "surprise": "融资开支并非一次性运营收益",
+              "notes": "同一季收入不应和累计backlog做盈利对比。"
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "FY2026 revenue",
+              "current": "$13.0–13.3bn",
+              "previous_or_consensus": "上调；旧区间需要参考历史原始发布",
+              "change": "Raised",
+              "interpretation": "前瞻范围并非全年已实现收入。"
+            },
+            {
+              "metric": "FY2026 capital expenditures",
+              "current": "$37–39bn",
+              "previous_or_consensus": "此前下限$35bn（公司公告）",
+              "change": "Raised floor to $37bn",
+              "interpretation": "资本需求上升，融资资金到位情况需独立检验。"
+            }
+          ],
+          "market_reaction": {
+            "session": "2026-11-10 US after hours, after the 16:00 EST cash close",
+            "move": "盘后价格需独立核实；本期不提供未经同源时点核实的涨跌幅",
+            "as_of": "2026-11-10 16:05 EST release"
+          },
+          "one_offs": [
+            "Revenue backlog是未来可能确认的合同收入，与收入或现金余额不同。",
+            "约$9bn未来三个月客户预付款/保证金为管理层预期，非当期已入账现金。"
+          ],
+          "read_through": [
+            {
+              "asset": "CRWV debt/equity",
+              "implication": "市场关注现金利息覆盖能力和未来建设提款率，不能把高速营收增长等同权益利润。"
+            },
+            {
+              "asset": "SOXX, power utilities",
+              "implication": "长周期订单支撑芯片需求，但数据中心融资或供电延迟会改变设备交付兑现时点。"
+            }
+          ],
+          "sources": [
+            "S07",
+            "S08"
+          ]
+        }
+      ],
+      "upcoming_72h": []
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "US Macro Data & Forecasts",
+      "status": "美国10月CPI已发布且核心超预期",
+      "summary": "美国劳工统计局公布10月整体CPI环比+0.4%、核心+0.3%，均较Reuters调查高0.1个百分点；11/13 PPI尚未发布。",
+      "paragraphs": [
+        "食品环比+0.5%、能源+0.7%、住房+0.3%；住房贡献了整体月率超过三成，美国10月部分指标官方同比缺失是2025年停摆造成的历史基准问题，不能自行推算成BLS官方YoY。",
+        "联储将需要结合11月13日08:30 EST October PPI与后续真实通胀分项决策；单独依据周一油价回落不能否定已实现的10月服务价格压力。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S03",
+        "S12"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Central Banks & Rates",
+      "status": "12月加息预期提高，政策并非宣布再加息",
+      "summary": "Reuters11月10日称市场对12月至少25bp加息已有充分定价，Fed Governor Waller认为应在12月加息并在通胀恶化时考虑50bp，但决议尚未发生。",
+      "paragraphs": [
+        "11月10日美债2Y在Reuters截点4.731%（+18.44bp），10Y 4.988%（+12.55bp），实际折现率提高对高资本支出公司估值更不利。",
+        "11月11日美国Veterans Day是固定收益交易假日，股市开放；次日美国债券恢复交易后才可用同质市场连续观测来核对政策重新定价。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S03",
+        "S06"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Geopolitics & War Risk",
+      "status": "中东紧张有所缓和，油气供应风险尚未解除",
+      "summary": "Reuters报道美方降低新增对伊军事打击紧迫性，但油轮通航和制裁变化仍需要实证，11月10日Brent和WTI连续回落。",
+      "paragraphs": [
+        "美方官员政策表态与海湾航运畅通并非同一证据层次；Brent $91.49/bbl与WTI $86.04/bbl分别为11月10日结算价，不能换算成全球实际产量损失。",
+        "若后续出现真实港口滞航或海上保险成本明显上升，油价将通过企业运输成本、核心物价与长期债券利率再冲击科技估值。"
+      ],
+      "tables": [],
+      "sources": [
+        "S11",
+        "S03"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "Regional Policy / China, Europe, Japan & Canada",
+      "status": "中国10月价格数据显示上游与终端传导仍不畅",
+      "summary": "中国国家统计局11月9日09:30发布10月CPI同比+0.7%、核心+0.8%、PPI同比+5.7%；欧美日加等其他新增重要政策未见同等可核实的本期新公告。",
+      "paragraphs": [
+        "PPI与CPI同比差达5个百分点，通胀高点更多停留在上游工业品和原材料，制造商如果缺终端议价权可能面临毛利压力。",
+        "日本、欧洲和加拿大财政/关税/产业政策在本研究窗口没有可证实且有同等级市场影响的新变更，不能编造“重大新增”，本期重点仍以中美实际公布的价格数据和政策为准。"
+      ],
+      "tables": [],
+      "sources": [
+        "S09",
+        "S10",
+        "S23"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "Index Changes & Market Structure",
+      "status": "指数日跌与指数成分监管风险必须区分",
+      "summary": "11月10日纳斯达克综合指数跌0.74%，纳指100跌约0.60%；SOXX在11月5日发生3:1拆股，跨期历史价格使用同供应商拆股调整序列。",
+      "paragraphs": [
+        "11/10标普-0.38%、Dow-0.30%，而英伟达约-5.4%使科技指数更弱；单个权重公司的新闻不能自动解释全部行业公司盈利。",
+        "本研究窗口尚未核实重大新指数纳入/剔除公告；ETF和SOXX拆分调整口径需保持一致，不将拆股前后价格尺度混用。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S15",
+        "S21",
+        "S22"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "Institutional Flows & Positioning",
+      "status": "尚无同口径完整资金流明细，不臆测大额净流向",
+      "summary": "11月9日股票普涨并不代表可核实的主动基金净流入；11月10日科技跌幅较大更不足以直接推定机构卖空或对冲基金减仓金额。",
+      "paragraphs": [
+        "10年期美债拍卖间接投标占61.2%、一级交易商9.8%是真实一级市场分配结构，不等同于全球机构资金所有资产净流入或对外汇债券头寸的推算。",
+        "须等待ETF申赎与基金实际披露后才能判断资金流方向，当前价格变化最多指示风险偏好而不构成净流量证据。"
+      ],
+      "tables": [],
+      "sources": [
+        "S04",
+        "S05",
+        "S02"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF & Fund Transmission",
+      "status": "QQQ、SOXX、IWM与防御板块出现相对收益分化",
+      "summary": "11月10日QQQ收674.76美元、SOXX调整后146.59美元、IWM 280.58美元；XLP 91.03美元微涨，科技与小盘承受融资利率冲击。",
+      "paragraphs": [
+        "使用Yahoo相同品种、同一收盘历史序列逐一计算五交易日变化，不把不同基金分红、拆分或日期当成可直接相减的共同净值收益。",
+        "QQQ和纳指100、SOXX与XLK具有重叠科技敞口，市场表15项资产不意味着15个独立宏观交易因子；用XLP、XLE的相对变化检验风格而非重复计算风险。"
+      ],
+      "tables": [],
+      "sources": [
+        "S14",
+        "S15",
+        "S16",
+        "S17",
+        "S19",
+        "S20"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "Options, Volatility & Derivatives",
+      "status": "未核实当日伽马仓位，不填写max pain或dealer flip",
+      "summary": "股市科技板块振幅提高确实可能放大短期对冲需求，但缺乏期权交易所完整11月10日到期结构与持仓数据，不能编造gamma flip和0DTE方向。",
+      "paragraphs": [
+        "当前可核实的是现货价格、美国通胀数据、债券拍卖和正式财报；所有“投行对冲会迫使指数跌/涨X点”的说法需有明确期权持仓与模型来源。",
+        "实际监控选择市场波动率指数VIX官方读数及认沽/认购成交量，当前没有同一时间可核实数字时保留文字风险描述而不赋定量阈值。"
+      ],
+      "tables": [],
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "US Treasury, Auctions & Funding",
+      "status": "已完成10Y拍卖偏软，30Y尚待发行结果",
+      "summary": "11月10日财政部420亿美元10年券竞标高收益5.020%，WI约5.01%、尾差+1.0bp、投标倍数2.46，间接/直接/交易商分别获配61.2%/29.0%/9.8%。",
+      "paragraphs": [
+        "竞标供给吸纳需求略弱于最近六次平均2.60倍；这类拍卖实际收益率与Reuters记录的现券10Y 4.988%不同，不能作为同一瞬间无风险曲线报价使用。",
+        "美国11月11日Veterans Day固定收益按SIFMA建议休市，11月12日13:00 EST 30年券拍卖尚未发生，所有未来bid-to-cover/尾差必须保留待公布。"
+      ],
+      "tables": [],
+      "sources": [
+        "S04",
+        "S05",
+        "S06",
+        "S24"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Commodities: Energy, Metals & Inflation",
+      "status": "油价回落与核心通胀上涨形成不同时间维度的错位",
+      "summary": "Brent11月10日ICE结算91.49美元/桶跌1.2%，WTI86.04美元/桶跌0.9%；但BLS10月CPI核心月率0.3%仍高于调查0.2%。",
+      "paragraphs": [
+        "油价回落可以在未来降低汽油与运输价格预期，但已发布10月份价格是历史样本，不能让11月份油价走势“回改”已发布10月实绩。",
+        "传导链条是能源→运输和工业投入→通胀预期及实际CPI/PPI→央行短端与长端国债→科技股风险溢价；现货黄金Reuters报告约$4,030.56/oz、-2.62%。"
+      ],
+      "tables": [],
+      "sources": [
+        "S11",
+        "S01",
+        "S03"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "Corporate Financing & AI Infrastructure",
+      "status": "AI云增长与资本结构杠杆需要逐项核对",
+      "summary": "CoreWeave披露Q3积压订单约$132.5bn、2026年资本开支指导$37–39bn、净利息开支$846m、约$9bn未来客户预付预期，融资必要性与收入增速同样突出。",
+      "paragraphs": [
+        "积压订单表示尚待履行的商业关系，并不等于已经收到现金；客户保证金计划与债券、项目贷款融资工具的实际到账额不得累加当作现存现金。",
+        "Reuters11月10日关于Anthropic巨额IPO的早期融资方案报道指出初版分发材料曾撤回，属于计划/预期而非已定价并募集资金；在股权市场高波动时应区分“目标、承诺、交割、已部署”。"
+      ],
+      "tables": [],
+      "sources": [
+        "S07",
+        "S08",
+        "S13"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Breaking News (Last 24 Hours)",
+      "status": "过去24小时新增可核实事实：CPI、拍卖、CoreWeave",
+      "summary": "截至真实北京时间研究截点，最有市场影响力的三件已发生事分别是美国11月10日08:30 EST BLS CPI、13:00 EST 10年国债拍卖、16:05 EST CoreWeave业绩发布。",
+      "paragraphs": [
+        "美国股市11月10日16:00 EST正式收盘的反应也已发生；CoreWeave成绩在股市收盘后公布，两者不能倒置因果或把盘后消息归因于此前现金市场收盘。",
+        "11月13日PPI、11月12日30年美债拍卖都是未来已排程事件，需标成Confirmed Upcoming、Actual=待公布；今日11月11日美国债市假期不能制造虚构交易收盘。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02",
+        "S04",
+        "S07",
+        "S12",
+        "S24"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "Market Impact / Investment Thesis & Execution",
+      "status": "短端利率主导，优先验证长端吸纳力与现金回款",
+      "summary": "当前最清晰可交易的信息不是单日油价下跌，而是核心CPI已超预期、二级2Y利率明显上升和10Y拍卖需求边际偏弱。",
+      "paragraphs": [
+        "对美股，拆开长期现金收益较强的经营型企业与靠高成本融资扩张的资本密集AI项目；对A/H和中国制造，重点观察PPI-CPI裂口对下游利润和美债贴现率对海外资金配置的影响。",
+        "11/11美国股票正常交易而债券假日，先审视股票相对收益；11/12国债市场恢复后看30Y拍卖，11/13 BLS PPI给出生产端价格证据，在这些出现之前不加杠杆押单一场景。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S03",
+        "S04",
+        "S06",
+        "S09",
+        "S10",
+        "S07"
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "增长脉冲",
+      "current": "→ 增长韧性、利润分化",
+      "yesterday": "→ 就业韧性",
+      "change_reason": "中国终端需求价格温和，而AI云收入强劲并不代表更广泛企业利润同步走强。",
+      "evidence": "中国10月CPI+0.7%、PPI+5.7%；CoreWeave Q3收入$3.661bn。",
+      "sources": [
+        "S09",
+        "S10",
+        "S07"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "通胀脉冲",
+      "current": "↑ 美核心通胀超预期",
+      "yesterday": "→ CPI等待",
+      "change_reason": "已发布的美国整体与核心价格月率均高于可核实调查，油价回落未能即时扭转核心分项。",
+      "evidence": "11/10 BLS整体+0.4%、核心+0.3%；调查分别+0.3%、+0.2%。",
+      "sources": [
+        "S01",
+        "S02",
+        "S03"
+      ]
+    },
+    "rates_pressure": {
+      "label": "利率压力",
+      "current": "↑ 2Y跳升、10Y尾差",
+      "yesterday": "↑ 3Y供给承压",
+      "change_reason": "通胀数据重新定价Fed政策，加上中长期美债拍卖认购偏弱，资金成本压力增强。",
+      "evidence": "2Y约4.731%（+18.44bp）；10Y竞标5.020%/2.46倍/尾差+1bp。",
+      "sources": [
+        "S03",
+        "S04",
+        "S05"
+      ]
+    },
+    "earnings_revision": {
+      "label": "盈利修正",
+      "current": "→ 收入强、利息负担高",
+      "yesterday": "→ AI盈利等待",
+      "change_reason": "CoreWeave订单与当季营收强劲，但融资费用与资本开支同样增大，盈利质量分化。",
+      "evidence": "Q3收入$3.661bn、净利息$846m、净亏损$709m、订单backlog$132.5bn。",
+      "sources": [
+        "S07",
+        "S08"
+      ]
+    },
+    "liquidity": {
+      "label": "流动性",
+      "current": "↓ 科技受贴现冲击",
+      "yesterday": "↑ 周一反弹",
+      "change_reason": "周二美国利率上行后科技股表现弱于大盘，11/11固定收益假日暂时削弱后续现券报价连续性。",
+      "evidence": "11/10纳指-0.74%、标普-0.38%；11/11 SIFMA美元固定收益建议休市。",
+      "sources": [
+        "S02",
+        "S06"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "地缘风险",
+      "current": "→ 油价缓和、事件未解决",
+      "yesterday": "↓ 海湾溢价缓解",
+      "change_reason": "美方降低追加军事打击可能性的信号继续减轻油价，但没有独立证实全面停火与全部航道恢复。",
+      "evidence": "11/10 Brent收$91.49（-1.2%）、WTI $86.04（-0.9%）。",
+      "sources": [
+        "S11"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base｜通胀粘性、债券假日后利率仍高位震荡",
+      "probability": "50%（主观情景权重，非市场报价）",
+      "trigger": "美国10月CPI强于调查已实现；11/12现券重开后长端收益率仍高位，油价延续小幅缓和但未形成新停航。",
+      "expected_market_reaction": "美股仍可有结构性反弹，但资金成本较高制约广谱科技估值；能源与必需消费可能相对分化。",
+      "assets_most_sensitive": [
+        "US 2Y/10Y",
+        "QQQ",
+        "SOXX",
+        "XLP",
+        "Brent"
+      ],
+      "what_confirms_it": "11/12债券成交恢复后长端不大幅回落、11/13 PPI不显著降温，AI云项目融资成本仍偏高。",
+      "what_invalidates_it": "若PPI与利率迅速回落、AI实际现金回报超预期且油运恢复，资金约束显著缓和。"
+    },
+    "bull_case": {
+      "label": "Bull｜价格压力退潮，AI订单转化成经营现金回款",
+      "probability": "25%（分析判断，非隐含概率）",
+      "trigger": "11/13美国PPI和后续生产端价格下行、11/12 30Y竞标需求强，CoreWeave等企业实际预付款到账并降低融资利率。",
+      "expected_market_reaction": "长久期科技和半导体可能补涨，小盘融资压力减轻，美元和黄金表现取决于真实收益率及风险偏好方向。",
+      "assets_most_sensitive": [
+        "QQQ",
+        "SOXX",
+        "IWM",
+        "US 10Y",
+        "CRWV"
+      ],
+      "what_confirms_it": "国债竞标结构、BLS价格分项和财报现金流同期改善，非只依据股价一天上涨。",
+      "what_invalidates_it": "服务通胀和信贷融资依然偏紧，或AI交付延期导致收入不兑现。"
+    },
+    "bear_case": {
+      "label": "Bear｜通胀与供给共振，AI资本密集链承压",
+      "probability": "25%（主观权重，并非统计预测）",
+      "trigger": "美国PPI明显上行、30Y拍卖再显著拖尾，或海湾实际供应中断与算力项目融资违约共振。",
+      "expected_market_reaction": "2Y/10Y及信用利差上升、纳指及AI云融资型股票相对落后，能源反弹增加中国制造链成本压力。",
+      "assets_most_sensitive": [
+        "US 2Y/10Y",
+        "QQQ",
+        "SOXX",
+        "CRWV",
+        "Brent"
+      ],
+      "what_confirms_it": "连续拍卖恶化、通胀与可核实坏账/项目延期同时出现且现金回款不及承诺。",
+      "what_invalidates_it": "若10Y尾差仅是单次事件、能源供应恢复且AI项目融资锁定，则极端恶化判断缺少证据。"
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-11-11 US cash session 22:30 SGT open / 2026-11-12 05:00 SGT close",
+      "et": "2026-11-11 09:30–16:00 EST",
+      "event": "Veterans Day当日美国股票正常交易，美元固定收益按SIFMA建议休市",
+      "consensus": "不适用：交易日安排而非市场调查",
+      "previous": "11/10 Nasdaq收25,065.87、S&P收7,520.93",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S06",
+        "S25"
+      ]
+    },
+    {
+      "sgt": "2026-11-13 02:00 SGT",
+      "et": "2026-11-12 13:00 EST",
+      "event": "美国财政部30年期国债拍卖（已安排，所有竞标指标未来）",
+      "consensus": "不填未经权威一致来源核实的WI和投标倍数",
+      "previous": "11/10 10Y中标5.020%、投标倍数2.46（不同期限仅作参照）",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S24",
+        "S04"
+      ]
+    },
+    {
+      "sgt": "2026-11-13 21:30 SGT",
+      "et": "2026-11-13 08:30 EST",
+      "event": "美国BLS公布10月PPI，包括核心和服务分项",
+      "consensus": "尚无法可靠确认同口径调查；不填数字",
+      "previous": "BLS 9月PPI环比+1.3%（上期官方口径）",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S12"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "美国核心CPI实绩超调查、10Y拍卖偏弱，联储加息与长久期AI估值承受双重贴现压缩",
+      "why_not_fully_priced": "11/09美股迅速反弹使市场易忽略“实际”核心CPI偏高与债券需求不足的组合；11/11固定收益休市可能推迟进一步确认。",
+      "trigger": "11/13 PPI继续上行、11/12 30Y竞标尾差扩大且利率在债券市场恢复后持续偏高。",
+      "transmission": "核心通胀→Fed短端→债券期限溢价与企业信用成本→AI算力项目IRR→纳指/半导体估值。",
+      "first_asset": "US 2Y/10Y, QQQ, SOXX",
+      "theme_id": "rates_ai_capex",
+      "lifecycle_state": "active",
+      "first_seen": "2026-11-05",
+      "last_seen": "2026-11-11",
+      "sources": [
+        "S01",
+        "S03",
+        "S04"
+      ]
+    },
+    {
+      "risk": "CoreWeave收入快速增长但利息支出和资本开支规模巨大，已签合同可能无法按预期转为净现金流",
+      "why_not_fully_priced": "收入$3.661bn和backlog$132.5bn非常吸引注意，但净利息$846m与FY capex$37–39bn表明资产负债表风险未消失。",
+      "trigger": "客户预付款/项目贷款无法按公司预期兑现，融资成本高于合同现金收益或机房供电交付延误。",
+      "transmission": "客户承诺→资本开支贷款→财务费用和资本回收周期→CRWV信用/股权→芯片订单与供电链。",
+      "first_asset": "CRWV credit/equity, SOXX, datacenter utilities",
+      "theme_id": "ai_financing_cash_flow",
+      "lifecycle_state": "active",
+      "first_seen": "2026-11-10",
+      "last_seen": "2026-11-11",
+      "sources": [
+        "S07",
+        "S08",
+        "S03"
+      ]
+    },
+    {
+      "risk": "海湾地缘风险并未因油价连续回落而解除，上游成本向中国终端需求传递受限",
+      "why_not_fully_priced": "美方外交缓和表态与现货货运安全是不同证据，Brent $91.49仍可能因实际供应中断跳涨；中国PPI/CPI裂口达5pp。",
+      "trigger": "核实的航道关闭、实物油气流量下降或新制裁落实，而非单独听闻未经核查的冲突消息。",
+      "transmission": "油气供应与运费→能源及工业原料→中国制造业成本毛利/居民消费→全球通胀与风险资产。",
+      "first_asset": "Brent, USD/CNH, China industrials",
+      "theme_id": "gulf_oil_china_price_transmission",
+      "lifecycle_state": "active",
+      "first_seen": "2026-11-07",
+      "last_seen": "2026-11-11",
+      "sources": [
+        "S11",
+        "S09",
+        "S10",
+        "S23"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "11月12日13:00 EST美国30年期国债拍卖：债券市场Veterans Day休市后首个重要长端融资需求测试",
+    "status": "Confirmed Upcoming — US Treasury scheduled auction (results unobserved)",
+    "date": "2026-11-12",
+    "et": "2026-11-12 13:00 EST",
+    "sgt": "2026-11-13 02:00 SGT",
+    "consensus": "未取得可核实的同口径市场WI与bid-to-cover共识，保持待公布。",
+    "previous": "11/10 10年券规模$42bn、高收益5.020%、WI约5.01%、尾差+1bp、投标倍数2.46；不同期限不可机械对比收益率。",
+    "actual": "待公布",
+    "why_it_matters": "10月核心CPI超预期和10Y投标偏软在11/11债市假日后面临更长久期国债需求检验；30Y吸纳力将决定AI数据中心及高杠杆企业长期贴现成本压力是否继续累积。",
+    "first_market": "US 30Y / 10s30s curve, USD, QQQ, corporate credit",
+    "bull_interpretation": "投标需求稳健、间接买盘回升、收益率回落并传导至AI融资利率，说明近期尾差可被吸纳。",
+    "bear_interpretation": "尾差继续明显为正、dealer留存比例上升及长端收益率再涨，意味着融资约束强化。",
+    "watch_first": [
+      "2026-11-12美债现券市场恢复后观察10Y/30Y真实成交和10s30s曲线，避免把11/11假日少量报价当连续正常收盘。",
+      "2026-11-13 02:00 SGT核验财政部30Y中标收益率与WI差、bid-to-cover、间接/直接/一级交易商获配比，不提前填写实际结果。",
+      "拍卖后比较QQQ/SOXX与企业信用利差、CoreWeave融资成本预期是否同向，持续性判断以完整现金交易确认。"
+    ],
+    "sources": [
+      "S24",
+      "S04",
+      "S05",
+      "S06"
+    ]
+  },
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23",
+    "S24",
+    "S25"
+  ],
+  "asia_snapshot": {
+    "as_of": "2026-11-11 09:13 SGT；已核实11/10 16:00 EST美股收盘与11/10期货结算；11/11美东股票现金盘尚未开市，债市SIFMA建议休市。",
+    "brent": "91.49 USD/bbl（Reuters 2026-11-10 ICE settlement, -1.2%）",
+    "wti": "86.04 USD/bbl（Reuters 2026-11-10 NYMEX settlement, -0.9%）",
+    "dxy": "102.25（Reuters 2026-11-10 US session indicative, +0.56%，非11/11早间现价）",
+    "s_and_p_futures": "11/11 09时SGT可靠同源股指期货实时数据未核实，保持缺口",
+    "nasdaq_futures": "11/11 09时SGT可靠同源纳指期货实时数据未核实，不以昨夜现金收盘冒充实时价",
+    "korea_equities": "韩国11/11本地实时指数未取得可核实成交数据，不填现价",
+    "sources": [
+      "S02",
+      "S03",
+      "S11",
+      "S06"
+    ]
+  }
+}
