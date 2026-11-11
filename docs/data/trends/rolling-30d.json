@@ -2346,6 +2346,10 @@
         {
           "date": "2026-11-09",
           "value": 7549.94
+        },
+        {
+          "date": "2026-11-10",
+          "value": 7520.93
         }
       ]
     },
@@ -2888,7 +2892,7 @@
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "SP500": {
-      "last_observation": "2026-11-09",
+      "last_observation": "2026-11-10",
       "source": "S&P Dow Jones Indices via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
