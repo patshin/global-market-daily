@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-11-09",
-  "window_start": "2026-10-11",
-  "window_end": "2026-11-09",
+  "as_of": "2026-11-11",
+  "window_start": "2026-10-13",
+  "window_end": "2026-11-11",
   "coverage": {
     "market_sessions": 30,
     "native_daily_days": 18,
@@ -88,130 +88,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-10-11",
-      "source_mode": "native_daily",
-      "regime_code": "event_risk",
-      "regime_label": "Event Risk / Oil–FX Intervention, Diesel Diplomacy and Duration",
-      "dominant_theme_id": "energy_inflation",
-      "signals": {
-        "growth": "↓",
-        "inflation": "↑",
-        "rates": "→",
-        "earnings": "→",
-        "liquidity": "↓",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "energy_inflation",
-          "theme_label": "Energy Inflation",
-          "category": "geopolitics_energy",
-          "title": "Oct 10 RBI opens Oct 12 oil-company USD window and tightens INR derivative access",
-          "evidence": "印度储备银行宣布经指定银行直接出售美元，满足IOC、HPCL、BPCL每日美元需求；另将部分无基础敞口凭证衍生品门槛从1亿美元降至500万美元，对超过200万美元的特定合约设置20%外汇风险储备。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "原油美元计价与进口账单↑ → 油企即期买汇↑ → 卢比压力↑ → RBI定向美元供给/衍生品资本约束 → EM FX与信贷定价。",
-          "confirmation": "10月12日USD/INR、央行外储投放信息和油企实际美元窗口使用可确认即期需求转移。",
-          "invalidation": "窗口未落实、卢比继续贬值且外储加速减少，将削弱短期政策缓冲。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
-          "title": "Oct 9–10 US–Russia diesel supply announcement meets Ukraine and EU objections",
-          "evidence": "Reuters和AP报道美国宣布俄罗斯将初步供应30万吨柴油给美国及国际市场、并对相关俄能源制裁做暂时调整；10月10日乌克兰及欧洲方面公开批评该安排可能增加俄方收入。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "俄柴油承诺与部分制裁缓解 → 预期柴油供应↑/炼厂裂解价差↓ → 运费及通胀预期；政治反弹→兑现不确定性。",
-          "confirmation": "独立核实运输船期、到港海关数据、柴油价格和裂解价差同步改善可确认供给兑现。",
-          "invalidation": "制裁安排逆转、实际到港不足或柴油裂解价差继续走高，将否定宣布即现货缓解。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "Oct 12 stock–bond holiday split precedes Oct 13 JPMorgan/Citi Q3 earnings",
-          "evidence": "美国10月12日NYSE/Nasdaq正常开市、美国美元债交易按SIFMA假日建议关闭；Citi官方确认10月13日08:00 EDT公布第三季度业绩，JPMorgan确认08:30 EDT业绩电话会。",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "周一股债交易日错配 → 资产间信号异步 → 周二银行盈利/准备金揭示资金成本和信贷质量 → 期限溢价与风险估值再定价。",
-          "confirmation": "周一股票广度与油价改善、周二美债收益率同步回落且银行净息差/信用质量稳健，支持风险缓和。",
-          "invalidation": "周一出现窄幅指数上涨、周二美债收益率上冲或银行大幅提高坏账拨备，意味着此前风险缓和是错配假象。",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
-    {
-      "date": "2026-10-12",
-      "source_mode": "native_daily",
-      "regime_code": "event_risk",
-      "regime_label": "Event Risk / Middle-East Transit, CPI and Bank Earnings",
-      "dominant_theme_id": "energy_inflation",
-      "signals": {
-        "growth": "→",
-        "inflation": "↑",
-        "rates": "→",
-        "earnings": "→",
-        "liquidity": "→",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "energy_inflation",
-          "theme_label": "Energy Inflation",
-          "category": "geopolitics_energy",
-          "title": "Oct 10–11 Saudi airport strikes renew aviation and regional transit risk before Oct 12 oil trading",
-          "evidence": "Reuters and AP reported deadly Houthi attacks and a repeat strike at Riyadh international airport, at least 12 reported dead in the initial attack and hundreds hurt; airline operations were disrupted. Verified Saudi oilfield production loss from these airport strikes has not been established.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Airport strikes and regional confrontation → airline routing/insurance and tanker risk premiums↑ → transport fuel costs and expected inflation↑ → discount-rate / airline margins pressure.",
-          "confirmation": "Documented airport reopening, reduced regional security incidents and verified lower matched Brent quotes would confirm physical-risk normalization.",
-          "invalidation": "Fresh verified transport attacks, durable flight closures or proven new supply interruption would invalidate a quick normalization narrative.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
-          "title": "Oct 12 Monday equities and FX trade against a SIFMA-recommended U.S. cash-bond holiday",
-          "evidence": "Reuters Monday Asia snapshot indicated S&P500 futures near +0.2%, Nasdaq futures near +0.5% and DXY about 102.14, while SIFMA recommends U.S. fixed-income cash market closure for Columbus Day and Japan cash equities also observe Sports Day.",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Holiday calendar and reduced liquidity → thinner cross-asset confirmation → futures/equity volatility → Tuesday UST cash reopen tests term premium → equity duration repricing.",
-          "confirmation": "Tuesday actual cash Treasury reopening with same-basis lower 10Y yields and Monday broad stock participation confirms duration relief.",
-          "invalidation": "Tuesday matched cash UST yields return higher while Monday only megacaps advanced, rejecting a broad sustainable risk-on signal.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "Oct 13 bank earnings and Oct 14 U.S. September CPI test duration and earnings simultaneously",
-          "evidence": "Issuer investor-relations calendars confirm JPMorgan Chase Q3 results on October 13 around 07:00 EDT and Citigroup around 08:00 EDT. U.S. BLS schedules September CPI for October 14 at 08:30 EDT; neither upcoming result is released at this research cutoff.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Bank credit/funding margins and CPI surprise → policy/UST rate path → bank credit supply and equity multiples → S&P500/Russell sector breadth.",
-          "confirmation": "CPI undercuts price pressure while bank releases show resilient real credit quality and matched Treasury yields ease.",
-          "invalidation": "CPI upside surprise together with weaker bank loan-loss trends and renewed yield pressure rejects the favorable base case.",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
     {
       "date": "2026-10-13",
       "source_mode": "native_daily",
@@ -1957,15 +1833,133 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-11-10",
+      "source_mode": "native_daily",
+      "regime_code": "unclassified",
+      "regime_label": "Oil-Driven Relief Rally / China PPI-CPI Margin Gap / CPI-Treasury Repricing",
+      "dominant_theme_id": "energy_inflation",
+      "signals": {
+        "growth": "→",
+        "inflation": "↓",
+        "rates": "→",
+        "earnings": "↑",
+        "liquidity": "↑",
+        "geopolitics": "↓"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
+          "title": "美国11月10日08:30 EST发布10月CPI：油价回落后的利率定价能否延续",
+          "evidence": "11月9日Brent结算下跌5.85%、纳指上涨2.74%，但11月6日发布的10月非农强于市场预期，3Y拍卖投标倍数仅2.53；美国10月CPI在本研究截点仍未发布，绝不可把调查值当作正式结果。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "CPI核心/能源分项→2Y/10Y国债收益率与联储预期→AI资本开支IRR及企业融资成本→纳指、半导体及信用。",
+          "confirmation": "核对BLS原始CPI月率、核心、同比与修订，再观察2Y/10Y收益率及股票收盘确认。",
+          "invalidation": "若数据与市场盘面反向或统计口径因年度缺口变动，先核实报告注释，不能直接下预期差结论。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "11月9日美股反弹与英伟达逆跌并存：AI回报分歧是否扩散",
+          "evidence": "标普500收7,549.94日涨2.35%、纳指收25,253.14涨2.74%、半导体指数反弹6.9%，但NVDA跌4.2%，AMD涨13.3%；前期下跌的半导体估值与主导龙头走势并未同步修复。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "油价下跌→通胀预期下降→长久期估值回补；芯片供应链资本支出兑现率→盈利预期→板块内部选股。",
+          "confirmation": "下一现金交易日比较NVDA/SOX相对收益、实际收益率、半导体供应链订单与企业毛利趋势。",
+          "invalidation": "若NVDA和中小芯片股后续持续同涨、企业现金流同步改善，单日分化不应被视作结构崩坏。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "中国10月PPI同比5.7%远高于CPI 0.7%，海外油价下跌考验利润传导",
+          "evidence": "官方CPI同比+0.7%、环比持平、核心+0.8%，PPI同比+5.7%、环比+0.7%，工业购进价格同比+7.9%；PPI与CPI同比差扩大至5.0个百分点。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "能源/金属购进价格→PPI和企业成本→CPI、出口终端议价→中国制造业利润、人民币和工业金属。",
+          "confirmation": "继续核对国家统计局工业细分、出口订单与10月海关真实数据，避免把同比名义涨价等同于消费量增长。",
+          "invalidation": "若原材料价格连续下降且终端需求、工业利润实际回升，则成本价差向利润的负向传导减弱。",
+          "source_mode": "native_daily"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-11",
+      "source_mode": "native_daily",
+      "regime_code": "unclassified",
+      "regime_label": "Hot CPI / Weakening Treasury Auction Demand / AI Financing Cash-Flow Test",
+      "dominant_theme_id": "fed_policy_path",
+      "signals": {
+        "growth": "→",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "→",
+        "liquidity": "↓",
+        "geopolitics": "→"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
+          "title": "美国11月10日08:30 EST公布10月CPI超预期：核心通胀重新锚定12月加息和AI贴现率",
+          "evidence": "BLS正式公布10月整体CPI环比0.4%、核心0.3%，Reuters调查分别为0.3%及0.2%；能源上涨0.7%，食品上涨0.5%，去年10月基准缺失导致官方部分同比不可发布。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "美国核心CPI→Fed加息预期/2Y收益率→10Y/美元与黄金→AI数据中心资本回报率→科技/半导体及信用利差。",
+          "confirmation": "以BLS原始分项、同日Reuters现券报价、正式收盘及11/13 PPI连续核验通胀是否广泛传导。",
+          "invalidation": "若后续PPI明显回落或核心通胀结构显示高度集中，且2Y回落、科技盈利仍强，通胀加息螺旋的持续性判断减弱。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
+          "title": "美国11月10日13:00 EST 420亿美元10Y拍卖需求偏软：投标倍数2.46和+1bp尾差检验债市吸纳力",
+          "evidence": "公开拍卖结果为$42bn规模、5.020%中标收益率、WI约5.01%、尾差+1bp、bid-to-cover 2.46、间接认购61.2%、直接29.0%、一级交易商9.8%。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "CPI与Fed路径→国债WI及拍卖尾差→收益率/美元/信用融资成本→数据中心资本支出与股市估值。",
+          "confirmation": "11/12 30Y正式竞标结果、11/12债券市场重开后的现券成交价、间接投标及dealer库存是否同步。",
+          "invalidation": "若后续30年券拍卖表现良好、长端现券回落并有连续买盘，一次10年券偏弱不足构成结构性资金枯竭。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "CoreWeave 11月10日盘后Q3正式财报：36.61亿美元收入背后的8.46亿美元季度净利息成本",
+          "evidence": "公司11月10日盘后发布第三季收入$3.661bn、GAAP经营收益$207m、净亏损$709m、净利息支出$846m、backlog $132.5bn；2026收入指引$13.0–13.3bn、资本开支指引$37–39bn。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "已确认收入/合同backlog→机房建设交付→贷款利息/现金流→云服务估值、芯片订单与电力需求。",
+          "confirmation": "核验SEC与公司财报的每季利息、客户预付款是否实际到账、未来融资利率和投入产出时点；不可把指引视为已实现。",
+          "invalidation": "若可核实的预付客户款和低成本项目融资足以覆盖资本开支、现金流改善，则长期高债务风险会被部分削弱。",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
-    {
-      "date": "2026-10-13",
-      "from": "Event Risk / Middle-East Transit, CPI and Bank Earnings",
-      "to": "Risk-Off Asia / Energy-Inflation–AI Duration Constraint",
-      "dominant_theme_id": "market_structure"
-    },
     {
       "date": "2026-10-14",
       "from": "Risk-Off Asia / Energy-Inflation–AI Duration Constraint",
@@ -2020,13 +2014,13 @@
       "theme_id": "market_structure",
       "theme_label": "Market Structure",
       "category": "market_structure",
-      "days_in_top3": 18,
+      "days_in_top3": 17,
       "best_rank": 1,
-      "first_seen": "2026-10-11",
-      "last_seen": "2026-11-09",
-      "latest_rank": 2,
-      "state": "Escalating",
-      "latest_transmission": "停火谈判可信度/封锁执法→海运保险成本和通航可用量→原油价格/进口通胀→亚洲周期与全球信用。",
+      "first_seen": "2026-10-13",
+      "last_seen": "2026-11-10",
+      "latest_rank": null,
+      "state": "Persistent",
+      "latest_transmission": "能源/金属购进价格→PPI和企业成本→CPI、出口终端议价→中国制造业利润、人民币和工业金属。",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -2036,13 +2030,13 @@
       "theme_id": "ai_earnings",
       "theme_label": "AI / Earnings",
       "category": "earnings_ai_semis",
-      "days_in_top3": 15,
+      "days_in_top3": 17,
       "best_rank": 1,
       "first_seen": "2026-10-14",
-      "last_seen": "2026-11-07",
-      "latest_rank": null,
+      "last_seen": "2026-11-11",
+      "latest_rank": 3,
       "state": "Persistent",
-      "latest_transmission": "许可与电力接入政策预期→数据中心建设交付时间表→芯片采购与融资现金流→SOX、云及项目债券估值。",
+      "latest_transmission": "已确认收入/合同backlog→机房建设交付→贷款利息/现金流→云服务估值、芯片订单与电力需求。",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -2052,13 +2046,13 @@
       "theme_id": "energy_inflation",
       "theme_label": "Energy Inflation",
       "category": "geopolitics_energy",
-      "days_in_top3": 14,
+      "days_in_top3": 13,
       "best_rank": 1,
-      "first_seen": "2026-10-11",
-      "last_seen": "2026-11-09",
-      "latest_rank": 1,
+      "first_seen": "2026-10-13",
+      "last_seen": "2026-11-10",
+      "latest_rank": null,
       "state": "Escalating",
-      "latest_transmission": "能源/原材料成本→中国PPI与CPI价差→制造商毛利/终端消费→人民币、工业金属与亚洲周期股。",
+      "latest_transmission": "CPI核心/能源分项→2Y/10Y国债收益率与联储预期→AI资本开支IRR及企业融资成本→纳指、半导体及信用。",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -2068,13 +2062,13 @@
       "theme_id": "fed_policy_path",
       "theme_label": "Fed Policy Path",
       "category": "central_banks_fiscal",
-      "days_in_top3": 8,
+      "days_in_top3": 9,
       "best_rank": 1,
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-06",
-      "latest_rank": null,
+      "last_seen": "2026-11-11",
+      "latest_rank": 1,
       "state": "Persistent",
-      "latest_transmission": "实际劳动市场数据→美债和美元初步定价→成长股久期及AI融资成本；英国加息是跨市场利率分叉的独立验证。",
+      "latest_transmission": "美国核心CPI→Fed加息预期/2Y收益率→10Y/美元与黄金→AI数据中心资本回报率→科技/半导体及信用利差。",
       "source_modes": [
         "native_daily",
         "objective_market_reconstruction",
@@ -2082,32 +2076,16 @@
       ]
     },
     {
-      "theme_id": "us_china_trade_controls",
-      "theme_label": "U.S.–China Trade Controls",
-      "category": "china_trade_policy",
-      "days_in_top3": 6,
-      "best_rank": 2,
-      "first_seen": "2026-10-11",
-      "last_seen": "2026-10-26",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "外交表态→北美贸易政策不确定性→CAD与工业企业定价→北美供应链投资及信用风险",
-      "source_modes": [
-        "native_daily",
-        "reconstructed_daily"
-      ]
-    },
-    {
       "theme_id": "global_duration",
       "theme_label": "Global Duration / Term Premium",
       "category": "inflation_rates",
-      "days_in_top3": 6,
+      "days_in_top3": 7,
       "best_rank": 2,
       "first_seen": "2026-10-15",
-      "last_seen": "2026-11-09",
-      "latest_rank": 3,
+      "last_seen": "2026-11-11",
+      "latest_rank": 2,
       "state": "Escalating",
-      "latest_transmission": "就业韧性/通胀预期→Treasury真实需求与收益率→融资成本/数据中心项目IRR→科技与信用风险溢价。",
+      "latest_transmission": "CPI与Fed路径→国债WI及拍卖尾差→收益率/美元/信用融资成本→数据中心资本支出与股市估值。",
       "source_modes": [
         "native_daily",
         "objective_market_reconstruction",
@@ -2123,8 +2101,24 @@
       "first_seen": "2026-10-25",
       "last_seen": "2026-11-08",
       "latest_rank": null,
-      "state": "Escalating",
+      "state": "Persistent",
       "latest_transmission": "阿曼湾封锁执法→海运及保险风险溢价→原油实际可运能力→通胀预期/美债收益率→科技与信用估值。",
+      "source_modes": [
+        "native_daily",
+        "reconstructed_daily"
+      ]
+    },
+    {
+      "theme_id": "us_china_trade_controls",
+      "theme_label": "U.S.–China Trade Controls",
+      "category": "china_trade_policy",
+      "days_in_top3": 4,
+      "best_rank": 2,
+      "first_seen": "2026-10-18",
+      "last_seen": "2026-10-26",
+      "latest_rank": null,
+      "state": "Resolved",
+      "latest_transmission": "外交表态→北美贸易政策不确定性→CAD与工业企业定价→北美供应链投资及信用风险",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -2147,23 +2141,23 @@
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "energy_inflation",
-    "theme_label": "Energy Inflation",
-    "as_of": "2026-11-09",
-    "confirming": [],
-    "diverging": [
+    "theme_id": "fed_policy_path",
+    "theme_label": "Fed Policy Path",
+    "as_of": "2026-11-11",
+    "confirming": [
       {
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
-        "as_of": "2026-11-06 16:00 EST",
+        "as_of": "2026-11-10 16:00 EST",
         "source_mode": "native_daily",
-        "change": "+1.09%"
+        "change": "-0.74%"
       }
     ],
+    "diverging": [],
     "unavailable": [
       {
-        "series_id": "DCOILBRENTEU",
-        "label": "Brent"
+        "series_id": "DGS2",
+        "label": "US 2Y Treasury Yield"
       },
       {
         "series_id": "DGS10",
@@ -2174,9 +2168,9 @@
         "label": "Broad Trade-Weighted USD"
       }
     ],
-    "expectation_basis": "Explicit leading catalyst: Two-sided; wait for actual official print",
-    "interpretation_note": "0 项资产方向与当前主线一致，1 项出现背离；不是因果证明。",
-    "what_would_flip_it": "若公布时间发生变动或实际分项否定成本向终端传导假设，则重设方向，不把预览推演为结论。"
+    "expectation_basis": "Explicit leading catalyst: Rates up, growth duration risk down",
+    "interpretation_note": "1 项资产方向与当前主线一致，0 项出现背离；不是因果证明。",
+    "what_would_flip_it": "若后续PPI明显回落或核心通胀结构显示高度集中，且2Y回落、科技盈利仍强，通胀加息螺旋的持续性判断减弱。"
   },
   "series": {
     "NASDAQCOM": {
@@ -2185,10 +2179,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-12",
-          "value": 27245.9
-        },
         {
           "date": "2026-10-13",
           "value": 27204.38
@@ -2278,10 +2268,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-10-12",
-          "value": 7807.24
-        },
-        {
           "date": "2026-10-13",
           "value": 7805.45
         },
@@ -2352,6 +2338,14 @@
         {
           "date": "2026-11-05",
           "value": 7353.73
+        },
+        {
+          "date": "2026-11-06",
+          "value": 7376.86
+        },
+        {
+          "date": "2026-11-09",
+          "value": 7549.94
         }
       ]
     },
@@ -2361,10 +2355,6 @@
       "source": "CBOE via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-12",
-          "value": 15.21
-        },
         {
           "date": "2026-10-13",
           "value": 15.27
@@ -2440,6 +2430,10 @@
         {
           "date": "2026-11-06",
           "value": 25.64
+        },
+        {
+          "date": "2026-11-09",
+          "value": 19.92
         }
       ]
     },
@@ -2524,6 +2518,10 @@
         {
           "date": "2026-11-06",
           "value": 4.51
+        },
+        {
+          "date": "2026-11-09",
+          "value": 4.56
         }
       ]
     },
@@ -2608,6 +2606,10 @@
         {
           "date": "2026-11-06",
           "value": 4.86
+        },
+        {
+          "date": "2026-11-09",
+          "value": 4.88
         }
       ]
     },
@@ -2617,10 +2619,6 @@
       "source": "U.S. EIA via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-12",
-          "value": 129.95
-        },
         {
           "date": "2026-10-13",
           "value": 125.78
@@ -2778,10 +2776,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-10-12",
-          "value": 3.11
-        },
-        {
           "date": "2026-10-13",
           "value": 3.16
         },
@@ -2856,15 +2850,19 @@
         {
           "date": "2026-11-06",
           "value": 3.42
+        },
+        {
+          "date": "2026-11-09",
+          "value": 3.34
         }
       ]
     }
   },
   "monthly_coverage": {
     "month": "2026-11",
-    "through": "2026-11-09",
-    "expected_days": 9,
-    "present_days": 9,
+    "through": "2026-11-11",
+    "expected_days": 11,
+    "present_days": 11,
     "missing_dates": [],
     "unclassified_dates": [
       "2026-11-01",
@@ -2875,7 +2873,9 @@
       "2026-11-06",
       "2026-11-07",
       "2026-11-08",
-      "2026-11-09"
+      "2026-11-09",
+      "2026-11-10",
+      "2026-11-11"
     ],
     "unknown_signal_cells": 1,
     "price_proxy_dates": [],
@@ -2888,22 +2888,22 @@
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "SP500": {
-      "last_observation": "2026-11-05",
+      "last_observation": "2026-11-09",
       "source": "S&P Dow Jones Indices via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "VIXCLS": {
-      "last_observation": "2026-11-06",
+      "last_observation": "2026-11-09",
       "source": "CBOE via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS2": {
-      "last_observation": "2026-11-06",
+      "last_observation": "2026-11-09",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS10": {
-      "last_observation": "2026-11-06",
+      "last_observation": "2026-11-09",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
@@ -2918,7 +2918,7 @@
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "BAMLH0A0HYM2": {
-      "last_observation": "2026-11-06",
+      "last_observation": "2026-11-09",
       "source": "ICE BofA via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     }
