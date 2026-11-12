@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-11-11",
-  "window_start": "2026-10-13",
-  "window_end": "2026-11-11",
+  "as_of": "2026-11-12",
+  "window_start": "2026-10-14",
+  "window_end": "2026-11-12",
   "coverage": {
     "market_sessions": 30,
     "native_daily_days": 18,
@@ -88,68 +88,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-10-13",
-      "source_mode": "native_daily",
-      "regime_code": "risk_off",
-      "regime_label": "Risk-Off Asia / Energy-Inflation–AI Duration Constraint",
-      "dominant_theme_id": "market_structure",
-      "signals": {
-        "growth": "↓",
-        "inflation": "↑",
-        "rates": "→",
-        "earnings": "→",
-        "liquidity": "↓",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "October 13 Asia risk-off reprices Korean and Japanese technology exposure after the October 12 U.S. chip decline",
-          "evidence": "Reuters' early October 13 Asian wrap reports MSCI Asia Pacific ex-Japan around -2%, KOSPI around -6% and Nikkei around -2.6%, while the October 12 U.S. Nasdaq fell 0.44%. These are intraday Asian readings, not an Asia cash close.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "October 12 U.S. chip drawdown → Asia technology risk repricing and cross-border deleveraging → Korean/Japanese equities fall → DXY/JPY and cash Treasury yield confirm or reject.",
-          "confirmation": "Check Tuesday full-session KOSPI/Nikkei closes, semiconductor breadth and USD/JPY versus matched UST yields; continued broad declines confirm transmission.",
-          "invalidation": "Reversal in Asian cash indices with narrower technology underperformance and stable rate/FX funding channels weakens systemic contagion.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "energy_inflation",
-          "theme_label": "Energy Inflation",
-          "category": "geopolitics_energy",
-          "title": "October 12 Brent closes at $106.65 as OPEC trims 2026 demand forecast and Saudi pipeline capacity remains a future plan",
-          "evidence": "AP and WSJ recorded October 12 Brent settlement near $106.65 per barrel, up 1.8%, while Reuters reported OPEC's 2026 oil demand-growth forecast cut to 400,000 bpd and Saudi Arabia's potential pipeline conversion taking weeks to years, not immediate operational output.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Transit disruption/insurance ↑ → spot fuel and Brent risk premium ↑ → Asian import-price pass-through ↑ → inflation expectations and bond yields ↑ → duration and transport earnings ↓.",
-          "confirmation": "Use matched Brent/WTI settlements, certified tanker volumes and confirmed pipeline commissioning dates; lower premiums alongside real cargo-flow recovery would confirm easing.",
-          "invalidation": "Documented new shipping incidents, stable high prices despite forecast cuts, or project delays negate the near-term offset hypothesis.",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "October 13 JPMorgan and Citi earnings precede October 14 U.S. September CPI, testing whether banks can absorb energy and duration pressure",
-          "evidence": "Issuer calendars place JPMorgan and Citi's September-quarter earnings on October 13 U.S. premarket, while BLS places September CPI on October 14 at 08:30 EDT. At today's 10:30 SGT cut, bank results and the CPI actual are both pending.",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "Bank cost-of-credit + Treasury reopening → credit/funding repricing → US cyclicals and AI capex financing; CPI then validates or overturns duration pricing.",
-          "confirmation": "Read issuer actual NII/provisions/guidance with Tuesday 2Y/10Y same-session cash yields, then reconcile with BLS Wednesday actual headline/core CPI.",
-          "invalidation": "Better credit/funding metrics and cooler verified inflation with easing cash yields invalidate persistent bearish financial-condition transmission.",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
     {
       "date": "2026-10-14",
       "source_mode": "native_daily",
@@ -1957,15 +1895,71 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-11-12",
+      "source_mode": "native_daily",
+      "regime_code": "unclassified",
+      "regime_label": "Selective AI Rebound / High-Rates Confirmation / Governance & Geopolitical Event Risk",
+      "dominant_theme_id": "ai_earnings",
+      "signals": {
+        "growth": "→",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "↑",
+        "liquidity": "→",
+        "geopolitics": "→"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "11月12日亚洲早盘Nvidia管理层去留报道与盘后-8%：AI龙头治理风险重新定价",
+          "evidence": "Reuters于11月12日01:53 UTC报道，Nvidia董事会考虑CEO留任问题，引用知情人士；同时美股现金时段前一日曾上涨，股票在美东收盘后跌逾8%，但没有正式董事会最终决议披露。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "董事会治理报道→NVDA盘后波动→SOX/QQQ期货风险溢价→AI资本支出与供应保障信心→全球科技板块。",
+          "confirmation": "查Nvidia董事会/SEC/公司正式披露，比较NVDA正规盘成交与SOX、半导体供应商实盘反应，不凭单一盘后跳价判定人事结局。",
+          "invalidation": "若正式披露确认稳定领导安排、关键客户订单与交货能力不变并且板块修复，治理事件传导可能趋于短期。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "11月11日美股现金市场AI板块反弹：CoreWeave+24.7%、半导体指数+5.66%",
+          "evidence": "Reuters及AP均确认美股11月11日现金收盘标普+1.31%、纳指+1.60%、道指+0.49%；CoreWeave单日上涨约24.7%，公司先前披露第三季收入$3.661bn、净利息支出$846m、净亏损$709m及backlog $132.5bn。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "AI云财报→订单预期与算力租赁需求→CRWV/AI基础设施价格→半导体/电力设备→AI融资与现金回报。",
+          "confirmation": "对照CRWV正式收入、利息费用和下一季度经营现金流，同步比较主流大型云厂商资本开支与半导体订单的持续兑现。",
+          "invalidation": "如现金回款不足、项目交付延期或新增贷款成本抬升，涨价不能证明财务风险已解除。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "11月12日美元/日元逼近160与日本批发通胀7.1%：货币政策分化与干预尾部风险",
+          "evidence": "Reuters报告USDJPY在日本早盘一度159.94，主管外汇事务高官提醒市场不要忽略夏季干预，且日本10月批发价格同比上升7.1%；当前还没有证据证明11月12日发生新一轮实际外汇干预。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Fed加息预期→美日利差→USDJPY及进口通胀→日本干预预期/日债→全球杠杆仓位波动。",
+          "confirmation": "先核验日本财务省/日银是否正式宣布政策或操作，再用USDJPY、JGB与亚洲科技股同步变化确认。",
+          "invalidation": "如果美元回落、日本当局没有实施操作且跨资产波动有限，干预风险溢价可能下降。",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
-    {
-      "date": "2026-10-14",
-      "from": "Risk-Off Asia / Energy-Inflation–AI Duration Constraint",
-      "to": "Event Risk / CPI-Day Duration, Bank Earnings and AI Valuation Breadth",
-      "dominant_theme_id": "market_structure"
-    },
     {
       "date": "2026-10-15",
       "from": "Event Risk / CPI-Day Duration, Bank Earnings and AI Valuation Breadth",
@@ -2011,32 +2005,32 @@
   ],
   "persistent_themes": [
     {
-      "theme_id": "market_structure",
-      "theme_label": "Market Structure",
-      "category": "market_structure",
-      "days_in_top3": 17,
+      "theme_id": "ai_earnings",
+      "theme_label": "AI / Earnings",
+      "category": "earnings_ai_semis",
+      "days_in_top3": 18,
       "best_rank": 1,
-      "first_seen": "2026-10-13",
-      "last_seen": "2026-11-10",
-      "latest_rank": null,
+      "first_seen": "2026-10-14",
+      "last_seen": "2026-11-12",
+      "latest_rank": 1,
       "state": "Persistent",
-      "latest_transmission": "能源/金属购进价格→PPI和企业成本→CPI、出口终端议价→中国制造业利润、人民币和工业金属。",
+      "latest_transmission": "董事会治理报道→NVDA盘后波动→SOX/QQQ期货风险溢价→AI资本支出与供应保障信心→全球科技板块。",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
       ]
     },
     {
-      "theme_id": "ai_earnings",
-      "theme_label": "AI / Earnings",
-      "category": "earnings_ai_semis",
+      "theme_id": "market_structure",
+      "theme_label": "Market Structure",
+      "category": "market_structure",
       "days_in_top3": 17,
       "best_rank": 1,
       "first_seen": "2026-10-14",
-      "last_seen": "2026-11-11",
+      "last_seen": "2026-11-12",
       "latest_rank": 3,
       "state": "Persistent",
-      "latest_transmission": "已确认收入/合同backlog→机房建设交付→贷款利息/现金流→云服务估值、芯片订单与电力需求。",
+      "latest_transmission": "Fed加息预期→美日利差→USDJPY及进口通胀→日本干预预期/日债→全球杠杆仓位波动。",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -2046,9 +2040,9 @@
       "theme_id": "energy_inflation",
       "theme_label": "Energy Inflation",
       "category": "geopolitics_energy",
-      "days_in_top3": 13,
+      "days_in_top3": 12,
       "best_rank": 1,
-      "first_seen": "2026-10-13",
+      "first_seen": "2026-10-15",
       "last_seen": "2026-11-10",
       "latest_rank": null,
       "state": "Escalating",
@@ -2066,7 +2060,7 @@
       "best_rank": 1,
       "first_seen": "2026-10-23",
       "last_seen": "2026-11-11",
-      "latest_rank": 1,
+      "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "美国核心CPI→Fed加息预期/2Y收益率→10Y/美元与黄金→AI数据中心资本回报率→科技/半导体及信用利差。",
       "source_modes": [
@@ -2083,7 +2077,7 @@
       "best_rank": 2,
       "first_seen": "2026-10-15",
       "last_seen": "2026-11-11",
-      "latest_rank": 2,
+      "latest_rank": null,
       "state": "Escalating",
       "latest_transmission": "CPI与Fed路径→国债WI及拍卖尾差→收益率/美元/信用融资成本→数据中心资本支出与股市估值。",
       "source_modes": [
@@ -2141,36 +2135,37 @@
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "fed_policy_path",
-    "theme_label": "Fed Policy Path",
-    "as_of": "2026-11-11",
+    "theme_id": "ai_earnings",
+    "theme_label": "AI / Earnings",
+    "as_of": "2026-11-12",
     "confirming": [
       {
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
-        "as_of": "2026-11-10 16:00 EST",
+        "as_of": "美股现金收盘 11/11 16:00 EST",
         "source_mode": "native_daily",
-        "change": "-0.74%"
+        "change": "+1.60%"
+      },
+      {
+        "series_id": "SP500",
+        "label": "S&P 500",
+        "as_of": "美股现金收盘 11/11 16:00 EST",
+        "source_mode": "native_daily",
+        "change": "+1.31%"
+      },
+      {
+        "series_id": "VIXCLS",
+        "label": "VIX",
+        "as_of": "美股指标收盘 11/11 16:00 EST",
+        "source_mode": "native_daily",
+        "change": "-10.12%"
       }
     ],
     "diverging": [],
-    "unavailable": [
-      {
-        "series_id": "DGS2",
-        "label": "US 2Y Treasury Yield"
-      },
-      {
-        "series_id": "DGS10",
-        "label": "US 10Y Treasury Yield"
-      },
-      {
-        "series_id": "DTWEXBGS",
-        "label": "Broad Trade-Weighted USD"
-      }
-    ],
-    "expectation_basis": "Explicit leading catalyst: Rates up, growth duration risk down",
-    "interpretation_note": "1 项资产方向与当前主线一致，0 项出现背离；不是因果证明。",
-    "what_would_flip_it": "若后续PPI明显回落或核心通胀结构显示高度集中，且2Y回落、科技盈利仍强，通胀加息螺旋的持续性判断减弱。"
+    "unavailable": [],
+    "expectation_basis": "Explicit leading catalyst: Cross-asset, scenario dependent",
+    "interpretation_note": "3 项资产方向与当前主线一致，0 项出现背离；不是因果证明。",
+    "what_would_flip_it": "若正式披露确认稳定领导安排、关键客户订单与交货能力不变并且板块修复，治理事件传导可能趋于短期。"
   },
   "series": {
     "NASDAQCOM": {
@@ -2179,10 +2174,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-13",
-          "value": 27204.38
-        },
         {
           "date": "2026-10-14",
           "value": 26692.87
@@ -2258,6 +2249,10 @@
         {
           "date": "2026-11-09",
           "value": 25253.14
+        },
+        {
+          "date": "2026-11-10",
+          "value": 25065.87
         }
       ]
     },
@@ -2267,10 +2262,6 @@
       "source": "S&P Dow Jones Indices via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-13",
-          "value": 7805.45
-        },
         {
           "date": "2026-10-14",
           "value": 7718.94
@@ -2360,10 +2351,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-10-13",
-          "value": 15.27
-        },
-        {
           "date": "2026-10-14",
           "value": 16.87
         },
@@ -2438,6 +2425,10 @@
         {
           "date": "2026-11-09",
           "value": 19.92
+        },
+        {
+          "date": "2026-11-10",
+          "value": 19.46
         }
       ]
     },
@@ -2447,10 +2438,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-10-13",
-          "value": 4.79
-        },
         {
           "date": "2026-10-14",
           "value": 4.82
@@ -2536,10 +2523,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-10-13",
-          "value": 5.21
-        },
-        {
           "date": "2026-10-14",
           "value": 5.19
         },
@@ -2624,10 +2607,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-10-13",
-          "value": 125.78
-        },
-        {
           "date": "2026-10-14",
           "value": 126.55
         },
@@ -2695,10 +2674,6 @@
       "source": "Federal Reserve via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-13",
-          "value": 121.4433
-        },
         {
           "date": "2026-10-14",
           "value": 122.0037
@@ -2780,10 +2755,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-10-13",
-          "value": 3.16
-        },
-        {
           "date": "2026-10-14",
           "value": 3.25
         },
@@ -2864,9 +2835,9 @@
   },
   "monthly_coverage": {
     "month": "2026-11",
-    "through": "2026-11-11",
-    "expected_days": 11,
-    "present_days": 11,
+    "through": "2026-11-12",
+    "expected_days": 12,
+    "present_days": 12,
     "missing_dates": [],
     "unclassified_dates": [
       "2026-11-01",
@@ -2879,7 +2850,8 @@
       "2026-11-08",
       "2026-11-09",
       "2026-11-10",
-      "2026-11-11"
+      "2026-11-11",
+      "2026-11-12"
     ],
     "unknown_signal_cells": 1,
     "price_proxy_dates": [],
@@ -2887,7 +2859,7 @@
   },
   "series_freshness": {
     "NASDAQCOM": {
-      "last_observation": "2026-11-09",
+      "last_observation": "2026-11-10",
       "source": "Nasdaq, Inc. via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
@@ -2897,7 +2869,7 @@
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "VIXCLS": {
-      "last_observation": "2026-11-09",
+      "last_observation": "2026-11-10",
       "source": "CBOE via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
