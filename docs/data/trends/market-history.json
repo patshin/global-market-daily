@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "retrieved_for": "Global Market Daily 30D Lens",
-  "as_of": "2026-11-12",
+  "as_of": "2026-11-13",
   "series": {
     "NASDAQCOM": {
       "label": "Nasdaq Composite",
@@ -1254,6 +1254,10 @@
         {
           "date": "2026-11-11",
           "value": 25466.19
+        },
+        {
+          "date": "2026-11-12",
+          "value": 25366.09
         }
       ]
     },

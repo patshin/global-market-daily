@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-11-12",
-  "window_start": "2026-10-14",
-  "window_end": "2026-11-12",
+  "as_of": "2026-11-13",
+  "window_start": "2026-10-15",
+  "window_end": "2026-11-13",
   "coverage": {
     "market_sessions": 30,
     "native_daily_days": 18,
@@ -88,68 +88,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-10-14",
-      "source_mode": "native_daily",
-      "regime_code": "event_risk",
-      "regime_label": "Event Risk / CPI-Day Duration, Bank Earnings and AI Valuation Breadth",
-      "dominant_theme_id": "market_structure",
-      "signals": {
-        "growth": "↓",
-        "inflation": "↑",
-        "rates": "↓",
-        "earnings": "→",
-        "liquidity": "→",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "10月14日美国9月CPI于08:30 EDT公布：核心通胀决定久期重估",
-          "evidence": "BLS正式2026年日程安排9月消费者价格指数于10月14日08:30 EDT发布；在本次2026年10月14日09时后研究截止时，该数据尚未正式发布，不可填入任何实际值。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "BLS总体/核心CPI→UST 2Y和10Y→DXY、Nasdaq与Russell→信用融资成本。",
-          "confirmation": "BLS官方数字及分项和同窗口现金国债、美元走势一致时才确认通胀传导。",
-          "invalidation": "若真实核心数据或股票/利率反应方向与单一叙事不一致，则不能把所有盘面变化归因于CPI。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "10月13日美国大银行Q3利润改善但市场价格确认分化",
-          "evidence": "高盛10月13日已报告2026Q3 EPS 17.01美元、营收186.8亿美元；Reuters报道JPM EPS 5.57美元低于调查预期约5.85美元，花旗EPS2.85美元高于一致预测2.66美元。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "银行EPS与信用准备→贷款价格/信贷需求→小盘股估值与企业融资成本。",
-          "confirmation": "检查净利息收入、坏账和费用指引，叠加金融股10月13日真实收盘反应确认质量。",
-          "invalidation": "如果利润增长来自不可持续的交易或一次性项目、贷款信用恶化，将否定全面银行复苏的叙事。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
-          "title": "10月13日全球半导体与AI资本开支回报担忧持续冲击市场宽度",
-          "evidence": "Reuters10月13日记录芯片行业受到AI资本开支实际回报、潜在中国存储竞争和企业估值的共同检验，科技龙头集中度风险持续。",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "中国芯片竞争/算力回报→半导体利润率→Nasdaq权重→科技融资与数据中心建设。",
-          "confirmation": "以企业后续真实订单、资本支出现金回报和同口径SOX与Nasdaq-100股价验证持续性。",
-          "invalidation": "若芯片订单与现金回报证明强于预期且市场广度恢复，则AI估值风险可能下降。",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
     {
       "date": "2026-10-15",
       "source_mode": "reconstructed_daily",
@@ -1957,15 +1895,71 @@
           "source_mode": "native_daily"
         }
       ]
+    },
+    {
+      "date": "2026-11-13",
+      "source_mode": "native_daily",
+      "regime_code": "unclassified",
+      "regime_label": "AI Governance Shock / High Rates / Oil Inflation Risk",
+      "dominant_theme_id": "ai_earnings",
+      "signals": {
+        "growth": "→",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "→",
+        "liquidity": "→",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "NVIDIA 11/12正式确认CEO更替，11/17业绩报告将验证治理交接与算力交付",
+          "evidence": "NVIDIA在11月12日公司声明中确认：创始人黄仁勋辞去CEO、总裁及董事职务，CFO Colette Kress出任临时CEO，董事会启动接任者搜寻。同日NVDA现金收盘166.19美元、下跌4.34%，SOX指数下跌0.54%，两者涨跌幅不能混同。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "NVDA→SOX→AI云订单兑现→科技指数",
+          "confirmation": "优先跟踪NVIDIA官方临时管理架构、11月17日财报与主要云厂商供货确认，再看NVDA相对SOX和纳斯达克100的现金收盘走势。",
+          "invalidation": "若公司正式披露交付路线和订单不受影响、关键客户未调整采购且市场连续交易修复，则治理风险溢价可部分回落。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
+          "title": "11/12美国2Y/10Y收益率抬升、30Y拍卖需求与11/13 PPI共同限制长久期资产",
+          "evidence": "美国财政部11月12日官方固定期限曲线显示2Y收益率4.86%、10Y为5.10%，较11月10日上一个开放交易日分别上升13和12个基点；11月11日Veterans Day美债市场休市。10月PPI仍安排在11月13日08:30 EST公布，本次研究截止前尚无实际值。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "PPI→Fed预期→US2Y/10Y→美元→AI云债务融资",
+          "confirmation": "以BLS官方PPI实际分项和修订、财政部下一开放交易日2Y/10Y par yield及云基础设施融资条款共同核实。",
+          "invalidation": "若PPI明显降温，2Y和10Y收益率在后续正式交易日持续回落且融资利差收窄，则长久期估值压力有望缓解。",
+          "source_mode": "native_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "credit_conditions",
+          "theme_label": "Credit Conditions",
+          "category": "liquidity_credit",
+          "title": "Nebius季度收入超预期但数据中心交付延期，2027投资预算与融资来源仍需核实",
+          "evidence": "Nebius公布第三季度营收约9.81亿美元，超过约9.075亿美元的市场预期，但第三方数据中心容量交付延期，公司同步提出2027年400亿至450亿美元资本开支计划。客户预付款及资产抵押融资尚属计划，不能视作已收到的现金。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "交付延迟→收入确认→借款需求→NBIS/CRWV信用与股权",
+          "confirmation": "下一次查看Nebius正式财报附注、投入运营MW及机房上线时点、客户预付款到账情况和已签署融资文件。",
+          "invalidation": "若延期设施按计划投产、收入开始按现金收取且融资成本与额度均获正式确认，则交付与融资风险可能下降。",
+          "source_mode": "native_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
-    {
-      "date": "2026-10-15",
-      "from": "Event Risk / CPI-Day Duration, Bank Earnings and AI Valuation Breadth",
-      "to": "Risk-Off / energy inflation and growth-duration de-rating",
-      "dominant_theme_id": "energy_inflation"
-    },
     {
       "date": "2026-10-16",
       "from": "Risk-Off / energy inflation and growth-duration de-rating",
@@ -2010,11 +2004,11 @@
       "category": "earnings_ai_semis",
       "days_in_top3": 18,
       "best_rank": 1,
-      "first_seen": "2026-10-14",
-      "last_seen": "2026-11-12",
+      "first_seen": "2026-10-15",
+      "last_seen": "2026-11-13",
       "latest_rank": 1,
       "state": "Persistent",
-      "latest_transmission": "董事会治理报道→NVDA盘后波动→SOX/QQQ期货风险溢价→AI资本支出与供应保障信心→全球科技板块。",
+      "latest_transmission": "NVDA→SOX→AI云订单兑现→科技指数",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -2024,11 +2018,11 @@
       "theme_id": "market_structure",
       "theme_label": "Market Structure",
       "category": "market_structure",
-      "days_in_top3": 17,
+      "days_in_top3": 16,
       "best_rank": 1,
-      "first_seen": "2026-10-14",
+      "first_seen": "2026-10-16",
       "last_seen": "2026-11-12",
-      "latest_rank": 3,
+      "latest_rank": null,
       "state": "Persistent",
       "latest_transmission": "Fed加息预期→美日利差→USDJPY及进口通胀→日本干预预期/日债→全球杠杆仓位波动。",
       "source_modes": [
@@ -2073,13 +2067,13 @@
       "theme_id": "global_duration",
       "theme_label": "Global Duration / Term Premium",
       "category": "inflation_rates",
-      "days_in_top3": 7,
+      "days_in_top3": 8,
       "best_rank": 2,
       "first_seen": "2026-10-15",
-      "last_seen": "2026-11-11",
-      "latest_rank": null,
+      "last_seen": "2026-11-13",
+      "latest_rank": 2,
       "state": "Escalating",
-      "latest_transmission": "CPI与Fed路径→国债WI及拍卖尾差→收益率/美元/信用融资成本→数据中心资本支出与股市估值。",
+      "latest_transmission": "PPI→Fed预期→US2Y/10Y→美元→AI云债务融资",
       "source_modes": [
         "native_daily",
         "objective_market_reconstruction",
@@ -2132,40 +2126,53 @@
       "source_modes": [
         "objective_market_reconstruction"
       ]
+    },
+    {
+      "theme_id": "credit_conditions",
+      "theme_label": "Credit Conditions",
+      "category": "liquidity_credit",
+      "days_in_top3": 1,
+      "best_rank": 3,
+      "first_seen": "2026-11-13",
+      "last_seen": "2026-11-13",
+      "latest_rank": 3,
+      "state": "New",
+      "latest_transmission": "交付延迟→收入确认→借款需求→NBIS/CRWV信用与股权",
+      "source_modes": [
+        "native_daily"
+      ]
     }
   ],
   "cross_asset_confirmation": {
     "theme_id": "ai_earnings",
     "theme_label": "AI / Earnings",
-    "as_of": "2026-11-12",
-    "confirming": [
+    "as_of": "2026-11-13",
+    "confirming": [],
+    "diverging": [
       {
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
-        "as_of": "美股现金收盘 11/11 16:00 EST",
+        "as_of": "2026-11-12 US regular-session close 16:00 EST",
         "source_mode": "native_daily",
-        "change": "+1.60%"
+        "change": "-0.39%"
       },
       {
         "series_id": "SP500",
         "label": "S&P 500",
-        "as_of": "美股现金收盘 11/11 16:00 EST",
+        "as_of": "2026-11-12 US regular-session close 16:00 EST",
         "source_mode": "native_daily",
-        "change": "+1.31%"
-      },
-      {
-        "series_id": "VIXCLS",
-        "label": "VIX",
-        "as_of": "美股指标收盘 11/11 16:00 EST",
-        "source_mode": "native_daily",
-        "change": "-10.12%"
+        "change": "-0.35%"
       }
     ],
-    "diverging": [],
-    "unavailable": [],
-    "expectation_basis": "Explicit leading catalyst: Cross-asset, scenario dependent",
-    "interpretation_note": "3 项资产方向与当前主线一致，0 项出现背离；不是因果证明。",
-    "what_would_flip_it": "若正式披露确认稳定领导安排、关键客户订单与交货能力不变并且板块修复，治理事件传导可能趋于短期。"
+    "unavailable": [
+      {
+        "series_id": "VIXCLS",
+        "label": "VIX"
+      }
+    ],
+    "expectation_basis": "Explicit leading catalyst: Risk divergence / cross-asset",
+    "interpretation_note": "0 项资产方向与当前主线一致，2 项出现背离；不是因果证明。",
+    "what_would_flip_it": "若公司正式披露交付路线和订单不受影响、关键客户未调整采购且市场连续交易修复，则治理风险溢价可部分回落。"
   },
   "series": {
     "NASDAQCOM": {
@@ -2174,10 +2181,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-14",
-          "value": 26692.87
-        },
         {
           "date": "2026-10-15",
           "value": 26713.03
@@ -2257,6 +2260,10 @@
         {
           "date": "2026-11-11",
           "value": 25466.19
+        },
+        {
+          "date": "2026-11-12",
+          "value": 25366.09
         }
       ]
     },
@@ -2266,10 +2273,6 @@
       "source": "S&P Dow Jones Indices via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-14",
-          "value": 7718.94
-        },
         {
           "date": "2026-10-15",
           "value": 7744.06
@@ -2359,10 +2362,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-10-14",
-          "value": 16.87
-        },
-        {
           "date": "2026-10-15",
           "value": 16.46
         },
@@ -2451,10 +2450,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-10-14",
-          "value": 4.82
-        },
-        {
           "date": "2026-10-15",
           "value": 4.77
         },
@@ -2539,10 +2534,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-10-14",
-          "value": 5.19
-        },
-        {
           "date": "2026-10-15",
           "value": 5.1
         },
@@ -2626,10 +2617,6 @@
       "source": "U.S. EIA via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-14",
-          "value": 126.55
-        },
         {
           "date": "2026-10-15",
           "value": 126.35
@@ -2719,10 +2706,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-10-14",
-          "value": 122.0037
-        },
-        {
           "date": "2026-10-15",
           "value": 121.5693
         },
@@ -2798,10 +2781,6 @@
       "source": "ICE BofA via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-10-14",
-          "value": 3.25
-        },
         {
           "date": "2026-10-15",
           "value": 3.23
@@ -2883,9 +2862,9 @@
   },
   "monthly_coverage": {
     "month": "2026-11",
-    "through": "2026-11-12",
-    "expected_days": 12,
-    "present_days": 12,
+    "through": "2026-11-13",
+    "expected_days": 13,
+    "present_days": 13,
     "missing_dates": [],
     "unclassified_dates": [
       "2026-11-01",
@@ -2899,7 +2878,8 @@
       "2026-11-09",
       "2026-11-10",
       "2026-11-11",
-      "2026-11-12"
+      "2026-11-12",
+      "2026-11-13"
     ],
     "unknown_signal_cells": 1,
     "price_proxy_dates": [],
@@ -2907,7 +2887,7 @@
   },
   "series_freshness": {
     "NASDAQCOM": {
-      "last_observation": "2026-11-11",
+      "last_observation": "2026-11-12",
       "source": "Nasdaq, Inc. via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
