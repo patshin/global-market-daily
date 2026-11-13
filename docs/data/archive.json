@@ -1,7 +1,21 @@
 {
   "schema_version": "1.0.0",
-  "updated_at": "2026-11-12T11:07:00+08:00",
+  "updated_at": "2026-11-13T14:41:14+08:00",
   "entries": [
+    {
+      "date": "2026-11-13",
+      "thesis": "11月13日北京时间恢复研究显示，全球风险资产正遭遇AI治理、利率与能源成本的三重价格重估：11月12日NVIDIA正式宣布黄仁勋离任后NVDA现金盘下跌，AMD和Broadcom相对受益；美债收益率与布伦特同步上升，使Nebius等高度资本密集型AI云平台面临更高融资门槛。今晚21:30的美国10月PPI尚未发布，不能预先写入实际值。",
+      "overall_regime": "AI Governance Shock / High Rates / Oil Inflation Risk",
+      "dominant_narrative": "与11月12日早晨仅有董事会讨论报道不同，截至当前研究时，NVIDIA正式确认CEO交班已成为公司事实；NVIDIA11月12日现金收166.19美元，跌约4.34%，而美股标普500仅跌0.35%、纳指跌0.39%，说明市场正重新区分芯片供应商治理与AI终端需求。Nebius报告季度营收约9.81亿美元且高于预期，但第三方数据中心上线延期压缩当年指引，2027大额资本开支需要尚未落实的融资机制。同期美国2Y、10Y现券分别至4.867%和5.105%，布伦特期货结算约95.82美元；能源风险抬高通胀担忧，通胀又通过利率贴现传导到AI融资。美国PPI今晚才公布，油管损失尚无核实官方减供规模，故不能混用不同时点或将未证实传闻升级为事实。",
+      "report_path": "reports/2026/11/2026-11-13.md",
+      "daily_json_path": "data/daily/2026-11-13.json",
+      "sources_path": "data/sources/2026-11-13.json",
+      "edition": "Morning Official",
+      "edition_status": "official",
+      "publication_cycle": "morning",
+      "source_mode": "native_daily",
+      "last_updated": "2026-11-13T14:41:14+08:00"
+    },
     {
       "date": "2026-11-12",
       "thesis": "截至11月12日北京早晨，全球风险资产的主约束不是前夜美股反弹能否再涨，而是“AI利润兑现与治理风险能否抵消通胀推高的融资成本”：11月11日标普500+1.31%、纳指+1.60%、半导体+5.66%，CoreWeave强劲需求提振股价；但Nvidia盘后因管理层不确定性报道跌逾8%，美元/日元逼近160、美债因节日缺少新现金成交，11月12日重开现券和11月13日PPI才是真正裁决。",
