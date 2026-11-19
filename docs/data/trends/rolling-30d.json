@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-11-17",
-  "window_start": "2026-10-19",
-  "window_end": "2026-11-17",
+  "as_of": "2026-11-18",
+  "window_start": "2026-10-20",
+  "window_end": "2026-11-18",
   "coverage": {
     "market_sessions": 28,
     "native_daily_days": 17,
-    "reconstructed_daily_days": 8,
-    "reconstructed_days": 3,
-    "partial_days": 2,
+    "reconstructed_daily_days": 7,
+    "reconstructed_days": 4,
+    "partial_days": 3,
     "verified_event_days": 0,
     "historical_series_start": "2025-08-01"
   },
@@ -88,68 +88,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-10-19",
-      "source_mode": "reconstructed_daily",
-      "regime_code": "unclassified",
-      "regime_label": "Growth–Earnings Verification / Energy Constraint",
-      "dominant_theme_id": "market_structure",
-      "signals": {
-        "growth": "→",
-        "inflation": "↑",
-        "rates": "→",
-        "earnings": "→",
-        "liquidity": "→",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "中国三季度与9月经济数据即将公布",
-          "evidence": "截至2026-10-19 09:00 SGT，国家统计局三季度GDP及9月主要活动数据属于预定发布日程，原始历史截止时实际结果仍待公布。本历史补档只保留截点内可知的事件日程，不填写之后公布的GDP和经济活动实际值。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "中国内需结构与预期差→离岸人民币及铜价→周期性股票和跨国企业盈利预期",
-          "confirmation": "CNH、铜和需求敏感股票同时确认数据改善才支持广泛复苏。",
-          "invalidation": "总量改善但消费投资疲弱或跨市场背离，将否定全面复苏判断。",
-          "source_mode": "reconstructed_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "ai_earnings",
-          "theme_label": "AI / Earnings",
-          "category": "earnings_ai_semis",
-          "title": "先进制程盈利增长与科技估值压力并存",
-          "evidence": "截至2026-10-19 09:00 SGT，已发布的台积电三季度业绩显示美元收入约467.2亿美元、毛利率约66.4%，证明部分先进制程供应链仍有经营需求；这些数字不能直接代表AI下游项目现金回报，尚未公布的后续业绩不作实际值处理。",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "芯片收入与毛利率→经营现金流与资本开支→融资覆盖能力和权益估值",
-          "confirmation": "供应链收入与利润率稳定、经营现金流能覆盖资本开支，且科技股市场广度同步恢复，才更支持持续性改善。",
-          "invalidation": "若AI项目支出持续快于客户现金回收、融资成本升高或订单兑现放缓，将削弱由芯片盈利推导整体科技板块回报的判断。",
-          "source_mode": "reconstructed_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
-          "title": "能源与关键贸易航道风险仍待价格验证",
-          "evidence": "截至本历史截点可核实的最近交易日仍为10月16日（周五）：Brent 2026年12月合约结算价109.86美元，WTI 2026年11月合约101.41美元；尚无本次截点内的周一现货/期货新成交快照，任何风险声明都不能直接当作新增减产事实。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "能源/运费→投入成本→利润率与通胀→政策约束",
-          "confirmation": "同合约报价与真实通行、运价同步缓和才确认风险溢价下降。",
-          "invalidation": "若随后出现经过独立确认的船舶通行中断、实际供应约束或同合约油价再度明显走高，就不能继续使用快速缓和能源风险溢价的情景。",
-          "source_mode": "reconstructed_daily"
-        }
-      ]
-    },
     {
       "date": "2026-10-20",
       "source_mode": "native_daily",
@@ -1718,11 +1656,11 @@
       "dominant_theme_id": "growth_duration_rotation",
       "signals": {
         "growth": "↓",
-        "inflation": "?",
+        "inflation": "→",
         "rates": "↓",
         "earnings": "↓",
         "liquidity": "?",
-        "geopolitics": "?"
+        "geopolitics": "↑"
       },
       "catalysts": [
         {
@@ -1774,10 +1712,10 @@
           "VIXCLS",
           "DGS2",
           "DGS10",
+          "DCOILBRENTEU",
           "BAMLH0A0HYM2"
         ],
         "missing_series": [
-          "DCOILBRENTEU",
           "DTWEXBGS"
         ],
         "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
@@ -1788,7 +1726,80 @@
       "source_mode": "objective_market_reconstruction",
       "regime_code": "unavailable",
       "regime_label": "Insufficient data",
-      "dominant_theme_id": "equity_risk_appetite",
+      "dominant_theme_id": "credit_conditions",
+      "signals": {
+        "growth": "→",
+        "inflation": "→",
+        "rates": "→",
+        "earnings": "↑",
+        "liquidity": "?",
+        "geopolitics": "→"
+      },
+      "catalysts": [
+        {
+          "theme_id": "credit_conditions",
+          "theme_label": "Credit Conditions",
+          "category": "liquidity_credit",
+          "title": "HY OAS moves +9.0bp",
+          "evidence": "BAMLH0A0HYM2 +9.0bp",
+          "market_bias": "risk_off",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "Credit spreads wider → funding conditions tighten",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 1
+        },
+        {
+          "theme_id": "growth_duration_rotation",
+          "theme_label": "Growth / Duration Rotation",
+          "category": "earnings_ai_semis",
+          "title": "Nasdaq relative to S&P 500 +0.29pp",
+          "evidence": "NASDAQCOM -0.74% vs SP500 -1.03%",
+          "market_bias": "risk_on",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "Growth leadership strengthens",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 2
+        },
+        {
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
+          "title": "US 2Y moves -3.0bp",
+          "evidence": "DGS2 -3.0bp",
+          "market_bias": "risk_on",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "2Y ↓ → policy path reprices easier",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 3
+        }
+      ],
+      "data_quality": {
+        "status": "partial",
+        "available_driver_count": 3,
+        "available_series": [
+          "NASDAQCOM",
+          "SP500",
+          "VIXCLS",
+          "DGS2",
+          "DGS10",
+          "DCOILBRENTEU",
+          "BAMLH0A0HYM2"
+        ],
+        "missing_series": [
+          "DTWEXBGS"
+        ],
+        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
+      }
+    },
+    {
+      "date": "2026-11-18",
+      "source_mode": "objective_market_reconstruction",
+      "regime_code": "unavailable",
+      "regime_label": "Insufficient data",
+      "dominant_theme_id": "market_structure",
       "signals": {
         "growth": "?",
         "inflation": "?",
@@ -1797,29 +1808,15 @@
         "liquidity": "?",
         "geopolitics": "?"
       },
-      "catalysts": [
-        {
-          "theme_id": "equity_risk_appetite",
-          "theme_label": "Equity Risk Appetite",
-          "category": "growth_macro",
-          "title": "Nasdaq daily move -0.74%",
-          "evidence": "NASDAQCOM -0.74% vs prior close",
-          "market_bias": "risk_off",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Equity move → risk appetite / duration repricing",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        }
-      ],
+      "catalysts": [],
       "data_quality": {
         "status": "partial",
-        "available_driver_count": 1,
+        "available_driver_count": 0,
         "available_series": [
-          "NASDAQCOM"
+          "SP500"
         ],
         "missing_series": [
-          "SP500",
+          "NASDAQCOM",
           "VIXCLS",
           "DGS2",
           "DGS10",
@@ -1856,9 +1853,9 @@
       "theme_id": "ai_earnings",
       "theme_label": "AI / Earnings",
       "category": "earnings_ai_semis",
-      "days_in_top3": 16,
+      "days_in_top3": 15,
       "best_rank": 1,
-      "first_seen": "2026-10-19",
+      "first_seen": "2026-10-27",
       "last_seen": "2026-11-13",
       "latest_rank": null,
       "state": "Persistent",
@@ -1872,12 +1869,12 @@
       "theme_id": "market_structure",
       "theme_label": "Market Structure",
       "category": "market_structure",
-      "days_in_top3": 14,
+      "days_in_top3": 13,
       "best_rank": 1,
-      "first_seen": "2026-10-19",
+      "first_seen": "2026-10-20",
       "last_seen": "2026-11-12",
       "latest_rank": null,
-      "state": "Persistent",
+      "state": "Resolved",
       "latest_transmission": "Fed加息预期→美日利差→USDJPY及进口通胀→日本干预预期/日债→全球杠杆仓位波动。",
       "source_modes": [
         "native_daily",
@@ -1904,13 +1901,13 @@
       "theme_id": "fed_policy_path",
       "theme_label": "Fed Policy Path",
       "category": "central_banks_fiscal",
-      "days_in_top3": 9,
+      "days_in_top3": 10,
       "best_rank": 1,
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-11",
+      "last_seen": "2026-11-17",
       "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "美国核心CPI→Fed加息预期/2Y收益率→10Y/美元与黄金→AI数据中心资本回报率→科技/半导体及信用利差。",
+      "state": "Persistent",
+      "latest_transmission": "2Y ↓ → policy path reprices easier",
       "source_modes": [
         "native_daily",
         "objective_market_reconstruction",
@@ -1951,47 +1948,16 @@
       ]
     },
     {
-      "theme_id": "us_china_trade_controls",
-      "theme_label": "U.S.–China Trade Controls",
-      "category": "china_trade_policy",
-      "days_in_top3": 3,
-      "best_rank": 2,
-      "first_seen": "2026-10-19",
-      "last_seen": "2026-10-26",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "外交表态→北美贸易政策不确定性→CAD与工业企业定价→北美供应链投资及信用风险",
-      "source_modes": [
-        "native_daily",
-        "reconstructed_daily"
-      ]
-    },
-    {
       "theme_id": "growth_duration_rotation",
       "theme_label": "Growth / Duration Rotation",
       "category": "earnings_ai_semis",
-      "days_in_top3": 2,
+      "days_in_top3": 3,
       "best_rank": 1,
       "first_seen": "2026-10-23",
-      "last_seen": "2026-11-16",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "Long-duration growth underperforms",
-      "source_modes": [
-        "objective_market_reconstruction"
-      ]
-    },
-    {
-      "theme_id": "equity_risk_appetite",
-      "theme_label": "Equity Risk Appetite",
-      "category": "growth_macro",
-      "days_in_top3": 2,
-      "best_rank": 1,
-      "first_seen": "2026-11-16",
       "last_seen": "2026-11-17",
-      "latest_rank": 1,
-      "state": "New",
-      "latest_transmission": "Equity move → risk appetite / duration repricing",
+      "latest_rank": null,
+      "state": "Escalating",
+      "latest_transmission": "Growth leadership strengthens",
       "source_modes": [
         "objective_market_reconstruction"
       ]
@@ -2000,37 +1966,67 @@
       "theme_id": "credit_conditions",
       "theme_label": "Credit Conditions",
       "category": "liquidity_credit",
-      "days_in_top3": 2,
-      "best_rank": 2,
+      "days_in_top3": 3,
+      "best_rank": 1,
       "first_seen": "2026-11-13",
-      "last_seen": "2026-11-16",
+      "last_seen": "2026-11-17",
       "latest_rank": null,
-      "state": "New",
+      "state": "Escalating",
       "latest_transmission": "Credit spreads wider → funding conditions tighten",
       "source_modes": [
         "native_daily",
         "objective_market_reconstruction"
       ]
+    },
+    {
+      "theme_id": "us_china_trade_controls",
+      "theme_label": "U.S.–China Trade Controls",
+      "category": "china_trade_policy",
+      "days_in_top3": 2,
+      "best_rank": 2,
+      "first_seen": "2026-10-20",
+      "last_seen": "2026-10-26",
+      "latest_rank": null,
+      "state": "Resolved",
+      "latest_transmission": "外交表态→北美贸易政策不确定性→CAD与工业企业定价→北美供应链投资及信用风险",
+      "source_modes": [
+        "native_daily"
+      ]
+    },
+    {
+      "theme_id": "equity_risk_appetite",
+      "theme_label": "Equity Risk Appetite",
+      "category": "growth_macro",
+      "days_in_top3": 1,
+      "best_rank": 3,
+      "first_seen": "2026-11-16",
+      "last_seen": "2026-11-16",
+      "latest_rank": null,
+      "state": "New",
+      "latest_transmission": "Equity move → risk appetite / duration repricing",
+      "source_modes": [
+        "objective_market_reconstruction"
+      ]
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "equity_risk_appetite",
-    "theme_label": "Equity Risk Appetite",
-    "as_of": "2026-11-17",
+    "theme_id": "market_structure",
+    "theme_label": "Market Structure",
+    "as_of": "2026-11-18",
     "confirming": [],
     "diverging": [
       {
-        "series_id": "NASDAQCOM",
-        "label": "Nasdaq Composite",
-        "as_of": "2026-11-17",
+        "series_id": "SP500",
+        "label": "S&P 500",
+        "as_of": "2026-11-18",
         "source_mode": "objective_market_reconstruction",
-        "change": "-0.74%"
+        "change": "-0.23%"
       }
     ],
     "unavailable": [
       {
-        "series_id": "SP500",
-        "label": "S&P 500"
+        "series_id": "NASDAQCOM",
+        "label": "Nasdaq Composite"
       },
       {
         "series_id": "VIXCLS",
@@ -2039,7 +2035,7 @@
     ],
     "expectation_basis": "Thematic conditional comparison; not a verified causal attribution.",
     "interpretation_note": "0 项资产方向与当前主线一致，1 项出现背离；不是因果证明。",
-    "what_would_flip_it": "A material reversal in the key confirming assets."
+    "what_would_flip_it": ""
   },
   "series": {
     "NASDAQCOM": {
@@ -2048,10 +2044,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-19",
-          "value": 26430.89
-        },
         {
           "date": "2026-10-20",
           "value": 26424.82
@@ -2145,10 +2137,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-10-19",
-          "value": 7690.73
-        },
-        {
           "date": "2026-10-20",
           "value": 7712.57
         },
@@ -2227,6 +2215,14 @@
         {
           "date": "2026-11-16",
           "value": 7416.59
+        },
+        {
+          "date": "2026-11-17",
+          "value": 7340.53
+        },
+        {
+          "date": "2026-11-18",
+          "value": 7323.63
         }
       ]
     },
@@ -2236,10 +2232,6 @@
       "source": "CBOE via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-19",
-          "value": 18.44
-        },
         {
           "date": "2026-10-20",
           "value": 17.31
@@ -2319,6 +2311,10 @@
         {
           "date": "2026-11-16",
           "value": 22.91
+        },
+        {
+          "date": "2026-11-17",
+          "value": 25.46
         }
       ]
     },
@@ -2328,10 +2324,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-10-19",
-          "value": 4.77
-        },
         {
           "date": "2026-10-20",
           "value": 4.79
@@ -2407,6 +2399,10 @@
         {
           "date": "2026-11-16",
           "value": 4.83
+        },
+        {
+          "date": "2026-11-17",
+          "value": 4.8
         }
       ]
     },
@@ -2416,10 +2412,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-10-19",
-          "value": 5.15
-        },
         {
           "date": "2026-10-20",
           "value": 5.12
@@ -2495,6 +2487,10 @@
         {
           "date": "2026-11-16",
           "value": 5.12
+        },
+        {
+          "date": "2026-11-17",
+          "value": 5.1
         }
       ]
     },
@@ -2504,10 +2500,6 @@
       "source": "U.S. EIA via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-19",
-          "value": 118.82
-        },
         {
           "date": "2026-10-20",
           "value": 115.22
@@ -2575,6 +2567,22 @@
         {
           "date": "2026-11-11",
           "value": 92.14
+        },
+        {
+          "date": "2026-11-12",
+          "value": 95.42
+        },
+        {
+          "date": "2026-11-13",
+          "value": 95.17
+        },
+        {
+          "date": "2026-11-16",
+          "value": 92.9
+        },
+        {
+          "date": "2026-11-17",
+          "value": 92.94
         }
       ]
     },
@@ -2584,10 +2592,6 @@
       "source": "Federal Reserve via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-19",
-          "value": 121.3248
-        },
         {
           "date": "2026-10-20",
           "value": 121.116
@@ -2669,10 +2673,6 @@
       "kind": "yield",
       "points": [
         {
-          "date": "2026-10-19",
-          "value": 3.29
-        },
-        {
           "date": "2026-10-20",
           "value": 3.33
         },
@@ -2751,15 +2751,19 @@
         {
           "date": "2026-11-16",
           "value": 3.34
+        },
+        {
+          "date": "2026-11-17",
+          "value": 3.43
         }
       ]
     }
   },
   "monthly_coverage": {
     "month": "2026-11",
-    "through": "2026-11-17",
-    "expected_days": 17,
-    "present_days": 15,
+    "through": "2026-11-18",
+    "expected_days": 18,
+    "present_days": 16,
     "missing_dates": [
       "2026-11-14",
       "2026-11-15"
@@ -2779,9 +2783,10 @@
       "2026-11-12",
       "2026-11-13",
       "2026-11-16",
-      "2026-11-17"
+      "2026-11-17",
+      "2026-11-18"
     ],
-    "unknown_signal_cells": 10,
+    "unknown_signal_cells": 9,
     "price_proxy_dates": [],
     "note": "Calendar coverage, editorial provenance and underlying-provider freshness are separate; price proxies do not restore missing original judgments."
   },
@@ -2792,27 +2797,27 @@
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "SP500": {
-      "last_observation": "2026-11-16",
+      "last_observation": "2026-11-18",
       "source": "S&P Dow Jones Indices via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "VIXCLS": {
-      "last_observation": "2026-11-16",
+      "last_observation": "2026-11-17",
       "source": "CBOE via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS2": {
-      "last_observation": "2026-11-16",
+      "last_observation": "2026-11-17",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS10": {
-      "last_observation": "2026-11-16",
+      "last_observation": "2026-11-17",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DCOILBRENTEU": {
-      "last_observation": "2026-11-11",
+      "last_observation": "2026-11-17",
       "source": "U.S. EIA via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
@@ -2822,7 +2827,7 @@
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "BAMLH0A0HYM2": {
-      "last_observation": "2026-11-16",
+      "last_observation": "2026-11-17",
       "source": "ICE BofA via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     }
