@@ -1799,30 +1799,70 @@
       "source_mode": "objective_market_reconstruction",
       "regime_code": "unavailable",
       "regime_label": "Insufficient data",
-      "dominant_theme_id": "market_structure",
+      "dominant_theme_id": "growth_duration_rotation",
       "signals": {
-        "growth": "?",
+        "growth": "→",
         "inflation": "?",
-        "rates": "?",
-        "earnings": "?",
+        "rates": "→",
+        "earnings": "↑",
         "liquidity": "?",
         "geopolitics": "?"
       },
-      "catalysts": [],
+      "catalysts": [
+        {
+          "theme_id": "growth_duration_rotation",
+          "theme_label": "Growth / Duration Rotation",
+          "category": "earnings_ai_semis",
+          "title": "Nasdaq relative to S&P 500 +0.65pp",
+          "evidence": "NASDAQCOM +0.42% vs SP500 -0.23%",
+          "market_bias": "risk_on",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Growth leadership strengthens",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 1
+        },
+        {
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
+          "title": "US 10Y moves -3.0bp",
+          "evidence": "DGS10 -3.0bp",
+          "market_bias": "risk_on",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "10Y ↓ → discount rate eases",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 2
+        },
+        {
+          "theme_id": "equity_risk_appetite",
+          "theme_label": "Equity Risk Appetite",
+          "category": "growth_macro",
+          "title": "Nasdaq daily move +0.42%",
+          "evidence": "NASDAQCOM +0.42% vs prior close",
+          "market_bias": "risk_on",
+          "importance_level": 3,
+          "importance": "★★★",
+          "transmission": "Equity move → risk appetite / duration repricing",
+          "source_mode": "objective_market_reconstruction",
+          "rank": 3
+        }
+      ],
       "data_quality": {
         "status": "partial",
-        "available_driver_count": 0,
+        "available_driver_count": 3,
         "available_series": [
-          "SP500"
-        ],
-        "missing_series": [
           "NASDAQCOM",
+          "SP500",
           "VIXCLS",
           "DGS2",
           "DGS10",
-          "DCOILBRENTEU",
-          "DTWEXBGS",
           "BAMLH0A0HYM2"
+        ],
+        "missing_series": [
+          "DCOILBRENTEU",
+          "DTWEXBGS"
         ],
         "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
       }
@@ -1918,17 +1958,32 @@
       "theme_id": "global_duration",
       "theme_label": "Global Duration / Term Premium",
       "category": "inflation_rates",
-      "days_in_top3": 7,
+      "days_in_top3": 8,
       "best_rank": 2,
       "first_seen": "2026-10-22",
-      "last_seen": "2026-11-13",
-      "latest_rank": null,
+      "last_seen": "2026-11-18",
+      "latest_rank": 2,
       "state": "Persistent",
-      "latest_transmission": "PPI→Fed预期→US2Y/10Y→美元→AI云债务融资",
+      "latest_transmission": "10Y ↓ → discount rate eases",
       "source_modes": [
         "native_daily",
         "objective_market_reconstruction",
         "reconstructed_daily"
+      ]
+    },
+    {
+      "theme_id": "growth_duration_rotation",
+      "theme_label": "Growth / Duration Rotation",
+      "category": "earnings_ai_semis",
+      "days_in_top3": 4,
+      "best_rank": 1,
+      "first_seen": "2026-10-23",
+      "last_seen": "2026-11-18",
+      "latest_rank": 1,
+      "state": "Escalating",
+      "latest_transmission": "Growth leadership strengthens",
+      "source_modes": [
+        "objective_market_reconstruction"
       ]
     },
     {
@@ -1945,21 +2000,6 @@
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
-      ]
-    },
-    {
-      "theme_id": "growth_duration_rotation",
-      "theme_label": "Growth / Duration Rotation",
-      "category": "earnings_ai_semis",
-      "days_in_top3": 3,
-      "best_rank": 1,
-      "first_seen": "2026-10-23",
-      "last_seen": "2026-11-17",
-      "latest_rank": null,
-      "state": "Escalating",
-      "latest_transmission": "Growth leadership strengthens",
-      "source_modes": [
-        "objective_market_reconstruction"
       ]
     },
     {
@@ -1997,11 +2037,11 @@
       "theme_id": "equity_risk_appetite",
       "theme_label": "Equity Risk Appetite",
       "category": "growth_macro",
-      "days_in_top3": 1,
+      "days_in_top3": 2,
       "best_rank": 3,
       "first_seen": "2026-11-16",
-      "last_seen": "2026-11-16",
-      "latest_rank": null,
+      "last_seen": "2026-11-18",
+      "latest_rank": 3,
       "state": "New",
       "latest_transmission": "Equity move → risk appetite / duration repricing",
       "source_modes": [
@@ -2010,10 +2050,25 @@
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "market_structure",
-    "theme_label": "Market Structure",
+    "theme_id": "growth_duration_rotation",
+    "theme_label": "Growth / Duration Rotation",
     "as_of": "2026-11-18",
-    "confirming": [],
+    "confirming": [
+      {
+        "series_id": "NASDAQCOM",
+        "label": "Nasdaq Composite",
+        "as_of": "2026-11-18",
+        "source_mode": "objective_market_reconstruction",
+        "change": "+0.42%"
+      },
+      {
+        "series_id": "VIXCLS",
+        "label": "VIX",
+        "as_of": "2026-11-18",
+        "source_mode": "objective_market_reconstruction",
+        "change": "-3.53%"
+      }
+    ],
     "diverging": [
       {
         "series_id": "SP500",
@@ -2023,19 +2078,10 @@
         "change": "-0.23%"
       }
     ],
-    "unavailable": [
-      {
-        "series_id": "NASDAQCOM",
-        "label": "Nasdaq Composite"
-      },
-      {
-        "series_id": "VIXCLS",
-        "label": "VIX"
-      }
-    ],
+    "unavailable": [],
     "expectation_basis": "Thematic conditional comparison; not a verified causal attribution.",
-    "interpretation_note": "0 项资产方向与当前主线一致，1 项出现背离；不是因果证明。",
-    "what_would_flip_it": ""
+    "interpretation_note": "2 项资产方向与当前主线一致，1 项出现背离；不是因果证明。",
+    "what_would_flip_it": "A material reversal in the key confirming assets."
   },
   "series": {
     "NASDAQCOM": {
@@ -2127,6 +2173,10 @@
         {
           "date": "2026-11-17",
           "value": 24328.38
+        },
+        {
+          "date": "2026-11-18",
+          "value": 24429.88
         }
       ]
     },
@@ -2315,6 +2365,10 @@
         {
           "date": "2026-11-17",
           "value": 25.46
+        },
+        {
+          "date": "2026-11-18",
+          "value": 24.56
         }
       ]
     },
@@ -2402,6 +2456,10 @@
         },
         {
           "date": "2026-11-17",
+          "value": 4.8
+        },
+        {
+          "date": "2026-11-18",
           "value": 4.8
         }
       ]
@@ -2491,6 +2549,10 @@
         {
           "date": "2026-11-17",
           "value": 5.1
+        },
+        {
+          "date": "2026-11-18",
+          "value": 5.07
         }
       ]
     },
@@ -2755,6 +2817,10 @@
         {
           "date": "2026-11-17",
           "value": 3.43
+        },
+        {
+          "date": "2026-11-18",
+          "value": 3.47
         }
       ]
     }
@@ -2786,13 +2852,13 @@
       "2026-11-17",
       "2026-11-18"
     ],
-    "unknown_signal_cells": 9,
+    "unknown_signal_cells": 6,
     "price_proxy_dates": [],
     "note": "Calendar coverage, editorial provenance and underlying-provider freshness are separate; price proxies do not restore missing original judgments."
   },
   "series_freshness": {
     "NASDAQCOM": {
-      "last_observation": "2026-11-17",
+      "last_observation": "2026-11-18",
       "source": "Nasdaq, Inc. via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
@@ -2802,17 +2868,17 @@
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "VIXCLS": {
-      "last_observation": "2026-11-17",
+      "last_observation": "2026-11-18",
       "source": "CBOE via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS2": {
-      "last_observation": "2026-11-17",
+      "last_observation": "2026-11-18",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS10": {
-      "last_observation": "2026-11-17",
+      "last_observation": "2026-11-18",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
@@ -2827,7 +2893,7 @@
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "BAMLH0A0HYM2": {
-      "last_observation": "2026-11-17",
+      "last_observation": "2026-11-18",
       "source": "ICE BofA via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     }
