@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0.0",
-  "as_of": "2026-11-18",
-  "window_start": "2026-10-20",
-  "window_end": "2026-11-18",
+  "as_of": "2026-11-22",
+  "window_start": "2026-10-24",
+  "window_end": "2026-11-22",
   "coverage": {
-    "market_sessions": 28,
-    "native_daily_days": 17,
-    "reconstructed_daily_days": 7,
-    "reconstructed_days": 4,
-    "partial_days": 3,
+    "market_sessions": 30,
+    "native_daily_days": 14,
+    "reconstructed_daily_days": 16,
+    "reconstructed_days": 0,
+    "partial_days": 0,
     "verified_event_days": 0,
     "historical_series_start": "2025-08-01"
   },
@@ -88,264 +88,6 @@
     }
   },
   "days": [
-    {
-      "date": "2026-10-20",
-      "source_mode": "native_daily",
-      "regime_code": "unclassified",
-      "regime_label": "Selective AI Relief / Energy–Credit Constraint",
-      "dominant_theme_id": "market_structure",
-      "signals": {
-        "growth": "→",
-        "inflation": "↑",
-        "rates": "→",
-        "earnings": "↑",
-        "liquidity": "→",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "2026-10-19 Nasdaq +1.11% and SOX +1.61% selective technology rebound",
-          "evidence": "10月19日Nasdaq Composite +1.11%至26,430.89，SOX +1.61%，标普+0.41%，道指-0.07%；Reuters记录15.27十亿股成交低于20日均17.26十亿股，且广度偏弱。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "芯片股买盘↑→纳指弹升；融资信用利差若未缩窄→估值反弹持续性受限。",
-          "confirmation": "周二检验半导体广度、AI相关信用利差与科技公司资本开支指引是否同时改善。",
-          "invalidation": "若科技反弹时信用利差持续扩张、成交量不足且道指/小盘弱，则仅属短线补仓。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "2026-10-19 China Q3 GDP +4.5% versus 4.3% in Q2, retail sales +1.1%",
-          "evidence": "中国国家统计口径Q3 GDP同比增长4.5%（二季度4.3%），9月工业增加值+5.5%，社会消费品零售总额仅+1.1%；Reuters及中国政府信息交叉印证。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "出口/工业生产回升→全球制造链订单预期改善；消费弱→国内服务与地产链利润修复受限。",
-          "confirmation": "比较未来亚洲贸易订单、铜价与人民币对已公布数据的同交易日反应，避免用GDP增速替代内需。",
-          "invalidation": "若9月零售低位持续、地产投资恶化且外需新单转弱，则4.5%增长并不意味着复苏扩散。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "us_china_trade_controls",
-          "theme_label": "U.S.–China Trade Controls",
-          "category": "china_trade_policy",
-          "title": "2026-10-19 Brent Dec -0.3% while WTI Nov +2.2% on Russia waiver and expiry basis",
-          "evidence": "10月19日Brent 12月期货收109.55美元（-0.3%）；WTI11月收103.66美元（+2.2%）而WTI12月收98.54美元（-0.5%）。俄制裁豁免改变供给预期，但航运风险仍在。",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "俄制裁执行放松→远月供给预期↑、风险溢价↓；近月交割紧张→WTI11月价差↑；通胀传导仍高。",
-          "confirmation": "检验WTI11月到期前后的近远月价差、Brent12月及实际航运量是否同向收敛。",
-          "invalidation": "若已核验新物流中断或航运保费再升，使Brent远月持续创新高，则制裁缓和难独立压低成本。",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
-    {
-      "date": "2026-10-21",
-      "source_mode": "native_daily",
-      "regime_code": "unclassified",
-      "regime_label": "Selective Rotation / Housing-Duration Stress + Energy Tail Risk",
-      "dominant_theme_id": "market_structure",
-      "signals": {
-        "growth": "↓",
-        "inflation": "→",
-        "rates": "↓",
-        "earnings": "→",
-        "liquidity": "→",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "2026-10-20美国股市道指+1.02%、Russell2000 +1.65%而Nasdaq -0.02%的风格分化",
-          "evidence": "10月20日道指52,495.88收涨1.02%，Russell2000收2,773.42涨1.65%；同期标普涨0.28%，纳指微跌0.02%。3M等工业盈利与医药防御支持非科技轮动。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "工业企业现金流指引改善→价值股买盘↑；AI高资本开支仍存→科技权重风险溢价偏高。",
-          "confirmation": "10月21日验证同类行业相对强度、上涨家数与企业财报现金流指引是否一致，而非仅看指数涨跌。",
-          "invalidation": "若小盘及工业领涨很快消退且AI信用利差扩大，今日轮动更可能只是临时仓位调节。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "2026-10-20美国9月待售签约量环比-7.3%、新屋开工降至122.1万套SAAR",
-          "evidence": "NAR报告9月待售房屋销售签约环比-7.3%、同比-11.3%；Census同期新屋开工122.1万套年化，环比-5.2%，且抽样误差可能使单月方向不具统计显著性。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "抵押贷款利率高→购买力和签约下降→建筑订单/家具家电需求减少→信贷和企业盈利增长下行。",
-          "confirmation": "后续持续观察NAR成屋成交量、按揭申请及新屋库存是否同向恶化，并核对统计置信区间。",
-          "invalidation": "若新增签约与按揭申请快速回升、建商订单改善，则9月数据的领先指示可能被修正。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "2026-10-20美股盘后Netflix Q3收入128.7亿美元、Q4 EPS指引0.67美元引发股价下行",
-          "evidence": "Netflix第三季度收入128.7亿美元同比增长11.8%、净利润36.6亿美元、每股收益0.87美元；四季度EPS指引0.67美元与广告收入增长路径下调引发盘后约4%–5%股价回落（非正式收盘）。",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "广告商业化预期下修→未来利润与增长能见度下降→估值贴现上调→高估值媒体/互联网板块承压。",
-          "confirmation": "10月21日Netflix开盘后正式成交、同行广告变现率和Meta财报收入/CapEx指引共同验证。",
-          "invalidation": "若正常交易时段价格修复且广告库存及全年收入信号改善，盘后冲击可能并未转化为持续预期下修。",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
-    {
-      "date": "2026-10-22",
-      "source_mode": "native_daily",
-      "regime_code": "unclassified",
-      "regime_label": "AI Earnings Rebound / Cash-Conversion Test + Oil/Duration Overhang",
-      "dominant_theme_id": "market_structure",
-      "signals": {
-        "growth": "→",
-        "inflation": "↑",
-        "rates": "→",
-        "earnings": "↑",
-        "liquidity": "→",
-        "geopolitics": "↑"
-      },
-      "catalysts": [
-        {
-          "rank": 1,
-          "theme_id": "market_structure",
-          "theme_label": "Market Structure",
-          "category": "market_structure",
-          "title": "2026-10-21盘后Meta Q3收入646.01亿美元、CapEx349.1亿美元及FCF负21.2亿美元",
-          "evidence": "Meta Q3营收646.01亿美元，同比增长26%；披露98.9亿美元法律费用，年度CapEx预期1,350–1,450亿美元，Q3自由现金流为负。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "广告营收增长→经营现金流增加，但AI设施资本开支增长更快→自由现金流转负→长期资本成本敏感。",
-          "confirmation": "下一交易日持续确认广告量价、2027经营现金回报和真实自由现金流，不依赖盘后单一涨幅。",
-          "invalidation": "若AI基础设施投入进一步侵蚀可分配现金且信用利差扩大，短期股价上涨不能维持。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 2,
-          "theme_id": "energy_inflation",
-          "theme_label": "Energy Inflation",
-          "category": "geopolitics_energy",
-          "title": "2026-10-21 EIA美国原油库存降约306万桶、Brent与WTI收盘分化",
-          "evidence": "EIA截至16日当周商业原油库存约4.125亿桶、周减约306万桶；汽油库存下降、馏分油库存增加。Brent12月结算108.82美元，WTI12月收97.15美元。",
-          "market_bias": "mixed",
-          "importance_level": 5,
-          "importance": "★★★★★",
-          "transmission": "现货周转下降→上游库存压力→油价风险溢价；产品库存分化→裂解价差→通胀预期及利率。",
-          "confirmation": "连续两期库存与Cushing分项和实物航运改善一致、期货同合约价差收敛。",
-          "invalidation": "如美伊事态再度破坏航运即便总库存回补，也无法说明供应风险已消除。",
-          "source_mode": "native_daily"
-        },
-        {
-          "rank": 3,
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "2026-10-21英国9月CPI 3.5%与法国10Y国债触及5%附近、美国20Y拍卖高收益5.469%",
-          "evidence": "ONS披露英国9月CPI同比3.5%高于上期3.1%；法国10Y收益率约5%并见风险利差扩大，美国20Y拍卖5.469%、较WI约尾差0.9bp。",
-          "market_bias": "mixed",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "英国价格上涨→BoE政策弹性下降；法国财政溢价→欧债融资压力；美国债券尾差→全球期限溢价。",
-          "confirmation": "法国-德国利差及拍卖后美债收益率是否持续扩大，而不是仅看一天的新闻高点。",
-          "invalidation": "如能源成本回落且通胀预期与信用利差同时改善，此压力可减弱。",
-          "source_mode": "native_daily"
-        }
-      ]
-    },
-    {
-      "date": "2026-10-23",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "neutral",
-      "regime_label": "Neutral",
-      "dominant_theme_id": "growth_duration_rotation",
-      "signals": {
-        "growth": "→",
-        "inflation": "→",
-        "rates": "↑",
-        "earnings": "↑",
-        "liquidity": "↑",
-        "geopolitics": "→"
-      },
-      "catalysts": [
-        {
-          "theme_id": "growth_duration_rotation",
-          "theme_label": "Growth / Duration Rotation",
-          "category": "earnings_ai_semis",
-          "title": "Nasdaq relative to S&P 500 +0.31pp",
-          "evidence": "NASDAQCOM -0.21% vs SP500 -0.52%",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Growth leadership strengthens",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
-          "theme_id": "fed_policy_path",
-          "theme_label": "Fed Policy Path",
-          "category": "central_banks_fiscal",
-          "title": "US 2Y moves +4.0bp",
-          "evidence": "DGS2 +4.0bp",
-          "market_bias": "risk_off",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "2Y ↑ → policy path reprices tighter",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
-          "theme_id": "global_duration",
-          "theme_label": "Global Duration / Term Premium",
-          "category": "inflation_rates",
-          "title": "US 10Y moves +4.0bp",
-          "evidence": "DGS10 +4.0bp",
-          "market_bias": "risk_off",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "10Y ↑ → discount rate ↑ → long-duration equity valuation ↓",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
-        }
-      ],
-      "data_quality": {
-        "status": "complete",
-        "available_driver_count": 3,
-        "available_series": [
-          "NASDAQCOM",
-          "SP500",
-          "VIXCLS",
-          "DGS2",
-          "DGS10",
-          "DCOILBRENTEU",
-          "DTWEXBGS",
-          "BAMLH0A0HYM2"
-        ],
-        "missing_series": [],
-        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
-      }
-    },
     {
       "date": "2026-10-24",
       "source_mode": "native_daily",
@@ -1649,243 +1391,576 @@
       ]
     },
     {
-      "date": "2026-11-16",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "unavailable",
-      "regime_label": "Insufficient data",
-      "dominant_theme_id": "growth_duration_rotation",
+      "date": "2026-11-14",
+      "source_mode": "reconstructed_daily",
+      "regime_code": "unclassified",
+      "regime_label": "Inflation Persistence / AI De-rating / Oil Supply Rebalancing",
+      "dominant_theme_id": "market_structure",
       "signals": {
-        "growth": "↓",
-        "inflation": "→",
-        "rates": "↓",
+        "growth": "→",
+        "inflation": "↑",
+        "rates": "↑",
         "earnings": "↓",
-        "liquidity": "?",
+        "liquidity": "→",
         "geopolitics": "↑"
       },
       "catalysts": [
         {
-          "theme_id": "growth_duration_rotation",
-          "theme_label": "Growth / Duration Rotation",
-          "category": "earnings_ai_semis",
-          "title": "Nasdaq relative to S&P 500 -0.57pp",
-          "evidence": "NASDAQCOM -2.49% vs SP500 -1.92%",
-          "market_bias": "risk_off",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Long-duration growth underperforms",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
+          "rank": 1,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "11月13日美国10月PPI环比+0.3%但同比+6.5%，高利率定价未解除",
+          "evidence": "美国BLS公布10月PPI总月率+0.3%、较市场预期+0.4%略弱，但同比上涨6.5%，9月环比修订为+1.4%；其公布已发生，不能沿用上一版“待公布”。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "BLS PPI→Fed加息预期→UST 2Y/10Y→美元及成长股估值",
+          "confirmation": "核对BLS分项和修订、美国正式收益率曲线及市场交易日连续确认。",
+          "invalidation": "若后续通胀数据系统降温，收益率持续下行且实际信贷利差收窄，则高利率叙事边际减弱。",
+          "source_mode": "reconstructed_daily"
         },
         {
+          "rank": 2,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "NVIDIA治理更迭后11月13日NVDA、SOXX继续下跌，11月17日财报待验证",
+          "evidence": "11月12日NVIDIA正式披露创始人离任、CFO暂任CEO；11月13日NVDA美国现金盘报162.85美元、跌2.01%，SOXX跌3.67%。11月17日业绩仍属未来事件。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "NVDA管理层→供应商交期信心→SOXX/NDX→AI云资本计划",
+          "confirmation": "11/17财报及正式管理层答复、客户订单和交期、后续NVDA相对SOXX交易表现。",
+          "invalidation": "若管理层明确业务连续性且客户供货与收入兑现保持稳健，风险溢价可回落。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
+          "title": "11月13日IEA预计Q4原油供需转为盈余，11月16日中国宏观数据检验需求",
+          "evidence": "IEA称第四季度全球石油供给可能较需求多约170万桶/日，Brent11月13日结算约95.84美元；中国10月工业生产、零售、投资数据计划11月16日10时公布。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "IEA供需预测与中国工业需求→油价/铜价→通胀→全球利率/商品货币",
+          "confirmation": "核对实际海湾出口、油品库存和11月16日中国官方经济数据。",
+          "invalidation": "若航运风险令实际供应收缩或中国需求大幅强于预期，供给盈余预期可能快速反转。",
+          "source_mode": "reconstructed_daily"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-15",
+      "source_mode": "reconstructed_daily",
+      "regime_code": "unclassified",
+      "regime_label": "High Rates / AI Governance / Energy Inflation",
+      "dominant_theme_id": "market_structure",
+      "signals": {
+        "growth": "→",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "→",
+        "liquidity": "→",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "美国10月PPI于11月13日正式发布：月率+0.3%、同比+6.5%，市场从月度降温转向观察价格粘性",
+          "evidence": "美国BLS报告PPI最终需求10月环比增长0.3%、同比增长6.5%，9月月率修订至1.4%；10月商品0.5%、服务0.2%。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "PPI价格分项→美联储利率预期→UST2Y/10Y→AI资本支出估值",
+          "confirmation": "核验11/13 BLS正式修订后的分项和财政部收益率；未来继续看11/17进出口价格以及SOX相对表现。",
+          "invalidation": "若下一轮进出口价格显著走弱且收益率同向回落，通胀贴现冲击可能减弱。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "NVIDIA 11月17日财报与电话会：CEO交接后首个验证供货连续性和AI资本开支信心的正式窗口",
+          "evidence": "公司已官方确定11月17日财报发布时间与电话会；11月13日NVDA再次下跌约2%，但财报尚未公布。公司10月28日公告美东16:20左右披露业绩，美东17:00左右召开电话会。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "NVIDIA官方业绩/指引→AI计算订单兑现→SOX与云资本支出→Nasdaq100",
+          "confirmation": "等待公司正式公告与财报电话会，分别记录actual、guidance、重大客户及产能信息。",
+          "invalidation": "财报预告时间调整或企业正式披露需求不及市场预期，则需重估催化窗口与估值。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "global_duration",
+          "theme_label": "Global Duration / Term Premium",
+          "category": "inflation_rates",
+          "title": "美债2Y至10Y五个债券交易日收益率显著上行，油价高位使AI融资贴现压力延伸至下周开盘",
+          "evidence": "11月13日美债官方2Y 4.88%、10Y 5.15%，相对11月5日分别累计上升42bp和31bp；Brent结算95.84美元。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "Oil/Inflation→Treasury yield curve→AI credit spreads/discount rate→NDX/RUT",
+          "confirmation": "周一核对真实债市与现货开盘，确认油价、UST、SOX是否继续同向。",
+          "invalidation": "若债市收益率回落并伴随AI现金订单正面确认，跨资产负面共振将减弱。",
+          "source_mode": "reconstructed_daily"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-16",
+      "source_mode": "reconstructed_daily",
+      "regime_code": "unclassified",
+      "regime_label": "Asian Growth Softening / High US Rates / AI Earnings Test",
+      "dominant_theme_id": "market_structure",
+      "signals": {
+        "growth": "↓",
+        "inflation": "↑",
+        "rates": "↑",
+        "earnings": "→",
+        "liquidity": "→",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "中国10月增长数据正式公布：工业生产+4.8%、零售销售+0.4%，1—10月固定资产投资-8.1%",
+          "evidence": "11月16日国家统计局数据经路透报导：工业生产同比4.8%（9月5.5%）、零售0.4%（9月1.1%），固定投资1—10月下降8.1%。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "中国产销投资数据→亚洲增长预期→中港股票与工业商品→全球风险偏好",
+          "confirmation": "以中国统计局实际发布及后续生产/地产分项与亚洲盘成交共同验证。",
+          "invalidation": "若后续经济刺激与高频消费修复显著强于预期，则增长冲击可能衰减。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 2,
           "theme_id": "credit_conditions",
           "theme_label": "Credit Conditions",
           "category": "liquidity_credit",
-          "title": "HY OAS moves +11.0bp",
-          "evidence": "BAMLH0A0HYM2 +11.0bp",
-          "market_bias": "risk_off",
+          "title": "日本2026年第三季度GDP初值年化-0.1%，私人消费环比-0.3%",
+          "evidence": "日本政府初步数据经路透确认三季度GDP年化负增长0.1%，消费下降0.3%，但企业资本支出增长1.6%。。需要再以来源原始时间、下一交易日价格与真实融资资料交叉确认，不把条件分析写成已实现的事实。",
+          "market_bias": "mixed",
           "importance_level": 4,
           "importance": "★★★★",
-          "transmission": "Credit spreads wider → funding conditions tighten",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
+          "transmission": "日本GDP与能源进口→日债政策预期→USDJPY及日股→亚太风险资产",
+          "confirmation": "日本内阁府初值、BOJ官方信号及日元相同时间戳报价。",
+          "invalidation": "内需修订明显转正或央行明确转向宽松。。需要再以来源原始时间、下一交易日价格与真实融资资料交叉确认，不把条件分析写成已实现的事实。",
+          "source_mode": "reconstructed_daily"
         },
         {
-          "theme_id": "equity_risk_appetite",
-          "theme_label": "Equity Risk Appetite",
-          "category": "growth_macro",
-          "title": "Nasdaq daily move -2.49%",
-          "evidence": "NASDAQCOM -2.49% vs prior close",
-          "market_bias": "risk_off",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Equity move → risk appetite / duration repricing",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
+          "rank": 3,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "NVIDIA 11月17日盘后FY2027第三季度财报与Anthropic预期IPO共同检验AI现金流",
+          "evidence": "截至研究截止时间，NVIDIA正式业绩尚未公布；公司此前披露11/17 16:20 EST预计公布并在17:00 EST电话会。Anthropic的IPO是市场预期不是已实现上市。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "NVDA真实收入和指引→AI产业订单与芯片价格→云计算资本开支→半导体/成长股估值",
+          "confirmation": "只以NVIDIA投资者关系正式财报与电话会披露作为actual；Anthropic以正式招股与交易所上市事件核对。",
+          "invalidation": "财报推迟或预期上市日期改动；不把报道中的预期视为已实现财务事实。",
+          "source_mode": "reconstructed_daily"
         }
-      ],
-      "data_quality": {
-        "status": "partial",
-        "available_driver_count": 3,
-        "available_series": [
-          "NASDAQCOM",
-          "SP500",
-          "VIXCLS",
-          "DGS2",
-          "DGS10",
-          "DCOILBRENTEU",
-          "BAMLH0A0HYM2"
-        ],
-        "missing_series": [
-          "DTWEXBGS"
-        ],
-        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
-      }
+      ]
     },
     {
       "date": "2026-11-17",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "unavailable",
-      "regime_label": "Insufficient data",
-      "dominant_theme_id": "credit_conditions",
+      "source_mode": "reconstructed_daily",
+      "regime_code": "unclassified",
+      "regime_label": "AI De-rating / Regulatory Risk / High Rates despite Oil Surplus",
+      "dominant_theme_id": "ai_earnings",
+      "signals": {
+        "growth": "↓",
+        "inflation": "→",
+        "rates": "↑",
+        "earnings": "↓",
+        "liquidity": "↓",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "11月16日美股全面回撤：Nasdaq -2.49%、S&P 500 -1.92%、SOX -5.3%，NVIDIA财报前AI估值承压",
+          "evidence": "Reuters和AP分别报告11月16日现金盘，Nasdaq收24,509.76、标普收7,416.59，费城半导体指数下跌5.3%；NVIDIA跌约4.1%，CoreWeave和Nebius也明显承压。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "AI盈利质疑→成长股风险溢价与融资利差→Nasdaq/SOX相对价格→全球风险资产配置",
+          "confirmation": "11/17晚间核对NVIDIA官方业绩指引及SOX与纳指的后续收盘相对表现，同时检查美国2Y与10Y同一时段变化，避免仅凭盘前反弹判定反转。",
+          "invalidation": "若正式NVIDIA营收利润率与指引明显改善，半导体广度、信用与国债同步确认修复，此次风险溢价上行可能被部分逆转。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "BIS明确先进AI算力远程访问临时规则：第三国云数据中心绕行限制的合规路径被收紧",
+          "evidence": "BIS官方网站公布针对远程访问先进SI芯片和服务器的临时最终规则，核心是阻止利用第三国数据中心规避现有先进技术限制；新闻稿可核对，细节和实际生效日需要查正式法律文本。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "远程算力合规边界→海外AI服务交付与资本开支→芯片需求指引→NVDA/SOX/云服务商",
+          "confirmation": "跟踪BIS正式IFR法律文本、生效日期及许可例外，再通过公司公告核对实际受影响服务和营收口径。",
+          "invalidation": "若正式文本明确一般许可和合理过渡、公司业务说明实际不受影响，政策折价不应继续按最严格情形外推。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
+          "title": "11月17日油价随IEA四季度供应盈余预期下跌：Brent约92美元、WTI约85.28美元",
+          "evidence": "Reuters在11/17 01:02 GMT观察Brent期货$92.00、WTI$85.28，均跌约$0.44；IEA 11月油市报告预计四季度转为供应盈余，同时指出海湾航运与能源设施袭击仍在持续。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "IEA盈余预期与海湾出口恢复→Brent/WTI→通胀预期和UST长期端→全球股票估值",
+          "confirmation": "以同合约后续正式结算、IEA更新及海湾实际装运量共同确认降价是否持续；不以一笔盘中报价推断整周趋势。",
+          "invalidation": "若海湾实物供应再度中断或OPEC+政策造成减供，Brent和WTI或重新升水，使短期通胀缓解假说失效。",
+          "source_mode": "reconstructed_daily"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-18",
+      "source_mode": "reconstructed_daily",
+      "regime_code": "unclassified",
+      "regime_label": "Tactical AI Bounce / Broad Risk-Off / High Rates",
+      "dominant_theme_id": "ai_earnings",
       "signals": {
         "growth": "→",
-        "inflation": "→",
-        "rates": "→",
+        "inflation": "↑",
+        "rates": "↑",
         "earnings": "↑",
-        "liquidity": "?",
+        "liquidity": "→",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "NVIDIA正式公布FY2027 Q3营收115.8bn美元及下一季收入指引130bn美元，盘后AI链迎来关键需求验证",
+          "evidence": "NVIDIA官方发布季度营收115.8bn美元、数据中心107.6bn美元、非GAAP毛利率74.9%及EPS 2.68；下一季收入指引130bn±3%，预估毛利率71–72%，美东盘后NVDA指示涨4.7%。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "公司实际订单与指引→半导体盈利预期→AI云融资与资本开支→纳指与亚洲芯片股",
+          "confirmation": "11/18美股常规现金交易时段验证涨幅、SOX广度和国债收益率，勿把盘后4.7%写成当天现金收盘。",
+          "invalidation": "若11/18现货开盘后回落且毛利率下降成为主导，盘后需求验证可能被估值和出口许可风险抵消。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "美国11月17日现金盘再度广泛下挫：标普-1.03%而零售总量+0.2%、核心消费+0.6%分化",
+          "evidence": "AP记录标普7,340.53、道指50,759.42、纳指24,328.38、Russell 2,701.87；同日公布的10月零售月增0.2%，control group增0.6%，住房建造商信心指数跌至25。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "消费与住宅需求→盈利修订/信贷质量→美股广度及收益率曲线→全球配置",
+          "confirmation": "看未来零售价格平减修正、NAHB后续指标与美股等权及银行板块相对收益是否企稳。",
+          "invalidation": "若强劲核心销售转化为通胀和鹰派政策预期，名义消费韧性反而可能拉高贴现率。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "美国BIS远程先进算力许可新规与海峡石油运输风险构成AI盈利反弹之外的结构性尾部约束",
+          "evidence": "Reuters报道新增许可针对部分第三国远程提供大型AI算力与特定芯片目的地；法律评估列出12 million TPP门槛并预计11/19刊登，油价则因海峡船只袭击在11/17结算小幅反弹。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "算力出口许可/海峡油价→云服务交付和通胀预期→利率与资本开支回报→全球AI估值",
+          "confirmation": "持续核验Federal Register正式文本和生效日、授权例外与公司地域指引，并监控Brent结算而非传闻即时报价。",
+          "invalidation": "如果规则包含明确豁免且运输供给持续恢复，对盈利和能源成本的直接冲击可能低于风险定价。",
+          "source_mode": "reconstructed_daily"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-19",
+      "source_mode": "reconstructed_daily",
+      "regime_code": "unclassified",
+      "regime_label": "AI Earnings Strong / Rates Hawkish / Energy Disinflation",
+      "dominant_theme_id": "market_structure",
+      "signals": {
+        "growth": "→",
+        "inflation": "↓",
+        "rates": "↑",
+        "earnings": "→",
+        "liquidity": "→",
         "geopolitics": "→"
       },
       "catalysts": [
         {
-          "theme_id": "credit_conditions",
-          "theme_label": "Credit Conditions",
-          "category": "liquidity_credit",
-          "title": "HY OAS moves +9.0bp",
-          "evidence": "BAMLH0A0HYM2 +9.0bp",
-          "market_bias": "risk_off",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Credit spreads wider → funding conditions tighten",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
+          "rank": 1,
+          "theme_id": "market_structure",
+          "theme_label": "Market Structure",
+          "category": "market_structure",
+          "title": "NVIDIA FY2027第三财季收入达1158亿美元且下一季指引1300亿美元，但11/18现金股价仍跌约2.9%",
+          "evidence": "NVIDIA公布财季收入1158亿美元，下一季收入展望约1300亿美元；即便在收入和前瞻指引双双上修之后，公司11月18日美股现金盘仍下跌约2.9%，表明高资本开支与投资者风险偏好仍制约定价。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "财报与指引→AI终端需求预期→数据中心融资条件→NVDA和科技股估值",
+          "confirmation": "观察下一交易日NVDA、AI云运营商及科技板块的价格广度与融资利差",
+          "invalidation": "若成本与融资压力仍压倒需求改善，股价可能继续弱于强劲季报",
+          "source_mode": "reconstructed_daily"
         },
         {
-          "theme_id": "growth_duration_rotation",
-          "theme_label": "Growth / Duration Rotation",
-          "category": "earnings_ai_semis",
-          "title": "Nasdaq relative to S&P 500 +0.29pp",
-          "evidence": "NASDAQCOM -0.74% vs SP500 -1.03%",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Growth leadership strengthens",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
-        },
-        {
+          "rank": 2,
           "theme_id": "fed_policy_path",
           "theme_label": "Fed Policy Path",
           "category": "central_banks_fiscal",
-          "title": "US 2Y moves -3.0bp",
-          "evidence": "DGS2 -3.0bp",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "2Y ↓ → policy path reprices easier",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
+          "title": "FOMC十月会议纪要发布，决策者偏向进一步加息并讨论更大幅度，金融条件成为风险资产关键约束",
+          "evidence": "美联储11月18日公布10月会议纪要：大多数委员认为通胀风险仍需警惕，若经济沿着预期路径运行可能仍需进一步加息，部分委员讨论更大幅度动作。纪要属于既往会议表态，并非已经作出的12月利率决定。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "政策倾向→美债收益率与美元→消费/信贷条件→股市估值",
+          "confirmation": "关注11/19与下次会议前利率曲线、美元和信用利差如何重新定价",
+          "invalidation": "若后续通胀和增长数据转弱，鹰派措辞的实际加息幅度可能不及市场预期",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "Anthropic IPO以每股83美元定价，11月19日拟挂牌，与AI股票普遍承压形成一级和二级市场反差",
+          "evidence": "Reuters和AP确认发行价83美元、估值约1.5万亿美元，预期今天在纳斯达克以ANT交易，尚无可核实现金盘口首笔成交。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "IPO新资金→AI算力承诺与现金消耗→行业融资成本→科技股风险偏好",
+          "confirmation": "待正式上市后确认开盘价、成交与估值，未开盘不写涨跌幅",
+          "invalidation": "上市后若显著低于发行价，可能重新加大AI盈利质量争议",
+          "source_mode": "reconstructed_daily"
         }
-      ],
-      "data_quality": {
-        "status": "partial",
-        "available_driver_count": 3,
-        "available_series": [
-          "NASDAQCOM",
-          "SP500",
-          "VIXCLS",
-          "DGS2",
-          "DGS10",
-          "DCOILBRENTEU",
-          "BAMLH0A0HYM2"
-        ],
-        "missing_series": [
-          "DTWEXBGS"
-        ],
-        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
-      }
+      ]
     },
     {
-      "date": "2026-11-18",
-      "source_mode": "objective_market_reconstruction",
-      "regime_code": "unavailable",
-      "regime_label": "Insufficient data",
-      "dominant_theme_id": "growth_duration_rotation",
+      "date": "2026-11-20",
+      "source_mode": "reconstructed_daily",
+      "regime_code": "risk_off",
+      "regime_label": "Risk-off / AI融资与成长估值共振",
+      "dominant_theme_id": "global_duration",
       "signals": {
-        "growth": "→",
-        "inflation": "?",
+        "growth": "↓",
+        "inflation": "→",
         "rates": "→",
-        "earnings": "↑",
-        "liquidity": "?",
-        "geopolitics": "?"
+        "earnings": "↓",
+        "liquidity": "↓",
+        "geopolitics": "↑"
       },
       "catalysts": [
         {
-          "theme_id": "growth_duration_rotation",
-          "theme_label": "Growth / Duration Rotation",
-          "category": "earnings_ai_semis",
-          "title": "Nasdaq relative to S&P 500 +0.65pp",
-          "evidence": "NASDAQCOM +0.42% vs SP500 -0.23%",
-          "market_bias": "risk_on",
-          "importance_level": 4,
-          "importance": "★★★★",
-          "transmission": "Growth leadership strengthens",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 1
-        },
-        {
+          "rank": 1,
           "theme_id": "global_duration",
           "theme_label": "Global Duration / Term Premium",
           "category": "inflation_rates",
-          "title": "US 10Y moves -3.0bp",
-          "evidence": "DGS10 -3.0bp",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "10Y ↓ → discount rate eases",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 2
+          "title": "Anthropic 11月19日上市首日收97.17美元，标普500同期跌约2.02%，体现单股融资热与大盘风险偏好的分离",
+          "evidence": "11月19日美股标普500收7,175.83点、跌2.02%，纳指23,879.20点、跌2.25%，道指49,097.06点、跌2.19%；全市场超过90%的标普成分股下跌。Anthropic按83美元IPO定价后首日收97.17美元、上涨约17%，但公司个股需求不能代表全部AI股票盈利兑现。美国财政部10年期par yield为5.04%，股债市场开始定价增长与融资条件双向压缩。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
+          "confirmation": "对比下一个真实现金盘的纳指、VIX、美国2Y/10Y曲线和融资条款，若多项共同变化才提升结论置信度。",
+          "invalidation": "若现金盘恢复、VIX回落且信用或融资条件同步改善，风险扩散叙事将减弱；不能仅看短暂盘前反弹。",
+          "source_mode": "reconstructed_daily"
         },
         {
-          "theme_id": "equity_risk_appetite",
-          "theme_label": "Equity Risk Appetite",
-          "category": "growth_macro",
-          "title": "Nasdaq daily move +0.42%",
-          "evidence": "NASDAQCOM +0.42% vs prior close",
-          "market_bias": "risk_on",
-          "importance_level": 3,
-          "importance": "★★★",
-          "transmission": "Equity move → risk appetite / duration repricing",
-          "source_mode": "objective_market_reconstruction",
-          "rank": 3
+          "rank": 2,
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
+          "title": "美联储10月FOMC纪要对通胀与AI相关信用风险保持警惕，11月19日美债10Y par yield 5.04%",
+          "evidence": "FOMC于11月18日发布的十月会议纪要强调价格和金融稳定风险；11月19日公布的初请失业救济约20.3万人，不能凭单一数据推断就业突然恶化。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
+          "confirmation": "对比下一个真实现金盘的纳指、VIX、美国2Y/10Y曲线和融资条款，若多项共同变化才提升结论置信度。",
+          "invalidation": "若现金盘恢复、VIX回落且信用或融资条件同步改善，风险扩散叙事将减弱；不能仅看短暂盘前反弹。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "geopolitics_energy",
+          "theme_label": "Geopolitics / Energy",
+          "category": "geopolitics_energy",
+          "title": "11月19日中东油运扰动与全球供应过剩预期并存，January Brent结算91.98美元",
+          "evidence": "11月19日ICE January Brent结算91.98美元，环比仅加0.03%；航运地缘消息未被独立证明为可持续的原油减产。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
+          "confirmation": "对比下一个真实现金盘的纳指、VIX、美国2Y/10Y曲线和融资条款，若多项共同变化才提升结论置信度。",
+          "invalidation": "若现金盘恢复、VIX回落且信用或融资条件同步改善，风险扩散叙事将减弱；不能仅看短暂盘前反弹。",
+          "source_mode": "reconstructed_daily"
         }
-      ],
-      "data_quality": {
-        "status": "partial",
-        "available_driver_count": 3,
-        "available_series": [
-          "NASDAQCOM",
-          "SP500",
-          "VIXCLS",
-          "DGS2",
-          "DGS10",
-          "BAMLH0A0HYM2"
-        ],
-        "missing_series": [
-          "DCOILBRENTEU",
-          "DTWEXBGS"
-        ],
-        "note": "Only contemporaneously available observations are ranked; missing releases are not filled or treated as neutral."
-      }
+      ]
+    },
+    {
+      "date": "2026-11-21",
+      "source_mode": "reconstructed_daily",
+      "regime_code": "event_risk",
+      "regime_label": "Event Risk / AI去杠杆与美债避险",
+      "dominant_theme_id": "fed_policy_path",
+      "signals": {
+        "growth": "↓",
+        "inflation": "→",
+        "rates": "→",
+        "earnings": "↓",
+        "liquidity": "↓",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
+          "title": "美股11月20日标普500跌3.70%、纳指跌5.28%，VIX升至35.89：全球风险资产去杠杆加速",
+          "evidence": "11月20日标普500报6,910.39、单日跌3.70%，纳指22,617.73、跌5.28%，道指48,147.33、跌1.93%；半导体指数跌幅约10.7%。VIX收35.89、单日上升7.45点；美国官方10年期par yield降至4.92%，下降12bp。股债反向变化印证避险需求，但不能自动等同于美联储已经转向降息。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
+          "confirmation": "对比下一个真实现金盘的纳指、VIX、美国2Y/10Y曲线和融资条款，若多项共同变化才提升结论置信度。",
+          "invalidation": "若现金盘恢复、VIX回落且信用或融资条件同步改善，风险扩散叙事将减弱；不能仅看短暂盘前反弹。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
+          "title": "美国10年期财政部par yield降至4.92%，单日-12bp；从通胀担忧转向增长与流动性避险",
+          "evidence": "11月18日公布的FOMC纪要是已知政策背景，周五避险买债引发10年收益率跌12bp并不代表Fed立即改变紧缩倾向；密歇根消费者信心终值51.5为11月20日已公布调查，不能代替官方PCE。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
+          "confirmation": "对比下一个真实现金盘的纳指、VIX、美国2Y/10Y曲线和融资条款，若多项共同变化才提升结论置信度。",
+          "invalidation": "若现金盘恢复、VIX回落且信用或融资条件同步改善，风险扩散叙事将减弱；不能仅看短暂盘前反弹。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "ai_earnings",
+          "theme_label": "AI / Earnings",
+          "category": "earnings_ai_semis",
+          "title": "11月20日布伦特原油逆势上涨0.64%，地缘供给风险与AI股票下跌形成不同资产方向",
+          "evidence": "11月20日January Brent结算92.57美元/桶、涨0.64%，WTI December结算83.98美元/桶、涨0.93%；油价供应担忧与股市大跌同时发生，油→通胀→利率的方向须结合未来数据验证。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
+          "confirmation": "对比下一个真实现金盘的纳指、VIX、美国2Y/10Y曲线和融资条款，若多项共同变化才提升结论置信度。",
+          "invalidation": "若现金盘恢复、VIX回落且信用或融资条件同步改善，风险扩散叙事将减弱；不能仅看短暂盘前反弹。",
+          "source_mode": "reconstructed_daily"
+        }
+      ]
+    },
+    {
+      "date": "2026-11-22",
+      "source_mode": "reconstructed_daily",
+      "regime_code": "event_risk",
+      "regime_label": "Weekend Event Risk / 市场休市后等待流动性重定价",
+      "dominant_theme_id": "us_china_trade_controls",
+      "signals": {
+        "growth": "↓",
+        "inflation": "→",
+        "rates": "→",
+        "earnings": "↓",
+        "liquidity": "↓",
+        "geopolitics": "↑"
+      },
+      "catalysts": [
+        {
+          "rank": 1,
+          "theme_id": "us_china_trade_controls",
+          "theme_label": "U.S.–China Trade Controls",
+          "category": "china_trade_policy",
+          "title": "周日截至11月22日北京时间09:00无新的美国现金盘，沿用11月20日标普-3.70%与纳指-5.28%真实收盘",
+          "evidence": "截至11月22日09:00北京时间，美股与美国现券上一次完整日终仍是11月20日：标普500收6,910.39（-3.70%）、纳指22,617.73（-5.28%）、VIX 35.89；财政部10年期par yield为4.92%。不能将周末盘前传闻写成已结算行情。当前核心变量是周一流动性恢复后的卖压是否扩散至信用与非美资产。",
+          "market_bias": "mixed",
+          "importance_level": 5,
+          "importance": "★★★★★",
+          "transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
+          "confirmation": "对比下一个真实现金盘的纳指、VIX、美国2Y/10Y曲线和融资条款，若多项共同变化才提升结论置信度。",
+          "invalidation": "若现金盘恢复、VIX回落且信用或融资条件同步改善，风险扩散叙事将减弱；不能仅看短暂盘前反弹。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 2,
+          "theme_id": "fed_policy_path",
+          "theme_label": "Fed Policy Path",
+          "category": "central_banks_fiscal",
+          "title": "11月20日VIX结算35.89、美国10Y收益率4.92%，11月23日CME与现券重开检验避险持续性",
+          "evidence": "上次FOMC纪要强调价格风险与AI债务结构问题；11月23日09:45 EST美国11月初值PMI尚未公布，须观察价格与就业分项是否强化货币政策约束。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
+          "confirmation": "对比下一个真实现金盘的纳指、VIX、美国2Y/10Y曲线和融资条款，若多项共同变化才提升结论置信度。",
+          "invalidation": "若现金盘恢复、VIX回落且信用或融资条件同步改善，风险扩散叙事将减弱；不能仅看短暂盘前反弹。",
+          "source_mode": "reconstructed_daily"
+        },
+        {
+          "rank": 3,
+          "theme_id": "energy_inflation",
+          "theme_label": "Energy Inflation",
+          "category": "geopolitics_energy",
+          "title": "11月20日Brent上涨0.64%而科技股下跌，11月23日PMI将检验供给通胀与增长风险的相对主导",
+          "evidence": "最新可比较结算仍为11月20日January Brent 92.57美元和December WTI 83.98美元；无周末新期货官方结算。供需过剩与中东运输干扰两种机制相反，必须等待实物运输/库存确认。",
+          "market_bias": "mixed",
+          "importance_level": 4,
+          "importance": "★★★★",
+          "transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
+          "confirmation": "对比下一个真实现金盘的纳指、VIX、美国2Y/10Y曲线和融资条款，若多项共同变化才提升结论置信度。",
+          "invalidation": "若现金盘恢复、VIX回落且信用或融资条件同步改善，风险扩散叙事将减弱；不能仅看短暂盘前反弹。",
+          "source_mode": "reconstructed_daily"
+        }
+      ]
     }
   ],
   "regime_transitions": [
     {
-      "date": "2026-10-23",
-      "from": "AI Earnings Rebound / Cash-Conversion Test + Oil/Duration Overhang",
-      "to": "Neutral",
-      "dominant_theme_id": "growth_duration_rotation"
+      "date": "2026-11-20",
+      "from": "AI Earnings Strong / Rates Hawkish / Energy Disinflation",
+      "to": "Risk-off / AI融资与成长估值共振",
+      "dominant_theme_id": "global_duration"
     },
     {
-      "date": "2026-10-24",
-      "from": "Neutral",
-      "to": "Oil-Led Inflation Risk / AI Cash-Return Divergence / Duration Constraint",
-      "dominant_theme_id": "energy_inflation"
-    },
-    {
-      "date": "2026-11-16",
-      "from": "AI Governance Shock / High Rates / Oil Inflation Risk",
-      "to": "Insufficient data",
-      "dominant_theme_id": "growth_duration_rotation"
+      "date": "2026-11-21",
+      "from": "Risk-off / AI融资与成长估值共振",
+      "to": "Event Risk / AI去杠杆与美债避险",
+      "dominant_theme_id": "fed_policy_path"
     }
   ],
   "persistent_themes": [
@@ -1893,13 +1968,13 @@
       "theme_id": "ai_earnings",
       "theme_label": "AI / Earnings",
       "category": "earnings_ai_semis",
-      "days_in_top3": 15,
+      "days_in_top3": 22,
       "best_rank": 1,
       "first_seen": "2026-10-27",
-      "last_seen": "2026-11-13",
+      "last_seen": "2026-11-21",
       "latest_rank": null,
       "state": "Persistent",
-      "latest_transmission": "NVDA→SOX→AI云订单兑现→科技指数",
+      "latest_transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -1909,29 +1984,13 @@
       "theme_id": "market_structure",
       "theme_label": "Market Structure",
       "category": "market_structure",
-      "days_in_top3": 13,
+      "days_in_top3": 15,
       "best_rank": 1,
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-11-12",
+      "first_seen": "2026-10-24",
+      "last_seen": "2026-11-19",
       "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "Fed加息预期→美日利差→USDJPY及进口通胀→日本干预预期/日债→全球杠杆仓位波动。",
-      "source_modes": [
-        "native_daily",
-        "reconstructed_daily"
-      ]
-    },
-    {
-      "theme_id": "energy_inflation",
-      "theme_label": "Energy Inflation",
-      "category": "geopolitics_energy",
-      "days_in_top3": 10,
-      "best_rank": 1,
-      "first_seen": "2026-10-22",
-      "last_seen": "2026-11-10",
-      "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "CPI核心/能源分项→2Y/10Y国债收益率与联储预期→AI资本开支IRR及企业融资成本→纳指、半导体及信用。",
+      "state": "Persistent",
+      "latest_transmission": "财报与指引→AI终端需求预期→数据中心融资条件→NVDA和科技股估值",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -1941,16 +2000,31 @@
       "theme_id": "fed_policy_path",
       "theme_label": "Fed Policy Path",
       "category": "central_banks_fiscal",
-      "days_in_top3": 10,
+      "days_in_top3": 12,
       "best_rank": 1,
-      "first_seen": "2026-10-23",
-      "last_seen": "2026-11-17",
-      "latest_rank": null,
-      "state": "Persistent",
-      "latest_transmission": "2Y ↓ → policy path reprices easier",
+      "first_seen": "2026-10-26",
+      "last_seen": "2026-11-22",
+      "latest_rank": 2,
+      "state": "Escalating",
+      "latest_transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
       "source_modes": [
         "native_daily",
-        "objective_market_reconstruction",
+        "reconstructed_daily"
+      ]
+    },
+    {
+      "theme_id": "energy_inflation",
+      "theme_label": "Energy Inflation",
+      "category": "geopolitics_energy",
+      "days_in_top3": 11,
+      "best_rank": 1,
+      "first_seen": "2026-10-24",
+      "last_seen": "2026-11-22",
+      "latest_rank": 3,
+      "state": "Persistent",
+      "latest_transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
+      "source_modes": [
+        "native_daily",
         "reconstructed_daily"
       ]
     },
@@ -1958,45 +2032,45 @@
       "theme_id": "global_duration",
       "theme_label": "Global Duration / Term Premium",
       "category": "inflation_rates",
-      "days_in_top3": 8,
-      "best_rank": 2,
-      "first_seen": "2026-10-22",
-      "last_seen": "2026-11-18",
-      "latest_rank": 2,
+      "days_in_top3": 7,
+      "best_rank": 1,
+      "first_seen": "2026-10-30",
+      "last_seen": "2026-11-20",
+      "latest_rank": null,
       "state": "Persistent",
-      "latest_transmission": "10Y ↓ → discount rate eases",
+      "latest_transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
       "source_modes": [
         "native_daily",
-        "objective_market_reconstruction",
         "reconstructed_daily"
-      ]
-    },
-    {
-      "theme_id": "growth_duration_rotation",
-      "theme_label": "Growth / Duration Rotation",
-      "category": "earnings_ai_semis",
-      "days_in_top3": 4,
-      "best_rank": 1,
-      "first_seen": "2026-10-23",
-      "last_seen": "2026-11-18",
-      "latest_rank": 1,
-      "state": "Escalating",
-      "latest_transmission": "Growth leadership strengthens",
-      "source_modes": [
-        "objective_market_reconstruction"
       ]
     },
     {
       "theme_id": "geopolitics_energy",
       "theme_label": "Geopolitics / Energy",
       "category": "geopolitics_energy",
-      "days_in_top3": 4,
+      "days_in_top3": 6,
       "best_rank": 1,
       "first_seen": "2026-10-25",
-      "last_seen": "2026-11-08",
+      "last_seen": "2026-11-20",
       "latest_rank": null,
-      "state": "Resolved",
-      "latest_transmission": "阿曼湾封锁执法→海运及保险风险溢价→原油实际可运能力→通胀预期/美债收益率→科技与信用估值。",
+      "state": "Escalating",
+      "latest_transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
+      "source_modes": [
+        "native_daily",
+        "reconstructed_daily"
+      ]
+    },
+    {
+      "theme_id": "us_china_trade_controls",
+      "theme_label": "U.S.–China Trade Controls",
+      "category": "china_trade_policy",
+      "days_in_top3": 2,
+      "best_rank": 1,
+      "first_seen": "2026-10-26",
+      "last_seen": "2026-11-22",
+      "latest_rank": 1,
+      "state": "Persistent",
+      "latest_transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
       "source_modes": [
         "native_daily",
         "reconstructed_daily"
@@ -2006,82 +2080,51 @@
       "theme_id": "credit_conditions",
       "theme_label": "Credit Conditions",
       "category": "liquidity_credit",
-      "days_in_top3": 3,
-      "best_rank": 1,
-      "first_seen": "2026-11-13",
-      "last_seen": "2026-11-17",
-      "latest_rank": null,
-      "state": "Escalating",
-      "latest_transmission": "Credit spreads wider → funding conditions tighten",
-      "source_modes": [
-        "native_daily",
-        "objective_market_reconstruction"
-      ]
-    },
-    {
-      "theme_id": "us_china_trade_controls",
-      "theme_label": "U.S.–China Trade Controls",
-      "category": "china_trade_policy",
       "days_in_top3": 2,
       "best_rank": 2,
-      "first_seen": "2026-10-20",
-      "last_seen": "2026-10-26",
+      "first_seen": "2026-11-13",
+      "last_seen": "2026-11-16",
       "latest_rank": null,
       "state": "Resolved",
-      "latest_transmission": "外交表态→北美贸易政策不确定性→CAD与工业企业定价→北美供应链投资及信用风险",
+      "latest_transmission": "日本GDP与能源进口→日债政策预期→USDJPY及日股→亚太风险资产",
       "source_modes": [
-        "native_daily"
-      ]
-    },
-    {
-      "theme_id": "equity_risk_appetite",
-      "theme_label": "Equity Risk Appetite",
-      "category": "growth_macro",
-      "days_in_top3": 2,
-      "best_rank": 3,
-      "first_seen": "2026-11-16",
-      "last_seen": "2026-11-18",
-      "latest_rank": 3,
-      "state": "New",
-      "latest_transmission": "Equity move → risk appetite / duration repricing",
-      "source_modes": [
-        "objective_market_reconstruction"
+        "native_daily",
+        "reconstructed_daily"
       ]
     }
   ],
   "cross_asset_confirmation": {
-    "theme_id": "growth_duration_rotation",
-    "theme_label": "Growth / Duration Rotation",
-    "as_of": "2026-11-18",
-    "confirming": [
+    "theme_id": "us_china_trade_controls",
+    "theme_label": "U.S.–China Trade Controls",
+    "as_of": "2026-11-22",
+    "confirming": [],
+    "diverging": [
       {
         "series_id": "NASDAQCOM",
         "label": "Nasdaq Composite",
-        "as_of": "2026-11-18",
-        "source_mode": "objective_market_reconstruction",
-        "change": "+0.42%"
+        "as_of": "2026-11-20 16:00 EST (US cash close)",
+        "source_mode": "reconstructed_daily",
+        "change": "-5.28%"
+      },
+      {
+        "series_id": "SP500",
+        "label": "S&P 500",
+        "as_of": "2026-11-20 16:00 EST (US cash close)",
+        "source_mode": "reconstructed_daily",
+        "change": "-3.70%"
       },
       {
         "series_id": "VIXCLS",
         "label": "VIX",
-        "as_of": "2026-11-18",
-        "source_mode": "objective_market_reconstruction",
-        "change": "-3.53%"
-      }
-    ],
-    "diverging": [
-      {
-        "series_id": "SP500",
-        "label": "S&P 500",
-        "as_of": "2026-11-18",
-        "source_mode": "objective_market_reconstruction",
-        "change": "-0.23%"
+        "as_of": "2026-11-20 16:00 EST US volatility index close",
+        "source_mode": "reconstructed_daily",
+        "change": "+7.45pts"
       }
     ],
     "unavailable": [],
-    "expectation_basis": "Thematic conditional comparison; not a verified causal attribution.",
-    "interpretation_note": "2 项资产方向与当前主线一致，1 项出现背离；不是因果证明。",
-    "what_would_flip_it": "A material reversal in the key confirming assets."
+    "expectation_basis": "Explicit leading catalyst: Risk-off / cross-asset",
+    "interpretation_note": "0 项资产方向与当前主线一致，3 项出现背离；不是因果证明。",
+    "what_would_flip_it": "若现金盘恢复、VIX回落且信用或融资条件同步改善，风险扩散叙事将减弱；不能仅看短暂盘前反弹。"
   },
   "series": {
     "NASDAQCOM": {
@@ -2090,22 +2133,6 @@
       "source": "Nasdaq, Inc. via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-20",
-          "value": 26424.82
-        },
-        {
-          "date": "2026-10-21",
-          "value": 26702.86
-        },
-        {
-          "date": "2026-10-22",
-          "value": 26008.86
-        },
-        {
-          "date": "2026-10-23",
-          "value": 25955.34
-        },
         {
           "date": "2026-10-26",
           "value": 26169.38
@@ -2177,6 +2204,10 @@
         {
           "date": "2026-11-18",
           "value": 24429.88
+        },
+        {
+          "date": "2026-11-19",
+          "value": 23879.2
         }
       ]
     },
@@ -2186,22 +2217,6 @@
       "source": "S&P Dow Jones Indices via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-20",
-          "value": 7712.57
-        },
-        {
-          "date": "2026-10-21",
-          "value": 7757.17
-        },
-        {
-          "date": "2026-10-22",
-          "value": 7663.43
-        },
-        {
-          "date": "2026-10-23",
-          "value": 7623.68
-        },
         {
           "date": "2026-10-26",
           "value": 7676.77
@@ -2273,6 +2288,10 @@
         {
           "date": "2026-11-18",
           "value": 7323.63
+        },
+        {
+          "date": "2026-11-19",
+          "value": 7175.83
         }
       ]
     },
@@ -2282,22 +2301,6 @@
       "source": "CBOE via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-20",
-          "value": 17.31
-        },
-        {
-          "date": "2026-10-21",
-          "value": 16.68
-        },
-        {
-          "date": "2026-10-22",
-          "value": 19.03
-        },
-        {
-          "date": "2026-10-23",
-          "value": 19.45
-        },
         {
           "date": "2026-10-26",
           "value": 18.39
@@ -2369,6 +2372,10 @@
         {
           "date": "2026-11-18",
           "value": 24.56
+        },
+        {
+          "date": "2026-11-19",
+          "value": 28.44
         }
       ]
     },
@@ -2378,22 +2385,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-10-20",
-          "value": 4.79
-        },
-        {
-          "date": "2026-10-21",
-          "value": 4.81
-        },
-        {
-          "date": "2026-10-22",
-          "value": 4.65
-        },
-        {
-          "date": "2026-10-23",
-          "value": 4.69
-        },
         {
           "date": "2026-10-26",
           "value": 4.68
@@ -2461,6 +2452,10 @@
         {
           "date": "2026-11-18",
           "value": 4.8
+        },
+        {
+          "date": "2026-11-19",
+          "value": 4.76
         }
       ]
     },
@@ -2470,22 +2465,6 @@
       "source": "Federal Reserve H.15 via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-10-20",
-          "value": 5.12
-        },
-        {
-          "date": "2026-10-21",
-          "value": 5.13
-        },
-        {
-          "date": "2026-10-22",
-          "value": 4.96
-        },
-        {
-          "date": "2026-10-23",
-          "value": 5.0
-        },
         {
           "date": "2026-10-26",
           "value": 5.0
@@ -2553,6 +2532,10 @@
         {
           "date": "2026-11-18",
           "value": 5.07
+        },
+        {
+          "date": "2026-11-19",
+          "value": 5.04
         }
       ]
     },
@@ -2562,22 +2545,6 @@
       "source": "U.S. EIA via FRED",
       "kind": "price",
       "points": [
-        {
-          "date": "2026-10-20",
-          "value": 115.22
-        },
-        {
-          "date": "2026-10-21",
-          "value": 117.37
-        },
-        {
-          "date": "2026-10-22",
-          "value": 125.39
-        },
-        {
-          "date": "2026-10-23",
-          "value": 128.3
-        },
         {
           "date": "2026-10-26",
           "value": 128.12
@@ -2655,22 +2622,6 @@
       "kind": "price",
       "points": [
         {
-          "date": "2026-10-20",
-          "value": 121.116
-        },
-        {
-          "date": "2026-10-21",
-          "value": 121.3422
-        },
-        {
-          "date": "2026-10-22",
-          "value": 121.3531
-        },
-        {
-          "date": "2026-10-23",
-          "value": 121.3202
-        },
-        {
           "date": "2026-10-26",
           "value": 121.6042
         },
@@ -2734,22 +2685,6 @@
       "source": "ICE BofA via FRED",
       "kind": "yield",
       "points": [
-        {
-          "date": "2026-10-20",
-          "value": 3.33
-        },
-        {
-          "date": "2026-10-21",
-          "value": 3.27
-        },
-        {
-          "date": "2026-10-22",
-          "value": 3.4
-        },
-        {
-          "date": "2026-10-23",
-          "value": 3.38
-        },
         {
           "date": "2026-10-26",
           "value": 3.3
@@ -2821,19 +2756,20 @@
         {
           "date": "2026-11-18",
           "value": 3.47
+        },
+        {
+          "date": "2026-11-19",
+          "value": 3.52
         }
       ]
     }
   },
   "monthly_coverage": {
     "month": "2026-11",
-    "through": "2026-11-18",
-    "expected_days": 18,
-    "present_days": 16,
-    "missing_dates": [
-      "2026-11-14",
-      "2026-11-15"
-    ],
+    "through": "2026-11-22",
+    "expected_days": 22,
+    "present_days": 22,
+    "missing_dates": [],
     "unclassified_dates": [
       "2026-11-01",
       "2026-11-02",
@@ -2848,37 +2784,40 @@
       "2026-11-11",
       "2026-11-12",
       "2026-11-13",
+      "2026-11-14",
+      "2026-11-15",
       "2026-11-16",
       "2026-11-17",
-      "2026-11-18"
+      "2026-11-18",
+      "2026-11-19"
     ],
-    "unknown_signal_cells": 6,
+    "unknown_signal_cells": 1,
     "price_proxy_dates": [],
     "note": "Calendar coverage, editorial provenance and underlying-provider freshness are separate; price proxies do not restore missing original judgments."
   },
   "series_freshness": {
     "NASDAQCOM": {
-      "last_observation": "2026-11-18",
+      "last_observation": "2026-11-19",
       "source": "Nasdaq, Inc. via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "SP500": {
-      "last_observation": "2026-11-18",
+      "last_observation": "2026-11-19",
       "source": "S&P Dow Jones Indices via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "VIXCLS": {
-      "last_observation": "2026-11-18",
+      "last_observation": "2026-11-19",
       "source": "CBOE via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS2": {
-      "last_observation": "2026-11-18",
+      "last_observation": "2026-11-19",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "DGS10": {
-      "last_observation": "2026-11-18",
+      "last_observation": "2026-11-19",
       "source": "Federal Reserve H.15 via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
@@ -2893,7 +2832,7 @@
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     },
     "BAMLH0A0HYM2": {
-      "last_observation": "2026-11-18",
+      "last_observation": "2026-11-19",
       "source": "ICE BofA via FRED",
       "note": "Independent provider as_of; no forward-fill or cross-instrument substitution."
     }
