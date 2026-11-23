@@ -1,15 +1,15 @@
 {
   "schema_version": "1.1.0",
-  "date": "2026-11-13",
-  "thesis": "11月13日北京时间恢复研究显示，全球风险资产正遭遇AI治理、利率与能源成本的三重价格重估：11月12日NVIDIA正式宣布黄仁勋离任后NVDA现金盘下跌，AMD和Broadcom相对受益；美债收益率与布伦特同步上升，使Nebius等高度资本密集型AI云平台面临更高融资门槛。今晚21:30的美国10月PPI尚未发布，不能预先写入实际值。",
-  "overall_regime": "AI Governance Shock / High Rates / Oil Inflation Risk",
-  "dominant_narrative": "与11月12日早晨仅有董事会讨论报道不同，截至当前研究时，NVIDIA正式确认CEO交班已成为公司事实；NVIDIA11月12日现金收166.19美元，跌约4.34%，而美股标普500仅跌0.35%、纳指跌0.39%，说明市场正重新区分芯片供应商治理与AI终端需求。Nebius报告季度营收约9.81亿美元且高于预期，但第三方数据中心上线延期压缩当年指引，2027大额资本开支需要尚未落实的融资机制。同期美国2Y、10Y现券分别至4.867%和5.105%，布伦特期货结算约95.82美元；能源风险抬高通胀担忧，通胀又通过利率贴现传导到AI融资。美国PPI今晚才公布，油管损失尚无核实官方减供规模，故不能混用不同时点或将未证实传闻升级为事实。",
-  "report_path": "reports/2026/11/2026-11-13.md",
-  "daily_json_path": "data/daily/2026-11-13.json",
-  "sources_path": "data/sources/2026-11-13.json",
-  "edition": "Morning Official",
+  "date": "2026-11-22",
+  "thesis": "周日没有新美国现金盘收盘，沿用11月20日股灾与债券避险事实，观察CME复盘和11月23日PMI：美元利差、信用利差及AI数据中心融资条款决定估值下跌是否转成融资风险；未观测到新的独立现金盘或持有人申赎报告，不把周末休市解释为价格企稳。 所有日终观察仅使用2026-11-20已经完成的交易日，不将补档研究时的新事实写回历史晨间。",
+  "overall_regime": "Weekend Event Risk / 市场休市后等待流动性重定价",
+  "dominant_narrative": "截至11月22日09:00北京时间，美股与美国现券上一次完整日终仍是11月20日：标普500收6,910.39（-3.70%）、纳指22,617.73（-5.28%）、VIX 35.89；财政部10年期par yield为4.92%。不能将周末盘前传闻写成已结算行情。当前核心变量是周一流动性恢复后的卖压是否扩散至信用与非美资产。 上次FOMC纪要强调价格风险与AI债务结构问题；11月23日09:45 EST美国11月初值PMI尚未公布，须观察价格与就业分项是否强化货币政策约束。 最新可比较结算仍为11月20日January Brent 92.57美元和December WTI 83.98美元；无周末新期货官方结算。供需过剩与中东运输干扰两种机制相反，必须等待实物运输/库存确认。 美元利差、信用利差及AI数据中心融资条款决定估值下跌是否转成融资风险；未观测到新的独立现金盘或持有人申赎报告，不把周末休市解释为价格企稳。",
+  "report_path": "reports/2026/11/2026-11-22.md",
+  "daily_json_path": "data/daily/2026-11-22.json",
+  "sources_path": "data/sources/2026-11-22.json",
+  "edition": "Morning Official · 历史补档",
   "edition_status": "official",
   "publication_cycle": "morning",
-  "source_mode": "native_daily",
-  "last_updated": "2026-11-13T14:41:14+08:00"
+  "source_mode": "reconstructed_daily",
+  "last_updated": "2026-11-23T09:51:31+08:00"
 }
