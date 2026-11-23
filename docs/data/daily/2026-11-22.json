@@ -1,0 +1,867 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-11-22",
+  "edition": "Morning Official · 历史补档",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-11-22 09:00 SGT",
+  "data_cutoff_et": "2026-11-21 20:00 EST",
+  "last_updated": "2026-11-23T09:51:31+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-11-22T09:00:00+08:00",
+    "started_at_sgt": "2026-11-23T09:51:31+08:00",
+    "research_cutoff_sgt": "2026-11-23T09:51:31+08:00",
+    "mode": "retrospective_reconstruction_not_contemporaneous",
+    "note": "2026-11-23 才实际研究并补档；历史 cutoff 为假设原早报当时可用信息边界，非原始研究完成时刻。"
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": false
+  },
+  "publication_policy": {
+    "effective_date": "2026-10-08",
+    "no_evening_edition": true,
+    "is_canonical_daily": true
+  },
+  "source_mode": "reconstructed_daily",
+  "sources_path": "data/sources/2026-11-22.json",
+  "reconstruction": {
+    "is_reconstructed": true,
+    "reconstructed_at": "2026-11-23T09:51:31+08:00",
+    "historical_cutoff_sgt": "2026-11-22 09:00 SGT",
+    "original_contemporaneous_snapshot_recovered": false,
+    "limitations": [
+      "原始2026-11-20至22日期的九点原生早报快照未在主仓库发布；本版由2026-11-23外部真实历史行情和当时已公布文件事后重建。",
+      "历史信息截止采用所列晨间09:00 SGT，不等同于本次2026-11-23实际研究时间；不得把截止后发布的事件回填。",
+      "5D只采用同指数相同口径或财政部同期限par yield的五个实际交易日；Brent January同合约历史链条尚无独立可靠证据，明确缺失。",
+      "缺少原当日人工观察截图和完整ETF净申赎/期权仓位数据，30D必须标记reconstructed_daily而非native_daily。"
+    ]
+  },
+  "comparison_basis": "前一正式历史期的同口径观察，未经确认的后续事实不用于本日状态判定。前一晨已记录11月20日急跌和美债收益率回落；周末没有美国新开盘数据。 → 本日并无新的已完成美国现金交易时段。重要变化是周一PMI与CME指数期货重新开盘临近，须检验此前抛售是否延续。",
+  "thesis": "周日没有新美国现金盘收盘，沿用11月20日股灾与债券避险事实，观察CME复盘和11月23日PMI：美元利差、信用利差及AI数据中心融资条款决定估值下跌是否转成融资风险；未观测到新的独立现金盘或持有人申赎报告，不把周末休市解释为价格企稳。 所有日终观察仅使用2026-11-20已经完成的交易日，不将补档研究时的新事实写回历史晨间。",
+  "dominant_narrative": "截至11月22日09:00北京时间，美股与美国现券上一次完整日终仍是11月20日：标普500收6,910.39（-3.70%）、纳指22,617.73（-5.28%）、VIX 35.89；财政部10年期par yield为4.92%。不能将周末盘前传闻写成已结算行情。当前核心变量是周一流动性恢复后的卖压是否扩散至信用与非美资产。 上次FOMC纪要强调价格风险与AI债务结构问题；11月23日09:45 EST美国11月初值PMI尚未公布，须观察价格与就业分项是否强化货币政策约束。 最新可比较结算仍为11月20日January Brent 92.57美元和December WTI 83.98美元；无周末新期货官方结算。供需过剩与中东运输干扰两种机制相反，必须等待实物运输/库存确认。 美元利差、信用利差及AI数据中心融资条款决定估值下跌是否转成融资风险；未观测到新的独立现金盘或持有人申赎报告，不把周末休市解释为价格企稳。",
+  "market_regime": {
+    "growth": {
+      "state": "↓ 下行压力",
+      "evidence": "美股与科技板块相对弱势、国内需求数据较低，需确认盈利和消费是否转弱。",
+      "sources": [
+        "S02",
+        "S13"
+      ]
+    },
+    "inflation": {
+      "state": "→ 通胀偏高但油分化",
+      "evidence": "最新可比较结算仍为11月20日January Brent 92.57美元和December WTI 83.98美元；无周末新期货官方结算。供需过剩与中东运输干扰两种机制相反，必须等待实物运输/库存确认。",
+      "sources": [
+        "S04",
+        "S05"
+      ]
+    },
+    "rates": {
+      "state": "↓ 避险利率回落",
+      "evidence": "UST10Y=4.92%，按财政部正式par curve；这是债券交易日收盘，不是Fed决议。",
+      "sources": [
+        "S01"
+      ]
+    },
+    "earnings": {
+      "state": "↓ 盈利与估值分化",
+      "evidence": "NVIDIA已公布强劲收入，但高资本开支领域并非所有企业现金流同步落地。",
+      "sources": [
+        "S08"
+      ]
+    },
+    "liquidity": {
+      "state": "↓ 风险资产流动性收缩",
+      "evidence": "截至11月22日09:00北京时间，美股与美国现券上一次完整日终仍是11月20日：标普500收6,910.39（-3.70%）、纳指22,617.73（-5.28%）、VIX 35.89；财政部10年期par yield为4.92%。不能将周末盘前传闻写成已结算行情。当前核心变量是周一流动性恢复后的卖压是否扩散至信用与非美资产。",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    "geopolitics": {
+      "state": "↑ 运输风险与油价分化",
+      "evidence": "最新可比较结算仍为11月20日January Brent 92.57美元和December WTI 83.98美元；无周末新期货官方结算。供需过剩与中东运输干扰两种机制相反，必须等待实物运输/库存确认。",
+      "sources": [
+        "S04"
+      ]
+    },
+    "overall": {
+      "state": "Weekend Event Risk / 市场休市后等待流动性重定价",
+      "evidence": "截至11月22日09:00北京时间，美股与美国现券上一次完整日终仍是11月20日：标普500收6,910.39（-3.70%）、纳指22,617.73（-5.28%）、VIX 35.89；财政部10年期par yield为4.92%。不能将周末盘前传闻写成已结算行情。当前核心变量是周一流动性恢复后的卖压是否扩散至信用与非美资产。",
+      "sources": [
+        "S01",
+        "S02",
+        "S04"
+      ]
+    }
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "6,910.39",
+      "change_1d": "-3.70%",
+      "change_5d": "-8.61%",
+      "signal": "跌势主导",
+      "driver": "同一指数的真实美国现金盘收盘，5D按五个实际交易日比较；AI权重波动与估值贴现和宏观风险共振。",
+      "status": "EXCHANGE DERIVED CASH CLOSE / prior=2026-11-19 / five-session base=2026-11-13; retrospective as-of, not current quote; WEEKEND Friday Nov20 close carried as of previous session",
+      "as_of": "2026-11-20 16:00 EST (US cash close)",
+      "sources": [
+        "S02"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "22,617.73",
+      "change_1d": "-5.28%",
+      "change_5d": "-10.02%",
+      "signal": "跌势主导",
+      "driver": "同一指数的真实美国现金盘收盘，5D按五个实际交易日比较；AI权重波动与估值贴现和宏观风险共振。",
+      "status": "EXCHANGE DERIVED CASH CLOSE / prior=2026-11-19 / five-session base=2026-11-13; retrospective as-of, not current quote; WEEKEND Friday Nov20 close carried as of previous session",
+      "as_of": "2026-11-20 16:00 EST (US cash close)",
+      "sources": [
+        "S02"
+      ]
+    },
+    {
+      "asset": "Dow Jones",
+      "level": "48,147.33",
+      "change_1d": "-1.93%",
+      "change_5d": "-8.02%",
+      "signal": "跌势主导",
+      "driver": "同一指数的真实美国现金盘收盘，5D按五个实际交易日比较；AI权重波动与估值贴现和宏观风险共振。",
+      "status": "EXCHANGE DERIVED CASH CLOSE / prior=2026-11-19 / five-session base=2026-11-13; retrospective as-of, not current quote; WEEKEND Friday Nov20 close carried as of previous session",
+      "as_of": "2026-11-20 16:00 EST (US cash close)",
+      "sources": [
+        "S02"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,581.79",
+      "change_1d": "-2.76%",
+      "change_5d": "-7.48%",
+      "signal": "跌势主导",
+      "driver": "同一指数的真实美国现金盘收盘，5D按五个实际交易日比较；AI权重波动与估值贴现和宏观风险共振。",
+      "status": "EXCHANGE DERIVED CASH CLOSE / prior=2026-11-19 / five-session base=2026-11-13; retrospective as-of, not current quote; WEEKEND Friday Nov20 close carried as of previous session",
+      "as_of": "2026-11-20 16:00 EST (US cash close)",
+      "sources": [
+        "S02"
+      ]
+    },
+    {
+      "asset": "US Treasury 2Y par yield",
+      "level": "4.63%",
+      "change_1d": "-13bp",
+      "change_5d": "-25bp",
+      "signal": "收益率下行/避险",
+      "driver": "美国财政部官方par yield固定期限曲线，比较前一实际债券交易日与此前第五个实际债券交易日；不混Reuters盘中现券。",
+      "status": "OFFICIAL TREASURY PAR CURVE / prior=2026-11-19 / five-open-session base=2026-11-13; WEEKEND Friday Nov20 close carried as of previous session",
+      "as_of": "2026-11-20 US Treasury official daily par yield curve",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "US Treasury 5Y par yield",
+      "level": "4.71%",
+      "change_1d": "-15bp",
+      "change_5d": "-27bp",
+      "signal": "收益率下行/避险",
+      "driver": "美国财政部官方par yield固定期限曲线，比较前一实际债券交易日与此前第五个实际债券交易日；不混Reuters盘中现券。",
+      "status": "OFFICIAL TREASURY PAR CURVE / prior=2026-11-19 / five-open-session base=2026-11-13; WEEKEND Friday Nov20 close carried as of previous session",
+      "as_of": "2026-11-20 US Treasury official daily par yield curve",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "US Treasury 10Y par yield",
+      "level": "4.92%",
+      "change_1d": "-12bp",
+      "change_5d": "-23bp",
+      "signal": "收益率下行/避险",
+      "driver": "美国财政部官方par yield固定期限曲线，比较前一实际债券交易日与此前第五个实际债券交易日；不混Reuters盘中现券。",
+      "status": "OFFICIAL TREASURY PAR CURVE / prior=2026-11-19 / five-open-session base=2026-11-13; WEEKEND Friday Nov20 close carried as of previous session",
+      "as_of": "2026-11-20 US Treasury official daily par yield curve",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "US Treasury 30Y par yield",
+      "level": "5.31%",
+      "change_1d": "-9bp",
+      "change_5d": "-16bp",
+      "signal": "收益率下行/避险",
+      "driver": "美国财政部官方par yield固定期限曲线，比较前一实际债券交易日与此前第五个实际债券交易日；不混Reuters盘中现券。",
+      "status": "OFFICIAL TREASURY PAR CURVE / prior=2026-11-19 / five-open-session base=2026-11-13; WEEKEND Friday Nov20 close carried as of previous session",
+      "as_of": "2026-11-20 US Treasury official daily par yield curve",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "US 2s10s par yield spread",
+      "level": "+29bp",
+      "change_1d": "+1bp",
+      "change_5d": "+2bp",
+      "signal": "曲线走陡",
+      "driver": "完全由财政部同日同口径四个固定期限par yield做算术差值（10Y−2Y或30Y−10Y）；非另一个独立市场报价。",
+      "status": "DERIVED FROM OFFICIAL CURVE, same observations 2026-11-20, 2026-11-19, 2026-11-13; WEEKEND Friday Nov20 close carried as of previous session",
+      "as_of": "2026-11-20 US Treasury par yield derived spread",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "US 10s30s par yield spread",
+      "level": "+39bp",
+      "change_1d": "+3bp",
+      "change_5d": "+7bp",
+      "signal": "曲线走陡",
+      "driver": "完全由财政部同日同口径四个固定期限par yield做算术差值（10Y−2Y或30Y−10Y）；非另一个独立市场报价。",
+      "status": "DERIVED FROM OFFICIAL CURVE, same observations 2026-11-20, 2026-11-19, 2026-11-13; WEEKEND Friday Nov20 close carried as of previous session",
+      "as_of": "2026-11-20 US Treasury par yield derived spread",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "asset": "CBOE VIX",
+      "level": "35.89",
+      "change_1d": "+7.45pts",
+      "change_5d": "+16.59pts",
+      "signal": "股权保护成本急升",
+      "driver": "CBOE/VIX历史收盘值，比较同一波动率指数的真实交易日；不是期权做市商Gamma方向推断。",
+      "status": "CBOE INDEX CLOSE, cash session 2026-11-20; 1D=2026-11-19; five sessions=2026-11-13; WEEKEND Friday Nov20 close carried as of previous session",
+      "as_of": "2026-11-20 16:00 EST US volatility index close",
+      "sources": [
+        "S05"
+      ]
+    },
+    {
+      "asset": "ICE Brent January futures",
+      "level": "92.57 USD/bbl",
+      "change_1d": "+0.64%（11月20日上一次交易日；周末无新1D）",
+      "change_5d": "尚无法可靠确认（同标的同合约五交易日价格缺乏独立可比来源）",
+      "signal": "油价供应风险与库存预期拉锯",
+      "driver": "仅展示同一January交割合约的当日可核结算；未有完整同合约5交易日记录，不以连续主力自动拼接。",
+      "status": "REUTERS / JANUARY DELIVERY FUTURES SETTLEMENT; 5D same-contract unavailable; WEEKEND Friday Nov20 close carried as of previous session",
+      "as_of": "2026-11-20 ICE Brent January delivery settlement",
+      "sources": [
+        "S04"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "historical reconstruction, not native; Level 12/12; 1D 12/12; reliable 5D 11/12; Brent 5D gap disclosed.",
+    "asset_count": 12,
+    "level_coverage": {
+      "available": 12,
+      "total": 12,
+      "ratio": 1.0
+    },
+    "change_1d_coverage": {
+      "available": 12,
+      "total": 12,
+      "ratio": 1.0
+    },
+    "change_5d_coverage": {
+      "available": 11,
+      "total": 12,
+      "ratio": 0.9166666666666666
+    },
+    "explicit_gaps": [
+      "Brent January 5D exact same-contract historical settlement source unavailable; do not splice futures contracts.",
+      "Sunday/holiday quotation is a carried forward Friday cash close, not a new settlement."
+    ]
+  },
+  "what_changed": [
+    {
+      "yesterday": "前一晨已记录11月20日急跌和美债收益率回落；周末没有美国新开盘数据。",
+      "today": "本日并无新的已完成美国现金交易时段。重要变化是周一PMI与CME指数期货重新开盘临近，须检验此前抛售是否延续。",
+      "why_it_matters": "风险变化主要通过科技股估值、股债避险方向和信用融资成本传导；不可把休市当日当成新的价格观察。",
+      "why": "风险变化主要通过科技股估值、股债避险方向和信用融资成本传导；不可把休市当日当成新的价格观察。",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    {
+      "yesterday": "前一日尚未确认当前历史截点最新的美国官方par收益率曲线。",
+      "today": "已核验 2026-11-20 Treasury 2Y 4.63%、10Y 4.92%，并保留此前债券交易日比较。",
+      "why_it_matters": "贴现率变化先改变高负债AI项目资金成本及长久期股票估值；避险买债与政策转向是不同概念。",
+      "why": "贴现率变化先改变高负债AI项目资金成本及长久期股票估值；避险买债与政策转向是不同概念。",
+      "sources": [
+        "S01"
+      ]
+    },
+    {
+      "yesterday": "全球能源运输与供应过剩是未解决的双向扰动。",
+      "today": "最新可比较结算仍为11月20日January Brent 92.57美元和December WTI 83.98美元；无周末新期货官方结算。供需过剩与中东运输干扰两种机制相反，必须等待实物运输/库存确认。",
+      "why_it_matters": "油价既可能提高成本通胀，也可能因增长担忧承压；实物供应与库存才是风险溢价持续性的验证标准。",
+      "why": "油价既可能提高成本通胀，也可能因增长担忧承压；实物供应与库存才是风险溢价持续性的验证标准。",
+      "sources": [
+        "S04"
+      ]
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "周日截至11月22日北京时间09:00无新的美国现金盘，沿用11月20日标普-3.70%与纳指-5.28%真实收盘",
+      "status": "Released/Occurred (historical event; no contemporaneous publication)",
+      "event_time_et": "2026-11-20 16:00 EST",
+      "event_time_sgt": "2026-11-21 05:00 SGT",
+      "what_happened": "截至11月22日09:00北京时间，美股与美国现券上一次完整日终仍是11月20日：标普500收6,910.39（-3.70%）、纳指22,617.73（-5.28%）、VIX 35.89；财政部10年期par yield为4.92%。不能将周末盘前传闻写成已结算行情。当前核心变量是周一流动性恢复后的卖压是否扩散至信用与非美资产。",
+      "what_changed": "本日并无新的已完成美国现金交易时段。重要变化是周一PMI与CME指数期货重新开盘临近，须检验此前抛售是否延续。 对比上一观察时点应区分已发生价格、官方文件与尚未实现的预测。",
+      "why_it_matters": "美元利差、信用利差及AI数据中心融资条款决定估值下跌是否转成融资风险；未观测到新的独立现金盘或持有人申赎报告，不把周末休市解释为价格企稳。 该事件会影响跨资产风险溢价与资金可用性，不等于企业财务数字已经全部兑现。",
+      "transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
+      "affected_assets": [
+        "S&P 500",
+        "Nasdaq Composite",
+        "UST 10Y",
+        "Brent"
+      ],
+      "direction": "Risk-off / cross-asset",
+      "importance": "★★★★★",
+      "confirmation": "对比下一个真实现金盘的纳指、VIX、美国2Y/10Y曲线和融资条款，若多项共同变化才提升结论置信度。",
+      "invalidation": "若现金盘恢复、VIX回落且信用或融资条件同步改善，风险扩散叙事将减弱；不能仅看短暂盘前反弹。",
+      "sources": [
+        "S02",
+        "S03"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "11月20日VIX结算35.89、美国10Y收益率4.92%，11月23日CME与现券重开检验避险持续性",
+      "status": "Released/Occurred (historical event; no contemporaneous publication)",
+      "event_time_et": "2026-11-20 16:00 EST",
+      "event_time_sgt": "2026-11-21 05:00 SGT",
+      "what_happened": "上次FOMC纪要强调价格风险与AI债务结构问题；11月23日09:45 EST美国11月初值PMI尚未公布，须观察价格与就业分项是否强化货币政策约束。",
+      "what_changed": "本日并无新的已完成美国现金交易时段。重要变化是周一PMI与CME指数期货重新开盘临近，须检验此前抛售是否延续。 对比上一观察时点应区分已发生价格、官方文件与尚未实现的预测。",
+      "why_it_matters": "美元利差、信用利差及AI数据中心融资条款决定估值下跌是否转成融资风险；未观测到新的独立现金盘或持有人申赎报告，不把周末休市解释为价格企稳。 该事件会影响跨资产风险溢价与资金可用性，不等于企业财务数字已经全部兑现。",
+      "transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
+      "affected_assets": [
+        "S&P 500",
+        "Nasdaq Composite",
+        "UST 10Y",
+        "Brent"
+      ],
+      "direction": "Hawkish policy / rates sensitive",
+      "importance": "★★★★",
+      "confirmation": "对比下一个真实现金盘的纳指、VIX、美国2Y/10Y曲线和融资条款，若多项共同变化才提升结论置信度。",
+      "invalidation": "若现金盘恢复、VIX回落且信用或融资条件同步改善，风险扩散叙事将减弱；不能仅看短暂盘前反弹。",
+      "sources": [
+        "S01",
+        "S05"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "11月20日Brent上涨0.64%而科技股下跌，11月23日PMI将检验供给通胀与增长风险的相对主导",
+      "status": "Released/Occurred (historical event; no contemporaneous publication)",
+      "event_time_et": "2026-11-20 15:00 EST",
+      "event_time_sgt": "2026-11-21 04:00 SGT",
+      "what_happened": "最新可比较结算仍为11月20日January Brent 92.57美元和December WTI 83.98美元；无周末新期货官方结算。供需过剩与中东运输干扰两种机制相反，必须等待实物运输/库存确认。",
+      "what_changed": "本日并无新的已完成美国现金交易时段。重要变化是周一PMI与CME指数期货重新开盘临近，须检验此前抛售是否延续。 对比上一观察时点应区分已发生价格、官方文件与尚未实现的预测。",
+      "why_it_matters": "美元利差、信用利差及AI数据中心融资条款决定估值下跌是否转成融资风险；未观测到新的独立现金盘或持有人申赎报告，不把周末休市解释为价格企稳。 该事件会影响跨资产风险溢价与资金可用性，不等于企业财务数字已经全部兑现。",
+      "transmission": "已有事实→跨资产风险偏好与美债收益率→资金成本与信用利差→科技指数和大宗商品价格",
+      "affected_assets": [
+        "S&P 500",
+        "Nasdaq Composite",
+        "UST 10Y",
+        "Brent"
+      ],
+      "direction": "Supply risk / commodity divergence",
+      "importance": "★★★★",
+      "confirmation": "对比下一个真实现金盘的纳指、VIX、美国2Y/10Y曲线和融资条款，若多项共同变化才提升结论置信度。",
+      "invalidation": "若现金盘恢复、VIX回落且信用或融资条件同步改善，风险扩散叙事将减弱；不能仅看短暂盘前反弹。",
+      "sources": [
+        "S04",
+        "S11"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top Market Catalysts",
+      "status": "历史事实已核验／截至原历史截点",
+      "summary": "截至11月22日09:00北京时间，美股与美国现券上一次完整日终仍是11月20日：标普500收6,910.39（-3.70%）、纳指22,617.73（-5.2；新的独立现金盘或持有人申赎报告，不把周末休市解释为价格企稳。",
+      "paragraphs": [
+        "截至11月22日09:00北京时间，美股与美国现券上一次完整日终仍是11月20日：标普500收6,910.39（-3.70%）、纳指22,617.73（-5.28%）、VIX 35.89；财政部10年期par yield为4.92%。不能将周末盘前传闻写成已结算行情。当前核心变量是周一流动性恢复后的卖压是否扩散至信用与非美资产。",
+        "美元利差、信用利差及AI数据中心融资条款决定估值下跌是否转成融资风险；未观测到新的独立现金盘或持有人申赎报告，不把周末休市解释为价格企稳。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings",
+      "status": "无重大新增事件。",
+      "summary": "截至该历史信息截点，NVIDIA 11月17日正式披露2027财年第三财季收入1,158亿美元和下一季1,300亿美元营收指引，但本历史截点没有新的独立大型财报；绩已公布；应继续核对云数据中心上线、毛利率以及客户付款节奏。",
+      "paragraphs": [
+        "截至该历史信息截点，NVIDIA 11月17日正式披露2027财年第三财季收入1,158亿美元和下一季1,300亿美元营收指引，但本历史截点没有新的独立大型财报发布。强劲收入不构成客户实际预付款、未发行债务已经落实或所有AI公司自由现金流已改善的证据。",
+        "对下一重大财报缺少可靠独立的一致预期及具体发布时间，本段不把上市公司盘中涨跌当作业绩已公布；应继续核对云数据中心上线、毛利率以及客户付款节奏。"
+      ],
+      "tables": [],
+      "sources": [
+        "S08"
+      ],
+      "reported": [],
+      "upcoming_72h": []
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "US Macro",
+      "status": "历史事实已核验／截至原历史截点",
+      "summary": "上次FOMC纪要强调价格风险与AI债务结构问题；11月23日09:45 EST美国11月初值PMI尚未公布，须观察价格与就业分项是否强化货币政策约束。；分名义价格和实际数量。对未来宏观日历只列待公布，避免向前看。",
+      "paragraphs": [
+        "上次FOMC纪要强调价格风险与AI债务结构问题；11月23日09:45 EST美国11月初值PMI尚未公布，须观察价格与就业分项是否强化货币政策约束。",
+        "11月17日美国Census公布10月零售总额环比+0.2%，剔除汽车的增长为+0.6%；总额名义值不是实际消费增速，仍需在PCE发布前区分名义价格和实际数量。对未来宏观日历只列待公布，避免向前看。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Central Banks",
+      "status": "历史事实已核验／截至原历史截点",
+      "summary": "美联储于11月18日公布10月会议纪要，内含对通胀韧性、可能进一步加息及金融稳定的讨论；这些属于既有政策信号，不等同于11月新设定的政策利率。上次FOMC纪要强；而变；要将货币政策真正改变与风险厌恶导致的债券买盘严格分开。",
+      "paragraphs": [
+        "美联储于11月18日公布10月会议纪要，内含对通胀韧性、可能进一步加息及金融稳定的讨论；这些属于既有政策信号，不等同于11月新设定的政策利率。上次FOMC纪要强调价格风险与AI债务结构问题；11月23日09:45 EST美国11月初值PMI尚未公布，须观察价格与就业分项是否强化货币政策约束。",
+        "美国国债市场收益率变化来自已核验交易时段，市场隐含路径可随股价和需求而变；要将货币政策真正改变与风险厌恶导致的债券买盘严格分开。"
+      ],
+      "tables": [],
+      "sources": [
+        "S04",
+        "S05",
+        "S06"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Geopolitics",
+      "status": "历史事实已核验／截至原历史截点",
+      "summary": "最新可比较结算仍为11月20日January Brent 92.57美元和December WTI 83.98美元；无周末新期货官方结算。供需过剩与中东运输干扰；率与长期AI项目折现价值，但传导需要具体价格和实物供给证据。",
+      "paragraphs": [
+        "最新可比较结算仍为11月20日January Brent 92.57美元和December WTI 83.98美元；无周末新期货官方结算。供需过剩与中东运输干扰两种机制相反，必须等待实物运输/库存确认。",
+        "海湾运输风险的声明与被官方确认的实际实体损失不能混淆。原油风险溢价经由能源成本、生产价格和通胀预期影响收益率与长期AI项目折现价值，但传导需要具体价格和实物供给证据。"
+      ],
+      "tables": [],
+      "sources": [
+        "S04",
+        "S05",
+        "S06"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "China / Japan / Europe / Canada Policy",
+      "status": "历史事实已核验／截至原历史截点",
+      "summary": "中国11月16日公布的10月工业生产同比约+4.8%、零售同比约+0.4%，显示出口链与国内需求不一致。这属于已经公布的区域经济背景，不应重标为今天新增的刺激政；域风险重点是美元融资利差、出口链科技需求以及工业品采购成本。",
+      "paragraphs": [
+        "中国11月16日公布的10月工业生产同比约+4.8%、零售同比约+0.4%，显示出口链与国内需求不一致。这属于已经公布的区域经济背景，不应重标为今天新增的刺激政策。",
+        "截至所用历史截点，日本、欧洲与加拿大若无可同时核验的重大新政策公告，不以价格波动代替政策事件。区域风险重点是美元融资利差、出口链科技需求以及工业品采购成本。"
+      ],
+      "tables": [],
+      "sources": [
+        "S13"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "Index Changes",
+      "status": "无重大新增事件。",
+      "summary": "本历史截点没有获得指数商正式且有生效日期的重大纳入或剔除公告，因此不把AI股票大涨大跌解读为指数定期调样。；申赎规模需要ETF份额和指数商权重资料，不允许靠成交量倒推。",
+      "paragraphs": [
+        "本历史截点没有获得指数商正式且有生效日期的重大纳入或剔除公告，因此不把AI股票大涨大跌解读为指数定期调样。",
+        "被动指数基金可能因科技权重而出现同步现金盘波动，但实际新增被动成交与申赎规模需要ETF份额和指数商权重资料，不允许靠成交量倒推。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "Capital Flows",
+      "status": "无重大新增事件。",
+      "summary": "科技与小盘股票同步下行说明风险偏好趋弱，但没有获得可比的机构、散户或跨境资金日净流量原表，因此无法计算真实净申购或净撤资。；变化可作为流动性压力的间接证据，不能充当现金流向的直接计量。",
+      "paragraphs": [
+        "科技与小盘股票同步下行说明风险偏好趋弱，但没有获得可比的机构、散户或跨境资金日净流量原表，因此无法计算真实净申购或净撤资。",
+        "应观察ETF份额、真实申赎披露与信用利差；价格和成交额变化可作为流动性压力的间接证据，不能充当现金流向的直接计量。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF",
+      "status": "无重大新增事件。",
+      "summary": "尚无发行方确认的综合科技ETF当日净申购和赎回数据。不把标普、纳指或半导体ETF市价跌幅等同于基金净流出。；折溢价与真实交易日，而非凭二级市场价格推断一级市场资金进出。",
+      "paragraphs": [
+        "尚无发行方确认的综合科技ETF当日净申购和赎回数据。不把标普、纳指或半导体ETF市价跌幅等同于基金净流出。",
+        "AI与半导体持仓高度集中时指数与ETF可能同向波动，下一步应核对发行方份额变化、折溢价与真实交易日，而非凭二级市场价格推断一级市场资金进出。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "Options",
+      "status": "无重大新增事件。",
+      "summary": "VIX来自同一交易日真实波动率指数收盘，市场对未来指数波动的风险定价上升；这一观测不能据此确定期权做市商净Gamma或0DTE方向。；max pain或pin点位，需用价格与量的实测证据再分析。",
+      "paragraphs": [
+        "VIX来自同一交易日真实波动率指数收盘，市场对未来指数波动的风险定价上升；这一观测不能据此确定期权做市商净Gamma或0DTE方向。",
+        "未经期权链、合约到期、未平仓量与做市商持仓核验，不提供所谓Gamma flip、max pain或pin点位，需用价格与量的实测证据再分析。"
+      ],
+      "tables": [],
+      "sources": [
+        "S05"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "Treasury",
+      "status": "历史事实已核验／截至原历史截点",
+      "summary": "美国财政部官方par yield曲线的2年、5年、10年和30年期本期观察及1D、5个实际债券交易日变化已逐一标明；曲线斜率只由相同官方数据计算。；政策转鸽。对尚未核实的国债拍卖规模、尾差和投标结构不填猜测。",
+      "paragraphs": [
+        "美国财政部官方par yield曲线的2年、5年、10年和30年期本期观察及1D、5个实际债券交易日变化已逐一标明；曲线斜率只由相同官方数据计算。",
+        "在AI相关借款与科技股长久期折现环境中，收益率上行提高项目资金成本；当风险事件推动债券避险时，收益率下行也不能直接代表政策转鸽。对尚未核实的国债拍卖规模、尾差和投标结构不填猜测。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Commodities",
+      "status": "历史事实已核验／截至原历史截点",
+      "summary": "最新可比较结算仍为11月20日January Brent 92.57美元和December WTI 83.98美元；无周末新期货官方结算。供需过剩与中东运输干扰；风险资产折现是一条条件性路径，而非由单日油价单独证明的因果。",
+      "paragraphs": [
+        "最新可比较结算仍为11月20日January Brent 92.57美元和December WTI 83.98美元；无周末新期货官方结算。供需过剩与中东运输干扰两种机制相反，必须等待实物运输/库存确认。",
+        "观察原油期货结算的合约月份和交割期限，不混现货黄金、WTI与布伦特远近月价格。原油→企业输入成本→PPI/通胀预期→美债收益率→风险资产折现是一条条件性路径，而非由单日油价单独证明的因果。"
+      ],
+      "tables": [],
+      "sources": [
+        "S04",
+        "S05",
+        "S06"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "Financing",
+      "status": "历史事实已核验／截至原历史截点",
+      "summary": "NVIDIA历史季度业绩显示AI算力需求存在，但需求增长并不自动替代银行贷款、客户预付款和资产抵押融资。Anthropic首发融资是上市募集，不代表整个行业融资；诺、公司计划资本开支和未完成项目，关注信用利差与现金流时点。",
+      "paragraphs": [
+        "NVIDIA历史季度业绩显示AI算力需求存在，但需求增长并不自动替代银行贷款、客户预付款和资产抵押融资。Anthropic首发融资是上市募集，不代表整个行业融资成本下降。",
+        "美元利差、信用利差及AI数据中心融资条款决定估值下跌是否转成融资风险；未观测到新的独立现金盘或持有人申赎报告，不把周末休市解释为价格企稳。 必须区分已收到的资金、银行正式承诺、公司计划资本开支和未完成项目，关注信用利差与现金流时点。"
+      ],
+      "tables": [],
+      "sources": [
+        "S08",
+        "S09"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Breaking News",
+      "status": "历史事实已核验／截至原历史截点",
+      "summary": "截至11月22日09:00北京时间，美股与美国现券上一次完整日终仍是11月20日：标普500收6,910.39（-3.70%）、纳指22,617.73（-5.2；；既有新闻仅作为背景延续，不将后续报道倒灌到更早一天的截点。",
+      "paragraphs": [
+        "截至11月22日09:00北京时间，美股与美国现券上一次完整日终仍是11月20日：标普500收6,910.39（-3.70%）、纳指22,617.73（-5.28%）、VIX 35.89；财政部10年期par yield为4.92%。不能将周末盘前传闻写成已结算行情。当前核心变量是周一流动性恢复后的卖压是否扩散至信用与非美资产。",
+        "本节限定历史信息截点以前已发生的事实，并区分现金收盘、已完成公告与尚未公布事件；既有新闻仅作为背景延续，不将后续报道倒灌到更早一天的截点。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "Cross-Asset Market Impact",
+      "status": "历史事实已核验／截至原历史截点",
+      "summary": "截至11月22日09:00北京时间，美股与美国现券上一次完整日终仍是11月20日：标普500收6,910.39（-3.70%）、纳指22,617.73（-5.2；识别增长冲击与通胀冲击何者占主导，不能把相关性说成证实因果。",
+      "paragraphs": [
+        "截至11月22日09:00北京时间，美股与美国现券上一次完整日终仍是11月20日：标普500收6,910.39（-3.70%）、纳指22,617.73（-5.28%）、VIX 35.89；财政部10年期par yield为4.92%。不能将周末盘前传闻写成已结算行情。当前核心变量是周一流动性恢复后的卖压是否扩散至信用与非美资产。",
+        "跨资产首要观察链是AI估值与融资→科技/小盘收益→VIX和信用偏好→美债价格与美元→能源通胀预期。股债出现反向交易时应识别增长冲击与通胀冲击何者占主导，不能把相关性说成证实因果。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "增长脉冲",
+      "current": "↓ 股市与需求预期走弱",
+      "yesterday": "→ 前一期观察待验证",
+      "change_reason": "增长脉冲当前状态来自已完成的2026-11-20真实交易与公开事件组合，须按结算日而非补档日排序。",
+      "evidence": "截至11月22日09:00北京时间，美股与美国现券上一次完整日终仍是11月20日：标普500收6,910.39（-3.70%）、纳指22,617.73（-5.28%）、VIX 35.89；财政部10年期par yield为4.92%。不能将周末盘前传闻写成已结算行情。当前核心变量是周一流动性恢复后的卖压是否扩散至信用与非美资产。",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "通胀脉冲",
+      "current": "→ 通胀与能源分化",
+      "yesterday": "→ 前一期观察待验证",
+      "change_reason": "通胀脉冲当前状态来自已完成的2026-11-20真实交易与公开事件组合，须按结算日而非补档日排序。",
+      "evidence": "最新可比较结算仍为11月20日January Brent 92.57美元和December WTI 83.98美元；无周末新期货官方结算。供需过剩与中东运输干扰两种机制相反，必须等待实物运输/库存确认。",
+      "sources": [
+        "S04",
+        "S05"
+      ]
+    },
+    "rates_pressure": {
+      "label": "利率压力",
+      "current": "→ 名义利率与避险重定价",
+      "yesterday": "→ 前一期观察待验证",
+      "change_reason": "利率压力当前状态来自已完成的2026-11-20真实交易与公开事件组合，须按结算日而非补档日排序。",
+      "evidence": "上次FOMC纪要强调价格风险与AI债务结构问题；11月23日09:45 EST美国11月初值PMI尚未公布，须观察价格与就业分项是否强化货币政策约束。",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "earnings_revision": {
+      "label": "盈利修正",
+      "current": "↓ 算力收入与估值分化",
+      "yesterday": "→ 前一期观察待验证",
+      "change_reason": "盈利修正当前状态来自已完成的2026-11-20真实交易与公开事件组合，须按结算日而非补档日排序。",
+      "evidence": "美元利差、信用利差及AI数据中心融资条款决定估值下跌是否转成融资风险；未观测到新的独立现金盘或持有人申赎报告，不把周末休市解释为价格企稳。",
+      "sources": [
+        "S08"
+      ]
+    },
+    "liquidity": {
+      "label": "流动性",
+      "current": "↓ 风险资产去杠杆",
+      "yesterday": "→ 前一期观察待验证",
+      "change_reason": "流动性当前状态来自已完成的2026-11-20真实交易与公开事件组合，须按结算日而非补档日排序。",
+      "evidence": "截至11月22日09:00北京时间，美股与美国现券上一次完整日终仍是11月20日：标普500收6,910.39（-3.70%）、纳指22,617.73（-5.28%）、VIX 35.89；财政部10年期par yield为4.92%。不能将周末盘前传闻写成已结算行情。当前核心变量是周一流动性恢复后的卖压是否扩散至信用与非美资产。",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "地缘风险",
+      "current": "↑ 供应风险未明",
+      "yesterday": "→ 前一期观察待验证",
+      "change_reason": "地缘风险当前状态来自已完成的2026-11-20真实交易与公开事件组合，须按结算日而非补档日排序。",
+      "evidence": "最新可比较结算仍为11月20日January Brent 92.57美元和December WTI 83.98美元；无周末新期货官方结算。供需过剩与中东运输干扰两种机制相反，必须等待实物运输/库存确认。",
+      "sources": [
+        "S04",
+        "S05"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base｜跌势后的波动整固",
+      "probability": "50%（主观情景权重）",
+      "trigger": "无进一步重大实体事件，市场等待官方下一次经济数据",
+      "expected_market_reaction": "美股价格可能反复，信用市场更依赖真实融资披露。",
+      "assets_most_sensitive": [
+        "S&P 500",
+        "UST 10Y",
+        "VIX"
+      ],
+      "what_confirms_it": "VIX回落且权益与利率方向重新稳定",
+      "what_invalidates_it": "股债信用同步恶化或披露重大现金流缺口"
+    },
+    "bull_case": {
+      "label": "Bull｜估值修复与资金成本稳定",
+      "probability": "20%（主观情景权重）",
+      "trigger": "PMI价格压力降温且期货/现券开市后买盘持续",
+      "expected_market_reaction": "半导体与成长股反弹、美债贴现压力缓和。",
+      "assets_most_sensitive": [
+        "Nasdaq Composite",
+        "US Treasury 10Y par yield",
+        "CBOE VIX"
+      ],
+      "what_confirms_it": "下一正常现金盘中多数板块和信用条件同步改善",
+      "what_invalidates_it": "反弹限于少数大市值科技而大盘广度恶化"
+    },
+    "bear_case": {
+      "label": "Bear｜融资去杠杆扩大",
+      "probability": "30%（主观情景权重）",
+      "trigger": "AI融资条件进一步紧缩或供应中断得到官方确认",
+      "expected_market_reaction": "科技和小盘股受压、VIX上升，风险资金继续偏好高流动性美债。",
+      "assets_most_sensitive": [
+        "S&P 500",
+        "Russell 2000",
+        "CBOE VIX"
+      ],
+      "what_confirms_it": "VIX与信用利差扩大且纳指持续相对走弱",
+      "what_invalidates_it": "实际融资完成并伴随VIX和信用利差同步回落"
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "event": "CME Globex美股指数期货周日重新开市",
+      "sgt": "2026-11-23 07:00 SGT",
+      "et": "2026-11-22 18:00 EST",
+      "consensus": "不适用",
+      "previous": "11月20日收盘参考",
+      "actual": "待公布",
+      "importance": "★★★★",
+      "sources": [
+        "S12"
+      ]
+    },
+    {
+      "event": "美国11月制造业与服务业PMI初值",
+      "sgt": "2026-11-23 22:45 SGT",
+      "et": "2026-11-23 09:45 EST",
+      "consensus": "同口径一致预期需以报告当日可用调查为准",
+      "previous": "10月制造业54.9、服务业56.1（来自11/20经济日历）",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S11"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "AI融资与芯片估值暴露的高杠杆集中度风险",
+      "why_not_fully_priced": "美元利差、信用利差及AI数据中心融资条款决定估值下跌是否转成融资风险；未观测到新的独立现金盘或持有人申赎报告，不把周末休市解释为价格企稳。 尚缺完整跨市场信用/流动性分项，单日价格不能显示全部尾部暴露。",
+      "trigger": "下一交易时段AI项目融资或收入确认披露进一步负面",
+      "transmission": "算力资本开支→现金流缺口→信用风险→科技股重新贴现",
+      "first_asset": "Nasdaq Composite / SOX",
+      "theme_id": "ai_financing_rates",
+      "lifecycle_state": "active",
+      "first_seen": "2026-11-20",
+      "last_seen": "2026-11-22",
+      "sources": [
+        "S01",
+        "S02",
+        "S04"
+      ]
+    },
+    {
+      "risk": "联储通胀路径与金融条件收紧的错配风险",
+      "why_not_fully_priced": "美元利差、信用利差及AI数据中心融资条款决定估值下跌是否转成融资风险；未观测到新的独立现金盘或持有人申赎报告，不把周末休市解释为价格企稳。 尚缺完整跨市场信用/流动性分项，单日价格不能显示全部尾部暴露。",
+      "trigger": "美国PMI价格分项偏热且官方曲线或信用利差回升",
+      "transmission": "服务通胀→FOMC预期→美债利率→美元融资成本",
+      "first_asset": "US 2Y / US 10Y",
+      "theme_id": "fed_policy_path",
+      "lifecycle_state": "active",
+      "first_seen": "2026-11-20",
+      "last_seen": "2026-11-22",
+      "sources": [
+        "S01",
+        "S02",
+        "S04"
+      ]
+    },
+    {
+      "risk": "中东油运扰动与全球需求减速的双向能源风险",
+      "why_not_fully_priced": "美元利差、信用利差及AI数据中心融资条款决定估值下跌是否转成融资风险；未观测到新的独立现金盘或持有人申赎报告，不把周末休市解释为价格企稳。 尚缺完整跨市场信用/流动性分项，单日价格不能显示全部尾部暴露。",
+      "trigger": "有官方确认的实物供给中断或库存异常，而非单一袭击声称",
+      "transmission": "原油供应→通胀预期→美债和美元→跨资产风险溢价",
+      "first_asset": "ICE Brent / WTI",
+      "theme_id": "geopolitics_oil_fx",
+      "lifecycle_state": "active",
+      "first_seen": "2026-11-20",
+      "last_seen": "2026-11-22",
+      "sources": [
+        "S01",
+        "S02",
+        "S04"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "2026-11-23 美国11月制造业与服务业PMI初值",
+    "status": "Confirmed Upcoming (as of historical cutoff)",
+    "date": "2026-11-23",
+    "et": "2026-11-23 09:45 EST",
+    "sgt": "2026-11-23 22:45 SGT",
+    "consensus": "官方事件日程已确认；同口径市场预期无法在原始历史截点完全核实",
+    "previous": "先前的真实交易日及历史报告中的官方指标为基线，不能将未来发布的结果当作前值。",
+    "actual": "待公布",
+    "why_it_matters": "强烈股市波动后，第一个可观测的指数期货或PMI数据可检验增长冲击、通胀和融资条件哪一项主导市场；需区分盘前跳价与完整交易。",
+    "first_market": "ES/NQ期货、VIX、US2Y/10Y、DXY、Brent",
+    "bull_interpretation": "交易流动性恢复且收益率/美元不过度上行，科技风险资产由少数个股扩散至更广泛修复。",
+    "bear_interpretation": "PMI通胀压力持续或重新开市后卖压伴随信用恶化，利率与流动性将继续压缩高资本开支估值。",
+    "watch_first": [
+      "先观察ES/NQ正式开盘后是否连续维持反弹或下跌，并与下一现金盘成交广度对照；夜盘跳价不足以确认反转。",
+      "同步核验官方US2Y/10Y和VIX收盘，若债券避险而股指继续跌则更偏向增长/流动性冲击，否则须评估再通胀。",
+      "检查Brent真实同月合约结算和油运官方证据，再以信用利差或实际融资披露确认能源及AI融资风险。"
+    ],
+    "sources": [
+      "S11",
+      "S01",
+      "S02"
+    ]
+  },
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14"
+  ],
+  "asia_snapshot": {
+    "as_of": "2026-11-22 09:00 SGT",
+    "market_note": "周末无新美国股票现金盘收盘。",
+    "sources": [
+      "S01",
+      "S02"
+    ]
+  }
+}

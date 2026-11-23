@@ -1,0 +1,982 @@
+{
+  "schema_version": "1.1.0",
+  "date": "2026-11-14",
+  "edition": "Morning Official · 历史补档",
+  "edition_status": "official",
+  "timezone": "Asia/Singapore",
+  "data_cutoff_sgt": "2026-11-14 10:35 SGT",
+  "data_cutoff_et": "2026-11-13 21:35 EST",
+  "last_updated": "2026-11-23T09:51:31+08:00",
+  "run_timing": {
+    "scheduled_for_sgt": "2026-11-14T09:00:00+08:00",
+    "started_at_sgt": "2026-11-14T10:25:23+08:00",
+    "research_cutoff_sgt": "2026-11-14T10:35:40.235691+08:00",
+    "mode": "historical_reconstruction_of_unpublished_original_morning_draft",
+    "note": "原始晨间研究时刻保存于reconstruction.original_candidate_run_timing；本期研究修订于2026-11-23，不意味着当日发布。"
+  },
+  "publication_cycle": {
+    "status": "official",
+    "cycle": "morning",
+    "is_final": true,
+    "archive_eligible": true,
+    "market_lens_native_eligible": false
+  },
+  "publication_policy": {
+    "effective_date": "2026-10-08",
+    "no_evening_edition": true,
+    "is_canonical_daily": true
+  },
+  "source_mode": "reconstructed_daily",
+  "sources_path": "data/sources/2026-11-14.json",
+  "comparison_basis": "前一期正式版为11月13日 Morning Official，研究截点11月13日14:41 SGT；当时美国10月PPI尚待当晚21:30公布，最新一期已得到BLS实际发布。11月14日是周六，证券报价仅引用11月13日美国现金市场收盘；对油价、债券等不同市场分别保留真实来源及交易时点。",
+  "thesis": "11月14日晨间能够确认的最新全球市场信号是“通胀粘性与AI融资重估同时压制成长股”：美国10月PPI环比只涨0.3%、略低于0.4%的预期，但同比6.5%，美国10年期官方国债收益率约5.15%；11月13日纳斯达克指数下跌约0.9%、半导体ETF SOXX下跌3.67%，NVIDIA继续下跌2.01%。IEA估算第四季度原油供给较需求多约170万桶/日，能源供需改善却未扭转高利率压力。",
+  "dominant_narrative": "11月13日美国10月PPI终于公布，BLS记录总指数环比0.3%，9月修订为1.4%，同比达6.5%；这意味着数据低于当月市场一致预期，但不是通胀已受控制。美债10年期官方par yield达约5.15%，2年期约4.88%，高贴现率仍压制资本密集型AI云。美股标准普尔500收7561.67、跌约0.4%，纳指收25136.27、跌约0.9%，但道指微升，主要风险集中在科技和半导体。NVIDIA官方于11月12日确认CEO更替，11月13日NVDA收162.85美元、跌2.01%，SOXX收149.30美元、跌3.67%；不可把个人传闻或潜在政策影响当成正式事实。IEA预测本季度全球石油供需转盈余，但海湾航运成本和战争风险未消失。下一个72小时重要宏观窗口是11月16日北京时间10时公布的中国10月工业、零售及投资数据，需确认实际发布后再判断内需和工业链。各行情保留11月13日各自实际收盘，没有制造11月14日周末实时交易价格。",
+  "market_regime": {
+    "growth": {
+      "state": "mixed",
+      "evidence": "原始候选记录的历史市场判断；作为历史补档展示，不构成当前实时市场观点。",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "inflation": {
+      "state": "elevated",
+      "evidence": "原始候选记录的历史市场判断；作为历史补档展示，不构成当前实时市场观点。",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "rates": {
+      "state": "higher",
+      "evidence": "原始候选记录的历史市场判断；作为历史补档展示，不构成当前实时市场观点。",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "earnings": {
+      "state": "diverging",
+      "evidence": "原始候选记录的历史市场判断；作为历史补档展示，不构成当前实时市场观点。",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "liquidity": {
+      "state": "selective",
+      "evidence": "原始候选记录的历史市场判断；作为历史补档展示，不构成当前实时市场观点。",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "geopolitics": {
+      "state": "elevated",
+      "evidence": "原始候选记录的历史市场判断；作为历史补档展示，不构成当前实时市场观点。",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "overall": {
+      "state": "Inflation Persistence / AI De-rating / Oil Supply Rebalancing",
+      "evidence": "原始候选记录的历史市场判断；作为历史补档展示，不构成当前实时市场观点。",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    }
+  },
+  "market_tape": [
+    {
+      "asset": "S&P 500",
+      "level": "7,561.67",
+      "change_1d": "-0.4%",
+      "change_5d": "+2.5%",
+      "signal": "大型股回落",
+      "driver": "美债收益率上行和AI科技权重调整压制大盘，非所有行业同步下跌。",
+      "status": "AP published final cash close; rounded daily and weekly changes",
+      "as_of": "2026-11-13 US regular-session close 16:00 EST",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "asset": "Nasdaq Composite",
+      "level": "25,136.27",
+      "change_1d": "-0.9%",
+      "change_5d": "+2.3%",
+      "signal": "科技表现落后",
+      "driver": "NVIDIA治理与算力融资压力在科技股中放大，纳指跌幅超过标普。",
+      "status": "AP published final cash close; rounded daily and weekly changes",
+      "as_of": "2026-11-13 US regular-session close 16:00 EST",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "asset": "Dow Jones",
+      "level": "52,347.55",
+      "change_1d": "+0.1%",
+      "change_5d": "+2.1%",
+      "signal": "价值股相对抗跌",
+      "driver": "道指微涨而纳指回落，显示抛售主要集中在科技资本开支链。",
+      "status": "AP published final cash close; rounded daily and weekly changes",
+      "as_of": "2026-11-13 US regular-session close 16:00 EST",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "asset": "Russell 2000",
+      "level": "2,790.49",
+      "change_1d": "-0.3%",
+      "change_5d": "+1.3%",
+      "signal": "小盘边际承压",
+      "driver": "资金成本仍影响高杠杆小盘企业，即便周度有技术性修复。",
+      "status": "AP published final cash close; rounded daily and weekly changes",
+      "as_of": "2026-11-13 US regular-session close 16:00 EST",
+      "sources": [
+        "S03"
+      ]
+    },
+    {
+      "asset": "Nasdaq 100",
+      "level": "27,943.74",
+      "change_1d": "-1.22%",
+      "change_5d": "+3.53%",
+      "signal": "科技权重下跌",
+      "driver": "AI龙头调整及高贴现率拖累纳斯达克100，周内反弹未消除风险。",
+      "status": "Same provider regular-session closes; Nov06->Nov13 five US cash sessions",
+      "as_of": "2026-11-13 US regular-session close 16:00 EST",
+      "sources": [
+        "S16"
+      ]
+    },
+    {
+      "asset": "NVIDIA NVDA",
+      "level": "162.85",
+      "change_1d": "-2.01%",
+      "change_5d": "-12.75%",
+      "signal": "创始人离任风险继续",
+      "driver": "公司已公告管理层更替，但关键客户供货、战略和资本投入未证实失效。",
+      "status": "Same provider regular-session closes; Nov06->Nov13 five US cash sessions",
+      "as_of": "2026-11-13 US regular-session close 16:00 EST",
+      "sources": [
+        "S17"
+      ]
+    },
+    {
+      "asset": "iShares Russell 2000 ETF IWM",
+      "level": "277.54",
+      "change_1d": "-0.32%",
+      "change_5d": "+1.41%",
+      "signal": "小盘ETF回调",
+      "driver": "相对大型科技股抗跌，但小盘信用敏感性仍需盯住美国利率。",
+      "status": "Same provider regular-session closes; Nov06->Nov13 five US cash sessions",
+      "as_of": "2026-11-13 US regular-session close 16:00 EST",
+      "sources": [
+        "S18"
+      ]
+    },
+    {
+      "asset": "iShares Semiconductor ETF SOXX",
+      "level": "149.30",
+      "change_1d": "-3.67%",
+      "change_5d": "+9.35%",
+      "signal": "半导体板块分化",
+      "driver": "SOXX在11月13日下跌，但较上周五仍上涨；不能将单日表现误当周趋势。",
+      "status": "Same provider regular-session closes; Nov06->Nov13 five US cash sessions",
+      "as_of": "2026-11-13 US regular-session close 16:00 EST",
+      "sources": [
+        "S19"
+      ]
+    },
+    {
+      "asset": "Costco COST",
+      "level": "1,106.21",
+      "change_1d": "+1.28%",
+      "change_5d": "+5.00%",
+      "signal": "防御消费相对走强",
+      "driver": "高质量消费防御股表现与AI半导体相反，说明资金轮动而非单向风险偏好。",
+      "status": "Same provider regular-session closes; Nov06->Nov13 five US cash sessions",
+      "as_of": "2026-11-13 US regular-session close 16:00 EST",
+      "sources": [
+        "S20"
+      ]
+    },
+    {
+      "asset": "US Treasury 2Y par yield",
+      "level": "4.88%",
+      "change_1d": "+2bp",
+      "change_5d": "+42bp（11/13 对11/05五个真实债券交易日）",
+      "signal": "短端处高位",
+      "driver": "官方曲线显示短端利率比11月12日提高约2bp，5D不可由不连续交易日简单替代。 同口径5D证据缺口：N/A（五实际债券交易日未核实）",
+      "status": "Treasury par yield via secondary Treasury data presentation; Nov13 print; no comparable 5D verified",
+      "as_of": "2026-11-13 US Treasury daily par yield publication",
+      "sources": [
+        "S21"
+      ]
+    },
+    {
+      "asset": "US Treasury 10Y par yield",
+      "level": "5.15%",
+      "change_1d": "+5bp",
+      "change_5d": "+31bp（11/13 对11/05五个真实债券交易日）",
+      "signal": "长端收益率上行",
+      "driver": "10Y升至5.15%，按官方par与前一个实际开放日比较为约5bp，持续考验AI云融资。 同口径5D证据缺口：N/A（五实际债券交易日未核实）",
+      "status": "Treasury par yield via secondary Treasury data presentation; no comparable 5D verified",
+      "as_of": "2026-11-13 US Treasury daily par yield publication",
+      "sources": [
+        "S21"
+      ]
+    },
+    {
+      "asset": "Brent front-month crude",
+      "level": "$95.84/bbl",
+      "change_1d": "+0.02%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "原油供需转平衡",
+      "driver": "IEA供给盈余是预测、不是已经到账的库存；期货周线缺同合约报价。 同口径5D证据缺口：N/A（未核验同合约5D）",
+      "status": "Reuters published Nov13 futures settlement; contract-specific 5D not verified",
+      "as_of": "2026-11-13 Brent front-month futures settlement",
+      "sources": [
+        "S05",
+        "S06"
+      ]
+    },
+    {
+      "asset": "WTI front-month crude",
+      "level": "$88.56/bbl",
+      "change_1d": "-0.20%",
+      "change_5d": "尚无法可靠确认",
+      "signal": "原油略跌",
+      "driver": "海湾实物恢复使油价降低，但运费、袭击及炼油产品紧张度仍是风险。 同口径5D证据缺口：N/A（未核验同合约5D）",
+      "status": "Reuters published Nov13 futures settlement; contract-specific 5D not verified",
+      "as_of": "2026-11-13 WTI front-month futures settlement",
+      "sources": [
+        "S05",
+        "S06"
+      ]
+    }
+  ],
+  "market_tape_data_quality": {
+    "publish_status": "历史补档：截点后研究，非当日native；下面为字段中可解析的5D数量，不声称全部逐个独立证实。",
+    "asset_count": 13,
+    "explicit_gaps": [
+      "无法逐期回读的历史五日油价/黄金等不同合约不得估算",
+      "5D已呈现的数据与原候选来源一致，只有另有官方比对的收益率可升格为二次确认；本次不把占位符当成可靠价格。"
+    ],
+    "level_coverage": {
+      "available": 13,
+      "total": 13,
+      "ratio": 1.0
+    },
+    "change_1d_coverage": {
+      "available": 13,
+      "total": 13,
+      "ratio": 1.0
+    },
+    "change_5d_coverage": {
+      "available": 11,
+      "total": 13,
+      "ratio": 0.846154
+    }
+  },
+  "what_changed": [
+    {
+      "yesterday": "11月13日前一版研究截止时，美国10月PPI尚未公布。",
+      "today": "BLS在11月13日08:30 EST公布PPI环比+0.3%（市场预期+0.4%），同比+6.5%。",
+      "why_it_matters": "单月数据温和不能忽视同比高位，通胀对美债、美元及AI融资成本的传导必须采用实际已发布值。",
+      "sources": [
+        "S01",
+        "S02"
+      ],
+      "why": "单月数据温和不能忽视同比高位，通胀对美债、美元及AI融资成本的传导必须采用实际已发布值。"
+    },
+    {
+      "yesterday": "11月12日NVIDIA刚确认管理层更替，科技指数与NVDA初步分化。",
+      "today": "11月13日NVDA收162.85美元、跌2.01%，SOXX跌3.67%，纳指跌约0.9%，道指微涨。",
+      "why_it_matters": "治理风险开始影响半导体整体估值，需将行业融资与交付证据和个人传闻分开处理。",
+      "sources": [
+        "S03",
+        "S04",
+        "S17",
+        "S19"
+      ],
+      "why": "治理风险开始影响半导体整体估值，需将行业融资与交付证据和个人传闻分开处理。"
+    },
+    {
+      "yesterday": "此前油价因航运与管线事件受到短缺溢价推动。",
+      "today": "IEA新预测第四季度全球油供给平均105mbpd，可能超出需求约1.7mbpd，Brent收95.84美元。",
+      "why_it_matters": "油价短线供需缓和不是风险消失；库存、成品油紧张和海峡运输仍可能重新引发通胀。",
+      "sources": [
+        "S05",
+        "S06"
+      ],
+      "why": "油价短线供需缓和不是风险消失；库存、成品油紧张和海峡运输仍可能重新引发通胀。"
+    }
+  ],
+  "top_catalysts": [
+    {
+      "rank": 1,
+      "event": "11月13日美国10月PPI环比+0.3%但同比+6.5%，高利率定价未解除",
+      "status": "已发布／官方经济数据",
+      "event_time_et": "2026-11-13 08:30 EST",
+      "event_time_sgt": "2026-11-13 21:30 SGT",
+      "what_happened": "美国BLS公布10月PPI总月率+0.3%、较市场预期+0.4%略弱，但同比上涨6.5%，9月环比修订为+1.4%；其公布已发生，不能沿用上一版“待公布”。",
+      "what_changed": "由前一期未公布数据转为BLS实际数据，价格压力虽月率降速但同比依旧高位，美债收益率没有持续向下突破。",
+      "why_it_matters": "对12月联储利率预期、2Y/10Y贴现率和数据中心债务融资均有直接传导，不能用一次温和月率直接宣布通胀见顶。",
+      "transmission": "BLS PPI→Fed加息预期→UST 2Y/10Y→美元及成长股估值",
+      "affected_assets": [
+        "US2Y",
+        "US10Y",
+        "NDX"
+      ],
+      "direction": "Rate/tech risk-off",
+      "importance": "★★★★★",
+      "confirmation": "核对BLS分项和修订、美国正式收益率曲线及市场交易日连续确认。",
+      "invalidation": "若后续通胀数据系统降温，收益率持续下行且实际信贷利差收窄，则高利率叙事边际减弱。",
+      "sources": [
+        "S01",
+        "S02",
+        "S21"
+      ]
+    },
+    {
+      "rank": 2,
+      "event": "NVIDIA治理更迭后11月13日NVDA、SOXX继续下跌，11月17日财报待验证",
+      "status": "治理公告已确认／业绩尚未公布",
+      "event_time_et": "2026-11-13 16:00 EST",
+      "event_time_sgt": "2026-11-14 05:00 SGT",
+      "what_happened": "11月12日NVIDIA正式披露创始人离任、CFO暂任CEO；11月13日NVDA美国现金盘报162.85美元、跌2.01%，SOXX跌3.67%。11月17日业绩仍属未来事件。",
+      "what_changed": "前一日公司消息已变成连续现金交易表现，股价反应进一步延伸到半导体板块，但订单中断尚未经独立确认。",
+      "why_it_matters": "供应商治理与供应链连续性可能改变AI云采购和投资风险偏好；必须等待公司管理层、云客户及产能交付的可验证材料。",
+      "transmission": "NVDA管理层→供应商交期信心→SOXX/NDX→AI云资本计划",
+      "affected_assets": [
+        "NVDA",
+        "SOXX",
+        "NDX"
+      ],
+      "direction": "AI supply-chain risk",
+      "importance": "★★★★★",
+      "confirmation": "11/17财报及正式管理层答复、客户订单和交期、后续NVDA相对SOXX交易表现。",
+      "invalidation": "若管理层明确业务连续性且客户供货与收入兑现保持稳健，风险溢价可回落。",
+      "sources": [
+        "S08",
+        "S09",
+        "S17",
+        "S19"
+      ]
+    },
+    {
+      "rank": 3,
+      "event": "11月13日IEA预计Q4原油供需转为盈余，11月16日中国宏观数据检验需求",
+      "status": "IEA预测已发布／中国数据待公布",
+      "event_time_et": "2026-11-13 08:00 EST",
+      "event_time_sgt": "2026-11-13 21:00 SGT",
+      "what_happened": "IEA称第四季度全球石油供给可能较需求多约170万桶/日，Brent11月13日结算约95.84美元；中国10月工业生产、零售、投资数据计划11月16日10时公布。",
+      "what_changed": "此前偏重海湾物理供应损失，现在IEA提供了可检验的供应恢复预测，但仍未证明每一项预期已实现。",
+      "why_it_matters": "原油与全球商品需求双向影响通胀、企业利润以及人民币/澳元和资源股，需将预测与成交价格分开。",
+      "transmission": "IEA供需预测与中国工业需求→油价/铜价→通胀→全球利率/商品货币",
+      "affected_assets": [
+        "Brent",
+        "WTI",
+        "AUDUSD"
+      ],
+      "direction": "Cross-asset conditional",
+      "importance": "★★★★",
+      "confirmation": "核对实际海湾出口、油品库存和11月16日中国官方经济数据。",
+      "invalidation": "若航运风险令实际供应收缩或中国需求大幅强于预期，供给盈余预期可能快速反转。",
+      "sources": [
+        "S05",
+        "S06",
+        "S22"
+      ]
+    }
+  ],
+  "section_order": [
+    "top_catalysts",
+    "earnings",
+    "us_macro",
+    "central_banks",
+    "geopolitics",
+    "regional_policy",
+    "index_changes",
+    "flows",
+    "etf",
+    "options",
+    "treasury",
+    "commodities",
+    "financing",
+    "breaking_news",
+    "market_impact"
+  ],
+  "sections": {
+    "top_catalysts": {
+      "number": 1,
+      "title": "Top Market Catalysts",
+      "status": "已核验／证据及缺口明确",
+      "summary": "美国PPI实际发布、NVIDIA管理层更替后的连续交易及IEA原油盈余预测，构成当日三条可核验主线。",
+      "paragraphs": [
+        "BLS11月13日发布PPI月率0.3%、同比6.5%，单月不及预期但并不意味着通胀压力已解决；美国10年期国债收益率官方曲线约5.15%。",
+        "NVIDIA治理公告后的NVDA单日再跌2.01%，SOXX跌3.67%；IEA预测全球供给盈余，三条主线应分别用官方数据、真实现金收盘和实际油量核验。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S03",
+        "S06",
+        "S17",
+        "S19",
+        "S21"
+      ]
+    },
+    "earnings": {
+      "number": 2,
+      "title": "Important Earnings",
+      "status": "已核验／证据及缺口明确",
+      "summary": "Nebius已披露季度收入惊喜与资本开支计划，关键风险是机房交付及融资到位而非订单数字。",
+      "paragraphs": [
+        "Nebius11月12日披露第三季度收入约9.81亿美元，超过调查预期的9.075亿美元，但第三方数据中心延期导致2026收入展望调整为约30亿至32亿美元。",
+        "其2027年400亿至450亿美元资本开支为管理层规划，计划中的客户预付款及资产抵押融资并非已到账资金；NVIDIA下周业绩尚未公布。"
+      ],
+      "tables": [],
+      "sources": [
+        "S23",
+        "S09"
+      ],
+      "reported": [
+        {
+          "id": "NBIS-2026-Q3-NOV12",
+          "company": "Nebius Group",
+          "ticker": "NBIS",
+          "period": "FY2026 Q3",
+          "status": "Released 2026-11-12; observed as prior completed earnings, not Nov14 release",
+          "release_date": "2026-11-12",
+          "release_time_et": "2026-11-12 08:00 EST",
+          "release_time_sgt": "2026-11-12 21:00 SGT",
+          "market_session": "2026-11-12 US cash",
+          "key_takeaway": "收入约$981m高于LSEG预期但2026收入指引受数据中心容量延迟压缩；2027高资本开支属于规划。",
+          "metrics": [
+            {
+              "metric": "FY26 Q3 revenue",
+              "actual": "$981m approximately",
+              "consensus": "$907.5m LSEG survey",
+              "previous_or_yoy": "Year-on-year high growth per company report",
+              "surprise": "Positive revenue surprise, management guidance still constrained",
+              "notes": "季度已实现收入不等于年度合同总额。"
+            }
+          ],
+          "guidance": [
+            {
+              "metric": "2026 sales outlook",
+              "current": "$3.0bn–$3.2bn cited by Reuters",
+              "previous_or_consensus": "Prior outlook $3.0bn–$3.4bn",
+              "change": "Upper bound reduced",
+              "interpretation": "Project commissioning delays limit current period revenue."
+            },
+            {
+              "metric": "2027 capital expenditure",
+              "current": "$40bn–$45bn planned",
+              "previous_or_consensus": "No reliable directly comparable prior bound",
+              "change": "Forward-looking plan",
+              "interpretation": "Not funded or deployed cash."
+            }
+          ],
+          "market_reaction": {
+            "session": "2026-11-12 US cash",
+            "move": "approximately -16% according to Reuters",
+            "as_of": "2026-11-12 16:00 EST"
+          },
+          "one_offs": [
+            "Company expected third-party capacity deployment timing changes.",
+            "Proposed customer prepayments / asset-based debt not equivalent to received money."
+          ],
+          "read_through": [
+            {
+              "asset": "NBIS/CRWV equity and credit",
+              "implication": "Financing spreads and commissioning pace affect cash flow conversion."
+            }
+          ],
+          "sources": [
+            "S23"
+          ]
+        }
+      ],
+      "upcoming_72h": []
+    },
+    "us_macro": {
+      "number": 3,
+      "title": "US Macro",
+      "status": "已核验／证据及缺口明确",
+      "summary": "美国10月PPI环比低于预期，但同比升至6.5%，是当日宏观定价的首要事实。",
+      "paragraphs": [
+        "BLS记录10月最终需求价格指数环比+0.3%，低于市场调查的+0.4%，9月被修订为+1.4%；不可再把PPI标记为待公布。",
+        "工业品及服务业价格均有上涨，12个月未季调增幅6.5%，需要配合CPI、工资及下一批数据判断联储路径，而非用单项代替整体。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "central_banks": {
+      "number": 4,
+      "title": "Central Banks",
+      "status": "已核验／证据及缺口明确",
+      "summary": "联储政策预期维持偏紧，美债长短端收益率均处高位，但未来议息结果尚未发生。",
+      "paragraphs": [
+        "11月13日美国官方par曲线约2年期4.88%、10年期5.15%，分别较11月12日升2和5个基点，反映市场继续担心成本型通胀。",
+        "12月议息加息幅度属于市场定价，不是央行决定；应持续区分Fed官员表态、衍生品概率和最终议息会议。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S10",
+        "S21"
+      ]
+    },
+    "geopolitics": {
+      "number": 5,
+      "title": "Geopolitics",
+      "status": "已核验／证据及缺口明确",
+      "summary": "海湾运输仍是原油供需平衡的尾部风险，IEA预计供给恢复不能直接推出风险消失。",
+      "paragraphs": [
+        "IEA认为海湾出口恢复快于需求增长，第四季度可能供给比需求多170万桶/日；这是机构预测，而非逐日实物验收结果。",
+        "海峡袭击和运输保险、成品油炼化紧张仍可能导致原油与柴油价格分化，需看官方出口及库存持续验证。"
+      ],
+      "tables": [],
+      "sources": [
+        "S05",
+        "S06"
+      ]
+    },
+    "regional_policy": {
+      "number": 6,
+      "title": "China / Japan / Europe / Canada Policy",
+      "status": "已核验／证据及缺口明确",
+      "summary": "中国11月16日公布10月主要活动数据，将检验内需和工业产出的分化。",
+      "paragraphs": [
+        "据公开预告，中国计划11月16日北京时间10时公布10月工业生产、零售消费及固定资产投资等数据；该时刻在当前研究截止之后，不得提前填报实际值。",
+        "先前官方PMI显示制造业略低于荣枯线；人民币、澳元及工业品可能对地产投资和工业数据的差异反应更大。"
+      ],
+      "tables": [],
+      "sources": [
+        "S22",
+        "S15"
+      ]
+    },
+    "index_changes": {
+      "number": 7,
+      "title": "Index Changes",
+      "status": "已核验／证据及缺口明确",
+      "summary": "11月13日大盘与科技表现分化，纳指跌约0.9%，道指微涨，不能用盘中价替代收盘。",
+      "paragraphs": [
+        "AP所列美国现金收盘：标普500报7561.67、跌0.4%，纳斯达克报25136.27、跌0.9%，道指52347.55微升0.1%，Russell 2000报2790.49、跌0.3%。",
+        "指数当周仍上涨，表明11月13日科技下跌并不等于所有资产周线均向下；五日变动需要用同市场同交易基准解释。"
+      ],
+      "tables": [],
+      "sources": [
+        "S03",
+        "S16"
+      ]
+    },
+    "flows": {
+      "number": 8,
+      "title": "Capital Flows",
+      "status": "已核验／证据及缺口明确",
+      "summary": "缺少能够独立复验的全市场净申赎数据，股价下跌不能被描述成ETF资金净流出。",
+      "paragraphs": [
+        "11月13日纳指回落、SOXX下跌，仅证明交易价格变化，不能推出全周基金份额净流入或融资交易平仓规模。",
+        "后续需要基金管理人申赎份额、机构交易披露与交易所数据才能确认资金来源；当前明确将这一项标为可核验缺口。"
+      ],
+      "tables": [],
+      "sources": [
+        "S03",
+        "S19"
+      ]
+    },
+    "etf": {
+      "number": 9,
+      "title": "ETF",
+      "status": "已核验／证据及缺口明确",
+      "summary": "半导体ETF SOXX单日跌3.67%，而IWM小盘ETF仅跌约0.32%，显示风险传播具有行业集中性。",
+      "paragraphs": [
+        "Yahoo Finance同一ETF价格历史显示SOXX11月13日收149.30美元、较上一交易日154.99美元回落3.67%；比11月6日136.53美元仍高约9.35%。",
+        "IWM同日收277.54美元、跌0.32%，较11月6日273.67美元仍升约1.41%，单日跌幅与周度趋势必须分开呈现。"
+      ],
+      "tables": [],
+      "sources": [
+        "S18",
+        "S19"
+      ]
+    },
+    "options": {
+      "number": 10,
+      "title": "Options",
+      "status": "已核验／证据及缺口明确",
+      "summary": "目前没有同时可核验的当日隐含波动率期限结构和成交分布，不能编造看涨看跌比率。",
+      "paragraphs": [
+        "NVIDIA事件驱动可能增加短期看跌保护需求，但未取得交易所同截点期权持仓和IV曲面，不能将推测写为已经出现的资金流。",
+        "建议优先观察NVDA、SOXX和NDX的期权隐含与实现波动率差异，结合交易所期权持仓变化确认风险溢价。"
+      ],
+      "tables": [],
+      "sources": [
+        "S04",
+        "S17",
+        "S19"
+      ]
+    },
+    "treasury": {
+      "number": 11,
+      "title": "Treasury",
+      "status": "已核验／证据及缺口明确",
+      "summary": "美国par curve在11月13日短长端上行，10Y约5.15%继续压制长期现金流资产。",
+      "paragraphs": [
+        "美国官方par曲线经公开数据镜像显示2年期4.88%、10年期5.15%；对比11月12日分别升2和5个基点，区别于Reuters/WSJ盘中可交易报价。",
+        "11月11日美国国债市场节日休市，因此严格可比的五个实际债券交易日变化暂缺，不得把五个日历日或其他收益率口径硬拼。"
+      ],
+      "tables": [],
+      "sources": [
+        "S10",
+        "S14",
+        "S21"
+      ]
+    },
+    "commodities": {
+      "number": 12,
+      "title": "Commodities",
+      "status": "已核验／证据及缺口明确",
+      "summary": "IEA预计Q4全球原油转盈余，Brent和WTI周五结算维持95.84与88.56美元。",
+      "paragraphs": [
+        "Reuters11月13日报Brent结算95.84美元/桶、WTI结算88.56美元/桶，分别较上一交易日约+0.02%与-0.20%，两者周度走势偏弱。",
+        "IEA称Q4供给可能超过需求约170万桶/天；尚未验证相同到期月份期货五个交易日的精确收益率，因此Tape保留透明5D缺口。"
+      ],
+      "tables": [],
+      "sources": [
+        "S05",
+        "S06"
+      ]
+    },
+    "financing": {
+      "number": 13,
+      "title": "Financing",
+      "status": "已核验／证据及缺口明确",
+      "summary": "AI云供应商的核心风险从订单数转向实际交付、借款成本及未来资本开支资金来源。",
+      "paragraphs": [
+        "Nebius报告季度营收高于预期，但交付延期把部分收入移至下一年度，2027年数百亿美元的资本支出计划需要依赖预付款与抵押融资的真实落实。",
+        "美债10年期收益率约5.15%，融资贴现率仍处高位；不能把合同额、融资意向与已经收到的现金视作同一指标。"
+      ],
+      "tables": [],
+      "sources": [
+        "S23",
+        "S21"
+      ]
+    },
+    "breaking_news": {
+      "number": 14,
+      "title": "Breaking News",
+      "status": "已核验／证据及缺口明确",
+      "summary": "11月13日NVIDIA后续市场反应、美国PPI和IEA报告均已发生；不可把未来财报当作已发布。",
+      "paragraphs": [
+        "Reuters与AP均记录NVIDIA治理事件后半导体板块继续承压，NVDA、SOXX下跌，部分旧报道盘中跌幅与最终收盘不同。",
+        "11月13日BLS PPI与IEA石油月报已正式发布；下一批中国宏观数据和NVIDIA业绩仍待公布，需要逐个事件更新状态。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S03",
+        "S04",
+        "S06",
+        "S09"
+      ]
+    },
+    "market_impact": {
+      "number": 15,
+      "title": "Cross-Asset Market Impact",
+      "status": "已核验／证据及缺口明确",
+      "summary": "接下来先核验中国经济活动、AI管理层与融资现金兑现，再判断高利率下的行业轮动。",
+      "paragraphs": [
+        "基准情景是美国通胀粘性和高融资成本维持科技内部分化；改善情景需要中国需求确认、NVIDIA关键订单稳定、美国收益率回落同时支持。",
+        "恶化情景是PPI持续传导、海湾供应再受冲击或AI客户订单调整，导致利率、信用利差和半导体估值共同承压。"
+      ],
+      "tables": [],
+      "sources": [
+        "S01",
+        "S06",
+        "S09",
+        "S17",
+        "S21",
+        "S22"
+      ]
+    }
+  },
+  "signal_panel": {
+    "growth_impulse": {
+      "label": "增长脉冲",
+      "current": "→ 增长与融资分化",
+      "yesterday": "→ 高算力订单但交付延迟",
+      "change_reason": "欧洲增长与中国即将公布活动数据尚未证明全球制造链已重新同步回升。",
+      "evidence": "欧元区Q3 GDP+0.4% q/q；中国10月数据将于11/16公布。",
+      "sources": [
+        "S07",
+        "S22"
+      ]
+    },
+    "inflation_impulse": {
+      "label": "通胀脉冲",
+      "current": "↑ 同比粘性显著",
+      "yesterday": "↑ 油价传导风险",
+      "change_reason": "10月美国PPI环比虽温和但同比上升6.5%，能源与运输成本高位难快速消退。",
+      "evidence": "BLS美国10月PPI+0.3% m/m、+6.5% y/y。",
+      "sources": [
+        "S01",
+        "S02"
+      ]
+    },
+    "rates_pressure": {
+      "label": "利率压力",
+      "current": "↑ 10Y升至5.15%",
+      "yesterday": "↑ 债市高位",
+      "change_reason": "10Y官方par收益率由11月12日约5.10%再升5bp，给长久期现金流更高贴现成本。",
+      "evidence": "官方2Y 4.88%，10Y 5.15%，均为11/13收益率曲线。",
+      "sources": [
+        "S21"
+      ]
+    },
+    "earnings_revision": {
+      "label": "盈利修正",
+      "current": "↓ AI板块承压",
+      "yesterday": "→ AI股内部切换",
+      "change_reason": "NVIDIA管理层变化引发芯片类股继续回调，企业业务连续性仍待可验证答复。",
+      "evidence": "NVDA 11/13 -2.01%，SOXX -3.67%，NVIDIA正式财报尚未公布。",
+      "sources": [
+        "S04",
+        "S17",
+        "S19"
+      ]
+    },
+    "liquidity": {
+      "label": "流动性",
+      "current": "→ 缺少净申赎证据",
+      "yesterday": "→ 缺少净申赎证据",
+      "change_reason": "指数和ETF价格是交易清算结果，不等于可验证的全市场流量。",
+      "evidence": "IWM/SOXX收盘价可核查，但基金申赎与资金流向未被独立核实。",
+      "sources": [
+        "S18",
+        "S19"
+      ]
+    },
+    "geopolitical_risk": {
+      "label": "地缘风险",
+      "current": "↑ 运输尾部风险",
+      "yesterday": "↑ 海湾事件风险",
+      "change_reason": "IEA供给恢复预测不排除后续航运袭击使油运、柴油和保险重新承压。",
+      "evidence": "IEA Q4可能盈余1.7mbpd，Brent收95.84美元。",
+      "sources": [
+        "S05",
+        "S06"
+      ]
+    }
+  },
+  "scenario_matrix": {
+    "base_case": {
+      "label": "Base｜通胀粘性与AI轮动",
+      "probability": "50%（主观情景权重，并非统计预测）",
+      "trigger": "PPI维持高同比但没有额外突然供给冲击，NVIDIA订单未被正式确认中断",
+      "expected_market_reaction": "美债高位，科技股内部继续分化，防御及现金流优质股相对稳健",
+      "assets_most_sensitive": [
+        "NVDA",
+        "NDX",
+        "US10Y",
+        "SOXX"
+      ],
+      "what_confirms_it": "官方通胀、公司客户交付和债券实际交易连续验证",
+      "what_invalidates_it": "实际通胀与债券收益率快速回落或NVIDIA订单大幅变动"
+    },
+    "bull_case": {
+      "label": "Bull｜中国数据改善与利率降温",
+      "probability": "20%（主观情景权重，并非统计预测）",
+      "trigger": "11/16中国工业及消费数据超预期、后续美国实际通胀和收益率回落",
+      "expected_market_reaction": "半导体风险偏好修复，小盘与工业金属扩散，信用利差收窄",
+      "assets_most_sensitive": [
+        "SOXX",
+        "NDX",
+        "IWM",
+        "AUDUSD"
+      ],
+      "what_confirms_it": "中国官方数据、美国官方利率及NVIDIA实际客户订单共同改善",
+      "what_invalidates_it": "工业需求疲弱或美国通胀继续高企"
+    },
+    "bear_case": {
+      "label": "Bear｜治理冲击和通胀融资共振",
+      "probability": "30%（主观情景权重，并非统计预测）",
+      "trigger": "NVIDIA客户采购或交期受损、油运冲击、实际美债收益率继续上涨",
+      "expected_market_reaction": "科技股与高杠杆算力平台下跌、信用融资成本提高",
+      "assets_most_sensitive": [
+        "NVDA",
+        "US10Y",
+        "NBIS",
+        "Brent"
+      ],
+      "what_confirms_it": "供应链公告、实际融资文件、海湾运输和官方利率共同恶化",
+      "what_invalidates_it": "关键供应合同确认、原油运力恢复及利率下降"
+    }
+  },
+  "upcoming_market_watch": [
+    {
+      "sgt": "2026-11-16 10:00 SGT",
+      "et": "2026-11-15 21:00 EST",
+      "event": "中国10月工业生产、零售与固定资产投资数据（计划）",
+      "consensus": "未获得可信同口径正式共识",
+      "previous": "9月工业增速约5.5%、零售约1.1%（需以正式统计表复核）",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S22"
+      ]
+    },
+    {
+      "sgt": "2026-11-18 06:00 SGT",
+      "et": "2026-11-17 17:00 EST",
+      "event": "NVIDIA三季度FY2027业绩电话会（超出72小时，列为后续重要窗口）",
+      "consensus": "未取得可靠当前同口径预测",
+      "previous": "上一季度财报需独立核对",
+      "actual": "待公布",
+      "importance": "★★★★★",
+      "sources": [
+        "S09"
+      ]
+    }
+  ],
+  "top_risks": [
+    {
+      "risk": "美国PPI同比6.5%叠加10年美债约5.15%，高融资成本压缩AI云资产估值",
+      "why_not_fully_priced": "预付款与资产抵押融资计划尚未等同到账，若长端利率继续上行，当前估值未必充分反映未来资本开支。",
+      "trigger": "后续通胀和财政收益率升高、融资条款收紧",
+      "transmission": "PPI→UST 2Y/10Y→数据中心融资利差→AI云股权估值",
+      "first_asset": "US10Y / NBIS",
+      "theme_id": "rates_ai_financing",
+      "lifecycle_state": "active",
+      "first_seen": "2026-11-14",
+      "last_seen": "2026-11-14",
+      "sources": [
+        "S01",
+        "S21",
+        "S23"
+      ]
+    },
+    {
+      "risk": "NVIDIA关键人物更替可能放大半导体供应链与客户信心的不确定性",
+      "why_not_fully_priced": "连续股价下跌还不能验证交付路线、管理层计划或大客户是否实际调整采购。",
+      "trigger": "公司正式经营指引下调、关键客户采购变化或芯片交付延期",
+      "transmission": "NVIDIA治理→供货/采购预期→SOXX和NDX→AI资本投入",
+      "first_asset": "NVDA / SOXX",
+      "theme_id": "ai_governance_concentration",
+      "lifecycle_state": "active",
+      "first_seen": "2026-11-12",
+      "last_seen": "2026-11-14",
+      "sources": [
+        "S08",
+        "S09",
+        "S17",
+        "S19"
+      ]
+    },
+    {
+      "risk": "IEA油市盈余预期可能因海湾运输冲击或中国需求意外而失效",
+      "why_not_fully_priced": "预测盈余与已实现实体油品库存不同，海运安全及炼化产品供给依然脆弱。",
+      "trigger": "油运实际受袭、库存再降或中国工业需求显著超预期",
+      "transmission": "航运/供给→原油及柴油→PPI→全球利率及商品货币",
+      "first_asset": "Brent / US10Y",
+      "theme_id": "geopolitics_oil_fx",
+      "lifecycle_state": "active",
+      "first_seen": "2026-11-14",
+      "last_seen": "2026-11-14",
+      "sources": [
+        "S05",
+        "S06",
+        "S22"
+      ]
+    }
+  ],
+  "next_catalyst": {
+    "event": "2026年11月16日中国10月国民经济活动数据公布（计划）",
+    "status": "Scheduled / actual not yet released",
+    "date": "2026-11-16",
+    "et": "2026-11-15 21:00 EST",
+    "sgt": "2026-11-16 10:00 SGT",
+    "consensus": "无可独立核实的正式同口径调查预测",
+    "previous": "9月工业和零售统计值需以NBS官方前值为准",
+    "actual": "待公布",
+    "why_it_matters": "中国工业生产与零售、地产投资是否背离，决定大宗商品、出口产业链和亚洲风险资产对美国高利率的缓冲程度。",
+    "first_market": "沪深300、AUDUSD、铜/铁矿、CNH与能源",
+    "bull_interpretation": "工业和消费共同改善，商品需求与亚洲股市相对强势扩大。",
+    "bear_interpretation": "地产投资与消费均明显走弱，亚洲商品货币和原油需求预期下修。",
+    "watch_first": [
+      "北京时间11月16日10时先核验国家统计局工业增加值、社会消费品零售与投资的实际原始数值及修订，切勿把预告当作实际发布。",
+      "区分工业同比、零售同比与累计固定资产投资不同口径，再观察澳元、人民币和工业金属的同窗可交易反应。",
+      "11月17日NVIDIA财报前关注正式供应链/客户确认，并把美债10年期的实际市场变动和AI科技板块比较。"
+    ],
+    "sources": [
+      "S22",
+      "S09"
+    ]
+  },
+  "sources": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05",
+    "S06",
+    "S07",
+    "S08",
+    "S09",
+    "S10",
+    "S11",
+    "S12",
+    "S13",
+    "S14",
+    "S15",
+    "S16",
+    "S17",
+    "S18",
+    "S19",
+    "S20",
+    "S21",
+    "S22",
+    "S23"
+  ],
+  "asia_snapshot": {
+    "as_of": "2026-11-14 10:25-10:33 SGT research window; US last cash session 2026-11-13 16:00 EST",
+    "market_note": "美国周末无新现金收盘，所有最新成交来自2026-11-13交易日；补档后不应误标11/14或11/15美股收盘。",
+    "sources": [
+      "S03",
+      "S21",
+      "S22"
+    ]
+  },
+  "reconstruction": {
+    "is_reconstructed": true,
+    "reconstructed_at": "2026-11-23T09:51:31+08:00",
+    "historical_cutoff_sgt": "2026-11-14 10:35 SGT",
+    "original_contemporaneous_unpublished_draft_recovered": true,
+    "original_candidate_file": "GMD-2026-11-14-RECOVERY-5FILE-QUALITY_NOT_RUN-NOT_SUBMITTED.zip",
+    "original_candidate_run_timing": {
+      "scheduled_for_sgt": "2026-11-14T09:00:00+08:00",
+      "started_at_sgt": "2026-11-14T10:25:23+08:00",
+      "research_cutoff_sgt": "2026-11-14T10:35:40.235691+08:00",
+      "mode": "contemporaneous_delayed_morning_recovery",
+      "note": "09:00原任务留下2026-11-14 09:06:52 SGT可查的部分研究及来源；10:30恢复按当次main重新只读核实并扩大研究，实际研究完成时间记本字段，绝不冒充09:00截止；11月14日周六无美股现金交易，资产as_of保留11月13日。原已保存的partial包不是此候选的发布批准。"
+    },
+    "limitations": [
+      "原生晨间研究草稿虽保留，但未在历史日发布至main；本版于2026-11-23经追溯整理才进入候选归档，不得充当原生30D。",
+      "该期历史来源部分仅有发布日期或网页回读时间，精确历史可用时刻并非全部可恢复；关键事实需独立核实，尚未全面通过Quality。",
+      "部分未独立确认同口径五交易日市场价格和期权/ETF实际申赎，保持原明确缺口。"
+    ]
+  }
+}
