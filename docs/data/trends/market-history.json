@@ -146,7 +146,8 @@
         },
         {
           "date": "2025-10-02",
-          "value": 22844.05
+          "value": 22844.05,
+          "source_url": "https://fred.stlouisfed.org/series/NASDAQCOM"
         },
         {
           "date": "2025-10-03",
@@ -1449,7 +1450,8 @@
         },
         {
           "date": "2025-10-02",
-          "value": 6715.35
+          "value": 6715.35,
+          "source_url": "https://fred.stlouisfed.org/series/SP500"
         },
         {
           "date": "2025-10-03",
@@ -2833,7 +2835,8 @@
         },
         {
           "date": "2025-10-02",
-          "value": 16.63
+          "value": 16.63,
+          "source_url": "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
         },
         {
           "date": "2025-10-03",
@@ -4160,7 +4163,8 @@
         },
         {
           "date": "2025-10-02",
-          "value": 3.55
+          "value": 3.55,
+          "source_url": "https://fred.stlouisfed.org/series/DGS2"
         },
         {
           "date": "2025-10-03",
@@ -5447,7 +5451,8 @@
         },
         {
           "date": "2025-10-02",
-          "value": 4.1
+          "value": 4.1,
+          "source_url": "https://fred.stlouisfed.org/series/DGS10"
         },
         {
           "date": "2025-10-03",
@@ -6734,7 +6739,8 @@
         },
         {
           "date": "2025-10-02",
-          "value": 65.44
+          "value": 65.44,
+          "source_url": "https://fred.stlouisfed.org/series/DCOILBRENTEU"
         },
         {
           "date": "2025-10-03",
@@ -8041,7 +8047,8 @@
         },
         {
           "date": "2025-10-02",
-          "value": 120.4296
+          "value": 120.4296,
+          "source_url": "https://fred.stlouisfed.org/series/DTWEXBGS"
         },
         {
           "date": "2025-10-03",
@@ -9330,7 +9337,8 @@
         },
         {
           "date": "2025-10-02",
-          "value": 2.81
+          "value": 2.81,
+          "source_url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2"
         },
         {
           "date": "2025-10-03",
